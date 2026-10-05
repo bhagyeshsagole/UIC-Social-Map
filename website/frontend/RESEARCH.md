@@ -1,0 +1,17 @@
+# Initial place research
+
+Checked October 4, 2026. This is a curated starting set for the UI, not an exhaustive Chicago directory. All displayed descriptions are maintained in [added_sites.md](../../added_sites.md).
+
+| Place | Evidence | Content limits |
+| --- | --- | --- |
+| Art Institute | [UIC CADA admission policy](https://cada.uic.edu/museum-admission/) confirms free admission with student i-card. [Museum exhibition listing on Google Arts & Culture](https://artsandculture.google.com/event/g11yms0806g) dates Mary Cassatt: After Impressionism from Sep 6, 2026 to Jan 3, 2027. | The museum visit page was blocked to the research tool. Regular hours were corroborated by visitor directories, but need primary-source re-verification. No calculated open-now badge. Free general admission does not imply free paid workshops. |
+| Busy Burger | [UIC student-government guide](https://usg.uic.edu/uic-student-discount-guide/) lists 10% off with UIC ID. [Official menu](https://www.busyburger.com/menu?menu=busy-burger) supplies prices, ingredients, and daily 10am–midnight hours. | Plant-based patties do not make the buttered bun and sauce vegan. Veg options require ingredient/preparation confirmation. |
+| Two Shades Cafe | The same UIC guide lists 15% off. [Official hours](https://www.twoshadescafe.com/our-shops) and [drinks menu](https://www.twoshadescafe.com/menus?menu=drinks) support the listing. | Base drink prices vary by size and milk. Only orange juice has an explicit official vegan label; plain cold brew is an ingredient-based vegan option, not a certification. |
+| Gallery 400 | [Official visit information](https://gallery400.uic.edu/visit/visit/) confirms free admission and regular hours. [Press & Pull](https://gallery400.uic.edu/exhibition/pressandpull/) runs Sep 11 to Dec 12, 2026. | Closed on holidays and during exhibition installations. |
+| First Ascent Block 37 | [Chicago memberships](https://faclimbing.com/chicago/membership/) confirms discounted full-time student monthly/annual plans. [Location](https://faclimbing.com/chicago/block-37/) supplies address and hours. | No free day-pass claim. The old three-month summer offer ended June 30, 2026 and is excluded. |
+| 3RUN2 | [Club schedule and waiver](https://www.threeruntwo.com/schedule2025) lists Tuesday 6:30pm at the Maxwell cul-de-sac west of Halsted; 5K, 4mi, and 8K options, no bag drop. [RunSesh](https://runsesh.com/running-clubs/3run2/) reports no fee. | Schedule URL contains 2025 even though it remains indexed; check latest club cancellations before attending. No invented dated run event or participant count. |
+| Cairo Kebab | UIC student-government guide lists a discount typically 10–15%. [Official menu page](https://cairokebab.com/menu/) supports halal zabiha, vegetarian/vegan options, address, and hours. | Exact discount requires counter confirmation. Named menu examples come from the restaurant's [2023 menu](https://cairokebab.com/wp-content/uploads/2023/08/cairo-kebab-menu-september-2023.pdf); prices deliberately omitted and current availability needs confirmation. |
+
+UIC's student-government guide is student-organization content, not a guarantee by university administration. Each food offer tells users to confirm before ordering. Dietary filters identify options, not restaurant-wide guarantees; users should discuss ingredients and preparation with staff.
+
+The weekly content job is documented separately in [SUNDAY_REFRESH_TASK.md](../../SUNDAY_REFRESH_TASK.md). It has not been implemented or scheduled.

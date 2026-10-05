@@ -9,7 +9,7 @@
 ## Start here
 
 - [Living project plan](PROJECT_PLAN.md) — requirements, shared decisions, milestones.
-- [Workflow A · Bhagesh](WORKFLOW_A_BHAGESH.md) — UI work, progress, messages to Hassan.
+- [Workflow A · Bhagesh](WORKFLOW_A_BHAGYESH.md) — UI work, progress, messages to Hassan.
 - [Workflow B · Hassan](WORKFLOW_B_HASSAN.md) — backend work, progress, messages to Bhagesh.
 - [Concept review](EVENT_MAP_REVIEW.md) — research, sources, loopholes, proposed safeguards.
 - [Website workspace](website/README.md) — code boundaries and integration.
@@ -23,7 +23,7 @@ UIC-Social-Map/                 ← shared project / future Git repository root
 ├── AGENTS.md                   ← instructions for future assistant sessions
 ├── PROJECT_PLAN.md
 ├── EVENT_MAP_REVIEW.md
-├── WORKFLOW_A_BHAGESH.md
+├── WORKFLOW_A_BHAGYESH.md
 ├── WORKFLOW_B_HASSAN.md
 └── website/                    ← application and deployment workspace
     ├── frontend/               ← Bhagesh

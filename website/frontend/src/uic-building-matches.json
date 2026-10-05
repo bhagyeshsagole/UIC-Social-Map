@@ -1,0 +1,1593 @@
+{
+  "source": "https://maps.uic.edu/Maps",
+  "tiles": "https://tiles.openfreemap.org/planet/20260927_080001_pt/{z}/{x}/{y}.pbf",
+  "checked": "2026-10-05",
+  "ids": [
+    28172790,
+    14300230722,
+    53730630,
+    566308180,
+    1516781400,
+    190633530,
+    744510170,
+    1489029940,
+    1515574392,
+    202707520,
+    28171290,
+    1529764780,
+    138273060,
+    15461243572,
+    1005553120,
+    15461292312,
+    15461292350,
+    550629820,
+    407854450,
+    407854250,
+    177212570,
+    563932160,
+    28242980,
+    1498778300,
+    206039480,
+    1489107270,
+    15464777250,
+    15461322240,
+    15461322262,
+    20505050,
+    15461322242,
+    1519606672,
+    407854230,
+    1516755630,
+    14300230742,
+    310907540,
+    310907570,
+    1516755682,
+    744136350,
+    1516722012,
+    2093578380,
+    21842730,
+    2093579590,
+    205932530,
+    1989527630,
+    1652412300,
+    1652410880,
+    31167200,
+    2093833360,
+    2052219930,
+    8364704952,
+    2093602550,
+    2093813570,
+    2098292790,
+    2098111182,
+    2093815540,
+    2098098100,
+    1652412760,
+    28209170,
+    2062241890,
+    205909760,
+    3199252800,
+    2098109932,
+    1576862690,
+    15530132732,
+    2098100120,
+    205932540,
+    15520618072,
+    205893570,
+    15526959700,
+    2097828140,
+    206002003,
+    77880020,
+    15463516892,
+    15460541202,
+    176501620,
+    737362660,
+    356014790,
+    173713230
+  ],
+  "matches": [
+    {
+      "id": "0640",
+      "name": "Academic & Residential Complex",
+      "coordinates": [
+        -87.651442,
+        41.874775
+      ],
+      "campus": "EAST",
+      "ids": [
+        28172790,
+        14300230722
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0616",
+      "name": "Addams Hall",
+      "coordinates": [
+        -87.649017,
+        41.870941
+      ],
+      "campus": "EAST",
+      "ids": [
+        53730630,
+        566308180
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0628",
+      "name": "Architecture and Design Studios",
+      "coordinates": [
+        -87.64875,
+        41.873669
+      ],
+      "campus": "EAST",
+      "ids": [
+        1516781400,
+        190633530,
+        744510170
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0641",
+      "name": "Art and Exhibition Hall",
+      "coordinates": [
+        -87.649857,
+        41.876442
+      ],
+      "campus": "EAST",
+      "ids": [
+        1489029940
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0618",
+      "name": "Behavioral Sciences Building",
+      "coordinates": [
+        -87.652695,
+        41.873768
+      ],
+      "campus": "EAST",
+      "ids": [
+        1515574392
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0617",
+      "name": "Burnham Hall",
+      "coordinates": [
+        -87.64949,
+        41.870995
+      ],
+      "campus": "EAST",
+      "ids": [
+        53730630
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0643",
+      "name": "Chemical Engineering Building",
+      "coordinates": [
+        -87.641281,
+        41.87151
+      ],
+      "campus": "EAST",
+      "ids": [
+        202707520
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0654",
+      "name": "Co-Generation Facility",
+      "coordinates": [
+        -87.652436,
+        41.867587
+      ],
+      "campus": "EAST",
+      "ids": [
+        28171290
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0642",
+      "name": "College of Urban Planning & Public Affairs  Hall",
+      "coordinates": [
+        -87.64986,
+        41.876112
+      ],
+      "campus": "EAST",
+      "ids": [
+        1529764780
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0649",
+      "name": "Computer Design Research and Learning Center",
+      "coordinates": [
+        -87.6495282036285,
+        41.870019503249715
+      ],
+      "campus": "EAST",
+      "ids": [
+        138273060,
+        15461243572,
+        1005553120
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0638",
+      "name": "Credit Union 1 Arena",
+      "coordinates": [
+        -87.656219,
+        41.87484
+      ],
+      "campus": "EAST",
+      "ids": [
+        28172790
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0613",
+      "name": "Douglass Hall",
+      "coordinates": [
+        -87.649094,
+        41.872822
+      ],
+      "campus": "EAST",
+      "ids": [
+        53730630,
+        566308180
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0623",
+      "name": "Education, Theatre, Music and Social Work",
+      "coordinates": [
+        -87.653053,
+        41.874947
+      ],
+      "campus": "EAST",
+      "ids": [
+        28172790
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0629",
+      "name": "Engineering Innovation Building",
+      "coordinates": [
+        -87.650123,
+        41.869101
+      ],
+      "campus": "EAST",
+      "ids": [
+        28171290
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0648",
+      "name": "Engineering Research Facility",
+      "coordinates": [
+        -87.647926,
+        41.869904
+      ],
+      "campus": "EAST",
+      "ids": [
+        15461292312,
+        566308180,
+        15461292350
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0646",
+      "name": "Flames Athletic Center",
+      "coordinates": [
+        -87.648392,
+        41.866634
+      ],
+      "campus": "EAST",
+      "ids": [
+        550629820
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0612",
+      "name": "Grant Hall",
+      "coordinates": [
+        -87.649506,
+        41.872856
+      ],
+      "campus": "EAST",
+      "ids": [
+        53730630
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0626",
+      "name": "Henry Hall",
+      "coordinates": [
+        -87.650558,
+        41.874081
+      ],
+      "campus": "EAST",
+      "ids": [
+        53730630
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0670",
+      "name": "Jane Addams Hull-House Museum",
+      "coordinates": [
+        -87.647415,
+        41.871655
+      ],
+      "campus": "EAST",
+      "ids": [
+        407854450
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0671",
+      "name": "Jane Addams' Hull-House Dining Hall",
+      "coordinates": [
+        -87.647453,
+        41.871353
+      ],
+      "campus": "EAST",
+      "ids": [
+        407854250
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0602",
+      "name": "Jefferson Hall",
+      "coordinates": [
+        -87.65023,
+        41.873981
+      ],
+      "campus": "EAST",
+      "ids": [
+        53730630
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0604A",
+      "name": "Lecture Center Building A",
+      "coordinates": [
+        -87.649818,
+        41.872108
+      ],
+      "campus": "EAST",
+      "ids": [
+        177212570
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0604B",
+      "name": "Lecture Center Building B",
+      "coordinates": [
+        -87.649292,
+        41.872192
+      ],
+      "campus": "EAST",
+      "ids": [
+        177212570
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0604C",
+      "name": "Lecture Center Building C",
+      "coordinates": [
+        -87.648697,
+        41.872124
+      ],
+      "campus": "EAST",
+      "ids": [
+        177212570,
+        563932160
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0604D",
+      "name": "Lecture Center Building D",
+      "coordinates": [
+        -87.648727,
+        41.871681
+      ],
+      "campus": "EAST",
+      "ids": [
+        177212570,
+        563932160
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0604E",
+      "name": "Lecture Center Building E",
+      "coordinates": [
+        -87.649246,
+        41.871605
+      ],
+      "campus": "EAST",
+      "ids": [
+        177212570,
+        563932160
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0604F",
+      "name": "Lecture Center Building F",
+      "coordinates": [
+        -87.649841,
+        41.871658
+      ],
+      "campus": "EAST",
+      "ids": [
+        177212570
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0614",
+      "name": "Lincoln Hall",
+      "coordinates": [
+        -87.649292,
+        41.872482
+      ],
+      "campus": "EAST",
+      "ids": [
+        53730630
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0677",
+      "name": "Maxwell Street Parking Structure",
+      "coordinates": [
+        -87.645393,
+        41.864586
+      ],
+      "campus": "EAST",
+      "ids": [
+        28242980
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0633",
+      "name": "Physical Education Building",
+      "coordinates": [
+        -87.64962,
+        41.86665
+      ],
+      "campus": "EAST",
+      "ids": [
+        28171290
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0611",
+      "name": "Physical Plant Building",
+      "coordinates": [
+        -87.651779,
+        41.867619
+      ],
+      "campus": "EAST",
+      "ids": [
+        1498778300
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0635",
+      "name": "Plant Research Laboratory",
+      "coordinates": [
+        -87.646172,
+        41.869183
+      ],
+      "campus": "EAST",
+      "ids": [
+        206039480
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0609",
+      "name": "Richard J. Daley Library",
+      "coordinates": [
+        -87.650505,
+        41.87196
+      ],
+      "campus": "EAST",
+      "ids": [
+        1489107270
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0621",
+      "name": "Roosevelt Road Building",
+      "coordinates": [
+        -87.645714,
+        41.867905
+      ],
+      "campus": "EAST",
+      "ids": [
+        550629820,
+        15464777250
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0607",
+      "name": "Science & Engineering Laboratory East",
+      "coordinates": [
+        -87.647995,
+        41.870365
+      ],
+      "campus": "EAST",
+      "ids": [
+        15461322240,
+        15461322262,
+        20505050
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0608",
+      "name": "Science & Engineering Laboratory West",
+      "coordinates": [
+        -87.64904,
+        41.870426
+      ],
+      "campus": "EAST",
+      "ids": [
+        15461322242,
+        15461322262,
+        20505050,
+        15461322240
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0631",
+      "name": "Science & Engineering Offices",
+      "coordinates": [
+        -87.650475,
+        41.870899
+      ],
+      "campus": "EAST",
+      "ids": [
+        1519606672
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0619",
+      "name": "Science & Engineering South",
+      "coordinates": [
+        -87.648315,
+        41.868958
+      ],
+      "campus": "EAST",
+      "ids": [
+        190633530
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0627",
+      "name": "Stevenson Hall",
+      "coordinates": [
+        -87.650345,
+        41.872864
+      ],
+      "campus": "EAST",
+      "ids": [
+        407854230
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0630",
+      "name": "Student Recreation Facility",
+      "coordinates": [
+        -87.646355,
+        41.872547
+      ],
+      "campus": "EAST",
+      "ids": [
+        566308180
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0644C",
+      "name": "Student Residence and Commons Courtyard",
+      "coordinates": [
+        -87.64801,
+        41.874039
+      ],
+      "campus": "EAST",
+      "ids": [
+        20505050
+      ],
+      "method": "nearest footprint (6.6 m)"
+    },
+    {
+      "id": "0644N",
+      "name": "Student Residence and Commons North",
+      "coordinates": [
+        -87.647446,
+        41.873608
+      ],
+      "campus": "EAST",
+      "ids": [
+        1516755630
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0644S",
+      "name": "Student Residence and Commons South",
+      "coordinates": [
+        -87.647812,
+        41.873158
+      ],
+      "campus": "EAST",
+      "ids": [
+        1516755630
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0644W",
+      "name": "Student Residence and Commons West",
+      "coordinates": [
+        -87.6492,
+        41.874233
+      ],
+      "campus": "EAST",
+      "ids": [
+        20505050,
+        14300230742
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0655",
+      "name": "Student Services Building",
+      "coordinates": [
+        -87.657806,
+        41.874817
+      ],
+      "campus": "EAST",
+      "ids": [
+        53730630
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0615",
+      "name": "Taft Hall",
+      "coordinates": [
+        -87.649261,
+        41.871292
+      ],
+      "campus": "EAST",
+      "ids": [
+        53730630,
+        566308180
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0690",
+      "name": "Taylor Street Building",
+      "coordinates": [
+        -87.654503,
+        41.86932
+      ],
+      "campus": "EAST",
+      "ids": [
+        53730630,
+        310907540
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0689",
+      "name": "Teaching Excellence Building",
+      "coordinates": [
+        -87.65139229717445,
+        41.86970045591483
+      ],
+      "campus": "EAST",
+      "ids": [
+        138273060,
+        310907570
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0657",
+      "name": "Transportation Facility",
+      "coordinates": [
+        -87.650574,
+        41.864029
+      ],
+      "campus": "EAST",
+      "ids": [
+        1498778300
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0656",
+      "name": "UIC Police Station",
+      "coordinates": [
+        -87.650665,
+        41.864494
+      ],
+      "campus": "EAST",
+      "ids": [
+        28171290
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0605",
+      "name": "UIC Student Center East",
+      "coordinates": [
+        -87.647964,
+        41.871967
+      ],
+      "campus": "EAST",
+      "ids": [
+        407854230
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0606",
+      "name": "UIC Student Center East Tower",
+      "coordinates": [
+        -87.647865,
+        41.87281
+      ],
+      "campus": "EAST",
+      "ids": [
+        1516755682,
+        744136350
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0624",
+      "name": "UIC Theatre",
+      "coordinates": [
+        -87.653343,
+        41.874573
+      ],
+      "campus": "EAST",
+      "ids": [
+        28172790
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0601",
+      "name": "University Hall",
+      "coordinates": [
+        -87.65103,
+        41.873731
+      ],
+      "campus": "EAST",
+      "ids": [
+        1516722012
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0610",
+      "name": "Utilities Building",
+      "coordinates": [
+        -87.651665,
+        41.868465
+      ],
+      "campus": "EAST",
+      "ids": [
+        28171290
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0980",
+      "name": "2242 West Harrison",
+      "coordinates": [
+        -87.682861,
+        41.874619
+      ],
+      "campus": "WEST",
+      "ids": [
+        2093578380
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0981",
+      "name": "5525 South Pulaski Road Building",
+      "coordinates": [
+        -87.72272914530734,
+        41.79263955161966
+      ],
+      "campus": "WEST",
+      "ids": [
+        21842730
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0941",
+      "name": "Administrative Office Building",
+      "coordinates": [
+        -87.670624,
+        41.871296
+      ],
+      "campus": "WEST",
+      "ids": [
+        1489107270,
+        2093579590
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0916",
+      "name": "Applied Health Sciences Building",
+      "coordinates": [
+        -87.674812,
+        41.868362
+      ],
+      "campus": "WEST",
+      "ids": [
+        205932530
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0933",
+      "name": "Benjamin Goldberg Research Center",
+      "coordinates": [
+        -87.675522,
+        41.869476
+      ],
+      "campus": "WEST",
+      "ids": [
+        1989527630,
+        1652412300
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0932",
+      "name": "Biologic Resources Laboratory",
+      "coordinates": [
+        -87.672821,
+        41.869492
+      ],
+      "campus": "WEST",
+      "ids": [
+        2093578380,
+        1652410880
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0976",
+      "name": "Center for Structural Biology",
+      "coordinates": [
+        -87.666862,
+        41.868164
+      ],
+      "campus": "WEST",
+      "ids": [
+        1498778300
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0920",
+      "name": "Clinical Sciences Building",
+      "coordinates": [
+        -87.672035,
+        41.870621
+      ],
+      "campus": "WEST",
+      "ids": [
+        31167200
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0911",
+      "name": "Clinical Sciences North",
+      "coordinates": [
+        -87.672653,
+        41.870872
+      ],
+      "campus": "WEST",
+      "ids": [
+        31167200
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0940",
+      "name": "College of Dentistry",
+      "coordinates": [
+        -87.668396,
+        41.871059
+      ],
+      "campus": "WEST",
+      "ids": [
+        190633530
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0910",
+      "name": "College of Medicine East Tower",
+      "coordinates": [
+        -87.671761,
+        41.871254
+      ],
+      "campus": "WEST",
+      "ids": [
+        2093833360
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0934",
+      "name": "College of Medicine Research Building",
+      "coordinates": [
+        -87.673401,
+        41.869728
+      ],
+      "campus": "WEST",
+      "ids": [
+        2052219930,
+        8364704952
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0908",
+      "name": "College of Medicine West",
+      "coordinates": [
+        -87.672409,
+        41.8713
+      ],
+      "campus": "WEST",
+      "ids": [
+        2093602550
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0909",
+      "name": "College of Medicine West Tower",
+      "coordinates": [
+        -87.673256,
+        41.871292
+      ],
+      "campus": "WEST",
+      "ids": [
+        2093813570
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0936",
+      "name": "College of Nursing",
+      "coordinates": [
+        -87.675385,
+        41.870064
+      ],
+      "campus": "WEST",
+      "ids": [
+        2098292790,
+        2098111182
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0924",
+      "name": "College of Pharmacy",
+      "coordinates": [
+        -87.67086,
+        41.870621
+      ],
+      "campus": "WEST",
+      "ids": [
+        1005553120,
+        2093815540
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0974",
+      "name": "Disability, Health and Social Policy Building",
+      "coordinates": [
+        -87.667854,
+        41.867546
+      ],
+      "campus": "WEST",
+      "ids": [
+        2098098100
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0931",
+      "name": "Environmental Health and Safety Offices",
+      "coordinates": [
+        -87.669746,
+        41.867485
+      ],
+      "campus": "WEST",
+      "ids": [
+        310907570
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0902",
+      "name": "Eye and Ear Infirmary",
+      "coordinates": [
+        -87.67308,
+        41.868805
+      ],
+      "campus": "WEST",
+      "ids": [
+        1652412760
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0907",
+      "name": "Human Resources Building",
+      "coordinates": [
+        -87.671165,
+        41.872276
+      ],
+      "campus": "WEST",
+      "ids": [
+        1489107270,
+        2093579590
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0965",
+      "name": "Incubator Laboratory Facility",
+      "coordinates": [
+        -87.681885,
+        41.872311
+      ],
+      "campus": "WEST",
+      "ids": [
+        2093578380
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0972",
+      "name": "Laflin Warehouse Building",
+      "coordinates": [
+        -87.664597,
+        41.861248
+      ],
+      "campus": "WEST",
+      "ids": [
+        28209170
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0942",
+      "name": "Library of the Health Sciences",
+      "coordinates": [
+        -87.670929,
+        41.871887
+      ],
+      "campus": "WEST",
+      "ids": [
+        53730630,
+        2062241890
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0957",
+      "name": "Lions of Illinois Eye Research Institute",
+      "coordinates": [
+        -87.67408,
+        41.868885
+      ],
+      "campus": "WEST",
+      "ids": [
+        1652410880
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0922",
+      "name": "Marshfield Avenue Building",
+      "coordinates": [
+        -87.667419,
+        41.871185
+      ],
+      "campus": "WEST",
+      "ids": [
+        205909760
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0914",
+      "name": "Medical Center Administration Building",
+      "coordinates": [
+        -87.672516,
+        41.869953
+      ],
+      "campus": "WEST",
+      "ids": [
+        2093579590
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0935",
+      "name": "Medical Sciences Building",
+      "coordinates": [
+        -87.673386,
+        41.87056
+      ],
+      "campus": "WEST",
+      "ids": [
+        2052219930
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0929",
+      "name": "Mile Square Health Center",
+      "coordinates": [
+        -87.67207,
+        41.866365
+      ],
+      "campus": "WEST",
+      "ids": [
+        3199252800
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0919",
+      "name": "Molecular Biology Research Building",
+      "coordinates": [
+        -87.666946,
+        41.870823
+      ],
+      "campus": "WEST",
+      "ids": [
+        205909760
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0918",
+      "name": "NMR Laboratories",
+      "coordinates": [
+        -87.672791,
+        41.870556
+      ],
+      "campus": "WEST",
+      "ids": [
+        31167200
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0950",
+      "name": "Neuropsychiatric Institute",
+      "coordinates": [
+        -87.671768,
+        41.870037
+      ],
+      "campus": "WEST",
+      "ids": [
+        2098109932
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0959",
+      "name": "On the Mall",
+      "coordinates": [
+        -87.669853,
+        41.871387
+      ],
+      "campus": "WEST",
+      "ids": [
+        28172790
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0948",
+      "name": "Outpatient Care Center",
+      "coordinates": [
+        -87.671867,
+        41.869041
+      ],
+      "campus": "WEST",
+      "ids": [
+        28171290
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0963",
+      "name": "Paulina Street Building",
+      "coordinates": [
+        -87.669243,
+        41.867508
+      ],
+      "campus": "WEST",
+      "ids": [
+        310907540
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0937",
+      "name": "Polk Street Residence Hall",
+      "coordinates": [
+        -87.675224,
+        41.871132
+      ],
+      "campus": "WEST",
+      "ids": [
+        1576862690,
+        15530132732
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0975",
+      "name": "School of Public Health and Psychiatric Institute",
+      "coordinates": [
+        -87.667709,
+        41.868649
+      ],
+      "campus": "WEST",
+      "ids": [
+        2098100120
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0930",
+      "name": "School of Public Health-West",
+      "coordinates": [
+        -87.679245,
+        41.868633
+      ],
+      "campus": "WEST",
+      "ids": [
+        205932540
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0951",
+      "name": "Single Student Residence",
+      "coordinates": [
+        -87.675705,
+        41.871162
+      ],
+      "campus": "WEST",
+      "ids": [
+        15520618072,
+        205893570
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0923",
+      "name": "Student Residence Hall",
+      "coordinates": [
+        -87.674408,
+        41.871197
+      ],
+      "campus": "WEST",
+      "ids": [
+        15526959700,
+        2052219930
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0947",
+      "name": "UI Health Specialty Care Building",
+      "coordinates": [
+        -87.67122783088271,
+        41.869024334813425
+      ],
+      "campus": "WEST",
+      "ids": [
+        2097828140,
+        3199252800
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0953",
+      "name": "UIC Sport and Fitness Center",
+      "coordinates": [
+        -87.675529,
+        41.87056
+      ],
+      "campus": "WEST",
+      "ids": [
+        2093578380
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0938",
+      "name": "UIC Student Center West",
+      "coordinates": [
+        -87.674561,
+        41.870762
+      ],
+      "campus": "WEST",
+      "ids": [
+        2093578380
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0949",
+      "name": "University of Illinois Hospital",
+      "coordinates": [
+        -87.6705,
+        41.869677
+      ],
+      "campus": "WEST",
+      "ids": [
+        205909760,
+        206002003
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0977",
+      "name": "Westside Research Office Building",
+      "coordinates": [
+        -87.670631,
+        41.866413
+      ],
+      "campus": "WEST",
+      "ids": [
+        190633530,
+        205932540
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0672",
+      "name": "1253 South Halsted Street",
+      "coordinates": [
+        -87.646591,
+        41.865646
+      ],
+      "campus": "SOUTH",
+      "ids": [
+        77880020
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0673",
+      "name": "1309 South Halsted Street",
+      "coordinates": [
+        -87.646591,
+        41.865139
+      ],
+      "campus": "SOUTH",
+      "ids": [
+        28242980
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0675",
+      "name": "1333 South Halsted Street",
+      "coordinates": [
+        -87.646591,
+        41.864494
+      ],
+      "campus": "SOUTH",
+      "ids": [
+        550629820
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0674",
+      "name": "722 West Maxwell Street",
+      "coordinates": [
+        -87.646133,
+        41.86499
+      ],
+      "campus": "SOUTH",
+      "ids": [
+        77880020
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0668",
+      "name": "Curtis Granderson Stadium",
+      "coordinates": [
+        -87.649525,
+        41.864895
+      ],
+      "campus": "SOUTH",
+      "ids": [
+        1498778300
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0667",
+      "name": "Isadore and Sadie Dorin Forum",
+      "coordinates": [
+        -87.645699,
+        41.866833
+      ],
+      "campus": "SOUTH",
+      "ids": [
+        550629820,
+        15463516892
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0665",
+      "name": "James J. Stukel Towers",
+      "coordinates": [
+        -87.646027,
+        41.866245
+      ],
+      "campus": "SOUTH",
+      "ids": [
+        15460541202
+      ],
+      "method": "nearest footprint (3.1 m)"
+    },
+    {
+      "id": "0664",
+      "name": "Marie Robinson Hall",
+      "coordinates": [
+        -87.6474,
+        41.864323
+      ],
+      "campus": "SOUTH",
+      "ids": [
+        176501620
+      ],
+      "method": "nearest footprint (19.3 m)"
+    },
+    {
+      "id": "0663",
+      "name": "Thomas Beckham Hall",
+      "coordinates": [
+        -87.647408,
+        41.865372
+      ],
+      "campus": "SOUTH",
+      "ids": [
+        176501620
+      ],
+      "method": "nearest footprint (14.0 m)"
+    },
+    {
+      "id": "0681",
+      "name": "UIC LAW: 19 West Jackson Blvd",
+      "coordinates": [
+        -87.628522,
+        41.878086
+      ],
+      "campus": "UIC LAW",
+      "ids": [
+        566308180
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0682",
+      "name": "UIC LAW: 300 South State Street",
+      "coordinates": [
+        -87.628019,
+        41.877972
+      ],
+      "campus": "UIC LAW",
+      "ids": [
+        737362660
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0680",
+      "name": "UIC LAW: 315 South Plymouth Court",
+      "coordinates": [
+        -87.628477,
+        41.8777
+      ],
+      "campus": "UIC LAW",
+      "ids": [
+        356014790
+      ],
+      "method": "contains official point"
+    },
+    {
+      "id": "0683",
+      "name": "UIC LAW: 321 South Plymouth Court",
+      "coordinates": [
+        -87.628467,
+        41.877299
+      ],
+      "campus": "UIC LAW",
+      "ids": [
+        173713230
+      ],
+      "method": "contains official point"
+    }
+  ],
+  "unmatched": [
+    {
+      "id": "0691",
+      "name": "Flames Field Press Box",
+      "coordinates": [
+        -87.65078757224066,
+        41.865518789371485
+      ],
+      "campus": "SOUTH"
+    }
+  ]
+}

@@ -32,3 +32,6 @@
 - Hosting and environments: **not configured** — B03/B08.
 
 Each app keeps its own manifest and lockfile. Put server secrets only in the backend/hosting environment. Browser configuration must contain only values intended to be public.
+
+## Added Instructions (Claude/ Codex Always Read this)
+- For any tasks given, download relevant skills and store them in skills but reputable repos, not generic non popular repos.

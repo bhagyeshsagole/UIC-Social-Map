@@ -1,7 +1,7 @@
 # UIC Social Discovery Map — Living Plan and Tracker
 
 Last updated: 2026-10-04 (America/Chicago)  
-Phase: Chosen concept; research and product decisions before implementation  
+Phase: First local frontend prototype; production decisions and backend remain open<br>
 Team: Bhagesh — frontend; Hassan — backend, data, and deployment  
 Current review: [Evidence, loopholes, and recommendations](EVENT_MAP_REVIEW.md)
 
@@ -9,7 +9,7 @@ Current review: [Evidence, loopholes, and recommendations](EVENT_MAP_REVIEW.md)
 
 A map-based portal for UIC students to discover places and events in Chicago, understand relevant benefits, see other members planning to go, and connect before attending. Users can display their name or participate using a generated nickname.
 
-The team selected this direction. Stop generating unrelated alternatives. The current task is to prepare separate implementation workflows while resolving remaining product decisions. No application, accounts, live listings, or outreach have been created.
+The team selected this direction. Stop generating unrelated alternatives. A local UI prototype now implements map discovery, place details, bookmarks, and private event drafts. Accounts, shared events, attendance, chat, backend services, deployment, and outreach remain unimplemented.
 
 ## Living-document rules
 
@@ -21,10 +21,10 @@ Statuses: TODO, IN PROGRESS, AWAITING TEAM INPUT, BLOCKED, DONE, DEFERRED, SUPER
 
 | ID | Requirement | Status |
 | --- | --- | --- |
-| E01 | Map-centered portal with Chicago places/events relevant to UIC students | Accepted; not built |
+| E01 | Map-centered portal with Chicago places/events relevant to UIC students | Local frontend prototype built; no backend |
 | E02 | UIC students are the intended membership; require verification through a UIC email | Accepted goal; email alone does not prove current enrollment, mechanism unresolved |
 | E03 | Seed places and recommendations using the builders' local knowledge | Accepted; factual benefits still need verification |
-| E04 | Surface student benefits and practical information, including free/discounted admission where documented | Accepted; not built |
+| E04 | Surface student benefits and practical information, including free/discounted admission where documented | Seven sourced prototype listings; field-level caveats included |
 | E05 | Let users express intent to attend and see others planning to go | Accepted; time/group semantics to define |
 | E06 | Offer a named attendance option and a generated-username option | Accepted; audience and identity-linkage rules to define |
 | E07 | Enable chatting with other participants, including people using generated usernames | Accepted; group/direct-message permissions to define |
@@ -63,7 +63,7 @@ Sources and details are in [EVENT_MAP_REVIEW.md](EVENT_MAP_REVIEW.md). These are
 ## Two-person ownership — agreed split
 
 > [!info] Workflow A · Bhagesh
-> UI, visualization, frontend map rendering, and client integration. Owns `website/frontend/**` and [Workflow A](WORKFLOW_A_BHAGESH.md).
+> UI, visualization, frontend map rendering, and client integration. Owns `website/frontend/**` and [Workflow A](WORKFLOW_A_BHAGYESH.md).
 
 ---
 
@@ -104,3 +104,29 @@ Detailed implementation tasks live in the two owner trackers. These milestones t
 - **2026-10-04:** Selected UIC social discovery map with membership, attendance identity choices, and chat.
 - **2026-10-04:** Completed concept review; corrected email-verification, admission, and Eventbrite assumptions. Product decisions remain open.
 - **2026-10-04:** Assigned Workflow A to Bhagesh and Workflow B to Hassan. Created the parent coordination folder and nested website workspace, including separate trackers and deployment notes. Removed rejected ideas, complaint-portal research, and obsolete archives at the team's request. Application development has not started.
+
+## First UI scope accepted on 2026-10-04
+
+- Floating glass navigation inspired by reference 1; muted 3D building map inspired by reference 2.
+- Central Chicago pilot bounds, UIC camera on reload, no 2D toggle.
+- Automatic day/night based on each day's Chicago sunrise and sunset.
+- Search, place details, free/discount benefits, food tags, menu highlights, hours, and Google Maps links.
+- [added_sites.md](added_sites.md) is the name/description source for all UI locations. Stable IDs preserve bookmarks and drafts.
+- [Humanizer](Skills/humanizer/SKILL.md) installed locally for copy.
+- Sunday backend refresh requested as a future task: [B10](SUNDAY_REFRESH_TASK.md).
+
+Implementation choices for this reversible prototype: React + Vite, MapLibre GL JS 6, OpenFreeMap vector tiles, and SunCalc. Production provider/hosting decisions remain Hassan's responsibility under B02. “Afterclass” is a provisional display name. Saved places and event drafts are local only. The central rectangle is a pilot extent, not the Chicago municipal polygon.
+
+- **2026-10-04:** Built the first local map UI per the supplied references, added seven researched places and editable Markdown copy, and created the Sunday refresh handoff. No backend job or deployment was activated.
+
+## UI refinements accepted on 2026-10-05
+
+The original Chicago restriction and always-3D/no-toggle decisions above are superseded. The map now allows world exploration, starts at UIC on every reload, and offers explicit 2D/3D controls. Two-finger scrolling pans; rotation, pitch, and roll are available without scroll-driven tilt.
+
+Discovery is an on-demand bottom-center glass sheet. Guest and detail views use glass, with close controls. The header is smaller; time, live dot, branding, welcome copy, reminder footer, road names, and decorative map widgets are removed. UIC has a text-only label and red gradient buildings based on official directory locations matched to map footprints.
+
+Saved holds bookmarked places; My Events holds event drafts. These remain local-only until account and backend work is implemented. Campus geometry cleanup merges connected and overlapping parts across tile seams to avoid 3D flicker. See the frontend README for coverage and refresh limitations.
+
+- **2026-10-05:** Added a north-up alignment button above 2D/3D: roll resets to zero and 3D tilt aligns to 45°. Navigation order is Explore → Live events → My Events → Saved → Create event → Search.
+
+- **2026-10-05:** Moved UIC label to the central Lecture Center courtyard. Keep every place pin visible; only active name boxes reposition to avoid overlap. User requested pushing the accumulated local UI work.

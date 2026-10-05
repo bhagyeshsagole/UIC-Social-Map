@@ -4,10 +4,10 @@
 
 - Read `PROJECT_PLAN.md` and the affected owner's workflow before changing this project.
 - The chosen product is the UIC social discovery map. Do not revive the discarded complaint portal or unrelated project ideas.
-- Bhagesh owns `website/frontend/**` and `WORKFLOW_A_BHAGESH.md`.
+- Bhagesh owns `website/frontend/**` and `WORKFLOW_A_BHAGYESH.md`.
 - Hassan owns `website/backend/**`, `website/data/**`, `website/contracts/**`, `website/deployment/**`, and `WORKFLOW_B_HASSAN.md`.
 - Hassan is the proposed editor for shared root documentation/configuration until the team changes that assignment. Honor explicit user instructions to update shared files.
-- For every work request, update BOTH `WORKFLOW_A_BHAGESH.md` and `WORKFLOW_B_HASSAN.md`: check both for overlap first, record the claim in each file's *Active claims* table, then record status, evidence, dependencies, and a dated change-log entry when done. See the "update BOTH workflows" callout at the top of each workflow. Update the shared plan when scope or decisions change.
+- For every work request, update BOTH `WORKFLOW_A_BHAGYESH.md` and `WORKFLOW_B_HASSAN.md`: check both for overlap first, record the claim in each file's *Active claims* table, then record status, evidence, dependencies, and a dated change-log entry when done. See the "update BOTH workflows" callout at the top of each workflow. Update the shared plan when scope or decisions change.
 - A handoff belongs in the sender's workflow file. Do not silently make partner-owned implementation changes; record an agreed handoff or follow an explicit user request that authorizes them.
 - Keep recommendations distinct from accepted decisions. Do not mark implementation done because its folder or plan exists.
 - Keep Markdown readable in Obsidian: short sections, task checkboxes, relative links, occasional callouts.
