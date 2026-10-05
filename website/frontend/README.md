@@ -22,6 +22,27 @@ Hours, source links, coordinates, menu highlights, dietary tags, benefits, and d
 
 Initial places: Art Institute, Busy Burger, Two Shades Cafe, Gallery 400, First Ascent Block 37, 3RUN2 University Village, and Cairo Kebab. The UI links to the source for every listing. Read [research notes](RESEARCH.md) before refreshing offers.
 
+### UIC Connection live events
+
+Live events now imports the public [UIC Connection calendar](https://uic.campusgroups.com/calendar#month). Its calendar JavaScript loads `/mobile_ws/v17/mobile_calendar.aspx` with a month date range. Verified October 5, 2026: 178 source listings; the first snapshot contained 141 not-yet-started October events and 49 public map destinations. Counts decrease as events start.
+
+- The upcoming list includes events whose start is still ahead in the current **America/Chicago** month, sorted by start time. Past dates, already-started sessions, and next-month events are excluded. The app reevaluates the clock every minute and requests the new month after rollover. The larger Live events sheet has three persistent tags: UIC (CampusGroups plus UIC Gallery 400), Off-campus (independent venue exhibitions), and Community (published member events; currently empty). Private drafts remain in My Events. UIC affiliation follows the organizer, even when an outing takes place off campus.
+- Each event has its organizer, Chicago date/time, official details/registration link, and a location action. Public addresses open Google Maps. Missing or private venues link to UIC Connection; sign-in may be required. No coordinates, rooms, ticket prices, or attendance are inferred.
+- Search in the list or Spotlight by event, host, or location. Spotlight opens the official event page.
+- The Vite dev and preview servers expose `/api/campus-events`, fetching the public feed with a 15-minute server cache. The client refreshes every 15 minutes and has a manual retry button. Source failures keep saved listings with a visible freshness message; expired entries still disappear.
+- `public/campus-events.json` is a sanitized snapshot with source and fetch time. It contains no author identities, attendees, or ticket counts. Refresh atomically with `npm run events:refresh`; source errors leave the existing file intact.
+
+Before a static build, run:
+
+```sh
+npm run events:refresh
+npm run build
+```
+
+A static-only host serves the snapshot and shows that live refresh is unavailable. It needs scheduled snapshot refresh/rebuilds or a production endpoint equivalent to `fetchCampusEvents` in `scripts/campus-events.mjs` for continuing updates. No production service or scheduler has been deployed. This handoff is recorded as H03 in Workflow A.
+
+Event checks: `npm test` covers parsing, month/timezone boundaries, deduplication, expiry, unsafe links, and source failures. With the dev server running, `node tests/campus-events-smoke.mjs` checks desktop/mobile, CT display in another browser timezone, search, action URLs, fallback, expiry, and unavailable states. Screenshots: `artifacts/live-events.png` and `artifacts/live-events-mobile.png`.
+
 ## Interaction scope
 
 - Search names, descriptions, cuisine, and dietary tags; filter by category or free admission.

@@ -1,3 +1,4 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-export default defineConfig({ plugins: [react()], server: { fs: { allow: ['../..'] } } });
+import {campusEventsPlugin} from './scripts/campus-events.mjs';
+export default defineConfig({ plugins: [react(), campusEventsPlugin()], server: { fs: { allow: ['../..'] } } });

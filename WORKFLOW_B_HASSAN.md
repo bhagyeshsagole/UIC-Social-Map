@@ -10,7 +10,7 @@
 > 3. **When finished**, update both files again: the owner's workflow gets status, evidence, checkbox, and a dated change-log entry; remove the claim from *Active claims* in both files, and add a one-line change-log entry to the other workflow saying what changed.
 > 4. If it's unclear whose workflow a request belongs to, use the one that owns the paths being touched and ask if still unclear. Never edit the other person's folders without an agreed handoff or an explicit request.
 
-**Updated:** 2026-10-04  
+**Updated:** 2026-10-05<br>
 **Current task:** B02 provider review and B10 Sunday refresh handoff pending<br>
 **Implementation progress:** 0 / 9 tasks complete
 
@@ -35,6 +35,9 @@ Check a task only when its result exists. These tasks do not imply approval of a
 
 | Task | State | Evidence / blocker |
 | --- | --- | --- |
+| A14 | DONE | Prepared validated A12/A13 and existing map refinements for user-requested Git publication to origin/main; remote has no new commits |
+| A13 | DONE | Larger desktop/mobile event sheet; persistent UIC, Off-campus, Community tags; production build and event browser checks pass |
+| A12 | DONE | Upcoming UIC Connection events integrated in local frontend; 28 unit tests, production build, desktop/mobile event browser checks, and real local API verification pass. Production refresh deployment remains H03 |
 | B00 | DONE | [Website workspace](website/README.md) |
 | B01 | TODO | First interface handoff to Bhagesh |
 | B02 | TODO | A08 frontend has a reversible MapLibre 6 + OpenFreeMap prototype; production provider still requires Hassan review (H01) |
@@ -73,3 +76,15 @@ Provider handoff should include the SDK, supported version, configuration variab
 - **2026-10-05:** A11 follow-up: always-free places (kind `free`) now also show the student badge on map pins, through `hasPerk` in `Map.jsx`. The data is unchanged. Frontend only.
 
 - **2026-10-05:** A11 frontend label fixes complete: UIC moved to courtyard, all place pins retained, active name boxes avoid collisions and screen edges. 20 unit tests, build and browser verification passed. Project snapshot prepared for user-requested Git push; no backend changes.
+- **2026-10-05:** Frontend map gesture fix: Option/Alt + two-finger scroll rotates the map. Chrome on macOS doesn't expose trackpad rotation; Safari's gesture events and touchscreen twist still rotate directly.
+- **2026-10-05:** Gesture follow-up: a sideways two-finger trackpad swipe now rotates the map in Chrome with no modifier key. Vertical swipes pan, Option/Alt + swipe pans freely, and Shift + swipe still rolls. Smoke test updated.
+- **2026-10-05:** Gesture revert: two-finger swipe pans again. Twist-to-rotate works through Safari gesture events and touchscreens; Chrome on macOS doesn't expose trackpad rotation, so Option/Alt + swipe rotates there.
+- **2026-10-05:** Added a red glass "UIC" map button between N and the 2D/3D toggle that flies back to the main-campus starting view. Frontend only.
+- **2026-10-05:** The UIC button now returns to campus flat (pitch 0, no roll) and keeps the current rotation.
+- **2026-10-05:** Correction: the UIC button now returns to campus in 3D (pitch 54) facing north (bearing 0, no roll).
+
+- **2026-10-05:** A12 frontend imports verified UIC Connection events with upcoming current-month filtering, official registration/location actions, search, and local dev/preview refresh. Initial snapshot: 141 events, 49 public map destinations; live verification later returned 139. 28 unit tests, build, and desktop/mobile browser checks pass. Workflow A H03 hands off production endpoint or scheduled snapshot refresh; no backend/data/deployment folders or deployed services changed.
+
+- **2026-10-05:** A13 frontend complete: enlarged Live events with UIC, Off-campus, and Community tags, roomier event cards, and verified desktop/mobile behavior. Community remains empty until shared publishing exists; private drafts remain private. Build and event browser checks pass; no backend changes.
+
+- **2026-10-05:** User requested Git publication of the current project. Prepared the live-events importer, larger category-based event browser, existing map refinements, screenshots, and documentation for `origin/main`. Prior validation: 28 unit tests, production build, and desktop/mobile event browser checks passed; whitespace check clean and remote unchanged before commit.

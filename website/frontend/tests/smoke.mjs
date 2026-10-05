@@ -19,6 +19,8 @@ await page.mouse.move(850,500);await page.mouse.wheel(-100,10);await page.waitFo
 assert.equal((await pose()).pitch,rotated.pitch,'Two-finger scrolling does not tilt');
 assert.equal((await pose()).bearing,rotated.bearing,'Two-finger scrolling does not rotate');
 assert.notDeepEqual((await pose()).center,rotated.center,'Two-finger scrolling pans');
+const panned2=await pose();await page.keyboard.down('Alt');await page.mouse.wheel(-40,0);await page.keyboard.up('Alt');await page.waitForTimeout(200);
+assert.ok(Math.abs((await pose()).bearing-panned2.bearing)>5,'Option + two-finger scrolling rotates');
 await page.getByRole('button',{name:'2D',exact:true}).click();await page.waitForTimeout(550);
 assert.equal((await pose()).pitch,0,'2D toggle gives flat view');
 await page.getByRole('button',{name:'3D',exact:true}).click();await page.waitForTimeout(550);

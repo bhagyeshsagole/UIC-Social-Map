@@ -53,7 +53,10 @@ export default function Map({places,selected,onSelect,night,resetKey}) {
         if(e.ctrlKey)return;
         if((e.deltaMode===0&&(Math.abs(e.deltaY)<50||e.deltaX!==0))||e.shiftKey){
           e.preventDefault();e.stopImmediatePropagation();
+          // Two-finger swipes pan. Twist-to-rotate arrives as Safari gesture events (below); Chrome never exposes
+          // trackpad rotation to web pages, so Option/Alt + swipe rotates there instead.
           if(e.shiftKey)m.jumpTo({roll:m.getRoll()-e.deltaX*.3});
+          else if(e.altKey)m.jumpTo({bearing:m.getBearing()+(Math.abs(e.deltaX)>Math.abs(e.deltaY)?e.deltaX:e.deltaY)*.35});
           else m.panBy([e.deltaX,e.deltaY],{duration:0});
         }
       };
@@ -83,7 +86,7 @@ export default function Map({places,selected,onSelect,night,resetKey}) {
       // Expose camera readings for regression checks without a global map instance.
       const syncPose=()=>{setFlat(m.getPitch()<1);container.current.dataset.camera=JSON.stringify({center:m.getCenter().toArray(),bearing:m.getBearing(),pitch:m.getPitch(),roll:m.getRoll(),zoom:m.getZoom()});};
       m.on('move',syncPose);syncPose();
-      m.getCanvas().setAttribute('aria-label','World 3D map. Drag to pan; right-drag to rotate and tilt; two-finger swipe to pan; use the 2D and 3D buttons to change tilt; Shift-horizontal scroll to roll; pinch to zoom.');
+      m.getCanvas().setAttribute('aria-label','World 3D map. Drag to pan; right-drag to rotate and tilt; two-finger swipe to pan; two-finger twist to rotate in Safari and on touchscreens; Option or Alt plus two-finger swipe to rotate in other browsers; two-finger twist rotates on touchscreens and in Safari; use the 2D and 3D buttons to change tilt; Shift-horizontal scroll to roll; pinch to zoom.');
       m.on('load',()=>!stopped&&setStatus('ready'));
       m.easeTo({center:UIC,offset:[0,0],duration:0});
       map.current=m;
@@ -134,7 +137,7 @@ export default function Map({places,selected,onSelect,night,resetKey}) {
     <div className="map-vignette"/>
     {status!=='ready'&&<div className="map-status glass" role="status">{status==='loading'?'Loading Chicago…':<>Map unavailable. You can still browse every place.<button onClick={()=>setRetry(v=>v+1)}>Retry map</button></>}</div>}
 
-    <button className="align-map glass" aria-label="Align map north up, east right" title="Align north up · 45° 3D tilt" onClick={()=>map.current?.easeTo({bearing:0,roll:0,pitch:flat?0:45,duration:450})}>N</button>
+    <button className="uic-home" aria-label="Back to UIC main campus" title="Back to UIC main campus" onClick={()=>map.current?.flyTo({center:UIC,zoom:15.3,pitch:54,bearing:0,roll:0,offset:[0,0],duration:900})}>UIC</button><button className="align-map glass" aria-label="Align map north up, east right" title="Align north up · 45° 3D tilt" onClick={()=>map.current?.easeTo({bearing:0,roll:0,pitch:flat?0:45,duration:450})}>N</button>
     <div className="view-toggle glass" role="group" aria-label="Map perspective">
       <button aria-pressed={flat} onClick={()=>map.current?.easeTo({pitch:0,roll:0,duration:450})}>2D</button>
       <button aria-pressed={!flat} onClick={()=>map.current?.easeTo({pitch:45,roll:0,duration:450})}>3D</button>

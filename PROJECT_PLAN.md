@@ -1,6 +1,6 @@
 # UIC Social Discovery Map — Living Plan and Tracker
 
-Last updated: 2026-10-04 (America/Chicago)  
+Last updated: 2026-10-05 (America/Chicago)
 Phase: First local frontend prototype; production decisions and backend remain open<br>
 Team: Bhagesh — frontend; Hassan — backend, data, and deployment  
 Current review: [Evidence, loopholes, and recommendations](EVENT_MAP_REVIEW.md)
@@ -130,3 +130,14 @@ Saved holds bookmarked places; My Events holds event drafts. These remain local-
 - **2026-10-05:** Added a north-up alignment button above 2D/3D: roll resets to zero and 3D tilt aligns to 45°. Navigation order is Explore → Live events → My Events → Saved → Create event → Search.
 
 - **2026-10-05:** Moved UIC label to the central Lecture Center courtyard. Keep every place pin visible; only active name boxes reposition to avoid overlap. User requested pushing the accumulated local UI work.
+
+
+## UIC Connection integration accepted on 2026-10-05
+
+- User supplied the UIC Connection calendar as a source for Live events. Show not-yet-started events within the current Chicago month, sorted by time; exclude past dates and already-started sessions.
+- Include official registration/details links and public location links. For venues withheld by UIC Connection, link to the official page and indicate that sign-in may be needed.
+- A12 implements a public-feed importer, sanitized dated snapshot, list/Spotlight search, and a 15-minute cached same-origin feed for local dev/preview. Static builds include the snapshot; ongoing production refresh awaits hosting/backend integration (Workflow A H03).
+
+- **2026-10-05:** Completed local UIC Connection integration. Verified 178 October source listings and imported 141 future-start events at the initial check; counts automatically decrease with time. 28 unit tests, build, desktop/mobile browser checks, and live local API verification passed. No production deployment or scheduler was activated.
+
+- **2026-10-05:** User requested a larger, less crowded Live events sheet and three category tags. Implemented UIC, Off-campus, and Community, with host-based affiliation (UIC outings remain UIC even at external venues). Independent venue listings appear under Off-campus. Community is reserved for published user events and currently shows an empty state; private drafts remain in My Events. Desktop/mobile layout and category switching verified.

@@ -3,6 +3,8 @@ import {createRoot} from 'react-dom/client';
 import {Search,ArrowUpRight,ArrowLeft,ArrowRight,Plus,X,Bookmark,Check,MapPin,Clock,SlidersHorizontal,Sun,Moon,CalendarDays,Landmark,User,ChevronDown,Compass,ExternalLink,Ticket,Leaf,GraduationCap} from 'lucide-react';
 import Map,{PlaceIcon} from './Map';
 import Spotlight from './Spotlight';
+import {useCampusEvents} from './CampusEventList.jsx';
+import LiveEvents from './LiveEvents.jsx';
 import {DIET,DIET_STATUS,servesFood,dietMatches} from './diet';
 import {buildIndex,shortDate} from './search';
 import {parsePlaces} from './content';
@@ -18,6 +20,7 @@ function App(){
  const [now,setNow]=useState(new Date()),[tab,setTab]=useState('Explore'),[category,setCategory]=useState('All places'),[query,setQuery]=useState(''),[selected,setSelected]=useState(null),[free,setFree]=useState(false),[diet,setDiet]=useState('All diets'),[filters,setFilters]=useState(false),[saved,setSaved]=useState(()=>readStore('afterclass-saved',[])),[drafts,setDrafts]=useState(()=>readStore('afterclass-drafts',[])),[modal,setModal]=useState(null),[reset,setReset]=useState(0),[notice,setNotice]=useState(''),[storageError,setStorageError]=useState(false),[panelOpen,setPanelOpen]=useState(false),[spotlight,setSpotlight]=useState(false);
  const search=useRef(),dialog=useRef(),lastFocus=useRef();
  const solar=solarState(now);
+ const campusCalendar=useCampusEvents(now);
  useEffect(()=>{const t=setInterval(()=>setNow(new Date()),60000);return()=>clearInterval(t);},[]);
  useEffect(()=>{try{localStorage.setItem('afterclass-saved',JSON.stringify(saved));localStorage.setItem('afterclass-drafts',JSON.stringify(drafts));}catch{setStorageError(true);}},[saved,drafts]);
  useEffect(()=>{if(!notice)return;const t=setTimeout(()=>setNotice(''),3500);return()=>clearTimeout(t);},[notice]);
@@ -34,8 +37,9 @@ function App(){
  const openPanel=t=>{setTab(t);setSelected(null);setPanelOpen(true);};
  const clearFilters=()=>{setQuery('');setCategory('All places');setFree(false);setDiet('All diets');};
  const showPlace=p=>{if(!p)return;if(!visible.some(v=>v.id===p.id)){setTab('Explore');clearFilters();}setSelected(p);};
- const searchItems=buildIndex({places,saved,drafts,events,categories:categories.slice(1)});
+ const searchItems=buildIndex({places,saved,drafts,events:[...events,...campusCalendar.events],categories:categories.slice(1)});
  function pick(item){
+  if(item.kind==='campus-event')return window.open(item.event.url,'_blank','noopener,noreferrer');
   if(item.kind==='plan')return openPanel('My Events');
   if(item.kind==='category'){clearFilters();setCategory(item.category);return openPanel('Explore');}
   if(item.kind==='action')return item.action==='create'?setModal('create'):openPanel({explore:'Explore',events:'Live events',saved:'Saved',plans:'My Events'}[item.action]);
@@ -57,7 +61,7 @@ function App(){
    <button className="profile glass" aria-label="Open profile" onClick={()=>setModal('profile')}><User size={19}/><span>Guest</span><ChevronDown size={13}/></button>
   </header>
 
-  {(selected||panelOpen)&&<aside className={`discovery glass ${selected?'has-detail':''}`} aria-label={selected?"Place details":"Discover places"}>
+  {(selected||panelOpen)&&<aside className={`discovery glass ${selected?'has-detail':tab==='Live events'?'has-live-events':''}`} aria-label={selected?"Place details":"Discover places"}>
    {selected?<>
     <div className="detail-top"><span className="eyebrow">PLACE DETAILS</span><div className="detail-top-actions"><button className={`icon-button ${saved.includes(selected.id)?'is-saved':''}`} aria-label={saved.includes(selected.id)?'Unsave place':'Save place'} onClick={()=>toggleSave(selected)}><Bookmark size={20} fill={saved.includes(selected.id)?'currentColor':'none'}/></button><button className="icon-button close-panel" aria-label="Close place details" onClick={closePanel}><X size={21}/></button></div></div>
     {selected.photo?<figure className={`place-photo ${selected.accent}`}><img src={`${import.meta.env.BASE_URL}places/${selected.photo.file}`} alt={selected.photo.alt} style={{objectPosition:selected.photo.focus}}/><figcaption><span>{selected.category}</span><External href={selected.photo.href} title={`Photo: ${selected.photo.credit}`}>Photo · {selected.photo.credit}</External></figcaption></figure>:<div className={`place-art ${selected.accent}`}><div className="art-lines"/><PlaceIcon place={selected} size={64}/><span>{selected.category}</span><span className="art-number">CHI / {String(places.indexOf(selected)+1).padStart(2,'0')}</span></div>}
@@ -72,8 +76,8 @@ function App(){
     <button className="panel-close icon-button" aria-label="Close discovery" onClick={closePanel}><X size={21}/></button>
     {tab!=='Explore'&&<div className="panel-intro"><h1>{tab}</h1></div>}
     {tab==='Explore'&&<><div className="search-field"><input ref={search} value={query} onChange={e=>setQuery(e.target.value)} placeholder="A place, a craving, a plan…" aria-label="Search places"/>{query?<button aria-label="Clear search" onClick={()=>setQuery('')}><X size={15}/></button>:null}</div><div className="category-list">{categories.map(c=><button key={c} className={category===c?'chosen':''} onClick={()=>setCategory(c)}>{c}</button>)}</div><div className="list-toolbar"><span>{visible.length} places to explore</span><button aria-label="Filter places" aria-expanded={filters} onClick={()=>setFilters(!filters)}><SlidersHorizontal size={15}/><span>Filters</span>{(free||diet!=='All diets')&&<i/>}</button></div>{filters&&<div className="filter-panel"><label><input type="checkbox" checked={free} onChange={e=>setFree(e.target.checked)}/> Free places only</label><label>Food preferences<select value={diet} onChange={e=>setDiet(e.target.value)}><option>All diets</option>{DIET.map(([key,label])=><option key={key} value={key}>{label}</option>)}</select></label><button className="text-link" onClick={()=>{setFree(false);setDiet('All diets');setQuery('');setCategory('All places');}}>Reset filters</button></div>}</>}
-    <div className="places-list">
-     {tab==='Live events'?<><div className="subtle-note">Venue listings · not a live attendance feed</div>{events.map(e=><button className="calendar-card" key={e.title} onClick={()=>setSelected(e.place)}><span className={`mini-art ${e.place.accent}`}><Landmark size={25}/></span><span><small>{e.place.name}</small><strong>{e.title}</strong><span>Through {shortDate(e.end)}<ArrowUpRight size={15}/></span></span></button>)}{events.length===0&&<div className="empty"><CalendarDays/><h3>No current listings</h3><p>Explore a place to check its official calendar.</p></div>}</>:tab==='My Events'?null:<>{tab==='Saved'&&<div className="subtle-note">Saved on this device · {saved.length} places</div>}{visible.map(p=><PlaceCard key={p.id} place={p} saved={saved.includes(p.id)} onSave={()=>toggleSave(p)} onSelect={()=>setSelected(p)} now={now}/>)}{visible.length===0&&<div className="empty"><Compass size={30}/><h3>{tab==='Saved'?'A city of possibilities.':'No places found'}</h3><p>{tab==='Saved'?'Tap a bookmark to keep a place here.':'Try another search or clear your filters.'}</p><button className="secondary-button" onClick={()=>{setQuery('');setCategory('All places');setFree(false);setDiet('All diets');goTab('Explore');}}>Explore places</button></div>}</>}
+    <div className={tab==='Live events'?'live-events-body':'places-list'}>
+     {tab==='Live events'?<LiveEvents calendar={campusCalendar} now={now} exhibitions={events} onMyEvents={()=>openPanel('My Events')}/>:tab==='My Events'?null:<>{tab==='Saved'&&<div className="subtle-note">Saved on this device · {saved.length} places</div>}{visible.map(p=><PlaceCard key={p.id} place={p} saved={saved.includes(p.id)} onSave={()=>toggleSave(p)} onSelect={()=>setSelected(p)} now={now}/>)}{visible.length===0&&<div className="empty"><Compass size={30}/><h3>{tab==='Saved'?'A city of possibilities.':'No places found'}</h3><p>{tab==='Saved'?'Tap a bookmark to keep a place here.':'Try another search or clear your filters.'}</p><button className="secondary-button" onClick={()=>{setQuery('');setCategory('All places');setFree(false);setDiet('All diets');goTab('Explore');}}>Explore places</button></div>}</>}
      {tab==='My Events'&&<section className="drafts"><h3>{drafts.length?'Your event drafts':'No events yet'}</h3><p className="fine-print">Private drafts on this device. Publishing and invitations will come with accounts.</p>{drafts.map(d=><div className="draft" key={d.id}><CalendarDays size={20}/><div><strong>{d.title}</strong><span>{places.find(p=>p.id===d.placeId)?.name||'Place unavailable'}</span><small>{d.date} · {d.time} Chicago time</small></div><button aria-label={`Delete ${d.title}`} onClick={()=>setDrafts(v=>v.filter(x=>x.id!==d.id))}><X size={16}/></button></div>)}<button className="secondary-button" onClick={()=>setModal('create')}><Plus size={16}/> Make a plan</button></section>}
     </div>
    </>}

@@ -11,7 +11,7 @@
 > 4. If it's unclear whose workflow a request belongs to, use the one that owns the paths being touched and ask if still unclear. Never edit the other person's folders without an agreed handoff or an explicit request.
 
 **Updated:** 2026-10-05<br>
-**Current task:** A11 complete; project snapshot ready for requested Git push<br>
+**Current task:** A13 complete; larger Live events sheet and category tags<br>
 **Implementation progress:** A02 and A08 complete; remaining production journey tasks pending
 
 ## Steps and tracker
@@ -35,10 +35,17 @@ Check a task only when its result exists. If a task is partial, leave it uncheck
 
 - [x] **A11 · Campus label and place name boxes.** UIC moved to the Lecture Center courtyard; active tooltips avoid neighboring icons without hiding any place pins.
 
+- [x] **A12 · UIC Connection live events.** Public calendar importer, current-month future-start filtering in Chicago time, official registration/location actions, list/Spotlight search, refresh and cached fallback.
+
+- [x] **A13 · Event browsing space and categories.** Larger event sheet, roomier cards, and UIC / Off-campus / Community tags with separate results.
+
 ## Current work
 
 | Task | State | Evidence / blocker |
 | --- | --- | --- |
+| A14 | DONE | Prepared validated A12/A13 and existing map refinements for user-requested Git publication to origin/main; remote has no new commits |
+| A13 | DONE | Larger desktop/mobile event sheet; persistent UIC, Off-campus, Community tags; production build and event browser checks pass |
+| A12 | DONE | Upcoming UIC Connection events integrated in local frontend; 28 unit tests, production build, desktop/mobile event browser checks, and real local API verification pass. Production refresh deployment remains H03 |
 | A11 | DONE | UIC courtyard label; every place pin retained, one collision-aware name box. 20 unit tests, production build and targeted browser checks passed |
 | A10 | DONE | [Detail with photo](website/frontend/artifacts/detail-photo.png), [spotlight](website/frontend/artifacts/spotlight.png); 8 unit tests, production build, and browser smoke flow pass with no page errors |
 | A09 | DONE | 14 unit tests, production build, and browser checks pass; [campus seams](website/frontend/artifacts/campus-close.png), [rotated map](website/frontend/artifacts/campus-rotated.png), [guest glass](website/frontend/artifacts/guest.png) |
@@ -62,6 +69,7 @@ Write requests here; Hassan responds in [his tracker](WORKFLOW_B_HASSAN.md#hando
 | --- | --- | --- | --- |
 | H01 | 2026-10-04 | A08 uses MapLibre 6 + OpenFreeMap for a local prototype. Hassan to review production provider, bounds/coverage, and quotas in B02. Metadata in `website/frontend/src/placeDetails.js` is provisional. | Awaiting Hassan |
 | H02 | 2026-10-04 | Implement [B10 Sunday refresh](SUNDAY_REFRESH_TASK.md); preserve user-edited Markdown copy and produce source-backed review tasks. | TODO |
+| H03 | 2026-10-05 | A12 provides `website/frontend/scripts/campus-events.mjs` and a sanitized public snapshot. Local dev/preview refresh via a cached same-origin API. Reuse the importer for production API/scheduled builds when hosting is selected; static-only deploys show snapshot freshness and cannot refresh the upstream feed themselves. | Local implementation complete; production deployment pending Hassan |
 
 For each handoff include: task ID, relevant path, required behavior, and what is blocked. Link screenshots/design files here when they exist.
 
@@ -80,3 +88,15 @@ For each handoff include: task ID, relevant path, required behavior, and what is
 - **2026-10-05:** A11 follow-up: always-free places (kind `free`) now also show the student badge on map pins, through `hasPerk` in `Map.jsx`. The data is unchanged. Frontend only.
 
 - **2026-10-05:** Completed A11: moved UIC label to the central Lecture Center courtyard. Retained all 31 place pins, made only one hovered/focused/selected name box active, and positioned the box to avoid nearby pins and viewport clipping. Verified label placement, hover, selection and mobile; 20 unit tests and production build pass. Corrected workflow links to the existing renamed file. User requested committing and pushing the accumulated project snapshot.
+- **2026-10-05:** Frontend map gesture fix: Option/Alt + two-finger scroll rotates the map. Chrome on macOS doesn't expose trackpad rotation; Safari's gesture events and touchscreen twist still rotate directly.
+- **2026-10-05:** Gesture follow-up: a sideways two-finger trackpad swipe now rotates the map in Chrome with no modifier key. Vertical swipes pan, Option/Alt + swipe pans freely, and Shift + swipe still rolls. Smoke test updated.
+- **2026-10-05:** Gesture revert: two-finger swipe pans again. Twist-to-rotate works through Safari gesture events and touchscreens; Chrome on macOS doesn't expose trackpad rotation, so Option/Alt + swipe rotates there.
+- **2026-10-05:** Added a red glass "UIC" map button between N and the 2D/3D toggle that flies back to the main-campus starting view. Frontend only.
+- **2026-10-05:** The UIC button now returns to campus flat (pitch 0, no roll) and keeps the current rotation.
+- **2026-10-05:** Correction: the UIC button now returns to campus in 3D (pitch 54) facing north (bearing 0, no roll).
+
+- **2026-10-05:** Completed A12 per the user’s CampusGroups request. Verified public calendar/data endpoint; imported 141 upcoming October events from 178 source records at first fetch (49 public map destinations). Live endpoint returned 139 later as start times passed. Private/unpublished locations link to official details without guessing. Added Chicago month/start-time filtering, 15-minute local refresh, manual retry, dated fallback, event/host/location search, and registration links. 28 unit tests, production build, real API request, and desktop/mobile browser checks pass without page errors; screenshots in `website/frontend/artifacts/live-events*.png`. H03 records production refresh dependency. Preserved existing unrelated uncommitted map/gesture changes.
+
+- **2026-10-05:** Completed A13. Live events grows from 820×460px to up to 1120×740px on desktop and fills the available phone height. Category tags remain visible while cards scroll. UIC includes the CampusGroups feed and Gallery 400; Off-campus contains independent venue listings; Community shows an honest empty state and links to My Events without exposing private drafts. Larger card text, spacing, and location/actions improve scanning. Production build and updated browser checks pass, including category switching, affiliation separation, panel bounds, mobile overflow, links, fallback, and expiry. Updated live-event screenshots. Community publishing still depends on account/backend work.
+
+- **2026-10-05:** User requested Git publication of the current project. Prepared the live-events importer, larger category-based event browser, existing map refinements, screenshots, and documentation for `origin/main`. Prior validation: 28 unit tests, production build, and desktop/mobile event browser checks passed; whitespace check clean and remote unchanged before commit.
