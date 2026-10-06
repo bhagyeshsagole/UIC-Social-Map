@@ -1,0 +1,190 @@
+{
+  "apiVersion": "2026-10-06.v1",
+  "places": [
+    {
+      "id": "place:art-institute",
+      "name": "Art Institute of Chicago",
+      "description": "A museum with paintings, sculpture, and photography.",
+      "category": "Arts & culture",
+      "address": "111 S Michigan Ave",
+      "neighborhood": "The Loop",
+      "coords": [-87.6237, 41.8796],
+      "student": true,
+      "benefit": "Free with UIC ID",
+      "kind": "free",
+      "condition": "Free general admission for UIC students with a student i-card at the admissions counter. Separately ticketed programs may cost extra.",
+      "hours": "Mon, Wed, Fri–Sun 11am–5pm · Thu 11am–8pm · Tue closed. Confirm hours before visiting.",
+      "schedule": [[660, 1020], [660, 1020], null, [660, 1020], [660, 1200], [660, 1020], [660, 1020]],
+      "weekly": null,
+      "tags": ["Museum", "UIC perk"],
+      "diet": {"nonveg": "yes", "veg": "options", "vegan": "ask", "gf": "ask", "halal": "ask"},
+      "menu": null,
+      "menuUrl": null,
+      "sources": [
+        {"label": "UIC admission policy", "url": "https://cada.uic.edu/museum-admission/"},
+        {"label": "Visitor information", "url": "https://www.artic.edu/visit"}
+      ],
+      "events": [
+        {
+          "title": "Mary Cassatt: After Impressionism",
+          "start": "2026-09-06",
+          "end": "2027-01-03",
+          "description": "Paintings, pastels, and prints from Cassatt’s later career.",
+          "url": "https://artsandculture.google.com/event/g11yms0806g"
+        }
+      ],
+      "photo": {
+        "file": "art-institute.jpg",
+        "alt": "Bronze lion in front of the Art Institute of Chicago on Michigan Avenue",
+        "credit": "Nicholas Hartmann · CC BY-SA 4.0",
+        "href": "https://commons.wikimedia.org/wiki/File:2014_Chicago_Art_Institute_02.jpg",
+        "focus": "32% 50%"
+      },
+      "accent": "purple",
+      "createdAt": "2026-10-04T00:00:00Z",
+      "updatedAt": "2026-10-04T00:00:00Z"
+    }
+  ],
+  "events": [
+    {
+      "id": "event:gallery-400-press-pull",
+      "title": "Press & Pull",
+      "description": "Prints and stories from Robert Blackburn’s cooperative printmaking workshop.",
+      "placeId": "place:gallery-400",
+      "location": "Gallery 400",
+      "coordinates": [-87.6495, 41.8763],
+      "startAt": "2026-09-11T10:00:00-05:00",
+      "endAt": "2026-12-12T17:00:00-06:00",
+      "timeZone": "America/Chicago",
+      "host": {"type": "organization", "id": "organization:gallery-400"},
+      "source": {"type": "external", "url": "https://gallery400.uic.edu/exhibition/pressandpull/"},
+      "sourceEventId": null,
+      "status": "published",
+      "createdAt": "2026-10-04T00:00:00Z",
+      "updatedAt": "2026-10-04T00:00:00Z",
+      "lastCheckedAt": "2026-10-04T00:00:00Z",
+      "lastUpdatedAt": "2026-10-04T00:00:00Z"
+    }
+  ],
+  "currentUser": {
+    "id": "user:example",
+    "displayName": "Afterclass",
+    "identityType": "pseudonymous",
+    "emailVerified": true,
+    "accountStatus": "active"
+  },
+  "savedPlaces": [
+    {
+      "id": "saved-place:example",
+      "userId": "user:example",
+      "placeId": "place:art-institute",
+      "place": {
+        "id": "place:art-institute",
+        "name": "Art Institute of Chicago",
+        "description": "A museum with paintings, sculpture, and photography.",
+        "category": "Arts & culture",
+        "coords": [-87.6237, 41.8796],
+        "address": "111 S Michigan Ave",
+        "neighborhood": "The Loop",
+        "student": true,
+        "benefit": "Free with UIC ID",
+        "kind": "free",
+        "condition": "Free general admission for UIC students with a student i-card at the admissions counter.",
+        "hours": "Mon, Wed, Fri–Sun 11am–5pm · Thu 11am–8pm · Tue closed. Confirm hours before visiting.",
+        "schedule": [[660, 1020], [660, 1020], null, [660, 1020], [660, 1200], [660, 1020], [660, 1020]],
+        "weekly": null,
+        "tags": ["Museum", "UIC perk"],
+        "diet": {"nonveg": "yes", "veg": "options", "vegan": "ask", "gf": "ask", "halal": "ask"},
+        "menu": null,
+        "menuUrl": null,
+        "sources": [],
+        "events": [],
+        "photo": null,
+        "accent": "purple"
+      },
+      "createdAt": "2026-10-06T12:00:00Z"
+    }
+  ],
+  "savedEvents": [
+    {
+      "id": "saved-event:example",
+      "userId": "user:example",
+      "eventId": "event:gallery-400-press-pull",
+      "event": {
+        "id": "event:gallery-400-press-pull",
+        "title": "Press & Pull",
+        "description": "Prints and stories from Robert Blackburn’s cooperative printmaking workshop.",
+        "placeId": "place:gallery-400",
+        "location": "Gallery 400",
+        "coordinates": [-87.6495, 41.8763],
+        "startAt": "2026-09-11T10:00:00-05:00",
+        "endAt": "2026-12-12T17:00:00-06:00",
+        "timeZone": "America/Chicago",
+        "host": {"type": "organization", "id": "organization:gallery-400"},
+        "source": {"type": "external", "url": "https://gallery400.uic.edu/exhibition/pressandpull/"},
+        "sourceEventId": null,
+        "status": "published",
+        "createdAt": "2026-10-04T00:00:00Z",
+        "updatedAt": "2026-10-04T00:00:00Z",
+        "lastCheckedAt": "2026-10-04T00:00:00Z",
+        "lastUpdatedAt": "2026-10-04T00:00:00Z"
+      },
+      "createdAt": "2026-10-06T12:00:00Z"
+    }
+  ],
+  "createdEvents": [
+    {
+      "id": "created-event:example",
+      "userId": "user:example",
+      "meetupId": "meetup:example-1",
+      "title": "Study session at the Art Institute",
+      "placeId": "place:art-institute",
+      "startAt": "2026-10-12T14:00:00-05:00",
+      "endAt": "2026-10-12T17:00:00-05:00",
+      "timeZone": "America/Chicago",
+      "visibility": "group",
+      "status": "scheduled",
+      "createdAt": "2026-10-06T12:00:00Z",
+      "updatedAt": "2026-10-06T12:00:00Z"
+    }
+  ],
+  "joinedEvents": [
+    {
+      "id": "joined-event:example",
+      "userId": "user:example",
+      "eventId": "event:gallery-400-press-pull",
+      "title": "Press & Pull",
+      "placeId": "place:gallery-400",
+      "startAt": "2026-09-11T10:00:00-05:00",
+      "endAt": "2026-12-12T17:00:00-06:00",
+      "timeZone": "America/Chicago",
+      "status": "joined",
+      "displayName": "Afterclass",
+      "createdAt": "2026-10-06T12:00:00Z",
+      "updatedAt": "2026-10-06T12:00:00Z"
+    }
+  ],
+  "futureChat": {
+    "id": "message:example",
+    "conversationId": "conversation:example",
+    "senderUserId": "user:example",
+    "senderDisplayName": "Afterclass",
+    "body": "Are we meeting at the entrance?",
+    "createdAt": "2026-10-06T12:00:00Z",
+    "readBy": []
+  },
+  "futureReport": {
+    "id": "report:example",
+    "targetType": "message",
+    "targetId": "message:example",
+    "reason": "abusive",
+    "status": "open",
+    "createdAt": "2026-10-06T12:00:00Z"
+  },
+  "futureBlock": {
+    "id": "block:example",
+    "userId": "user:example",
+    "blockedUserId": "user:other",
+    "createdAt": "2026-10-06T12:00:00Z"
+  }
+}

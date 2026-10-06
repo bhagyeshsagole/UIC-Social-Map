@@ -10,14 +10,14 @@
 > 3. **When finished**, update both files again: the owner's workflow gets status, evidence, checkbox, and a dated change-log entry; remove the claim from *Active claims* in both files, and add a one-line change-log entry to the other workflow saying what changed.
 > 4. If it's unclear whose workflow a request belongs to, use the one that owns the paths being touched and ask if still unclear. Never edit the other person's folders without an agreed handoff or an explicit request.
 
-**Updated:** 2026-10-05<br>
-**Current task:** B02 provider review and B10 Sunday refresh handoff pending<br>
-**Implementation progress:** 0 / 9 tasks complete
+**Updated:** 2026-10-06<br>
+**Current task:** B01 data/API contract approved; B11 UIC Connections local importer complete; B02 provider review and B10 weekly Chicago place-content refresh pending<br>
+**Implementation progress:** 1 / 9 tasks complete
 
 ## Steps and tracker
 
 - [x] **B00 · Workspace ready.** Backend, data, contracts, deployment folders, and this tracker created. Documentation only.
-- [ ] **B01 · Agree on the data/API contract.** Draft place, event, meetup, attendance, identity, and chat response shapes; review with Bhagesh and publish synthetic fixtures. Keep unresolved policy fields explicit. **Ready now; agreement needed before calling it stable.**
+- [x] **B01 · Agree on the data/API contract.** Draft place, event, meetup, attendance, identity, and chat response shapes; review with Bhagesh and publish synthetic fixtures. Keep unresolved policy fields explicit. **DONE; contract approved by Bhagesh on 2026-10-06.**
 - [ ] **B02 · Choose the map provider.** Compare SDK fit, coverage, pricing, quotas, and content-use terms; document the choice, browser-key restrictions, and setup details for Bhagesh. **Ready now.**
 - [ ] **B03 · Set up backend and storage.** Select backend/database/hosting within an agreed budget; keep dependencies separate from frontend. Implement initial schema after B01. **Evaluation ready now.**
 - [ ] **B04 · Add the first real places and events.** Define seed format; record sources, coordinates, times/time zones, benefit conditions, and last-checked dates. Build a repeatable import/update path. **After B01; initial source collection can begin now.**
@@ -29,7 +29,8 @@
 
 Check a task only when its result exists. These tasks do not imply approval of a paid service or public launch.
 
-- [ ] **B10 · Weekly Sunday content refresh.** [Task and acceptance criteria](SUNDAY_REFRESH_TASK.md). Pull official-source events/hours/benefits and create review to-dos; preserve editable names and descriptions. Requested cadence accepted; time, scheduler, backend, and API contract pending. No job scheduled.
+- [ ] **B10 · Weekly Chicago place-content refresh.** [Task and acceptance criteria](SUNDAY_REFRESH_TASK.md). Pull official-source place hours, benefits, and related Chicago content; preserve editable names and descriptions. No job scheduled.
+- [x] **B11 · Import UIC Connections events locally.** [Task and acceptance criteria](website/data/importers/UIC_CONNECTIONS_IMPORTER_TASK.md). Seven tests pass; the 2026-10-06 live import produced 657 canonical events from 666 feed records, collapsing 9 duplicates. Manual monthly refresh only; no production scheduler or storage integration.
 
 ## Current work
 
@@ -41,10 +42,11 @@ Check a task only when its result exists. These tasks do not imply approval of a
 | A13 | DONE | Larger desktop/mobile event sheet; persistent UIC, Off-campus, Community tags; production build and event browser checks pass |
 | A12 | DONE | Upcoming UIC Connection events integrated in local frontend; 28 unit tests, production build, desktop/mobile event browser checks, and real local API verification pass. Production refresh deployment remains H03 |
 | B00 | DONE | [Website workspace](website/README.md) |
-| B01 | TODO | First interface handoff to Bhagesh |
+| B01 | DONE | Proposed contract and synthetic fixtures approved by Bhagesh on 2026-10-06; unresolved product policies remain explicitly identified |
 | B02 | TODO | A08 frontend has a reversible MapLibre 6 + OpenFreeMap prototype; production provider still requires Hassan review (H01) |
 | B04 | PARTIAL | Seven researched places in frontend metadata; sources and gaps in [research](website/frontend/RESEARCH.md). Backend import not implemented |
 | B10 | TODO | [Sunday refresh task](SUNDAY_REFRESH_TASK.md), incoming H02 from Workflow A |
+| B11 | DONE | [Importer task and verification evidence](website/data/importers/UIC_CONNECTIONS_IMPORTER_TASK.md); 657 canonical events in local output |
 
 ## Active claims
 
@@ -59,12 +61,16 @@ Write requests here; Bhagesh responds in [his tracker](WORKFLOW_A_BHAGYESH.md#ha
 
 | ID | Date | Request / deliverable | State |
 | --- | --- | --- | --- |
-| — | — | No handoffs yet | — |
+| B01 | 2026-10-06 | Review the proposed place/event/meetup/user/session contract and synthetic fixtures; agree before backend implementation. | Approved / completed by Bhagesh |
 
 Provider handoff should include the SDK, supported version, configuration variable names, cost limits, and any attribution requirements. Never put actual credentials here.
 
 ## Change log
 
+- **2026-10-06:** Completed B01 after Bhagesh approved the versioned API/data contract and synthetic fixtures. Removed the mirrored B01 active claim; unresolved product-policy choices remain documented. No backend implementation started.
+- **2026-10-06:** Completed B11 local UIC Connections ICS import. Seven tests pass; live feed produced 657 canonical events from 666 records with 9 duplicates collapsed and none skipped. Monthly cadence is agreed, but scheduling remains deferred until storage integration. B10 is explicitly the weekly Chicago place-content refresh. No frontend or backend storage changes.
+- **2026-10-06:** Claimed B11 for a local, dependency-light UIC Connections ICS importer. The task is limited to parsing, normalization, duplicate prevention, local JSON output, tests, and live-feed verification; no scheduler, database, storage, or frontend integration is included.
+- **2026-10-06:** Drafted the B01 API/data contract and synthetic fixtures; B01 remains in progress awaiting Bhagesh review and agreement. No backend, database, authentication, deployment, or frontend implementation started.
 - **2026-10-04:** Created the backend workflow and file boundaries. No provider, backend, database, or deployment configured.
 - **2026-10-04:** Added the rule that every Claude Code request updates both workflow files, plus a mirrored *Active claims* table, so work doesn't overlap. Requested by Bhagesh; same change made in [Workflow A](WORKFLOW_A_BHAGYESH.md).
 
