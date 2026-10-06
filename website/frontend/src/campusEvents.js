@@ -51,6 +51,12 @@ export function campusTimestamp(date, time) {
   }
   return new Date(utc).toISOString();
 }
+export const NO_LOCATION = 'Location on UIC Connection';
+// Map links need a street address; private, online and to-be-announced places never get one.
+export function placeFields(location, url, hasAddress = /\b\d{1,6}\s+[NSEW]\.?\s+\w/i.test(location)) {
+  const canMap = hasAddress && !/private|sign in|log in|online|virtual|zoom|https?:|\bTBD\b|to be (announced|determined)/i.test(location);
+  return {location:location || NO_LOCATION, locationUrl:canMap ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}` : url, hasPublicLocation:canMap};
+}
 export function parseCampusFeed(payload) {
   if (!payload || !Array.isArray(payload.events)) throw new Error('CampusGroups returned an unexpected calendar response.');
   const events = new Map();
@@ -62,15 +68,25 @@ export function parseCampusFeed(payload) {
     if (!/^\d+$/.test(id) || !title || !url || !start || !end || end < start) { skippedCount++; continue; }
     const venue = plainText(row.event_location), address = [row.event_address, row.event_city, row.event_state, row.event_zipcode].map(plainText).filter(Boolean).join(', ');
     const location = [venue, address].filter(Boolean).join(' · ');
-    const canMap = Boolean(plainText(row.event_address)) && !/private|sign in|log in|online|virtual|zoom|https?:|\bTBD\b|to be (announced|determined)/i.test(location);
     events.set(id, {id:`campusgroups-${id}`, title, organizer:plainText(row.groupName), start, end,
-      startDate:row.eventDateStr, endDate:row.eventEndDateStr, location:location || 'Location on UIC Connection',
-      locationUrl:canMap ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}` : url,
-      hasPublicLocation:canMap, url, source:'UIC Connection'});
+      startDate:row.eventDateStr, endDate:row.eventEndDateStr, ...placeFields(location, url, Boolean(plainText(row.event_address))), url, source:'UIC Connection'});
   }
   return {events:[...events.values()], skippedCount, sourceCount:payload.events.length};
 }
 // Events stay listed until they end, so multi-week series already underway still show.
+// The JSON feed leaves some public locations blank. Fill them from the official
+// calendar file (same event title and start), then from reviewed description quotes.
+// Locations UIC keeps behind sign-in stay hidden.
+export function addCampusLocations(events, calendar = [], notes = {}) {
+  const key = (title, start) => `${plainText(title).toLowerCase()}|${start}`;
+  const listed = new Map(calendar.filter(e => e.location && !/\bTBD\b|sign in/i.test(e.location)).map(e => [key(e.title, e.startAt), plainText(e.location).replace(/,\s*United States$/, '')]));
+  return events.map(e => {
+    if (e.location !== NO_LOCATION) return e;
+    const fromCalendar = listed.get(key(e.title, e.start)), location = fromCalendar || notes[e.id]?.location;
+    if (!location) return e;
+    return {...e, ...placeFields(/^online event$/i.test(location) ? 'Online event' : location, e.url), locationSource:fromCalendar ? 'UIC Connection calendar file' : 'Event description'};
+  });
+}
 export function upcomingCampusEvents(events, now = new Date()) {
   const last = addMonths(campusMonth(now), CAMPUS_MONTHS - 1);
   return events.filter(e => Date.parse(e.end) > +now && (e.startDate || e.start.slice(0, 10)).slice(0, 7) <= last)

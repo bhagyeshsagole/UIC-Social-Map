@@ -1,15 +1,28 @@
-import {writeFile, rename} from 'node:fs/promises';
+import {readFile, writeFile, rename} from 'node:fs/promises';
 import {pathToFileURL} from 'node:url';
-import {calendarFeedUrl, campusMonth, parseCampusFeed, upcomingCampusEvents, CAMPUS_CALENDAR} from '../src/campusEvents.js';
+import {addCampusLocations, calendarFeedUrl, campusMonth, parseCampusFeed, upcomingCampusEvents, CAMPUS_CALENDAR} from '../src/campusEvents.js';
+import {mergeEvents, parseIcs} from '../../data/importers/uic-connections-importer.mjs';
+
+// Hassan's B11 parser reads the official calendar file, which lists some locations the JSON feed omits.
+const CALENDAR_FILE = 'https://uic.campusgroups.com/ical/uic/ical_uic.ics';
+async function calendarLocations(fetcher) {
+  try {
+    const response = await fetcher(CALENDAR_FILE, {headers:{Accept:'text/calendar'}, signal:AbortSignal.timeout(20000)});
+    return response.ok ? mergeEvents(parseIcs(await response.text()), CALENDAR_FILE).events : [];
+  } catch { return []; }
+}
+const locationNotes = async () => JSON.parse(await readFile(new URL('../src/campus-event-locations.json', import.meta.url))).events;
 
 export const snapshotPath = new URL('../public/campus-events.json', import.meta.url);
 export async function fetchCampusEvents(now = new Date(), fetcher = fetch) {
+  const calendar = calendarLocations(fetcher);
   const response = await fetcher(calendarFeedUrl(now), {signal:AbortSignal.timeout(20000)});
   if (!response.ok) throw new Error(`Calendar request failed (${response.status}).`);
   const parsed = parseCampusFeed(JSON.parse(await response.text()));
   if (parsed.skippedCount) throw new Error(`Calendar schema changed: ${parsed.skippedCount} invalid event records. Keeping the previous snapshot.`);
+  const events = addCampusLocations(upcomingCampusEvents(parsed.events, now), await calendar, await locationNotes());
   return {schemaVersion:1, source:CAMPUS_CALENDAR, fetchedAt:new Date().toISOString(), month:campusMonth(now),
-    sourceCount:parsed.sourceCount, events:upcomingCampusEvents(parsed.events, now)};
+    sourceCount:parsed.sourceCount, events};
 }
 
 // Same-origin endpoint in both local development and Vite preview. A future

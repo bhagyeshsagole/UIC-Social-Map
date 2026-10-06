@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "source": "https://uic.campusgroups.com/calendar#month",
-  "fetchedAt": "2026-10-06T22:32:03.199Z",
+  "fetchedAt": "2026-10-06T22:46:44.540Z",
   "month": "2026-10",
   "sourceCount": 341,
   "events": [
@@ -69,11 +69,12 @@
       "end": "2027-05-07T20:00:00.000Z",
       "startDate": "2026-08-26",
       "endDate": "2027-05-07",
-      "location": "Location on UIC Connection",
-      "locationUrl": "https://uic.campusgroups.com/StudentCenters/rsvp?id=2271850",
-      "hasPublicLocation": false,
+      "location": "Millennium Lanes, Student Center East, 750 S Halsted St, Chicago, IL 60607",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=Millennium%20Lanes%2C%20Student%20Center%20East%2C%20750%20S%20Halsted%20St%2C%20Chicago%2C%20IL%2060607",
+      "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/StudentCenters/rsvp?id=2271850",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "locationSource": "Event description"
     },
     {
       "id": "campusgroups-2272299",
@@ -153,11 +154,12 @@
       "end": "2026-10-06T23:00:00.000Z",
       "startDate": "2026-10-06",
       "endDate": "2026-10-06",
-      "location": "Location on UIC Connection",
-      "locationUrl": "https://uic.campusgroups.com/aclub/rsvp?id=2272373",
-      "hasPublicLocation": false,
+      "location": "SCE 613, Student Center East, 750 S Halsted St, Chicago, IL 60607",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=SCE%20613%2C%20Student%20Center%20East%2C%20750%20S%20Halsted%20St%2C%20Chicago%2C%20IL%2060607",
+      "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/aclub/rsvp?id=2272373",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "locationSource": "Event description"
     },
     {
       "id": "campusgroups-2271586",
@@ -279,11 +281,12 @@
       "end": "2026-10-07T19:30:00.000Z",
       "startDate": "2026-10-07",
       "endDate": "2026-10-07",
-      "location": "Location on UIC Connection",
+      "location": "Online event",
       "locationUrl": "https://uic.campusgroups.com/CounselingCenter/rsvp?id=2272185",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/CounselingCenter/rsvp?id=2272185",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "locationSource": "UIC Connection calendar file"
     },
     {
       "id": "campusgroups-2272043",
@@ -321,11 +324,12 @@
       "end": "2026-10-07T22:00:00.000Z",
       "startDate": "2026-10-07",
       "endDate": "2026-10-07",
-      "location": "Location on UIC Connection",
-      "locationUrl": "https://uic.campusgroups.com/dcc/rsvp?id=2272177",
-      "hasPublicLocation": false,
+      "location": "Institute for the Humanities, Behavioral Sciences Building, 1007 W Harrison St, Chicago, IL 60607",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=Institute%20for%20the%20Humanities%2C%20Behavioral%20Sciences%20Building%2C%201007%20W%20Harrison%20St%2C%20Chicago%2C%20IL%2060607",
+      "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/dcc/rsvp?id=2272177",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "locationSource": "Event description"
     },
     {
       "id": "campusgroups-2272314",
@@ -363,11 +367,12 @@
       "end": "2026-10-08T00:00:00.000Z",
       "startDate": "2026-10-07",
       "endDate": "2026-10-07",
-      "location": "Location on UIC Connection",
-      "locationUrl": "https://uic.campusgroups.com/gsc/rsvp?id=2272225",
-      "hasPublicLocation": false,
+      "location": "Room 301, Student Center East, 750 S Halsted St, Chicago, IL 60607",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=Room%20301%2C%20Student%20Center%20East%2C%20750%20S%20Halsted%20St%2C%20Chicago%2C%20IL%2060607",
+      "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/gsc/rsvp?id=2272225",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "locationSource": "Event description"
     },
     {
       "id": "campusgroups-2272234",
@@ -377,11 +382,12 @@
       "end": "2026-10-08T01:30:00.000Z",
       "startDate": "2026-10-07",
       "endDate": "2026-10-07",
-      "location": "Location on UIC Connection",
-      "locationUrl": "https://uic.campusgroups.com/opmanagement/rsvp?id=2272234",
-      "hasPublicLocation": false,
+      "location": "UIC Douglass Hall 220, 705 S Morgan St, Chicago, IL 60607, 750 S Halsted St., Student Center East, Chicago, IL 60607",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=UIC%20Douglass%20Hall%20220%2C%20705%20S%20Morgan%20St%2C%20Chicago%2C%20IL%2060607%2C%20750%20S%20Halsted%20St.%2C%20Student%20Center%20East%2C%20Chicago%2C%20IL%2060607",
+      "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/opmanagement/rsvp?id=2272234",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "locationSource": "UIC Connection calendar file"
     },
     {
       "id": "campusgroups-2271523",
@@ -419,11 +425,12 @@
       "end": "2026-10-08T22:00:00.000Z",
       "startDate": "2026-10-08",
       "endDate": "2026-10-08",
-      "location": "Location on UIC Connection",
-      "locationUrl": "https://uic.campusgroups.com/aaan/rsvp?id=2272294",
-      "hasPublicLocation": false,
+      "location": "AAAN Conference Room, 1200 W. Harrison St. Suite 2800, Chicago, IL 60607",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=AAAN%20Conference%20Room%2C%201200%20W.%20Harrison%20St.%20Suite%202800%2C%20Chicago%2C%20IL%2060607",
+      "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/aaan/rsvp?id=2272294",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "locationSource": "UIC Connection calendar file"
     },
     {
       "id": "campusgroups-2272206",
@@ -517,11 +524,12 @@
       "end": "2026-10-09T16:45:00.000Z",
       "startDate": "2026-10-09",
       "endDate": "2026-10-09",
-      "location": "Location on UIC Connection",
-      "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2271632",
-      "hasPublicLocation": false,
+      "location": "SRF MPS-B, 737 S. Halsted St., Chicago, IL 60607",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=SRF%20MPS-B%2C%20737%20S.%20Halsted%20St.%2C%20Chicago%2C%20IL%2060607",
+      "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2271632",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "locationSource": "UIC Connection calendar file"
     },
     {
       "id": "campusgroups-2272261",
@@ -629,11 +637,12 @@
       "end": "2026-10-10T21:00:00.000Z",
       "startDate": "2026-10-10",
       "endDate": "2026-10-10",
-      "location": "Location on UIC Connection",
-      "locationUrl": "https://uic.campusgroups.com/uicradio/rsvp?id=2271376",
-      "hasPublicLocation": false,
+      "location": "SCE 605, 750 S Halsted St., Student Center East, Chicago, IL 60607",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=SCE%20605%2C%20750%20S%20Halsted%20St.%2C%20Student%20Center%20East%2C%20Chicago%2C%20IL%2060607",
+      "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/uicradio/rsvp?id=2271376",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "locationSource": "UIC Connection calendar file"
     },
     {
       "id": "campusgroups-2271458",
@@ -783,11 +792,12 @@
       "end": "2026-10-11T18:30:00.000Z",
       "startDate": "2026-10-11",
       "endDate": "2026-10-11",
-      "location": "Location on UIC Connection",
-      "locationUrl": "https://uic.campusgroups.com/StudentEngagement/rsvp?id=2272031",
-      "hasPublicLocation": false,
+      "location": "Front of Student Center East, 750 S Halsted St, Chicago, IL 60607",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=Front%20of%20Student%20Center%20East%2C%20750%20S%20Halsted%20St%2C%20Chicago%2C%20IL%2060607",
+      "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/StudentEngagement/rsvp?id=2272031",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "locationSource": "Event description"
     },
     {
       "id": "campusgroups-2272395",
@@ -1147,11 +1157,12 @@
       "end": "2026-10-15T18:00:00.000Z",
       "startDate": "2026-10-15",
       "endDate": "2026-10-15",
-      "location": "Location on UIC Connection",
+      "location": "Online event",
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2271475",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2271475",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "locationSource": "UIC Connection calendar file"
     },
     {
       "id": "campusgroups-2271939",
@@ -1161,11 +1172,12 @@
       "end": "2026-10-15T17:30:00.000Z",
       "startDate": "2026-10-15",
       "endDate": "2026-10-15",
-      "location": "Location on UIC Connection",
+      "location": "Online event",
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2271939",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2271939",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "locationSource": "UIC Connection calendar file"
     },
     {
       "id": "campusgroups-2272397",
@@ -1175,11 +1187,12 @@
       "end": "2026-10-15T18:30:00.000Z",
       "startDate": "2026-10-15",
       "endDate": "2026-10-15",
-      "location": "Location on UIC Connection",
-      "locationUrl": "https://uic.campusgroups.com/sgc/rsvp?id=2272397",
-      "hasPublicLocation": false,
+      "location": "Seminar Room A, Idea Commons, Richard J. Daley Library, 801 S Morgan St, Chicago, IL 60607",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=Seminar%20Room%20A%2C%20Idea%20Commons%2C%20Richard%20J.%20Daley%20Library%2C%20801%20S%20Morgan%20St%2C%20Chicago%2C%20IL%2060607",
+      "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/sgc/rsvp?id=2272397",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "locationSource": "Event description"
     },
     {
       "id": "campusgroups-2271928",
@@ -1385,11 +1398,12 @@
       "end": "2026-10-19T01:00:00.000Z",
       "startDate": "2026-10-18",
       "endDate": "2026-10-18",
-      "location": "Location on UIC Connection",
-      "locationUrl": "https://uic.campusgroups.com/WED/rsvp?id=2272353",
-      "hasPublicLocation": false,
+      "location": "UIC SCE Illinois Room, 750 S Halsted St., Student Center East, Chicago, IL 60607",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=UIC%20SCE%20Illinois%20Room%2C%20750%20S%20Halsted%20St.%2C%20Student%20Center%20East%2C%20Chicago%2C%20IL%2060607",
+      "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/WED/rsvp?id=2272353",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "locationSource": "UIC Connection calendar file"
     },
     {
       "id": "campusgroups-2272243",
@@ -1413,11 +1427,12 @@
       "end": "2026-10-19T18:30:00.000Z",
       "startDate": "2026-10-19",
       "endDate": "2026-10-19",
-      "location": "Location on UIC Connection",
-      "locationUrl": "https://uic.campusgroups.com/dos/rsvp?id=2272239",
-      "hasPublicLocation": false,
+      "location": "Concourse, Student Center East, 750 S Halsted St, Chicago, IL 60607",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=Concourse%2C%20Student%20Center%20East%2C%20750%20S%20Halsted%20St%2C%20Chicago%2C%20IL%2060607",
+      "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/dos/rsvp?id=2272239",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "locationSource": "Event description"
     },
     {
       "id": "campusgroups-2271916",
@@ -1469,11 +1484,12 @@
       "end": "2026-10-19T22:30:00.000Z",
       "startDate": "2026-10-19",
       "endDate": "2026-10-19",
-      "location": "Location on UIC Connection",
-      "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2272270",
-      "hasPublicLocation": false,
+      "location": "Sport and Fitness Center, 828 S Wolcott Ave, Chicago, IL 60612",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=Sport%20and%20Fitness%20Center%2C%20828%20S%20Wolcott%20Ave%2C%20Chicago%2C%20IL%2060612",
+      "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2272270",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "locationSource": "Event description"
     },
     {
       "id": "campusgroups-2271570",
@@ -1595,11 +1611,12 @@
       "end": "2026-10-21T19:30:00.000Z",
       "startDate": "2026-10-21",
       "endDate": "2026-10-21",
-      "location": "Location on UIC Connection",
+      "location": "Online event",
       "locationUrl": "https://uic.campusgroups.com/CounselingCenter/rsvp?id=2272186",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/CounselingCenter/rsvp?id=2272186",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "locationSource": "UIC Connection calendar file"
     },
     {
       "id": "campusgroups-2272045",
@@ -1651,11 +1668,12 @@
       "end": "2026-10-22T01:30:00.000Z",
       "startDate": "2026-10-21",
       "endDate": "2026-10-21",
-      "location": "Location on UIC Connection",
-      "locationUrl": "https://uic.campusgroups.com/StudentCenters/rsvp?id=2272135",
-      "hasPublicLocation": false,
+      "location": "Millennium Lanes, Student Center East, 750 S Halsted St, Chicago, IL 60607",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=Millennium%20Lanes%2C%20Student%20Center%20East%2C%20750%20S%20Halsted%20St%2C%20Chicago%2C%20IL%2060607",
+      "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/StudentCenters/rsvp?id=2272135",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "locationSource": "Event description"
     },
     {
       "id": "campusgroups-2271886",
@@ -1665,11 +1683,12 @@
       "end": "2026-10-22T18:30:00.000Z",
       "startDate": "2026-10-22",
       "endDate": "2026-10-22",
-      "location": "Location on UIC Connection",
+      "location": "Online event",
       "locationUrl": "https://uic.campusgroups.com/ACCP/rsvp?id=2271886",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/ACCP/rsvp?id=2271886",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "locationSource": "Event description"
     },
     {
       "id": "campusgroups-2271587",
@@ -1959,11 +1978,12 @@
       "end": "2026-10-28T00:00:00.000Z",
       "startDate": "2026-10-27",
       "endDate": "2026-10-27",
-      "location": "Location on UIC Connection",
-      "locationUrl": "https://uic.campusgroups.com/StudentCenters/rsvp?id=2272133",
-      "hasPublicLocation": false,
+      "location": "Lower Level Bookstore, Student Center East, 750 S Halsted St, Chicago, IL 60607",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=Lower%20Level%20Bookstore%2C%20Student%20Center%20East%2C%20750%20S%20Halsted%20St%2C%20Chicago%2C%20IL%2060607",
+      "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/StudentCenters/rsvp?id=2272133",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "locationSource": "Event description"
     },
     {
       "id": "campusgroups-2271514",
@@ -2141,11 +2161,12 @@
       "end": "2026-10-30T02:00:00.000Z",
       "startDate": "2026-10-29",
       "endDate": "2026-10-29",
-      "location": "Location on UIC Connection",
-      "locationUrl": "https://uic.campusgroups.com/sab/rsvp?id=2271195",
-      "hasPublicLocation": false,
+      "location": "Millennium Lanes, Student Center East, 750 S Halsted St, Chicago, IL 60607",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=Millennium%20Lanes%2C%20Student%20Center%20East%2C%20750%20S%20Halsted%20St%2C%20Chicago%2C%20IL%2060607",
+      "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/sab/rsvp?id=2271195",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "locationSource": "Event description"
     },
     {
       "id": "campusgroups-2271829",
@@ -2155,11 +2176,12 @@
       "end": "2026-10-30T21:00:00.000Z",
       "startDate": "2026-10-29",
       "endDate": "2026-10-30",
-      "location": "Location on UIC Connection",
-      "locationUrl": "https://uic.campusgroups.com/StudentCenters/rsvp?id=2271829",
-      "hasPublicLocation": false,
+      "location": "Millennium Lanes, Student Center East, 750 S Halsted St, Chicago, IL 60607",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=Millennium%20Lanes%2C%20Student%20Center%20East%2C%20750%20S%20Halsted%20St%2C%20Chicago%2C%20IL%2060607",
+      "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/StudentCenters/rsvp?id=2271829",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "locationSource": "Event description"
     },
     {
       "id": "campusgroups-2271784",
@@ -2253,11 +2275,12 @@
       "end": "2026-10-30T23:15:00.000Z",
       "startDate": "2026-10-30",
       "endDate": "2026-10-30",
-      "location": "Location on UIC Connection",
-      "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2271633",
-      "hasPublicLocation": false,
+      "location": "SFC Fitness Room 2and3, 737 S. Halsted St., Chicago, IL 60607",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=SFC%20Fitness%20Room%202and3%2C%20737%20S.%20Halsted%20St.%2C%20Chicago%2C%20IL%2060607",
+      "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2271633",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "locationSource": "UIC Connection calendar file"
     },
     {
       "id": "campusgroups-2271780",
@@ -2421,11 +2444,12 @@
       "end": "2026-11-05T01:30:00.000Z",
       "startDate": "2026-11-04",
       "endDate": "2026-11-04",
-      "location": "Location on UIC Connection",
-      "locationUrl": "https://uic.campusgroups.com/uicradio/rsvp?id=2271378",
-      "hasPublicLocation": false,
+      "location": "SCE 301, 750 S Halsted St., Student Center East, Chicago, IL 60607",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=SCE%20301%2C%20750%20S%20Halsted%20St.%2C%20Student%20Center%20East%2C%20Chicago%2C%20IL%2060607",
+      "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/uicradio/rsvp?id=2271378",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "locationSource": "UIC Connection calendar file"
     },
     {
       "id": "campusgroups-2271578",
@@ -2659,11 +2683,12 @@
       "end": "2026-11-11T18:00:00.000Z",
       "startDate": "2026-11-11",
       "endDate": "2026-11-11",
-      "location": "Location on UIC Connection",
-      "locationUrl": "https://uic.campusgroups.com/SVA/rsvp?id=2272347",
-      "hasPublicLocation": false,
+      "location": "750 S. Halsted Street, 750 S Halsted St., Student Center East, Chicago, IL 60607",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=750%20S.%20Halsted%20Street%2C%20750%20S%20Halsted%20St.%2C%20Student%20Center%20East%2C%20Chicago%2C%20IL%2060607",
+      "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/SVA/rsvp?id=2272347",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "locationSource": "UIC Connection calendar file"
     },
     {
       "id": "campusgroups-2272048",
@@ -2799,11 +2824,12 @@
       "end": "2026-11-14T00:00:00.000Z",
       "startDate": "2026-11-13",
       "endDate": "2026-11-13",
-      "location": "Location on UIC Connection",
-      "locationUrl": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271283",
-      "hasPublicLocation": false,
+      "location": "Student Center East Tower, Room 301, 710 S Halsted St, Chicago, IL 60607",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=Student%20Center%20East%20Tower%2C%20Room%20301%2C%20710%20S%20Halsted%20St%2C%20Chicago%2C%20IL%2060607",
+      "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271283",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "locationSource": "Event description"
     },
     {
       "id": "campusgroups-2272027",
@@ -2883,11 +2909,12 @@
       "end": "2026-11-17T21:00:00.000Z",
       "startDate": "2026-11-17",
       "endDate": "2026-11-17",
-      "location": "Location on UIC Connection",
-      "locationUrl": "https://uic.campusgroups.com/StudentCenters/rsvp?id=2272227",
-      "hasPublicLocation": false,
+      "location": "Student Center East Tower, Room 301, 710 S Halsted St, Chicago, IL 60607",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=Student%20Center%20East%20Tower%2C%20Room%20301%2C%20710%20S%20Halsted%20St%2C%20Chicago%2C%20IL%2060607",
+      "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/StudentCenters/rsvp?id=2272227",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "locationSource": "Event description"
     },
     {
       "id": "campusgroups-2271282",
@@ -2995,11 +3022,12 @@
       "end": "2026-11-19T19:00:00.000Z",
       "startDate": "2026-11-19",
       "endDate": "2026-11-19",
-      "location": "Location on UIC Connection",
+      "location": "Online event",
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2271476",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2271476",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "locationSource": "UIC Connection calendar file"
     },
     {
       "id": "campusgroups-2271940",
@@ -3009,11 +3037,12 @@
       "end": "2026-11-19T18:30:00.000Z",
       "startDate": "2026-11-19",
       "endDate": "2026-11-19",
-      "location": "Location on UIC Connection",
+      "location": "Online event",
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2271940",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2271940",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "locationSource": "UIC Connection calendar file"
     },
     {
       "id": "campusgroups-2271485",
@@ -3051,11 +3080,12 @@
       "end": "2026-11-20T00:00:00.000Z",
       "startDate": "2026-11-19",
       "endDate": "2026-11-19",
-      "location": "Location on UIC Connection",
-      "locationUrl": "https://uic.campusgroups.com/StudentCenters/rsvp?id=2272229",
-      "hasPublicLocation": false,
+      "location": "Courtyard, Student Center East, 750 S Halsted St, Chicago, IL 60607",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=Courtyard%2C%20Student%20Center%20East%2C%20750%20S%20Halsted%20St%2C%20Chicago%2C%20IL%2060607",
+      "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/StudentCenters/rsvp?id=2272229",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "locationSource": "Event description"
     },
     {
       "id": "campusgroups-2271806",
@@ -3163,11 +3193,12 @@
       "end": "2026-11-24T19:30:00.000Z",
       "startDate": "2026-11-24",
       "endDate": "2026-11-24",
-      "location": "Location on UIC Connection",
+      "location": "Online event",
       "locationUrl": "https://uic.campusgroups.com/ACCP/rsvp?id=2271887",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/ACCP/rsvp?id=2271887",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "locationSource": "UIC Connection calendar file"
     },
     {
       "id": "campusgroups-2271952",
@@ -3247,11 +3278,12 @@
       "end": "2026-12-02T21:00:00.000Z",
       "startDate": "2026-12-02",
       "endDate": "2026-12-02",
-      "location": "Location on UIC Connection",
-      "locationUrl": "https://uic.campusgroups.com/commute/rsvp?id=2271582",
-      "hasPublicLocation": false,
+      "location": "Student Center East, 750 S Halsted St, Chicago, IL 60607",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=Student%20Center%20East%2C%20750%20S%20Halsted%20St%2C%20Chicago%2C%20IL%2060607",
+      "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/commute/rsvp?id=2271582",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "locationSource": "Event description"
     },
     {
       "id": "campusgroups-2272050",
@@ -3317,11 +3349,12 @@
       "end": "2026-12-07T20:00:00.000Z",
       "startDate": "2026-12-07",
       "endDate": "2026-12-07",
-      "location": "Location on UIC Connection",
-      "locationUrl": "https://uic.campusgroups.com/commute/rsvp?id=2271583",
-      "hasPublicLocation": false,
+      "location": "Student Center West, 828 S Wolcott Ave, Chicago, IL 60612",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=Student%20Center%20West%2C%20828%20S%20Wolcott%20Ave%2C%20Chicago%2C%20IL%2060612",
+      "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/commute/rsvp?id=2271583",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "locationSource": "Event description"
     },
     {
       "id": "campusgroups-2272051",
@@ -3947,11 +3980,12 @@
       "end": "2027-04-07T00:00:00.000Z",
       "startDate": "2027-04-06",
       "endDate": "2027-04-06",
-      "location": "Location on UIC Connection",
-      "locationUrl": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271320",
-      "hasPublicLocation": false,
+      "location": "Student Center East Tower, Room 301, 710 S Halsted St, Chicago, IL 60607",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=Student%20Center%20East%20Tower%2C%20Room%20301%2C%20710%20S%20Halsted%20St%2C%20Chicago%2C%20IL%2060607",
+      "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271320",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "locationSource": "Event description"
     },
     {
       "id": "campusgroups-2272062",
@@ -4241,11 +4275,12 @@
       "end": "2027-09-07T19:00:00.000Z",
       "startDate": "2027-09-07",
       "endDate": "2027-09-07",
-      "location": "Location on UIC Connection",
-      "locationUrl": "https://uic.campusgroups.com/fsl/rsvp?id=2272093",
-      "hasPublicLocation": false,
+      "location": "SCE Illinois Room, 750 S Halsted St., Student Center East, Chicago, IL 60607",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=SCE%20Illinois%20Room%2C%20750%20S%20Halsted%20St.%2C%20Student%20Center%20East%2C%20Chicago%2C%20IL%2060607",
+      "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/fsl/rsvp?id=2272093",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "locationSource": "UIC Connection calendar file"
     }
   ]
 }

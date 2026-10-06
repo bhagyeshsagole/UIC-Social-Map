@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {addMonths, calendarFeedUrl, campusTimestamp, parseCampusFeed, upcomingCampusEvents, plainText, eventWhen, monthDates, monthLabel, onCampusDate, dayLabel} from '../src/campusEvents.js';
+import {addCampusLocations, NO_LOCATION, addMonths, calendarFeedUrl, campusTimestamp, parseCampusFeed, upcomingCampusEvents, plainText, eventWhen, monthDates, monthLabel, onCampusDate, dayLabel} from '../src/campusEvents.js';
 import {fetchCampusEvents} from '../scripts/campus-events.mjs';
 import {buildIndex, searchIndex} from '../src/search.js';
 
@@ -100,4 +100,39 @@ test('date picker covers the Chicago month and multi-day events match every day 
   assert.deepEqual(['2026-10-09','2026-10-10','2026-10-11','2026-10-12','2026-10-13'].map(d=>onCampusDate(span,d)),[false,true,true,true,false]);
   assert.equal(onCampusDate({startDate:'2026-10-10'},'2026-10-10'),true);
   assert.equal(dayLabel('2026-10-14'),'Wed, Oct 14');
+});
+test('blank feed locations fill from the official calendar file, then reviewed description quotes; private ones stay hidden', async () => {
+  const blank = row({event_location:'', event_address:'', event_city:'', event_state:'', event_zipcode:''});
+  const events = parseCampusFeed({events:[blank, row({...blank, id:124, title:'Synthetic Yoga'}), row({...blank, id:125, title:'Synthetic Private'}),
+    row({...blank, id:126, title:'Synthetic TBD'}), row({id:127, title:'Synthetic Listed'})]}).events;
+  const at = events[0].start;
+  const calendar = [{title:'Synthetic Arts & Games', startAt:at, location:'SCE 605, 750 S Halsted St., Chicago, IL 60607, United States'},
+    {title:'Synthetic Yoga', startAt:at, location:'Online Event'}, {title:'Synthetic Private', startAt:at, location:null},
+    {title:'Synthetic TBD', startAt:at, location:'TBD'}, {title:'Synthetic Listed', startAt:at, location:'Somewhere else, 1 W Elm St'}];
+  const notes = {'campusgroups-126':{location:'Room 301, Student Center East, 750 S Halsted St, Chicago, IL 60607'}, 'campusgroups-125':undefined};
+  const [arts, yoga, hidden, tbd, listed] = addCampusLocations(events, calendar, notes);
+  assert.equal(arts.location, 'SCE 605, 750 S Halsted St., Chicago, IL 60607');
+  assert.equal(arts.hasPublicLocation, true);
+  assert.equal(arts.locationSource, 'UIC Connection calendar file');
+  assert.match(arts.locationUrl, /^https:\/\/www.google.com\/maps\/search/);
+  assert.equal(yoga.location, 'Online event');
+  assert.equal(yoga.hasPublicLocation, false, 'online events get no map link');
+  assert.equal(yoga.locationUrl, yoga.url);
+  assert.equal(hidden.location, NO_LOCATION, 'sign-in locations are never guessed');
+  assert.equal(tbd.locationSource, 'Event description', 'TBD in the calendar file falls through to a reviewed quote');
+  assert.equal(listed.location, events[4].location, 'a location from the main feed is never replaced');
+});
+test('every reviewed description location names a street address or an online event, with its source quote', () => {
+  const {events} = JSON.parse(readFileSync(new URL('../src/campus-event-locations.json', import.meta.url)));
+  for (const [id, note] of Object.entries(events)) {
+    assert.match(id, /^campusgroups-\d+$/);
+    assert.ok(note.quote, id);
+    assert.ok(/\b\d{1,6} [NSEW] \w/.test(note.location) || note.location === 'Online event', id);
+    assert.ok(!/https?:|zoom\.us/i.test(note.location + note.quote), 'meeting links are not copied');
+  }
+});
+test('the import keeps working when the calendar file is unavailable', async () => {
+  const now = new Date('2026-10-05T20:00:00Z');
+  const fetcher = async url => String(url).endsWith('.ics') ? new Response('', {status:503}) : new Response(JSON.stringify({events:[row()]}));
+  assert.equal((await fetchCampusEvents(now, fetcher)).events.length, 1);
 });

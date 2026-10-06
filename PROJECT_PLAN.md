@@ -108,6 +108,7 @@ Detailed implementation tasks live in the two owner trackers. These milestones t
 - **2026-10-06:** Added B11 for a local UIC Connections ICS importer. It is independent of B01 and B10: B01 defines the shared data contract, B10 covers weekly Chicago place refreshes, and B11 imports the monthly UIC Connections feed into local JSON without scheduling or storage.
 - **2026-10-06:** Completed B11's local ICS parser, normalization, duplicate prevention, tests, and live import. The 2026-10-06 feed yielded 657 canonical events from 666 records; monthly scheduling remains deferred until storage integration. B10 remains the separate weekly Chicago place-content refresh.
 - **2026-10-06:** Live events widened at the user's request: UIC Connection events now cover 12 Chicago months and stay listed until they end, so series already underway appear. The frontend still reads the CampusGroups JSON feed; B11's ICS output is not wired in. See Workflow A, A22.
+- **2026-10-06:** Blank UIC event locations are now filled from the official calendar file (via Hassan's B11 parser) and reviewed quotes from public event descriptions. Locations UIC keeps behind sign-in stay hidden. The frontend import now depends on B11's `parseIcs`/`mergeEvents` exports. See Workflow A, A23.
 
 ## First UI scope accepted on 2026-10-04
 

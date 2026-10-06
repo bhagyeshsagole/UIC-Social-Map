@@ -1,0 +1,82 @@
+{
+  "checked": "2026-10-06",
+  "note": "Locations stated in each event's public UIC Connection description, used only when the feeds leave the location blank. Events whose descriptions name several places (crawls, drop-off bins) or only a campus-wide route are left out. Meeting links are not copied.",
+  "events": {
+    "campusgroups-2271850": {
+      "location": "Millennium Lanes, Student Center East, 750 S Halsted St, Chicago, IL 60607",
+      "quote": "located inside Millennium Lanes at Student Center East"
+    },
+    "campusgroups-2272373": {
+      "location": "SCE 613, Student Center East, 750 S Halsted St, Chicago, IL 60607",
+      "quote": "Location: SCE 613"
+    },
+    "campusgroups-2272177": {
+      "location": "Institute for the Humanities, Behavioral Sciences Building, 1007 W Harrison St, Chicago, IL 60607",
+      "quote": "The Institute for the Humanities can be entered from the exterior of the Behavioral Sciences Building (BSB)"
+    },
+    "campusgroups-2272225": {
+      "location": "Room 301, Student Center East, 750 S Halsted St, Chicago, IL 60607",
+      "quote": "Student Center East room 301"
+    },
+    "campusgroups-2272031": {
+      "location": "Front of Student Center East, 750 S Halsted St, Chicago, IL 60607",
+      "quote": "Location: Front of Student Center East 750 S. Halsted"
+    },
+    "campusgroups-2272397": {
+      "location": "Seminar Room A, Idea Commons, Richard J. Daley Library, 801 S Morgan St, Chicago, IL 60607",
+      "quote": "Location: Seminar Room A (Idea Commons, Richard Daley Library)"
+    },
+    "campusgroups-2272239": {
+      "location": "Concourse, Student Center East, 750 S Halsted St, Chicago, IL 60607",
+      "quote": "tabling at the Student Center East Concourse"
+    },
+    "campusgroups-2272270": {
+      "location": "Sport and Fitness Center, 828 S Wolcott Ave, Chicago, IL 60612",
+      "quote": "October 19, SFC 5-5:30PM"
+    },
+    "campusgroups-2272135": {
+      "location": "Millennium Lanes, Student Center East, 750 S Halsted St, Chicago, IL 60607",
+      "quote": "Location: Millennium Lanes @ SCE"
+    },
+    "campusgroups-2272133": {
+      "location": "Lower Level Bookstore, Student Center East, 750 S Halsted St, Chicago, IL 60607",
+      "quote": "Lower Level Bookstore | Student Center East"
+    },
+    "campusgroups-2271195": {
+      "location": "Millennium Lanes, Student Center East, 750 S Halsted St, Chicago, IL 60607",
+      "quote": "Millennium Lanes at Student Center East 750 S. Halsted St."
+    },
+    "campusgroups-2271829": {
+      "location": "Millennium Lanes, Student Center East, 750 S Halsted St, Chicago, IL 60607",
+      "quote": "Millennium Lanes at Student Center East 750 S. Halsted St."
+    },
+    "campusgroups-2271283": {
+      "location": "Student Center East Tower, Room 301, 710 S Halsted St, Chicago, IL 60607",
+      "quote": "in the SCE Tower Room 301"
+    },
+    "campusgroups-2272227": {
+      "location": "Student Center East Tower, Room 301, 710 S Halsted St, Chicago, IL 60607",
+      "quote": "SCE Tower, Room 301"
+    },
+    "campusgroups-2272229": {
+      "location": "Courtyard, Student Center East, 750 S Halsted St, Chicago, IL 60607",
+      "quote": "Join us in the Student Center East Courtyard"
+    },
+    "campusgroups-2271582": {
+      "location": "Student Center East, 750 S Halsted St, Chicago, IL 60607",
+      "quote": "Come join us for our De-Stress event at SCE!"
+    },
+    "campusgroups-2271583": {
+      "location": "Student Center West, 828 S Wolcott Ave, Chicago, IL 60612",
+      "quote": "Come join us for our De-Stress event at SCW"
+    },
+    "campusgroups-2271320": {
+      "location": "Student Center East Tower, Room 301, 710 S Halsted St, Chicago, IL 60607",
+      "quote": "Location: Student Center East Tower, Room 301"
+    },
+    "campusgroups-2271886": {
+      "location": "Online event",
+      "quote": "Meeting Link: (Zoom link in the event description)"
+    }
+  }
+}
