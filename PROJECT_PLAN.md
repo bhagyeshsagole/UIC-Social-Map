@@ -9,7 +9,7 @@ Current review: [Evidence, loopholes, and recommendations](EVENT_MAP_REVIEW.md)
 
 A map-based portal for UIC students to discover places and events in Chicago, understand relevant benefits, see other members planning to go, and connect before attending. Users can display their name or participate using a generated nickname.
 
-The team selected this direction. Stop generating unrelated alternatives. A local UI prototype now implements map discovery, place details, bookmarks, and private event drafts. Accounts, shared events, attendance, chat, backend services, deployment, and outreach remain unimplemented.
+The team selected this direction. Stop generating unrelated alternatives. A local UI prototype now implements map discovery, place details, bookmarks, private events pinned to buildings, and shareable event snapshots. Accounts, synchronized shared events, attendance, chat, backend services, deployment, and outreach remain unimplemented.
 
 ## Living-document rules
 
@@ -104,6 +104,7 @@ Detailed implementation tasks live in the two owner trackers. These milestones t
 - **2026-10-04:** Selected UIC social discovery map with membership, attendance identity choices, and chat.
 - **2026-10-04:** Completed concept review; corrected email-verification, admission, and Eventbrite assumptions. Product decisions remain open.
 - **2026-10-04:** Assigned Workflow A to Bhagesh and Workflow B to Hassan. Created the parent coordination folder and nested website workspace, including separate trackers and deployment notes. Removed rejected ideas, complaint-portal research, and obsolete archives at the team's request. Application development has not started.
+- **2026-10-05:** Scope widened at the user's request: places now include bars, nightlife, music venues, comedy and city sights within 6 miles of UIC (was 4), not only student-discount spots. The student badge marks documented student perks only. See Workflow A, A19.
 
 ## First UI scope accepted on 2026-10-04
 
@@ -141,3 +142,21 @@ Saved holds bookmarked places; My Events holds event drafts. These remain local-
 - **2026-10-05:** Completed local UIC Connection integration. Verified 178 October source listings and imported 141 future-start events at the initial check; counts automatically decrease with time. 28 unit tests, build, desktop/mobile browser checks, and live local API verification passed. No production deployment or scheduler was activated.
 
 - **2026-10-05:** User requested a larger, less crowded Live events sheet and three category tags. Implemented UIC, Off-campus, and Community, with host-based affiliation (UIC outings remain UIC even at external venues). Independent venue listings appear under Off-campus. Community is reserved for published user events and currently shows an empty state; private drafts remain in My Events. Desktop/mobile layout and category switching verified.
+
+- **2026-10-05:** User requested event-card navigation to buildings and purple coloring for all Live events venues. A15 implements purple precedence over UIC red for matched upcoming-event buildings, automatic removal with event expiry/feed changes, and compact event details after map navigation. Public indoor locations match verified venue coordinates/footprints; outdoor locations get a marker, and private/unmatched locations retain official details links. 33 unit tests, build, and desktop/mobile browser validation passed.
+
+
+## Building-first private events accepted on 2026-10-05
+
+- Create event starts by selecting a building from search or by tapping a map footprint. Show the building’s existing events so users can select one or create their own. No numbered onboarding progress strip.
+- Private events save locally, turn their building yellow, appear in My Events, and can be deleted. Yellow takes precedence over other building colors; removing the last local event restores the building’s normal color.
+- The lower-left glass legend is Red / UIC Building, Purple / Off Campus Events, Yellow / Private Events. This supersedes A15’s all-event-venues-purple rule: UIC buildings retain red unless a private event highlights them yellow.
+- Any event can be shared through a copyable message link. The current frontend carries a validated snapshot in the URL fragment and opens its precise venue in a fresh browser. Locations withheld by the source remain withheld. Links require a reachable host; localhost links are not public. Snapshots are not revocable or synchronized after deletion; shared storage and account-based authorization remain backend work.
+- A glass pill beside Chicago shows the total public events currently available in Live events (UIC feed plus venue listings). It opens Live events and updates with the feed/time filters.
+- Building event panels use the actual selected venue name above “Upcoming events”; focused public-event cards also identify their venue instead of the generic “EVENT BUILDING.”
+
+- **2026-10-05:** A17 implements the building-first creation and existing-event branch, yellow buildings/deletion, shareable snapshots, three-color legend, public event total, and dynamic venue headings. User explicitly authorized simultaneous work with A16; its hover previews/date filters are preserved. No backend or deployment was added.
+
+- **2026-10-05:** Follow-up share UI: removed “SEND A PLAN,” the navigation explanation, and snapshot/deletion paragraph at the user’s request. The event name is the share heading and page/native-share title. External messaging services may still use cached/server-rendered metadata for rich previews; the static fragment-link prototype does not provide per-event server metadata.
+
+- **2026-10-05:** A17 creation-order correction supersedes search/dialog-first setup: Create event opens the map with a yellow pin cursor; clicking a building pins it and immediately previews its roof in yellow; Continue then opens onboarding with existing-event/new-event choices. Cancel/Escape clears only the temporary preview. Connected campus footprints choose the nearest named venue instead of the first annotation.

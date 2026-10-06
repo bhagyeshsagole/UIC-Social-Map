@@ -12,7 +12,7 @@ npm ci
 npm run dev
 ```
 
-Open http://127.0.0.1:5173. `npm run build` creates `dist/`; `npm run preview` serves the built app. No API key is needed for this prototype.
+Open http://127.0.0.1:5173. To try it on a phone on the same Wi-Fi, run `npm run dev:phone` and open the Network https:// address it prints; it uses a local self-signed certificate (create one in `.certs/` with `openssl`), so the phone shows a one-time warning. HTTPS is needed for the native share sheet. `npm run build` creates `dist/`; `npm run preview` serves the built app. No API key is needed for this prototype.
 
 ## Content
 
@@ -20,7 +20,7 @@ Edit [added_sites.md](../../added_sites.md) to change a place name or descriptio
 
 Hours, source links, coordinates, menu highlights, dietary tags, benefits, and date-bounded exhibitions are in [placeDetails.js](src/placeDetails.js). Coordinates are approximate entrance locations; Google Maps links resolve the place and address. Venue schedules are regular hours and do not guarantee holiday opening. Art Institute hours still need primary-source re-verification and show “Check schedule” instead of an open/closed claim.
 
-Initial places: Art Institute, Busy Burger, Two Shades Cafe, Gallery 400, First Ascent Block 37, 3RUN2 University Village, and Cairo Kebab. The UI links to the source for every listing. Read [research notes](RESEARCH.md) before refreshing offers.
+Places: 81 within 6 miles of UIC east campus, in seven categories (Food & drink, Cafes, Nightlife, Arts & culture, Sights, Get active, Outdoors). Only documented UIC or student perks (UIC student government discount guide, UIC CADA museum admission) get the graduation-cap badge; free-for-everyone places show a Free label instead. A16 added 50 places on 2026-10-05; each has an OpenStreetMap or official source, and hours that weren't confirmed show "Check schedule". New places have no photo yet and use the illustrated fallback. The UI links to the source for every listing. Read [research notes](RESEARCH.md) before refreshing offers.
 
 ### UIC Connection live events
 
@@ -28,7 +28,8 @@ Live events now imports the public [UIC Connection calendar](https://uic.campusg
 
 - The upcoming list includes events whose start is still ahead in the current **America/Chicago** month, sorted by start time. Past dates, already-started sessions, and next-month events are excluded. The app reevaluates the clock every minute and requests the new month after rollover. The larger Live events sheet has three persistent tags: UIC (CampusGroups plus UIC Gallery 400), Off-campus (independent venue exhibitions), and Community (published member events; currently empty). Private drafts remain in My Events. UIC affiliation follows the organizer, even when an outing takes place off campus.
 - Each event has its organizer, Chicago date/time, official details/registration link, and a location action. Public addresses open Google Maps. Missing or private venues link to UIC Connection; sign-in may be required. No coordinates, rooms, ticket prices, or attendance are inferred.
-- Search in the list or Spotlight by event, host, or location. Spotlight opens the official event page.
+- Hover a purple building to preview its upcoming events; click or tap it to open every event there. **Pick a date** filters the UIC list to one Chicago day; only days with upcoming events can be chosen.
+- Search in the list or Spotlight by event, host, or location. Click a mapped event card/title or its Spotlight result to fly to its venue. Official registration and Maps links remain separate; events with private/unmatched locations open their official page.
 - The Vite dev and preview servers expose `/api/campus-events`, fetching the public feed with a 15-minute server cache. The client refreshes every 15 minutes and has a manual retry button. Source failures keep saved listings with a visible freshness message; expired entries still disappear.
 - `public/campus-events.json` is a sanitized snapshot with source and fetch time. It contains no author identities, attendees, or ticket counts. Refresh atomically with `npm run events:refresh`; source errors leave the existing file intact.
 
@@ -84,3 +85,29 @@ node tests/smoke.mjs
 Unit checks cover Markdown propagation, data IDs, sunrise/sunset across seasons and DST, Chicago hours, and expired exhibitions. The browser smoke flow checks loaded maps, search, details, bookmark persistence, draft creation, free filtering, and phone overflow. Screenshots are in `artifacts/`.
 
 [Frontend tracker](../../WORKFLOW_A_BHAGYESH.md) · [Sunday refresh handoff](../../SUNDAY_REFRESH_TASK.md)
+
+
+## Event building colors and navigation
+
+`src/event-venues.json` contains source-dated addresses and coordinates from the [UIC building directory](https://maps.uic.edu/Maps) plus individually reviewed [OpenStreetMap](https://www.openstreetmap.org/copyright) venue records. It includes all 49 public-address events in the checked snapshot. Address matching normalizes street abbreviations and room/suite details; ambiguous, private, or unknown venues are never inferred from event titles or organizer names. New addresses need verification before they can highlight a building.
+
+Live event cards and Spotlight results fly to mapped venues, close the large list, and show a compact event summary with registration and a return action. Matched off-campus upcoming-event buildings appear purple automatically, regardless of which tag is selected. UIC buildings remain red. A private event overrides either color with yellow; deleting the last private event at a building restores its normal color. Outdoor events use a location marker rather than coloring a neighboring building. The focused event closes if it drops out of the feed.
+
+`npm run events:tiles` regenerates `public/event-tiles/` and `src/event-tile-index.json`. It starts from the existing seven campus tiles and additional OpenFreeMap tiles, matches connected roof footprints to verified venue points, and adds `event_venues` properties. Existing roof geometry and heights remain unchanged: rendering uses the original extrusion layer, without overlapping purple surfaces. See [MapLibre data-driven extrusion colors](https://maplibre.org/maplibre-style-spec/layers/#fill-extrusion-color). Thirteen tiles currently cover 120 matched venues; the pre-existing unmatched Flames Field Press Box remains uncolored. Street-edge points can use the nearest roof within 35m; these are map approximations, not room-level positions.
+
+Rebuild event tiles after changing the venue registry or running the campus tile builder. The manifest records the campus revision, and stale event tiles are ignored when revisions differ. Original tile downloads are cached under `/tmp` for rebuilding. Retain the map's OpenStreetMap/OpenMapTiles/OpenFreeMap attribution and the source links in each venue record.
+
+`npm test` covers address resolution, private-location exclusions, all public snapshot venues, evaluated purple/red/neutral expressions in both themes, and exact preservation of campus tile geometry. `node tests/event-map-smoke.mjs` checks rendered footprint tags, card/title navigation, camera position, registration links, off-campus and outdoor locations, phone layout, feed removal, and night restyling. Screenshots are in `artifacts/event-building*.png`.
+
+
+## Private events and share links
+
+Create event immediately activates map pinning with a yellow pin-shaped cursor. Clicking a building places a pin and turns the roof yellow before any onboarding dialog opens. Continue opens that building’s existing events or the private-event form (title, Chicago date/time, optional description, and review). Cancel/Escape removes the temporary preview without saving an event; saved events retain their highlights. There is no numbered progress strip. Known venues use annotated building tiles; custom map selections use the selected roof geometry with a stable footprint identity. Yellow uses the existing extrusion color expression, avoiding overlapping surfaces. My Events retains local records under the existing `afterclass-drafts` key, preserving older drafts.
+
+The lower-left glass legend explains red UIC, purple off-campus event, and yellow private-event buildings. The adjacent Chicago/event-count pills show all public events currently available in Live events, not private device records. Venue panel headings identify the selected building dynamically.
+
+`ShareEvent.jsx` offers copy link and native sharing when supported. Links carry a size-limited, validated UTF-8 event snapshot in the URL fragment; no recipient storage or account is required to open the precise map destination. Source-withheld locations remain unlocated. Private events are not added to public listings or silently saved in the recipient’s My Events. A recipient can remove the snapshot from their map. Owners can delete their device record, but previously sent snapshots remain readable. This is not account-based access control or revocable invitation storage. A localhost link only works where that server is reachable; publish the app on a shared host for real cross-device invitations.
+
+Run `node tests/private-events-smoke.mjs` for building-first setup, existing-event selection, actual footprint picking, local persistence/deletion, clipboard sharing, public links, fresh-recipient mobile navigation, invalid-link handling, and counter/legend layout. Unit tests cover snapshot validation, geometry identity, and yellow color precedence. Evidence is in `artifacts/private-*.png`. Backend support for synchronized/revocable events is tracked in Workflow A H04.
+
+The share dialog uses the event name as its heading and page/native-share title, with the requested explanatory text removed. Messaging-service rich previews can still show the static site's title because URL fragments are not sent to servers and crawlers may ignore client-side titles; per-event server metadata belongs with the hosted event-ID implementation. The native sharing payload includes the event title explicitly.

@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {calendarFeedUrl, campusTimestamp, parseCampusFeed, upcomingCampusEvents, plainText, eventWhen} from '../src/campusEvents.js';
+import {calendarFeedUrl, campusTimestamp, parseCampusFeed, upcomingCampusEvents, plainText, eventWhen, monthDates, onCampusDate, dayLabel} from '../src/campusEvents.js';
 import {fetchCampusEvents} from '../scripts/campus-events.mjs';
 import {buildIndex, searchIndex} from '../src/search.js';
 
@@ -83,4 +83,13 @@ test('published snapshot stores event facts and provenance, with no attendance o
     assert.match(e.url, /^https:\/\/uic\.campusgroups\.com\//);
     assert.ok(!('attendees' in e) && !('author_id' in e) && !('ticketsSold' in e));
   }
+});
+test('date picker covers the Chicago month and multi-day events match every day they span',()=>{
+  const {lead,dates}=monthDates(new Date('2026-10-05T17:00:00Z'));
+  assert.equal(lead,4);assert.equal(dates.length,31);assert.equal(dates[0],'2026-10-01');assert.equal(dates[30],'2026-10-31');
+  assert.equal(monthDates(new Date('2026-11-01T04:30:00Z')).dates[0],'2026-10-01','late Oct 31 in Chicago is still October');
+  const span={startDate:'2026-10-10',endDate:'2026-10-12'};
+  assert.deepEqual(['2026-10-09','2026-10-10','2026-10-11','2026-10-12','2026-10-13'].map(d=>onCampusDate(span,d)),[false,true,true,true,false]);
+  assert.equal(onCampusDate({startDate:'2026-10-10'},'2026-10-10'),true);
+  assert.equal(dayLabel('2026-10-14'),'Wed, Oct 14');
 });

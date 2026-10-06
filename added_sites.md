@@ -127,3 +127,203 @@ The Halsted Street Starbucks, managed by UIC business students.
 <!-- id: subway-uv -->
 ## Subway · University Village
 Quick subs on Halsted in University Village, just south of campus.
+
+<!-- id: fontanos-subs -->
+## Fontano's Subs
+Italian subs at Polk and Carpenter, a short walk from east campus. Show your student ID for about 10% off.
+
+<!-- id: mr-greek-gyros -->
+## Mr. Greek Gyros
+A Greektown gyro counter open since 1997, with an old-school interior and late hours. Show your student ID for about 10% off.
+
+<!-- id: thai-bowl -->
+## Thai Bowl
+Small family-owned Thai spot on Taylor Street. UIC's student life blog recommends the pad see ew with duck or tofu.
+
+<!-- id: lotus-cafe -->
+## Lotus Cafe & Banh Mi
+Banh mi and Vietnamese dishes on Maxwell Street, steps from the University Village dorms.
+
+<!-- id: pompei -->
+## Pompei
+A longtime Taylor Street Italian spot for pizza and pasta.
+
+<!-- id: conte-di-savoia -->
+## Conte Di Savoia
+Italian grocery and deli counter on Taylor Street since 1948. Regulars rate the meatball sandwich and the caprese.
+
+<!-- id: sweet-maple -->
+## Sweet Maple Cafe
+Breakfast and lunch on Taylor Street, open mornings Wednesday through Sunday.
+
+<!-- id: stax-cafe -->
+## Stax Cafe
+Breakfast and brunch at Taylor and Loomis, open every morning.
+
+<!-- id: rosatis -->
+## Rosati’s Pizza · Halsted
+Chicago-style pizza, Italian beef and wings on Halsted, open late.
+
+<!-- id: greek-islands -->
+## Greek Islands
+A classic Greektown restaurant on Halsted for Greek plates and saganaki.
+
+<!-- id: lou-mitchells -->
+## Lou Mitchell’s
+A classic Chicago breakfast diner on Jackson, near Union Station.
+
+<!-- id: mr-beef -->
+## Mr. Beef
+River North Italian beef stand, the real-life inspiration for The Bear.
+
+<!-- id: au-cheval -->
+## Au Cheval
+West Loop diner famous for its burger. Most tables are walk-in; weekday afternoons between 2 and 4:30pm usually have the shortest waits.
+
+<!-- id: girl-and-the-goat -->
+## Girl & the Goat
+Stephanie Izard’s West Loop restaurant for shared plates. Book ahead for dinner.
+
+<!-- id: joy-yee -->
+## Joy Yee Noodle
+Noodles, rice plates and bubble tea in Chinatown Square.
+
+<!-- id: carnitas-uruapan -->
+## Carnitas Uruapan
+Pilsen carnitas counter, open from the morning into the afternoon.
+
+<!-- id: lou-malnatis-south-loop -->
+## Lou Malnati’s · South Loop
+Chicago deep-dish pizza on State Street in the South Loop.
+
+<!-- id: scafuri -->
+## Scafuri Bakery
+Italian bakery on Taylor Street since 1904, with cannoli, sfogliatelle and bombolini.
+
+<!-- id: kristoffers -->
+## Kristoffer’s Cafe & Bakery
+Pilsen bakery cafe on Halsted known for its tres leches cakes.
+
+<!-- id: cafe-jumping-bean -->
+## Cafe Jumping Bean
+Pilsen coffeehouse on 18th Street, open early every day.
+
+<!-- id: sawada-coffee -->
+## Sawada Coffee
+West Loop coffee bar known for its military latte.
+
+<!-- id: ipsento-606 -->
+## Ipsento 606
+Coffee shop right off the 606 trail in Bucktown.
+
+<!-- id: little-joes -->
+## Little Joe’s
+Taylor Street saloon from 1946 with Italian-basement decor, bar food and karaoke on Wednesday nights.
+
+<!-- id: kumiko -->
+## Kumiko
+Japanese-inspired cocktail bar in the West Loop.
+
+<!-- id: big-star -->
+## Big Star
+Tacos and whiskey in Wicker Park, a popular stop on a night out.
+
+<!-- id: emporium-wicker -->
+## Emporium Arcade Bar
+Arcade bar on Milwaukee Avenue with classic games and pinball.
+
+<!-- id: logan-arcade -->
+## Logan Arcade
+Arcade and pinball bar in Logan Square, open evenings.
+
+<!-- id: murphys-bleachers -->
+## Murphy’s Bleachers
+Sports bar across from Wrigley Field’s bleachers. Expect crowds on game days.
+
+<!-- id: sluggers -->
+## Sluggers
+Sports bar on Clark Street, a block from Wrigley Field.
+
+<!-- id: simones -->
+## Simone’s
+Neighborhood bar on 18th Street in Pilsen.
+
+<!-- id: metro -->
+## Metro
+Wrigleyville concert venue for touring and local bands.
+
+<!-- id: salt-shed -->
+## The Salt Shed
+Concert venue in the old Morton Salt shed by the river, with indoor and outdoor stages.
+
+<!-- id: thalia-hall -->
+## Thalia Hall
+Restored 1892 hall in Pilsen hosting concerts and comedy.
+
+<!-- id: house-of-blues -->
+## House of Blues
+River North concert hall for touring acts.
+
+<!-- id: empty-bottle -->
+## The Empty Bottle
+Ukrainian Village bar and music venue for indie and experimental shows.
+
+<!-- id: second-city -->
+## The Second City
+Chicago’s improv and sketch comedy theater in Old Town.
+
+<!-- id: millennium-park -->
+## Millennium Park
+Downtown park with Cloud Gate (the Bean), Crown Fountain and the Pritzker Pavilion lawn.
+
+<!-- id: navy-pier -->
+## Navy Pier
+Lakefront pier with the Centennial Wheel, restaurants and seasonal events.
+
+<!-- id: riverwalk -->
+## Chicago Riverwalk
+Walk along the river through the Loop, with cafes and bars on the water.
+
+<!-- id: skydeck -->
+## Skydeck Chicago
+Glass ledges 103 floors up in Willis Tower.
+
+<!-- id: field-museum -->
+## Field Museum
+Natural history museum on the lakefront, home of SUE the T. rex.
+
+<!-- id: shedd -->
+## Shedd Aquarium
+Aquarium on Museum Campus, next to the Field Museum.
+
+<!-- id: adler -->
+## Adler Planetarium
+Planetarium at the tip of Museum Campus, with skyline views across the water.
+
+<!-- id: wrigley-field -->
+## Wrigley Field
+Home of the Chicago Cubs since 1914, in the middle of Wrigleyville.
+
+<!-- id: maggie-daley -->
+## Maggie Daley Park
+Next to Millennium Park, with climbing walls and a winter ice-skating ribbon.
+
+<!-- id: the-606 -->
+## The 606
+A 2.7-mile elevated trail through Wicker Park, Bucktown and Logan Square.
+
+<!-- id: north-ave-beach -->
+## North Avenue Beach
+Lakefront beach with skyline views, busy on warm weekends.
+
+<!-- id: garfield-conservatory -->
+## Garfield Park Conservatory
+Free indoor gardens on the West Side, open late on Wednesdays.
+
+<!-- id: lincoln-park-conservatory -->
+## Lincoln Park Conservatory
+Free glasshouse gardens next to Lincoln Park Zoo.
+
+<!-- id: ping-tom -->
+## Ping Tom Memorial Park
+Riverside park in Chinatown, a short walk from Chinatown Square.

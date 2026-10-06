@@ -72,3 +72,16 @@ export function eventWhen(event) {
   const start = new Date(event.start), end = new Date(event.end);
   return `${date.format(start)} · ${time.format(start)}–${campusDate(start) === campusDate(end) ? '' : `${date.format(end)} · `}${time.format(end)} CT`;
 }
+// A multi-day event appears on every Chicago date it covers.
+export function onCampusDate(event, date) {
+  const start = (event.startDate || event.start || '').slice(0, 10), end = (event.endDate || event.end || start).slice(0, 10);
+  return start <= date && date <= end;
+}
+export function monthDates(now = new Date()) {
+  const month = campusMonth(now), [year, m] = month.split('-').map(Number);
+  const count = new Date(Date.UTC(year, m, 0)).getUTCDate();
+  return {lead:new Date(Date.UTC(year, m - 1, 1)).getUTCDay(), dates:Array.from({length:count}, (_, i) => `${month}-${String(i + 1).padStart(2, '0')}`)};
+}
+export function dayLabel(date) {
+  return new Intl.DateTimeFormat('en-US', {timeZone:'UTC', weekday:'short', month:'short', day:'numeric'}).format(new Date(`${date}T12:00:00Z`));
+}

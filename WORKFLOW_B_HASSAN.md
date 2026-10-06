@@ -35,6 +35,8 @@ Check a task only when its result exists. These tasks do not imply approval of a
 
 | Task | State | Evidence / blocker |
 | --- | --- | --- |
+| A17 | DONE | Building-first setup with existing-event choice, map pins/yellow roofs/deletion, snapshot sharing, glass legend, total-events pill, venue headings and event-name share titles. 42 unit tests, build, private-events, event-map, campus-events and main browser checks pass; shared backend/hosting remains H04 |
+| A15 | DONE | Public event cards fly to matched venues; upcoming-event buildings turn purple ahead of UIC red. 33 unit tests, production build, event-list and map browser checks pass |
 | A14 | DONE | Prepared validated A12/A13 and existing map refinements for user-requested Git publication to origin/main; remote has no new commits |
 | A13 | DONE | Larger desktop/mobile event sheet; persistent UIC, Off-campus, Community tags; production build and event browser checks pass |
 | A12 | DONE | Upcoming UIC Connection events integrated in local frontend; 28 unit tests, production build, desktop/mobile event browser checks, and real local API verification pass. Production refresh deployment remains H03 |
@@ -88,3 +90,20 @@ Provider handoff should include the SDK, supported version, configuration variab
 - **2026-10-05:** A13 frontend complete: enlarged Live events with UIC, Off-campus, and Community tags, roomier event cards, and verified desktop/mobile behavior. Community remains empty until shared publishing exists; private drafts remain private. Build and event browser checks pass; no backend changes.
 
 - **2026-10-05:** User requested Git publication of the current project. Prepared the live-events importer, larger category-based event browser, existing map refinements, screenshots, and documentation for `origin/main`. Prior validation: 28 unit tests, production build, and desktop/mobile event browser checks passed; whitespace check clean and remote unchanged before commit.
+
+- **2026-10-05:** A15 frontend now maps public event addresses to buildings, colors all upcoming-event venues purple, and navigates there from event cards/search. 33 unit tests, production build, and desktop/mobile event-list/map checks pass. Preserve `src/event-venues.json`, `src/event-tile-index.json`, and `public/event-tiles/`; run `npm run events:tiles` after changing venue coordinates or campus tiles. New unmatched addresses keep official links until verified. Backend/deployment unchanged.
+- **2026-10-05:** Bhagesh frontend A16: building hover previews, per-building event sheet, and a date picker in Live events. Frontend only; no feed, contract or data changes.
+- **2026-10-05:** Bhagesh A18: Apple design audit of the frontend recorded in [Workflow A](WORKFLOW_A_BHAGYESH.md#apple-design-audit-a18); `Skills/emil-kowalski-skills/` added (MIT). Documentation only; no backend, data or contract impact.
+
+- **2026-10-05:** A17 frontend complete: building-first private creation/existing-event selection, yellow roofs/local deletion, snapshot share links, glass legend, total-event pill, dynamic venue headings and simplified event-name sharing. 42 unit tests, build and four browser flows pass; A16 behavior preserved. H04 in Workflow A records shared storage/auth/revocation/hosting dependencies. Backend and deployment unchanged.
+
+- **2026-10-05:** A17 correction: Create event now starts directly in map pin mode with a yellow SVG pin cursor. Clicking a roof immediately previews it in yellow and places a pin; Continue opens onboarding/existing-event choices. Cancel/Escape clears the unsaved preview, preserving saved highlights. Shared campus roofs resolve to the nearest named venue. Production build, 42 unit tests, and updated desktop/mobile private-event browser checks pass, including computed pin cursor, no initial dialog, yellow preview before setup, saving/sharing/deletion, and cancellation with no stored event. Evidence: `website/frontend/artifacts/private-pin-preview.png`. No backend/deployment changes.
+- **2026-10-05:** A17 follow-up: compact pin-mode banner. Frontend only.
+- **2026-10-05:** A17 follow-up: compact share dialog. Frontend only.
+- **2026-10-05:** Bhagesh A19: 50 new places in `added_sites.md` and `website/frontend/src/placeDetails.js` (new `Nightlife` and `Sights` categories, optional `photo`, places up to 6 miles out) plus October 2026 venue events. B10 Sunday refresh should re-check hours labeled "from OpenStreetMap" and the USG guide, which still lists two closed restaurants (Ichiban Sushi Cafe, Taylor Made Pizza).
+- **2026-10-05:** A19 follow-up: detail sheet without photo placeholder; five off-campus venues added to `website/frontend/src/event-venues.json` and event tiles rebuilt so their buildings turn purple. Frontend only.
+- **2026-10-05:** A19 follow-up: all off-campus place buildings purple (71 venues added to `event-venues.json`, event tiles rebuilt) and page load matches the UIC button view. Frontend only.
+- **2026-10-05:** A19 follow-up: corrected First Ascent's building match (Block 37). Frontend only.
+- **2026-10-06:** A19 follow-ups: all-events sheet from place details, photos for the 50 new places (49 Commons, Metro's own photo needs permission before launch), Live events date picker in the category row for every tab, refresh button removed. Frontend only.
+- **2026-10-06:** Bhagesh A20: phone layout rework, map credits moved to the profile dialog, native share sheet. Frontend only. Deployment note: native sharing needs the site served over HTTPS.
+- **2026-10-06:** A20 follow-ups: iPhone Safari edge-to-edge scroll runway, sheets hide the phone nav, `npm run dev:phone` (HTTPS, self-signed cert in gitignored `.certs/`). Deployment: serve over HTTPS for native sharing.

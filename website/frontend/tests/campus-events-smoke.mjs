@@ -16,7 +16,17 @@ try {
   await page.getByRole('button', {name:'Live events', exact:true}).click();
   await page.locator('.campus-events .campus-event-card').first().waitFor();
   assert.equal(await page.locator('.campus-events .campus-event-card').count(), expected.length);
-  assert.match(await page.locator('.campus-heading').innerText(), /October 2026 at UIC/);
+  const heading = await page.locator('.campus-events').innerText();
+  assert.match(heading, new RegExp(`${expected.length} upcoming events`));
+  for (const gone of ['October 2026 at UIC', 'Chicago time', 'From UIC Connection', 'Checked']) assert.ok(!heading.includes(gone), gone);
+  await page.getByRole('button', {name:'Pick a date'}).click();
+  const day = page.getByRole('dialog', {name:'Pick a date'}).locator('button:not([disabled])').first();
+  const count = Number((await day.getAttribute('aria-label')).match(/, (\d+) event/)[1]);
+  await day.click();
+  assert.equal(await page.locator('.event-results .campus-event-card').count(), count, 'a picked date shows only that day across UIC events and exhibitions');
+  assert.match(await page.locator('.campus-heading').innerText(), / on [A-Z][a-z]{2}, [A-Z][a-z]{2} \d+/);
+  await page.getByRole('button', {name:'Clear date'}).click();
+  assert.equal(await page.locator('.campus-events .campus-event-card').count(), expected.length);
   assert.match(await page.locator('.campus-event-date').first().innerText(), / CT$/);
   for (const e of [expected.find(e => e.hasPublicLocation), expected.find(e => !e.hasPublicLocation)]) {
     await page.getByRole('searchbox', {name:'Search UIC events'}).fill(e.title);
@@ -30,7 +40,8 @@ try {
   const sheet = await page.locator('.has-live-events').boundingBox();
   assert.ok(sheet.width >= 1100 && sheet.height >= 700, 'Live events has a larger desktop sheet');
   const tags = page.getByRole('group', {name:'Event categories'});
-  assert.equal(await tags.getByRole('button').count(), 3);
+  assert.equal(await tags.locator('button[aria-pressed]').count(), 3, 'three category tags');
+  assert.equal(await tags.getByRole('button', {name:'Pick a date'}).count(), 1, 'date filter sits in the category row');
   await tags.getByRole('button', {name:'Off-campus', exact:true}).click();
   await page.getByRole('heading', {name:'Around the city'}).waitFor();
   assert.equal(await page.locator('.campus-events').count(), 0);
@@ -50,9 +61,12 @@ try {
   await page.getByRole('option').first().waitFor();
   assert.match(await page.getByRole('option').first().innerText(), / CT/);
   await page.keyboard.press('Escape');
+  await page.evaluate(() => document.activeElement?.blur());
   await page.setViewportSize({width:390,height:844});
+  await page.waitForFunction(() => scrollY === 80, null, {timeout:5000});
   const mobileSheet = await page.locator('.has-live-events').boundingBox();
-  assert.ok(mobileSheet.height > 650 && mobileSheet.y >= 75);
+  // Phone: the sheet sits below the top row (legend, count, account) and above the bottom nav.
+  assert.ok(mobileSheet.height > 600 && mobileSheet.y >= 54 && mobileSheet.y + mobileSheet.height <= 844 - 66, JSON.stringify(mobileSheet));
   await tags.getByRole('button', {name:'Off-campus', exact:true}).click();
   await page.getByRole('heading', {name:'Around the city'}).waitFor();
   await tags.getByRole('button', {name:'UIC', exact:true}).click();
@@ -61,11 +75,12 @@ try {
   assert.ok(await page.locator('.campus-events .campus-event-card').first().evaluate(e => e.getBoundingClientRect().right <= innerWidth));
   await page.unroute('**/api/campus-events');
   await page.route('**/api/campus-events', route => route.fulfill({status:503, json:{error:'Unavailable'}}));
-  await page.getByRole('button', {name:'Refresh UIC events'}).click();
+  // No refresh button: a reload re-requests the feed and falls back to the saved snapshot.
+  await page.reload();
+  await page.getByRole('button', {name:'Live events', exact:true}).click();
   await page.getByText('Showing saved listings; live refresh unavailable.').waitFor();
   assert.equal(await page.locator('.campus-events .campus-event-card').count(), expected.length);
   await page.clock.setFixedTime(new Date(`${feed.month}-31T23:59:59-05:00`));
-  await page.getByRole('button', {name:'Refresh UIC events'}).click();
   // Reload initializes the app clock at the new time; cached records cannot revive past events.
   await page.reload();
   await page.getByRole('button', {name:'Live events', exact:true}).click();
@@ -74,7 +89,7 @@ try {
   await page.route('**/campus-events.json', route => route.fulfill({status:404}));
   await page.reload();
   await page.getByRole('button', {name:'Live events', exact:true}).click();
-  await page.getByText('UIC Connection is unavailable. Try again or open the calendar.').waitFor();
+  await page.getByText('UIC Connection is unavailable. Open the UIC calendar for listings.').waitFor();
   assert.equal(errors.length, 0, errors.join('\n'));
   console.log('Campus events: desktop/mobile, CT times, search, official links, fallback, expiry, and unavailable state passed.');
 } finally { await browser.close(); }

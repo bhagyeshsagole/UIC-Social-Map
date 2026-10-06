@@ -1,4 +1,5 @@
 import {chromium} from '@playwright/test';
+import {details} from '../src/placeDetails.js';
 import assert from 'node:assert/strict';
 const browser=await chromium.launch({headless:true});
 const page=await browser.newPage({viewport:{width:1440,height:1000}});
@@ -44,10 +45,10 @@ await page.reload();await page.locator('.map-status').waitFor({state:'detached',
 assert.ok(Math.abs((await pose()).center[0]+87.6475)<.0001,'Reload returns to UIC');
 console.log('rotation, pitch, multi-axis pan, world zoom and UIC reset passed');
 await page.screenshot({path:'artifacts/desktop.png'});
-assert.equal(await page.locator('.maplibregl-ctrl-attrib.maplibregl-compact-show').count(),0,'Attribution starts collapsed');
-await page.locator('.maplibregl-ctrl-attrib-button').click();
-assert.equal(await page.locator('.maplibregl-ctrl-attrib.maplibregl-compact-show').count(),1,'Attribution opens from its button');
-await page.locator('.maplibregl-ctrl-attrib-button').click();
+assert.equal(await page.locator('.maplibregl-ctrl-attrib').isVisible(),false,'No attribution button on the map');
+await page.getByRole('button',{name:'Open profile'}).click();
+assert.match(await page.locator('.map-credits').innerText(),/OpenStreetMap contributors/,'Map credits live in the profile dialog');
+await page.getByRole('button',{name:'Close dialog'}).click();
 await page.mouse.move(850,500);await page.mouse.down();await page.mouse.move(1150,650,{steps:10});await page.mouse.up();await page.waitForTimeout(500);
 assert.ok(Math.abs((await pose()).center[0]+87.6475)>.0005,'Map moved away from UIC');
 await page.getByRole('button',{name:'Explore',exact:true}).click();await page.waitForTimeout(1300);
@@ -58,7 +59,7 @@ assert.ok(alignment<1,`Close control alignment: ${alignment}`);
 await page.screenshot({path:'artifacts/discovery.png'});
 await page.getByRole('textbox',{name:'Search places'}).fill('burger');
 await page.getByRole('button',{name:'Save Busy Burger',exact:true}).click();
-await page.locator('.place-main').click();
+await page.locator('.place-card').filter({hasText:'Busy Burger'}).locator('.place-main').click();
 await page.getByRole('heading',{name:'Busy Burger'}).waitFor();
 console.log('directions',await page.getByRole('link',{name:'Google Maps'}).getAttribute('href'));
 await page.screenshot({path:'artifacts/detail.png'});
@@ -66,14 +67,20 @@ await page.getByRole('button',{name:'Close place details'}).click();
 assert.equal(await page.locator('.discovery').count(),0);
 await page.getByRole('button',{name:/^View Busy Burger/}).click({force:true});
 await page.getByRole('button',{name:'Make a plan',exact:true}).click();
-await page.getByLabel('What’s the plan?').fill('Burger break');
+assert.equal(await page.locator('dialog[open]').count(),0);
+let pin='';
+for(let y=250;y<650&&!pin;y+=35)for(let x=350;x<1000&&!pin;x+=35){await page.mouse.click(x,y);pin=await page.locator('.map').getAttribute('data-preview-venue');}
+assert.ok(pin);await page.getByRole('region',{name:'Pin event location'}).getByRole('button',{name:'Continue',exact:true}).click();
+await page.getByRole('button',{name:'Create a new event',exact:true}).click();
+await page.getByLabel('Event name',{exact:true}).fill('Burger break');
 await page.getByLabel('Date',{exact:true}).fill('2026-12-20');
 await page.getByLabel('Time',{exact:true}).fill('17:30');
-await page.getByRole('button',{name:'Save draft'}).click();
-await page.getByText('Burger break',{exact:true}).waitFor();
+await page.getByRole('button',{name:'Continue',exact:true}).click();
+await page.getByRole('button',{name:'Create private event',exact:true}).click();
+await page.getByRole('heading',{name:'Burger break',exact:true}).waitFor();
 await page.reload();
 await page.getByRole('button',{name:'My Events'}).click();
-await page.getByText('Burger break',{exact:true}).waitFor();
+await page.getByRole('button',{name:'Burger break',exact:true}).waitFor();
 assert.equal(await page.locator('.place-card').count(),0,'My Events excludes saved places');
 await page.getByRole('button',{name:/^Saved/}).click();
 assert.equal(await page.locator('.place-card').count(),1);
@@ -85,6 +92,10 @@ await spot.fill('burger');
 for(const g of ['Saved','My Events','Menu'])await page.getByRole('group',{name:g}).waitFor();
 await page.screenshot({path:'artifacts/spotlight.png'});
 await spot.fill('cassatt');await page.keyboard.press('Enter');
+await page.getByRole('region',{name:'Selected event on map'}).waitFor();
+await page.getByRole('button',{name:'Close event on map'}).click();
+// Saved view only pins saved places, so open the Art Institute through Spotlight.
+await page.getByRole('button',{name:'Search everything',exact:true}).click();await spot.fill('Art Institute of Chicago');await page.keyboard.press('Enter');
 await page.getByRole('heading',{name:'Art Institute of Chicago'}).waitFor();
 await page.locator('.fact-event').waitFor();await page.locator('.place-photo img').waitFor();
 await page.waitForFunction(()=>{const i=document.querySelector('.place-photo img');return i&&i.complete&&i.naturalWidth>500;},null,{timeout:10000});
@@ -97,7 +108,7 @@ await page.getByRole('button',{name:'Explore',exact:true}).click();
 await page.getByRole('textbox',{name:'Search places'}).fill('');
 await page.getByRole('button',{name:'Filter places'}).click();
 await page.getByLabel('Free places only').check();
-assert.equal(await page.locator('.place-card').count(),12);
+assert.equal(await page.locator('.place-card').count(),Object.values(details).filter(d=>d.kind==='free').length);
 console.log('free filter passed');
 await page.getByRole('button',{name:'Reset filters'}).click();
 await page.getByRole('button',{name:'Filter places'}).click();
@@ -116,7 +127,9 @@ console.log('mobile overflow check passed');
 for(const viewport of [{width:1440,height:440},{width:844,height:390},{width:390,height:844}]){
  await page.setViewportSize(viewport);await page.waitForTimeout(250);
  const fits=await page.evaluate(()=>{const r=document.querySelector('.app').getBoundingClientRect(),m=document.querySelector('.maplibregl-canvas').getBoundingClientRect();return {top:r.top,bottom:r.bottom,height:innerHeight,scroll:document.documentElement.scrollHeight,canvasBottom:m.bottom};});
- assert.equal(fits.top,0);assert.equal(fits.bottom,fits.height);assert.equal(fits.canvasBottom,fits.height);assert.equal(fits.scroll,fits.height);
+ assert.equal(fits.top,0);assert.equal(fits.bottom,fits.height);
+ // Phones: the canvas bleeds 150px behind Safari's toolbar and the page holds an 80px scroll runway.
+ if(viewport.width<=760){assert.equal(fits.canvasBottom,fits.height+150);assert.equal(await page.evaluate(()=>scrollY),80);}else{assert.equal(fits.canvasBottom,fits.height);assert.equal(fits.scroll,fits.height);}
 }
 console.log('viewport edge coverage at desktop, small landscape, and mobile passed');
 const day=await browser.newPage({viewport:{width:1440,height:1000}});

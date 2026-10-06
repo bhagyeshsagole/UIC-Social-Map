@@ -3,19 +3,40 @@ import * as maplibregl from 'maplibre-gl';
 import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
 maplibregl.setWorkerUrl(workerUrl);
 import { createRoot } from 'react-dom/client';
-import { Coffee, Utensils, Landmark, Footprints, Mountain, Trees, GraduationCap } from 'lucide-react';
+import { Coffee, Utensils, Landmark, Footprints, Mountain, Trees, GraduationCap, Beer, Music, Binoculars, Martini } from 'lucide-react';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import base from './base-style.json';
 import uicTiles from './uic-tile-index.json';
+import eventTiles from './event-tile-index.json';
+import {eventBuildingColor,buildingVenues} from './eventLocations';
+import {eventTime} from './search';
+import registry from './event-venues.json';
+import {cleanVenue,footprintId,buildingArea} from './privateEvents';
 import { UIC } from './time';
 import {touchFrame,touchCamera} from './gestures';
 import {placeLabel} from './labelPlacement';
+import {safariBleed} from './safariRunway';
 // Label sits in the courtyard between the six Lecture Center buildings.
 const UIC_LABEL = [-87.64927, 41.87191];
-// Pins get the student badge for UIC/student perks and for places that are always free.
-export const hasPerk=place=>!!place.student||place.kind==='free';
-export function PlaceIcon({place, size=19}) { const Icon=place.id==='three-run-two'?Footprints:place.category==='Outdoors'?Trees:place.category==='Get active'?Mountain:place.category==='Cafes'?Coffee:place.category==='Food & drink'?Utensils:Landmark; return <Icon size={size} strokeWidth={1.8}/>; }
-export function styledMap(night) {
+// One home view for page load and the UIC button.
+const HOME = {center:UIC,zoom:15.3,pitch:54,bearing:0,roll:0};
+const EXTRUSIONS = base.layers.filter(l=>l.type==='fill-extrusion').map(l=>l.id);
+// Hover preview for a purple building. Feed text goes in through textContent only.
+function peekContent(groups){
+  const el=document.createElement('div'),add=(parent,tag,text,cls)=>{const node=document.createElement(tag);if(text)node.textContent=text;if(cls)node.className=cls;parent.append(node);return node;};
+  const events=[...new Set(groups.flatMap(g=>g.events))].sort((a,b)=>String(a.start).localeCompare(String(b.start)));
+  add(el,'strong',groups.map(g=>g.venue.name).join(' · '));
+  add(el,'small',`${events.length} upcoming ${events.length===1?'event':'events'}`);
+  const list=add(el,'ul');
+  for(const e of events.slice(0,3)){const item=add(list,'li');add(item,'b',e.title);add(item,'span',eventTime(e));}
+  if(events.length>3)add(list,'li',`+${events.length-3} more`,'peek-more');
+  add(el,'em','Click to explore');
+  return el;
+}
+// Pins get the student badge only for documented UIC/student perks; free-for-everyone places show their benefit label instead.
+export const hasPerk=place=>!!place.student;
+export function PlaceIcon({place, size=19}) { const Icon=place.id==='three-run-two'?Footprints:place.category==='Nightlife'?(place.tags.some(t=>t==='Live music'||t==='Comedy')?Music:place.tags.includes('Cocktails')?Martini:Beer):place.category==='Sights'?Binoculars:place.category==='Outdoors'?Trees:place.category==='Get active'?Mountain:place.category==='Cafes'?Coffee:place.category==='Food & drink'?Utensils:Landmark; return <Icon size={size} strokeWidth={1.8}/>; }
+export function styledMap(night, eventVenueIds = [], privateVenues = []) {
   const style=structuredClone(base);
   const c=night?{ground:'#292f3b',park:'#394a48',water:'#1d3544',road:'#626b7e',casing:'#343e50',building:'#817568',label:'#c0c6d0',halo:'#303744'}:{ground:'#e3e3dc',park:'#b9c8af',water:'#acc6cf',road:'#faf8ee',casing:'#c5c8c6',building:'#c7b9a6',label:'#5f696d',halo:'#e6e8e3'};
   style.layers=style.layers.filter(l=>l.type!=='symbol'&&!l.id.includes('hatching')&&l.id!=='road_area_pattern');
@@ -25,20 +46,28 @@ export function styledMap(night) {
     if(l.type==='fill') { l.paint['fill-color']=/water/.test(l.id)?c.water:/park|wood|grass|cemetery|pitch/.test(l.id)?c.park:c.ground; }
     if(l.type==='line') { l.paint['line-color']=/water/.test(l.id)?c.water:/casing/.test(l.id)?c.casing:c.road; if(/boundary|rail|path|track/.test(l.id)) l.paint['line-opacity']=0.2; }
     if(l.type==='symbol') { l.paint['text-color']=c.label;l.paint['text-halo-color']=c.halo;l.paint['text-halo-width']=1; }
-    if(l.type==='fill-extrusion') { l.minzoom=12;l.paint={'fill-extrusion-color':['case',['==',['get','uic'],true],['interpolate',['linear'],['coalesce',['get','render_height'],7],0,night?'#9f263b':'#b5263b',25,night?'#da4256':'#e84658',80,night?'#ff7982':'#ff7d85'],c.building],'fill-extrusion-vertical-gradient':true,'fill-extrusion-height':['max',7,['coalesce',['get','render_height'],7]],'fill-extrusion-base':['coalesce',['get','render_min_height'],0],'fill-extrusion-opacity':1}; }
+    if(l.type==='fill-extrusion') { l.minzoom=12;l.paint={'fill-extrusion-color':eventBuildingColor(night,eventVenueIds,privateVenues),'fill-extrusion-vertical-gradient':true,'fill-extrusion-height':['max',7,['coalesce',['get','render_height'],7]],'fill-extrusion-base':['coalesce',['get','render_min_height'],0],'fill-extrusion-opacity':1}; }
   });
   style.light={anchor:'viewport',color:night?'#b7bedf':'#fff2d8',intensity:night?0.35:0.45,position:[1.5,210,45]};
   return style;
 }
-export default function Map({places,selected,onSelect,night,resetKey}) {
-  const container=useRef(), map=useRef(), markers=useRef([]), callback=useRef(onSelect);
+export default function Map({places,selected,onSelect,night,resetKey,eventVenues=[],focusedEvent,venueGroups={},onVenuePick,focusedVenue,privateEvents=[],previewVenue=null,pickingBuilding=false,onBuildingPick,onPrivatePick}) {
+  const container=useRef(), map=useRef(), markers=useRef([]), callback=useRef(onSelect), groupsRef=useRef(venueGroups), venueCallback=useRef(onVenuePick);
+  groupsRef.current=venueGroups;venueCallback.current=onVenuePick;
+  const privateRef=useRef(privateEvents), pickingRef=useRef(pickingBuilding), buildingCallback=useRef(onBuildingPick), privateCallback=useRef(onPrivatePick);
+  privateRef.current=privateEvents;pickingRef.current=pickingBuilding;buildingCallback.current=onBuildingPick;privateCallback.current=onPrivatePick;
+  const privateKey=JSON.stringify(privateEvents.map(e=>e.venue));
+  const colorVenues=useRef([]);colorVenues.current=[...privateEvents.map(e=>e.venue),...(previewVenue?[previewVenue]:[])];
+  const colorKey=JSON.stringify(colorVenues.current);
   const [status,setStatus]=useState('loading'), [retry,setRetry]=useState(0), [flat,setFlat]=useState(false);
   callback.current=onSelect;
+  const venueKey=JSON.stringify([...new Set(eventVenues.map(v=>v.id))].sort());
+  const activeVenues=useRef([]);activeVenues.current=JSON.parse(venueKey);
   useEffect(()=>{
     let m; let stopped=false; const cleanups=[];
     setStatus('loading');
     try {
-      m=new maplibregl.Map({container:container.current,style:styledMap(night),transformRequest:url=>{const match=url.match(/tiles\.openfreemap\.org\/planet\/[^/]+\/(14\/\d+\/\d+)\.pbf/);return {url:match&&uicTiles.tiles.includes(match[1])?new URL(`${import.meta.env.BASE_URL}uic-tiles/${match[1].replaceAll('/','-')}.pbf?v=${uicTiles.revision}`,window.location.href).href:url};},center:UIC,zoom:15.3,pitch:54,bearing:-22,minPitch:0,maxPitch:80,minZoom:1,maxZoom:19,renderWorldCopies:true,attributionControl:false,dragPan:true,dragRotate:true,pitchWithRotate:true,rollEnabled:true,touchZoomRotate:true,touchPitch:false,keyboard:true});
+      m=new maplibregl.Map({container:container.current,style:styledMap(night,activeVenues.current,colorVenues.current),transformRequest:url=>{const match=url.match(/tiles\.openfreemap\.org\/planet\/[^/]+\/(14\/\d+\/\d+)\.pbf/);if(match&&eventTiles.campusRevision===uicTiles.revision&&eventTiles.tiles.includes(match[1]))return {url:new URL(`${import.meta.env.BASE_URL}event-tiles/${match[1].replaceAll('/','-')}.pbf?v=${eventTiles.revision}`,window.location.href).href};return {url:match&&uicTiles.tiles.includes(match[1])?new URL(`${import.meta.env.BASE_URL}uic-tiles/${match[1].replaceAll('/','-')}.pbf?v=${uicTiles.revision}`,window.location.href).href:url};},...HOME,minPitch:0,maxPitch:80,minZoom:1,maxZoom:19,renderWorldCopies:true,attributionControl:false,dragPan:true,dragRotate:true,pitchWithRotate:true,rollEnabled:true,touchZoomRotate:true,touchPitch:false,keyboard:true});
       m.addControl(new maplibregl.AttributionControl({compact:true}),'bottom-right');
       // MapLibre opens compact attribution once data arrives; keep it collapsed until the (i) button is pressed.
       const collapseAttribution=()=>{const el=container.current?.querySelector('.maplibregl-ctrl-attrib.maplibregl-compact');if(!el)return;el.classList.remove('maplibregl-compact-show');el.removeAttribute('open');m.off('data',collapseAttribution);};
@@ -81,20 +110,97 @@ export default function Map({places,selected,onSelect,night,resetKey}) {
       surface.addEventListener('gesturestart',gestureStart,{passive:false});
       surface.addEventListener('gesturechange',gestureChange,{passive:false});
       surface.addEventListener('gestureend',gestureEnd);
-      const resize=new ResizeObserver(()=>m.resize());resize.observe(container.current);
+      // The canvas bleeds behind Safari's bars on phones; padding keeps the camera centred on the visible screen.
+      const pad=()=>{const b=safariBleed();m.setPadding({top:b.top,bottom:b.bottom,left:0,right:0});};pad();
+      const resize=new ResizeObserver(()=>{m.resize();pad();});resize.observe(container.current);
       cleanups.push(()=>{resize.disconnect();surface.removeEventListener('wheel',wheel,true);surface.removeEventListener('gesturestart',gestureStart);surface.removeEventListener('gesturechange',gestureChange);surface.removeEventListener('gestureend',gestureEnd);for(const name of ['touchstart','touchmove','touchend','touchcancel'])surface.removeEventListener(name,touch,true);});
       // Expose camera readings for regression checks without a global map instance.
       const syncPose=()=>{setFlat(m.getPitch()<1);container.current.dataset.camera=JSON.stringify({center:m.getCenter().toArray(),bearing:m.getBearing(),pitch:m.getPitch(),roll:m.getRoll(),zoom:m.getZoom()});};
       m.on('move',syncPose);syncPose();
       m.getCanvas().setAttribute('aria-label','World 3D map. Drag to pan; right-drag to rotate and tilt; two-finger swipe to pan; two-finger twist to rotate in Safari and on touchscreens; Option or Alt plus two-finger swipe to rotate in other browsers; two-finger twist rotates on touchscreens and in Safari; use the 2D and 3D buttons to change tilt; Shift-horizontal scroll to roll; pinch to zoom.');
+      // Purple buildings preview their events on hover; a click or tap opens that venue's events.
+      const peek=new maplibregl.Popup({closeButton:false,closeOnClick:false,className:'building-peek',offset:18,maxWidth:'300px'});
+      let peekKey='';
+      const venuesAt=e=>{
+        if(e.originalEvent?.target!==m.getCanvas()||!m.isStyleLoaded())return [];
+        const [top]=m.queryRenderedFeatures(e.point,{layers:EXTRUSIONS.filter(id=>m.getLayer(id))});
+        if(!top)return [];
+        const ids=buildingVenues(top.properties.event_venues,groupsRef.current),customId=footprintId(top.toJSON().geometry);
+        if(groupsRef.current[customId])ids.push(customId);
+        return [...new Set(ids)];
+      };
+      const hidePeek=()=>{peek.remove();peekKey='';m.getCanvas().style.cursor='';};
+      const hover=e=>{
+        if(pickingRef.current){hidePeek();m.getCanvas().style.cursor='crosshair';return;}
+        const ids=venuesAt(e);if(!ids.length)return hidePeek();
+        const key=ids.join('|')+':'+ids.map(id=>groupsRef.current[id].events.length).join(',');
+        if(key!==peekKey){peek.setDOMContent(peekContent(ids.map(id=>groupsRef.current[id])));peekKey=key;}
+        peek.setLngLat(e.lngLat);if(!peek.isOpen())peek.addTo(m);
+        m.getCanvas().style.cursor='pointer';
+      };
+      const pick=e=>{
+        if(pickingRef.current){
+          if(e.originalEvent?.target!==m.getCanvas()||!m.isStyleLoaded())return;
+          const [feature]=m.queryRenderedFeatures(e.point,{layers:EXTRUSIONS.filter(id=>m.getLayer(id))});
+          if(!feature){buildingCallback.current?.(null);return;}
+          const candidates=String(feature.properties.event_venues||'').split('|').map(id=>registry.venues.find(v=>v.id===id)).filter(Boolean);
+          const distance=v=>Math.hypot((v.coords[0]-e.lngLat.lng)*Math.cos(e.lngLat.lat*Math.PI/180),v.coords[1]-e.lngLat.lat);
+          const known=candidates.sort((a,b)=>distance(a)-distance(b))[0];
+          const footprint=feature.toJSON().geometry,customId=footprintId(footprint);
+          const previous=privateRef.current.find(event=>event.venue.id===customId)?.venue;
+          const area=buildingArea({footprint}).coordinates[0],center=[(area[0][0]+area[2][0])/2,(area[0][1]+area[2][1])/2];
+          const venue=known || previous || cleanVenue({id:customId,name:'Pinned building',coords:center,footprint,featureId:feature.id});
+          hidePeek();buildingCallback.current?.(venue);return;
+        }
+        const ids=venuesAt(e);if(ids.length){hidePeek();venueCallback.current?.(ids);}
+      };
+      m.on('mousemove',hover);m.on('mouseout',hidePeek);m.on('dragstart',hidePeek);m.on('click',pick);
+      cleanups.push(()=>peek.remove());
       m.on('load',()=>!stopped&&setStatus('ready'));
       m.easeTo({center:UIC,offset:[0,0],duration:0});
       map.current=m;
     } catch { setStatus('error'); }
     const timeout=setTimeout(()=>{if(!stopped&&m&&!m.isStyleLoaded())setStatus('error');},18000);
     return ()=>{stopped=true;clearTimeout(timeout);cleanups.forEach(fn=>fn());m?.remove();map.current=null;};
-  },[retry,uicTiles.revision]);
-  useEffect(()=>{if(map.current)map.current.setStyle(styledMap(night));},[night]);
+  },[retry,uicTiles.revision,eventTiles.revision]);
+  useEffect(()=>{if(map.current)map.current.setStyle(styledMap(night,activeVenues.current,colorVenues.current));},[night]);
+  useEffect(()=>{
+    const m=map.current;if(!m)return;
+    let applied=false;
+    const update=()=>{
+      if(applied||!m.isStyleLoaded())return;
+      for(const layer of m.getStyle().layers.filter(l=>l.type==='fill-extrusion'))m.setPaintProperty(layer.id,'fill-extrusion-color',eventBuildingColor(night,activeVenues.current,colorVenues.current));
+      container.current.dataset.eventVenues=venueKey;container.current.dataset.privateVenues=privateKey;container.current.dataset.previewVenue=previewVenue?.id||'';applied=true;
+    };
+    const inspect=()=>{
+      if(!m.isStyleLoaded())return;
+      update();
+      const layers=m.getStyle().layers.filter(l=>l.type==='fill-extrusion').map(l=>l.id);
+      const rendered=m.queryRenderedFeatures({layers}).filter(f=>activeVenues.current.some(id=>String(f.properties.event_venues||'').includes(`|${id}|`)));
+      container.current.dataset.eventBuildings=JSON.stringify([...new Set(rendered.map(f=>f.properties.event_venues))]);
+    };
+    const restyle=()=>{applied=false;update();};
+    m.on('style.load',restyle);m.on('idle',inspect);update();
+    return()=>{m.off('style.load',restyle);m.off('idle',inspect);};
+  },[venueKey,privateKey,colorKey,night,retry]);
+  useEffect(()=>{
+    const m=map.current;if(!m||!focusedEvent?.venue)return;
+    const venue=focusedEvent.venue,el=document.createElement('div');el.className=`event-building-marker ${focusedEvent.source==='Private event'?'private-building-marker':''}`;
+    const dot=document.createElement('i'),label=document.createElement('span');label.textContent=venue.name;el.append(dot,label);
+    const marker=new maplibregl.Marker({element:el,anchor:'bottom'}).setLngLat(venue.coords).addTo(m);
+    m.flyTo({center:venue.coords,zoom:venue.kind==='outdoor'?16:17.2,pitch:54,bearing:0,roll:0,offset:[0,0],duration:1000});
+    container.current.dataset.focusedEventVenue=venue.id;
+    return()=>{marker.remove();delete container.current.dataset.focusedEventVenue;};
+  },[focusedEvent,retry]);
+  useEffect(()=>{
+    const m=map.current,venues=(focusedVenue||[]).map(id=>groupsRef.current[id]?.venue).filter(Boolean);if(!m||!venues.length)return;
+    const el=document.createElement('div');el.className='event-building-marker';
+    const dot=document.createElement('i'),label=document.createElement('span');label.textContent=venues.map(v=>v.name).join(' · ');el.append(dot,label);
+    const marker=new maplibregl.Marker({element:el,anchor:'bottom'}).setLngLat(venues[0].coords).addTo(m);
+    m.flyTo({center:venues[0].coords,zoom:Math.max(m.getZoom(),16.6),pitch:54,offset:window.innerWidth>760?[0,-230]:[0,-150],duration:900});
+    container.current.dataset.focusedVenue=venues.map(v=>v.id).join('|');
+    return()=>{marker.remove();delete container.current?.dataset.focusedVenue;};
+  },[focusedVenue?.join('|'),retry]);
   useEffect(()=>{
     markers.current.forEach(({marker,root})=>{marker.remove();setTimeout(()=>root.unmount(),0);});
     markers.current=[];
@@ -131,13 +237,30 @@ export default function Map({places,selected,onSelect,night,resetKey}) {
     return ()=>{cancelAnimationFrame(frame);sizes.disconnect();m.off('render',layout);m.off('resize',schedule);for(const name of ['pointerover','pointerout','focusin','focusout'])surface.removeEventListener(name,schedule);markers.current.forEach(({marker,root})=>{marker.remove();setTimeout(()=>root.unmount(),0);});markers.current=[];};
   },[places,selected,retry]);
   useEffect(()=>{if(selected&&map.current)map.current.flyTo({center:selected.coords,zoom:15.8,pitch:54,offset:window.innerWidth>760?[0,-220]:[0,-130],duration:900});},[selected]);
-  useEffect(()=>{if(map.current)map.current.flyTo({center:UIC,zoom:15.3,pitch:54,bearing:-22,offset:[0,0],duration:900});},[resetKey]);
+  useEffect(()=>{if(map.current&&resetKey>0)map.current.flyTo({center:UIC,zoom:15.3,pitch:54,bearing:-22,offset:[0,0],duration:900});},[resetKey]);
+  useEffect(()=>{
+    const m=map.current;if(!m)return;
+    const pins=privateRef.current.filter(event=>event.id!==focusedEvent?.id).map(event=>{
+      const el=document.createElement('button');el.className='private-event-pin';el.type='button';el.setAttribute('aria-label',`Show private event ${event.title}`);
+      const dot=document.createElement('i'),label=document.createElement('span');label.textContent=event.title;el.append(dot,label);
+      el.addEventListener('click',()=>{if(!pickingRef.current)privateCallback.current?.(event);});
+      return new maplibregl.Marker({element:el,anchor:'bottom'}).setLngLat(event.venue.coords).addTo(m);
+    });
+    return()=>pins.forEach(pin=>pin.remove());
+  },[privateKey,JSON.stringify(privateEvents.map(e=>[e.id,e.title])),focusedEvent?.id,retry]);
+  useEffect(()=>{
+    const m=map.current;if(!m||!previewVenue)return;
+    const el=document.createElement('div');el.className='event-building-marker private-building-marker event-pin-preview';
+    const dot=document.createElement('i'),label=document.createElement('span');label.textContent=previewVenue.name;el.append(dot,label);
+    const marker=new maplibregl.Marker({element:el,anchor:'bottom'}).setLngLat(previewVenue.coords).addTo(m);
+    return()=>marker.remove();
+  },[previewVenue,retry]);
   return <>
-    <div ref={container} className="map" aria-label="Interactive 3D world map, starting at UIC"/>
+    <div ref={container} className={`map ${pickingBuilding?'picking-building':''}`} aria-label="Interactive 3D world map, starting at UIC"/>
     <div className="map-vignette"/>
     {status!=='ready'&&<div className="map-status glass" role="status">{status==='loading'?'Loading Chicago…':<>Map unavailable. You can still browse every place.<button onClick={()=>setRetry(v=>v+1)}>Retry map</button></>}</div>}
 
-    <button className="uic-home" aria-label="Back to UIC main campus" title="Back to UIC main campus" onClick={()=>map.current?.flyTo({center:UIC,zoom:15.3,pitch:54,bearing:0,roll:0,offset:[0,0],duration:900})}>UIC</button><button className="align-map glass" aria-label="Align map north up, east right" title="Align north up · 45° 3D tilt" onClick={()=>map.current?.easeTo({bearing:0,roll:0,pitch:flat?0:45,duration:450})}>N</button>
+    <button className="uic-home" aria-label="Back to UIC main campus" title="Back to UIC main campus" onClick={()=>map.current?.flyTo({...HOME,offset:[0,0],duration:900})}>UIC</button><button className="align-map glass" aria-label="Align map north up, east right" title="Align north up · 45° 3D tilt" onClick={()=>map.current?.easeTo({bearing:0,roll:0,pitch:flat?0:45,duration:450})}>N</button>
     <div className="view-toggle glass" role="group" aria-label="Map perspective">
       <button aria-pressed={flat} onClick={()=>map.current?.easeTo({pitch:0,roll:0,duration:450})}>2D</button>
       <button aria-pressed={!flat} onClick={()=>map.current?.easeTo({pitch:45,roll:0,duration:450})}>3D</button>

@@ -1,0 +1,2643 @@
+{
+  "checked": "2026-10-05",
+  "venues": [
+    {
+      "id": "uic-0640",
+      "name": "Academic & Residential Complex",
+      "address": "940 West Harrison Street",
+      "coords": [
+        -87.651442,
+        41.874775
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0616",
+      "name": "Addams Hall",
+      "address": "830 South Halsted Street",
+      "coords": [
+        -87.649017,
+        41.870941
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0628",
+      "name": "Architecture and Design Studios",
+      "address": "845 West Harrison Street",
+      "coords": [
+        -87.64875,
+        41.873669
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0641",
+      "name": "Art and Exhibition Hall",
+      "address": "400 South Peoria Street",
+      "coords": [
+        -87.649857,
+        41.876442
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "gallery-400"
+      ]
+    },
+    {
+      "id": "uic-0618",
+      "name": "Behavioral Sciences Building",
+      "address": "1007 West Harrison Street",
+      "coords": [
+        -87.652695,
+        41.873768
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0617",
+      "name": "Burnham Hall",
+      "address": "828 South Halsted Street",
+      "coords": [
+        -87.64949,
+        41.870995
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0643",
+      "name": "Chemical Engineering Building",
+      "address": "810 South Clinton Street",
+      "coords": [
+        -87.641281,
+        41.87151
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0654",
+      "name": "Co-Generation Facility",
+      "address": "1120 South Morgan Street",
+      "coords": [
+        -87.652436,
+        41.867587
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0642",
+      "name": "College of Urban Planning & Public Affairs  Hall",
+      "address": "412 South Peoria Street",
+      "coords": [
+        -87.64986,
+        41.876112
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0649",
+      "name": "Computer Design Research and Learning Center",
+      "address": "850 W. Taylor Street",
+      "coords": [
+        -87.6495282036285,
+        41.870019503249715
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0638",
+      "name": "Credit Union 1 Arena",
+      "address": "525 South Racine Avenue",
+      "coords": [
+        -87.656219,
+        41.87484
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0613",
+      "name": "Douglass Hall",
+      "address": "705 South Morgan Street",
+      "coords": [
+        -87.649094,
+        41.872822
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0623",
+      "name": "Education, Theatre, Music and Social Work",
+      "address": "1040 West Harrison Street",
+      "coords": [
+        -87.653053,
+        41.874947
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0629",
+      "name": "Engineering Innovation Building",
+      "address": "929 West Taylor Street",
+      "coords": [
+        -87.650123,
+        41.869101
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0648",
+      "name": "Engineering Research Facility",
+      "address": "842 West Taylor Street",
+      "coords": [
+        -87.647926,
+        41.869904
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0646",
+      "name": "Flames Athletic Center",
+      "address": "839 West Roosevelt Road",
+      "coords": [
+        -87.648392,
+        41.866634
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0612",
+      "name": "Grant Hall",
+      "address": "703 South Morgan Street",
+      "coords": [
+        -87.649506,
+        41.872856
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0626",
+      "name": "Henry Hall",
+      "address": "935 West Harrison Street",
+      "coords": [
+        -87.650558,
+        41.874081
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0670",
+      "name": "Jane Addams Hull-House Museum",
+      "address": "800 South Halsted Street",
+      "coords": [
+        -87.647415,
+        41.871655
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0671",
+      "name": "Jane Addams' Hull-House Dining Hall",
+      "address": "800 South Halsted Street",
+      "coords": [
+        -87.647453,
+        41.871353
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0602",
+      "name": "Jefferson Hall",
+      "address": "929 West Harrison Street",
+      "coords": [
+        -87.65023,
+        41.873981
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0604A",
+      "name": "Lecture Center Building A",
+      "address": "805 South Morgan Street",
+      "coords": [
+        -87.649818,
+        41.872108
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0604B",
+      "name": "Lecture Center Building B",
+      "address": "803 South Morgan Street",
+      "coords": [
+        -87.649292,
+        41.872192
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0604C",
+      "name": "Lecture Center Building C",
+      "address": "802 South Halsted Street",
+      "coords": [
+        -87.648697,
+        41.872124
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0604D",
+      "name": "Lecture Center Building D",
+      "address": "804 South Halsted Street",
+      "coords": [
+        -87.648727,
+        41.871681
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0604E",
+      "name": "Lecture Center Building E",
+      "address": "806 South Halsted Street",
+      "coords": [
+        -87.649246,
+        41.871605
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0604F",
+      "name": "Lecture Center Building F",
+      "address": "807 South Morgan Street",
+      "coords": [
+        -87.649841,
+        41.871658
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0614",
+      "name": "Lincoln Hall",
+      "address": "707 South Morgan Street",
+      "coords": [
+        -87.649292,
+        41.872482
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0677",
+      "name": "Maxwell Street Parking Structure",
+      "address": "701 W. Maxwell Street",
+      "coords": [
+        -87.645393,
+        41.864586
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0633",
+      "name": "Physical Education Building",
+      "address": "901 West Roosevelt Street",
+      "coords": [
+        -87.64962,
+        41.86665
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0611",
+      "name": "Physical Plant Building",
+      "address": "1140 S Morgan Street",
+      "coords": [
+        -87.651779,
+        41.867619
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0635",
+      "name": "Plant Research Laboratory",
+      "address": "1020 South Union Street",
+      "coords": [
+        -87.646172,
+        41.869183
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0609",
+      "name": "Richard J. Daley Library",
+      "address": "801 South Morgan Street",
+      "coords": [
+        -87.650505,
+        41.87196
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0621",
+      "name": "Roosevelt Road Building",
+      "address": "728 West Roosevelt Road",
+      "coords": [
+        -87.645714,
+        41.867905
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0607",
+      "name": "Science & Engineering Laboratory East",
+      "address": "950 South Halsted Street",
+      "coords": [
+        -87.647995,
+        41.870365
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0608",
+      "name": "Science & Engineering Laboratory West",
+      "address": "900 West Taylor Street",
+      "coords": [
+        -87.64904,
+        41.870426
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0631",
+      "name": "Science & Engineering Offices",
+      "address": "851 South Morgan Street",
+      "coords": [
+        -87.650475,
+        41.870899
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0619",
+      "name": "Science & Engineering South",
+      "address": "845 West Taylor Street",
+      "coords": [
+        -87.648315,
+        41.868958
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0627",
+      "name": "Stevenson Hall",
+      "address": "701 South Morgan Street",
+      "coords": [
+        -87.650345,
+        41.872864
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0630",
+      "name": "Student Recreation Facility",
+      "address": "737 South Halsted Street",
+      "coords": [
+        -87.646355,
+        41.872547
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0644C",
+      "name": "Student Residence and Commons Courtyard",
+      "address": "600 South Halsted Street",
+      "coords": [
+        -87.64801,
+        41.874039
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0644N",
+      "name": "Student Residence and Commons North",
+      "address": "650 South Halsted Street",
+      "coords": [
+        -87.647446,
+        41.873608
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0644S",
+      "name": "Student Residence and Commons South",
+      "address": "700 South Halsted Street",
+      "coords": [
+        -87.647812,
+        41.873158
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0644W",
+      "name": "Student Residence and Commons West",
+      "address": "901 West Harrison Street",
+      "coords": [
+        -87.6492,
+        41.874233
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0655",
+      "name": "Student Services Building",
+      "address": "1200 West Harrison Street",
+      "coords": [
+        -87.657806,
+        41.874817
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0615",
+      "name": "Taft Hall",
+      "address": "826 South Halsted Street",
+      "coords": [
+        -87.649261,
+        41.871292
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0690",
+      "name": "Taylor Street Building",
+      "address": "1101 West Taylor Street",
+      "coords": [
+        -87.654503,
+        41.86932
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0689",
+      "name": "Teaching Excellence Building",
+      "address": "924 South Morgan Street",
+      "coords": [
+        -87.65139229717445,
+        41.86970045591483
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0657",
+      "name": "Transportation Facility",
+      "address": "1351 South Morgan Street",
+      "coords": [
+        -87.650574,
+        41.864029
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0656",
+      "name": "UIC Police Station",
+      "address": "943 West Maxwell Street",
+      "coords": [
+        -87.650665,
+        41.864494
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0605",
+      "name": "UIC Student Center East",
+      "address": "750 South Halsted Street",
+      "coords": [
+        -87.647964,
+        41.871967
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0606",
+      "name": "UIC Student Center East Tower",
+      "address": "710 South Halsted Street",
+      "coords": [
+        -87.647865,
+        41.87281
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0624",
+      "name": "UIC Theatre",
+      "address": "1044 West Harrison Street",
+      "coords": [
+        -87.653343,
+        41.874573
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0601",
+      "name": "University Hall",
+      "address": "601 South Morgan Street",
+      "coords": [
+        -87.65103,
+        41.873731
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0610",
+      "name": "Utilities Building",
+      "address": "1100 South Morgan Street",
+      "coords": [
+        -87.651665,
+        41.868465
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0980",
+      "name": "2242 West Harrison",
+      "address": "2242 West Harrison Street",
+      "coords": [
+        -87.682861,
+        41.874619
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0981",
+      "name": "5525 South Pulaski Road Building",
+      "address": "5525 S Pulaski Rd",
+      "coords": [
+        -87.72272914530734,
+        41.79263955161966
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0941",
+      "name": "Administrative Office Building",
+      "address": "1737 West Polk Street",
+      "coords": [
+        -87.670624,
+        41.871296
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0916",
+      "name": "Applied Health Sciences Building",
+      "address": "1919 West Taylor Street",
+      "coords": [
+        -87.674812,
+        41.868362
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0933",
+      "name": "Benjamin Goldberg Research Center",
+      "address": "1940 West Taylor Street",
+      "coords": [
+        -87.675522,
+        41.869476
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0932",
+      "name": "Biologic Resources Laboratory",
+      "address": "1840 West Taylor Street",
+      "coords": [
+        -87.672821,
+        41.869492
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0976",
+      "name": "Center for Structural Biology",
+      "address": "1100 South Ashland Avenue",
+      "coords": [
+        -87.666862,
+        41.868164
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0920",
+      "name": "Clinical Sciences Building",
+      "address": "840 South Wood Street",
+      "coords": [
+        -87.672035,
+        41.870621
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0911",
+      "name": "Clinical Sciences North",
+      "address": "820 South Wood Street",
+      "coords": [
+        -87.672653,
+        41.870872
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0940",
+      "name": "College of Dentistry",
+      "address": "801 South Paulina Street",
+      "coords": [
+        -87.668396,
+        41.871059
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0910",
+      "name": "College of Medicine East Tower",
+      "address": "808 South Wood Street",
+      "coords": [
+        -87.671761,
+        41.871254
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0934",
+      "name": "College of Medicine Research Building",
+      "address": "909 South Wolcott Avenue",
+      "coords": [
+        -87.673401,
+        41.869728
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0908",
+      "name": "College of Medicine West",
+      "address": "1819 West Polk Street",
+      "coords": [
+        -87.672409,
+        41.8713
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0909",
+      "name": "College of Medicine West Tower",
+      "address": "1853 West Polk Street",
+      "coords": [
+        -87.673256,
+        41.871292
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0936",
+      "name": "College of Nursing",
+      "address": "845 South Damen Avenue",
+      "coords": [
+        -87.675385,
+        41.870064
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0924",
+      "name": "College of Pharmacy",
+      "address": "833 South Wood Street",
+      "coords": [
+        -87.67086,
+        41.870621
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0974",
+      "name": "Disability, Health and Social Policy Building",
+      "address": "1640 West Roosevelt Road",
+      "coords": [
+        -87.667854,
+        41.867546
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0931",
+      "name": "Environmental Health and Safety Offices",
+      "address": "1129 South Hermitage Avenue",
+      "coords": [
+        -87.669746,
+        41.867485
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0902",
+      "name": "Eye and Ear Infirmary",
+      "address": "1855 West Taylor Street",
+      "coords": [
+        -87.67308,
+        41.868805
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0907",
+      "name": "Human Resources Building",
+      "address": "715 South Wood Street",
+      "coords": [
+        -87.671165,
+        41.872276
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0965",
+      "name": "Incubator Laboratory Facility",
+      "address": "2201 W Campbell Park Drive",
+      "coords": [
+        -87.681885,
+        41.872311
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0972",
+      "name": "Laflin Warehouse Building",
+      "address": "1515 West 15th Street",
+      "coords": [
+        -87.664597,
+        41.861248
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0942",
+      "name": "Library of the Health Sciences",
+      "address": "1750 West Polk Street",
+      "coords": [
+        -87.670929,
+        41.871887
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0957",
+      "name": "Lions of Illinois Eye Research Institute",
+      "address": "1905 West Taylor Street",
+      "coords": [
+        -87.67408,
+        41.868885
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0922",
+      "name": "Marshfield Avenue Building",
+      "address": "809 South Marshfield Avenue",
+      "coords": [
+        -87.667419,
+        41.871185
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0914",
+      "name": "Medical Center Administration Building",
+      "address": "914 South Wood Street",
+      "coords": [
+        -87.672516,
+        41.869953
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0935",
+      "name": "Medical Sciences Building",
+      "address": "835 South Wolcott Avenue",
+      "coords": [
+        -87.673386,
+        41.87056
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0929",
+      "name": "Mile Square Health Center",
+      "address": "1220 South Wood Street",
+      "coords": [
+        -87.67207,
+        41.866365
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0919",
+      "name": "Molecular Biology Research Building",
+      "address": "900 South Ashland Avenue",
+      "coords": [
+        -87.666946,
+        41.870823
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0918",
+      "name": "NMR Laboratories",
+      "address": "830 South Wood Street",
+      "coords": [
+        -87.672791,
+        41.870556
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0950",
+      "name": "Neuropsychiatric Institute",
+      "address": "912 South Wood Street",
+      "coords": [
+        -87.671768,
+        41.870037
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0959",
+      "name": "On the Mall",
+      "address": "1717 West Polk Street",
+      "coords": [
+        -87.669853,
+        41.871387
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0948",
+      "name": "Outpatient Care Center",
+      "address": "1801 West Taylor Street",
+      "coords": [
+        -87.671867,
+        41.869041
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0963",
+      "name": "Paulina Street Building",
+      "address": "1140 South Paulina Street",
+      "coords": [
+        -87.669243,
+        41.867508
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0937",
+      "name": "Polk Street Residence Hall",
+      "address": "1933 West Polk Street",
+      "coords": [
+        -87.675224,
+        41.871132
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0975",
+      "name": "School of Public Health and Psychiatric Institute",
+      "address": "1601 West Taylor Street",
+      "coords": [
+        -87.667709,
+        41.868649
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0930",
+      "name": "School of Public Health-West",
+      "address": "2121 West Taylor Street",
+      "coords": [
+        -87.679245,
+        41.868633
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0951",
+      "name": "Single Student Residence",
+      "address": "809 South Damen Avenue",
+      "coords": [
+        -87.675705,
+        41.871162
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0923",
+      "name": "Student Residence Hall",
+      "address": "818 South Wolcott Aveunue",
+      "coords": [
+        -87.674408,
+        41.871197
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0947",
+      "name": "UI Health Specialty Care Building",
+      "address": "1009 South Wood Street",
+      "coords": [
+        -87.67122783088271,
+        41.869024334813425
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0953",
+      "name": "UIC Sport and Fitness Center",
+      "address": "829 South Damen Avenue",
+      "coords": [
+        -87.675529,
+        41.87056
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0938",
+      "name": "UIC Student Center West",
+      "address": "828 South Wolcott Avenue",
+      "coords": [
+        -87.674561,
+        41.870762
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0949",
+      "name": "University of Illinois Hospital",
+      "address": "1740 West Taylor Street",
+      "coords": [
+        -87.6705,
+        41.869677
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0977",
+      "name": "Westside Research Office Building",
+      "address": "1747 West Roosevelt Road",
+      "coords": [
+        -87.670631,
+        41.866413
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0672",
+      "name": "1253 South Halsted Street",
+      "address": "1253 South Halsted Street",
+      "coords": [
+        -87.646591,
+        41.865646
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0673",
+      "name": "1309 South Halsted Street",
+      "address": "1309 South Halsted Street",
+      "coords": [
+        -87.646591,
+        41.865139
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0675",
+      "name": "1333 South Halsted Street",
+      "address": "1333 South Halsted Street",
+      "coords": [
+        -87.646591,
+        41.864494
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0674",
+      "name": "722 West Maxwell Street",
+      "address": "722 West Maxwell Street",
+      "coords": [
+        -87.646133,
+        41.86499
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0668",
+      "name": "Curtis Granderson Stadium",
+      "address": "900 West Maxwell Street",
+      "coords": [
+        -87.649525,
+        41.864895
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0691",
+      "name": "Flames Field Press Box",
+      "address": "901 West Roosevelt Road",
+      "coords": [
+        -87.65078757224066,
+        41.865518789371485
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0667",
+      "name": "Isadore and Sadie Dorin Forum",
+      "address": "725 West Roosevelt Road",
+      "coords": [
+        -87.645699,
+        41.866833
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0665",
+      "name": "James J. Stukel Towers",
+      "address": "718 West Rochford Street",
+      "coords": [
+        -87.646027,
+        41.866245
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0664",
+      "name": "Marie Robinson Hall",
+      "address": "811 West Maxwell Street",
+      "coords": [
+        -87.6474,
+        41.864323
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0663",
+      "name": "Thomas Beckham Hall",
+      "address": "1250 South Halsted Street",
+      "coords": [
+        -87.647408,
+        41.865372
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0681",
+      "name": "UIC LAW: 19 West Jackson Blvd",
+      "address": "19 West Jackson Blvd",
+      "coords": [
+        -87.628522,
+        41.878086
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0682",
+      "name": "UIC LAW: 300 South State Street",
+      "address": "300 South State Street",
+      "coords": [
+        -87.628019,
+        41.877972
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0680",
+      "name": "UIC LAW: 315 South Plymouth Court",
+      "address": "315 South Plymouth Court",
+      "coords": [
+        -87.628477,
+        41.8777
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "uic-0683",
+      "name": "UIC LAW: 321 South Plymouth Court",
+      "address": "321 South Plymouth Court",
+      "coords": [
+        -87.628467,
+        41.877299
+      ],
+      "source": "https://maps.uic.edu/Maps",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "osm-node-6970180942",
+      "name": "Greater Chicago Food Depository",
+      "address": "4100 W Ann Lurie Pl",
+      "coords": [
+        -87.7268735,
+        41.8173168
+      ],
+      "kind": "building",
+      "source": "https://www.openstreetmap.org/node/6970180942",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "osm-node-3988653236",
+      "name": "National Veterans Art Museum",
+      "address": "4041 N Milwaukee Ave",
+      "coords": [
+        -87.7486367,
+        41.9543845
+      ],
+      "kind": "building",
+      "source": "https://www.openstreetmap.org/node/3988653236",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "osm-way-381823994",
+      "name": "Randolph Street marathon meeting location",
+      "address": "331 E Randolph St",
+      "coords": [
+        -87.6203678,
+        41.8842243
+      ],
+      "kind": "outdoor",
+      "source": "https://www.openstreetmap.org/way/381823994",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "osm-way-31466873",
+      "name": "Brookfield Zoo",
+      "address": "3300 Golf Rd",
+      "coords": [
+        -87.8358055,
+        41.831572
+      ],
+      "kind": "outdoor",
+      "source": "https://www.openstreetmap.org/way/31466873",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "osm-way-24091938",
+      "name": "2216 S Wentworth Ave",
+      "address": "2216 S Wentworth Ave",
+      "coords": [
+        -87.6321115,
+        41.852346
+      ],
+      "kind": "building",
+      "source": "https://www.openstreetmap.org/way/24091938",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "osm-way-24088510",
+      "name": "723 W Maxwell St",
+      "address": "723 W Maxwell St",
+      "coords": [
+        -87.6461098,
+        41.8647128
+      ],
+      "kind": "building",
+      "source": "https://www.openstreetmap.org/way/24088510",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "osm-way-210671540",
+      "name": "Cadillac Palace Theatre",
+      "address": "151 W Randolph St",
+      "coords": [
+        -87.6331821,
+        41.884074
+      ],
+      "kind": "building",
+      "source": "https://www.openstreetmap.org/way/210671540",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "osm-way-144015996",
+      "name": "The Newberry Library",
+      "address": "60 W Walton St",
+      "coords": [
+        -87.6303045,
+        41.9001632
+      ],
+      "kind": "building",
+      "source": "https://www.openstreetmap.org/way/144015996",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "soldier-field",
+      "name": "Soldier Field",
+      "address": "1410 S Museum Campus Drive",
+      "coords": [
+        -87.6176477,
+        41.8623356
+      ],
+      "source": "https://www.openstreetmap.org/relation/16699535",
+      "checked": "2026-10-05",
+      "aliases": []
+    },
+    {
+      "id": "art-institute",
+      "name": "Art Institute of Chicago",
+      "address": "111 S Michigan Ave",
+      "coords": [
+        -87.6237,
+        41.8796
+      ],
+      "source": "https://www.artic.edu/visit",
+      "checked": "2026-10-05",
+      "placeIds": [
+        "art-institute"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "field-museum",
+      "name": "Field Museum",
+      "address": "1400 S Lake Shore Dr",
+      "coords": [
+        -87.616891,
+        41.866222
+      ],
+      "source": "https://www.fieldmuseum.org/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "field-museum"
+      ]
+    },
+    {
+      "id": "navy-pier",
+      "name": "Navy Pier",
+      "address": "600 E Grand Ave",
+      "coords": [
+        -87.604145,
+        41.8918
+      ],
+      "source": "https://navypier.org/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "navy-pier"
+      ]
+    },
+    {
+      "id": "mca",
+      "name": "Museum of Contemporary Art Chicago",
+      "address": "220 E Chicago Ave",
+      "coords": [
+        -87.6211,
+        41.8972
+      ],
+      "source": "https://mcachicago.org/visit",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "mca"
+      ]
+    },
+    {
+      "id": "nmma",
+      "name": "National Museum of Mexican Art",
+      "address": "1852 W 19th St",
+      "coords": [
+        -87.673,
+        41.8561
+      ],
+      "source": "https://www.nationalmuseumofmexicanart.org/visit",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "nmma"
+      ]
+    },
+    {
+      "id": "lincoln-park-zoo",
+      "name": "Lincoln Park Zoo",
+      "address": "2001 N Clark St",
+      "coords": [
+        -87.6338,
+        41.9213
+      ],
+      "source": "https://www.lpzoo.org/visit/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "lincoln-park-zoo"
+      ],
+      "kind": "outdoor"
+    },
+    {
+      "id": "busy-burger",
+      "name": "Busy Burger",
+      "address": "1120 W Taylor St",
+      "coords": [
+        -87.655,
+        41.8696
+      ],
+      "source": "https://usg.uic.edu/uic-student-discount-guide/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "busy-burger"
+      ]
+    },
+    {
+      "id": "two-shades",
+      "name": "Two Shades Cafe",
+      "address": "1152 W Taylor St",
+      "coords": [
+        -87.6566,
+        41.8695
+      ],
+      "source": "https://usg.uic.edu/uic-student-discount-guide/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "two-shades"
+      ]
+    },
+    {
+      "id": "first-ascent",
+      "name": "First Ascent · Block 37",
+      "address": "108 N State St · 4th floor",
+      "coords": [
+        -87.628566,
+        41.883878
+      ],
+      "source": "https://www.openstreetmap.org/way/124865494",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "first-ascent"
+      ]
+    },
+    {
+      "id": "three-run-two",
+      "name": "3RUN2 · University Village",
+      "address": "Maxwell St cul-de-sac, west of Halsted",
+      "coords": [
+        -87.648,
+        41.8646
+      ],
+      "source": "https://www.threeruntwo.com/schedule2025",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "three-run-two"
+      ],
+      "kind": "outdoor"
+    },
+    {
+      "id": "cairo-kebab",
+      "name": "Cairo Kebab",
+      "address": "730 W Maxwell St",
+      "coords": [
+        -87.6457,
+        41.8647
+      ],
+      "source": "https://usg.uic.edu/uic-student-discount-guide/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "cairo-kebab"
+      ]
+    },
+    {
+      "id": "ml-kitchen",
+      "name": "ML Kitchen",
+      "address": "1138 W Taylor St",
+      "coords": [
+        -87.6558,
+        41.8697
+      ],
+      "source": "https://usg.uic.edu/uic-student-discount-guide/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "ml-kitchen"
+      ]
+    },
+    {
+      "id": "de-pasada",
+      "name": "De Pasada",
+      "address": "1517 W Taylor St",
+      "coords": [
+        -87.6648,
+        41.8691
+      ],
+      "source": "https://usg.uic.edu/uic-student-discount-guide/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "de-pasada"
+      ]
+    },
+    {
+      "id": "azul-18",
+      "name": "Azul 18 on Taylor",
+      "address": "1230 W Taylor St",
+      "coords": [
+        -87.6581,
+        41.8695
+      ],
+      "source": "https://usg.uic.edu/uic-student-discount-guide/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "azul-18"
+      ]
+    },
+    {
+      "id": "jims-original",
+      "name": "Jim's Original",
+      "address": "1250 S Union Ave",
+      "coords": [
+        -87.6452,
+        41.8657
+      ],
+      "source": "https://usg.uic.edu/uic-student-discount-guide/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "jims-original"
+      ]
+    },
+    {
+      "id": "primos",
+      "name": "Primo's Chicago Pizza",
+      "address": "816 W Van Buren St",
+      "coords": [
+        -87.6482,
+        41.8768
+      ],
+      "source": "https://usg.uic.edu/uic-student-discount-guide/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "primos"
+      ]
+    },
+    {
+      "id": "ghareeb-nawaz",
+      "name": "Ghareeb Nawaz",
+      "address": "807 W Roosevelt Rd",
+      "coords": [
+        -87.6473,
+        41.8665
+      ],
+      "source": "https://usg.uic.edu/uic-student-discount-guide/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "ghareeb-nawaz"
+      ]
+    },
+    {
+      "id": "als-beef",
+      "name": "Al's #1 Italian Beef",
+      "address": "1079 W Taylor St",
+      "coords": [
+        -87.654,
+        41.8693
+      ],
+      "source": "https://usg.uic.edu/uic-student-discount-guide/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "als-beef"
+      ]
+    },
+    {
+      "id": "jenis",
+      "name": "Jeni's Splendid Ice Creams",
+      "address": "908 W Randolph St",
+      "coords": [
+        -87.6502,
+        41.8847
+      ],
+      "source": "https://usg.uic.edu/uic-student-discount-guide/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "jenis"
+      ]
+    },
+    {
+      "id": "cultural-center",
+      "name": "Chicago Cultural Center",
+      "address": "78 E Washington St",
+      "coords": [
+        -87.6248,
+        41.8839
+      ],
+      "source": "https://www.chicago.gov/city/en/depts/dca/supp_info/chicago_culturalcenter.html",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "cultural-center"
+      ]
+    },
+    {
+      "id": "design-museum",
+      "name": "Design Museum of Chicago",
+      "address": "72 E Randolph St",
+      "coords": [
+        -87.6254,
+        41.8848
+      ],
+      "source": "https://www.designchicago.org/visit",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "design-museum"
+      ]
+    },
+    {
+      "id": "mocp",
+      "name": "Museum of Contemporary Photography",
+      "address": "600 S Michigan Ave",
+      "coords": [
+        -87.6251,
+        41.8738
+      ],
+      "source": "https://www.mocp.org/visit/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "mocp"
+      ]
+    },
+    {
+      "id": "gamespace",
+      "name": "Chicago Gamespace",
+      "address": "2418 W Bloomingdale Ave",
+      "coords": [
+        -87.6882,
+        41.9142
+      ],
+      "source": "https://cada.uic.edu/museum-admission/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "gamespace"
+      ]
+    },
+    {
+      "id": "chipotle",
+      "name": "Chipotle · Clinton & Roosevelt",
+      "address": "1132 S Clinton St",
+      "coords": [
+        -87.641,
+        41.868
+      ],
+      "source": "https://usg.uic.edu/uic-student-discount-guide/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "chipotle"
+      ]
+    },
+    {
+      "id": "papa-johns",
+      "name": "Papa John's · Taylor Street",
+      "address": "1151 W Taylor St",
+      "coords": [
+        -87.6566,
+        41.8693
+      ],
+      "source": "https://locations.papajohns.com/united-states/il/60607/chicago/1151-w-taylor-st",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "papa-johns"
+      ]
+    },
+    {
+      "id": "taco-bell",
+      "name": "Taco Bell · Taylor Street",
+      "address": "1429 W Taylor St",
+      "coords": [
+        -87.6627,
+        41.8692
+      ],
+      "source": "https://locations.tacobell.com/il/chicago/1429-w-taylor-st.html",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "taco-bell"
+      ]
+    },
+    {
+      "id": "portillos",
+      "name": "Portillo's · Canal & Taylor",
+      "address": "520 W Taylor St",
+      "coords": [
+        -87.6402,
+        41.8703
+      ],
+      "source": "https://www.yelp.com/biz/portillos-chicago-canal-and-taylor-chicago",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "portillos"
+      ]
+    },
+    {
+      "id": "starbucks-uv",
+      "name": "Starbucks · University Village",
+      "address": "1328 S Halsted St",
+      "coords": [
+        -87.6471,
+        41.8646
+      ],
+      "source": "https://uvmaxwellstreet.com/item/starbucks/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "starbucks-uv"
+      ]
+    },
+    {
+      "id": "subway-uv",
+      "name": "Subway · University Village",
+      "address": "1252 S Halsted St",
+      "coords": [
+        -87.6471,
+        41.8656
+      ],
+      "source": "https://www.yelp.com/biz/subway-chicago-607",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "subway-uv"
+      ]
+    },
+    {
+      "id": "fontanos-subs",
+      "name": "Fontano's Subs",
+      "address": "1058 W Polk St",
+      "coords": [
+        -87.653432,
+        41.872051
+      ],
+      "source": "https://usg.uic.edu/uic-student-discount-guide/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "fontanos-subs"
+      ]
+    },
+    {
+      "id": "mr-greek-gyros",
+      "name": "Mr. Greek Gyros",
+      "address": "234 S Halsted St",
+      "coords": [
+        -87.647403,
+        41.87807
+      ],
+      "source": "https://usg.uic.edu/uic-student-discount-guide/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "mr-greek-gyros"
+      ]
+    },
+    {
+      "id": "thai-bowl",
+      "name": "Thai Bowl",
+      "address": "1049 W Taylor St",
+      "coords": [
+        -87.653058,
+        41.869308
+      ],
+      "source": "https://life.uic.edu/news-stories/top-5-lunch-spots",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "thai-bowl"
+      ]
+    },
+    {
+      "id": "lotus-cafe",
+      "name": "Lotus Cafe & Banh Mi",
+      "address": "719 W Maxwell St",
+      "coords": [
+        -87.645908,
+        41.864633
+      ],
+      "source": "https://lotusbanhmi.com/university-village-menu/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "lotus-cafe"
+      ]
+    },
+    {
+      "id": "pompei",
+      "name": "Pompei",
+      "address": "1531 W Taylor St",
+      "coords": [
+        -87.665537,
+        41.869116
+      ],
+      "source": "https://www.pompeiusa.com",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "pompei"
+      ]
+    },
+    {
+      "id": "conte-di-savoia",
+      "name": "Conte Di Savoia",
+      "address": "1438 W Taylor St",
+      "coords": [
+        -87.663269,
+        41.869447
+      ],
+      "source": "https://www.contedisavoia.com/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "conte-di-savoia"
+      ]
+    },
+    {
+      "id": "sweet-maple",
+      "name": "Sweet Maple Cafe",
+      "address": "1339 W Taylor St",
+      "coords": [
+        -87.660741,
+        41.869171
+      ],
+      "source": "https://www.sweetmaplecafechicago.com/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "sweet-maple"
+      ]
+    },
+    {
+      "id": "stax-cafe",
+      "name": "Stax Cafe",
+      "address": "1401 W Taylor St",
+      "coords": [
+        -87.661817,
+        41.86916
+      ],
+      "source": "https://www.yelp.com/biz/stax-cafe-chicago",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "stax-cafe"
+      ]
+    },
+    {
+      "id": "rosatis",
+      "name": "Rosati’s Pizza · Halsted",
+      "address": "1339 S Halsted St",
+      "coords": [
+        -87.646696,
+        41.864264
+      ],
+      "source": "https://www.rosatispizza.com/location/chicago-il-south-loop-halsted-st",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "rosatis"
+      ]
+    },
+    {
+      "id": "greek-islands",
+      "name": "Greek Islands",
+      "address": "200 S Halsted St",
+      "coords": [
+        -87.647509,
+        41.878985
+      ],
+      "source": "https://greekislands.net/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "greek-islands"
+      ]
+    },
+    {
+      "id": "lou-mitchells",
+      "name": "Lou Mitchell’s",
+      "address": "565 W Jackson Blvd",
+      "coords": [
+        -87.642136,
+        41.877824
+      ],
+      "source": "https://www.yelp.com/biz/lou-mitchells-chicago",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "lou-mitchells"
+      ]
+    },
+    {
+      "id": "mr-beef",
+      "name": "Mr. Beef",
+      "address": "666 N Orleans St",
+      "coords": [
+        -87.637373,
+        41.894423
+      ],
+      "source": "https://www.yelp.com/biz/mr-beef-chicago-5",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "mr-beef"
+      ]
+    },
+    {
+      "id": "au-cheval",
+      "name": "Au Cheval",
+      "address": "800 W Randolph St",
+      "coords": [
+        -87.647601,
+        41.884707
+      ],
+      "source": "https://www.auchevaldiner.com/chicago/about",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "au-cheval"
+      ]
+    },
+    {
+      "id": "girl-and-the-goat",
+      "name": "Girl & the Goat",
+      "address": "809 W Randolph St",
+      "coords": [
+        -87.647939,
+        41.884111
+      ],
+      "source": "https://girlandthegoat.com/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "girl-and-the-goat"
+      ]
+    },
+    {
+      "id": "joy-yee",
+      "name": "Joy Yee Noodle",
+      "address": "2139 S China Pl",
+      "coords": [
+        -87.633876,
+        41.854074
+      ],
+      "source": "https://joyyee.com/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "joy-yee"
+      ]
+    },
+    {
+      "id": "carnitas-uruapan",
+      "name": "Carnitas Uruapan",
+      "address": "1725 W 18th St",
+      "coords": [
+        -87.669696,
+        41.857596
+      ],
+      "source": "https://www.carnitasuruapanchi.com/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "carnitas-uruapan"
+      ]
+    },
+    {
+      "id": "lou-malnatis-south-loop",
+      "name": "Lou Malnati’s · South Loop",
+      "address": "805 S State St",
+      "coords": [
+        -87.627339,
+        41.871553
+      ],
+      "source": "https://www.loumalnatis.com/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "lou-malnatis-south-loop"
+      ]
+    },
+    {
+      "id": "scafuri",
+      "name": "Scafuri Bakery",
+      "address": "1337 W Taylor St",
+      "coords": [
+        -87.660653,
+        41.869174
+      ],
+      "source": "https://scafuribakery.com",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "scafuri"
+      ]
+    },
+    {
+      "id": "kristoffers",
+      "name": "Kristoffer’s Cafe & Bakery",
+      "address": "1733 S Halsted St",
+      "coords": [
+        -87.646445,
+        41.858146
+      ],
+      "source": "https://kristofferscakes.com/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "kristoffers"
+      ]
+    },
+    {
+      "id": "cafe-jumping-bean",
+      "name": "Cafe Jumping Bean",
+      "address": "1439 W 18th St",
+      "coords": [
+        -87.662812,
+        41.857724
+      ],
+      "source": "https://www.yelp.com/biz/cafe-jumping-bean-chicago",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "cafe-jumping-bean"
+      ]
+    },
+    {
+      "id": "sawada-coffee",
+      "name": "Sawada Coffee",
+      "address": "112 N Green St",
+      "coords": [
+        -87.648757,
+        41.883657
+      ],
+      "source": "https://sawadacoffee.com/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "sawada-coffee"
+      ]
+    },
+    {
+      "id": "ipsento-606",
+      "name": "Ipsento 606",
+      "address": "1813 N Milwaukee Ave",
+      "coords": [
+        -87.683279,
+        41.914427
+      ],
+      "source": "https://www.ipsento.com/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "ipsento-606"
+      ]
+    },
+    {
+      "id": "little-joes",
+      "name": "Little Joe’s",
+      "address": "1041 W Taylor St",
+      "coords": [
+        -87.652773,
+        41.869307
+      ],
+      "source": "https://www.yelp.com/biz/little-joes-chicago-3",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "little-joes"
+      ]
+    },
+    {
+      "id": "kumiko",
+      "name": "Kumiko",
+      "address": "630 W Lake St",
+      "coords": [
+        -87.644065,
+        41.885868
+      ],
+      "source": "https://barkumiko.com/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "kumiko"
+      ]
+    },
+    {
+      "id": "big-star",
+      "name": "Big Star",
+      "address": "1531 N Damen Ave",
+      "coords": [
+        -87.677128,
+        41.909174
+      ],
+      "source": "https://www.bigstarchicago.com/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "big-star"
+      ]
+    },
+    {
+      "id": "emporium-wicker",
+      "name": "Emporium Arcade Bar",
+      "address": "1366 N Milwaukee Ave",
+      "coords": [
+        -87.671848,
+        41.906454
+      ],
+      "source": "https://www.emporiumarcadebar.com/locations/chicago/wicker-park/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "emporium-wicker"
+      ]
+    },
+    {
+      "id": "logan-arcade",
+      "name": "Logan Arcade",
+      "address": "2410 W Fullerton Ave",
+      "coords": [
+        -87.688126,
+        41.925138
+      ],
+      "source": "https://www.loganarcade.com/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "logan-arcade"
+      ]
+    },
+    {
+      "id": "murphys-bleachers",
+      "name": "Murphy’s Bleachers",
+      "address": "3655 N Sheffield Ave",
+      "coords": [
+        -87.654024,
+        41.948906
+      ],
+      "source": "https://murphysbleachers.com/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "murphys-bleachers"
+      ]
+    },
+    {
+      "id": "sluggers",
+      "name": "Sluggers",
+      "address": "3540 N Clark St",
+      "coords": [
+        -87.656322,
+        41.946616
+      ],
+      "source": "https://www.sluggersbar.com/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "sluggers"
+      ]
+    },
+    {
+      "id": "simones",
+      "name": "Simone’s",
+      "address": "960 W 18th St",
+      "coords": [
+        -87.651036,
+        41.858141
+      ],
+      "source": "http://www.simonesbar.com/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "simones"
+      ]
+    },
+    {
+      "id": "metro",
+      "name": "Metro",
+      "address": "3730 N Clark St",
+      "coords": [
+        -87.658945,
+        41.949842
+      ],
+      "source": "https://metrochicago.com",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "metro"
+      ]
+    },
+    {
+      "id": "salt-shed",
+      "name": "The Salt Shed",
+      "address": "1357 N Elston Ave",
+      "coords": [
+        -87.659207,
+        41.906736
+      ],
+      "source": "https://www.saltshedchicago.com/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "salt-shed"
+      ]
+    },
+    {
+      "id": "thalia-hall",
+      "name": "Thalia Hall",
+      "address": "1807 S Allport St",
+      "coords": [
+        -87.657285,
+        41.857722
+      ],
+      "source": "https://www.thaliahallchicago.com/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "thalia-hall"
+      ]
+    },
+    {
+      "id": "house-of-blues",
+      "name": "House of Blues",
+      "address": "329 N Dearborn St",
+      "coords": [
+        -87.629109,
+        41.888244
+      ],
+      "source": "https://www.houseofblues.com/chicago",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "house-of-blues"
+      ]
+    },
+    {
+      "id": "empty-bottle",
+      "name": "The Empty Bottle",
+      "address": "1035 N Western Ave",
+      "coords": [
+        -87.686653,
+        41.900481
+      ],
+      "source": "https://www.emptybottle.com/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "empty-bottle"
+      ]
+    },
+    {
+      "id": "second-city",
+      "name": "The Second City",
+      "address": "1616 N Wells St",
+      "coords": [
+        -87.634892,
+        41.911613
+      ],
+      "source": "https://www.secondcity.com/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "second-city"
+      ]
+    },
+    {
+      "id": "millennium-park",
+      "name": "Millennium Park",
+      "address": "201 E Randolph St",
+      "coords": [
+        -87.622536,
+        41.882575
+      ],
+      "source": "https://www.cityofchicago.org/city/en/depts/dca/supp_info/millennium_park.html",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "millennium-park"
+      ],
+      "kind": "outdoor"
+    },
+    {
+      "id": "riverwalk",
+      "name": "Chicago Riverwalk",
+      "address": "Chicago Riverwalk (Lake St to Wacker Dr)",
+      "coords": [
+        -87.627226,
+        41.887234
+      ],
+      "source": "https://www.openstreetmap.org/way/504093803",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "riverwalk"
+      ],
+      "kind": "outdoor"
+    },
+    {
+      "id": "skydeck",
+      "name": "Skydeck Chicago",
+      "address": "233 S Wacker Dr",
+      "coords": [
+        -87.635887,
+        41.878505
+      ],
+      "source": "https://theskydeck.com",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "skydeck"
+      ]
+    },
+    {
+      "id": "shedd",
+      "name": "Shedd Aquarium",
+      "address": "1200 S Lake Shore Dr",
+      "coords": [
+        -87.613679,
+        41.867636
+      ],
+      "source": "https://www.sheddaquarium.org/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "shedd"
+      ]
+    },
+    {
+      "id": "adler",
+      "name": "Adler Planetarium",
+      "address": "1300 S DuSable Lake Shore Dr",
+      "coords": [
+        -87.606626,
+        41.866366
+      ],
+      "source": "https://www.adlerplanetarium.org/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "adler"
+      ]
+    },
+    {
+      "id": "wrigley-field",
+      "name": "Wrigley Field",
+      "address": "1060 W Addison St",
+      "coords": [
+        -87.655559,
+        41.948185
+      ],
+      "source": "https://www.mlb.com/cubs/ballpark",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "wrigley-field"
+      ]
+    },
+    {
+      "id": "maggie-daley",
+      "name": "Maggie Daley Park",
+      "address": "337 E Randolph St",
+      "coords": [
+        -87.619117,
+        41.883954
+      ],
+      "source": "https://www.openstreetmap.org/way/764227071",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "maggie-daley"
+      ],
+      "kind": "outdoor"
+    },
+    {
+      "id": "the-606",
+      "name": "The 606",
+      "address": "1805 N Ridgeway Ave (and other access points)",
+      "coords": [
+        -87.685972,
+        41.91396
+      ],
+      "source": "https://www.chicagoparkdistrict.com/parks-facilities/bloomingdale-trail-park",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "the-606"
+      ],
+      "kind": "outdoor"
+    },
+    {
+      "id": "north-ave-beach",
+      "name": "North Avenue Beach",
+      "address": "1600 N Lake Shore Dr",
+      "coords": [
+        -87.628027,
+        41.918507
+      ],
+      "source": "https://www.openstreetmap.org/relation/12788474",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "north-ave-beach"
+      ],
+      "kind": "outdoor"
+    },
+    {
+      "id": "garfield-conservatory",
+      "name": "Garfield Park Conservatory",
+      "address": "300 N Central Park Ave",
+      "coords": [
+        -87.718585,
+        41.886827
+      ],
+      "source": "https://garfieldconservatory.org/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "garfield-conservatory"
+      ]
+    },
+    {
+      "id": "lincoln-park-conservatory",
+      "name": "Lincoln Park Conservatory",
+      "address": "2391 N Stockton Dr",
+      "coords": [
+        -87.634803,
+        41.924413
+      ],
+      "source": "https://www.chicagoparkdistrict.com/parks-facilities/lincoln-park-conservatory/",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "lincoln-park-conservatory"
+      ]
+    },
+    {
+      "id": "ping-tom",
+      "name": "Ping Tom Memorial Park",
+      "address": "1700 S Wentworth Ave",
+      "coords": [
+        -87.632539,
+        41.858899
+      ],
+      "source": "https://www.openstreetmap.org/relation/5240880",
+      "checked": "2026-10-05",
+      "aliases": [],
+      "placeIds": [
+        "ping-tom"
+      ],
+      "kind": "outdoor"
+    }
+  ]
+}

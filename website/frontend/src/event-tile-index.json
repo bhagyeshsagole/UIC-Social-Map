@@ -1,0 +1,973 @@
+{
+  "revision": "5d84b84c6387",
+  "campusRevision": "5643ab46d4e6",
+  "source": "https://tiles.openfreemap.org/planet/20260927_080001_pt/{z}/{x}/{y}.pbf",
+  "checked": "2026-10-05",
+  "tiles": [
+    "14/4202/6089",
+    "14/4203/6089",
+    "14/4202/6090",
+    "14/4203/6090",
+    "14/4201/6089",
+    "14/4199/6094",
+    "14/4201/6090",
+    "14/4199/6093",
+    "14/4198/6084",
+    "14/4203/6091",
+    "14/4203/6088",
+    "14/4204/6090",
+    "14/4204/6089",
+    "14/4205/6088",
+    "14/4204/6088",
+    "14/4201/6087",
+    "14/4201/6086",
+    "14/4202/6085",
+    "14/4202/6087",
+    "14/4201/6088",
+    "14/4203/6087",
+    "14/4199/6088",
+    "14/4203/6086"
+  ],
+  "matches": [
+    {
+      "id": "uic-0640",
+      "parts": 6,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0616",
+      "parts": 2,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0628",
+      "parts": 5,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0641",
+      "parts": 3,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0618",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0617",
+      "parts": 2,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0643",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0654",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0642",
+      "parts": 3,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0649",
+      "parts": 10,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0638",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0613",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0623",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0629",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0648",
+      "parts": 10,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0646",
+      "parts": 3,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0612",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0626",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0670",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0671",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0602",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0604A",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0604B",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0604C",
+      "parts": 2,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0604D",
+      "parts": 2,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0604E",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0604F",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0614",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0677",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0633",
+      "parts": 3,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0611",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0635",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0609",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0621",
+      "parts": 5,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0607",
+      "parts": 10,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0608",
+      "parts": 10,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0631",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0619",
+      "parts": 2,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0627",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0630",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0644C",
+      "parts": 2,
+      "method": "source point 6.6m from roof (entrance/courtyard)"
+    },
+    {
+      "id": "uic-0644N",
+      "parts": 5,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0644S",
+      "parts": 5,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0644W",
+      "parts": 2,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0655",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0615",
+      "parts": 2,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0690",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0689",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0657",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0656",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0605",
+      "parts": 5,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0606",
+      "parts": 5,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0624",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0601",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0610",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0980",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0981",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0941",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0916",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0933",
+      "parts": 2,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0932",
+      "parts": 8,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0976",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0920",
+      "parts": 8,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0911",
+      "parts": 8,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0940",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0910",
+      "parts": 5,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0934",
+      "parts": 8,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0908",
+      "parts": 5,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0909",
+      "parts": 8,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0936",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0924",
+      "parts": 3,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0974",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0931",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0902",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0907",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0965",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0972",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0942",
+      "parts": 2,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0957",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0922",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0914",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0935",
+      "parts": 8,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0929",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0919",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0918",
+      "parts": 8,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0950",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0959",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0948",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0963",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0937",
+      "parts": 3,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0975",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0930",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0951",
+      "parts": 2,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0923",
+      "parts": 3,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0947",
+      "parts": 2,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0953",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0938",
+      "parts": 3,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0949",
+      "parts": 6,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0977",
+      "parts": 2,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0672",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0673",
+      "parts": 2,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0675",
+      "parts": 2,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0674",
+      "parts": 2,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0668",
+      "parts": 2,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0667",
+      "parts": 2,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0665",
+      "parts": 1,
+      "method": "source point 3.1m from roof (entrance/courtyard)"
+    },
+    {
+      "id": "uic-0664",
+      "parts": 1,
+      "method": "source point 19.3m from roof (entrance/courtyard)"
+    },
+    {
+      "id": "uic-0663",
+      "parts": 1,
+      "method": "source point 14.0m from roof (entrance/courtyard)"
+    },
+    {
+      "id": "uic-0681",
+      "parts": 3,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0682",
+      "parts": 3,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0680",
+      "parts": 4,
+      "method": "contains source point"
+    },
+    {
+      "id": "uic-0683",
+      "parts": 4,
+      "method": "contains source point"
+    },
+    {
+      "id": "osm-node-6970180942",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "osm-node-3988653236",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "osm-way-24091938",
+      "parts": 1,
+      "method": "source point 0.4m from roof (entrance/courtyard)"
+    },
+    {
+      "id": "osm-way-24088510",
+      "parts": 1,
+      "method": "source point 1.4m from roof (entrance/courtyard)"
+    },
+    {
+      "id": "osm-way-210671540",
+      "parts": 5,
+      "method": "contains source point"
+    },
+    {
+      "id": "osm-way-144015996",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "soldier-field",
+      "parts": 10,
+      "method": "contains source point"
+    },
+    {
+      "id": "art-institute",
+      "parts": 10,
+      "method": "contains source point"
+    },
+    {
+      "id": "field-museum",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "navy-pier",
+      "parts": 30,
+      "method": "contains source point"
+    },
+    {
+      "id": "mca",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "nmma",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "busy-burger",
+      "parts": 4,
+      "method": "contains source point"
+    },
+    {
+      "id": "two-shades",
+      "parts": 4,
+      "method": "source point 0.7m from roof (entrance/courtyard)"
+    },
+    {
+      "id": "first-ascent",
+      "parts": 5,
+      "method": "contains source point"
+    },
+    {
+      "id": "cairo-kebab",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "ml-kitchen",
+      "parts": 6,
+      "method": "contains source point"
+    },
+    {
+      "id": "de-pasada",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "azul-18",
+      "parts": 2,
+      "method": "contains source point"
+    },
+    {
+      "id": "jims-original",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "primos",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "ghareeb-nawaz",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "als-beef",
+      "parts": 2,
+      "method": "contains source point"
+    },
+    {
+      "id": "jenis",
+      "parts": 8,
+      "method": "contains source point"
+    },
+    {
+      "id": "cultural-center",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "design-museum",
+      "parts": 2,
+      "method": "contains source point"
+    },
+    {
+      "id": "mocp",
+      "parts": 6,
+      "method": "contains source point"
+    },
+    {
+      "id": "gamespace",
+      "parts": 3,
+      "method": "contains source point"
+    },
+    {
+      "id": "chipotle",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "papa-johns",
+      "parts": 2,
+      "method": "contains source point"
+    },
+    {
+      "id": "taco-bell",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "portillos",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "starbucks-uv",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "subway-uv",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "fontanos-subs",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "mr-greek-gyros",
+      "parts": 2,
+      "method": "contains source point"
+    },
+    {
+      "id": "thai-bowl",
+      "parts": 2,
+      "method": "contains source point"
+    },
+    {
+      "id": "lotus-cafe",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "pompei",
+      "parts": 2,
+      "method": "contains source point"
+    },
+    {
+      "id": "conte-di-savoia",
+      "parts": 2,
+      "method": "contains source point"
+    },
+    {
+      "id": "sweet-maple",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "stax-cafe",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "rosatis",
+      "parts": 2,
+      "method": "contains source point"
+    },
+    {
+      "id": "greek-islands",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "lou-mitchells",
+      "parts": 3,
+      "method": "contains source point"
+    },
+    {
+      "id": "mr-beef",
+      "parts": 4,
+      "method": "contains source point"
+    },
+    {
+      "id": "au-cheval",
+      "parts": 5,
+      "method": "contains source point"
+    },
+    {
+      "id": "girl-and-the-goat",
+      "parts": 4,
+      "method": "contains source point"
+    },
+    {
+      "id": "joy-yee",
+      "parts": 18,
+      "method": "contains source point"
+    },
+    {
+      "id": "carnitas-uruapan",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "lou-malnatis-south-loop",
+      "parts": 8,
+      "method": "contains source point"
+    },
+    {
+      "id": "scafuri",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "kristoffers",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "cafe-jumping-bean",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "sawada-coffee",
+      "parts": 10,
+      "method": "contains source point"
+    },
+    {
+      "id": "ipsento-606",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "little-joes",
+      "parts": 2,
+      "method": "contains source point"
+    },
+    {
+      "id": "kumiko",
+      "parts": 4,
+      "method": "contains source point"
+    },
+    {
+      "id": "big-star",
+      "parts": 2,
+      "method": "contains source point"
+    },
+    {
+      "id": "emporium-wicker",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "logan-arcade",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "murphys-bleachers",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "sluggers",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "simones",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "metro",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "salt-shed",
+      "parts": 17,
+      "method": "contains source point"
+    },
+    {
+      "id": "thalia-hall",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "house-of-blues",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "empty-bottle",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "second-city",
+      "parts": 3,
+      "method": "source point 0.0m from roof (entrance/courtyard)"
+    },
+    {
+      "id": "skydeck",
+      "parts": 41,
+      "method": "contains source point"
+    },
+    {
+      "id": "shedd",
+      "parts": 5,
+      "method": "contains source point"
+    },
+    {
+      "id": "adler",
+      "parts": 3,
+      "method": "contains source point"
+    },
+    {
+      "id": "wrigley-field",
+      "parts": 10,
+      "method": "source point 36.8m from roof (entrance/courtyard)"
+    },
+    {
+      "id": "garfield-conservatory",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "lincoln-park-conservatory",
+      "parts": 5,
+      "method": "contains source point"
+    }
+  ]
+}
