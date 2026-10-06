@@ -29,8 +29,8 @@ try{
   await page.screenshot({path:'artifacts/building-events.png'});
   await page.getByRole('button',{name:'Close building events'}).click();
   await page.getByRole('button',{name:'Live events',exact:true}).click();
-  await page.getByRole('searchbox',{name:'Search UIC events'}).fill('Major Minor Fair');
-  await page.getByRole('button',{name:'Show Major Minor Fair on map',exact:true}).click();
+  await page.getByRole('searchbox',{name:'Search UIC events'}).fill('Andersen Firm Night');
+  await page.getByRole('button',{name:'Show Andersen Firm Night on map',exact:true}).click();
   await page.getByRole('region',{name:'Selected event on map'}).waitFor();
   await page.waitForTimeout(1300);
   assert.equal(await page.locator('.has-live-events').count(),0,'large sheet closes to reveal building');
@@ -61,8 +61,8 @@ try{
   assert.match(await page.getByRole('region',{name:'Selected event on map'}).innerText(),/Chicago Marathon/);
   await page.setViewportSize({width:390,height:844});
   await page.getByRole('button',{name:'Back to events',exact:true}).click();
-  await page.getByRole('searchbox',{name:'Search UIC events'}).fill('Major Minor Fair');
-  await page.getByRole('button',{name:'Show Major Minor Fair on map',exact:true}).click();
+  await page.getByRole('searchbox',{name:'Search UIC events'}).fill('Andersen Firm Night');
+  await page.getByRole('button',{name:'Show Andersen Firm Night on map',exact:true}).click();
   await page.waitForTimeout(1200);
   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
   await page.screenshot({path:'artifacts/event-building-mobile.png'});

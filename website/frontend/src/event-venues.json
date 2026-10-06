@@ -2638,6 +2638,71 @@
         "ping-tom"
       ],
       "kind": "outdoor"
+    },
+    {
+      "id": "osm-way-23642579",
+      "name": "333 N LaSalle St",
+      "address": "333 N LaSalle St",
+      "coords": [
+        -87.6323023,
+        41.8887171
+      ],
+      "kind": "building",
+      "source": "https://www.openstreetmap.org/way/23642579",
+      "checked": "2026-10-06",
+      "aliases": []
+    },
+    {
+      "id": "osm-way-136662656",
+      "name": "155 North Wacker",
+      "address": "155 N Wacker Dr",
+      "coords": [
+        -87.6363214,
+        41.8848667
+      ],
+      "kind": "building",
+      "source": "https://www.openstreetmap.org/way/136662656",
+      "checked": "2026-10-06",
+      "aliases": []
+    },
+    {
+      "id": "osm-way-433246692",
+      "name": "1240 W Harrison St",
+      "address": "1240 W Harrison St",
+      "coords": [
+        -87.6575503,
+        41.874295
+      ],
+      "kind": "building",
+      "source": "https://www.openstreetmap.org/way/433246692",
+      "checked": "2026-10-06",
+      "aliases": []
+    },
+    {
+      "id": "osm-node-11249178594",
+      "name": "2500 W Bradley Pl",
+      "address": "2500 W Bradley Pl",
+      "coords": [
+        -87.6918091,
+        41.9501889
+      ],
+      "kind": "building",
+      "source": "https://www.openstreetmap.org/node/11249178594",
+      "checked": "2026-10-06",
+      "aliases": []
+    },
+    {
+      "id": "osm-way-151309644",
+      "name": "Parking Lot 1B",
+      "address": "1139 W Harrison St",
+      "coords": [
+        -87.6557759,
+        41.8736662
+      ],
+      "kind": "outdoor",
+      "source": "https://www.openstreetmap.org/way/151309644",
+      "checked": "2026-10-06",
+      "aliases": []
     }
   ]
 }

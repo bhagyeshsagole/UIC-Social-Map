@@ -44,6 +44,6 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     const temp = new URL('../public/campus-events.json.tmp', import.meta.url);
     await writeFile(temp, JSON.stringify(result, null, 2) + '\n');
     await rename(temp, snapshotPath);
-    console.log(`Imported ${result.events.length} upcoming ${result.month} events (${result.sourceCount} source listings).`);
+    console.log(`Imported ${result.events.length} upcoming events from ${result.month} on (${result.sourceCount} source listings).`);
   } catch (error) { console.error(error.message); process.exitCode = 1; }
 }

@@ -20,7 +20,14 @@ try {
   assert.match(heading, new RegExp(`${expected.length} upcoming events`));
   for (const gone of ['October 2026 at UIC', 'Chicago time', 'From UIC Connection', 'Checked']) assert.ok(!heading.includes(gone), gone);
   await page.getByRole('button', {name:'Pick a date'}).click();
-  const day = page.getByRole('dialog', {name:'Pick a date'}).locator('button:not([disabled])').first();
+  const picker = page.getByRole('dialog', {name:'Pick a date'});
+  assert.equal(await picker.getByRole('button', {name:'Previous month'}).isDisabled(), true, 'no months before the current one');
+  const firstMonth = await picker.locator('.date-picker-month span').innerText();
+  await picker.getByRole('button', {name:'Next month'}).click();
+  assert.notEqual(await picker.locator('.date-picker-month span').innerText(), firstMonth, 'next month is reachable');
+  assert.ok(await picker.locator('.date-picker-grid button:not([disabled])').count() > 0, 'next month offers event days');
+  await picker.getByRole('button', {name:'Previous month'}).click();
+  const day = picker.locator('.date-picker-grid button:not([disabled])').first();
   const count = Number((await day.getAttribute('aria-label')).match(/, (\d+) event/)[1]);
   await day.click();
   assert.equal(await page.locator('.event-results .campus-event-card').count(), count, 'a picked date shows only that day across UIC events and exhibitions');
@@ -80,7 +87,7 @@ try {
   await page.getByRole('button', {name:'Live events', exact:true}).click();
   await page.getByText('Showing saved listings; live refresh unavailable.').waitFor();
   assert.equal(await page.locator('.campus-events .campus-event-card').count(), expected.length);
-  await page.clock.setFixedTime(new Date(`${feed.month}-31T23:59:59-05:00`));
+  await page.clock.setFixedTime(new Date(Math.max(...feed.events.map(e => Date.parse(e.end))) + 1000));
   // Reload initializes the app clock at the new time; cached records cannot revive past events.
   await page.reload();
   await page.getByRole('button', {name:'Live events', exact:true}).click();

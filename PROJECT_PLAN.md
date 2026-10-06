@@ -107,6 +107,7 @@ Detailed implementation tasks live in the two owner trackers. These milestones t
 - **2026-10-05:** Scope widened at the user's request: places now include bars, nightlife, music venues, comedy and city sights within 6 miles of UIC (was 4), not only student-discount spots. The student badge marks documented student perks only. See Workflow A, A19.
 - **2026-10-06:** Added B11 for a local UIC Connections ICS importer. It is independent of B01 and B10: B01 defines the shared data contract, B10 covers weekly Chicago place refreshes, and B11 imports the monthly UIC Connections feed into local JSON without scheduling or storage.
 - **2026-10-06:** Completed B11's local ICS parser, normalization, duplicate prevention, tests, and live import. The 2026-10-06 feed yielded 657 canonical events from 666 records; monthly scheduling remains deferred until storage integration. B10 remains the separate weekly Chicago place-content refresh.
+- **2026-10-06:** Live events widened at the user's request: UIC Connection events now cover 12 Chicago months and stay listed until they end, so series already underway appear. The frontend still reads the CampusGroups JSON feed; B11's ICS output is not wired in. See Workflow A, A22.
 
 ## First UI scope accepted on 2026-10-04
 
@@ -137,7 +138,7 @@ Saved holds bookmarked places; My Events holds event drafts. These remain local-
 
 ## UIC Connection integration accepted on 2026-10-05
 
-- User supplied the UIC Connection calendar as a source for Live events. Show not-yet-started events within the current Chicago month, sorted by time; exclude past dates and already-started sessions.
+- User supplied the UIC Connection calendar as a source for Live events. Show events that have not yet ended from the current Chicago month through the next 11 months, sorted by start time; exclude ended events. (Changed 2026-10-06 from "not-yet-started, current month only"; Workflow A, A22.)
 - Include official registration/details links and public location links. For venues withheld by UIC Connection, link to the official page and indicate that sign-in may be needed.
 - A12 implements a public-feed importer, sanitized dated snapshot, list/Spotlight search, and a 15-minute cached same-origin feed for local dev/preview. Static builds include the snapshot; ongoing production refresh awaits hosting/backend integration (Workflow A H03).
 

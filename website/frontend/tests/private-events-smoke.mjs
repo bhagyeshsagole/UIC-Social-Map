@@ -33,14 +33,14 @@ try{
  await page.locator('.map-status').waitFor({state:'detached',timeout:30000});
  assert.equal(await page.locator('vite-error-overlay').count(),0);
  assert.match(await page.getByRole('group',{name:'Map legend'}).innerText(),/UIC Building[\s\S]*Off-campus places & events[\s\S]*Private Events/);
- await page.getByRole('button',{name:/events available/}).click();await page.getByRole('searchbox',{name:'Search UIC events'}).fill('Major Minor Fair');await page.getByRole('button',{name:'Show Major Minor Fair on map',exact:true}).click();await page.waitForTimeout(1200);
+ await page.getByRole('button',{name:/events available/}).click();await page.getByRole('searchbox',{name:'Search UIC events'}).fill('Andersen Firm Night');await page.getByRole('button',{name:'Show Andersen Firm Night on map',exact:true}).click();await page.waitForTimeout(1200);
  await page.getByRole('button',{name:'Create event',exact:true}).click();await page.getByRole('region',{name:'Pin event location'}).getByRole('button',{name:'Cancel',exact:true}).click();assert.equal(await page.locator('.create-event-dialog').count(),0);
  await page.getByRole('button',{name:'Create event',exact:true}).click();
  assert.equal(await page.locator('.wizard-steps').count(),0);
  assert.equal(await page.getByLabel('Event name',{exact:true}).count(),0,'building comes before event details');
  await page.screenshot({path:'artifacts/private-building-first.png'});
  await pinBuilding(page,'uic-0605');
- await page.getByRole('region',{name:'Existing events in this building'}).getByRole('button',{name:'Choose Major Minor Fair',exact:true}).click();
+ await page.getByRole('region',{name:'Existing events in this building'}).getByRole('button',{name:'Choose Andersen Firm Night',exact:true}).click();
  await page.getByRole('region',{name:'Selected event on map'}).waitFor();
  assert.equal(await page.locator('.create-event-dialog').count(),0,'choosing existing event exits setup');
  assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('afterclass-drafts')).length),0);
@@ -88,9 +88,9 @@ try{
  assert.match(await detail.innerText(),/Synthetic map pin test/);await page.waitForTimeout(2700);await page.screenshot({path:'artifacts/private-pinned-building.png'});console.log('Picked venue:',await page.evaluate(()=>JSON.parse(localStorage.getItem('afterclass-drafts')).at(-1).venue.id));
  // Public and hidden-location events both expose working share links.
  await page.getByRole('button',{name:'Live events',exact:true}).click();
- const card=page.locator('.campus-event-card').filter({has:page.getByRole('button',{name:'Share Major Minor Fair',exact:true})});await card.getByRole('button',{name:'Share Major Minor Fair',exact:true}).click();
+ const card=page.locator('.campus-event-card').filter({has:page.getByRole('button',{name:'Share Andersen Firm Night',exact:true})});await card.getByRole('button',{name:'Share Andersen Firm Night',exact:true}).click();
  await page.locator('dialog[open]').getByLabel('Event link',{exact:true}).click();const publicLink=await page.locator('dialog[open]').getByLabel('Event link',{exact:true}).inputValue();
- await recipient.goto(publicLink);await recipient.waitForTimeout(1600);assert.match(await recipient.getByRole('region',{name:'Selected event on map'}).innerText(),/Major Minor Fair/);
+ await recipient.goto(publicLink);await recipient.waitForTimeout(1600);assert.match(await recipient.getByRole('region',{name:'Selected event on map'}).innerText(),/Andersen Firm Night/);
  assert.equal(await recipient.locator('.map').getAttribute('data-focused-event-venue'),'uic-0605');
  // On phones an open event card hides the bottom nav; close it first.
  await recipient.getByRole('button',{name:'Close event on map'}).click();

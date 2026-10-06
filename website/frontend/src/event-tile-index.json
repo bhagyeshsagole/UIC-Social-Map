@@ -1,5 +1,5 @@
 {
-  "revision": "5d84b84c6387",
+  "revision": "11638834bf6a",
   "campusRevision": "5643ab46d4e6",
   "source": "https://tiles.openfreemap.org/planet/20260927_080001_pt/{z}/{x}/{y}.pbf",
   "checked": "2026-10-05",
@@ -26,7 +26,8 @@
     "14/4201/6088",
     "14/4203/6087",
     "14/4199/6088",
-    "14/4203/6086"
+    "14/4203/6086",
+    "14/4201/6085"
   ],
   "matches": [
     {
@@ -967,6 +968,26 @@
     {
       "id": "lincoln-park-conservatory",
       "parts": 5,
+      "method": "contains source point"
+    },
+    {
+      "id": "osm-way-23642579",
+      "parts": 9,
+      "method": "contains source point"
+    },
+    {
+      "id": "osm-way-136662656",
+      "parts": 1,
+      "method": "contains source point"
+    },
+    {
+      "id": "osm-way-433246692",
+      "parts": 1,
+      "method": "source point 19.2m from roof (entrance/courtyard)"
+    },
+    {
+      "id": "osm-node-11249178594",
+      "parts": 1,
       "method": "contains source point"
     }
   ]

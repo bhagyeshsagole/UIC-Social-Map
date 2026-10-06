@@ -1,7 +1,7 @@
 import ShareEvent from './ShareEvent.jsx';
 import React, {useEffect, useRef, useState} from 'react';
-import {ArrowUpRight, CalendarDays, MapPin, X} from 'lucide-react';
-import {CAMPUS_CALENDAR, campusDate, campusMonth, dayLabel, eventWhen, monthDates, onCampusDate, upcomingCampusEvents} from './campusEvents';
+import {ArrowUpRight, CalendarDays, ChevronLeft, ChevronRight, MapPin, X} from 'lucide-react';
+import {CAMPUS_CALENDAR, CAMPUS_MONTHS, addMonths, campusDate, campusMonth, dayLabel, eventWhen, monthDates, monthLabel, onCampusDate, upcomingCampusEvents} from './campusEvents';
 
 async function readFeed(url, signal) {
   const response = await fetch(url, {signal, cache:'no-store'});
@@ -46,10 +46,15 @@ export function CampusEventCard({event:e, onSelectEvent}) {
   </article>;
 }
 
-// Month grid for the current Chicago month; only days with upcoming events can be picked.
+// Month grid starting at the current Chicago month; only days with upcoming events can be picked.
 export function DatePicker({now, events, value, onChange}) {
-  const [open, setOpen] = useState(false), ref = useRef();
-  const {lead, dates} = monthDates(now), today = campusDate(now);
+  const [open, setOpen] = useState(false), [view, setView] = useState(''), ref = useRef();
+  const today = campusDate(now), first = campusMonth(now);
+  // Arrows stop at the last month that still has an event on it.
+  const last = events.reduce((max, e) => { const end = (e.endDate || e.end || e.startDate || '').slice(0, 7); return end > max ? end : max; }, first);
+  const final = last < addMonths(first, CAMPUS_MONTHS - 1) ? last : addMonths(first, CAMPUS_MONTHS - 1);
+  const month = view && view >= first && view <= final ? view : first;
+  const {lead, dates} = monthDates(now, month);
   const counts = Object.fromEntries(dates.map(d => [d, events.filter(e => onCampusDate(e, d)).length]));
   useEffect(() => {
     if (!open) return;
@@ -59,9 +64,12 @@ export function DatePicker({now, events, value, onChange}) {
     return () => { document.removeEventListener('pointerdown', away); window.removeEventListener('keydown', esc, true); };
   }, [open]);
   return <div className="date-picker" ref={ref}>
-    <button className={`date-picker-toggle ${value ? 'has-date' : ''}`} aria-expanded={open} aria-haspopup="dialog" onClick={() => setOpen(!open)}><CalendarDays size={16}/><span>{value ? dayLabel(value) : 'Pick a date'}</span></button>
+    <button className={`date-picker-toggle ${value ? 'has-date' : ''}`} aria-expanded={open} aria-haspopup="dialog" onClick={() => { if (!open) setView(value ? value.slice(0, 7) : first); setOpen(!open); }}><CalendarDays size={16}/><span>{value ? dayLabel(value) : 'Pick a date'}</span></button>
     {open && <div className="date-picker-pop glass" role="dialog" aria-label="Pick a date">
-      <div className="date-picker-month">{new Intl.DateTimeFormat('en-US', {timeZone:'America/Chicago', month:'long', year:'numeric'}).format(now)}</div>
+      <div className="date-picker-month"><span aria-live="polite">{monthLabel(month)}</span><div className="date-picker-nav">
+        <button aria-label="Previous month" disabled={month <= first} onClick={() => setView(addMonths(month, -1))}><ChevronLeft size={16}/></button>
+        <button aria-label="Next month" disabled={month >= final} onClick={() => setView(addMonths(month, 1))}><ChevronRight size={16}/></button>
+      </div></div>
       <div className="date-picker-grid">
         {['S','M','T','W','T','F','S'].map((d, i) => <span key={i} className="date-picker-weekday" aria-hidden="true">{d}</span>)}
         {Array.from({length:lead}, (_, i) => <span key={`lead-${i}`}/>)}

@@ -5,10 +5,19 @@ export function campusDate(now = new Date()) {
   return new Intl.DateTimeFormat('en-CA', {timeZone:zone, year:'numeric', month:'2-digit', day:'2-digit'}).format(now);
 }
 export function campusMonth(now = new Date()) { return campusDate(now).slice(0, 7); }
+// The calendar covers this Chicago month and the next eleven.
+export const CAMPUS_MONTHS = 12;
+export function addMonths(month, count) {
+  const [year, m] = month.split('-').map(Number);
+  return new Date(Date.UTC(year, m - 1 + count, 1)).toISOString().slice(0, 7);
+}
+function monthLength(month) {
+  const [year, m] = month.split('-').map(Number);
+  return new Date(Date.UTC(year, m, 0)).getUTCDate();
+}
 export function calendarFeedUrl(now = new Date()) {
-  const month = campusMonth(now), [year, m] = month.split('-').map(Number);
-  const last = new Date(Date.UTC(year, m, 0)).getUTCDate();
-  const query = new URLSearchParams({view:'month', start_date:`${month}-01`, end_date:`${month}-${last}`, etl:'', club_id:'', topic_id:'', search:'', range:'', limit:'', filterBy:'', calendarView:'month'});
+  const month = campusMonth(now), last = addMonths(month, CAMPUS_MONTHS - 1);
+  const query = new URLSearchParams({view:'month', start_date:`${month}-01`, end_date:`${last}-${monthLength(last)}`, etl:'', club_id:'', topic_id:'', search:'', range:'', limit:'', filterBy:'', calendarView:'month'});
   return `${CAMPUS_ORIGIN}/mobile_ws/v17/mobile_calendar.aspx?${query}`;
 }
 export function plainText(value) {
@@ -61,9 +70,10 @@ export function parseCampusFeed(payload) {
   }
   return {events:[...events.values()], skippedCount, sourceCount:payload.events.length};
 }
+// Events stay listed until they end, so multi-week series already underway still show.
 export function upcomingCampusEvents(events, now = new Date()) {
-  const month = campusMonth(now);
-  return events.filter(e => e.startDate?.startsWith(month) && Date.parse(e.start) >= +now)
+  const last = addMonths(campusMonth(now), CAMPUS_MONTHS - 1);
+  return events.filter(e => Date.parse(e.end) > +now && (e.startDate || e.start.slice(0, 10)).slice(0, 7) <= last)
     .sort((a, b) => a.start.localeCompare(b.start) || a.title.localeCompare(b.title));
 }
 export function eventWhen(event) {
@@ -77,10 +87,12 @@ export function onCampusDate(event, date) {
   const start = (event.startDate || event.start || '').slice(0, 10), end = (event.endDate || event.end || start).slice(0, 10);
   return start <= date && date <= end;
 }
-export function monthDates(now = new Date()) {
-  const month = campusMonth(now), [year, m] = month.split('-').map(Number);
-  const count = new Date(Date.UTC(year, m, 0)).getUTCDate();
-  return {lead:new Date(Date.UTC(year, m - 1, 1)).getUTCDay(), dates:Array.from({length:count}, (_, i) => `${month}-${String(i + 1).padStart(2, '0')}`)};
+export function monthDates(now = new Date(), month = campusMonth(now)) {
+  const [year, m] = month.split('-').map(Number);
+  return {lead:new Date(Date.UTC(year, m - 1, 1)).getUTCDay(), dates:Array.from({length:monthLength(month)}, (_, i) => `${month}-${String(i + 1).padStart(2, '0')}`)};
+}
+export function monthLabel(month) {
+  return new Intl.DateTimeFormat('en-US', {timeZone:'UTC', month:'long', year:'numeric'}).format(new Date(`${month}-15T12:00:00Z`));
 }
 export function dayLabel(date) {
   return new Intl.DateTimeFormat('en-US', {timeZone:'UTC', weekday:'short', month:'short', day:'numeric'}).format(new Date(`${date}T12:00:00Z`));
