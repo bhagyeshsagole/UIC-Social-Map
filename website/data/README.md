@@ -1,6 +1,6 @@
 # Places, events, and benefits · Hassan
 
-**Status:** No listings collected or imported yet.
+**Status:** Local UIC Connections importer produces normalized JSON; no database/storage integration or scheduler is active.
 
 Keep curated seed data and import/update scripts here. Bhagesh can suggest places in his handoff log; Hassan maintains the committed records.
 
@@ -15,3 +15,5 @@ Keep curated seed data and import/update scripts here. Bhagesh can suggest place
 Keep permanent venues separate from specific outings so one pin does not imply everyone is attending at the same time. Confirm this model in B01.
 
 Clearly distinguish synthetic development fixtures from real listings. Do not import personal attendance or chats here. Verify claims before publishing; a student example is not a confirmed discount or event.
+
+The official UIC Connections ICS importer is documented in [importers/README.md](importers/README.md). Its local output is a snapshot for later review/integration, not yet published event data.

@@ -1,16 +1,20 @@
 # Shared interface · Hassan maintains, both agree
 
-**Status:** Contract not drafted. This is the checklist for B01, not an implemented API.
+**Status:** Proposed version `2026-10-06.v1`; B01 contract draft is ready for review, not implemented.
 
-## Agree before integration
+## Contract
 
-- Record shapes for places, dated events, student meetups, benefits, and hosts.
-- Discovery filters, pagination, coordinates, and time-zone representation.
-- Session/verification states and consistent error responses.
-- Join/leave behavior, counts, cancellation, and named/nickname display fields.
-- Chat, report, and block operations; identity fields clients may receive.
+- [API contract](API_CONTRACT.md) defines the versioned data model, endpoint shapes, account deletion behavior, and unresolved product decisions.
+- [Synthetic fixtures](fixtures.json) provide simple examples for the frontend before the backend exists.
+- No real user data, passwords, session secrets, service credentials, or internal identity mappings are included.
 
-Add a versioned contract and synthetic request/response examples here once agreed. Select the format with the backend stack. Frontend and backend should use the same examples.
+## Review checklist
+
+- Confirm place fields preserve the current frontend's discovery and detail needs.
+- Confirm dated events remain separate from permanent places and student meetups.
+- Review public identity, attendance, chat, report, and block visibility rules.
+- Review account deletion and retention decisions before backend implementation.
+- Agree on endpoint names and field conventions before introducing the backend.
 
 ## Change process
 

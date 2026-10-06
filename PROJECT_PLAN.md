@@ -1,6 +1,6 @@
 # UIC Social Discovery Map — Living Plan and Tracker
 
-Last updated: 2026-10-04 (America/Chicago)  
+Last updated: 2026-10-06 (America/Chicago)
 Phase: First local frontend prototype; production decisions and backend remain open<br>
 Team: Bhagesh — frontend; Hassan — backend, data, and deployment  
 Current review: [Evidence, loopholes, and recommendations](EVENT_MAP_REVIEW.md)
@@ -104,6 +104,8 @@ Detailed implementation tasks live in the two owner trackers. These milestones t
 - **2026-10-04:** Selected UIC social discovery map with membership, attendance identity choices, and chat.
 - **2026-10-04:** Completed concept review; corrected email-verification, admission, and Eventbrite assumptions. Product decisions remain open.
 - **2026-10-04:** Assigned Workflow A to Bhagesh and Workflow B to Hassan. Created the parent coordination folder and nested website workspace, including separate trackers and deployment notes. Removed rejected ideas, complaint-portal research, and obsolete archives at the team's request. Application development has not started.
+- **2026-10-06:** Added B11 for a local UIC Connections ICS importer. It is independent of B01 and B10: B01 defines the shared data contract, B10 covers weekly Chicago place refreshes, and B11 imports the monthly UIC Connections feed into local JSON without scheduling or storage.
+- **2026-10-06:** Completed B11's local ICS parser, normalization, duplicate prevention, tests, and live import. The 2026-10-06 feed yielded 657 canonical events from 666 records; monthly scheduling remains deferred until storage integration. B10 remains the separate weekly Chicago place-content refresh.
 
 ## First UI scope accepted on 2026-10-04
 
@@ -113,7 +115,7 @@ Detailed implementation tasks live in the two owner trackers. These milestones t
 - Search, place details, free/discount benefits, food tags, menu highlights, hours, and Google Maps links.
 - [added_sites.md](added_sites.md) is the name/description source for all UI locations. Stable IDs preserve bookmarks and drafts.
 - [Humanizer](Skills/humanizer/SKILL.md) installed locally for copy.
-- Sunday backend refresh requested as a future task: [B10](SUNDAY_REFRESH_TASK.md).
+- Weekly Chicago place-content refresh is a future task: [B10](SUNDAY_REFRESH_TASK.md). The UIC Connections calendar is a separate monthly import under B11.
 
 Implementation choices for this reversible prototype: React + Vite, MapLibre GL JS 6, OpenFreeMap vector tiles, and SunCalc. Production provider/hosting decisions remain Hassan's responsibility under B02. “Afterclass” is a provisional display name. Saved places and event drafts are local only. The central rectangle is a pilot extent, not the Chicago municipal polygon.
 

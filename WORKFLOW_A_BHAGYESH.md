@@ -67,6 +67,9 @@ For each handoff include: task ID, relevant path, required behavior, and what is
 
 ## Change log
 
+- **2026-10-06:** Bhagesh approved Hassan's B01 API/data contract and synthetic fixtures. B01 is complete, and its mirrored active claim has been removed; no frontend work was started.
+- **2026-10-06:** Hassan completed B11's local UIC Connections ICS importer. It produces normalized JSON with duplicate prevention and has no frontend, storage, or scheduled-job integration; the agreed monthly schedule remains deferred until storage integration.
+- **2026-10-06:** Hassan drafted the B01 API/data contract and synthetic fixtures for review. No frontend files changed; the mirrored B01 claim remains active while Bhagesh reviews the contract.
 - **2026-10-04:** Created the frontend workflow and file boundaries. No UI or application code implemented.
 - **2026-10-04:** Added the rule that every Claude Code request updates both workflow files, plus a mirrored *Active claims* table, so work doesn't overlap. Same change made in [Workflow B](WORKFLOW_B_HASSAN.md).
 

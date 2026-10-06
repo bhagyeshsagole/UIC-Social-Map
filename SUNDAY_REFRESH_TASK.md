@@ -1,6 +1,9 @@
 # Sunday place refresh
 
-- [ ] **B10 · Implement weekly official-source content refresh.** Owner: Hassan. Status: TODO, not scheduled. The user requested a task for later backend work; this UI change creates no backend jobs.
+- [ ] **B10 · Implement weekly Chicago place-content refresh.** Owner: Hassan. Status: TODO, not scheduled. This is separate from the monthly UIC Connections event import in B11.
+
+> [!note] Separate from B11
+> B11 imports the official UIC Connections calendar into local JSON on a monthly cadence. This task is only for weekly Chicago place content; do not run the UIC Connections calendar on this weekly schedule.
 
 Run every Sunday at 09:00 America/Chicago (proposed time; Sunday cadence is requested). Use a timezone-aware scheduler so daylight-saving changes preserve the local time. If the hosting scheduler only supports UTC, run daily and gate against Chicago's Sunday/date, with an idempotent weekly run key.
 
