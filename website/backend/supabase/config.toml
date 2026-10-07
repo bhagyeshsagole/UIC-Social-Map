@@ -19,6 +19,8 @@ site_url = "https://kampuscape.com/uic"
 additional_redirect_urls = ["https://kampuscape.com/uic", "http://localhost:5173/", "http://127.0.0.1:5173/", "http://localhost:5173", "http://127.0.0.1:5173"]
 enable_signup = true
 enable_anonymous_sign_ins = false
+# Email + password sign-in after one-time email verification.
+minimum_password_length = 8
 enable_manual_linking = false
 
 [auth.email]
@@ -50,4 +52,8 @@ skip_nonce_check = false
 
 [auth.email.template.confirmation]
 subject = "Verify your UIC email for Kampuscape"
-content_path = "./supabase/templates/magic-link.html"
+content_path = "./supabase/templates/confirmation.html"
+
+[auth.email.template.recovery]
+subject = "Reset your Kampuscape password"
+content_path = "./supabase/templates/recovery.html"

@@ -22,3 +22,11 @@
 .account-switch-mode{text-align:center;font-size:12.5px;color:#6d786d;margin:18px 0 0}
 .account-switch-mode button,.account-error-action{font-weight:650;color:#405f39;text-decoration:underline;text-underline-offset:2px}
 .account-error-action{color:inherit}
+/* Password fields: lock icon on the left, show/hide on the right. */
+.account-password input{padding-right:46px}
+.account-reveal{position:absolute;right:6px;top:50%;transform:translateY(-50%);display:grid;place-items:center;width:36px;height:36px;border-radius:9px;color:#8b9783}
+.account-reveal:hover{background:#eef1ea}
+.account-input-icon .account-reveal svg{position:static}
+.account-forgot{display:block;margin:8px 0 0 auto;font-size:12px;font-weight:600;color:#55634f}
+.account-key-icon{background:#e7ede2;color:#42623d}
+

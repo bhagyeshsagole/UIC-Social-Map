@@ -169,12 +169,13 @@ export default function Map({places,selected,onSelect,night,resetKey,eventVenues
     const m=map.current;if(!m)return;
     let applied=false;
     const update=()=>{
-      if(applied||!m.isStyleLoaded())return;
+      // Map events can fire after the container unmounts (e.g. a re-render during sign-in).
+      if(applied||!container.current||!m.isStyleLoaded())return;
       for(const layer of m.getStyle().layers.filter(l=>l.type==='fill-extrusion'))m.setPaintProperty(layer.id,'fill-extrusion-color',eventBuildingColor(night,activeVenues.current,colorVenues.current));
       container.current.dataset.eventVenues=venueKey;container.current.dataset.privateVenues=privateKey;container.current.dataset.previewVenue=previewVenue?.id||'';applied=true;
     };
     const inspect=()=>{
-      if(!m.isStyleLoaded())return;
+      if(!container.current||!m.isStyleLoaded())return;
       update();
       const layers=m.getStyle().layers.filter(l=>l.type==='fill-extrusion').map(l=>l.id);
       const rendered=m.queryRenderedFeatures({layers}).filter(f=>activeVenues.current.some(id=>String(f.properties.event_venues||'').includes(`|${id}|`)));

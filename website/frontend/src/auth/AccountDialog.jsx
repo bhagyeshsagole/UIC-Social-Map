@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {ArrowRight, ArrowLeft, Check, Compass, LoaderCircle, Mail, ShieldCheck, Trash2, X} from 'lucide-react';
-import {useAuth} from './AuthProvider.jsx';
+import {ArrowRight, ArrowLeft, Check, Compass, Eye, EyeOff, KeyRound, LoaderCircle, Lock, Mail, ShieldCheck, Trash2, X} from 'lucide-react';
+import {PASSWORD_MIN, useAuth} from './AuthProvider.jsx';
 import {AVATARS, PRONOUNS, isUicEmail, validateProfile} from './profile.js';
 import {INTERESTS} from '../interests.js';
 import './account.css';
@@ -10,41 +10,73 @@ export function Avatar({id, size=44}) {
   return <span className="account-avatar" style={{'--avatar-color':avatar.color,width:size,height:size,fontSize:size*.5}} aria-hidden="true">{avatar.symbol}</span>;
 }
 function GoogleMark(){return <svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.23c0-.71-.06-1.39-.18-2.05H12v3.88h5.38a4.6 4.6 0 0 1-2 3.02v2.51h3.23c1.89-1.74 2.99-4.3 2.99-7.36Z"/><path fill="#34A853" d="M12 22c2.7 0 4.96-.9 6.61-2.41l-3.23-2.51c-.89.6-2.03.96-3.38.96-2.6 0-4.8-1.76-5.59-4.12H3.07v2.59A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.41 13.92a6 6 0 0 1 0-3.84V7.49H3.07a10 10 0 0 0 0 9.02l3.34-2.59Z"/><path fill="#EA4335" d="M12 5.96c1.47 0 2.79.51 3.82 1.51l2.87-2.87A9.59 9.59 0 0 0 12 2a10 10 0 0 0-8.93 5.49l3.34 2.59C7.2 7.72 9.4 5.96 12 5.96Z"/></svg>;}
-function SignIn(){
- const auth=useAuth(),[email,setEmail]=useState(''),[sent,setSent]=useState(false),[code,setCode]=useState(''),[useCode,setUseCode]=useState(false),[returning,setReturning]=useState(false),[noAccount,setNoAccount]=useState(false),[busy,setBusy]=useState(false),[error,setError]=useState(''),[cooldown,setCooldown]=useState(0);
- useEffect(()=>{if(!cooldown)return;const timer=setTimeout(()=>setCooldown(v=>v-1),1000);return()=>clearTimeout(timer);},[cooldown]);
- const run=async action=>{setBusy(true);setError('');setNoAccount(false);try{await action();}catch(e){setError(e.message);setNoAccount(!!e.noAccount);}finally{setBusy(false);}};
- const switchMode=next=>{setReturning(next);setError('');setNoAccount(false);};
- const send=()=>run(async()=>{if(!isUicEmail(email))throw new Error('Use your @uic.edu email address.');await auth.sendCode(email,!returning);setSent(true);setCooldown(60);});
+function PasswordField({id,label,value,onChange,autoComplete,hint,autoFocus}){
+ const [show,setShow]=useState(false);
  return <>
-  {returning?<><h1 id="account-title">Welcome back.</h1>
-  <p className="account-intro">Sign in with the UIC email you joined with. Your profile and interests are waiting.</p></>:<><h1 id="account-title">Your campus.<br/>Your kind of plans.</h1>
-  <p className="account-intro">Join Kampuscape with your UIC account. Find your people and your next reason to get out.</p></>}
-  {!sent ? <>
-   <button className="account-google" disabled={busy||!auth.configured} onClick={()=>run(auth.signInGoogle)}><GoogleMark/> Continue with Google</button>
-   <div className="account-divider"><span>or use your UIC email</span></div>
-   <form onSubmit={e=>{e.preventDefault();send();}}>
+  <div className="account-label"><label htmlFor={id}>{label}</label>{hint&&<span id={`${id}-hint`}>{hint}</span>}</div>
+  <div className="account-input-icon account-password"><Lock size={18}/><input id={id} aria-describedby={hint?`${id}-hint`:undefined} type={show?'text':'password'} autoComplete={autoComplete} required minLength={PASSWORD_MIN} maxLength={72} value={value} onChange={e=>onChange(e.target.value)} autoFocus={autoFocus}/>
+   <button type="button" className="account-reveal" aria-label={show?'Hide password':'Show password'} aria-pressed={show} onClick={()=>setShow(v=>!v)}>{show?<EyeOff size={18}/>:<Eye size={18}/>}</button></div>
+ </>;
+}
+// Create account (verify email once) · Sign in (password, no email) · Forgot password.
+function SignIn(){
+ const auth=useAuth(),[mode,setMode]=useState('signup'),[email,setEmail]=useState(''),[password,setPassword]=useState('');
+ const [sent,setSent]=useState(''),[busy,setBusy]=useState(false),[error,setError]=useState(null),[cooldown,setCooldown]=useState(0);
+ useEffect(()=>{if(!cooldown)return;const timer=setTimeout(()=>setCooldown(v=>v-1),1000);return()=>clearTimeout(timer);},[cooldown]);
+ const run=async action=>{setBusy(true);setError(null);try{await action();}catch(e){setError(e);}finally{setBusy(false);}};
+ const go=next=>{setMode(next);setError(null);setSent('');setPassword('');};
+ const submit=e=>{e.preventDefault();run(async()=>{
+  if(mode==='signup'){await auth.signUp(email,password);setSent('verify');setCooldown(60);}
+  else if(mode==='signin'){await auth.signIn(email,password);}
+  else{await auth.requestPasswordReset(email);setSent('reset');setCooldown(60);}
+ });};
+ const resend=()=>run(async()=>{if(sent==='reset')await auth.requestPasswordReset(email);else await auth.resendVerification(email);setCooldown(60);if(!sent)setSent('verify');});
+ const address=email.trim().toLowerCase();
+ const heading={signup:<>Your campus.<br/>Your kind of plans.</>,signin:'Welcome back.',forgot:'Reset your password.'}[mode];
+ const intro={signup:'Join Kampuscape with your UIC email. You’ll verify it once, then sign in with your password.',signin:'Sign in with your UIC email and password.',forgot:'Enter your UIC email and we’ll send you a link to choose a new password.'}[mode];
+ return <>
+  <h1 id="account-title">{sent==='verify'?'Verify your email.':sent==='reset'?'Check your inbox.':heading}</h1>
+  {sent?<>
+   <div className="account-sent"><Mail size={22}/><div><strong>Check your UIC inbox</strong><span>{sent==='verify'?<>We sent a verification link to {address}. Open it on any device to finish creating your account. You only need to do this once.</>:<>If an account uses {address}, we sent it a link to choose a new password.</>}</span></div></div>
+   <p className="account-caption account-caption-left">Can’t find it? It can take a minute. Check Junk and the Other tab in Outlook; UIC may flag a new sender.</p>
+   <div className="account-inline-actions"><button disabled={busy||cooldown>0} onClick={resend}>{cooldown?`Resend in ${cooldown}s`:'Resend email'}</button><button disabled={busy} onClick={()=>go('signin')}>Back to sign in</button></div>
+  </>:<>
+   <p className="account-intro">{intro}</p>
+   {mode!=='forgot'&&auth.googleEnabled&&<><button className="account-google" disabled={busy||!auth.configured} onClick={()=>run(auth.signInGoogle)}><GoogleMark/> Continue with Google</button>
+   <div className="account-divider"><span>or use your UIC email</span></div></>}
+   <form onSubmit={submit}>
     <label className="account-label" htmlFor="uic-email">UIC email</label>
-    <div className="account-input-icon"><Mail size={18}/><input id="uic-email" type="email" autoComplete="email" placeholder="you@uic.edu" required maxLength={254} value={email} onChange={e=>setEmail(e.target.value)} disabled={busy}/></div>
-    <button className="account-primary" disabled={busy||!auth.configured}>{busy?<LoaderCircle className="spin" size={18}/>:<>Email me a sign-in link <ArrowRight size={18}/></>}</button>
+    <div className="account-input-icon"><Mail size={18}/><input id="uic-email" type="email" autoComplete={mode==='signup'?'email':'username'} placeholder="you@uic.edu" required maxLength={254} value={email} onChange={e=>setEmail(e.target.value)} disabled={busy}/></div>
+    {mode!=='forgot'&&<PasswordField id="account-password" label="Password" hint={mode==='signup'?`At least ${PASSWORD_MIN} characters`:null} value={password} onChange={setPassword} autoComplete={mode==='signup'?'new-password':'current-password'}/>}
+    {mode==='signin'&&<button type="button" className="account-forgot" onClick={()=>go('forgot')}>Forgot password?</button>}
+    <button className="account-primary" disabled={busy||!auth.configured}>{busy?<LoaderCircle className="spin" size={18}/>:<>{{signup:'Create account',signin:'Sign in',forgot:'Email me a reset link'}[mode]} <ArrowRight size={18}/></>}</button>
    </form>
-   <p className="account-caption">Only verified @uic.edu accounts can sign in.</p>
-  </> : <>
-   <div className="account-sent"><Mail size={22}/><div><strong>Check your UIC inbox</strong><span>We sent a sign-in link to {email.trim().toLowerCase()}. Open it in this browser to verify your email and finish signing in.</span></div></div>
-   <p className="account-caption account-caption-left">Can’t find it? Check Junk or Quarantine; UIC may flag it as an external sender. The link expires in 10 minutes.</p>
-   {!useCode?<button className="account-text account-code-toggle" onClick={()=>setUseCode(true)}>Have a 6-digit code instead?</button>:
-   <form onSubmit={e=>{e.preventDefault();run(()=>auth.verifyCode(email,code));}}>
-    <label className="account-label" htmlFor="email-code">Verification code</label>
-    <input id="email-code" className="account-code" inputMode="numeric" autoComplete="one-time-code" pattern="[0-9]{6,8}" required maxLength={8} value={code} onChange={e=>setCode(e.target.value.replace(/\D/g,''))} autoFocus/>
-    <button className="account-primary" disabled={busy}>{busy?'Checking…':<>Verify & continue <ArrowRight size={18}/></>}</button>
-   </form>}
-   <div className="account-inline-actions"><button disabled={busy||cooldown>0} onClick={send}>{cooldown?`Resend in ${cooldown}s`:'Resend email'}</button><button disabled={busy} onClick={()=>{setSent(false);setCode('');setUseCode(false);setError('');}}>Change email</button></div>
+   <p className="account-caption">Only verified @uic.edu accounts can join.</p>
   </>}
   {auth.notice&&<p className="account-notice" role="status"><ShieldCheck size={17}/>{auth.notice}</p>}
-  {(error||auth.error)&&<p className="account-error" role="alert">{error||auth.error}{noAccount&&<> <button className="account-error-action" onClick={()=>switchMode(false)}>Create an account</button></>}</p>}
-  {!sent&&<p className="account-switch-mode">{returning?<>New to Kampuscape? <button onClick={()=>switchMode(false)}>Create an account</button></>:<>Already have an account? <button onClick={()=>switchMode(true)}>Sign in</button></>}</p>}
+  {(error||auth.error)&&<p className="account-error" role="alert">{error?.message||auth.error}
+   {error?.existing&&<> <button className="account-error-action" onClick={()=>go('signin')}>Sign in</button></>}
+   {error?.unconfirmed&&<> <button className="account-error-action" disabled={busy||cooldown>0} onClick={resend}>{cooldown?`Resend in ${cooldown}s`:'Resend verification email'}</button></>}
+  </p>}
+  {!sent&&<p className="account-switch-mode">{mode==='signup'?<>Already have an account? <button onClick={()=>go('signin')}>Sign in</button></>:mode==='signin'?<>New to Kampuscape? <button onClick={()=>go('signup')}>Create an account</button></>:<>Remembered it? <button onClick={()=>go('signin')}>Back to sign in</button></>}</p>}
   {!auth.configured&&<p className="account-error" role="status">Sign-in is being set up. You can explore the map in the meantime.</p>}
   <button className="account-text" onClick={auth.close}>Explore the map first</button>
+ </>;
+}
+// After a reset link, or "Change password" in the profile.
+function SetPassword(){
+ const auth=useAuth(),[password,setPassword]=useState(''),[busy,setBusy]=useState(false),[error,setError]=useState('');
+ const save=async e=>{e.preventDefault();setBusy(true);setError('');try{await auth.updatePassword(password);}catch(x){setError(x.message);}finally{setBusy(false);}};
+ return <>
+  <span className="account-danger-icon account-key-icon"><KeyRound size={24}/></span>
+  <h1 id="account-title">{auth.recovering?'Choose a new password.':'Change your password.'}</h1>
+  <p className="account-intro">You’ll use it with {auth.user.email} to sign in. No email needed.</p>
+  <form onSubmit={save}>
+   <PasswordField id="new-password" label="New password" hint={`At least ${PASSWORD_MIN} characters`} value={password} onChange={setPassword} autoComplete="new-password" autoFocus/>
+   {error&&<p className="account-error" role="alert">{error}</p>}
+   <button className="account-primary" disabled={busy}>{busy?<LoaderCircle className="spin" size={18}/>:<>Save password <ArrowRight size={18}/></>}</button>
+  </form>
+  {!auth.recovering&&<button className="account-text" disabled={busy} onClick={()=>auth.setChangingPassword(false)}>Cancel</button>}
  </>;
 }
 function ProfileForm(){
@@ -105,6 +137,7 @@ function Profile(){
   <div className="profile-interest-list">{auth.profile.interests.map(id=>{const i=INTERESTS.find(i=>i.id===id);return i?<span key={id}>{i.emoji} {i.label}</span>:null;})}</div>
   <p className="account-intro">Your interests shape the For you tab in Live events.</p><p className="account-caption">Your profile syncs across devices. Saved places and private plans stay on this device.</p>
   <button className="account-primary" onClick={()=>auth.setEditing(true)}>Edit profile & interests <ArrowRight size={18}/></button>
+  <button className="account-text" onClick={()=>auth.setChangingPassword(true)}><KeyRound size={14}/> Change password</button>
   <button className="account-text" onClick={async()=>{try{await auth.signOut();}catch(e){setError(e.message);}}}>Sign out</button>
   {error&&<p className="account-error" role="alert">{error}</p>}
   <button className="account-text account-delete" onClick={()=>setDeleting(true)}><Trash2 size={14}/> Delete account</button>
@@ -119,7 +152,7 @@ export default function AccountDialog(){
  return <dialog ref={ref} className="account-dialog" aria-labelledby="account-title" onCancel={cancel} onClick={e=>{if(e.target===ref.current&&!mustOnboard)auth.close();}}>
   <div className="account-shell"><div className="account-wordmark"><span className="account-logo"><Compass size={19}/></span>Kampuscape<span className="account-beta">UIC</span></div>
    {!mustOnboard&&<button className="account-close" aria-label="Close account" onClick={auth.close}><X size={20}/></button>}
-   {visible&&(auth.loading?<div className="account-loading"><LoaderCircle className="spin"/><h1 id="account-title">Getting things ready…</h1></div>:auth.user&&auth.error?<><h1 id="account-title">Let’s reconnect.</h1><p className="account-error" role="alert">{auth.error}</p><button className="account-primary" onClick={auth.retry}>Retry</button><button className="account-text" onClick={()=>auth.signOut().catch(()=>{})}>Sign out</button></>:auth.user?(mustOnboard||auth.editing?<ProfileForm key={auth.user.id}/>:<Profile/>):<SignIn/>)}
+   {visible&&(auth.loading?<div className="account-loading"><LoaderCircle className="spin"/><h1 id="account-title">Getting things ready…</h1></div>:auth.user&&auth.error?<><h1 id="account-title">Let’s reconnect.</h1><p className="account-error" role="alert">{auth.error}</p><button className="account-primary" onClick={auth.retry}>Retry</button><button className="account-text" onClick={()=>auth.signOut().catch(()=>{})}>Sign out</button></>:auth.user?(auth.recovering||auth.changingPassword?<SetPassword/>:mustOnboard||auth.editing?<ProfileForm key={auth.user.id}/>:<Profile/>):<SignIn/>)}
    {mustOnboard&&!auth.error&&!auth.loading&&<button className="account-text account-switch" onClick={()=>auth.signOut().catch(()=>{})}>Use a different account</button>}
   </div>
  </dialog>;
