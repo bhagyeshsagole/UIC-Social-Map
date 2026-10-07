@@ -17,7 +17,11 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=333%20N%20LaSalle%20St%2C%20Chicago%2C%20IL%2C%2060654",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/CSI/rsvp?id=2271385",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "film"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271603",
@@ -31,7 +35,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2271603",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2271603",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "sports"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271596",
@@ -45,7 +53,9 @@
       "locationUrl": "https://uic.campusgroups.com/StudentCenters/rsvp?id=2271596",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/StudentCenters/rsvp?id=2271596",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271599",
@@ -59,7 +69,9 @@
       "locationUrl": "https://uic.campusgroups.com/StudentCenters/rsvp?id=2271599",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/StudentCenters/rsvp?id=2271599",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271850",
@@ -74,7 +86,9 @@
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/StudentCenters/rsvp?id=2271850",
       "source": "UIC Connection",
-      "locationSource": "Event description"
+      "locationSource": "Event description",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272299",
@@ -88,7 +102,9 @@
       "locationUrl": "https://uic.campusgroups.com/phsso/rsvp?id=2272299",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/phsso/rsvp?id=2272299",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272365",
@@ -102,7 +118,11 @@
       "locationUrl": "https://uic.campusgroups.com/ChildrensCenter/rsvp?id=2272365",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/ChildrensCenter/rsvp?id=2272365",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "volunteering"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272369",
@@ -116,7 +136,11 @@
       "locationUrl": "https://uic.campusgroups.com/APA/rsvp?id=2272369",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/APA/rsvp?id=2272369",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "food"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271604",
@@ -130,7 +154,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2271604",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2271604",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "sports"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272384",
@@ -144,7 +172,9 @@
       "locationUrl": "https://uic.campusgroups.com/slce/rsvp?id=2272384",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/slce/rsvp?id=2272384",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272373",
@@ -159,7 +189,9 @@
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/aclub/rsvp?id=2272373",
       "source": "UIC Connection",
-      "locationSource": "Event description"
+      "locationSource": "Event description",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271586",
@@ -173,7 +205,9 @@
       "locationUrl": "https://uic.campusgroups.com/BCC/rsvp?id=2271586",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/BCC/rsvp?id=2271586",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272387",
@@ -187,7 +221,11 @@
       "locationUrl": "https://uic.campusgroups.com/amacollege/rsvp?id=2272387",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/amacollege/rsvp?id=2272387",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "career"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272377",
@@ -201,7 +239,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=750%20S.%20Halsted%20St.%20Room%20603%2C%20Chicago%2C%20IL%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/CHSelection/rsvp?id=2272377",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272305",
@@ -215,7 +255,11 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=940%20W.%20Harrison%20St.%2C%20Chicago%2C%20IL%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/wlrccan/rsvp?id=2272305",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "gaming"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272348",
@@ -229,7 +273,11 @@
       "locationUrl": "https://uic.campusgroups.com/BCC/rsvp?id=2272348",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/BCC/rsvp?id=2272348",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "food"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271567",
@@ -243,7 +291,9 @@
       "locationUrl": "https://uic.campusgroups.com/commute/rsvp?id=2271567",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/commute/rsvp?id=2271567",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271470",
@@ -257,7 +307,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=828%20S.%20Wolcott%20St.%2C%2C%20Chicago%2C%2060612",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2271470",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272153",
@@ -271,7 +323,9 @@
       "locationUrl": "https://uic.campusgroups.com/PSC/rsvp?id=2272153",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/PSC/rsvp?id=2272153",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272185",
@@ -286,7 +340,9 @@
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/CounselingCenter/rsvp?id=2272185",
       "source": "UIC Connection",
-      "locationSource": "UIC Connection calendar file"
+      "locationSource": "UIC Connection calendar file",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272043",
@@ -300,7 +356,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2272043",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2272043",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "arts"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271763",
@@ -314,7 +374,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=830%20S%20Halsted%20St%2C%20Chicago%2C%20Il%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/aaan/rsvp?id=2271763",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272177",
@@ -329,7 +391,9 @@
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/dcc/rsvp?id=2272177",
       "source": "UIC Connection",
-      "locationSource": "Event description"
+      "locationSource": "Event description",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272314",
@@ -343,7 +407,11 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=SELE%202268%2C%20950%20S%20Halsted%20St%2C%20Chicago%2C%20IL%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/wtsstudentchapter/rsvp?id=2272314",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "career"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272217",
@@ -357,7 +425,11 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=750%20S.%20Halsted%20St.%2C%20Chicago%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/aclub/rsvp?id=2272217",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "career"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272225",
@@ -372,7 +444,9 @@
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/gsc/rsvp?id=2272225",
       "source": "UIC Connection",
-      "locationSource": "Event description"
+      "locationSource": "Event description",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272234",
@@ -387,7 +461,12 @@
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/opmanagement/rsvp?id=2272234",
       "source": "UIC Connection",
-      "locationSource": "UIC Connection calendar file"
+      "locationSource": "UIC Connection calendar file",
+      "interestIds": [
+        "tech",
+        "career"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271523",
@@ -401,7 +480,9 @@
       "locationUrl": "https://uic.campusgroups.com/SVA/rsvp?id=2271523",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/SVA/rsvp?id=2271523",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271213",
@@ -415,7 +496,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=Addams%20Hall%20(Rm.%20209)%2C%20830%20S.%20Halsted%20St.%2C%20Chicago%2C%20IL%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/uiclibrary/rsvp?id=2271213",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272294",
@@ -430,7 +513,9 @@
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/aaan/rsvp?id=2272294",
       "source": "UIC Connection",
-      "locationSource": "UIC Connection calendar file"
+      "locationSource": "UIC Connection calendar file",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272206",
@@ -444,7 +529,9 @@
       "locationUrl": "https://uic.campusgroups.com/APA/rsvp?id=2272206",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/APA/rsvp?id=2272206",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272321",
@@ -458,7 +545,11 @@
       "locationUrl": "https://uic.campusgroups.com/baorg/rsvp?id=2272321",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/baorg/rsvp?id=2272321",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "tech"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272333",
@@ -472,7 +563,11 @@
       "locationUrl": "https://uic.campusgroups.com/SASP/rsvp?id=2272333",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/SASP/rsvp?id=2272333",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "career"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272364",
@@ -486,7 +581,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=750%20S.%20Halsted%20St.%2C%20Chicago%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/aclub/rsvp?id=2272364",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271432",
@@ -500,7 +597,9 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2271432",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2271432",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271460",
@@ -514,7 +613,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2271460",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2271460",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "sports"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271632",
@@ -529,7 +632,11 @@
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2271632",
       "source": "UIC Connection",
-      "locationSource": "UIC Connection calendar file"
+      "locationSource": "UIC Connection calendar file",
+      "interestIds": [
+        "sports"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272261",
@@ -543,7 +650,11 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=828%20S%20Wolcott%20Ave%2C%20Chicago%2C%2060612",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/Welness/rsvp?id=2272261",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "arts"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271798",
@@ -557,7 +668,11 @@
       "locationUrl": "https://uic.campusgroups.com/kpopdcsg/rsvp?id=2271798",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/kpopdcsg/rsvp?id=2271798",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "dance"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272392",
@@ -571,7 +686,11 @@
       "locationUrl": "https://uic.campusgroups.com/EngClb/rsvp?id=2272392",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/EngClb/rsvp?id=2272392",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "arts"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272084",
@@ -585,7 +704,11 @@
       "locationUrl": "https://uic.campusgroups.com/athletics/rsvp?id=2272084",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/athletics/rsvp?id=2272084",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "sports"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272081",
@@ -599,7 +722,11 @@
       "locationUrl": "https://uic.campusgroups.com/athletics/rsvp?id=2272081",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/athletics/rsvp?id=2272081",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "sports"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272026",
@@ -613,7 +740,9 @@
       "locationUrl": "https://uic.campusgroups.com/CDEC/rsvp?id=2272026",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/CDEC/rsvp?id=2272026",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271776",
@@ -627,7 +756,11 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=4100%20W%20Ann%20Lurie%20Pl%2C%20Chicago%2C%2060632",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271776",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "volunteering"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271376",
@@ -642,7 +775,11 @@
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/uicradio/rsvp?id=2271376",
       "source": "UIC Connection",
-      "locationSource": "UIC Connection calendar file"
+      "locationSource": "UIC Connection calendar file",
+      "interestIds": [
+        "music"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271458",
@@ -656,7 +793,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=1410%20S.%20Museum%20Campus%20Drive%2C%20Chicago%2C%20IL%2C%2060605",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/CSI/rsvp?id=2271458",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272324",
@@ -670,7 +809,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=4041%20N.%20Milwaukee%20Ave%2C%202nd%20Floor%2C%20Chicago%2C%20IL%2C%2060641",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/SVA/rsvp?id=2272324",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272085",
@@ -684,7 +825,11 @@
       "locationUrl": "https://uic.campusgroups.com/athletics/rsvp?id=2272085",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/athletics/rsvp?id=2272085",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "sports"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272086",
@@ -698,7 +843,11 @@
       "locationUrl": "https://uic.campusgroups.com/athletics/rsvp?id=2272086",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/athletics/rsvp?id=2272086",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "sports"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271767",
@@ -712,7 +861,11 @@
       "locationUrl": "https://uic.campusgroups.com/JFMMG/rsvp?id=2271767",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/JFMMG/rsvp?id=2271767",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "sports"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271201",
@@ -726,7 +879,12 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2271201",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2271201",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "sports",
+        "volunteering"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272325",
@@ -740,7 +898,12 @@
       "locationUrl": "https://uic.campusgroups.com/kines/rsvp?id=2272325",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/kines/rsvp?id=2272325",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "sports",
+        "volunteering"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272021",
@@ -754,7 +917,12 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=331%20E.%20Randolph%20St%20N%20Columbus%20Dr%2C%20Chicago%2C%2060601",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/BSLSG/rsvp?id=2272021",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "sports",
+        "volunteering"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272033",
@@ -768,7 +936,12 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=331%20E.%20Randolph%20St.%2C%20Chicago%2C%2060601",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/aclub/rsvp?id=2272033",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "sports",
+        "volunteering"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272204",
@@ -782,7 +955,9 @@
       "locationUrl": "https://uic.campusgroups.com/AAPP/rsvp?id=2272204",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/AAPP/rsvp?id=2272204",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272031",
@@ -797,7 +972,11 @@
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/StudentEngagement/rsvp?id=2272031",
       "source": "UIC Connection",
-      "locationSource": "Event description"
+      "locationSource": "Event description",
+      "interestIds": [
+        "sports"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272395",
@@ -811,7 +990,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=750%20S.%20Halsted%20Street%2C%20Chicago%2C%20IL%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/commute/rsvp?id=2272395",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272286",
@@ -825,7 +1006,9 @@
       "locationUrl": "https://uic.campusgroups.com/DEI/rsvp?id=2272286",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/DEI/rsvp?id=2272286",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271915",
@@ -839,7 +1022,11 @@
       "locationUrl": "https://uic.campusgroups.com/PhiDeltaChi/rsvp?id=2271915",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/PhiDeltaChi/rsvp?id=2271915",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "career"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272420",
@@ -853,7 +1040,11 @@
       "locationUrl": "https://uic.campusgroups.com/MMAC/rsvp?id=2272420",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/MMAC/rsvp?id=2272420",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "volunteering"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272155",
@@ -867,7 +1058,9 @@
       "locationUrl": "https://uic.campusgroups.com/PSC/rsvp?id=2272155",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/PSC/rsvp?id=2272155",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272396",
@@ -881,7 +1074,9 @@
       "locationUrl": "https://uic.campusgroups.com/bpsscuic/rsvp?id=2272396",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/bpsscuic/rsvp?id=2272396",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272327",
@@ -895,7 +1090,9 @@
       "locationUrl": "https://uic.campusgroups.com/mbsa/rsvp?id=2272327",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/mbsa/rsvp?id=2272327",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271453",
@@ -909,7 +1106,9 @@
       "locationUrl": "https://uic.campusgroups.com/sab/rsvp?id=2271453",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/sab/rsvp?id=2271453",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272193",
@@ -923,7 +1122,9 @@
       "locationUrl": "https://uic.campusgroups.com/APAASPChicago/rsvp?id=2272193",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/APAASPChicago/rsvp?id=2272193",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272330",
@@ -937,7 +1138,9 @@
       "locationUrl": "https://uic.campusgroups.com/ASCP/rsvp?id=2272330",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/ASCP/rsvp?id=2272330",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272361",
@@ -951,7 +1154,9 @@
       "locationUrl": "https://uic.campusgroups.com/ACCP/rsvp?id=2272361",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/ACCP/rsvp?id=2272361",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272399",
@@ -965,7 +1170,11 @@
       "locationUrl": "https://uic.campusgroups.com/dcc/rsvp?id=2272399",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/dcc/rsvp?id=2272399",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "food"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272310",
@@ -979,7 +1188,9 @@
       "locationUrl": "https://uic.campusgroups.com/HealthWellBeing/rsvp?id=2272310",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/HealthWellBeing/rsvp?id=2272310",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272156",
@@ -993,7 +1204,9 @@
       "locationUrl": "https://uic.campusgroups.com/PSC/rsvp?id=2272156",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/PSC/rsvp?id=2272156",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272218",
@@ -1007,7 +1220,11 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=155%20N%20Wacker%20Dr%2C%20Chicago%2C%2060606",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/aclub/rsvp?id=2272218",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "career"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272251",
@@ -1021,7 +1238,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=1200%20W.%20Harrison%20St.%2C%20Chicago%2C%20IL%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/fsl/rsvp?id=2272251",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271393",
@@ -1035,7 +1254,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=705%20S%20Morgan%20St%2C%20Chicago%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271393",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272383",
@@ -1049,7 +1270,9 @@
       "locationUrl": "https://uic.campusgroups.com/IPCE/rsvp?id=2272383",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/IPCE/rsvp?id=2272383",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272157",
@@ -1063,7 +1286,9 @@
       "locationUrl": "https://uic.campusgroups.com/PSC/rsvp?id=2272157",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/PSC/rsvp?id=2272157",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272044",
@@ -1077,7 +1302,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2272044",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2272044",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "arts"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271705",
@@ -1091,7 +1320,11 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=801%20S.%20Morgan%2C%20Chicago%2C%20IL%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/uiclibrary/rsvp?id=2271705",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "arts"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272148",
@@ -1105,7 +1338,9 @@
       "locationUrl": "https://uic.campusgroups.com/ICHP/rsvp?id=2272148",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/ICHP/rsvp?id=2272148",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271568",
@@ -1119,7 +1354,9 @@
       "locationUrl": "https://uic.campusgroups.com/commute/rsvp?id=2271568",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/commute/rsvp?id=2271568",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272110",
@@ -1133,7 +1370,9 @@
       "locationUrl": "https://uic.campusgroups.com/CHSelection/rsvp?id=2272110",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/CHSelection/rsvp?id=2272110",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271330",
@@ -1147,7 +1386,9 @@
       "locationUrl": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271330",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271330",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271475",
@@ -1162,7 +1403,11 @@
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2271475",
       "source": "UIC Connection",
-      "locationSource": "UIC Connection calendar file"
+      "locationSource": "UIC Connection calendar file",
+      "interestIds": [
+        "sports"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271939",
@@ -1177,7 +1422,11 @@
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2271939",
       "source": "UIC Connection",
-      "locationSource": "UIC Connection calendar file"
+      "locationSource": "UIC Connection calendar file",
+      "interestIds": [
+        "sports"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272397",
@@ -1192,7 +1441,11 @@
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/sgc/rsvp?id=2272397",
       "source": "UIC Connection",
-      "locationSource": "Event description"
+      "locationSource": "Event description",
+      "interestIds": [
+        "arts"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271928",
@@ -1206,7 +1459,11 @@
       "locationUrl": "https://uic.campusgroups.com/PhiDeltaChi/rsvp?id=2271928",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/PhiDeltaChi/rsvp?id=2271928",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "career"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272350",
@@ -1220,7 +1477,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=1200%20W.%20Harrison%20St.%2C%20Chicago%2C%20IL%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/fsl/rsvp?id=2272350",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272421",
@@ -1234,7 +1493,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=1240%20W%20Harrison%20St%2C%20Chicago%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/sandbox/rsvp?id=2272421",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272346",
@@ -1248,7 +1509,11 @@
       "locationUrl": "https://uic.campusgroups.com/WED/rsvp?id=2272346",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/WED/rsvp?id=2272346",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "dance"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272262",
@@ -1262,7 +1527,11 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=828%20S%20Wolcott%20Ave%2C%20Chicago%2C%2060612",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/Welness/rsvp?id=2272262",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "arts"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271800",
@@ -1276,7 +1545,11 @@
       "locationUrl": "https://uic.campusgroups.com/kpopdcsg/rsvp?id=2271800",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/kpopdcsg/rsvp?id=2271800",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "dance"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272317",
@@ -1290,7 +1563,11 @@
       "locationUrl": "https://uic.campusgroups.com/EngClb/rsvp?id=2272317",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/EngClb/rsvp?id=2272317",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "arts"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271202",
@@ -1304,7 +1581,12 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2271202",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2271202",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "outdoors",
+        "sports"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272367",
@@ -1318,7 +1600,11 @@
       "locationUrl": "https://uic.campusgroups.com/dcc/rsvp?id=2272367",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/dcc/rsvp?id=2272367",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "film"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271423",
@@ -1332,7 +1618,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=525%20S%20Racine%20Ave.%2C%20Chicago%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/CU1Arena/rsvp?id=2271423",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272378",
@@ -1346,7 +1634,9 @@
       "locationUrl": "https://uic.campusgroups.com/SNPhA/rsvp?id=2272378",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/SNPhA/rsvp?id=2272378",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271783",
@@ -1360,7 +1650,11 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=4100%20W%20Ann%20Lurie%20Pl%2C%20Chicago%2C%2060632",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271783",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "volunteering"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272301",
@@ -1374,7 +1668,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=3300%20Golf%20Rd%2C%20Brookfield%2C%20IL%2C%2060513",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/SVA/rsvp?id=2272301",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271777",
@@ -1388,7 +1684,11 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=4100%20W%20Ann%20Lurie%20Pl%2C%20Chicago%2C%2060632",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271777",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "volunteering"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272353",
@@ -1403,7 +1703,11 @@
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/WED/rsvp?id=2272353",
       "source": "UIC Connection",
-      "locationSource": "UIC Connection calendar file"
+      "locationSource": "UIC Connection calendar file",
+      "interestIds": [
+        "dance"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272243",
@@ -1417,7 +1721,9 @@
       "locationUrl": "https://uic.campusgroups.com/dos/rsvp?id=2272243",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/dos/rsvp?id=2272243",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272239",
@@ -1432,7 +1738,9 @@
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/dos/rsvp?id=2272239",
       "source": "UIC Connection",
-      "locationSource": "Event description"
+      "locationSource": "Event description",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271916",
@@ -1446,7 +1754,11 @@
       "locationUrl": "https://uic.campusgroups.com/PhiDeltaChi/rsvp?id=2271916",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/PhiDeltaChi/rsvp?id=2271916",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "career"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272368",
@@ -1460,7 +1772,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=2216%20S%20Wentworth%20Ave%2C%20Chicago%2C%20IL%2C%2060616",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/APA/rsvp?id=2272368",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272154",
@@ -1474,7 +1788,9 @@
       "locationUrl": "https://uic.campusgroups.com/PSC/rsvp?id=2272154",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/PSC/rsvp?id=2272154",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272270",
@@ -1489,7 +1805,9 @@
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2272270",
       "source": "UIC Connection",
-      "locationSource": "Event description"
+      "locationSource": "Event description",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271570",
@@ -1503,7 +1821,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=750%20S.%20Halsted%2C%20Suite%20245%2C%20Chicago%2C%20IL%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/commute/rsvp?id=2271570",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271484",
@@ -1517,7 +1837,9 @@
       "locationUrl": "https://uic.campusgroups.com/AMCP/rsvp?id=2271484",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/AMCP/rsvp?id=2271484",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272240",
@@ -1531,7 +1853,9 @@
       "locationUrl": "https://uic.campusgroups.com/dos/rsvp?id=2272240",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/dos/rsvp?id=2272240",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272352",
@@ -1545,7 +1869,9 @@
       "locationUrl": "https://uic.campusgroups.com/CSI/rsvp?id=2272352",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/CSI/rsvp?id=2272352",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271394",
@@ -1559,7 +1885,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=750%20S%20Halsted%20Street%2C%20Chicago%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271394",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272355",
@@ -1573,7 +1901,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=1200%20W.%20Harrison%20St.%2C%20Chicago%2C%20IL%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/fsl/rsvp?id=2272355",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271521",
@@ -1587,7 +1917,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=1200%20W.%20Harrison%20St%2C%20Chicago%2C%20Il%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/aaan/rsvp?id=2271521",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272241",
@@ -1601,7 +1933,9 @@
       "locationUrl": "https://uic.campusgroups.com/dos/rsvp?id=2272241",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/dos/rsvp?id=2272241",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272186",
@@ -1616,7 +1950,9 @@
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/CounselingCenter/rsvp?id=2272186",
       "source": "UIC Connection",
-      "locationSource": "UIC Connection calendar file"
+      "locationSource": "UIC Connection calendar file",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272045",
@@ -1630,7 +1966,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2272045",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2272045",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "arts"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272410",
@@ -1644,7 +1984,9 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2272410",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2272410",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271198",
@@ -1658,7 +2000,9 @@
       "locationUrl": "https://uic.campusgroups.com/sab/rsvp?id=2271198",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/sab/rsvp?id=2271198",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272135",
@@ -1673,7 +2017,9 @@
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/StudentCenters/rsvp?id=2272135",
       "source": "UIC Connection",
-      "locationSource": "Event description"
+      "locationSource": "Event description",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271886",
@@ -1688,7 +2034,9 @@
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/ACCP/rsvp?id=2271886",
       "source": "UIC Connection",
-      "locationSource": "Event description"
+      "locationSource": "Event description",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271587",
@@ -1702,7 +2050,9 @@
       "locationUrl": "https://uic.campusgroups.com/SASP/rsvp?id=2271587",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/SASP/rsvp?id=2271587",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272242",
@@ -1716,7 +2066,9 @@
       "locationUrl": "https://uic.campusgroups.com/dos/rsvp?id=2272242",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/dos/rsvp?id=2272242",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272356",
@@ -1730,7 +2082,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=1200%20W.%20Harrison%20St.%2C%20Chicago%2C%20IL%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/fsl/rsvp?id=2272356",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272319",
@@ -1744,7 +2098,9 @@
       "locationUrl": "https://uic.campusgroups.com/EngClb/rsvp?id=2272319",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/EngClb/rsvp?id=2272319",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272400",
@@ -1758,7 +2114,9 @@
       "locationUrl": "https://uic.campusgroups.com/sandbox/rsvp?id=2272400",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/sandbox/rsvp?id=2272400",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272426",
@@ -1772,7 +2130,9 @@
       "locationUrl": "https://uic.campusgroups.com/RHA/rsvp?id=2272426",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/RHA/rsvp?id=2272426",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272266",
@@ -1786,7 +2146,9 @@
       "locationUrl": "https://uic.campusgroups.com/NSFP/rsvp?id=2272266",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/NSFP/rsvp?id=2272266",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271778",
@@ -1800,7 +2162,11 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=4100%20W%20Ann%20Lurie%20Pl%2C%20Chicago%2C%2060632",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271778",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "volunteering"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272404",
@@ -1814,7 +2180,12 @@
       "locationUrl": "https://uic.campusgroups.com/PSC/rsvp?id=2272404",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/PSC/rsvp?id=2272404",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "volunteering",
+        "film"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271602",
@@ -1828,7 +2199,11 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=723%20W.%20Maxwell%20St.%2C%20Chicago%2C%20IL%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/uiclibrary/rsvp?id=2271602",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "arts"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272145",
@@ -1842,7 +2217,9 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2272145",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2272145",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272351",
@@ -1856,7 +2233,9 @@
       "locationUrl": "https://uic.campusgroups.com/StudentCenters/rsvp?id=2272351",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/StudentCenters/rsvp?id=2272351",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271174",
@@ -1870,7 +2249,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=2500%20W.%20Bradley%20Place%2C%20Chicago%2C%2060618",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/slce/rsvp?id=2271174",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272335",
@@ -1884,7 +2265,9 @@
       "locationUrl": "https://uic.campusgroups.com/SASP/rsvp?id=2272335",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/SASP/rsvp?id=2272335",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271571",
@@ -1898,7 +2281,11 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=750%20S%20Halsted%2C%20Suite%20245%2C%20Chicago%2C%20IL%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/commute/rsvp?id=2271571",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "arts"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271917",
@@ -1912,7 +2299,11 @@
       "locationUrl": "https://uic.campusgroups.com/PhiDeltaChi/rsvp?id=2271917",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/PhiDeltaChi/rsvp?id=2271917",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "career"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271572",
@@ -1926,7 +2317,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=750%20S.%20Halsted%2C%20Suite%20245%2C%20Chicago%2C%20IL%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/commute/rsvp?id=2271572",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271497",
@@ -1940,7 +2333,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=801%20S.%20Morgan%2C%20Chicago%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/uiclibrary/rsvp?id=2271497",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272191",
@@ -1954,7 +2349,9 @@
       "locationUrl": "https://uic.campusgroups.com/SNPhA/rsvp?id=2272191",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/SNPhA/rsvp?id=2272191",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272408",
@@ -1968,7 +2365,9 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2272408",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2272408",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272133",
@@ -1983,7 +2382,9 @@
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/StudentCenters/rsvp?id=2272133",
       "source": "UIC Connection",
-      "locationSource": "Event description"
+      "locationSource": "Event description",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271514",
@@ -1997,7 +2398,9 @@
       "locationUrl": "https://uic.campusgroups.com/SVA/rsvp?id=2271514",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/SVA/rsvp?id=2271514",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271532",
@@ -2011,7 +2414,9 @@
       "locationUrl": "https://uic.campusgroups.com/SVA/rsvp?id=2271532",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/SVA/rsvp?id=2271532",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271574",
@@ -2025,7 +2430,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=750%20S.%20Halsted%2C%20Suite%20245%2C%20Chicago%2C%20IL%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/commute/rsvp?id=2271574",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272046",
@@ -2039,7 +2446,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2272046",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2272046",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "arts"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272268",
@@ -2053,7 +2464,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=737%20S%20Halsted%20Street%2C%20Chicago%2C%20IL%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2272268",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271162",
@@ -2067,7 +2480,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=151%20W%20Randolph%20St%2C%20Chicago%2C%20IL%2C%2060601",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/CSI/rsvp?id=2271162",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272323",
@@ -2081,7 +2496,9 @@
       "locationUrl": "https://uic.campusgroups.com/slce/rsvp?id=2272323",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/slce/rsvp?id=2272323",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271575",
@@ -2095,7 +2512,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=750%20S.%20Halsted%2C%20Suite%20245%2C%20Chicago%2C%20IL%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/commute/rsvp?id=2271575",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272001",
@@ -2109,7 +2528,9 @@
       "locationUrl": "https://uic.campusgroups.com/APA/rsvp?id=2272001",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/APA/rsvp?id=2272001",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272390",
@@ -2123,7 +2544,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=723%20W%20Maxwell%20St%2C%20Chicago%2C%20IL%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/aarcc/rsvp?id=2272390",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271364",
@@ -2137,7 +2560,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=60%20West%20Walton%20Street%2C%20Chicago%2C%20IL%2C%2060610",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/uiclibrary/rsvp?id=2271364",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272111",
@@ -2151,7 +2576,9 @@
       "locationUrl": "https://uic.campusgroups.com/CHSelection/rsvp?id=2272111",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/CHSelection/rsvp?id=2272111",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271195",
@@ -2166,7 +2593,9 @@
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/sab/rsvp?id=2271195",
       "source": "UIC Connection",
-      "locationSource": "Event description"
+      "locationSource": "Event description",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271829",
@@ -2181,7 +2610,9 @@
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/StudentCenters/rsvp?id=2271829",
       "source": "UIC Connection",
-      "locationSource": "Event description"
+      "locationSource": "Event description",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271784",
@@ -2195,7 +2626,11 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=4100%20W%20Ann%20Lurie%20Pl%2C%20Chicago%2C%2060632",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271784",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "volunteering"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271576",
@@ -2209,7 +2644,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=750%20S.%20Halsted%2C%20Suite%20245%2C%20Chicago%2C%20IL%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/commute/rsvp?id=2271576",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272134",
@@ -2223,7 +2660,9 @@
       "locationUrl": "https://uic.campusgroups.com/StudentCenters/rsvp?id=2272134",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/StudentCenters/rsvp?id=2272134",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271779",
@@ -2237,7 +2676,11 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=4100%20W%20Ann%20Lurie%20Pl%2C%20Chicago%2C%2060632",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271779",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "volunteering"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271804",
@@ -2251,7 +2694,11 @@
       "locationUrl": "https://uic.campusgroups.com/kpopdcsg/rsvp?id=2271804",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/kpopdcsg/rsvp?id=2271804",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "dance"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271755",
@@ -2265,7 +2712,11 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=1200%20W.%20Harrison%20St%2C%20Chicago%2C%20Il%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/aaan/rsvp?id=2271755",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "film"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271633",
@@ -2280,7 +2731,9 @@
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2271633",
       "source": "UIC Connection",
-      "locationSource": "UIC Connection calendar file"
+      "locationSource": "UIC Connection calendar file",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271780",
@@ -2294,7 +2747,11 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=4100%20W%20Ann%20Lurie%20Pl%2C%20Chicago%2C%2060632",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271780",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "volunteering"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272300",
@@ -2308,7 +2765,11 @@
       "locationUrl": "https://uic.campusgroups.com/JFMMG/rsvp?id=2272300",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/JFMMG/rsvp?id=2272300",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "sports"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272256",
@@ -2322,7 +2783,11 @@
       "locationUrl": "https://uic.campusgroups.com/PhiDeltaChi/rsvp?id=2272256",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/PhiDeltaChi/rsvp?id=2272256",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "career"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271868",
@@ -2336,7 +2801,9 @@
       "locationUrl": "https://uic.campusgroups.com/slce/rsvp?id=2271868",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/slce/rsvp?id=2271868",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272415",
@@ -2350,7 +2817,11 @@
       "locationUrl": "https://uic.campusgroups.com/AASAP/rsvp?id=2272415",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/AASAP/rsvp?id=2272415",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "volunteering"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271489",
@@ -2364,7 +2835,9 @@
       "locationUrl": "https://uic.campusgroups.com/PSC/rsvp?id=2271489",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/PSC/rsvp?id=2271489",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271577",
@@ -2378,7 +2851,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=750%20S.%20Halsted%2C%20Suite%20245%2C%20Chicago%2C%20IL%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/commute/rsvp?id=2271577",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271471",
@@ -2392,7 +2867,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=828%20S.%20Wolcott%20St.%2C%2C%20Chicago%2C%2060612",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2271471",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271757",
@@ -2406,7 +2883,11 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=1200%20W.%20Harrison%20St.%2C%20Chicago%2C%20Il%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/aaan/rsvp?id=2271757",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "career"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272047",
@@ -2420,7 +2901,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2272047",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2272047",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "arts"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271764",
@@ -2434,7 +2919,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=830%20S%20Halsted%20St%2C%20Chicago%2C%20Il%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/aaan/rsvp?id=2271764",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271378",
@@ -2449,7 +2936,11 @@
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/uicradio/rsvp?id=2271378",
       "source": "UIC Connection",
-      "locationSource": "UIC Connection calendar file"
+      "locationSource": "UIC Connection calendar file",
+      "interestIds": [
+        "music"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271578",
@@ -2463,7 +2954,11 @@
       "locationUrl": "https://uic.campusgroups.com/commute/rsvp?id=2271578",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/commute/rsvp?id=2271578",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "social"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272357",
@@ -2477,7 +2972,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=1200%20W.%20Harrison%20St.%2C%20Chicago%2C%20IL%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/fsl/rsvp?id=2272357",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271805",
@@ -2491,7 +2988,11 @@
       "locationUrl": "https://uic.campusgroups.com/kpopdcsg/rsvp?id=2271805",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/kpopdcsg/rsvp?id=2271805",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "dance"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271758",
@@ -2505,7 +3006,11 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=1200%20W.%20Harrison%20St.%2C%20Chicago%2C%20Il%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/aaan/rsvp?id=2271758",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "gaming"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271448",
@@ -2519,7 +3024,9 @@
       "locationUrl": "https://uic.campusgroups.com/CSI/rsvp?id=2271448",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/CSI/rsvp?id=2271448",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271167",
@@ -2533,7 +3040,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=1139%20W%20Harrison%20St%2C%20Chicago%2C%20IL",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/sab/rsvp?id=2271167",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271284",
@@ -2547,7 +3056,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=1139%20W%20Harrison%20St%2C%20Chicago%2C%20IL%2060607%2C%20Chicago%2C%20IL%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271284",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271204",
@@ -2561,7 +3072,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2271204",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2271204",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "outdoors"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271781",
@@ -2575,7 +3090,11 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=4100%20W%20Ann%20Lurie%20Pl%2C%20Chicago%2C%2060632",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271781",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "volunteering"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272376",
@@ -2589,7 +3108,9 @@
       "locationUrl": "https://uic.campusgroups.com/WED/rsvp?id=2272376",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/WED/rsvp?id=2272376",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272132",
@@ -2603,7 +3124,11 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=725%20W%20Roosevelt%20Rd%2C%20Chicago%2C%20IL%2C%2060608",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/CSI/rsvp?id=2272132",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "music"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271844",
@@ -2617,7 +3142,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=525%20S%20Racine%20Ave.%2C%20Chicago%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/CU1Arena/rsvp?id=2271844",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272146",
@@ -2631,7 +3158,9 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2272146",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2272146",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272402",
@@ -2645,7 +3174,11 @@
       "locationUrl": "https://uic.campusgroups.com/sandbox/rsvp?id=2272402",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/sandbox/rsvp?id=2272402",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "tech"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272358",
@@ -2659,7 +3192,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=1200%20W.%20Harrison%20St.%2C%20Chicago%2C%20IL%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/fsl/rsvp?id=2272358",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272112",
@@ -2673,7 +3208,9 @@
       "locationUrl": "https://uic.campusgroups.com/CHSelection/rsvp?id=2272112",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/CHSelection/rsvp?id=2272112",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272347",
@@ -2688,7 +3225,9 @@
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/SVA/rsvp?id=2272347",
       "source": "UIC Connection",
-      "locationSource": "UIC Connection calendar file"
+      "locationSource": "UIC Connection calendar file",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272048",
@@ -2702,7 +3241,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2272048",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2272048",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "arts"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271760",
@@ -2716,7 +3259,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=1200%20W.%20Harrison%20St.%2C%20Chicago%2C%20Il%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/aaan/rsvp?id=2271760",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271579",
@@ -2730,7 +3275,11 @@
       "locationUrl": "https://uic.campusgroups.com/commute/rsvp?id=2271579",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/commute/rsvp?id=2271579",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "social"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271524",
@@ -2744,7 +3293,9 @@
       "locationUrl": "https://uic.campusgroups.com/SVA/rsvp?id=2271524",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/SVA/rsvp?id=2271524",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271929",
@@ -2758,7 +3309,11 @@
       "locationUrl": "https://uic.campusgroups.com/PhiDeltaChi/rsvp?id=2271929",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/PhiDeltaChi/rsvp?id=2271929",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "career"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271926",
@@ -2772,7 +3327,11 @@
       "locationUrl": "https://uic.campusgroups.com/PhiDeltaChi/rsvp?id=2271926",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/PhiDeltaChi/rsvp?id=2271926",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "career"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271433",
@@ -2786,7 +3345,9 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2271433",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2271433",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271461",
@@ -2800,7 +3361,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2271461",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2271461",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "sports"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271761",
@@ -2814,7 +3379,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=1200%20W.%20Harrison%20St.%2C%20Chicago%2C%20Il%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/aaan/rsvp?id=2271761",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271283",
@@ -2829,7 +3396,9 @@
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271283",
       "source": "UIC Connection",
-      "locationSource": "Event description"
+      "locationSource": "Event description",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272027",
@@ -2843,7 +3412,9 @@
       "locationUrl": "https://uic.campusgroups.com/CDEC/rsvp?id=2272027",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/CDEC/rsvp?id=2272027",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271184",
@@ -2857,7 +3428,11 @@
       "locationUrl": "https://uic.campusgroups.com/sab/rsvp?id=2271184",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/sab/rsvp?id=2271184",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "dance"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271331",
@@ -2871,7 +3446,9 @@
       "locationUrl": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271331",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271331",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272403",
@@ -2885,7 +3462,9 @@
       "locationUrl": "https://uic.campusgroups.com/sandbox/rsvp?id=2272403",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/sandbox/rsvp?id=2272403",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271454",
@@ -2899,7 +3478,9 @@
       "locationUrl": "https://uic.campusgroups.com/sab/rsvp?id=2271454",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/sab/rsvp?id=2271454",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272227",
@@ -2914,7 +3495,9 @@
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/StudentCenters/rsvp?id=2272227",
       "source": "UIC Connection",
-      "locationSource": "Event description"
+      "locationSource": "Event description",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271282",
@@ -2928,7 +3511,9 @@
       "locationUrl": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271282",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271282",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272362",
@@ -2942,7 +3527,9 @@
       "locationUrl": "https://uic.campusgroups.com/ACCP/rsvp?id=2272362",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/ACCP/rsvp?id=2272362",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272409",
@@ -2956,7 +3543,9 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2272409",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2272409",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271580",
@@ -2970,7 +3559,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=750%20S.%20Halsted%2C%20Suite%20245%2C%20Chicago%2C%20IL%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/commute/rsvp?id=2271580",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272049",
@@ -2984,7 +3575,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2272049",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2272049",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "arts"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271765",
@@ -2998,7 +3593,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=828%20S%20Halsted%20St%2C%20Chicago%2C%20Il%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/aaan/rsvp?id=2271765",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271581",
@@ -3012,7 +3609,11 @@
       "locationUrl": "https://uic.campusgroups.com/commute/rsvp?id=2271581",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/commute/rsvp?id=2271581",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "social"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271476",
@@ -3027,7 +3628,11 @@
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2271476",
       "source": "UIC Connection",
-      "locationSource": "UIC Connection calendar file"
+      "locationSource": "UIC Connection calendar file",
+      "interestIds": [
+        "sports"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271940",
@@ -3042,7 +3647,11 @@
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2271940",
       "source": "UIC Connection",
-      "locationSource": "UIC Connection calendar file"
+      "locationSource": "UIC Connection calendar file",
+      "interestIds": [
+        "sports"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271485",
@@ -3056,7 +3665,9 @@
       "locationUrl": "https://uic.campusgroups.com/AMCP/rsvp?id=2271485",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/AMCP/rsvp?id=2271485",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271197",
@@ -3070,7 +3681,9 @@
       "locationUrl": "https://uic.campusgroups.com/sab/rsvp?id=2271197",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/sab/rsvp?id=2271197",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272229",
@@ -3085,7 +3698,9 @@
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/StudentCenters/rsvp?id=2272229",
       "source": "UIC Connection",
-      "locationSource": "Event description"
+      "locationSource": "Event description",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271806",
@@ -3099,7 +3714,11 @@
       "locationUrl": "https://uic.campusgroups.com/kpopdcsg/rsvp?id=2271806",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/kpopdcsg/rsvp?id=2271806",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "dance"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271869",
@@ -3113,7 +3732,9 @@
       "locationUrl": "https://uic.campusgroups.com/slce/rsvp?id=2271869",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/slce/rsvp?id=2271869",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271782",
@@ -3127,7 +3748,11 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=4100%20W%20Ann%20Lurie%20Pl%2C%20Chicago%2C%2060632",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271782",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "volunteering"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271842",
@@ -3141,7 +3766,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=525%20S%20Racine%20Ave.%2C%20Chicago%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/CU1Arena/rsvp?id=2271842",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272320",
@@ -3155,7 +3782,9 @@
       "locationUrl": "https://uic.campusgroups.com/commute/rsvp?id=2272320",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/commute/rsvp?id=2272320",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272407",
@@ -3169,7 +3798,9 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2272407",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2272407",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272385",
@@ -3183,7 +3814,9 @@
       "locationUrl": "https://uic.campusgroups.com/aaan/rsvp?id=2272385",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/aaan/rsvp?id=2272385",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271887",
@@ -3198,7 +3831,9 @@
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/ACCP/rsvp?id=2271887",
       "source": "UIC Connection",
-      "locationSource": "UIC Connection calendar file"
+      "locationSource": "UIC Connection calendar file",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271952",
@@ -3212,7 +3847,9 @@
       "locationUrl": "https://uic.campusgroups.com/ASCP/rsvp?id=2271952",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/ASCP/rsvp?id=2271952",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271588",
@@ -3226,7 +3863,9 @@
       "locationUrl": "https://uic.campusgroups.com/SASP/rsvp?id=2271588",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/SASP/rsvp?id=2271588",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271311",
@@ -3240,7 +3879,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=705%20S%20Morgan%20St%2C%20Chicago%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271311",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271522",
@@ -3254,7 +3895,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=1200%20W.%20Harrison%20St%2C%20Chicago%2C%20Il%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/aaan/rsvp?id=2271522",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271930",
@@ -3268,7 +3911,11 @@
       "locationUrl": "https://uic.campusgroups.com/PhiDeltaChi/rsvp?id=2271930",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/PhiDeltaChi/rsvp?id=2271930",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "career"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271582",
@@ -3283,7 +3930,11 @@
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/commute/rsvp?id=2271582",
       "source": "UIC Connection",
-      "locationSource": "Event description"
+      "locationSource": "Event description",
+      "interestIds": [
+        "social"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272050",
@@ -3297,7 +3948,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2272050",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2272050",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "arts"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272147",
@@ -3311,7 +3966,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2272147",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2272147",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "sports"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271501",
@@ -3325,7 +3984,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=801%20S.%20Morgan%2C%20Chicago%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/uiclibrary/rsvp?id=2271501",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271502",
@@ -3339,7 +4000,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=801%20S.%20Morgan%2C%20Chicago%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/uiclibrary/rsvp?id=2271502",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271583",
@@ -3354,7 +4017,11 @@
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/commute/rsvp?id=2271583",
       "source": "UIC Connection",
-      "locationSource": "Event description"
+      "locationSource": "Event description",
+      "interestIds": [
+        "social"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272051",
@@ -3368,7 +4035,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2272051",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2272051",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "arts"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271525",
@@ -3382,7 +4053,9 @@
       "locationUrl": "https://uic.campusgroups.com/SVA/rsvp?id=2271525",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/SVA/rsvp?id=2271525",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272331",
@@ -3396,7 +4069,12 @@
       "locationUrl": "https://uic.campusgroups.com/SVA/rsvp?id=2272331",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/SVA/rsvp?id=2272331",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "sports",
+        "volunteering"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271434",
@@ -3410,7 +4088,9 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2271434",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2271434",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271462",
@@ -3424,7 +4104,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2271462",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2271462",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "sports"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271332",
@@ -3438,7 +4122,9 @@
       "locationUrl": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271332",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271332",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271353",
@@ -3452,7 +4138,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=705%20S%20Morgan%20St%2C%20Chicago%2C%20IL%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271353",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271352",
@@ -3466,7 +4154,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=705%20S%20Morgan%20St%2C%20Chicago%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271352",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272052",
@@ -3480,7 +4170,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2272052",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2272052",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "arts"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271526",
@@ -3494,7 +4188,9 @@
       "locationUrl": "https://uic.campusgroups.com/SVA/rsvp?id=2271526",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/SVA/rsvp?id=2271526",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271357",
@@ -3508,7 +4204,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=750%20S%20Halsted%20St.%2C%20Chicago%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271357",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271333",
@@ -3522,7 +4220,9 @@
       "locationUrl": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271333",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271333",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271358",
@@ -3536,7 +4236,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=750%20S%20Halsted%20St.%2C%20Chicago%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271358",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272053",
@@ -3550,7 +4252,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2272053",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2272053",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "arts"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272336",
@@ -3564,7 +4270,11 @@
       "locationUrl": "https://uic.campusgroups.com/SVA/rsvp?id=2272336",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/SVA/rsvp?id=2272336",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "arts"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271515",
@@ -3578,7 +4288,9 @@
       "locationUrl": "https://uic.campusgroups.com/SVA/rsvp?id=2271515",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/SVA/rsvp?id=2271515",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271533",
@@ -3592,7 +4304,9 @@
       "locationUrl": "https://uic.campusgroups.com/SVA/rsvp?id=2271533",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/SVA/rsvp?id=2271533",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272054",
@@ -3606,7 +4320,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2272054",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2272054",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "arts"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272055",
@@ -3620,7 +4338,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2272055",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2272055",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "arts"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271314",
@@ -3634,7 +4356,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=750%20South%20Halsted%20Street%2C%20Chicago%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271314",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271312",
@@ -3648,7 +4372,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=705%20S%20Morgan%20St%2C%20Chicago%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271312",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271527",
@@ -3662,7 +4388,9 @@
       "locationUrl": "https://uic.campusgroups.com/SVA/rsvp?id=2271527",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/SVA/rsvp?id=2271527",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271435",
@@ -3676,7 +4404,9 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2271435",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2271435",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271463",
@@ -3690,7 +4420,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2271463",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2271463",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "sports"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271334",
@@ -3704,7 +4438,9 @@
       "locationUrl": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271334",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271334",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272056",
@@ -3718,7 +4454,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2272056",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2272056",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "arts"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271315",
@@ -3732,7 +4472,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=750%20S%20Halsted%20St%2C%20Chicago%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271315",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271516",
@@ -3746,7 +4488,9 @@
       "locationUrl": "https://uic.campusgroups.com/SVA/rsvp?id=2271516",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/SVA/rsvp?id=2271516",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271534",
@@ -3760,7 +4504,9 @@
       "locationUrl": "https://uic.campusgroups.com/SVA/rsvp?id=2271534",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/SVA/rsvp?id=2271534",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272057",
@@ -3774,7 +4520,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2272057",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2272057",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "arts"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271706",
@@ -3788,7 +4538,11 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=1007%20West%20Harrison%20Street%2C%20Chicago%2C%20IL%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/uiclibrary/rsvp?id=2271706",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "arts"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272058",
@@ -3802,7 +4556,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2272058",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2272058",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "arts"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271708",
@@ -3816,7 +4574,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=750%20S%20Halsted%20St%2C%20Chicago%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271708",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272059",
@@ -3830,7 +4590,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2272059",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2272059",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "arts"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271321",
@@ -3844,7 +4608,9 @@
       "locationUrl": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271321",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271321",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271528",
@@ -3858,7 +4624,9 @@
       "locationUrl": "https://uic.campusgroups.com/SVA/rsvp?id=2271528",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/SVA/rsvp?id=2271528",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271436",
@@ -3872,7 +4640,9 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2271436",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2271436",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271464",
@@ -3886,7 +4656,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2271464",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2271464",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "sports"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271335",
@@ -3900,7 +4674,9 @@
       "locationUrl": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271335",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271335",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272060",
@@ -3914,7 +4690,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2272060",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2272060",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "arts"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271553",
@@ -3928,7 +4708,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2271553",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2271553",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "outdoors"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271517",
@@ -3942,7 +4726,9 @@
       "locationUrl": "https://uic.campusgroups.com/SVA/rsvp?id=2271517",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/SVA/rsvp?id=2271517",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271535",
@@ -3956,7 +4742,9 @@
       "locationUrl": "https://uic.campusgroups.com/SVA/rsvp?id=2271535",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/SVA/rsvp?id=2271535",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272061",
@@ -3970,7 +4758,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2272061",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2272061",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "arts"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271320",
@@ -3985,7 +4777,9 @@
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271320",
       "source": "UIC Connection",
-      "locationSource": "Event description"
+      "locationSource": "Event description",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272062",
@@ -3999,7 +4793,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2272062",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2272062",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "arts"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271529",
@@ -4013,7 +4811,9 @@
       "locationUrl": "https://uic.campusgroups.com/SVA/rsvp?id=2271529",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/SVA/rsvp?id=2271529",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271437",
@@ -4027,7 +4827,9 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2271437",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2271437",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271465",
@@ -4041,7 +4843,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2271465",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2271465",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "sports"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272063",
@@ -4055,7 +4861,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2272063",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2272063",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "arts"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271336",
@@ -4069,7 +4879,9 @@
       "locationUrl": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271336",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271336",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271322",
@@ -4083,7 +4895,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=750%20s%20Halsted%20St%2C%20Chicago%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271322",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272064",
@@ -4097,7 +4911,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2272064",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2272064",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "arts"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272422",
@@ -4111,7 +4929,11 @@
       "locationUrl": "https://uic.campusgroups.com/uicradio/rsvp?id=2272422",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/uicradio/rsvp?id=2272422",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "music"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271319",
@@ -4125,7 +4947,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=705%20S%20Morgan%20St%2C%20Chicago%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271319",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271518",
@@ -4139,7 +4963,9 @@
       "locationUrl": "https://uic.campusgroups.com/SVA/rsvp?id=2271518",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/SVA/rsvp?id=2271518",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271536",
@@ -4153,7 +4979,9 @@
       "locationUrl": "https://uic.campusgroups.com/SVA/rsvp?id=2271536",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/SVA/rsvp?id=2271536",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272065",
@@ -4167,7 +4995,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2272065",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2272065",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "arts"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272066",
@@ -4181,7 +5013,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2272066",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2272066",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "arts"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271318",
@@ -4195,7 +5031,9 @@
       "locationUrl": "https://www.google.com/maps/search/?api=1&query=705%20S%20Morgan%20St%2C%20Chicago%2C%20IL%2C%2060607",
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271318",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271530",
@@ -4209,7 +5047,9 @@
       "locationUrl": "https://uic.campusgroups.com/SVA/rsvp?id=2271530",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/SVA/rsvp?id=2271530",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271438",
@@ -4223,7 +5063,9 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2271438",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2271438",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271466",
@@ -4237,7 +5079,11 @@
       "locationUrl": "https://uic.campusgroups.com/campusrec/rsvp?id=2271466",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/campusrec/rsvp?id=2271466",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [
+        "sports"
+      ],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271337",
@@ -4251,7 +5097,9 @@
       "locationUrl": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271337",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271337",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2271338",
@@ -4265,7 +5113,9 @@
       "locationUrl": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271338",
       "hasPublicLocation": false,
       "url": "https://uic.campusgroups.com/UICBusiness/rsvp?id=2271338",
-      "source": "UIC Connection"
+      "source": "UIC Connection",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     },
     {
       "id": "campusgroups-2272093",
@@ -4280,7 +5130,10 @@
       "hasPublicLocation": true,
       "url": "https://uic.campusgroups.com/fsl/rsvp?id=2272093",
       "source": "UIC Connection",
-      "locationSource": "UIC Connection calendar file"
+      "locationSource": "UIC Connection calendar file",
+      "interestIds": [],
+      "interestTaggerVersion": 1
     }
-  ]
+  ],
+  "interestTaggerVersion": 1
 }

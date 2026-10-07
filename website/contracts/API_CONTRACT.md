@@ -161,7 +161,7 @@ A user has a backend account ID and may choose a public display name. Internal a
 {
   "id": "user:example",
   "email": "student@uic.edu",
-  "displayName": "Afterclass",
+  "displayName": "Kampuscape",
   "identityType": "pseudonymous",
   "emailVerified": true,
   "emailVerification": {
@@ -191,7 +191,7 @@ The session must be a server-managed credential. The client should receive a sho
   "authenticated": true,
   "user": {
     "id": "user:example",
-    "displayName": "Afterclass",
+    "displayName": "Kampuscape",
     "identityType": "pseudonymous"
   },
   "session": {
@@ -297,7 +297,7 @@ The contract uses separate records so a user can save a place or event without c
   "endAt": "2026-12-12T17:00:00-06:00",
   "timeZone": "America/Chicago",
   "status": "joined",
-  "displayName": "Afterclass",
+  "displayName": "Kampuscape",
   "createdAt": "2026-10-06T12:00:00Z",
   "updatedAt": "2026-10-06T12:00:00Z"
 }
@@ -314,7 +314,7 @@ These shapes are reserved for future work and do not imply implementation.
   "id": "message:example",
   "conversationId": "conversation:example",
   "senderUserId": "user:example",
-  "senderDisplayName": "Afterclass",
+  "senderDisplayName": "Kampuscape",
   "body": "Are we meeting at the entrance?",
   "createdAt": "2026-10-06T12:00:00Z",
   "readBy": []

@@ -5,7 +5,8 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const DEFAULT_SOURCE_URL = 'https://uic.campusgroups.com/ical/uic/ical_uic.ics';
-const DEFAULT_OUTPUT = resolve(dirname(fileURLToPath(import.meta.url)), '../output/uic-events.json');
+// Resolved lazily: bundled Cloudflare Workers (which reuse parseIcs) have no import.meta.url.
+const defaultOutput = () => resolve(dirname(fileURLToPath(import.meta.url)), '../output/uic-events.json');
 
 function unfoldIcs(source) {
   return source.replace(/\r\n[ \t]/g, ' ').split(/\r?\n/);
@@ -257,7 +258,7 @@ function isNewer(candidate, existing) {
   return candidateTime > existingTime || (candidateTime === existingTime && candidate.sourceSequence > existing.sourceSequence);
 }
 
-async function importFeed(sourceUrl = DEFAULT_SOURCE_URL, outputPath = DEFAULT_OUTPUT) {
+async function importFeed(sourceUrl = DEFAULT_SOURCE_URL, outputPath = defaultOutput()) {
   const response = await fetch(sourceUrl, { headers: { Accept: 'text/calendar; charset=utf-8' } });
   if (!response.ok) throw new Error(`Unable to fetch UIC Connections feed (${response.status})`);
   const source = await response.text();
@@ -290,9 +291,9 @@ async function importFeed(sourceUrl = DEFAULT_SOURCE_URL, outputPath = DEFAULT_O
   return output;
 }
 
-if (process.argv[1] === fileURLToPath(import.meta.url)) {
+if (process.argv[1] && process.argv[1] === fileURLToPath(import.meta.url)) {
   const sourceUrl = process.argv[2] || DEFAULT_SOURCE_URL;
-  const outputPath = process.argv[3] || DEFAULT_OUTPUT;
+  const outputPath = process.argv[3] || defaultOutput();
   importFeed(sourceUrl, outputPath).then((result) => {
     console.log(`Imported ${result.summary.canonical} events from ${sourceUrl}`);
     console.log(`Duplicates: ${result.summary.duplicates}; skipped: ${result.summary.skipped}`);

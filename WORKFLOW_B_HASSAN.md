@@ -10,7 +10,7 @@
 > 3. **When finished**, update both files again: the owner's workflow gets status, evidence, checkbox, and a dated change-log entry; remove the claim from *Active claims* in both files, and add a one-line change-log entry to the other workflow saying what changed.
 > 4. If it's unclear whose workflow a request belongs to, use the one that owns the paths being touched and ask if still unclear. Never edit the other person's folders without an agreed handoff or an explicit request.
 
-**Updated:** 2026-10-06<br>
+**Updated:** 2026-10-07<br>
 **Current task:** B01 data/API contract approved; B11 UIC Connections local importer complete; B02 provider review and B10 weekly Chicago place-content refresh pending<br>
 **Implementation progress:** 1 / 9 tasks complete
 
@@ -36,6 +36,9 @@ Check a task only when its result exists. These tasks do not imply approval of a
 
 | Task | State | Evidence / blocker |
 | --- | --- | --- |
+| A25 / B12 | IN PROGRESS | Live on Supabase project `ddhqammspwmmrprpolfw`: migration applied, both Auth hooks on, 6-digit/10-min OTP, kampuscape.com/uic redirect URLs, publishable key in the deployed build; non-UIC signup rejected live. Pending: custom SMTP (Resend) then the code email template, Google OAuth client |
+| A27 | DONE | kampuscape.com/support (help, reach out, bug, content/safety reports → private `kampuscape_support_requests`, rate-limited); self-service account deletion with privacy confirmation; "i" creators card holding map attribution; hidden sign-in dialog scrollbar. 59 unit tests, PGlite migration tests, mocked browser delete flow, live permission probes |
+| A24 | DONE | Kampuscape page titles, package metadata, project documentation and contract fixtures; saved places/drafts migrate to new storage keys. 50 unit tests, production build and focused browser checks pass |
 | A17 | DONE | Building-first setup with existing-event choice, map pins/yellow roofs/deletion, snapshot sharing, glass legend, total-events pill, venue headings and event-name share titles. 42 unit tests, build, private-events, event-map, campus-events and main browser checks pass; shared backend/hosting remains H04 |
 | A15 | DONE | Public event cards fly to matched venues; upcoming-event buildings turn purple ahead of UIC red. 33 unit tests, production build, event-list and map browser checks pass |
 | A14 | DONE | Prepared validated A12/A13 and existing map refinements for user-requested Git publication to origin/main; remote has no new commits |
@@ -54,6 +57,7 @@ Mirrored in both workflow files. Add a row when work starts; remove it when the 
 
 | Who | Task | Paths being touched | Since |
 | --- | --- | --- | --- |
+| Claude Code (took over from Codex) | A25 / B12 | Supabase SMTP (Resend), email template push, Google OAuth — user-authorized | 2026-10-07 |
 
 ## Handoffs and messages to Bhagesh
 
@@ -67,6 +71,8 @@ Provider handoff should include the SDK, supported version, configuration variab
 
 ## Change log
 
+- **2026-10-07:** A25/B12/A27 (Bhagesh's side, user-authorized) added and applied Supabase migrations `202610070002_support_requests.sql` and `202610070003_delete_account.sql` in `website/backend/supabase/migrations/`, plus production Site URL/redirects in `config.toml`. All three migrations are applied to `ddhqammspwmmrprpolfw`. Please review RLS/limits alongside B03/B05.
+- **2026-10-07:** A26 (Bhagesh, user-authorized) deployed the frontend to kampuscape.com/uic on Cloudflare Pages, which partly fulfils H03 with a Pages Function for live events. It also changed `website/data/importers/uic-connections-importer.mjs`: `DEFAULT_OUTPUT` is now a lazy `defaultOutput()` and the CLI guard checks `process.argv[1]` first, because bundled Workers have no `import.meta.url`. CLI behavior and tests are unchanged. Please review alongside B03.
 - **2026-10-06:** Completed B01 after Bhagesh approved the versioned API/data contract and synthetic fixtures. Removed the mirrored B01 active claim; unresolved product-policy choices remain documented. No backend implementation started.
 - **2026-10-06:** Completed B11 local UIC Connections ICS import. Seven tests pass; live feed produced 657 canonical events from 666 records with 9 duplicates collapsed and none skipped. Monthly cadence is agreed, but scheduling remains deferred until storage integration. B10 is explicitly the weekly Chicago place-content refresh. No frontend or backend storage changes.
 - **2026-10-06:** Claimed B11 for a local, dependency-light UIC Connections ICS importer. The task is limited to parsing, normalization, duplicate prevention, local JSON output, tests, and live-feed verification; no scheduler, database, storage, or frontend integration is included.
@@ -117,3 +123,5 @@ Provider handoff should include the SDK, supported version, configuration variab
 - **2026-10-06:** A21: drafted Student Venture Showcase/Founder Panel answers in chat with `Skills/humanizer/SKILL.md`. Used Afterclass as the existing working name and October 2026 as the documented prototype start; kept social handles as a fill-in and did not claim a public launch, users, revenue, or completed backend. No application submitted or product files changed.
 - **2026-10-06:** Bhagesh A22: Live events now shows 12 months of UIC Connection events (303, through Sep 2027) from the frontend's CampusGroups JSON request, not B11's output, because the JSON feed includes venue addresses. B11 is unchanged and still not consumed by the frontend; the team still needs to pick one UIC event source for storage. `website/data/output/` is left uncommitted. Five venues added to `website/frontend/src/event-venues.json`.
 - **2026-10-06:** Bhagesh A23: `website/frontend/scripts/campus-events.mjs` now imports `parseIcs` and `mergeEvents` from `website/data/importers/uic-connections-importer.mjs` to fill UIC event locations the JSON feed leaves blank (16 events). **Please keep those two exports and their `title`/`startAt`/`location` fields stable, or tell Bhagesh before changing them.** B11 code unchanged. Confirmed B11 parses LOCATION correctly; the feed itself hides 534 of 682 locations behind sign-in.
+
+- **2026-10-07:** Bhagesh A24 completed the user-authorized Kampuscape rename across frontend branding/package/storage, shared project documentation and synthetic contract display names. Existing saved places/drafts are preserved through legacy reads. 50 unit tests, production build and focused browser migration/title checks pass; no remaining rename dependencies.

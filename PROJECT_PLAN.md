@@ -1,6 +1,6 @@
-# UIC Social Discovery Map — Living Plan and Tracker
+# Kampuscape — Living Plan and Tracker
 
-Last updated: 2026-10-06 (America/Chicago)
+Last updated: 2026-10-07 (America/Chicago)
 Phase: First local frontend prototype; production decisions and backend remain open<br>
 Team: Bhagesh — frontend; Hassan — backend, data, and deployment  
 Current review: [Evidence, loopholes, and recommendations](EVENT_MAP_REVIEW.md)
@@ -49,7 +49,7 @@ Sources and details are in [EVENT_MAP_REVIEW.md](EVENT_MAP_REVIEW.md). These are
 
 | ID | Decision | Proposed starting point | State |
 | --- | --- | --- | --- |
-| EV01 | How to enforce current-student membership | Determine whether an approved affiliation/enrollment check is available; describe any email-only pilot as UIC-email verified | Open |
+| EV01 | Membership boundary | User accepted exact verified `uic.edu` email membership via Supabase email OTP or Google; this verifies a mailbox, not enrollment | Accepted 2026-10-07; hosted configuration pending |
 | EV02 | What a map pin represents | Separate place, dated external event, and student meetup records | Proposed |
 | EV03 | Who sees names, nicknames, and attendance | Login required; meetup-scoped nickname by default, explicit name opt-in; no public attendance history | Proposed |
 | EV04 | How chat and blocks work | Meetup group chat plus accepted requests for DMs; blocks follow internal accounts across nicknames | Proposed |
@@ -101,6 +101,8 @@ Detailed implementation tasks live in the two owner trackers. These milestones t
 
 ## Change log
 
+- **2026-10-07:** Accepted Kampuscape as the project name, replacing Afterclass. A24 updates page titles, frontend package metadata, shared documentation and synthetic contract display names. Browser storage uses Kampuscape keys with legacy reads to preserve saved places and drafts. Existing repository directory paths remain stable.
+
 - **2026-10-04:** Selected UIC social discovery map with membership, attendance identity choices, and chat.
 - **2026-10-04:** Completed concept review; corrected email-verification, admission, and Eventbrite assumptions. Product decisions remain open.
 - **2026-10-04:** Assigned Workflow A to Bhagesh and Workflow B to Hassan. Created the parent coordination folder and nested website workspace, including separate trackers and deployment notes. Removed rejected ideas, complaint-portal research, and obsolete archives at the team's request. Application development has not started.
@@ -120,7 +122,7 @@ Detailed implementation tasks live in the two owner trackers. These milestones t
 - [Humanizer](Skills/humanizer/SKILL.md) installed locally for copy.
 - Weekly Chicago place-content refresh is a future task: [B10](SUNDAY_REFRESH_TASK.md). The UIC Connections calendar is a separate monthly import under B11.
 
-Implementation choices for this reversible prototype: React + Vite, MapLibre GL JS 6, OpenFreeMap vector tiles, and SunCalc. Production provider/hosting decisions remain Hassan's responsibility under B02. “Afterclass” is a provisional display name. Saved places and event drafts are local only. The central rectangle is a pilot extent, not the Chicago municipal polygon.
+Implementation choices for this reversible prototype: React + Vite, MapLibre GL JS 6, OpenFreeMap vector tiles, and SunCalc. Production provider/hosting decisions remain Hassan's responsibility under B02. Kampuscape is the project name, accepted on 2026-10-07 (replacing the provisional Afterclass name). Saved places and event drafts are local only. The central rectangle is a pilot extent, not the Chicago municipal polygon.
 
 - **2026-10-04:** Built the first local map UI per the supplied references, added seven researched places and editable Markdown copy, and created the Sunday refresh handoff. No backend job or deployment was activated.
 
@@ -164,3 +166,12 @@ Saved holds bookmarked places; My Events holds event drafts. These remain local-
 - **2026-10-05:** Follow-up share UI: removed “SEND A PLAN,” the navigation explanation, and snapshot/deletion paragraph at the user’s request. The event name is the share heading and page/native-share title. External messaging services may still use cached/server-rendered metadata for rich previews; the static fragment-link prototype does not provide per-event server metadata.
 
 - **2026-10-05:** A17 creation-order correction supersedes search/dialog-first setup: Create event opens the map with a yellow pin cursor; clicking a building pins it and immediately previews its roof in yellow; Continue then opens onboarding with existing-event/new-event choices. Cancel/Escape clears only the temporary preview. Connected campus footprints choose the nearest named venue instead of the first annotation.
+
+
+## Accounts and interests accepted on 2026-10-07
+
+- Supabase project `ddhqammspwmmrprpolfw` is selected for Auth and private onboarding profiles. Email-code and Google sign-in must enforce the exact `uic.edu` domain server-side.
+- Onboarding collects display name, optional pronouns, a preset avatar and 1–8 interests. Members can edit these later. Supabase profiles are private to their owner under RLS.
+- Public discovery remains available; saving places and creating plans requires a completed account. Device-local bookmarks/drafts are scoped per signed-in user. Synchronized event storage remains a separate task.
+- A versioned keyword pipeline tags event content on refresh. For you ranks current events against explicitly selected interests, explains matches and supports date filtering. No demographic inference is used.
+- A25 / B12 contains the local implementation and tested database migration. Hosted migration, Auth hooks, SMTP/email delivery, Google provider and browser environment values require the project connection and real-flow verification before release. See [Supabase setup](website/backend/supabase/README.md).

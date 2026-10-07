@@ -1,0 +1,53 @@
+project_id = "kampuscape"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 54322
+shadow_port = 54320
+major_version = 17
+
+[auth]
+enabled = true
+# Production page; the client redirects back to origin + pathname (no trailing slash).
+site_url = "https://kampuscape.com/uic"
+additional_redirect_urls = ["https://kampuscape.com/uic", "http://localhost:5173/", "http://127.0.0.1:5173/", "http://localhost:5173", "http://127.0.0.1:5173"]
+enable_signup = true
+enable_anonymous_sign_ins = false
+enable_manual_linking = false
+
+[auth.email]
+enable_signup = true
+double_confirm_changes = true
+enable_confirmations = true
+secure_password_change = true
+max_frequency = "60s"
+otp_length = 6
+otp_expiry = 600
+
+[auth.email.template.magic_link]
+subject = "Your Kampuscape sign-in link"
+content_path = "./supabase/templates/magic-link.html"
+
+[auth.hook.before_user_created]
+enabled = true
+uri = "pg-functions://postgres/public/kampuscape_before_user_created"
+
+[auth.hook.custom_access_token]
+enabled = true
+uri = "pg-functions://postgres/public/kampuscape_access_token_hook"
+
+[auth.external.google]
+enabled = false
+client_id = "env(SUPABASE_AUTH_EXTERNAL_GOOGLE_CLIENT_ID)"
+secret = "env(SUPABASE_AUTH_EXTERNAL_GOOGLE_SECRET)"
+skip_nonce_check = false
+
+[auth.email.template.confirmation]
+subject = "Verify your UIC email for Kampuscape"
+content_path = "./supabase/templates/magic-link.html"

@@ -82,7 +82,7 @@ body,#root{position:fixed;inset:0}
 .topbar .profile svg{width:17px;height:17px}
 @media(max-width:1120px) and (min-width:761px){.nav-pill button{padding:0 11px;font-size:11px}.topbar .location-chip{font-size:10.5px;padding:0 12px}.topbar .profile{padding:0;width:40px}}
 @media(max-width:760px){.topbar .location-chip{height:38px;font-size:11px;padding:0 12px}.topbar .profile{height:38px;width:38px;padding:0}.nav-pill{height:53px}.nav-pill button{height:41px;font-size:10px;padding:0 9px;gap:3px}.nav-pill button svg{width:15px;height:15px}}
-.view-toggle{position:absolute;right:10px;bottom:40px;z-index:3;display:flex;padding:3px;gap:2px;border-radius:20px}
+.view-toggle{position:absolute;right:10px;bottom:83px;z-index:3;display:flex;padding:3px;gap:2px;border-radius:20px}
 .view-toggle button{height:27px;min-width:32px;border-radius:16px;font-size:10px;font-weight:650;padding:0 8px}
 .view-toggle button[aria-pressed=true]{background:var(--active);color:#33333a;box-shadow:0 1px 4px #1112}
 @media(max-width:760px){.view-toggle{bottom:112px;right:10px}.view-toggle button{height:30px;min-width:34px}}
@@ -243,13 +243,13 @@ dialog.spotlight[open]{display:flex}
 .maplibregl-marker[data-label-active="false"] .pin-label{opacity:0;visibility:hidden;transition:none}
 .maplibregl-marker[data-label-active="true"] .pin-label{opacity:1;visibility:visible;transform:none}
 /* Red glass shortcut back to UIC main campus, between the N button and the 2D/3D toggle. */
-.uic-home{position:absolute;right:10px;bottom:84px;z-index:3;width:35px;height:35px;padding:0;border-radius:50%;display:grid;place-items:center;font-size:9.5px;font-weight:750;letter-spacing:.6px;color:#fff;background:linear-gradient(135deg,#e2234fd9,#b0002ccc);border:1px solid #ffffff59;backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);box-shadow:inset 0 1px 0 #ffffff66,inset 0 -1px 0 #ffffff1f,0 6px 18px #d5003240;transition:transform .15s,background .2s}
+.uic-home{position:absolute;right:10px;bottom:127px;z-index:3;width:35px;height:35px;padding:0;border-radius:50%;display:grid;place-items:center;font-size:9.5px;font-weight:750;letter-spacing:.6px;color:#fff;background:linear-gradient(135deg,#e2234fd9,#b0002ccc);border:1px solid #ffffff59;backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);box-shadow:inset 0 1px 0 #ffffff66,inset 0 -1px 0 #ffffff1f,0 6px 18px #d5003240;transition:transform .15s,background .2s}
 .uic-home:hover{background:linear-gradient(135deg,#ec2c58e6,#c00031d9);transform:translateY(-1px)}
 .uic-home:active{transform:scale(.96)}
 .uic-home:focus-visible{outline:2px solid #fff;outline-offset:2px}
 @media(max-width:760px){.uic-home{bottom:159px;right:10px;width:38px;height:38px}}
 /* N sits above the UIC button. */
-.align-map{bottom:127px}
+.align-map{bottom:170px}
 @media(max-width:760px){.align-map{bottom:205px}}
 
 /* UIC Connection events keep their own dates, venues, and official actions. */

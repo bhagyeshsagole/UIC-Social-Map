@@ -1,5 +1,5 @@
 {
-  "name": "uic-social-map",
+  "name": "kampuscape",
   "private": true,
   "version": "0.1.0",
   "type": "module",
@@ -10,9 +10,13 @@
     "test": "node --test tests/*.test.js",
     "events:refresh": "node scripts/campus-events.mjs",
     "events:tiles": "node scripts/build-event-tiles.mjs",
-    "dev:phone": "DEV_HTTPS=1 vite --host 0.0.0.0"
+    "dev:phone": "DEV_HTTPS=1 vite --host 0.0.0.0",
+    "build:pages": "rm -rf dist && vite build --base=/uic/ --outDir dist/uic && mv dist/uic/index.html dist/uic.html && mv dist/uic/support.html dist/support.html && cp pages/_redirects dist/",
+    "deploy": "npm test && npm run build:pages && npx wrangler pages deploy dist --project-name=kampuscape --branch=main",
+    "events:interests": "node scripts/tag-event-interests.mjs"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.117.3",
     "lucide-react": "^0.468.0",
     "maplibre-gl": "^6.12.0",
     "react": "^19.0.0",
@@ -20,6 +24,7 @@
     "suncalc": "^1.9.0"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "^0.5.8",
     "@mapbox/vector-tile": "^3.0.0",
     "@playwright/test": "^1.51.0",
     "@vitejs/plugin-react": "^4.5.0",

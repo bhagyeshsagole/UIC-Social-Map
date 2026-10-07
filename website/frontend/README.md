@@ -1,6 +1,6 @@
-# Afterclass frontend
+# Kampuscape frontend
 
-A local React + Vite prototype for the UIC social discovery map. “Afterclass” is a working name.
+A local React + Vite prototype for the UIC social discovery map. The project name is Kampuscape.
 
 ## Run
 
@@ -103,7 +103,7 @@ Rebuild event tiles after changing the venue registry or running the campus tile
 
 ## Private events and share links
 
-Create event immediately activates map pinning with a yellow pin-shaped cursor. Clicking a building places a pin and turns the roof yellow before any onboarding dialog opens. Continue opens that building’s existing events or the private-event form (title, Chicago date/time, optional description, and review). Cancel/Escape removes the temporary preview without saving an event; saved events retain their highlights. There is no numbered progress strip. Known venues use annotated building tiles; custom map selections use the selected roof geometry with a stable footprint identity. Yellow uses the existing extrusion color expression, avoiding overlapping surfaces. My Events retains local records under the existing `afterclass-drafts` key, preserving older drafts.
+Create event immediately activates map pinning with a yellow pin-shaped cursor. Clicking a building places a pin and turns the roof yellow before any onboarding dialog opens. Continue opens that building’s existing events or the private-event form (title, Chicago date/time, optional description, and review). Cancel/Escape removes the temporary preview without saving an event; saved events retain their highlights. There is no numbered progress strip. Known venues use annotated building tiles; custom map selections use the selected roof geometry with a stable footprint identity. Yellow uses the existing extrusion color expression, avoiding overlapping surfaces. My Events stores local records under `kampuscape-drafts`; saved places use `kampuscape-saved`. On first load after the rename, the app reads legacy Afterclass records when the Kampuscape key has no valid array, then saves them under the new key. Existing Kampuscape records, including empty lists after deletion, take precedence. Legacy keys remain available for recovery.
 
 The lower-left glass legend explains red UIC, purple off-campus event, and yellow private-event buildings. The adjacent Chicago/event-count pills show all public events currently available in Live events, not private device records. Venue panel headings identify the selected building dynamically.
 
@@ -112,3 +112,12 @@ The lower-left glass legend explains red UIC, purple off-campus event, and yello
 Run `node tests/private-events-smoke.mjs` for building-first setup, existing-event selection, actual footprint picking, local persistence/deletion, clipboard sharing, public links, fresh-recipient mobile navigation, invalid-link handling, and counter/legend layout. Unit tests cover snapshot validation, geometry identity, and yellow color precedence. Evidence is in `artifacts/private-*.png`. Backend support for synchronized/revocable events is tracked in Workflow A H04.
 
 The share dialog uses the event name as its heading and page/native-share title, with the requested explanatory text removed. Messaging-service rich previews can still show the static site's title because URL fragments are not sent to servers and crawlers may ignore client-side titles; per-event server metadata belongs with the hosted event-ID implementation. The native sharing payload includes the event title explicitly.
+
+
+## UIC accounts and recommendations
+
+A25 adds Supabase email-code/Google sign-in restricted to verified `uic.edu` accounts, name/optional pronouns/preset-avatar onboarding, and 1–8 interests. Sign in from the profile control, saving a place or creating an event. Public map browsing remains available. Profiles sync to Supabase; local saved places/private plans are scoped to the signed-in account. Existing guest records remain on the device.
+
+Copy `.env.example` to `.env.local` and supply the project’s public publishable key. The project URL is already specified. Follow the [Supabase setup](../backend/supabase/README.md) to apply the migration and enable the UIC Auth hooks, email delivery and Google provider. Missing configuration shows a setup message instead of simulating sign-in. Hosted setup is not yet verified.
+
+Live events has a **For you** tab that matches the profile’s interests to current event content and explains each match. Edit interests from the profile or that tab. `npm run events:interests` retags the existing snapshot; `events:refresh` tags all refreshed events automatically. The shared `src/interests.js` catalog drives the UI, pipeline and ranking. Run `tests/onboarding-smoke.mjs` against the mock-configured dev server described in the backend guide for deterministic desktop/mobile verification.

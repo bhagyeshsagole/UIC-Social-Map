@@ -1,0 +1,20 @@
+/* Sits under 2D/3D: bottom of the desktop control stack, below it on phones. */
+.credits{position:absolute;right:10px;bottom:40px;z-index:4}
+.credits-button{width:35px;height:35px;border-radius:50%;display:grid;place-items:center;padding:0;font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:15px;font-weight:700}
+.credits-button:hover,.credits-button[aria-expanded=true]{background:var(--field)}
+.credits-card{position:absolute;right:84px;bottom:0;width:236px;padding:14px 10px 10px;border-radius:20px}
+.credits-card h2{margin:0 8px 8px;font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;opacity:.6}
+.credits-card ul{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.credits-card a{display:flex;align-items:center;gap:10px;padding:9px 8px;border-radius:12px;font-size:13.5px;font-weight:600}
+.credits-card a span{flex:1}
+.credits-card a svg:first-child{color:#0a66c2}
+.credits-card .credits-support{margin-top:4px;border-top:1px solid #0000000f;border-radius:0 0 12px 12px;padding-top:11px}
+.credits-card .credits-support svg:first-child{color:#405f39}
+.credits-card a svg:last-child{opacity:.45}
+.credits-card a:hover,.credits-card a:focus-visible{background:var(--field)}
+@media(max-width:760px){
+ .app .credits{top:calc(max(10px,env(safe-area-inset-top)) + 232px);bottom:auto;right:12px}
+ .app .credits-button{width:38px;height:38px}
+ .app .credits-card{bottom:auto;top:0;right:calc(100% + 10px)}
+ .app.sheet-open .credits{opacity:0;pointer-events:none}
+}

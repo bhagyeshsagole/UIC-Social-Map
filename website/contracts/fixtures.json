@@ -68,7 +68,7 @@
   ],
   "currentUser": {
     "id": "user:example",
-    "displayName": "Afterclass",
+    "displayName": "Kampuscape",
     "identityType": "pseudonymous",
     "emailVerified": true,
     "accountStatus": "active"
@@ -159,7 +159,7 @@
       "endAt": "2026-12-12T17:00:00-06:00",
       "timeZone": "America/Chicago",
       "status": "joined",
-      "displayName": "Afterclass",
+      "displayName": "Kampuscape",
       "createdAt": "2026-10-06T12:00:00Z",
       "updatedAt": "2026-10-06T12:00:00Z"
     }
@@ -168,7 +168,7 @@
     "id": "message:example",
     "conversationId": "conversation:example",
     "senderUserId": "user:example",
-    "senderDisplayName": "Afterclass",
+    "senderDisplayName": "Kampuscape",
     "body": "Are we meeting at the entrance?",
     "createdAt": "2026-10-06T12:00:00Z",
     "readBy": []

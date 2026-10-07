@@ -1,3 +1,4 @@
+import {installMember,TEST_USER_ID} from './auth-fixture.mjs';
 import {chromium} from '@playwright/test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
@@ -28,12 +29,13 @@ async function pinBuilding(page,expected){
  return id;
 }
 const page=await setup({viewport:{width:1440,height:1000}});
+await installMember(page);
 try{
- await page.goto('http://127.0.0.1:5173');
+ await page.goto((process.env.TEST_APP_URL||'http://127.0.0.1:5173'));
  await page.locator('.map-status').waitFor({state:'detached',timeout:30000});
  assert.equal(await page.locator('vite-error-overlay').count(),0);
  assert.match(await page.getByRole('group',{name:'Map legend'}).innerText(),/UIC Building[\s\S]*Off-campus places & events[\s\S]*Private Events/);
- await page.getByRole('button',{name:/events available/}).click();await page.getByRole('searchbox',{name:'Search UIC events'}).fill('Andersen Firm Night');await page.getByRole('button',{name:'Show Andersen Firm Night on map',exact:true}).click();await page.waitForTimeout(1200);
+ await page.getByRole('button',{name:/events available/}).click();await page.getByRole('group',{name:'Event categories'}).getByRole('button',{name:'UIC',exact:true}).click();await page.getByRole('searchbox',{name:'Search UIC events'}).fill('Andersen Firm Night');await page.getByRole('button',{name:'Show Andersen Firm Night on map',exact:true}).click();await page.waitForTimeout(1200);
  await page.getByRole('button',{name:'Create event',exact:true}).click();await page.getByRole('region',{name:'Pin event location'}).getByRole('button',{name:'Cancel',exact:true}).click();assert.equal(await page.locator('.create-event-dialog').count(),0);
  await page.getByRole('button',{name:'Create event',exact:true}).click();
  assert.equal(await page.locator('.wizard-steps').count(),0);
@@ -43,7 +45,7 @@ try{
  await page.getByRole('region',{name:'Existing events in this building'}).getByRole('button',{name:'Choose Andersen Firm Night',exact:true}).click();
  await page.getByRole('region',{name:'Selected event on map'}).waitFor();
  assert.equal(await page.locator('.create-event-dialog').count(),0,'choosing existing event exits setup');
- assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('afterclass-drafts')).length),0);
+ assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('kampuscape-drafts:00000000-0000-0000-0000-000000000001')).length),0);
  await page.getByRole('button',{name:'Create event',exact:true}).click();
  await pinBuilding(page,'uic-0605');
  await page.screenshot({path:'artifacts/private-existing-events.png'});
@@ -69,7 +71,7 @@ try{
  assert.equal(await recipient.title(),'Synthetic dinner test');
  const pose=JSON.parse(await recipient.locator('.map').getAttribute('data-camera'));
  assert.ok(Math.abs(pose.center[0]+87.647964)<.00001&&Math.abs(pose.center[1]-41.871967)<.00001,'fresh recipient opens exact building');
- assert.equal(await recipient.evaluate(()=>JSON.parse(localStorage.getItem('afterclass-drafts')).length),0,'shared event does not silently become an owned event');
+ assert.equal(await recipient.evaluate(()=>JSON.parse(localStorage.getItem('kampuscape-drafts')).length),0,'shared event does not silently become an owned event');
  assert.equal(await recipient.getByRole('button',{name:'Delete event',exact:true}).count(),0);
  assert.ok(await recipient.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
  assert.ok(await recipient.evaluate(()=>{const a=document.querySelector('.event-count-pill').getBoundingClientRect(),b=document.querySelector('.profile').getBoundingClientRect();return a.right<b.left;}),'event counter clears mobile profile');await recipient.screenshot({path:'artifacts/private-shared-mobile.png'});
@@ -78,16 +80,16 @@ try{
  await page.reload();await page.getByRole('button',{name:'My Events',exact:true}).click();
  await page.getByRole('button',{name:'Synthetic dinner test',exact:true}).click();await page.getByRole('button',{name:'Delete event',exact:true}).click();
  await page.waitForFunction(()=>document.querySelector('.map').dataset.privateVenues==='[]');
- await page.reload();assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('afterclass-drafts')).length),0);
+ await page.reload();assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('kampuscape-drafts:00000000-0000-0000-0000-000000000001')).length),0);
  // Pick a real roof directly, preserving form values across the map step.
  await page.locator('.map-status').waitFor({state:'detached',timeout:30000});
  await page.getByRole('button',{name:'Create event',exact:true}).click();
  await pinBuilding(page);await page.getByRole('button',{name:'Create a new event',exact:true}).click();
  await page.getByLabel('Event name',{exact:true}).fill('Synthetic map pin test');await page.getByLabel('Date',{exact:true}).fill('2026-12-21');await page.getByLabel('Time',{exact:true}).fill('17:00');await page.getByRole('button',{name:'Continue',exact:true}).click();
  await page.getByRole('button',{name:'Create private event',exact:true}).click();await page.waitForTimeout(1000);
- assert.match(await detail.innerText(),/Synthetic map pin test/);await page.waitForTimeout(2700);await page.screenshot({path:'artifacts/private-pinned-building.png'});console.log('Picked venue:',await page.evaluate(()=>JSON.parse(localStorage.getItem('afterclass-drafts')).at(-1).venue.id));
+ assert.match(await detail.innerText(),/Synthetic map pin test/);await page.waitForTimeout(2700);await page.screenshot({path:'artifacts/private-pinned-building.png'});console.log('Picked venue:',await page.evaluate(()=>JSON.parse(localStorage.getItem('kampuscape-drafts:00000000-0000-0000-0000-000000000001')).at(-1).venue.id));
  // Public and hidden-location events both expose working share links.
- await page.getByRole('button',{name:'Live events',exact:true}).click();
+ await page.getByRole('button',{name:'Live events',exact:true}).click();await page.getByRole('group',{name:'Event categories'}).getByRole('button',{name:'UIC',exact:true}).click();
  const card=page.locator('.campus-event-card').filter({has:page.getByRole('button',{name:'Share Andersen Firm Night',exact:true})});await card.getByRole('button',{name:'Share Andersen Firm Night',exact:true}).click();
  await page.locator('dialog[open]').getByLabel('Event link',{exact:true}).click();const publicLink=await page.locator('dialog[open]').getByLabel('Event link',{exact:true}).inputValue();
  await recipient.goto(publicLink);await recipient.waitForTimeout(1600);assert.match(await recipient.getByRole('region',{name:'Selected event on map'}).innerText(),/Andersen Firm Night/);
@@ -100,7 +102,7 @@ try{
  await recipient.waitForFunction(()=>!!document.querySelector('.map').dataset.previewVenue);
  await recipient.getByRole('region',{name:'Pin event location'}).getByRole('button',{name:'Cancel',exact:true}).click();
  await recipient.waitForFunction(()=>document.querySelector('.map').dataset.previewVenue==='');
- assert.equal(await recipient.evaluate(()=>JSON.parse(localStorage.getItem('afterclass-drafts')).length),0);
- await recipient.goto('http://127.0.0.1:5173/#event=invalid');await recipient.getByRole('status').filter({hasText:'invalid or incomplete'}).waitFor();
+ assert.equal(await recipient.evaluate(()=>JSON.parse(localStorage.getItem('kampuscape-drafts')).length),0);
+ await recipient.goto((process.env.TEST_APP_URL||'http://127.0.0.1:5173')+'/#event=invalid');await recipient.getByRole('status').filter({hasText:'invalid or incomplete'}).waitFor();
  assert.deepEqual(errors,[]);console.log('Private events: onboarding, real map picking, persistence, sharing to a fresh mobile browser, exact camera, deletion, public links and malformed links passed.');
 }finally{await browser.close();}
