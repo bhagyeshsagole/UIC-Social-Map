@@ -10,6 +10,7 @@ import uicTiles from './uic-tile-index.json';
 import eventTiles from './event-tile-index.json';
 import {eventBuildingColor,buildingVenues} from './eventLocations';
 import {eventTime} from './search';
+import Credits from './Credits.jsx';
 import registry from './event-venues.json';
 import {cleanVenue,footprintId,buildingArea} from './privateEvents';
 import { UIC } from './time';
@@ -116,7 +117,7 @@ export default function Map({places,selected,onSelect,night,resetKey,eventVenues
       const resize=new ResizeObserver(()=>{m.resize();pad();});resize.observe(container.current);
       cleanups.push(()=>{resize.disconnect();surface.removeEventListener('wheel',wheel,true);surface.removeEventListener('gesturestart',gestureStart);surface.removeEventListener('gesturechange',gestureChange);surface.removeEventListener('gestureend',gestureEnd);for(const name of ['touchstart','touchmove','touchend','touchcancel'])surface.removeEventListener(name,touch,true);});
       // Expose camera readings for regression checks without a global map instance.
-      const syncPose=()=>{setFlat(m.getPitch()<1);container.current.dataset.camera=JSON.stringify({center:m.getCenter().toArray(),bearing:m.getBearing(),pitch:m.getPitch(),roll:m.getRoll(),zoom:m.getZoom()});};
+      const syncPose=()=>{if(stopped||!container.current)return;setFlat(m.getPitch()<1);container.current.dataset.camera=JSON.stringify({center:m.getCenter().toArray(),bearing:m.getBearing(),pitch:m.getPitch(),roll:m.getRoll(),zoom:m.getZoom()});};
       m.on('move',syncPose);syncPose();
       m.getCanvas().setAttribute('aria-label','World 3D map. Drag to pan; right-drag to rotate and tilt; two-finger swipe to pan; two-finger twist to rotate in Safari and on touchscreens; Option or Alt plus two-finger swipe to rotate in other browsers; two-finger twist rotates on touchscreens and in Safari; use the 2D and 3D buttons to change tilt; Shift-horizontal scroll to roll; pinch to zoom.');
       // Purple buildings preview their events on hover; a click or tap opens that venue's events.
@@ -172,12 +173,13 @@ export default function Map({places,selected,onSelect,night,resetKey,eventVenues
     const m=map.current;if(!m)return;
     let applied=false;
     const update=()=>{
-      if(applied||!m.isStyleLoaded())return;
+      // Map events can fire after the container unmounts (e.g. a re-render during sign-in).
+      if(applied||!container.current||!m.isStyleLoaded())return;
       for(const layer of m.getStyle().layers.filter(l=>l.type==='fill-extrusion'))m.setPaintProperty(layer.id,'fill-extrusion-color',eventBuildingColor(night,activeVenues.current,colorVenues.current));
       container.current.dataset.eventVenues=venueKey;container.current.dataset.privateVenues=privateKey;container.current.dataset.previewVenue=previewVenue?.id||'';applied=true;
     };
     const inspect=()=>{
-      if(!m.isStyleLoaded())return;
+      if(!container.current||!m.isStyleLoaded())return;
       update();
       const layers=m.getStyle().layers.filter(l=>l.type==='fill-extrusion').map(l=>l.id);
       const rendered=m.queryRenderedFeatures({layers}).filter(f=>activeVenues.current.some(id=>String(f.properties.event_venues||'').includes(`|${id}|`)));
@@ -194,7 +196,7 @@ export default function Map({places,selected,onSelect,night,resetKey,eventVenues
     const marker=new maplibregl.Marker({element:el,anchor:'bottom'}).setLngLat(venue.coords).addTo(m);
     m.flyTo({center:venue.coords,zoom:venue.kind==='outdoor'?16:17.2,pitch:54,bearing:0,roll:0,offset:[0,0],duration:1000});
     container.current.dataset.focusedEventVenue=venue.id;
-    return()=>{marker.remove();delete container.current.dataset.focusedEventVenue;};
+    return()=>{marker.remove();delete container.current?.dataset.focusedEventVenue;};
   },[focusedEvent,retry]);
   useEffect(()=>{
     const m=map.current,venues=(focusedVenue||[]).map(id=>groupsRef.current[id]?.venue).filter(Boolean);if(!m||!venues.length)return;
@@ -269,5 +271,6 @@ export default function Map({places,selected,onSelect,night,resetKey,eventVenues
       <button aria-pressed={flat} onClick={()=>map.current?.easeTo({pitch:0,roll:0,duration:450})}>2D</button>
       <button aria-pressed={!flat} onClick={()=>map.current?.easeTo({pitch:45,roll:0,duration:450})}>3D</button>
     </div>
+    <Credits/>
   </>;
 }

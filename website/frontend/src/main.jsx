@@ -14,6 +14,9 @@ import copy from '../../../added_sites.md?raw';
 import {details,CHECKED} from './placeDetails';
 import {solarState,clockTime,openingStatus,currentEvents,directions,chicagoDate,chicagoDay,dayHours,weekHours,formatMinutes,DAYS} from './time';
 import {keepSafariRunway} from './safariRunway';
+import {readStore,STORAGE_KEYS} from './storage';
+import {AuthProvider,useAuth} from './auth/AuthProvider.jsx';
+import AccountDialog,{Avatar} from './auth/AccountDialog.jsx';
 import './styles.css';
 import './private-events.css';
 import {RegistrationProvider,RegistrationLink,RegistrationPrompt,useRegistration} from './RegistrationReturn.jsx';
@@ -25,21 +28,22 @@ const places=parsePlaces(copy).map(p=>({...details[p.id],...p}));
 // Every off-campus place's building is purple; UIC buildings stay red and open spaces keep only their pin.
 const placeVenues=places.map(p=>resolveEventVenue({place:p},venueRegistry.venues)).filter(v=>v&&v.kind!=='outdoor'&&!v.id.startsWith('uic-'));
 const categories=['All places','Food & drink','Cafes','Nightlife','Arts & culture','Sights','Get active','Outdoors'];
-function readStore(key,fallback){try{const value=JSON.parse(localStorage.getItem(key));return Array.isArray(value)?value:fallback;}catch{return fallback;}}
 function External({href,children,...props}) {return <a href={href} target="_blank" rel="noreferrer" {...props}>{children}</a>;}
 function App(){
  const registration=useRegistration();
- const [now,setNow]=useState(new Date()),[tab,setTab]=useState('Explore'),[category,setCategory]=useState('All places'),[query,setQuery]=useState(''),[selected,setSelected]=useState(null),[free,setFree]=useState(false),[diet,setDiet]=useState('All diets'),[filters,setFilters]=useState(false),[saved,setSaved]=useState(()=>readStore('afterclass-saved',[])),[drafts,setDrafts]=useState(()=>readStore('afterclass-drafts',[])),[modal,setModal]=useState(null),[reset,setReset]=useState(0),[notice,setNotice]=useState(''),[storageError,setStorageError]=useState(false),[panelOpen,setPanelOpen]=useState(false),[spotlight,setSpotlight]=useState(false),[focusedEvent,setFocusedEvent]=useState(null),[focusedVenue,setFocusedVenue]=useState(null);
+ const auth=useAuth();
+ const storeKeys=auth.user?{saved:`kampuscape-saved:${auth.user.id}`,drafts:`kampuscape-drafts:${auth.user.id}`}:STORAGE_KEYS;
+ const [now,setNow]=useState(new Date()),[tab,setTab]=useState('Explore'),[category,setCategory]=useState('All places'),[query,setQuery]=useState(''),[selected,setSelected]=useState(null),[free,setFree]=useState(false),[diet,setDiet]=useState('All diets'),[filters,setFilters]=useState(false),[saved,setSaved]=useState(()=>readStore(storeKeys.saved,[])),[drafts,setDrafts]=useState(()=>readStore(storeKeys.drafts,[])),[reset,setReset]=useState(0),[notice,setNotice]=useState(''),[storageError,setStorageError]=useState(false),[panelOpen,setPanelOpen]=useState(false),[spotlight,setSpotlight]=useState(false),[focusedEvent,setFocusedEvent]=useState(null),[focusedVenue,setFocusedVenue]=useState(null);
  const [sharedLink,setSharedLink]=useState(()=>readEventLink(window.location.hash)),[creating,setCreating]=useState(false),[pickingBuilding,setPickingBuilding]=useState(false),[pickedBuilding,setPickedBuilding]=useState(null);
- const search=useRef(),dialog=useRef(),lastFocus=useRef();
+ const search=useRef();
  const solar=solarState(now);
  const privateEvents=drafts.filter(d=>d.source==='Private event').map(cleanEvent).filter(Boolean);
  const linkedEvent=sharedLink.event;
  const mapPrivateEvents=[...privateEvents,...(linkedEvent?.source==='Private event'&&!privateEvents.some(e=>e.id===linkedEvent.id)?[linkedEvent]:[])];
  useEffect(()=>{const read=()=>{const link=readEventLink(window.location.hash);setSharedLink(link);setFocusedEvent(link.event);setPanelOpen(false);setSelected(null);if(link.error)setNotice(link.error);};read();window.addEventListener('hashchange',read);return()=>window.removeEventListener('hashchange',read);},[]);
- useEffect(()=>{document.title=focusedEvent?.title||'Afterclass · Chicago, together';},[focusedEvent?.title]);
+ useEffect(()=>{document.title=focusedEvent?.title||'Kampuscape · Chicago, together';},[focusedEvent?.title]);
  const clearEventHash=()=>{if(window.location.hash.startsWith('#event='))history.replaceState(null,'',window.location.pathname+window.location.search);setSharedLink({event:null,error:''});};
- const startCreate=()=>{setSelected(null);setFocusedVenue(null);setPickedBuilding(null);setPickingBuilding(true);setCreating(true);setSpotlight(false);setPanelOpen(false);setFocusedEvent(null);};
+ const startCreate=()=>{if(!auth.user||!auth.profile?.onboarding_completed_at){auth.openProfile();return;}setSelected(null);setFocusedVenue(null);setPickedBuilding(null);setPickingBuilding(true);setCreating(true);setSpotlight(false);setPanelOpen(false);setFocusedEvent(null);};
  const cancelCreate=()=>{setCreating(false);setPickingBuilding(false);setPickedBuilding(null);};
  const deleteEvent=event=>{setDrafts(v=>v.filter(d=>d.id!==event.id));if(focusedEvent?.id===event.id)setFocusedEvent(null);if(linkedEvent?.id===event.id)clearEventHash();setNotice('Event deleted from this device');};
  const createPrivateEvent=event=>{setDrafts(v=>[...v,event]);cancelCreate();setSelected(null);setPanelOpen(false);setFocusedEvent(event);setTab('My Events');setNotice('Private event created. Your building is yellow.');};
@@ -50,7 +54,7 @@ function App(){
    if(!creating || !pickedBuilding?.needsLookup)return;
    let cancelled=false;
    const controller=new AbortController();
-   const timeout=setTimeout(()=>controller.abort(),12000);
+   const timeout=setTimeout(()=>controller.abort(),6000);
    const id=pickedBuilding.id;
    const finish=details=>setPickedBuilding(current=>current?.id===id?{...current,...details,needsLookup:false,lookupMissing:!details?.name}:current);
    lookupBuilding(pickedBuilding,{signal:controller.signal,endpoint:import.meta.env.VITE_BUILDING_LOOKUP_URL || undefined})
@@ -63,9 +67,8 @@ function App(){
  const campusCalendar={...rawCampusCalendar,events:rawCampusCalendar.events.map(e=>({...e,venue:resolveEventVenue(e,venueRegistry.venues)}))};
  useEffect(()=>{const t=setInterval(()=>setNow(new Date()),60000);return()=>clearInterval(t);},[]);
  useEffect(()=>keepSafariRunway(),[]);
- useEffect(()=>{try{localStorage.setItem('afterclass-saved',JSON.stringify(saved));localStorage.setItem('afterclass-drafts',JSON.stringify(drafts));}catch{setStorageError(true);}},[saved,drafts]);
+ useEffect(()=>{try{localStorage.setItem(storeKeys.saved,JSON.stringify(saved));localStorage.setItem(storeKeys.drafts,JSON.stringify(drafts));}catch{setStorageError(true);}},[saved,drafts]);
  useEffect(()=>{if(!notice)return;const t=setTimeout(()=>setNotice(''),3500);return()=>clearTimeout(t);},[notice]);
- useEffect(()=>{if(modal){lastFocus.current=document.activeElement;dialog.current?.showModal();}else{dialog.current?.close();lastFocus.current?.focus();}},[modal]);
  // Touch screens don't get an automatic keyboard when Explore opens.
  useEffect(()=>{if(panelOpen&&!selected&&tab==='Explore'&&!window.matchMedia?.('(pointer: coarse)').matches)search.current?.focus();},[panelOpen,selected,tab]);
  useEffect(()=>{const ground=solar.night?'#292f3b':'#e3e3dc';document.documentElement.style.backgroundColor=ground;document.querySelector('meta[name="theme-color"]')?.setAttribute('content',ground);},[solar.night]);
@@ -84,7 +87,7 @@ function App(){
  const selectedVenue=selected?resolveEventVenue({place:selected},venueRegistry.venues):null;
  const selectedEvents=selected?((selectedVenue&&venueGroups[selectedVenue.id]?.events)||currentEvents(selected,now)):[];
  const openPlaceEvents=()=>selectedVenue&&venueGroups[selectedVenue.id]?pickVenue([selectedVenue.id]):(registration.begin({...selectedEvents[0],place:selected}),window.open(selectedEvents[0].url,'_blank','noopener,noreferrer'));
- const toggleSave=p=>{setSaved(v=>v.includes(p.id)?v.filter(id=>id!==p.id):[...v,p.id]);};
+ const toggleSave=p=>{if(!auth.user||!auth.profile?.onboarding_completed_at){auth.openProfile();return;}setSaved(v=>v.includes(p.id)?v.filter(id=>id!==p.id):[...v,p.id]);};
  const goTab=t=>{setFocusedEvent(null);setFocusedVenue(null);setTab(t);setSelected(null);setPanelOpen(t==='Explore'&&tab==='Explore'?!panelOpen:true);if(t==='Explore')setReset(r=>r+1);};
  const closePanel=()=>{setSelected(null);setFocusedVenue(null);setPanelOpen(false);};
  const openPanel=t=>{setFocusedEvent(null);setFocusedVenue(null);setTab(t);setSelected(null);setPanelOpen(true);};
@@ -115,7 +118,7 @@ function App(){
     <span className="nav-divider"/><button className="nav-search" aria-label="Search everything" aria-keyshortcuts="Meta+K Control+K" onClick={()=>setSpotlight(true)}><Search size={19}/></button>
    </nav>
    <button className="search-pill glass" aria-label="Search places and events" onClick={()=>setSpotlight(true)}><Search size={20}/></button>
-   <button className="profile glass" aria-label="Open profile" onClick={()=>setModal('profile')}><User size={19}/><span>Guest</span><ChevronDown size={13}/></button>
+   <button className="profile glass" aria-label="Open profile" onClick={auth.openProfile}>{auth.profile?<Avatar id={auth.profile.avatar_id} size={27}/>:<User size={19}/>}<span className="profile-name">{auth.profile?.display_name||'Sign in'}</span><ChevronDown size={13}/></button>
   </header>
 
   {(selected||panelOpen)&&<aside className={`discovery glass ${selected?`has-detail${selected.photo?'':' no-photo'}`:venueView?'has-live-events has-building-events':tab==='Live events'?'has-live-events':''}`} aria-label={selected?"Place details":venueView?"Events in this building":"Discover places"}>
@@ -148,7 +151,6 @@ function App(){
   <Spotlight open={spotlight} items={searchItems} onClose={()=>setSpotlight(false)} onPick={pick}/>
   {(notice||storageError)&&<div className="toast glass" role="status"><Check size={17}/>{storageError?'Device storage unavailable. Changes last for this session.':notice}</div>}
   <RegistrationPrompt onAdded={()=>openPanel('My Events')}/>
-  <dialog ref={dialog} onCancel={()=>setModal(null)} onClick={e=>{if(e.target===dialog.current)setModal(null);}}><div className="modal-content"><button className="modal-close icon-button" aria-label="Close dialog" onClick={()=>setModal(null)}><X size={21}/></button><><span className="modal-icon"><User size={26}/></span><span className="eyebrow">YOUR CORNER OF CHICAGO</span><h2>Hey, explorer.</h2><p>You’re browsing as a guest. Your saved places and events stay on this device.</p><div className="profile-stats"><div><strong>{saved.length}</strong><span>saved places</span></div><div><strong>{drafts.length+registration.events.length}</strong><span>events</span></div></div><p className="fine-print">Share an event link from My Events to send a plan to friends.</p><p className="fine-print map-credits">Map data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap contributors</a> · tiles by <a href="https://openfreemap.org" target="_blank" rel="noreferrer">OpenFreeMap</a> · <a href="https://maplibre.org" target="_blank" rel="noreferrer">MapLibre</a></p><button className="primary-button" onClick={()=>{setModal(null);goTab('Saved');}}>View Saved <ArrowRight size={17}/></button><button className="secondary-button profile-events" onClick={()=>{setModal(null);goTab('My Events');}}>My Events <ArrowRight size={17}/></button></></div></dialog>
  </main>;
 }
 function HoursCard({place:p,now}){
@@ -162,4 +164,5 @@ function HoursCard({place:p,now}){
 }
 function UtensilsIcon(){return <Leaf size={16}/>;}
 function PlaceCard({place:p,saved,onSave,onSelect,now}){const status=openingStatus(p,now);return <article className="place-card"><button className="place-main" onClick={onSelect}><span className={`mini-art ${p.accent}`}><PlaceIcon place={p} size={25}/></span><span className="card-copy"><span className="card-category">{p.neighborhood}</span><strong>{p.name}</strong>{p.benefit&&<span className={`benefit-label ${p.kind==='free'?'free':''}`}>{p.student?<GraduationCap size={12}/>:p.kind==='free'?<Ticket size={12}/>:<span className="percent">%</span>}{p.benefit}</span>}<span className="card-meta"><i className={status.open?'open':''}/>{status.label}</span></span></button><button className={`save-button ${saved?'is-saved':''}`} onClick={onSave} aria-label={`${saved?'Unsave':'Save'} ${p.name}`}><Bookmark size={17} fill={saved?'currentColor':'none'}/></button></article>;}
-createRoot(document.getElementById('root')).render(<RegistrationProvider><App/></RegistrationProvider>);
+function SessionApp(){const auth=useAuth();if(auth.loading&&!auth.profile)return <div className="session-loading" role="status"><Compass size={30}/><strong>Kampuscape</strong><span>Getting your account ready…</span></div>;return <><RegistrationProvider key={auth.user?.id||'guest'} userId={auth.user?.id}><App/></RegistrationProvider><AccountDialog/></>;}
+createRoot(document.getElementById('root')).render(<AuthProvider><SessionApp/></AuthProvider>);

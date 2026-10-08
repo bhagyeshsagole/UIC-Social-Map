@@ -1,5 +1,6 @@
 import {readFile, writeFile, rename} from 'node:fs/promises';
 import {pathToFileURL} from 'node:url';
+import {tagEvent,TAGGER_VERSION} from '../src/interests.js';
 import {addCampusLocations, calendarFeedUrl, campusMonth, parseCampusFeed, upcomingCampusEvents, CAMPUS_CALENDAR} from '../src/campusEvents.js';
 import {mergeEvents, parseIcs} from '../../data/importers/uic-connections-importer.mjs';
 
@@ -13,20 +14,20 @@ async function calendarLocations(fetcher) {
 }
 const locationNotes = async () => JSON.parse(await readFile(new URL('../src/campus-event-locations.json', import.meta.url))).events;
 
-export const snapshotPath = new URL('../public/campus-events.json', import.meta.url);
-export async function fetchCampusEvents(now = new Date(), fetcher = fetch) {
+// `notes` is injectable because the Cloudflare Pages Function has no filesystem.
+export async function fetchCampusEvents(now = new Date(), fetcher = fetch, notes = locationNotes) {
   const calendar = calendarLocations(fetcher);
   const response = await fetcher(calendarFeedUrl(now), {signal:AbortSignal.timeout(20000)});
   if (!response.ok) throw new Error(`Calendar request failed (${response.status}).`);
   const parsed = parseCampusFeed(JSON.parse(await response.text()));
   if (parsed.skippedCount) throw new Error(`Calendar schema changed: ${parsed.skippedCount} invalid event records. Keeping the previous snapshot.`);
-  const events = addCampusLocations(upcomingCampusEvents(parsed.events, now), await calendar, await locationNotes());
+  const events = addCampusLocations(upcomingCampusEvents(parsed.events, now), await calendar, await notes());
   return {schemaVersion:1, source:CAMPUS_CALENDAR, fetchedAt:new Date().toISOString(), month:campusMonth(now),
-    sourceCount:parsed.sourceCount, events};
+    sourceCount:parsed.sourceCount, interestTaggerVersion:TAGGER_VERSION, events:events.map(tagEvent)};
 }
 
-// Same-origin endpoint in both local development and Vite preview. A future
-// production backend can reuse fetchCampusEvents; static hosting uses the snapshot.
+// Same-origin endpoint in local development and Vite preview. Production serves
+// the same data from functions/api/campus-events.js on Cloudflare Pages.
 export function campusEventsPlugin() {
   let cached, pending;
   const middleware = async (req, res, next) => {
@@ -56,7 +57,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     const result = await fetchCampusEvents(now);
     const temp = new URL('../public/campus-events.json.tmp', import.meta.url);
     await writeFile(temp, JSON.stringify(result, null, 2) + '\n');
-    await rename(temp, snapshotPath);
+    await rename(temp, new URL('../public/campus-events.json', import.meta.url));
     console.log(`Imported ${result.events.length} upcoming events from ${result.month} on (${result.sourceCount} source listings).`);
   } catch (error) { console.error(error.message); process.exitCode = 1; }
 }

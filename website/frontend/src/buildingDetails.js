@@ -34,27 +34,65 @@ export function detailsFromElements(venue, elements = []) {
   const nodeNames = [...new Set(nodes.map(label=>label.name).filter(Boolean))];
   return nodeNames.length===1 ? {name:nodeNames[0],address:''} : null;
 }
+// Nominatim reverse geocoding answers in well under a second; accept its result
+// only when the returned shape covers the tapped point (or its point lies inside
+// the selected roof), so a nearby shop, bin or street is never used.
+export function detailsFromReverse(venue, result) {
+  if (!result || result.error) return null;
+  const a = result.address || {};
+  const address = text(a.house_number) && text(a.road) ? `${text(a.house_number)} ${text(a.road)}` : '';
+  const name = text(result.name);
+  const shape = result.geojson;
+  const covers = shape?.type === 'Point' ? contains(shape.coordinates, venue.footprint) : contains(venue.coords, shape);
+  if (!covers || !(name || address)) return null;
+  return {name:name || address, address};
+}
 const cache = new Map();
-let nextRequestAt = 0;
-export async function lookupBuilding(venue, {signal, fetcher=fetch, endpoint='https://overpass-api.de/api/interpreter'} = {}) {
-  if (cache.has(venue.id)) return cache.get(venue.id);
-  // Debounce quick repins and space requests; cancellations never overwrite a later pin.
-  const delay = Math.max(500,nextRequestAt-Date.now());
-  nextRequestAt=Date.now()+delay+1100;
-  await new Promise((resolve,reject)=>{
-    const cancel=()=>{clearTimeout(timer);reject(new DOMException('Cancelled','AbortError'));};
-    const timer=setTimeout(()=>{signal?.removeEventListener('abort',cancel);resolve();},delay);
-    if(signal?.aborted)cancel();else signal?.addEventListener('abort',cancel,{once:true});
-  });
+let nextRequestAt = 0, overpassPausedUntil = 0;
+const wait = (ms, signal) => new Promise((resolve,reject)=>{
+  const cancel=()=>{clearTimeout(timer);reject(new DOMException('Cancelled','AbortError'));};
+  const timer=setTimeout(()=>{signal?.removeEventListener('abort',cancel);resolve();},ms);
+  if(signal?.aborted)cancel();else signal?.addEventListener('abort',cancel,{once:true});
+});
+// One request per second across both services (Nominatim and Overpass usage policies).
+async function polite(signal) {
+  const delay = Math.max(150,nextRequestAt-Date.now());
+  nextRequestAt=Date.now()+delay+1000;
+  await wait(delay, signal);
+}
+async function reverseLookup(venue, {signal, fetcher, reverseEndpoint}) {
+  const [lon,lat] = venue.coords;
+  const url = `${reverseEndpoint}?format=jsonv2&lat=${lat}&lon=${lon}&zoom=18&addressdetails=1&polygon_geojson=1&polygon_threshold=0.00001`;
+  const response = await fetcher(url, {signal, headers:{Accept:'application/json'}});
+  if (!response.ok) return null;
+  return detailsFromReverse(venue, await response.json());
+}
+async function overpassLookup(venue, {signal, fetcher, endpoint}) {
+  if (Date.now() < overpassPausedUntil) throw new Error('Building lookup paused');
   const points=venue.footprint.type==='Polygon'?venue.footprint.coordinates.flat():venue.footprint.coordinates.flat(2);
   const xs=points.map(p=>p[0]),ys=points.map(p=>p[1]);
   const box=[Math.min(...ys)-.00001,Math.min(...xs)-.00001,Math.max(...ys)+.00001,Math.max(...xs)+.00001].join(',');
-  const query=`[out:json][timeout:8];(way[building](${box});way["building:part"](${box});node["addr:housenumber"](${box});node[name](${box}););out tags geom;`;
-  const response=await fetcher(endpoint,{method:'POST',body:new URLSearchParams({data:query}),signal});
-  if(!response.ok){if(response.status===429||response.status===406)nextRequestAt=Date.now()+30000;throw new Error('Building lookup unavailable');}
-  const data=await response.json();
-  if(!Array.isArray(data.elements)||data.remark)throw new Error('Incomplete building lookup');
-  const details=detailsFromElements(venue,data.elements);
+  const query=`[out:json][timeout:4];(way[building](${box});way["building:part"](${box});node["addr:housenumber"](${box});node[name](${box}););out tags geom;`;
+  // Public Overpass is often overloaded; give it 4 s, never the whole wait.
+  const own = new AbortController(), timer = setTimeout(()=>own.abort(), 4000);
+  const relay = () => own.abort(); signal?.addEventListener('abort', relay, {once:true});
+  try {
+    const response=await fetcher(endpoint,{method:'POST',body:new URLSearchParams({data:query}),signal:own.signal});
+    if(!response.ok){if(response.status===429||response.status===406)overpassPausedUntil=Date.now()+30000;throw new Error('Building lookup unavailable');}
+    const data=await response.json();
+    if(!Array.isArray(data.elements)||data.remark)throw new Error('Incomplete building lookup');
+    return detailsFromElements(venue,data.elements);
+  } finally {clearTimeout(timer); signal?.removeEventListener('abort', relay);}
+}
+export async function lookupBuilding(venue, {signal, fetcher=fetch, endpoint='https://overpass-api.de/api/interpreter', reverseEndpoint='https://nominatim.openstreetmap.org/reverse'} = {}) {
+  if (cache.has(venue.id)) return cache.get(venue.id);
+  // Debounce quick repins; cancellations never overwrite a later pin.
+  await polite(signal);
+  let details = await reverseLookup(venue, {signal, fetcher, reverseEndpoint}).catch(e => {if (e?.name === 'AbortError') throw e; return null;});
+  if (!details) {
+    await polite(signal);
+    details = await overpassLookup(venue, {signal, fetcher, endpoint});
+  }
   cache.set(venue.id,details);
   if(cache.size>100)cache.delete(cache.keys().next().value);
   return details;

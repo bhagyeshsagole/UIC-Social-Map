@@ -1,0 +1,5 @@
+name = "kampuscape"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-10-07"
+# The shared event importer uses node:crypto / node:path.
+compatibility_flags = ["nodejs_compat"]

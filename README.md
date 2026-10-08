@@ -1,4 +1,4 @@
-# UIC Social Map
+# Kampuscape
 
 > [!abstract] The project
 > Discover places and events around Chicago, find other UIC students planning to go, and connect before attending.

@@ -1,4 +1,4 @@
-# Website workspace
+# Kampuscape website workspace
 
 **Status:** Folder structure only. No runnable application yet.  
 **Shared planning:** [Project plan](../PROJECT_PLAN.md)

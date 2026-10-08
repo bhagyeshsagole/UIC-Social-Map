@@ -12,7 +12,7 @@ page.on('pageerror', error => errors.push(error.message));
 try {
   await page.clock.setFixedTime(now);
   await page.route('**/api/campus-events', route => route.fulfill({json:feed}));
-  await page.goto('http://127.0.0.1:5173');
+  await page.goto((process.env.TEST_APP_URL||'http://127.0.0.1:5173'));
   await page.getByRole('button', {name:'Live events', exact:true}).click();
   await page.locator('.campus-events .campus-event-card').first().waitFor();
   assert.equal(await page.locator('.campus-events .campus-event-card').count(), expected.length);
@@ -47,7 +47,7 @@ try {
   const sheet = await page.locator('.has-live-events').boundingBox();
   assert.ok(sheet.width >= 1100 && sheet.height >= 700, 'Live events has a larger desktop sheet');
   const tags = page.getByRole('group', {name:'Event categories'});
-  assert.equal(await tags.locator('button[aria-pressed]').count(), 3, 'three category tags');
+  assert.equal(await tags.locator('button[aria-pressed]').count(), 4, 'For you plus three category tags');
   assert.equal(await tags.getByRole('button', {name:'Pick a date'}).count(), 1, 'date filter sits in the category row');
   await tags.getByRole('button', {name:'Off-campus', exact:true}).click();
   await page.getByRole('heading', {name:'Around the city'}).waitFor();

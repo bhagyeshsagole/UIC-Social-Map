@@ -1,11 +1,16 @@
 import {chromium} from '@playwright/test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
+import {installMember,TEST_USER_ID} from './auth-fixture.mjs';
 const browser=await chromium.launch({headless:true,channel:process.env.PLAYWRIGHT_CHANNEL || undefined});
 const page=await browser.newPage({viewport:{width:1440,height:1000}});
 const errors=[];page.on('pageerror',e=>errors.push(e.message));
 let mode='named';
+// Creating events requires a signed-in member; the fixture fakes one (no real accounts).
+await installMember(page);
 await page.route('**/api/campus-events',r=>r.fulfill({json:JSON.parse(readFileSync(new URL('../public/campus-events.json',import.meta.url)))}));
+// The fast reverse lookup finds nothing here, so the synthetic Overpass response decides.
+await page.route('**/reverse?**',r=>r.fulfill({json:{error:'Unable to geocode'}}));
 // Synthetic API responses for the selected roof; never published map content.
 await page.route('**/api/interpreter',async r=>{
  if(mode==='offline')return r.abort();
@@ -15,7 +20,9 @@ await page.route('**/api/interpreter',async r=>{
 });
 try{
  for(const scenario of ['named','address','offline']){
-  mode=scenario;await page.goto('http://127.0.0.1:5173');
+  mode=scenario;await page.goto(process.env.TEST_APP_URL||'http://127.0.0.1:5173');
+  // Independent scenarios: a roof with a saved event reuses its saved name, so start each with no drafts.
+  await page.evaluate(id=>localStorage.removeItem(`kampuscape-drafts:${id}`),TEST_USER_ID);await page.reload();
   await page.locator('.map-status').waitFor({state:'detached',timeout:30000});
   await page.getByRole('button',{name:'Create event',exact:true}).click();
   let selected=false;
@@ -37,7 +44,8 @@ try{
   await page.getByLabel('Time',{exact:true}).fill('18:00');
   await page.getByRole('button',{name:'Continue',exact:true}).click();
   await page.getByRole('button',{name:'Create private event',exact:true}).click();
-  const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('afterclass-drafts')).at(-1));
+  // Signed-in members' drafts are stored per user (A25).
+  const saved=await page.evaluate(id=>JSON.parse(localStorage.getItem(`kampuscape-drafts:${id}`)).at(-1),TEST_USER_ID);
   assert.equal(saved.venue.name,scenario==='named'?'Synthetic Test Hall':scenario==='address'?'123 Synthetic Street':'Synthetic manual location');
   await page.evaluate(()=>localStorage.removeItem('afterclass-drafts'));
  }

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {registrationKey,registrationSnapshot,readRegistered,readPending} from '../src/registeredEvents.js';
+import {registrationKey,registrationSnapshot,readRegistered,readPending,registrationStorageKeys} from '../src/registeredEvents.js';
 const event={title:'Synthetic festival',url:'https://example.test/event',start:'2026-10-07',end:'2026-11-01',place:{id:'synthetic-place'}};
 test('external snapshots preserve details without claiming verified registration or becoming private events',()=>{
  const snapshot=registrationSnapshot(event);
@@ -21,4 +21,10 @@ test('pending returns validate their snapshot and expire after a day',()=>{
  assert.equal(readPending({...pending,at:300},200),null);
  assert.equal(readPending({...pending,event:{}},200),null);
  assert.equal(readPending({...pending,departed:false},200).departed,false);
+});
+
+test('saved and pending events are isolated by account',()=>{
+ const guest=registrationStorageKeys(),one=registrationStorageKeys('one'),two=registrationStorageKeys('two');
+ assert.notEqual(guest.saved,one.saved);assert.notEqual(one.saved,two.saved);
+ assert.notEqual(one.pending,two.pending);
 });

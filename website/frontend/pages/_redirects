@@ -1,0 +1,6 @@
+# Kampuscape serves one campus per path; UIC is the first. The page is uic.html
+# so Pages serves it at /uic without a trailing slash. 302 keeps the root free
+# for a future landing page.
+/      /uic  302
+/uic/  /uic  301
+/support/  /support  301

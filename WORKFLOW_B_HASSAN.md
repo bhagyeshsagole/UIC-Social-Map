@@ -36,6 +36,10 @@ Check a task only when its result exists. These tasks do not imply approval of a
 
 | Task | State | Evidence / blocker |
 | --- | --- | --- |
+| A28 / B13 | DONE | User-requested production deployment `d89ac041` completed. 59 tests and Pages build passed; live `/uic` returns 200 and references the matching new bundle with signup/reset-link UI. Supabase CLI is unauthenticated and dashboard controls remain stuck; outgoing email templates still require saving. |
+| A25 / B12 | IN PROGRESS | Live on Supabase project `ddhqammspwmmrprpolfw`: migration applied, both Auth hooks on, 6-digit/10-min OTP, kampuscape.com/uic redirect URLs, publishable key in the deployed build; non-UIC signup rejected live. Pending: custom SMTP (Resend) then the code email template, Google OAuth client |
+| A27 | DONE | kampuscape.com/support (help, reach out, bug, content/safety reports → private `kampuscape_support_requests`, rate-limited); self-service account deletion with privacy confirmation; "i" creators card holding map attribution; hidden sign-in dialog scrollbar. 59 unit tests, PGlite migration tests, mocked browser delete flow, live permission probes |
+| A24 | DONE | Kampuscape page titles, package metadata, project documentation and contract fixtures; saved places/drafts migrate to new storage keys. 50 unit tests, production build and focused browser checks pass |
 | A17 | DONE | Building-first setup with existing-event choice, map pins/yellow roofs/deletion, snapshot sharing, glass legend, total-events pill, venue headings and event-name share titles. 42 unit tests, build, private-events, event-map, campus-events and main browser checks pass; shared backend/hosting remains H04 |
 | A15 | DONE | Public event cards fly to matched venues; upcoming-event buildings turn purple ahead of UIC red. 33 unit tests, production build, event-list and map browser checks pass |
 | A14 | DONE | Prepared validated A12/A13 and existing map refinements for user-requested Git publication to origin/main; remote has no new commits |
@@ -54,7 +58,8 @@ Mirrored in both workflow files. Add a row when work starts; remove it when the 
 
 | Who | Task | Paths being touched | Since |
 | --- | --- | --- | --- |
-| Codex for Bhagesh | A25 push | A25 frontend, shared plan, both workflows, Git publication | 2026-10-07 |
+| Codex for Bhagesh | A29 push | A29 frontend, shared plan, both workflows, Git publication | 2026-10-07 |
+| Claude Code | A25 / B12 | Google OAuth configuration (existing claim preserved) | 2026-10-07 |
 
 ## Handoffs and messages to Bhagesh
 
@@ -68,6 +73,8 @@ Provider handoff should include the SDK, supported version, configuration variab
 
 ## Change log
 
+- **2026-10-07:** A25/B12/A27 (Bhagesh's side, user-authorized) added and applied Supabase migrations `202610070002_support_requests.sql` and `202610070003_delete_account.sql` in `website/backend/supabase/migrations/`, plus production Site URL/redirects in `config.toml`. All three migrations are applied to `ddhqammspwmmrprpolfw`. Please review RLS/limits alongside B03/B05.
+- **2026-10-07:** A26 (Bhagesh, user-authorized) deployed the frontend to kampuscape.com/uic on Cloudflare Pages, which partly fulfils H03 with a Pages Function for live events. It also changed `website/data/importers/uic-connections-importer.mjs`: `DEFAULT_OUTPUT` is now a lazy `defaultOutput()` and the CLI guard checks `process.argv[1]` first, because bundled Workers have no `import.meta.url`. CLI behavior and tests are unchanged. Please review alongside B03.
 - **2026-10-06:** Completed B01 after Bhagesh approved the versioned API/data contract and synthetic fixtures. Removed the mirrored B01 active claim; unresolved product-policy choices remain documented. No backend implementation started.
 - **2026-10-06:** Completed B11 local UIC Connections ICS import. Seven tests pass; live feed produced 657 canonical events from 666 records with 9 duplicates collapsed and none skipped. Monthly cadence is agreed, but scheduling remains deferred until storage integration. B10 is explicitly the weekly Chicago place-content refresh. No frontend or backend storage changes.
 - **2026-10-06:** Claimed B11 for a local, dependency-light UIC Connections ICS importer. The task is limited to parsing, normalization, duplicate prevention, local JSON output, tests, and live-feed verification; no scheduler, database, storage, or frontend integration is included.
@@ -119,8 +126,18 @@ Provider handoff should include the SDK, supported version, configuration variab
 - **2026-10-06:** Bhagesh A22: Live events now shows 12 months of UIC Connection events (303, through Sep 2027) from the frontend's CampusGroups JSON request, not B11's output, because the JSON feed includes venue addresses. B11 is unchanged and still not consumed by the frontend; the team still needs to pick one UIC event source for storage. `website/data/output/` is left uncommitted. Five venues added to `website/frontend/src/event-venues.json`.
 - **2026-10-06:** Bhagesh A23: `website/frontend/scripts/campus-events.mjs` now imports `parseIcs` and `mergeEvents` from `website/data/importers/uic-connections-importer.mjs` to fill UIC event locations the JSON feed leaves blank (16 events). **Please keep those two exports and their `title`/`startAt`/`location` fields stable, or tell Bhagesh before changing them.** B11 code unchanged. Confirmed B11 parses LOCATION correctly; the feed itself hides 534 of 682 locations behind sign-in.
 
+- **2026-10-07:** Bhagesh A24 completed the user-authorized Kampuscape rename across frontend branding/package/storage, shared project documentation and synthetic contract display names. Existing saved places/drafts are preserved through legacy reads. 50 unit tests, production build and focused browser migration/title checks pass; no remaining rename dependencies.
+
+- **2026-10-07 (A28/B13):** User requested links instead of numeric codes for signup and password reset. Restored branded app-link templates, changed inbox UI, preserved the new account-choice screen, and removed the code form. Auth subscribes before verification and avoids racing session restoration. All 59 unit tests, Pages build, and extended mocked browser checks passed, including confirmation/recovery in fresh browsers, password save, expired links and URL token cleanup. Added a targeted management-API template sync script with read-back verification. Local template check passes. Live update not performed: CLI lacks a management token and native dashboard controls are stuck; user asked to foreground the dashboard. Frontend deployment intentionally waits for template switch so current code emails continue to work. Existing Google claim and unrelated credits styles preserved.
+
+- **2026-10-07 (A28/B13 deployment):** User explicitly requested deployment after the template blocker was reported. Ran `npm run deploy`; all 59 tests and the Pages build passed. Cloudflare production deployment `d89ac041` succeeded (https://d89ac041.kampuscape.pages.dev). Verified https://kampuscape.com/uic returns HTTP 200 and references `/uic/assets/main-DKjR64W9.js`, whose content contains the new verification/reset-link UI. The build uses the current working tree, preserving the existing account-choice and credits styling. Retried Supabase template access: CLI still has no management login; native browser reaches Emails but loses the editor to a stuck sidebar accessibility view. No remote email-template save was performed; that dependency remains explicitly pending.
+
+- **2026-10-07 (A28/B13 template retry):** User opened Confirm signup editor. Observed live subject and numeric-token body. Browser clipboard timed out; typed HTML was not reliable, so no Save changes action was taken. Attempted Cancel but the browser connection failed before discard could be confirmed. User must replace the whole Body with the prepared confirmation/recovery HTML files before saving; do not save a partial editor draft. Production frontend remains deployed.
+
 - **2026-10-07:** Bhagesh A24 complete: creation uses building name/address via existing metadata and a cancellable selected-roof OSM lookup, with required manual entry on missing data. 51 unit tests, build and targeted Chrome tests pass; live screenshot-location address verified. See Workflow A H05 for production provider/cached-proxy review. No backend/data/deployment files changed.
 
 - **2026-10-07:** User-requested GitHub push complete: A24 building-name/address fix, tests and documentation published to `origin/main` in `799b8b0`. Remote accepted the fast-forward. Unrelated `website/data/output/` remains untracked; no deployment verification was performed.
 
-- **2026-10-07:** Bhagesh A25 complete: external registration return prompt with explicit add/dismiss, deduplicated saved events in local My Events, removal and reload recovery. 54 unit tests, build and desktop/mobile Chrome checks pass. See Workflow A H06 for future account-backed saves; this does not verify registration or attendance. No backend/data/deployment changes.
+- **2026-10-07:** Bhagesh A29 complete: external registration return prompt with explicit add/dismiss, deduplicated saved events in local My Events, removal and reload recovery. 54 unit tests, build and desktop/mobile Chrome checks pass. See Workflow A H06 for future account-backed saves; this does not verify registration or attendance. No backend/data/deployment changes.
+
+- **2026-10-07:** Integrated the registration-return feature with six newer `origin/main` commits before the requested push. Renamed this task from A25 to **A29** because upstream independently assigned A25 to accounts; the OAuth configuration claim is preserved. Saved/pending registration events now use per-account Kampuscape storage, reset with session changes, and clear on account deletion. All 68 unit tests, production build, and desktop/mobile registration browser checks pass. Cloud synchronization remains H06; no manual deployment performed.

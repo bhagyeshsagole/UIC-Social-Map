@@ -1,7 +1,7 @@
 import {cleanEvent} from './privateEvents.js';
 import {eventTime} from './search.js';
-export const REGISTERED_KEY='afterclass-registered-events';
-export const PENDING_KEY='afterclass-registration-return';
+export const REGISTERED_KEY='kampuscape-registered-events';
+export const PENDING_KEY='kampuscape-registration-return';
 export function registrationKey(event) {
   return event.registrationKey || JSON.stringify(event.id ? [event.source || '',event.id] : [event.url,event.title,event.start,event.end,event.place?.id]);
 }
@@ -23,4 +23,9 @@ export function readPending(value,now=Date.now()) {
   if(!value || !Number.isFinite(value.at) || now-value.at>86400000 || value.at>now)return null;
   const [event]=readRegistered([value.event]);
   return event?{event,at:value.at,departed:value.departed===true}:null;
+}
+
+export function registrationStorageKeys(userId) {
+  const suffix=userId?`:${userId}`:'';
+  return {saved:REGISTERED_KEY+suffix,pending:PENDING_KEY+suffix};
 }

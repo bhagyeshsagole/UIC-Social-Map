@@ -1,15 +1,16 @@
 import React,{createContext,useContext,useEffect,useRef,useState} from 'react';
 import {CalendarDays,X} from 'lucide-react';
-import {REGISTERED_KEY,PENDING_KEY,registrationSnapshot,readRegistered,readPending} from './registeredEvents';
+import {registrationSnapshot,readRegistered,readPending,registrationStorageKeys} from './registeredEvents';
 const Context=createContext(null);
 function read(storage,key){try{return JSON.parse(storage.getItem(key));}catch{return null;}}
 export const useRegistration=()=>useContext(Context);
-export function RegistrationProvider({children}){
-  const [events,setEvents]=useState(()=>readRegistered(read(localStorage,REGISTERED_KEY)));
+export function RegistrationProvider({children,userId}){
+  const keys=registrationStorageKeys(userId);
+  const [events,setEvents]=useState(()=>readRegistered(read(localStorage,keys.saved)));
   const [prompt,setPrompt]=useState(null),[error,setError]=useState('');
-  const pending=useRef(readPending(read(sessionStorage,PENDING_KEY))),saved=useRef(events);
+  const pending=useRef(readPending(read(sessionStorage,keys.pending))),saved=useRef(events);
   saved.current=events;
-  const persistPending=()=>{try{if(pending.current)sessionStorage.setItem(PENDING_KEY,JSON.stringify(pending.current));else sessionStorage.removeItem(PENDING_KEY);}catch{/* In-memory return tracking still works. */}};
+  const persistPending=()=>{try{if(pending.current)sessionStorage.setItem(keys.pending,JSON.stringify(pending.current));else sessionStorage.removeItem(keys.pending);}catch{/* In-memory return tracking still works. */}};
   const begin=event=>{
     pending.current=null;persistPending();
     const snapshot=registrationSnapshot(event);
@@ -34,7 +35,7 @@ export function RegistrationProvider({children}){
     document.addEventListener('visibilitychange',visibility);check();
     return()=>{clearTimeout(timer);window.removeEventListener('blur',leave);window.removeEventListener('focus',check);window.removeEventListener('pagehide',leave);window.removeEventListener('pageshow',check);document.removeEventListener('visibilitychange',visibility);};
   },[]);
-  const write=next=>{try{localStorage.setItem(REGISTERED_KEY,JSON.stringify(next));setEvents(next);setError('');return true;}catch{setError('Couldn’t save on this device. Please try again.');return false;}};
+  const write=next=>{try{localStorage.setItem(keys.saved,JSON.stringify(next));setEvents(next);setError('');return true;}catch{setError('Couldn’t save on this device. Please try again.');return false;}};
   const add=()=>{if(prompt&&write(readRegistered([...saved.current,prompt]))){setPrompt(null);return true;}return false;};
   const remove=event=>write(saved.current.filter(e=>e.registrationKey!==event.registrationKey));
   return <Context.Provider value={{events,prompt,error,begin,add,remove,dismiss:()=>{setPrompt(null);setError('');}}}>{children}</Context.Provider>;

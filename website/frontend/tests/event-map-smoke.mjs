@@ -10,7 +10,7 @@ const pose=async()=>JSON.parse(await page.locator('.map').getAttribute('data-cam
 try{
   await page.clock.setFixedTime(new Date(feed.fetchedAt));
   await page.route('**/api/campus-events',route=>route.fulfill({json:feed}));
-  await page.goto('http://127.0.0.1:5173');
+  await page.goto((process.env.TEST_APP_URL||'http://127.0.0.1:5173'));
   await page.waitForFunction(()=>document.querySelector('.map')?.dataset.eventVenues,{},{timeout:30000});
   assert.ok(!JSON.parse(await page.locator('.map').getAttribute('data-event-venues')).includes('uic-0605'),'UIC buildings retain red; purple is reserved for off-campus venues');
   await page.screenshot({path:'artifacts/event-buildings.png'});
