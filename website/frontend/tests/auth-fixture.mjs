@@ -12,6 +12,8 @@ export async function installMember(page) {
   const path=new URL(route.request().url()).pathname;
   // Attendance RPCs: nobody going yet, unless a test overrides this route.
   if(path.includes('/rest/v1/rpc/'))return route.fulfill({json:[]});
+  // Community events table: empty unless a test overrides this route.
+  if(path.endsWith('/kampuscape_community_events'))return route.fulfill(route.request().method()==='GET'?{json:[]}:{status:201,json:[]});
   if(path.endsWith('/settings'))return route.fulfill({json:{external:{email:true}}});
   if(path.endsWith('/user'))return route.fulfill({json:user});
   if(path.endsWith('/kampuscape_profiles'))return route.fulfill({json:[profile]});

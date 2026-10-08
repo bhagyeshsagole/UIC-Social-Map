@@ -43,7 +43,7 @@ try{
   await page.getByLabel('Date',{exact:true}).fill('2027-12-20');
   await page.getByLabel('Time',{exact:true}).fill('18:00');
   await page.getByRole('button',{name:'Continue',exact:true}).click();
-  await page.getByRole('button',{name:'Create private event',exact:true}).click();
+  await page.getByRole('radio',{name:/^Private/}).click();await page.getByRole('button',{name:'Create private event',exact:true}).click();
   // Signed-in members' drafts are stored per user (A25).
   const saved=await page.evaluate(id=>JSON.parse(localStorage.getItem(`kampuscape-drafts:${id}`)).at(-1),TEST_USER_ID);
   assert.equal(saved.venue.name,scenario==='named'?'Synthetic Test Hall':scenario==='address'?'123 Synthetic Street':'Synthetic manual location');

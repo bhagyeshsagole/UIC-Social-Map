@@ -80,7 +80,7 @@ await page.getByLabel('Event name',{exact:true}).fill('Burger break');
 await page.getByLabel('Date',{exact:true}).fill('2026-12-20');
 await page.getByLabel('Time',{exact:true}).fill('17:30');
 await page.getByRole('button',{name:'Continue',exact:true}).click();
-await page.getByRole('button',{name:'Create private event',exact:true}).click();
+await page.getByRole('radio',{name:/^Private/}).click();await page.getByRole('button',{name:'Create private event',exact:true}).click();
 await page.getByRole('heading',{name:'Burger break',exact:true}).waitFor();
 await page.reload();
 await page.getByRole('button',{name:'My Events'}).click();

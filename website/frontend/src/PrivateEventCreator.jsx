@@ -1,12 +1,12 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {ArrowRight, ArrowLeft, MapPin, LockKeyhole, Check, X, CalendarDays} from 'lucide-react';
+import {ArrowRight, ArrowLeft, MapPin, LockKeyhole, Check, X, CalendarDays, Users} from 'lucide-react';
 import {chicagoDate,clockTime} from './time';
 import {privateWhen} from './privateEvents';
 import {eventTime} from './search';
 
 export default function PrivateEventCreator({pickedVenue, picking, venueGroups, onSelectExisting, onPickMap, onCancel, onCreate, now}) {
   const dialog = useRef(), firstFocus = useRef(document.activeElement);
-  const [step,setStep] = useState(0), [title,setTitle] = useState(''), [date,setDate] = useState(''), [time,setTime] = useState(''), [description,setDescription] = useState(''), [venue,setVenue] = useState(null), [error,setError] = useState('');
+  const [step,setStep] = useState(0), [title,setTitle] = useState(''), [date,setDate] = useState(''), [time,setTime] = useState(''), [description,setDescription] = useState(''), [visibility,setVisibility] = useState('public'), [venue,setVenue] = useState(null), [error,setError] = useState('');
   useEffect(() => {if(picking) dialog.current.close(); else dialog.current.showModal();}, [picking]);
   useEffect(() => {if(pickedVenue) {setVenue({...pickedVenue,name:pickedVenue.lookupMissing?'':pickedVenue.name}); setStep(0); setError('');}}, [pickedVenue]);
   useEffect(() => () => firstFocus.current?.focus(), []);
@@ -22,7 +22,7 @@ export default function PrivateEventCreator({pickedVenue, picking, venueGroups, 
     e.preventDefault();
     if(step === 0 && venue?.name.trim()) setStep(1);
     else if(step === 1 && validate()) setStep(2);
-    else if(step === 2 && validate()) onCreate({id:crypto.randomUUID(),source:'Private event',title:title.trim(),date,time,description:description.trim(),venue});
+    else if(step === 2 && validate()) onCreate({id:crypto.randomUUID(),source:'Private event',visibility,title:title.trim(),date,time,description:description.trim(),venue});
   };
   const existing = venue ? (venueGroups[venue.id]?.events || []).filter(e => e.source !== 'Private event' || e.date >= chicagoDate(now)) : [];
   return <>
@@ -53,9 +53,12 @@ export default function PrivateEventCreator({pickedVenue, picking, venueGroups, 
             <p className="fine-print">All times are in Chicago. It’s {clockTime(now)} there now.</p>
             <label>A little more detail <span className="optional">(optional)</span><textarea maxLength={500} rows={3} value={description} onChange={e=>setDescription(e.target.value)} placeholder="Where to meet, what to bring…"/></label>
           </>}
-          {step === 2 && <><div className="event-review"><span className="eyebrow">PRIVATE EVENT</span><h3>{title}</h3><p>{privateWhen({date,time})}</p><p><MapPin size={17}/>{venue.name}</p>{description && <p>{description}</p>}</div><p className="fine-print">Saved on this device and kept out of public listings. Anyone you send the link to can view it.</p></>}
+          {step === 2 && <><div className="visibility-choice" role="radiogroup" aria-label="Who can see this event?">
+              <button type="button" role="radio" aria-checked={visibility==='public'} className={visibility==='public'?'chosen':''} onClick={()=>setVisibility('public')}><Users size={18}/><span><strong>Public</strong><small>All UIC members see it on the map and in Community.</small></span></button>
+              <button type="button" role="radio" aria-checked={visibility==='private'} className={visibility==='private'?'chosen':''} onClick={()=>setVisibility('private')}><LockKeyhole size={18}/><span><strong>Private</strong><small>Only people you send the link to.</small></span></button>
+            </div><div className="event-review"><span className="eyebrow">{visibility==='public'?'PUBLIC EVENT':'PRIVATE EVENT'}</span><h3>{title}</h3><p>{privateWhen({date,time})}</p><p><MapPin size={17}/>{venue.name}</p>{description && <p>{description}</p>}</div><p className="fine-print">{visibility==='public'?'Signed-in UIC members can see it and who’s going. Your account details stay private.':'Saved on this device and kept out of public listings. Anyone you send the link to can view it.'}</p></>}
           {error && <p role="alert" className="form-error">{error}</p>}
-          <div className="wizard-actions">{step > 0 && <button className="secondary-button" type="button" onClick={() => {setStep(step-1);setError('');}}><ArrowLeft size={16}/> Back</button>}<button className="primary-button" type="submit" disabled={step === 0 && (!venue || !venue.name.trim())}>{step === 2 ? 'Create private event' : step === 0 ? 'Create a new event' : 'Continue'}<ArrowRight size={17}/></button></div>
+          <div className="wizard-actions">{step > 0 && <button className="secondary-button" type="button" onClick={() => {setStep(step-1);setError('');}}><ArrowLeft size={16}/> Back</button>}<button className="primary-button" type="submit" disabled={step === 0 && (!venue || !venue.name.trim())}>{step === 2 ? (visibility==='public'?'Publish event':'Create private event') : step === 0 ? 'Create a new event' : 'Continue'}<ArrowRight size={17}/></button></div>
         </form>
       </div>
     </dialog>

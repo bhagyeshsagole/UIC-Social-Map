@@ -25,6 +25,8 @@ export function cleanEvent(value) {
   if (isPrivate && (!venue || !validDate(value.date) || !/^\d{2}:\d{2}$/.test(value.time) || Number(value.time.slice(0,2)) > 23 || Number(value.time.slice(3)) > 59)) return null;
   return {id:text(value.id, 160), title:text(value.title, 100), source:isPrivate ? 'Private event' : 'Shared event', venue,
     date:isPrivate ? value.date : undefined, time:isPrivate ? value.time : undefined,
+    // Member events marked Public are listed for all UIC members; others stay link-only.
+    visibility:isPrivate && value.visibility === 'public' ? 'public' : undefined,
     description:text(value.description, 500), when:text(value.when, 180), url:safeUrl(value.url)};
 }
 export function validDate(value) {

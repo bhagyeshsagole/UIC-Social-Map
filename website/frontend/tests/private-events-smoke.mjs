@@ -54,7 +54,7 @@ try{
  await page.getByLabel('Date',{exact:true}).fill('2026-12-20');await page.getByLabel('Time',{exact:true}).fill('18:00');
  await page.screenshot({path:'artifacts/private-onboarding.png'});
  await page.getByRole('button',{name:'Continue',exact:true}).click();await page.screenshot({path:'artifacts/private-review.png'});
- await page.getByRole('button',{name:'Create private event',exact:true}).click();
+ await page.getByRole('radio',{name:/^Private/}).click();await page.getByRole('button',{name:'Create private event',exact:true}).click();
  await page.waitForFunction(()=>document.querySelector('.map').dataset.privateVenues?.includes('uic-0605'));
  await page.waitForTimeout(1300);
  const detail=page.getByRole('region',{name:'Selected event on map'});
@@ -86,7 +86,7 @@ try{
  await page.getByRole('button',{name:'Create event',exact:true}).click();
  await pinBuilding(page);await page.getByRole('button',{name:'Create a new event',exact:true}).click();
  await page.getByLabel('Event name',{exact:true}).fill('Synthetic map pin test');await page.getByLabel('Date',{exact:true}).fill('2026-12-21');await page.getByLabel('Time',{exact:true}).fill('17:00');await page.getByRole('button',{name:'Continue',exact:true}).click();
- await page.getByRole('button',{name:'Create private event',exact:true}).click();await page.waitForTimeout(1000);
+ await page.getByRole('radio',{name:/^Private/}).click();await page.getByRole('button',{name:'Create private event',exact:true}).click();await page.waitForTimeout(1000);
  assert.match(await detail.innerText(),/Synthetic map pin test/);await page.waitForTimeout(2700);await page.screenshot({path:'artifacts/private-pinned-building.png'});console.log('Picked venue:',await page.evaluate(()=>JSON.parse(localStorage.getItem('kampuscape-drafts:00000000-0000-0000-0000-000000000001')).at(-1).venue.id));
  // Public and hidden-location events both expose working share links.
  await page.getByRole('button',{name:'Live events',exact:true}).click();await page.getByRole('group',{name:'Event categories'}).getByRole('button',{name:'UIC',exact:true}).click();

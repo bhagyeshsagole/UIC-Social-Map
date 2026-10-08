@@ -19,6 +19,8 @@ async function setup(options={}){
  await page.route('**/api/campus-events',r=>r.fulfill({json:feed}));
  await page.route('https://kampuscape-test.supabase.co/**',async route=>{
   const request=route.request(),path=new URL(request.url()).pathname;
+  if(path.endsWith('/kampuscape_community_events'))return route.fulfill({json:[]});
+  if(path.includes('/rest/v1/rpc/'))return route.fulfill({json:[]});
   if(path.endsWith('/settings'))return route.fulfill({json:{external:{email:true,google:true}}});
   if(path.endsWith('/signup')){const body=request.postDataJSON();signups.push(body.email);
    return route.fulfill({json:{...user(),id:'00000000-0000-0000-0000-000000000009',email:body.email,email_confirmed_at:null,identities:[{id:'synthetic-identity'}]}});}
