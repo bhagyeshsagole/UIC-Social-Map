@@ -335,3 +335,9 @@ button.fact-event:hover .fact-event-more{text-decoration:underline;text-underlin
 .event-scope-tags .date-picker-nav button{min-height:0;width:30px;height:30px;padding:0;border:0;border-radius:50%;background:none;flex:none}
 .event-scope-tags .date-picker-all{min-height:0;padding:0;border:0;border-radius:0;background:none;font-size:11px;flex:none}
 .event-scope-tags .date-clear{min-height:0;width:32px;height:32px;padding:0;border:0;border-radius:50%;flex:none}
+/* Explore · For you: chip icon, full-width intro, interest reasons above each place. */
+.for-you-chip{display:inline-flex;align-items:center;gap:6px}
+.places-for-you{grid-column:1/-1;padding:14px 10px 4px;margin-bottom:6px}
+.place-recommendation{display:flex;flex-direction:column;padding-top:10px}
+.place-recommendation>.recommendation-reasons{padding:0 10px;margin-bottom:2px}
+.category-list{overflow-x:auto;scrollbar-width:none}.category-list::-webkit-scrollbar{display:none}.category-list button{white-space:nowrap;flex-shrink:0}

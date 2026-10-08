@@ -43,3 +43,20 @@ export function rankEvents(events, interests, now = new Date()) {
     return matched.length ? [{event, matched, score:matched.length}] : [];
   }).sort((a,b) => b.score-a.score || String(a.event.start || '').localeCompare(String(b.event.start || '')) || a.event.title.localeCompare(b.event.title));
 }
+
+// Explore's For you: a place's category implies interests even when its copy doesn't
+// say so (a café is food & coffee). Public place content only, never profile data.
+const PLACE_CATEGORY_INTERESTS = {'Food & drink':['food'], 'Cafes':['food'], 'Nightlife':['music','social'], 'Arts & culture':['arts'], 'Get active':['sports'], 'Outdoors':['outdoors']};
+export function classifyPlace(place) {
+  const text = [place.name, place.description, place.category, ...(place.tags || [])].filter(Boolean).join(' ');
+  const ids = new Set([...(PLACE_CATEGORY_INTERESTS[place.category] || []), ...rules.filter(([, rule]) => rule.test(text)).map(([id]) => id)]);
+  return INTEREST_IDS.filter(id => ids.has(id));
+}
+export function rankPlaces(places, interests) {
+  const selected = new Set(interests.filter(id => INTEREST_IDS.includes(id)));
+  if (!selected.size) return [];
+  // Most matched interests first; otherwise keep Explore's usual order.
+  return places.map((place, order) => ({place, order, matched:classifyPlace(place).filter(id => selected.has(id))}))
+    .filter(r => r.matched.length).sort((a, b) => b.matched.length - a.matched.length || a.order - b.order);
+}
+
