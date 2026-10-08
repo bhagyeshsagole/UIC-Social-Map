@@ -10,7 +10,7 @@ await context.route('**/api/campus-events',r=>r.fulfill({json:JSON.parse(readFil
 // Synthetic external page: no registration/submission occurs in this test.
 await context.route('https://uic.campusgroups.com/**',r=>r.fulfill({contentType:'text/html',body:'<h1>Synthetic registration page</h1>'}));
 await context.route('https://www.lpzoo.org/**',r=>r.fulfill({contentType:'text/html',body:'<h1>Synthetic registration page</h1>'}));
-const dialog=page.getByRole('dialog',{name:'Did you register?'});
+const dialog=page.getByRole('dialog',{name:'Are you attending?'});
 async function returnFrom(link){
  const opened=context.waitForEvent('page');await link.click();const external=await opened;
  await external.waitForLoadState();
@@ -24,10 +24,10 @@ try{
  const link=page.getByRole('link',{name:'Details & registration',exact:true}).first();
  const title=await link.locator('xpath=ancestor::article').locator('h3').innerText();
  await returnFrom(link);await dialog.waitFor();assert.ok((await dialog.innerText()).includes(title));
- await dialog.getByRole('button',{name:'Not now'}).click();
+ await dialog.getByRole('button',{name:'Not going'}).click();
  assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('kampuscape-registered-events')||'[]').length),0);
  await page.evaluate(()=>window.dispatchEvent(new Event('focus')));await page.waitForTimeout(250);assert.equal(await dialog.count(),0);
- await returnFrom(link);await dialog.getByRole('button',{name:'Add to My Events'}).click();
+ await returnFrom(link);await dialog.getByRole('button',{name:'Yes, I’m going'}).click();
  await page.locator('.drafts').waitFor();assert.ok((await page.locator('.drafts').innerText()).includes(title));
  assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('kampuscape-registered-events')).length),1);
  assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('kampuscape-drafts')||'[]').length),0);
@@ -50,7 +50,7 @@ try{
  await page.reload();await external.close();await page.bringToFront();await page.evaluate(()=>window.dispatchEvent(new Event('focus')));
  await dialog.waitFor();assert.match(await dialog.innerText(),/Fall Fest/);
  await page.screenshot({path:'/tmp/uic-registration-return-desktop.png'});
- await dialog.getByRole('button',{name:'Add to My Events'}).click();
+ await dialog.getByRole('button',{name:'Yes, I’m going'}).click();
  await page.locator('.drafts').getByRole('button',{name:'Fall Fest',exact:true}).click();
  await page.getByRole('region',{name:'Selected event on map'}).getByRole('button',{name:'My Events',exact:true}).click();
  assert.match(await page.locator('.drafts').innerText(),/Fall Fest/);

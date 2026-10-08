@@ -51,13 +51,13 @@ export function RegistrationPrompt({onAdded}){
     else if(dialog.current.open){dialog.current.close();previousFocus.current?.focus();}
   },[prompt]);
   return <dialog ref={dialog} className="registration-dialog" aria-labelledby="registration-heading" aria-describedby="registration-question" onCancel={dismiss} onClick={e=>{if(e.target===dialog.current)dismiss();}} onKeyDown={e=>{if(e.key==='Escape')e.stopPropagation();}}>
-    <div className="modal-content"><button className="modal-close icon-button" aria-label="Close registration reminder" onClick={dismiss}><X size={21}/></button>
+    <div className="modal-content"><button className="modal-close icon-button" aria-label="Close attendance question" onClick={dismiss}><X size={21}/></button>
       <span className="modal-icon"><CalendarDays size={26}/></span>
-      <h2 id="registration-heading">Did you register?</h2>
-      <p id="registration-question">Add <strong>{prompt?.title}</strong> to My Events so you can find it later.</p>
+      <h2 id="registration-heading">Are you attending?</h2>
+      <p id="registration-question">You just looked at <strong>{prompt?.title}</strong>. If you’re going, we’ll keep it in My Events so you can find it later.</p>
       <p className="fine-print">Saved on this device. Registration is handled by the event organizer.</p>
       {error&&<p role="alert" className="form-error">{error}</p>}
-      <div className="registration-actions"><button className="secondary-button" onClick={dismiss}>Not now</button><button className="primary-button" onClick={()=>{if(add())onAdded?.();}}>Add to My Events</button></div>
+      <div className="registration-actions"><button className="secondary-button" onClick={dismiss}>Not going</button><button className="primary-button" onClick={()=>{if(add())onAdded?.();}}>Yes, I’m going</button></div>
     </div>
   </dialog>;
 }
