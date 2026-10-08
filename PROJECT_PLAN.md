@@ -154,6 +154,7 @@ Saved holds bookmarked places; My Events holds event drafts. These remain local-
 
 ## Building-first private events accepted on 2026-10-05
 
+- Event creation displays the selected building’s name, or its street address when no name is available. Missing map data requires manual entry; generic “Pinned building” is not saved as the location (A24, 2026-10-07).
 - Create event starts by selecting a building from search or by tapping a map footprint. Show the building’s existing events so users can select one or create their own. No numbered onboarding progress strip.
 - Private events save locally, turn their building yellow, appear in My Events, and can be deleted. Yellow takes precedence over other building colors; removing the last local event restores the building’s normal color.
 - The lower-left glass legend is Red / UIC Building, Purple / Off Campus Events, Yellow / Private Events. This supersedes A15’s all-event-venues-purple rule: UIC buildings retain red unless a private event highlights them yellow.
@@ -177,3 +178,5 @@ Saved holds bookmarked places; My Events holds event drafts. These remain local-
 - A25 / B12 contains the local implementation and tested database migration. Hosted migration, Auth hooks, SMTP/email delivery, Google provider and browser environment values require the project connection and real-flow verification before release. See [Supabase setup](website/backend/supabase/README.md).
 
 - **2026-10-07:** User supersedes numeric-code emails with clickable signup verification and password-reset links back to Kampuscape (A28/B13). Email/password sign-in and exact verified UIC membership remain; signup links open onboarding, recovery links open a new-password form.
+
+- **2026-10-07:** A24 adds building-name/address resolution to the private event flow. Small-prototype OSM lookup is replaceable; production service/caching review remains H05 in Workflow A.

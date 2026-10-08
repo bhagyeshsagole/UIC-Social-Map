@@ -11,7 +11,7 @@
 > 4. If it's unclear whose workflow a request belongs to, use the one that owns the paths being touched and ask if still unclear. Never edit the other person's folders without an agreed handoff or an explicit request.
 
 **Updated:** 2026-10-07<br>
-**Current task:** A24 complete; project renamed to Kampuscape with saved-data compatibility<br>
+**Current task:** A24 complete (Kampuscape rename; selected building names and address fallback); A25/A28 accounts live with link-based verification emails<br>
 **Implementation progress:** A02 and A08 complete; remaining production journey tasks pending
 
 ## Steps and tracker
@@ -55,15 +55,19 @@ Check a task only when its result exists. If a task is partial, leave it uncheck
 - [x] **A22 · Future-month UIC events.** Twelve-month UIC Connection window, events listed until they end, month navigation in the date picker, new verified venues.
 - [x] **A21 · Venture application copy.** Drafted the venture overview, website/social field, showcase demo plan, and founder-panel learning topics using Humanizer and documented project progress.
 
+- [x] **A24 · Pinned building names and addresses.** Resolve the selected building name or address during event creation.
+
 ## Current work
 
 | Task | State | Evidence / blocker |
 | --- | --- | --- |
-| A28 / B13 | FRONTEND DEPLOYED; EMAIL TEMPLATES PENDING | User-requested production deployment `d89ac041` completed. 59 tests and Pages build passed; live `/uic` returns 200 and references the matching new bundle with signup/reset-link UI. Supabase CLI is unauthenticated and dashboard controls remain stuck; outgoing email templates still require saving. |
+| A28 / B13 | DONE | User-requested production deployment `d89ac041` completed. 59 tests and Pages build passed; live `/uic` returns 200 and references the matching new bundle with signup/reset-link UI. Supabase CLI is unauthenticated and dashboard controls remain stuck; outgoing email templates still require saving. |
 | A25 / B12 | IN PROGRESS | Live on Supabase project `ddhqammspwmmrprpolfw`: migration applied, both Auth hooks on, 6-digit/10-min OTP, kampuscape.com/uic redirect URLs, publishable key in the deployed build; non-UIC signup rejected live. Pending: custom SMTP (Resend) then the code email template, Google OAuth client |
 | A27 | DONE | kampuscape.com/support (help, reach out, bug, content/safety reports → private `kampuscape_support_requests`, rate-limited); self-service account deletion with privacy confirmation; "i" creators card holding map attribution; hidden sign-in dialog scrollbar. 59 unit tests, PGlite migration tests, mocked browser delete flow, live permission probes |
 | A26 | DONE | Live at kampuscape.com/uic (Cloudflare Pages project `kampuscape`; page is `uic.html`, `/uic/` redirects to `/uic`); KS favicon and Apple touch icon; root redirects to `/uic`, `*.pages.dev` and www redirect to kampuscape.com. Live events via Pages Function `/uic/api/campus-events` (15-min edge cache, 307 events). kampuscape.com and www active since 2026-10-07 (CNAME to kampuscape.pages.dev). 57 unit tests and a headless browser check pass |
 | A24 | DONE | Kampuscape page titles, package metadata, project documentation and contract fixtures; saved places/drafts migrate to new storage keys. 50 unit tests, production build and focused browser checks pass |
+| A24 push | DONE | Commit `799b8b0` pushed to `origin/main`; GitHub accepted the fast-forward. 51 tests, build and Chrome checks passed before publication. H05 remains the production lookup dependency. |
+| A24 | DONE | Building names preferred, street-address fallback, cancellable OSM lookup and required manual entry when unavailable; 51 unit tests, production build, and targeted Chrome creation/persistence/offline checks pass. Production lookup service remains H05. |
 | A21 | DONE | Humanizer-edited application answers delivered in chat; overview under 200 words, prototype start stated as October 2026, no invented public links or traction; no submission |
 | A23 | DONE | 35 of 219 blank locations filled (16 from the calendar file, 19 from description quotes; 27 mappable, 8 online); 184 stay private. 47 unit tests, build and four browser smoke tests pass |
 | A22 | DONE | 303 UIC events through Sep 2027 (was 141), events listed until they end, month arrows in Pick a date, five new OSM venues; 44 unit tests, build and four browser smoke tests pass |
@@ -100,6 +104,7 @@ Write requests here; Hassan responds in [his tracker](WORKFLOW_B_HASSAN.md#hando
 | H01 | 2026-10-04 | A08 uses MapLibre 6 + OpenFreeMap for a local prototype. Hassan to review production provider, bounds/coverage, and quotas in B02. Metadata in `website/frontend/src/placeDetails.js` is provisional. | Awaiting Hassan |
 | H02 | 2026-10-04 | Implement [B10 Sunday refresh](SUNDAY_REFRESH_TASK.md); preserve user-edited Markdown copy and produce source-backed review tasks. | TODO |
 | H03 | 2026-10-05 | A12 provides `website/frontend/scripts/campus-events.mjs` and a sanitized public snapshot. Local dev/preview refresh via a cached same-origin API. Reuse the importer for production API/scheduled builds when hosting is selected; static-only deploys show snapshot freshness and cannot refresh the upstream feed themselves. | Production endpoint deployed by A26 on 2026-10-07 (Cloudflare Pages Function, user-authorized); Hassan to review hosting choice in B03 |
+| H05 | 2026-10-07 | A24 uses a replaceable Overpass endpoint for user-selected unknown roofs (`VITE_BUILDING_LOOKUP_URL`). Review production provider/cached proxy and application-wide request limits before scaling; browser lookup has debounce, cancellation, timeout and session cache. | Production service review pending Hassan |
 | H04 | 2026-10-05 | A17 frontend shares event snapshots through URL fragments. Implement server-backed event IDs, authenticated ownership/deletion, access rules, and synchronized/revocable invitations when B01/B03/B05 and hosting are agreed. Existing copied snapshots cannot be revoked; do not present them as secure invitations. | Backend integration pending Hassan |
 
 For each handoff include: task ID, relevant path, required behavior, and what is blocked. Link screenshots/design files here when they exist.
@@ -249,3 +254,8 @@ Ordered by impact for students on phones.
 - **2026-10-07 (A28/B13 deployment):** User explicitly requested deployment after the template blocker was reported. Ran `npm run deploy`; all 59 tests and the Pages build passed. Cloudflare production deployment `d89ac041` succeeded (https://d89ac041.kampuscape.pages.dev). Verified https://kampuscape.com/uic returns HTTP 200 and references `/uic/assets/main-DKjR64W9.js`, whose content contains the new verification/reset-link UI. The build uses the current working tree, preserving the existing account-choice and credits styling. Retried Supabase template access: CLI still has no management login; native browser reaches Emails but loses the editor to a stuck sidebar accessibility view. No remote email-template save was performed; that dependency remains explicitly pending.
 
 - **2026-10-07 (A28/B13 template retry):** User opened Confirm signup editor. Observed live subject and numeric-token body. Browser clipboard timed out; typed HTML was not reliable, so no Save changes action was taken. Attempted Cancel but the browser connection failed before discard could be confirmed. User must replace the whole Body with the prepared confirmation/recovery HTML files before saving; do not save a partial editor draft. Production frontend remains deployed.
+
+- **2026-10-07:** Completed A24 at the user’s request. Replaced the hard-coded creation label with existing venue/roof metadata, then a selected-roof OSM lookup; building name takes priority over a complete street address. Ambiguous/missing data requires manual entry, and legacy “Pinned building” drafts do not suppress lookup when repinning. Requests cancel on repin/dismissal and expire after 12 seconds. 51 unit tests, build and targeted Chrome checks pass for named/address-only buildings, saved values, offline failure and manual entry. Live OSM verification at the screenshot coordinates returned **1001 South Desplaines Street** (no building name). H05 records the production lookup dependency. No backend implementation or deployment.
+
+- **2026-10-07:** User-requested GitHub push complete: A24 building-name/address fix, tests and documentation published to `origin/main` in `799b8b0`. Remote accepted the fast-forward. Unrelated `website/data/output/` remains untracked; no deployment verification was performed.
+- **2026-10-07 (A28/B13 templates):** Claude Code pushed the link-based confirmation and recovery templates and subjects with `supabase config push` (only those two templates differed; SMTP via Resend, hooks and redirect URLs unchanged; re-check shows remote up to date). Merged Hassan's A24 building-name update (`799b8b0`, `b26e1fe`) from origin/main into `kampuscape-launch`; code merged without conflicts, shared docs resolved by keeping both sides.

@@ -22,6 +22,7 @@ import './private-events.css';
 import PrivateEventCreator from './PrivateEventCreator.jsx';
 import ShareEvent from './ShareEvent.jsx';
 import {readEventLink,cleanEvent} from './privateEvents';
+import {lookupBuilding} from './buildingDetails';
 const places=parsePlaces(copy).map(p=>({...details[p.id],...p}));
 // Every off-campus place's building is purple; UIC buildings stay red and open spaces keep only their pin.
 const placeVenues=places.map(p=>resolveEventVenue({place:p},venueRegistry.venues)).filter(v=>v&&v.kind!=='outdoor'&&!v.id.startsWith('uic-'));
@@ -45,6 +46,20 @@ function App(){
  const deleteEvent=event=>{setDrafts(v=>v.filter(d=>d.id!==event.id));if(focusedEvent?.id===event.id)setFocusedEvent(null);if(linkedEvent?.id===event.id)clearEventHash();setNotice('Event deleted from this device');};
  const createPrivateEvent=event=>{setDrafts(v=>[...v,event]);cancelCreate();setSelected(null);setPanelOpen(false);setFocusedEvent(event);setTab('My Events');setNotice('Private event created. Your building is yellow.');};
  const pickBuilding=venue=>{if(!venue){setNotice('Tap a building footprint to place your event pin.');return;}setPickedBuilding({...venue});};
+
+ // Resolve only this selection; cancel on repin, dismissal, save, or unmount.
+ useEffect(()=>{
+   if(!creating || !pickedBuilding?.needsLookup)return;
+   let cancelled=false;
+   const controller=new AbortController();
+   const timeout=setTimeout(()=>controller.abort(),12000);
+   const id=pickedBuilding.id;
+   const finish=details=>setPickedBuilding(current=>current?.id===id?{...current,...details,needsLookup:false,lookupMissing:!details?.name}:current);
+   lookupBuilding(pickedBuilding,{signal:controller.signal,endpoint:import.meta.env.VITE_BUILDING_LOOKUP_URL || undefined})
+     .then(details=>{if(!controller.signal.aborted)finish(details);})
+     .catch(()=>{if(!cancelled)finish(null);}).finally(()=>clearTimeout(timeout));
+   return()=>{cancelled=true;clearTimeout(timeout);controller.abort();};
+ },[creating,pickedBuilding?.id,pickedBuilding?.needsLookup]);
 
  const rawCampusCalendar=useCampusEvents(now);
  const campusCalendar={...rawCampusCalendar,events:rawCampusCalendar.events.map(e=>({...e,venue:resolveEventVenue(e,venueRegistry.venues)}))};

@@ -121,3 +121,13 @@ A25 adds Supabase email-code/Google sign-in restricted to verified `uic.edu` acc
 Copy `.env.example` to `.env.local` and supply the project’s public publishable key. The project URL is already specified. Follow the [Supabase setup](../backend/supabase/README.md) to apply the migration and enable the UIC Auth hooks, email delivery and Google provider. Missing configuration shows a setup message instead of simulating sign-in. Hosted setup is not yet verified.
 
 Live events has a **For you** tab that matches the profile’s interests to current event content and explains each match. Edit interests from the profile or that tab. `npm run events:interests` retags the existing snapshot; `events:refresh` tags all refreshed events automatically. The shared `src/interests.js` catalog drives the UI, pipeline and ranking. Run `tests/onboarding-smoke.mjs` against the mock-configured dev server described in the backend guide for deterministic desktop/mobile verification.
+
+### Building names during event creation
+
+A24 resolves a selected roof in this order: existing venue/saved name, roof metadata, then a user-triggered OpenStreetMap Overpass lookup. Building names take priority over a complete street address. Address nodes must sit inside the roof; neighboring buildings and ambiguous results are not used. If data is missing or the request fails, the form requires a name/address entered by the user. The chosen value survives saving and snapshot sharing.
+
+The lookup is debounced, cancellable, timed out after 12 seconds, and cached for up to 100 roofs per page session. `VITE_BUILDING_LOOKUP_URL` can replace the prototype endpoint (`https://overpass-api.de/api/interpreter`) with an Overpass-compatible service. Only roof bounds are sent, without event details. Multipolygon relation-only metadata and buildings without OSM name/address tags may require manual entry.
+
+[Overpass usage guidance](https://dev.overpass-api.de/overpass-doc/en/preface/commons.html) and [public-instance guidance](https://wiki.openstreetmap.org/wiki/Overpass_API#Public_Overpass_API_instances) checked 2026-10-07. The public endpoint is a small-prototype dependency, not a production provider commitment: production needs an appropriate service or cached proxy with application-wide rate limits (H05 in Workflow A). Public service availability is not guaranteed.
+
+Regression check: with Vite running, `node tests/building-details-smoke.mjs` exercises synthetic named/address-only responses, saved event values, offline fallback and manual entry. Set `PLAYWRIGHT_CHANNEL=chrome` to use installed Chrome.

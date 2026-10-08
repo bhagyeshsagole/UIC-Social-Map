@@ -8,7 +8,7 @@ export default function PrivateEventCreator({pickedVenue, picking, venueGroups, 
   const dialog = useRef(), firstFocus = useRef(document.activeElement);
   const [step,setStep] = useState(0), [title,setTitle] = useState(''), [date,setDate] = useState(''), [time,setTime] = useState(''), [description,setDescription] = useState(''), [venue,setVenue] = useState(null), [error,setError] = useState('');
   useEffect(() => {if(picking) dialog.current.close(); else dialog.current.showModal();}, [picking]);
-  useEffect(() => {if(pickedVenue) {setVenue(pickedVenue); setStep(0); setError('');}}, [pickedVenue]);
+  useEffect(() => {if(pickedVenue) {setVenue({...pickedVenue,name:pickedVenue.lookupMissing?'':pickedVenue.name}); setStep(0); setError('');}}, [pickedVenue]);
   useEffect(() => () => firstFocus.current?.focus(), []);
   useEffect(()=>{if(!picking)return;const cancel=e=>{if(e.key==='Escape')onCancel();};window.addEventListener('keydown',cancel);return()=>window.removeEventListener('keydown',cancel);},[picking,onCancel]);
   useEffect(() => {dialog.current.querySelector('h2')?.focus();}, [step]);
@@ -26,7 +26,7 @@ export default function PrivateEventCreator({pickedVenue, picking, venueGroups, 
   };
   const existing = venue ? (venueGroups[venue.id]?.events || []).filter(e => e.source !== 'Private event' || e.date >= chicagoDate(now)) : [];
   return <>
-    {picking && <section className="pin-instructions glass" aria-label="Pin event location"><MapPin size={16} className="pin-instructions-icon" aria-hidden="true"/><p>{pickedVenue?<><strong>{pickedVenue.name}</strong><span>Pinned</span></>:'Tap a building to pin your event'}</p><div className="pin-setup-actions">{pickedVenue&&<button className="primary-button" onClick={()=>onPickMap(false)}>Continue <ArrowRight size={14}/></button>}<button className="secondary-button" onClick={onCancel}>Cancel</button></div></section>}
+    {picking && <section className="pin-instructions glass" aria-label="Pin event location"><MapPin size={16} className="pin-instructions-icon" aria-hidden="true"/><p>{pickedVenue?<><strong>{pickedVenue.needsLookup?'Finding building…':pickedVenue.name}</strong><span>Pinned</span></>:'Tap a building to pin your event'}</p><div className="pin-setup-actions">{pickedVenue&&<button className="primary-button" disabled={pickedVenue.needsLookup} onClick={()=>onPickMap(false)}>Continue <ArrowRight size={14}/></button>}<button className="secondary-button" onClick={onCancel}>Cancel</button></div></section>}
     <dialog ref={dialog} className="create-event-dialog" onCancel={onCancel} onClick={e => {if(e.target === dialog.current) onCancel();}}>
       <div className="modal-content"><button className="modal-close icon-button" aria-label="Close event setup" onClick={onCancel}><X size={21}/></button>
         <span className="modal-icon private-icon">{step === 0 ? <MapPin size={26}/> : <LockKeyhole size={26}/>}</span>
@@ -35,8 +35,10 @@ export default function PrivateEventCreator({pickedVenue, picking, venueGroups, 
         <form onSubmit={submit}>
           {step === 0 && <>
             {venue ? <>
-              <div className="chosen-building"><Check size={19}/><div><strong>{venue.name}</strong><small>{venue.address || `${venue.coords[1].toFixed(5)}, ${venue.coords[0].toFixed(5)}`}</small></div><button type="button" className="text-link" onClick={()=>onPickMap(true)}>Change building</button></div>
-              {venue.footprint && <label>Building name<input required maxLength={120} value={venue.name} onChange={e=>setVenue({...venue,name:e.target.value})}/></label>}
+              <div className="chosen-building"><Check size={19}/><div><strong>{venue.name || 'Add a building name or address'}</strong><small>{venue.address || `${venue.coords[1].toFixed(5)}, ${venue.coords[0].toFixed(5)}`}</small></div><button type="button" className="text-link" onClick={()=>onPickMap(true)}>Change building</button></div>
+              {venue.footprint && <label>Building name or address<input required placeholder="Enter the building name or street address" maxLength={120} value={venue.name} onChange={e=>setVenue({...venue,name:e.target.value})}/></label>}
+              {venue.footprint && <p className="fine-print">Building data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap contributors</a>.</p>}
+              {venue.lookupMissing && <p className="fine-print" role="status">We couldn’t find this building’s name or address. Please enter it above.</p>}
               <section className="building-existing-events" aria-label="Existing events in this building">
                 <h3>{existing.length ? 'Already happening here' : 'Start something here.'}</h3>
                 <p>{existing.length ? 'Choose an event below, or create a new one.' : 'No upcoming events are listed here yet. Create your own private event.'}</p>
@@ -53,7 +55,7 @@ export default function PrivateEventCreator({pickedVenue, picking, venueGroups, 
           </>}
           {step === 2 && <><div className="event-review"><span className="eyebrow">PRIVATE EVENT</span><h3>{title}</h3><p>{privateWhen({date,time})}</p><p><MapPin size={17}/>{venue.name}</p>{description && <p>{description}</p>}</div><p className="fine-print">Saved on this device and kept out of public listings. Anyone you send the link to can view it.</p></>}
           {error && <p role="alert" className="form-error">{error}</p>}
-          <div className="wizard-actions">{step > 0 && <button className="secondary-button" type="button" onClick={() => {setStep(step-1);setError('');}}><ArrowLeft size={16}/> Back</button>}<button className="primary-button" type="submit" disabled={step === 0 && !venue}>{step === 2 ? 'Create private event' : step === 0 ? 'Create a new event' : 'Continue'}<ArrowRight size={17}/></button></div>
+          <div className="wizard-actions">{step > 0 && <button className="secondary-button" type="button" onClick={() => {setStep(step-1);setError('');}}><ArrowLeft size={16}/> Back</button>}<button className="primary-button" type="submit" disabled={step === 0 && (!venue || !venue.name.trim())}>{step === 2 ? 'Create private event' : step === 0 ? 'Create a new event' : 'Continue'}<ArrowRight size={17}/></button></div>
         </form>
       </div>
     </dialog>

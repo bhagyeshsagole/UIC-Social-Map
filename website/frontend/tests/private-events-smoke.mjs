@@ -96,12 +96,12 @@ try{
  assert.equal(await recipient.locator('.map').getAttribute('data-focused-event-venue'),'uic-0605');
  // On phones an open event card hides the bottom nav; close it first.
  await recipient.getByRole('button',{name:'Close event on map'}).click();
+ // Guests must sign in before creating events (A25); the account dialog opens instead of pin mode.
  await recipient.getByRole('button',{name:'Create event',exact:true}).click();
+ await recipient.locator('.account-dialog[open]').waitFor();
+ assert.equal(await recipient.locator('.map').getAttribute('data-preview-venue')||'','','no pin mode for guests');
+ await recipient.getByRole('button',{name:'Close account'}).click();
  assert.equal(await recipient.locator('dialog[open]').count(),0);
- await recipient.mouse.click(195,300);
- await recipient.waitForFunction(()=>!!document.querySelector('.map').dataset.previewVenue);
- await recipient.getByRole('region',{name:'Pin event location'}).getByRole('button',{name:'Cancel',exact:true}).click();
- await recipient.waitForFunction(()=>document.querySelector('.map').dataset.previewVenue==='');
  assert.equal(await recipient.evaluate(()=>JSON.parse(localStorage.getItem('kampuscape-drafts')).length),0);
  await recipient.goto((process.env.TEST_APP_URL||'http://127.0.0.1:5173')+'/#event=invalid');await recipient.getByRole('status').filter({hasText:'invalid or incomplete'}).waitFor();
  assert.deepEqual(errors,[]);console.log('Private events: onboarding, real map picking, persistence, sharing to a fresh mobile browser, exact camera, deletion, public links and malformed links passed.');

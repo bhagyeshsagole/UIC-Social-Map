@@ -14,6 +14,7 @@ import Credits from './Credits.jsx';
 import registry from './event-venues.json';
 import {cleanVenue,footprintId,buildingArea} from './privateEvents';
 import { UIC } from './time';
+import {buildingLabel} from './buildingDetails';
 import {touchFrame,touchCamera} from './gestures';
 import {placeLabel} from './labelPlacement';
 import {safariBleed} from './safariRunway';
@@ -150,7 +151,10 @@ export default function Map({places,selected,onSelect,night,resetKey,eventVenues
           const footprint=feature.toJSON().geometry,customId=footprintId(footprint);
           const previous=privateRef.current.find(event=>event.venue.id===customId)?.venue;
           const area=buildingArea({footprint}).coordinates[0],center=[(area[0][0]+area[2][0])/2,(area[0][1]+area[2][1])/2];
-          const venue=known || previous || cleanVenue({id:customId,name:'Pinned building',coords:center,footprint,featureId:feature.id});
+          const label=buildingLabel(feature.properties);
+          const saved=previous?.name==='Pinned building'?null:previous;
+          const custom=cleanVenue({id:customId,...label,name:label.name||'Selected building',coords:center,footprint,featureId:feature.id});
+          const venue=known || saved || (custom?{...custom,needsLookup:!label.name}:null);
           hidePeek();buildingCallback.current?.(venue);return;
         }
         const ids=venuesAt(e);if(ids.length){hidePeek();venueCallback.current?.(ids);}
