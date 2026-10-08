@@ -58,7 +58,6 @@ Mirrored in both workflow files. Add a row when work starts; remove it when the 
 
 | Who | Task | Paths being touched | Since |
 | --- | --- | --- | --- |
-| Codex for Bhagesh | A29 push | A29 frontend, shared plan, both workflows, Git publication | 2026-10-07 |
 | Claude Code | A25 / B12 | Google OAuth configuration (existing claim preserved) | 2026-10-07 |
 
 ## Handoffs and messages to Bhagesh
@@ -141,3 +140,5 @@ Provider handoff should include the SDK, supported version, configuration variab
 - **2026-10-07:** Bhagesh A29 complete: external registration return prompt with explicit add/dismiss, deduplicated saved events in local My Events, removal and reload recovery. 54 unit tests, build and desktop/mobile Chrome checks pass. See Workflow A H06 for future account-backed saves; this does not verify registration or attendance. No backend/data/deployment changes.
 
 - **2026-10-07:** Integrated the registration-return feature with six newer `origin/main` commits before the requested push. Renamed this task from A25 to **A29** because upstream independently assigned A25 to accounts; the OAuth configuration claim is preserved. Saved/pending registration events now use per-account Kampuscape storage, reset with session changes, and clear on account deletion. All 68 unit tests, production build, and desktop/mobile registration browser checks pass. Cloud synchronization remains H06; no manual deployment performed.
+
+- **2026-10-07:** User-requested GitHub publication complete: `0425342` adds the registration reminder; merge `61158aa` preserves upstream account/deployment updates and integrates account-scoped saved events. GitHub accepted the fast-forward to `main`. Unrelated `website/data/output/` remains untracked.

@@ -63,7 +63,7 @@ Check a task only when its result exists. If a task is partial, leave it uncheck
 
 | Task | State | Evidence / blocker |
 | --- | --- | --- |
-| A29 push | IN PROGRESS | User requested publication to origin/main; verifying remote and commit scope. |
+| A29 push | DONE | GitHub accepted `61158aa` on main after merging upstream; 68 unit tests, production build and desktop/mobile registration flow pass. H06 remains cloud-sync dependency. |
 | A29 | DONE | Return-only registration reminder, explicit add/dismiss, deduplicated local My Events with removal and Spotlight entries. 54 unit tests, build and desktop/mobile Chrome flow passed, including Fall Fest map details and pending-return recovery after reload. Account sync remains H06. |
 | A28 / B13 | DONE | User-requested production deployment `d89ac041` completed. 59 tests and Pages build passed; live `/uic` returns 200 and references the matching new bundle with signup/reset-link UI. Supabase CLI is unauthenticated and dashboard controls remain stuck; outgoing email templates still require saving. |
 | A25 / B12 | IN PROGRESS | Live on Supabase project `ddhqammspwmmrprpolfw`: migration applied, both Auth hooks on, 6-digit/10-min OTP, kampuscape.com/uic redirect URLs, publishable key in the deployed build; non-UIC signup rejected live. Pending: custom SMTP (Resend) then the code email template, Google OAuth client |
@@ -97,7 +97,6 @@ Mirrored in both workflow files. Add a row when work starts; remove it when the 
 
 | Who | Task | Paths being touched | Since |
 | --- | --- | --- | --- |
-| Codex for Bhagesh | A29 push | A29 frontend, shared plan, both workflows, Git publication | 2026-10-07 |
 | Claude Code | A25 / B12 | Google OAuth configuration (existing claim preserved) | 2026-10-07 |
 
 ## Handoffs and messages to Hassan
@@ -271,3 +270,5 @@ Ordered by impact for students on phones.
 - **2026-10-07:** A24 lookup speed-up (user-requested): public Overpass was returning 406/500/504, and a 406 paused all lookups for 30 s on top of a 12 s timeout. `lookupBuilding` now asks Nominatim reverse geocoding first (~0.2–0.8 s) and accepts it only when the returned polygon covers the tapped point or its point lies inside the selected roof; otherwise Overpass with a 4 s cap (skipped while paused). Overall wait 6 s, then manual entry. Requests stay ≥1 s apart (Nominatim/Overpass policies). Unit tests added; building-details smoke mocks Nominatim. Deployed.
 
 - **2026-10-07:** Integrated the registration-return feature with six newer `origin/main` commits before the requested push. Renamed this task from A25 to **A29** because upstream independently assigned A25 to accounts; the OAuth configuration claim is preserved. Saved/pending registration events now use per-account Kampuscape storage, reset with session changes, and clear on account deletion. All 68 unit tests, production build, and desktop/mobile registration browser checks pass. Cloud synchronization remains H06; no manual deployment performed.
+
+- **2026-10-07:** User-requested GitHub publication complete: `0425342` adds the registration reminder; merge `61158aa` preserves upstream account/deployment updates and integrates account-scoped saved events. GitHub accepted the fast-forward to `main`. Unrelated `website/data/output/` remains untracked.
