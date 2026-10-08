@@ -11,7 +11,7 @@
 > 4. If it's unclear whose workflow a request belongs to, use the one that owns the paths being touched and ask if still unclear. Never edit the other person's folders without an agreed handoff or an explicit request.
 
 **Updated:** 2026-10-07<br>
-**Current task:** A24 complete; selected building names and address fallback<br>
+**Current task:** A25 complete; registration return prompt and saved external events<br>
 **Implementation progress:** A02 and A08 complete; remaining production journey tasks pending
 
 ## Steps and tracker
@@ -54,10 +54,14 @@ Check a task only when its result exists. If a task is partial, leave it uncheck
 
 - [x] **A24 · Pinned building names and addresses.** Resolve the selected building name or address during event creation.
 
+- [x] **A25 · Registration return prompt.** Offer to add external events to My Events after returning from registration.
+
 ## Current work
 
 | Task | State | Evidence / blocker |
 | --- | --- | --- |
+| A25 push | IN PROGRESS | User requested publication to origin/main; verifying remote and commit scope. |
+| A25 | DONE | Return-only registration reminder, explicit add/dismiss, deduplicated local My Events with removal and Spotlight entries. 54 unit tests, build and desktop/mobile Chrome flow passed, including Fall Fest map details and pending-return recovery after reload. Account sync remains H06. |
 | A24 push | DONE | Commit `799b8b0` pushed to `origin/main`; GitHub accepted the fast-forward. 51 tests, build and Chrome checks passed before publication. H05 remains the production lookup dependency. |
 | A24 | DONE | Building names preferred, street-address fallback, cancellable OSM lookup and required manual entry when unavailable; 51 unit tests, production build, and targeted Chrome creation/persistence/offline checks pass. Production lookup service remains H05. |
 | A21 | DONE | Humanizer-edited application answers delivered in chat; overview under 200 words, prototype start stated as October 2026, no invented public links or traction; no submission |
@@ -85,6 +89,7 @@ Mirrored in both workflow files. Add a row when work starts; remove it when the 
 
 | Who | Task | Paths being touched | Since |
 | --- | --- | --- | --- |
+| Codex for Bhagesh | A25 push | A25 frontend, shared plan, both workflows, Git publication | 2026-10-07 |
 
 ## Handoffs and messages to Hassan
 
@@ -95,6 +100,7 @@ Write requests here; Hassan responds in [his tracker](WORKFLOW_B_HASSAN.md#hando
 | H01 | 2026-10-04 | A08 uses MapLibre 6 + OpenFreeMap for a local prototype. Hassan to review production provider, bounds/coverage, and quotas in B02. Metadata in `website/frontend/src/placeDetails.js` is provisional. | Awaiting Hassan |
 | H02 | 2026-10-04 | Implement [B10 Sunday refresh](SUNDAY_REFRESH_TASK.md); preserve user-edited Markdown copy and produce source-backed review tasks. | TODO |
 | H03 | 2026-10-05 | A12 provides `website/frontend/scripts/campus-events.mjs` and a sanitized public snapshot. Local dev/preview refresh via a cached same-origin API. Reuse the importer for production API/scheduled builds when hosting is selected; static-only deploys show snapshot freshness and cannot refresh the upstream feed themselves. | Local implementation complete; production deployment pending Hassan |
+| H06 | 2026-10-07 | A25 stores user-confirmed external event snapshots separately from private drafts. Add account-backed saved-event references when backend integration is ready; saving is not verified registration or attendance. | Future backend integration |
 | H05 | 2026-10-07 | A24 uses a replaceable Overpass endpoint for user-selected unknown roofs (`VITE_BUILDING_LOOKUP_URL`). Review production provider/cached proxy and application-wide request limits before scaling; browser lookup has debounce, cancellation, timeout and session cache. | Production service review pending Hassan |
 | H04 | 2026-10-05 | A17 frontend shares event snapshots through URL fragments. Implement server-backed event IDs, authenticated ownership/deletion, access rules, and synchronized/revocable invitations when B01/B03/B05 and hosting are agreed. Existing copied snapshots cannot be revoked; do not present them as secure invitations. | Backend integration pending Hassan |
 
@@ -234,3 +240,5 @@ Ordered by impact for students on phones.
 - **2026-10-07:** Completed A24 at the user’s request. Replaced the hard-coded creation label with existing venue/roof metadata, then a selected-roof OSM lookup; building name takes priority over a complete street address. Ambiguous/missing data requires manual entry, and legacy “Pinned building” drafts do not suppress lookup when repinning. Requests cancel on repin/dismissal and expire after 12 seconds. 51 unit tests, build and targeted Chrome checks pass for named/address-only buildings, saved values, offline failure and manual entry. Live OSM verification at the screenshot coordinates returned **1001 South Desplaines Street** (no building name). H05 records the production lookup dependency. No backend implementation or deployment.
 
 - **2026-10-07:** User-requested GitHub push complete: A24 building-name/address fix, tests and documentation published to `origin/main` in `799b8b0`. Remote accepted the fast-forward. Unrelated `website/data/output/` remains untracked; no deployment verification was performed.
+
+- **2026-10-07:** Completed A25. Details/registration links record a pending event; blur/hidden plus return focus/visibility triggers “Did you register?” once, never just the initial click. Add to My Events saves a sanitized external snapshot and opens My Events; Not now, Escape and close dismiss without saving. Existing saved events do not prompt again. Local saved events can be reopened, searched and removed; they never become private events or yellow roofs. Session pending state expires after 24 hours and survives reload. 54 unit tests, production build and Chrome desktop/mobile checks pass (headless lifecycle signals simulated), including the requested Fall Fest map-detail link. Screenshots reviewed in `/tmp/uic-registration-return-{desktop,mobile}.png`. H06 records account-sync dependency; external registration is not verified. No push or deployment in this request.

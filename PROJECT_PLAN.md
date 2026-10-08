@@ -1,6 +1,6 @@
 # UIC Social Discovery Map — Living Plan and Tracker
 
-Last updated: 2026-10-06 (America/Chicago)
+Last updated: 2026-10-07 (America/Chicago)
 Phase: First local frontend prototype; production decisions and backend remain open<br>
 Team: Bhagesh — frontend; Hassan — backend, data, and deployment  
 Current review: [Evidence, loopholes, and recommendations](EVENT_MAP_REVIEW.md)
@@ -130,7 +130,7 @@ The original Chicago restriction and always-3D/no-toggle decisions above are sup
 
 Discovery is an on-demand bottom-center glass sheet. Guest and detail views use glass, with close controls. The header is smaller; time, live dot, branding, welcome copy, reminder footer, road names, and decorative map widgets are removed. UIC has a text-only label and red gradient buildings based on official directory locations matched to map footprints.
 
-Saved holds bookmarked places; My Events holds event drafts. These remain local-only until account and backend work is implemented. Campus geometry cleanup merges connected and overlapping parts across tile seams to avoid 3D flicker. See the frontend README for coverage and refresh limitations.
+Saved holds bookmarked places; My Events holds private event drafts and external events explicitly saved after returning from registration (A25, 2026-10-07). These remain local-only until account and backend work is implemented. Campus geometry cleanup merges connected and overlapping parts across tile seams to avoid 3D flicker. See the frontend README for coverage and refresh limitations.
 
 - **2026-10-05:** Added a north-up alignment button above 2D/3D: roll resets to zero and 3D tilt aligns to 45°. Navigation order is Explore → Live events → My Events → Saved → Create event → Search.
 
@@ -167,3 +167,9 @@ Saved holds bookmarked places; My Events holds event drafts. These remain local-
 - **2026-10-05:** A17 creation-order correction supersedes search/dialog-first setup: Create event opens the map with a yellow pin cursor; clicking a building pins it and immediately previews its roof in yellow; Continue then opens onboarding with existing-event/new-event choices. Cancel/Escape clears only the temporary preview. Connected campus footprints choose the nearest named venue instead of the first annotation.
 
 - **2026-10-07:** A24 adds building-name/address resolution to the private event flow. Small-prototype OSM lookup is replaceable; production service/caching review remains H05 in Workflow A.
+
+## Registration return reminder accepted on 2026-10-07
+
+- After opening event details/registration and returning to the app, ask “Did you register?” and offer **Add to My Events** or **Not now**. Never infer completed registration from a click.
+- Add saves an external event snapshot locally, with duplicate prevention, reopen and remove controls; it does not create a private event or change roof colors. Existing saved events do not prompt again.
+- **2026-10-07:** A25 implements the reminder across event cards, map details and programmatic event links. Pending returns survive reload for up to 24 hours; saved events persist on the device. Account synchronization remains H06 in Workflow A.

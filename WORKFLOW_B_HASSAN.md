@@ -54,6 +54,7 @@ Mirrored in both workflow files. Add a row when work starts; remove it when the 
 
 | Who | Task | Paths being touched | Since |
 | --- | --- | --- | --- |
+| Codex for Bhagesh | A25 push | A25 frontend, shared plan, both workflows, Git publication | 2026-10-07 |
 
 ## Handoffs and messages to Bhagesh
 
@@ -121,3 +122,5 @@ Provider handoff should include the SDK, supported version, configuration variab
 - **2026-10-07:** Bhagesh A24 complete: creation uses building name/address via existing metadata and a cancellable selected-roof OSM lookup, with required manual entry on missing data. 51 unit tests, build and targeted Chrome tests pass; live screenshot-location address verified. See Workflow A H05 for production provider/cached-proxy review. No backend/data/deployment files changed.
 
 - **2026-10-07:** User-requested GitHub push complete: A24 building-name/address fix, tests and documentation published to `origin/main` in `799b8b0`. Remote accepted the fast-forward. Unrelated `website/data/output/` remains untracked; no deployment verification was performed.
+
+- **2026-10-07:** Bhagesh A25 complete: external registration return prompt with explicit add/dismiss, deduplicated saved events in local My Events, removal and reload recovery. 54 unit tests, build and desktop/mobile Chrome checks pass. See Workflow A H06 for future account-backed saves; this does not verify registration or attendance. No backend/data/deployment changes.

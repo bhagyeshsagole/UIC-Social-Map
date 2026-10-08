@@ -148,3 +148,5 @@ html,body{overscroll-behavior:none;-webkit-text-size-adjust:100%;text-size-adjus
 }
 @media(max-width:760px){body,#root{position:relative!important;inset:auto!important;display:block!important}}
 @media(max-width:760px){.app.sheet-open .align-map,.app.sheet-open .uic-home,.app.sheet-open .view-toggle{opacity:0;pointer-events:none}.app .align-map,.app .uic-home,.app .view-toggle{transition:opacity .18s ease}}
+
+.registration-dialog{width:min(440px,calc(100% - 28px));text-align:left}.registration-dialog .modal-content{padding:28px}.registration-dialog h2{font-size:25px;margin:18px 28px 12px 0}.registration-dialog p{overflow-wrap:anywhere;line-height:1.6}.registration-actions{display:flex;gap:12px;justify-content:flex-end;margin-top:24px}.registration-actions button{min-height:44px}.registration-actions .primary-button{width:auto;margin-top:0}.registration-dialog .fine-print{font-size:12px}@media(max-width:400px){.registration-dialog .modal-content{padding:24px 20px}.registration-actions{flex-direction:column-reverse}.registration-actions button,.registration-actions .primary-button{width:100%}}
