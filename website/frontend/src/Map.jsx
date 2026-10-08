@@ -248,7 +248,7 @@ export default function Map({places,selected,onSelect,night,resetKey,eventVenues
   useEffect(()=>{
     const m=map.current;if(!m)return;
     const pins=privateRef.current.filter(event=>event.id!==focusedEvent?.id).map(event=>{
-      const el=document.createElement('button');el.className='private-event-pin';el.type='button';el.setAttribute('aria-label',`Show private event ${event.title}`);
+      const el=document.createElement('button');el.className='private-event-pin';el.type='button';el.setAttribute('aria-label',`Show ${event.visibility==='public'?'public':'private'} event ${event.title}`);el.title=event.title;
       const dot=document.createElement('i'),label=document.createElement('span');label.textContent=event.title;el.append(dot,label);
       el.addEventListener('click',()=>{if(!pickingRef.current)privateCallback.current?.(event);});
       return new maplibregl.Marker({element:el,anchor:'bottom'}).setLngLat(event.venue.coords).addTo(m);

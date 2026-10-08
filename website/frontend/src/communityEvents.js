@@ -1,14 +1,17 @@
 import {supabase} from './auth/supabase.js';
 import {cleanEvent} from './privateEvents';
 
-// Public member events (kampuscape_community_events). Readable by everyone;
-// publishing needs a verified UIC member. The creator's identity is never returned.
+// Public member events, readable by everyone with the host's public profile name
+// and avatar (never their account ID or email). Publishing needs a verified member.
 const fail = (error, fallback) => new Error(error?.code === '54000' || error?.code === '22023' ? error.message : fallback);
 export async function fetchCommunityEvents(client = supabase) {
   if (!client) return [];
-  const {data, error} = await client.from('kampuscape_community_events').select('id,title,description,date,time,venue').order('date').order('time').limit(300);
+  const {data, error} = await client.rpc('kampuscape_public_events');
   if (error) throw fail(error, 'Couldn’t load community events.');
-  return (data || []).map(row => cleanEvent({...row, source:'Private event', visibility:'public'})).filter(Boolean);
+  return (data || []).map(row => {
+    const event = cleanEvent({...row, source:'Private event', visibility:'public'});
+    return event && {...event, host:row.host_name ? {name:String(row.host_name).slice(0, 60), avatar:row.host_avatar} : null};
+  }).filter(Boolean);
 }
 export async function publishEvent(event, client = supabase) {
   if (!client) throw new Error('Publishing is unavailable right now.');

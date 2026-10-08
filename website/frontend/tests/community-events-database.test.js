@@ -15,7 +15,7 @@ test('community events: everyone reads, members publish and delete their own, cr
       create table auth.users(id uuid primary key,email text,email_change text default '',email_confirmed_at timestamptz,is_anonymous boolean default false,banned_until timestamptz);
       create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$;
       grant execute on function auth.uid() to anon,authenticated;grant all on auth.users to supabase_auth_admin;grant usage on schema public to anon,authenticated;`);
-    for (const name of ['202610070001_uic_profiles.sql', '202610070002_support_requests.sql', '202610070003_delete_account.sql', '202610070004_event_attendance.sql', '202610070005_community_events.sql', '202610070006_public_events_for_everyone.sql']) await db.exec(await migration(name));
+    for (const name of ['202610070001_uic_profiles.sql', '202610070002_support_requests.sql', '202610070003_delete_account.sql', '202610070004_event_attendance.sql', '202610070005_community_events.sql', '202610070006_public_events_for_everyone.sql', '202610070007_public_event_hosts.sql']) await db.exec(await migration(name));
     await db.query('insert into auth.users(id,email,email_confirmed_at) values($1,$2,now()),($3,$4,now()),($5,$6,null)', [one, 'one@uic.edu', two, 'two@uic.edu', three, 'unverified@uic.edu']);
     const as = async uid => { await db.exec('reset role; set role authenticated'); await db.query("select set_config('request.jwt.claim.sub',$1,false)", [uid]); };
     const rows = (sql, p) => db.query(sql, p).then(r => r.rows);
@@ -23,6 +23,7 @@ test('community events: everyone reads, members publish and delete their own, cr
       [id(n), extra.title ?? ' Synthetic Watch Party ', extra.date ?? '2099-01-01', extra.time ?? '20:30', venue]);
 
     await as(one);
+    await rows("insert into public.kampuscape_profiles(id,display_name,avatar_id,interests) values($1,'Alex Host','fox','{music}')", [one]);
     await publish(1);
     await assert.rejects(rows("insert into public.kampuscape_community_events(id,creator_id,title,date,time,venue) values($1,$2,'x','2099-01-01','20:00',$3::jsonb)", [id(2), two, venue]), /permission denied/, 'cannot set creator');
     await assert.rejects(publish(3, {date:'2001-01-01'}), /future date/);
@@ -41,9 +42,14 @@ test('community events: everyone reads, members publish and delete their own, cr
     await db.exec("reset role; set role anon; select set_config('request.jwt.claim.sub','',false)");
     assert.equal((await rows('select id,title from public.kampuscape_community_events')).length, 11, 'guests see public events');
     await assert.rejects(rows('select creator_id from public.kampuscape_community_events'), /permission denied/, 'guests never see the creator');
+    const hosted = await rows('select * from public.kampuscape_public_events()');
+    assert.equal(hosted.length, 11);assert.deepEqual(Object.keys(hosted[0]).sort(), ['date','description','host_avatar','host_name','id','time','title','venue']);
+    assert.equal(hosted.filter(r => r.host_name === 'Alex Host').length, 1, 'host name from the profile');
+    assert.ok(hosted.filter(r => r.id !== id(1)).every(r => r.host_name === null), 'no profile, no host name');
     await assert.rejects(publish(31), /permission denied/, 'guests cannot publish');
 
     await as(one);
+    assert.deepEqual((await rows('select host_name,host_avatar from public.kampuscape_public_events() where id=$1', [id(1)]))[0], {host_name:'Alex Host', host_avatar:'fox'}, 'host name is public');
     assert.equal((await rows('delete from public.kampuscape_community_events where id=$1 returning id', [id(1)])).length, 1, 'creator can delete');
     await as(two); await rows('select public.kampuscape_delete_account()');
     await db.exec('reset role');

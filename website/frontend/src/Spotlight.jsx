@@ -2,7 +2,7 @@ import {useEffect, useMemo, useRef, useState} from 'react';
 import {Search, X, Bookmark, CalendarDays, Utensils, Compass, CornerDownLeft, ArrowRight, Shapes} from 'lucide-react';
 import {PlaceIcon} from './Map';
 import {searchIndex} from './search';
-const kindIcon = {'campus-event':CalendarDays, event:CalendarDays, plan:CalendarDays, menu:Utensils, category:Shapes, action:ArrowRight};
+const kindIcon = {'campus-event':CalendarDays, 'community-event':CalendarDays, event:CalendarDays, plan:CalendarDays, menu:Utensils, category:Shapes, action:ArrowRight};
 export default function Spotlight({open, items, onClose, onPick}) {
   const dialog = useRef(), input = useRef(), list = useRef();
   const [query, setQuery] = useState(''), [active, setActive] = useState(0);

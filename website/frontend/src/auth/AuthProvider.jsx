@@ -15,7 +15,7 @@ export function AuthProvider({children, client = supabase, providers = fetchAuth
   // The Google button appears only once Google is enabled in Supabase.
   const [googleEnabled, setGoogleEnabled] = useState(false);
   useEffect(() => {if (client) providers().then(p => setGoogleEnabled(!!p.google));}, [client, providers]);
-  const generation = useRef(0), currentUser = useRef(null);
+  const generation = useRef(0), currentUser = useRef(null), justSignedIn = useRef(false);
   useEffect(() => {
     if (!client) return;
     let active = true;
@@ -91,7 +91,9 @@ export function AuthProvider({children, client = supabase, providers = fetchAuth
       const {data:row, error:profileError} = await client.from('kampuscape_profiles').select(fields).eq('id', data.user.id).maybeSingle();
       if (!active || version !== generation.current) return;
       if (profileError) throw new Error('We couldn’t load your profile. Please retry.');
-      setProfile(row); setOpen(previous => row?.onboarding_completed_at ? previous : true);
+      // After a password sign-in, close the dialog instead of showing the profile.
+      const closing = justSignedIn.current; justSignedIn.current = false;
+      setProfile(row); setOpen(previous => row?.onboarding_completed_at ? (closing ? false : previous) : true);
     })().catch(e => {if(active && version === generation.current) {setError(e.message || 'Connection interrupted. Please retry.'); setOpen(true);}})
       .finally(() => {if(active && version === generation.current) setLoading(false);});
     return () => {active = false;};
@@ -128,7 +130,9 @@ export function AuthProvider({children, client = supabase, providers = fetchAuth
     const address = account(email);
     if (!password) throw fail('Enter your password.');
     rememberEvent();
+    justSignedIn.current = true;
     const {error} = await client.auth.signInWithPassword({email:address, password});
+    if (error) justSignedIn.current = false;
     if (error?.code === 'email_not_confirmed') throw fail('Verify your email first. Open the link we sent when you signed up.', {unconfirmed:true});
     if (error?.status === 429) throw fail('Too many attempts. Please wait a few minutes and try again.');
     if (error) throw fail('That email and password don’t match. Try again, or reset your password.');

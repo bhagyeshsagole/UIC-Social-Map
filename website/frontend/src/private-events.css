@@ -211,3 +211,33 @@ html,body{overscroll-behavior:none;-webkit-text-size-adjust:100%;text-size-adjus
 .draft .going-as-confirm-actions{flex:none;flex-direction:row}
 .event-map-detail .going-as-confirm p{display:block;margin:0 0 9px;font-size:12px;line-height:1.5}
 .event-map-head .whos-going-card{max-width:270px}
+/* Event pins: a compact dot; the name slides out on hover or keyboard focus. */
+.private-event-pin{gap:0;padding:7px;border-radius:999px;transition:gap .18s ease,padding .18s ease}
+.private-event-pin i{width:10px;height:10px}
+.private-event-pin span{max-width:0;opacity:0;transition:max-width .2s ease,opacity .15s ease}
+.private-event-pin:hover,.private-event-pin:focus-visible{gap:7px;padding:7px 11px;z-index:3}
+.private-event-pin:hover span,.private-event-pin:focus-visible span{max-width:170px;opacity:1}
+@media(prefers-reduced-motion:reduce){.private-event-pin,.private-event-pin span{transition:none}}
+
+.event-map-detail .event-host{font-size:12.5px;color:var(--muted);gap:7px;margin:2px 0 6px}.event-host strong{color:var(--text)}
+/* Compact attendee pill on event cards; full list lives in a popup. */
+.going-pill{display:inline-flex;align-items:center;gap:7px;height:32px;padding:0 6px 0 10px;border-radius:999px;border:1px solid var(--line);background:var(--field);font-size:12px;color:var(--muted);white-space:nowrap;align-self:start;margin-top:22px}
+.going-pill strong{color:var(--text)}
+.going-pill em{font-style:normal;font-weight:650;font-size:11.5px;padding:4px 9px;border-radius:999px;background:var(--active);color:#2b2933}
+.going-pill.is-going em{background:var(--muted-purple);color:var(--purple)}
+.going-pill:hover{border-color:var(--purple)}
+.going-pill-faces{display:flex}.going-pill-faces>*{margin-left:-6px;box-shadow:0 0 0 2px var(--field)}.going-pill-faces>*:first-child{margin-left:0}
+.attendees-dialog h2{margin-bottom:4px}
+.attendee-list{list-style:none;margin:14px 0;padding:0;display:grid;gap:4px;max-height:280px;overflow:auto}
+.attendee-list li{display:flex;align-items:center;gap:10px;padding:6px 4px;font-size:14px}
+.attendee-list li>span:not(.account-avatar){flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.attendee-list .account-avatar{flex:none}
+.attendee-list b{font-weight:500;color:var(--muted)}
+.attendee-list small{font-size:11px;color:var(--purple);background:var(--muted-purple);border-radius:999px;padding:3px 8px}
+.attendee-empty{margin:14px 0;color:var(--muted)}
+.attendees-dialog .going-as{display:flex;padding-top:12px;border-top:1px solid var(--line)}
+@media(max-width:760px){.going-pill{margin-top:0;justify-self:start}}
+/* My Events cards style every inner div as a stretching column; keep the switch a fixed pill. */
+.draft div.going-as-switch{display:inline-grid!important;flex:none!important;flex-direction:row;gap:0;width:196px;min-width:196px}
+.draft .going-as{flex-wrap:wrap}
+

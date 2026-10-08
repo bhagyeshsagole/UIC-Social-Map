@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {EyeOff, Users} from 'lucide-react';
+import React, {useEffect, useRef, useState} from 'react';
+import {EyeOff, Users, X} from 'lucide-react';
 import {useAuth} from './auth/AuthProvider.jsx';
 import {Avatar} from './auth/AccountDialog.jsx';
 import {attend, attendanceKey, eventAttendees, leaveEvent, myAttendance} from './attendance';
@@ -29,29 +29,43 @@ export function AttendChoice({value, onChange}) {
   </div>;
 }
 
-// Event card: everyone sees how many are going; names, pictures and joining need sign-in.
+// Event card: a small "N going" pill; the popup has the list and join controls.
+// Everyone sees the count; names, pictures and joining need sign-in.
 export function WhosGoing({event}) {
-  const auth = useAuth(), version = useAttendanceVersion();
-  const [state, setState] = useState({loading:true, rows:[]});
+  const auth = useAuth(), version = useAttendanceVersion(), dialog = useRef();
+  const [state, setState] = useState({loading:true, rows:[]}), [open, setOpen] = useState(false);
   const member = isMember(auth);
   useEffect(() => {
     let live = true;
-    setState(s => ({...s, loading:true}));
     const load = () => eventAttendees(event).then(rows => live && setState({loading:false, rows})).catch(() => live && setState({loading:false, rows:[], error:true}));
     load();
     // Live list: refresh while the card is open.
     const timer = setInterval(load, 20000);
     return () => {live = false; clearInterval(timer);};
   }, [event.registrationKey, event.id, event.url, version]);
+  useEffect(() => {if (open) dialog.current?.showModal(); else if (dialog.current?.open) dialog.current.close();}, [open]);
   if (state.loading && !state.rows.length) return null;
-  const total = Number(state.rows[0]?.total || 0);
-  return <section className="whos-going-card" aria-label="Who’s going">
-    {total ? <div className="whos-going" aria-label={`${total} going`}>
-      {member ? <div className="whos-going-faces">{state.rows.slice(0, 6).map((r, i) => <span key={i} title={r.is_you ? `${r.display_name} (you)` : r.display_name}><Avatar id={r.avatar_id} size={26}/></span>)}</div> : <span className="whos-going-icon"><Users size={16}/></span>}
-      <span><strong>{total} going</strong><small>{member ? <>{state.rows.slice(0, 2).map(r => r.is_you ? 'You' : r.display_name).join(', ')}{total > 2 ? ` +${total - 2}` : ''}</> : 'Sign in to see who'}</small></span>
-    </div> : <div className="whos-going"><span className="whos-going-icon"><Users size={16}/></span><span><strong>Be the first</strong><small>No one from Kampuscape yet</small></span></div>}
-    {member ? <GoingAs event={event} compact/> : <button className="text-link whos-going-join" onClick={auth.openProfile}>Sign in to join</button>}
-  </section>;
+  const total = Number(state.rows[0]?.total || 0), me = state.rows.find(r => r.is_you);
+  return <>
+    <button className={`going-pill ${me ? 'is-going' : ''}`} aria-haspopup="dialog" onClick={() => setOpen(true)}>
+      {member && total ? <span className="going-pill-faces">{state.rows.slice(0, 3).map((r, i) => <Avatar key={i} id={r.avatar_id} size={20}/>)}</span> : <Users size={14}/>}
+      <span><strong>{total}</strong> going</span><em>{me ? 'You’re in' : 'Join'}</em>
+    </button>
+    <dialog ref={dialog} className="registration-dialog attendees-dialog" aria-labelledby="attendees-heading" onCancel={() => setOpen(false)} onClick={e => {if (e.target === dialog.current) setOpen(false);}}>
+      <div className="modal-content">
+        <button className="modal-close icon-button" aria-label="Close who’s going" onClick={() => setOpen(false)}><X size={20}/></button>
+        <h2 id="attendees-heading">Who’s going</h2>
+        <p className="fine-print">{event.title} · {total} {total === 1 ? 'person' : 'people'} from Kampuscape</p>
+        {member ? <>
+          {total ? <ul className="attendee-list">{state.rows.map((r, i) => <li key={i}><Avatar id={r.avatar_id} size={30}/><span>{r.display_name}{r.is_you && <b> (you)</b>}</span>{r.anonymous && <small>anonymous</small>}</li>)}</ul> : <p className="attendee-empty">No one yet. Be the first.</p>}
+          <GoingAs event={event} compact/>
+        </> : <>
+          <p className="attendee-empty">Sign in with your UIC account to see who’s going and join, as yourself or anonymously.</p>
+          <div className="registration-actions"><button className="primary-button" onClick={() => {setOpen(false); auth.openProfile();}}>Sign in</button></div>
+        </>}
+      </div>
+    </dialog>
+  </>;
 }
 
 // My Events: switch between showing your name and going anonymously.
