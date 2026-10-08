@@ -54,7 +54,6 @@ Mirrored in both workflow files. Add a row when work starts; remove it when the 
 
 | Who | Task | Paths being touched | Since |
 | --- | --- | --- | --- |
-| Codex for Bhagesh | A24 push | A24 frontend changes, shared plan, both workflows, Git publication | 2026-10-07 |
 
 ## Handoffs and messages to Bhagesh
 
@@ -120,3 +119,5 @@ Provider handoff should include the SDK, supported version, configuration variab
 - **2026-10-06:** Bhagesh A23: `website/frontend/scripts/campus-events.mjs` now imports `parseIcs` and `mergeEvents` from `website/data/importers/uic-connections-importer.mjs` to fill UIC event locations the JSON feed leaves blank (16 events). **Please keep those two exports and their `title`/`startAt`/`location` fields stable, or tell Bhagesh before changing them.** B11 code unchanged. Confirmed B11 parses LOCATION correctly; the feed itself hides 534 of 682 locations behind sign-in.
 
 - **2026-10-07:** Bhagesh A24 complete: creation uses building name/address via existing metadata and a cancellable selected-roof OSM lookup, with required manual entry on missing data. 51 unit tests, build and targeted Chrome tests pass; live screenshot-location address verified. See Workflow A H05 for production provider/cached-proxy review. No backend/data/deployment files changed.
+
+- **2026-10-07:** User-requested GitHub push complete: A24 building-name/address fix, tests and documentation published to `origin/main` in `799b8b0`. Remote accepted the fast-forward. Unrelated `website/data/output/` remains untracked; no deployment verification was performed.

@@ -58,7 +58,7 @@ Check a task only when its result exists. If a task is partial, leave it uncheck
 
 | Task | State | Evidence / blocker |
 | --- | --- | --- |
-| A24 push | IN PROGRESS | User requested publication to origin/main; checking remote and commit scope. |
+| A24 push | DONE | Commit `799b8b0` pushed to `origin/main`; GitHub accepted the fast-forward. 51 tests, build and Chrome checks passed before publication. H05 remains the production lookup dependency. |
 | A24 | DONE | Building names preferred, street-address fallback, cancellable OSM lookup and required manual entry when unavailable; 51 unit tests, production build, and targeted Chrome creation/persistence/offline checks pass. Production lookup service remains H05. |
 | A21 | DONE | Humanizer-edited application answers delivered in chat; overview under 200 words, prototype start stated as October 2026, no invented public links or traction; no submission |
 | A23 | DONE | 35 of 219 blank locations filled (16 from the calendar file, 19 from description quotes; 27 mappable, 8 online); 184 stay private. 47 unit tests, build and four browser smoke tests pass |
@@ -85,7 +85,6 @@ Mirrored in both workflow files. Add a row when work starts; remove it when the 
 
 | Who | Task | Paths being touched | Since |
 | --- | --- | --- | --- |
-| Codex for Bhagesh | A24 push | A24 frontend changes, shared plan, both workflows, Git publication | 2026-10-07 |
 
 ## Handoffs and messages to Hassan
 
@@ -233,3 +232,5 @@ Ordered by impact for students on phones.
 - **2026-10-06:** Completed A23 (Claude Code for Bhagesh). The user asked to replace "Location on UIC Connection" with real locations, using what Hassan's pipeline found. 219 of 303 events had no location. Hassan's ICS parser was working: the calendar file hides 534 of its 682 locations behind "Sign in to download the location", and UIC's event pages show "Private Location (sign in to display)" for the same events. Those stay hidden; we don't sign in or guess. The calendar file does list 16 locations the JSON feed leaves blank (event pages confirmed public), so `scripts/campus-events.mjs` now imports Hassan's `parseIcs`/`mergeEvents` and fills blanks by title and start time. If that file is unavailable the import continues without it. 19 more come from places stated in public descriptions, reviewed one by one and stored with their quotes in `src/campus-event-locations.json`. Left out: descriptions naming several places (Halloween crawl, coat-drive bins, SRF and SFC days) and meeting links. Result: 111 events with map addresses (was 84), 8 online, 184 still private. Online cards say the meeting link is on UIC Connection. 47 unit tests, build and all four browser smoke tests pass.
 
 - **2026-10-07:** Completed A24 at the user’s request. Replaced the hard-coded creation label with existing venue/roof metadata, then a selected-roof OSM lookup; building name takes priority over a complete street address. Ambiguous/missing data requires manual entry, and legacy “Pinned building” drafts do not suppress lookup when repinning. Requests cancel on repin/dismissal and expire after 12 seconds. 51 unit tests, build and targeted Chrome checks pass for named/address-only buildings, saved values, offline failure and manual entry. Live OSM verification at the screenshot coordinates returned **1001 South Desplaines Street** (no building name). H05 records the production lookup dependency. No backend implementation or deployment.
+
+- **2026-10-07:** User-requested GitHub push complete: A24 building-name/address fix, tests and documentation published to `origin/main` in `799b8b0`. Remote accepted the fast-forward. Unrelated `website/data/output/` remains untracked; no deployment verification was performed.
