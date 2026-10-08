@@ -1,3 +1,4 @@
+import {RegistrationLink} from './RegistrationReturn.jsx';
 import ShareEvent from './ShareEvent.jsx';
 import React, {useEffect, useRef, useState} from 'react';
 import {ArrowUpRight, CalendarDays, ChevronLeft, ChevronRight, MapPin, X} from 'lucide-react';
@@ -39,9 +40,9 @@ export function useCampusEvents(now) {
 export function CampusEventCard({event:e, onSelectEvent}) {
   return <article className={`campus-event-card ${e.venue?'has-map-event':''}`} onClick={event=>{if(e.venue&&!event.target.closest('a,button,dialog'))onSelectEvent(e);}}>
     <div className="campus-event-date"><CalendarDays size={15}/><time dateTime={e.start}>{eventWhen(e)}</time></div>
-    <h3>{e.venue?<button className="event-map-title" onClick={()=>onSelectEvent(e)} aria-label={`Show ${e.title} on map`}>{e.title}</button>:<a href={e.url} target="_blank" rel="noreferrer">{e.title}</a>}</h3><p className="campus-organizer">{e.organizer}</p>
+    <h3>{e.venue?<button className="event-map-title" onClick={()=>onSelectEvent(e)} aria-label={`Show ${e.title} on map`}>{e.title}</button>:<RegistrationLink event={e}>{e.title}</RegistrationLink>}</h3><p className="campus-organizer">{e.organizer}</p>
     <p className="campus-location"><MapPin size={15}/><span>{e.venue&&<strong className="event-venue-name">{e.venue.name}</strong>}{e.location}</span></p>
-    <div className="campus-event-actions"><ShareEvent event={e}/><a className="secondary-button" href={e.url} target="_blank" rel="noreferrer">Details & registration <ArrowUpRight size={14}/></a><a className="text-link" href={e.locationUrl} target="_blank" rel="noreferrer">{e.hasPublicLocation ? 'Maps' : 'View location'} <ArrowUpRight size={14}/></a></div>
+    <div className="campus-event-actions"><ShareEvent event={e}/><RegistrationLink className="secondary-button" event={e}>Details & registration <ArrowUpRight size={14}/></RegistrationLink><a className="text-link" href={e.locationUrl} target="_blank" rel="noreferrer">{e.hasPublicLocation ? 'Maps' : 'View location'} <ArrowUpRight size={14}/></a></div>
     {!e.hasPublicLocation && <small className="campus-location-note">{e.location === 'Online event' ? 'The meeting link is on UIC Connection.' : 'UIC sign-in may be needed for the location.'}</small>}
   </article>;
 }

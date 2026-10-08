@@ -131,3 +131,11 @@ The lookup is debounced, cancellable, timed out after 12 seconds, and cached for
 [Overpass usage guidance](https://dev.overpass-api.de/overpass-doc/en/preface/commons.html) and [public-instance guidance](https://wiki.openstreetmap.org/wiki/Overpass_API#Public_Overpass_API_instances) checked 2026-10-07. The public endpoint is a small-prototype dependency, not a production provider commitment: production needs an appropriate service or cached proxy with application-wide rate limits (H05 in Workflow A). Public service availability is not guaranteed.
 
 Regression check: with Vite running, `node tests/building-details-smoke.mjs` exercises synthetic named/address-only responses, saved event values, offline fallback and manual entry. Set `PLAYWRIGHT_CHANNEL=chrome` to use installed Chrome.
+
+### Returning from registration
+
+A29 tracks event details/registration link activation, then waits for the page to lose focus/be hidden and return before asking “Did you register?”. Confirmation saves a sanitized snapshot to `kampuscape-registered-events` (with an account ID suffix for signed-in users) and opens My Events; dismissal saves nothing. Events already in that list do not prompt again. Saved public events are separate from private drafts and never turn buildings yellow. No registration status is verified with the organizer.
+
+Pending return state uses tab-scoped session storage (`kampuscape-registration-return`, also account-scoped), survives reload and expires after 24 hours. Saved events remain local until removed; account-specific saves and pending reminders clear on account deletion. Switching accounts remounts the registration state. Browser focus/visibility signals indicate return to the app, not completion on another website; browser tab suspension and disabled storage can limit recovery. Account-backed sync remains Workflow A H06.
+
+With Vite running: `PLAYWRIGHT_CHANNEL=chrome node tests/registration-return-smoke.mjs`. The test stubs external registration pages and simulates lifecycle signals in headless Chrome; it never submits a registration. It checks the Fall Fest detail link, UIC card links, add/dismiss, persistence, duplicates, removal, mobile bounds and pending-return recovery after reload.

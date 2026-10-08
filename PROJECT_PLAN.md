@@ -132,7 +132,7 @@ The original Chicago restriction and always-3D/no-toggle decisions above are sup
 
 Discovery is an on-demand bottom-center glass sheet. Guest and detail views use glass, with close controls. The header is smaller; time, live dot, branding, welcome copy, reminder footer, road names, and decorative map widgets are removed. UIC has a text-only label and red gradient buildings based on official directory locations matched to map footprints.
 
-Saved holds bookmarked places; My Events holds event drafts. These remain local-only until account and backend work is implemented. Campus geometry cleanup merges connected and overlapping parts across tile seams to avoid 3D flicker. See the frontend README for coverage and refresh limitations.
+Saved holds bookmarked places; My Events holds private event drafts and external events explicitly saved after returning from registration (A29, 2026-10-07). These remain local-only until account and backend work is implemented. Campus geometry cleanup merges connected and overlapping parts across tile seams to avoid 3D flicker. See the frontend README for coverage and refresh limitations.
 
 - **2026-10-05:** Added a north-up alignment button above 2D/3D: roll resets to zero and 3D tilt aligns to 45°. Navigation order is Explore → Live events → My Events → Saved → Create event → Search.
 
@@ -180,3 +180,9 @@ Saved holds bookmarked places; My Events holds event drafts. These remain local-
 - **2026-10-07:** User supersedes numeric-code emails with clickable signup verification and password-reset links back to Kampuscape (A28/B13). Email/password sign-in and exact verified UIC membership remain; signup links open onboarding, recovery links open a new-password form.
 
 - **2026-10-07:** A24 adds building-name/address resolution to the private event flow. Small-prototype OSM lookup is replaceable; production service/caching review remains H05 in Workflow A.
+
+## Registration return reminder accepted on 2026-10-07
+
+- After opening event details/registration and returning to the app, ask “Did you register?” and offer **Add to My Events** or **Not now**. Never infer completed registration from a click.
+- Add saves an external event snapshot locally, with duplicate prevention, reopen and remove controls; it does not create a private event or change roof colors. Existing saved events do not prompt again.
+- **2026-10-07:** A29 implements the reminder across event cards, map details and programmatic event links. Pending returns survive reload for up to 24 hours; saved events persist on the device. Account synchronization remains H06 in Workflow A.

@@ -1,3 +1,4 @@
+import {RegistrationLink} from './RegistrationReturn.jsx';
 import ShareEvent from './ShareEvent.jsx';
 import React, {useEffect, useState} from 'react';
 import {ArrowUpRight, CalendarDays, GraduationCap, MapPin, Users, X, Sparkles} from 'lucide-react';
@@ -18,10 +19,10 @@ const uicVenues = new Set(['gallery-400']);
 export function VenueEventCard({event:e, onSelectEvent}) {
   return <article className={`campus-event-card venue-event-card ${e.venue?'has-map-event':''}`} onClick={event=>{if(e.venue&&!event.target.closest('a,button,dialog'))onSelectEvent(e);}}>
     <div className="campus-event-date"><CalendarDays size={16}/><span>{venueDates(e)}</span></div>
-    <h3>{e.venue?<button className="event-map-title" onClick={()=>onSelectEvent(e)} aria-label={`Show ${e.title} on map`}>{e.title}</button>:<a href={e.url} target="_blank" rel="noreferrer">{e.title}</a>}</h3>
+    <h3>{e.venue?<button className="event-map-title" onClick={()=>onSelectEvent(e)} aria-label={`Show ${e.title} on map`}>{e.title}</button>:<RegistrationLink event={e}>{e.title}</RegistrationLink>}</h3>
     <p className="campus-organizer">{e.place.name}</p>
     <p className="campus-location"><MapPin size={17}/><span>{e.place.address}, Chicago</span></p>
-    <div className="campus-event-actions"><ShareEvent event={e}/><a className="secondary-button" href={e.url} target="_blank" rel="noreferrer">Event details <ArrowUpRight size={15}/></a><a className="text-link" href={directions(e.place)} target="_blank" rel="noreferrer">Maps <ArrowUpRight size={15}/></a></div>
+    <div className="campus-event-actions"><ShareEvent event={e}/><RegistrationLink className="secondary-button" event={e}>Event details <ArrowUpRight size={15}/></RegistrationLink><a className="text-link" href={directions(e.place)} target="_blank" rel="noreferrer">Maps <ArrowUpRight size={15}/></a></div>
   </article>;
 }
 

@@ -190,8 +190,9 @@ export function AuthProvider({children, client = supabase, providers = fetchAuth
     const {error} = await client.rpc('kampuscape_delete_account');
     if (error) throw new Error('Your account couldn’t be deleted. Nothing was removed; please try again.');
     try {
-      for (const key of [`kampuscape-saved:${id}`, `kampuscape-drafts:${id}`]) localStorage.removeItem(key);
+      for (const key of [`kampuscape-saved:${id}`, `kampuscape-drafts:${id}`, `kampuscape-registered-events:${id}`]) localStorage.removeItem(key);
       sessionStorage.removeItem('kampuscape-auth-return');
+      sessionStorage.removeItem(`kampuscape-registration-return:${id}`);
     } catch {}
     await client.auth.signOut({scope:'local'}).catch(() => {});
     ++generation.current; currentUser.current=null; setSession(null);setUser(null);setProfile(null);setEditing(false);setError('');
