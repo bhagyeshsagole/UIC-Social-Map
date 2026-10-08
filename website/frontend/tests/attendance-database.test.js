@@ -14,7 +14,7 @@ test('attendance: profile or per-event anonymous identity, members-only lists, n
       create table auth.users(id uuid primary key,email text,email_change text default '',email_confirmed_at timestamptz,is_anonymous boolean default false,banned_until timestamptz);
       create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$;
       grant execute on function auth.uid() to anon,authenticated;grant all on auth.users to supabase_auth_admin;grant usage on schema public to anon,authenticated;`);
-    for (const name of ['202610070001_uic_profiles.sql', '202610070002_support_requests.sql', '202610070003_delete_account.sql', '202610070004_event_attendance.sql']) await db.exec(await migration(name));
+    for (const name of ['202610070001_uic_profiles.sql', '202610070002_support_requests.sql', '202610070003_delete_account.sql', '202610070004_event_attendance.sql', '202610070005_community_events.sql', '202610070006_public_events_for_everyone.sql']) await db.exec(await migration(name));
     await db.query('insert into auth.users(id,email,email_confirmed_at) values($1,$2,now()),($3,$4,now()),($5,$6,null)', [one, 'one@uic.edu', two, 'two@uic.edu', three, 'unverified@uic.edu']);
     const as = async id => { await db.exec('reset role; set role authenticated'); await db.query("select set_config('request.jwt.claim.sub',$1,false)", [id]); };
     const call = (sql, params) => db.query(sql, params).then(r => r.rows);
@@ -49,9 +49,13 @@ test('attendance: profile or per-event anonymous identity, members-only lists, n
     await assert.rejects(call("select * from public.kampuscape_attend($1,'x','public')", [key('a')]), /Choose how to attend/);
     await as(three);
     await assert.rejects(call("select * from public.kampuscape_attend($1,'x','anonymous')", [key('a')]), /verified UIC account/);
-    await assert.rejects(call('select * from public.kampuscape_event_attendees($1)', [key('a')]), /verified UIC account/);
+    const unverified = await call('select * from public.kampuscape_event_attendees($1)', [key('a')]);
+    assert.equal(Number(unverified[0].total), 2, 'unverified accounts see the count');assert.ok(unverified.every(r => r.display_name === null && r.avatar_id === null), 'but not names');
     await db.exec("reset role; set role anon; select set_config('request.jwt.claim.sub','',false)");
-    await assert.rejects(call('select * from public.kampuscape_event_attendees($1)', [key('a')]), /permission denied/);
+    const guest = await call('select * from public.kampuscape_event_attendees($1)', [key('a')]);
+    assert.equal(Number(guest[0].total), 2, 'guests see the count');assert.ok(guest.every(r => r.display_name === null && r.avatar_id === null && r.anonymous === null && r.is_you === false), 'guests never see names, pictures or who is anonymous');
+    assert.ok(!JSON.stringify(guest).includes('@'), 'no emails for guests');
+    await assert.rejects(call("select * from public.kampuscape_attend($1,'x','anonymous')", [key('a')]), /permission denied/, 'guests cannot join');
 
     await as(two); await call('select public.kampuscape_leave_event($1)', [key('b')]);
     assert.equal((await call('select * from public.kampuscape_my_attendance()')).length, 7);

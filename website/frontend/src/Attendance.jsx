@@ -29,13 +29,12 @@ export function AttendChoice({value, onChange}) {
   </div>;
 }
 
-// Event card: who's going (names and pictures only; members only).
+// Event card: everyone sees how many are going; names, pictures and joining need sign-in.
 export function WhosGoing({event}) {
   const auth = useAuth(), version = useAttendanceVersion();
   const [state, setState] = useState({loading:true, rows:[]});
   const member = isMember(auth);
   useEffect(() => {
-    if (!member) return;
     let live = true;
     setState(s => ({...s, loading:true}));
     const load = () => eventAttendees(event).then(rows => live && setState({loading:false, rows})).catch(() => live && setState({loading:false, rows:[], error:true}));
@@ -43,16 +42,15 @@ export function WhosGoing({event}) {
     // Live list: refresh while the card is open.
     const timer = setInterval(load, 20000);
     return () => {live = false; clearInterval(timer);};
-  }, [member, event.registrationKey, event.id, event.url, version]);
-  if (!member) return <section className="whos-going-card" aria-label="Who’s going"><div className="whos-going"><span className="whos-going-icon"><Users size={16}/></span><span><strong>Who’s going?</strong><small>Sign in to see and join</small></span></div><button className="primary-button whos-going-signin" onClick={auth.openProfile}>Sign in</button></section>;
+  }, [event.registrationKey, event.id, event.url, version]);
   if (state.loading && !state.rows.length) return null;
   const total = Number(state.rows[0]?.total || 0);
   return <section className="whos-going-card" aria-label="Who’s going">
     {total ? <div className="whos-going" aria-label={`${total} going`}>
-      <div className="whos-going-faces">{state.rows.slice(0, 6).map((r, i) => <span key={i} title={r.is_you ? `${r.display_name} (you)` : r.display_name}><Avatar id={r.avatar_id} size={26}/></span>)}</div>
-      <span><strong>{total} going</strong><small>{state.rows.slice(0, 2).map(r => r.is_you ? 'You' : r.display_name).join(', ')}{total > 2 ? ` +${total - 2}` : ''}</small></span>
+      {member ? <div className="whos-going-faces">{state.rows.slice(0, 6).map((r, i) => <span key={i} title={r.is_you ? `${r.display_name} (you)` : r.display_name}><Avatar id={r.avatar_id} size={26}/></span>)}</div> : <span className="whos-going-icon"><Users size={16}/></span>}
+      <span><strong>{total} going</strong><small>{member ? <>{state.rows.slice(0, 2).map(r => r.is_you ? 'You' : r.display_name).join(', ')}{total > 2 ? ` +${total - 2}` : ''}</> : 'Sign in to see who'}</small></span>
     </div> : <div className="whos-going"><span className="whos-going-icon"><Users size={16}/></span><span><strong>Be the first</strong><small>No one from Kampuscape yet</small></span></div>}
-    <GoingAs event={event} compact/>
+    {member ? <GoingAs event={event} compact/> : <button className="text-link whos-going-join" onClick={auth.openProfile}>Sign in to join</button>}
   </section>;
 }
 

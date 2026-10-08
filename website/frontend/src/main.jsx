@@ -43,10 +43,9 @@ function App(){
  const solar=solarState(now);
  const privateEvents=drafts.filter(d=>d.source==='Private event').map(cleanEvent).filter(Boolean);
  const linkedEvent=sharedLink.event;
- // Public member events from everyone (signed-in members only); own copies come from drafts.
+ // Public member events are visible to everyone, signed in or not; own copies come from drafts.
  const [communityEvents,setCommunityEvents]=useState([]),[communityVersion,setCommunityVersion]=useState(0);
- const memberReady=!!auth.user&&!!auth.profile?.onboarding_completed_at;
- useEffect(()=>{if(!memberReady){setCommunityEvents([]);return;}let live=true;const load=()=>fetchCommunityEvents().then(list=>live&&setCommunityEvents(list)).catch(()=>{});load();const timer=setInterval(load,60000);return()=>{live=false;clearInterval(timer);};},[memberReady,communityVersion]);
+ useEffect(()=>{let live=true;const load=()=>fetchCommunityEvents().then(list=>live&&setCommunityEvents(list)).catch(()=>{});load();const timer=setInterval(load,60000);return()=>{live=false;clearInterval(timer);};},[communityVersion]);
  const othersPublic=communityEvents.filter(e=>!privateEvents.some(p=>p.id===e.id));
  const mapPrivateEvents=[...privateEvents,...othersPublic,...(linkedEvent?.source==='Private event'&&!privateEvents.some(e=>e.id===linkedEvent.id)?[linkedEvent]:[])];
  useEffect(()=>{const read=()=>{const link=readEventLink(window.location.hash);setSharedLink(link);setFocusedEvent(link.event);setPanelOpen(false);setSelected(null);if(link.error)setNotice(link.error);};read();window.addEventListener('hashchange',read);return()=>window.removeEventListener('hashchange',read);},[]);

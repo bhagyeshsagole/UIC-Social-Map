@@ -1,8 +1,8 @@
 import {supabase} from './auth/supabase.js';
 import {cleanEvent} from './privateEvents';
 
-// Public member events (kampuscape_community_events). Readable by verified UIC
-// members only; the creator's identity is never returned.
+// Public member events (kampuscape_community_events). Readable by everyone;
+// publishing needs a verified UIC member. The creator's identity is never returned.
 const fail = (error, fallback) => new Error(error?.code === '54000' || error?.code === '22023' ? error.message : fallback);
 export async function fetchCommunityEvents(client = supabase) {
   if (!client) return [];
