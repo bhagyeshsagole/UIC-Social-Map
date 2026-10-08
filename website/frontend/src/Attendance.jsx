@@ -44,14 +44,14 @@ export function WhosGoing({event}) {
     const timer = setInterval(load, 20000);
     return () => {live = false; clearInterval(timer);};
   }, [member, event.registrationKey, event.id, event.url, version]);
-  if (!member) return <div className="whos-going"><Users size={15}/><span>See who’s going</span><button className="text-link" onClick={auth.openProfile}>Sign in</button></div>;
+  if (!member) return <section className="whos-going-card" aria-label="Who’s going"><div className="whos-going"><span className="whos-going-icon"><Users size={16}/></span><span><strong>Who’s going?</strong><small>Sign in to see and join</small></span></div><button className="primary-button whos-going-signin" onClick={auth.openProfile}>Sign in</button></section>;
   if (state.loading && !state.rows.length) return null;
   const total = Number(state.rows[0]?.total || 0);
   return <section className="whos-going-card" aria-label="Who’s going">
     {total ? <div className="whos-going" aria-label={`${total} going`}>
       <div className="whos-going-faces">{state.rows.slice(0, 6).map((r, i) => <span key={i} title={r.is_you ? `${r.display_name} (you)` : r.display_name}><Avatar id={r.avatar_id} size={26}/></span>)}</div>
-      <span><strong>{total} going</strong> · {state.rows.slice(0, 3).map(r => r.is_you ? `${r.display_name} (you)` : r.display_name).join(', ')}{total > 3 ? ` and ${total - 3} more` : ''}</span>
-    </div> : <div className="whos-going"><Users size={15}/><span>No one from Kampuscape yet. Be the first.</span></div>}
+      <span><strong>{total} going</strong><small>{state.rows.slice(0, 2).map(r => r.is_you ? 'You' : r.display_name).join(', ')}{total > 2 ? ` +${total - 2}` : ''}</small></span>
+    </div> : <div className="whos-going"><span className="whos-going-icon"><Users size={16}/></span><span><strong>Be the first</strong><small>No one from Kampuscape yet</small></span></div>}
     <GoingAs event={event} compact/>
   </section>;
 }
@@ -60,7 +60,7 @@ export function WhosGoing({event}) {
 let mine = {version:-1, promise:null};
 export function GoingAs({event, compact = false}) {
   const auth = useAuth(), version = useAttendanceVersion();
-  const [row, setRow] = useState(undefined), [busy, setBusy] = useState(false), [error, setError] = useState('');
+  const [row, setRow] = useState(undefined), [busy, setBusy] = useState(false), [error, setError] = useState(''), [confirming, setConfirming] = useState(null);
   const member = isMember(auth);
   useEffect(() => {
     if (!member) return;
@@ -71,16 +71,26 @@ export function GoingAs({event, compact = false}) {
   }, [member, event.registrationKey, version]);
   if (!member) return compact ? null : <p className="going-as">Saved on this device. <button className="text-link" onClick={auth.openProfile}>Sign in</button> to join the attendee list.</p>;
   if (row === undefined) return null;
-  const choose = async mode => {
-    if (busy || (row && (row.anonymous ? 'anonymous' : 'profile') === mode)) return;
+  const current = row ? (row.anonymous ? 'anonymous' : 'profile') : null;
+  const save = async mode => {
     setBusy(true); setError('');
-    try {await attend(event, mode);} catch (e) {setError(e.message);} finally {setBusy(false);}
+    try {await attend(event, mode); setConfirming(null);} catch (e) {setError(e.message);} finally {setBusy(false);}
   };
+  // Joining is one tap; switching how you appear asks first.
+  const choose = mode => {if (!busy && mode !== current) row ? setConfirming(mode) : save(mode);};
+  if (confirming) return <div className="going-as going-as-confirm" role="alertdialog" aria-label="Confirm the change">
+    <p>{confirming === 'anonymous'
+      ? <>Go anonymous? <strong>{row.display_name}</strong> disappears from the list and you get a new random name and picture.</>
+      : <>Show your name? Everyone going will see <strong>{auth.profile?.display_name}</strong> instead of <strong>{row.display_name}</strong>.</>}</p>
+    <div className="going-as-confirm-actions"><button className="secondary-button" disabled={busy} onClick={() => setConfirming(null)}>Cancel</button><button className="primary-button" disabled={busy} onClick={() => save(confirming)}>{busy ? 'Saving…' : confirming === 'anonymous' ? 'Go anonymous' : 'Show my name'}</button></div>
+    {error && <p role="alert" className="form-error">{error}</p>}
+  </div>;
   return <div className="going-as">
-    <span>{row ? <>Going as <Avatar id={row.avatar_id} size={20}/> <strong>{row.display_name}</strong>{row.anonymous ? ' (anonymous)' : ''}</> : compact ? 'Going? Join as' : 'Not on the attendee list yet'}</span>
-    <div className="going-as-toggle" role="group" aria-label={`Show up at ${event.title} as`}>
-      <button aria-pressed={row?.anonymous === false} disabled={busy} onClick={() => choose('profile')}>My name</button>
-      <button aria-pressed={row?.anonymous === true} disabled={busy} onClick={() => choose('anonymous')}>Anonymous</button>
+    <span>{row ? <>Going as <Avatar id={row.avatar_id} size={20}/> <strong>{row.display_name}</strong>{row.anonymous ? ' (anonymous)' : ''}</> : compact ? 'Join as' : 'Not on the attendee list yet'}</span>
+    <div className={`going-as-switch ${current || 'none'}`} role="radiogroup" aria-label={`Show up at ${event.title} as`}>
+      <span className="going-as-thumb" aria-hidden="true"/>
+      <button role="radio" aria-checked={current === 'profile'} disabled={busy} onClick={() => choose('profile')}>My name</button>
+      <button role="radio" aria-checked={current === 'anonymous'} disabled={busy} onClick={() => choose('anonymous')}>Anonymous</button>
     </div>
     {compact && row && <button className="text-link" disabled={busy} onClick={async () => {setBusy(true);try {await leaveEvent(event);} catch (e) {setError(e.message);} finally {setBusy(false);}}}>Not going</button>}
     {error && <p role="alert" className="form-error">{error}</p>}
