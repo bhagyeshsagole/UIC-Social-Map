@@ -10,8 +10,8 @@
 > 3. **When finished**, update both files again: the owner's workflow gets status, evidence, checkbox, and a dated change-log entry; remove the claim from *Active claims* in both files, and add a one-line change-log entry to the other workflow saying what changed.
 > 4. If it's unclear whose workflow a request belongs to, use the one that owns the paths being touched and ask if still unclear. Never edit the other person's folders without an agreed handoff or an explicit request.
 
-**Updated:** 2026-10-05<br>
-**Current task:** A17 complete; building-first private events, sharing, legends and header refinements<br>
+**Updated:** 2026-10-07<br>
+**Current task:** A24 complete; selected building names and address fallback<br>
 **Implementation progress:** A02 and A08 complete; remaining production journey tasks pending
 
 ## Steps and tracker
@@ -52,10 +52,14 @@ Check a task only when its result exists. If a task is partial, leave it uncheck
 - [x] **A22 · Future-month UIC events.** Twelve-month UIC Connection window, events listed until they end, month navigation in the date picker, new verified venues.
 - [x] **A21 · Venture application copy.** Drafted the venture overview, website/social field, showcase demo plan, and founder-panel learning topics using Humanizer and documented project progress.
 
+- [x] **A24 · Pinned building names and addresses.** Resolve the selected building name or address during event creation.
+
 ## Current work
 
 | Task | State | Evidence / blocker |
 | --- | --- | --- |
+| A24 push | IN PROGRESS | User requested publication to origin/main; checking remote and commit scope. |
+| A24 | DONE | Building names preferred, street-address fallback, cancellable OSM lookup and required manual entry when unavailable; 51 unit tests, production build, and targeted Chrome creation/persistence/offline checks pass. Production lookup service remains H05. |
 | A21 | DONE | Humanizer-edited application answers delivered in chat; overview under 200 words, prototype start stated as October 2026, no invented public links or traction; no submission |
 | A23 | DONE | 35 of 219 blank locations filled (16 from the calendar file, 19 from description quotes; 27 mappable, 8 online); 184 stay private. 47 unit tests, build and four browser smoke tests pass |
 | A22 | DONE | 303 UIC events through Sep 2027 (was 141), events listed until they end, month arrows in Pick a date, five new OSM venues; 44 unit tests, build and four browser smoke tests pass |
@@ -81,6 +85,7 @@ Mirrored in both workflow files. Add a row when work starts; remove it when the 
 
 | Who | Task | Paths being touched | Since |
 | --- | --- | --- | --- |
+| Codex for Bhagesh | A24 push | A24 frontend changes, shared plan, both workflows, Git publication | 2026-10-07 |
 
 ## Handoffs and messages to Hassan
 
@@ -91,6 +96,7 @@ Write requests here; Hassan responds in [his tracker](WORKFLOW_B_HASSAN.md#hando
 | H01 | 2026-10-04 | A08 uses MapLibre 6 + OpenFreeMap for a local prototype. Hassan to review production provider, bounds/coverage, and quotas in B02. Metadata in `website/frontend/src/placeDetails.js` is provisional. | Awaiting Hassan |
 | H02 | 2026-10-04 | Implement [B10 Sunday refresh](SUNDAY_REFRESH_TASK.md); preserve user-edited Markdown copy and produce source-backed review tasks. | TODO |
 | H03 | 2026-10-05 | A12 provides `website/frontend/scripts/campus-events.mjs` and a sanitized public snapshot. Local dev/preview refresh via a cached same-origin API. Reuse the importer for production API/scheduled builds when hosting is selected; static-only deploys show snapshot freshness and cannot refresh the upstream feed themselves. | Local implementation complete; production deployment pending Hassan |
+| H05 | 2026-10-07 | A24 uses a replaceable Overpass endpoint for user-selected unknown roofs (`VITE_BUILDING_LOOKUP_URL`). Review production provider/cached proxy and application-wide request limits before scaling; browser lookup has debounce, cancellation, timeout and session cache. | Production service review pending Hassan |
 | H04 | 2026-10-05 | A17 frontend shares event snapshots through URL fragments. Implement server-backed event IDs, authenticated ownership/deletion, access rules, and synchronized/revocable invitations when B01/B03/B05 and hosting are agreed. Existing copied snapshots cannot be revoked; do not present them as secure invitations. | Backend integration pending Hassan |
 
 For each handoff include: task ID, relevant path, required behavior, and what is blocked. Link screenshots/design files here when they exist.
@@ -225,3 +231,5 @@ Ordered by impact for students on phones.
 - **2026-10-06:** A21: drafted Student Venture Showcase/Founder Panel answers in chat with `Skills/humanizer/SKILL.md`. Used Afterclass as the existing working name and October 2026 as the documented prototype start; kept social handles as a fill-in and did not claim a public launch, users, revenue, or completed backend. No application submitted or product files changed.
 - **2026-10-06:** Completed A22 (Claude Code for Bhagesh). The user asked to add the 657 events from Hassan's B11 importer. Of those, 374 had already ended and 130 were already in the app. The rest were future months, multi-week series already underway, and events posted after the Oct 5 snapshot. Rather than read B11's local output, the app's own CampusGroups request now covers the current Chicago month plus the next 11, which returns the same events with venue addresses (B11's ICS feed has no location for 129 of the 153 new ones). Events now stay listed until they **end**, not until they start, so series like Twilight Mondays and Sparky's Closet appear. This replaces the 2026-10-05 "not-yet-started, current month only" rule; see PROJECT_PLAN. Snapshot refreshed: 303 upcoming events through Sep 2027 (was 141), 84 with public addresses. **Pick a date** gained previous/next month arrows, limited to the current month through the last month with an event. Five OpenStreetMap venues added for six new public addresses (333 N LaSalle, 155 N Wacker, 1240 W Harrison, 2500 W Bradley Pl, and Parking Lot 1B at 1139 W Harrison as outdoor); event tiles rebuilt, all four buildings matched. Smoke tests no longer depend on the past "Major Minor Fair" (now "Andersen Firm Night", same building) and check month navigation. 44 unit tests, build, and all four browser smoke tests pass. Known: long-running series span every day, so the date picker marks nearly every day from August to May.
 - **2026-10-06:** Completed A23 (Claude Code for Bhagesh). The user asked to replace "Location on UIC Connection" with real locations, using what Hassan's pipeline found. 219 of 303 events had no location. Hassan's ICS parser was working: the calendar file hides 534 of its 682 locations behind "Sign in to download the location", and UIC's event pages show "Private Location (sign in to display)" for the same events. Those stay hidden; we don't sign in or guess. The calendar file does list 16 locations the JSON feed leaves blank (event pages confirmed public), so `scripts/campus-events.mjs` now imports Hassan's `parseIcs`/`mergeEvents` and fills blanks by title and start time. If that file is unavailable the import continues without it. 19 more come from places stated in public descriptions, reviewed one by one and stored with their quotes in `src/campus-event-locations.json`. Left out: descriptions naming several places (Halloween crawl, coat-drive bins, SRF and SFC days) and meeting links. Result: 111 events with map addresses (was 84), 8 online, 184 still private. Online cards say the meeting link is on UIC Connection. 47 unit tests, build and all four browser smoke tests pass.
+
+- **2026-10-07:** Completed A24 at the user’s request. Replaced the hard-coded creation label with existing venue/roof metadata, then a selected-roof OSM lookup; building name takes priority over a complete street address. Ambiguous/missing data requires manual entry, and legacy “Pinned building” drafts do not suppress lookup when repinning. Requests cancel on repin/dismissal and expire after 12 seconds. 51 unit tests, build and targeted Chrome checks pass for named/address-only buildings, saved values, offline failure and manual entry. Live OSM verification at the screenshot coordinates returned **1001 South Desplaines Street** (no building name). H05 records the production lookup dependency. No backend implementation or deployment.

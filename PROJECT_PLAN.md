@@ -152,6 +152,7 @@ Saved holds bookmarked places; My Events holds event drafts. These remain local-
 
 ## Building-first private events accepted on 2026-10-05
 
+- Event creation displays the selected building’s name, or its street address when no name is available. Missing map data requires manual entry; generic “Pinned building” is not saved as the location (A24, 2026-10-07).
 - Create event starts by selecting a building from search or by tapping a map footprint. Show the building’s existing events so users can select one or create their own. No numbered onboarding progress strip.
 - Private events save locally, turn their building yellow, appear in My Events, and can be deleted. Yellow takes precedence over other building colors; removing the last local event restores the building’s normal color.
 - The lower-left glass legend is Red / UIC Building, Purple / Off Campus Events, Yellow / Private Events. This supersedes A15’s all-event-venues-purple rule: UIC buildings retain red unless a private event highlights them yellow.
@@ -164,3 +165,5 @@ Saved holds bookmarked places; My Events holds event drafts. These remain local-
 - **2026-10-05:** Follow-up share UI: removed “SEND A PLAN,” the navigation explanation, and snapshot/deletion paragraph at the user’s request. The event name is the share heading and page/native-share title. External messaging services may still use cached/server-rendered metadata for rich previews; the static fragment-link prototype does not provide per-event server metadata.
 
 - **2026-10-05:** A17 creation-order correction supersedes search/dialog-first setup: Create event opens the map with a yellow pin cursor; clicking a building pins it and immediately previews its roof in yellow; Continue then opens onboarding with existing-event/new-event choices. Cancel/Escape clears only the temporary preview. Connected campus footprints choose the nearest named venue instead of the first annotation.
+
+- **2026-10-07:** A24 adds building-name/address resolution to the private event flow. Small-prototype OSM lookup is replaceable; production service/caching review remains H05 in Workflow A.

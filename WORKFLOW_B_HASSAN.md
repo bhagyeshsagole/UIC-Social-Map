@@ -10,7 +10,7 @@
 > 3. **When finished**, update both files again: the owner's workflow gets status, evidence, checkbox, and a dated change-log entry; remove the claim from *Active claims* in both files, and add a one-line change-log entry to the other workflow saying what changed.
 > 4. If it's unclear whose workflow a request belongs to, use the one that owns the paths being touched and ask if still unclear. Never edit the other person's folders without an agreed handoff or an explicit request.
 
-**Updated:** 2026-10-06<br>
+**Updated:** 2026-10-07<br>
 **Current task:** B01 data/API contract approved; B11 UIC Connections local importer complete; B02 provider review and B10 weekly Chicago place-content refresh pending<br>
 **Implementation progress:** 1 / 9 tasks complete
 
@@ -54,6 +54,7 @@ Mirrored in both workflow files. Add a row when work starts; remove it when the 
 
 | Who | Task | Paths being touched | Since |
 | --- | --- | --- | --- |
+| Codex for Bhagesh | A24 push | A24 frontend changes, shared plan, both workflows, Git publication | 2026-10-07 |
 
 ## Handoffs and messages to Bhagesh
 
@@ -117,3 +118,5 @@ Provider handoff should include the SDK, supported version, configuration variab
 - **2026-10-06:** A21: drafted Student Venture Showcase/Founder Panel answers in chat with `Skills/humanizer/SKILL.md`. Used Afterclass as the existing working name and October 2026 as the documented prototype start; kept social handles as a fill-in and did not claim a public launch, users, revenue, or completed backend. No application submitted or product files changed.
 - **2026-10-06:** Bhagesh A22: Live events now shows 12 months of UIC Connection events (303, through Sep 2027) from the frontend's CampusGroups JSON request, not B11's output, because the JSON feed includes venue addresses. B11 is unchanged and still not consumed by the frontend; the team still needs to pick one UIC event source for storage. `website/data/output/` is left uncommitted. Five venues added to `website/frontend/src/event-venues.json`.
 - **2026-10-06:** Bhagesh A23: `website/frontend/scripts/campus-events.mjs` now imports `parseIcs` and `mergeEvents` from `website/data/importers/uic-connections-importer.mjs` to fill UIC event locations the JSON feed leaves blank (16 events). **Please keep those two exports and their `title`/`startAt`/`location` fields stable, or tell Bhagesh before changing them.** B11 code unchanged. Confirmed B11 parses LOCATION correctly; the feed itself hides 534 of 682 locations behind sign-in.
+
+- **2026-10-07:** Bhagesh A24 complete: creation uses building name/address via existing metadata and a cancellable selected-roof OSM lookup, with required manual entry on missing data. 51 unit tests, build and targeted Chrome tests pass; live screenshot-location address verified. See Workflow A H05 for production provider/cached-proxy review. No backend/data/deployment files changed.
