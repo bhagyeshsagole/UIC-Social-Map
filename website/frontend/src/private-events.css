@@ -150,3 +150,21 @@ html,body{overscroll-behavior:none;-webkit-text-size-adjust:100%;text-size-adjus
 @media(max-width:760px){.app.sheet-open .align-map,.app.sheet-open .uic-home,.app.sheet-open .view-toggle{opacity:0;pointer-events:none}.app .align-map,.app .uic-home,.app .view-toggle{transition:opacity .18s ease}}
 
 .registration-dialog{width:min(440px,calc(100% - 28px));text-align:left}.registration-dialog .modal-content{padding:28px}.registration-dialog h2{font-size:25px;margin:18px 28px 12px 0}.registration-dialog p{overflow-wrap:anywhere;line-height:1.6}.registration-actions{display:flex;gap:12px;justify-content:flex-end;margin-top:24px}.registration-actions button{min-height:44px}.registration-actions .primary-button{width:auto;margin-top:0}.registration-dialog .fine-print{font-size:12px}@media(max-width:400px){.registration-dialog .modal-content{padding:24px 20px}.registration-actions{flex-direction:column-reverse}.registration-actions button,.registration-actions .primary-button{width:100%}}
+/* Attendance: choice cards, who's going, going-as toggle. */
+.attend-choice{display:grid;gap:9px;margin:16px 0 4px}
+.attend-choice button{display:flex;align-items:center;gap:12px;text-align:left;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:var(--field)}
+.attend-choice button.chosen{border-color:var(--purple);box-shadow:0 0 0 1px var(--purple) inset}
+.attend-choice strong{display:block;font-size:14px}
+.attend-choice small{display:block;font-size:12px;line-height:1.45;color:var(--muted);margin-top:2px}
+.attend-anon-icon{flex:none;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--muted-purple);color:var(--purple)}
+.whos-going{display:flex;align-items:center;gap:9px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin:10px 0 2px}
+.whos-going strong{color:var(--text)}
+.whos-going-faces{display:flex}.whos-going-faces>span{margin-left:-7px;border-radius:50%;box-shadow:0 0 0 2px var(--glass,#2a2f3a)}.whos-going-faces>span:first-child{margin-left:0}
+.going-as{display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px;font-size:12px;color:var(--muted);margin:6px 0 2px}
+.going-as>span{display:inline-flex;align-items:center;gap:6px}
+.going-as strong{color:var(--text)}
+.going-as-toggle{display:inline-flex;padding:2px;gap:2px;border:1px solid var(--line);border-radius:999px}
+.going-as-toggle button{font-size:11.5px;font-weight:650;padding:5px 11px;border-radius:999px}
+.going-as-toggle button[aria-pressed=true]{background:var(--active);color:#33333a}
+.whos-going-card{margin:12px 0 4px;padding:10px 0 0;border-top:1px solid var(--line)}
+.whos-going-card .whos-going{margin-top:0}

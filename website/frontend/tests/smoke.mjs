@@ -53,8 +53,10 @@ assert.equal(await page.locator('.credits-card a').count(),4,'Three creators plu
 await page.keyboard.press('Escape');
 await page.mouse.move(850,500);await page.mouse.down();await page.mouse.move(1150,650,{steps:10});await page.mouse.up();await page.waitForTimeout(500);
 assert.ok(Math.abs((await pose()).center[0]+87.6475)>.0005,'Map moved away from UIC');
+const before=await pose();
 await page.getByRole('button',{name:'Explore',exact:true}).click();await page.waitForTimeout(1300);
-assert.ok(Math.abs((await pose()).center[0]+87.6475)<.0005&&Math.abs((await pose()).center[1]-41.8719)<.0005,'Explore recenters on UIC');
+const after=await pose();
+assert.ok(Math.abs(after.center[0]-before.center[0])<1e-6&&Math.abs(after.center[1]-before.center[1])<1e-6&&Math.abs(after.bearing-before.bearing)<1e-6&&Math.abs(after.pitch-before.pitch)<1e-6,'Explore leaves the camera where it is');
 assert.equal(await page.locator('.campus-pin>span').count(),0);
 const alignment=await page.evaluate(()=>{const s=document.querySelector('.search-field').getBoundingClientRect(),x=document.querySelector('.panel-close').getBoundingClientRect();return Math.abs(s.y+s.height/2-x.y-x.height/2)});
 assert.ok(alignment<1,`Close control alignment: ${alignment}`);

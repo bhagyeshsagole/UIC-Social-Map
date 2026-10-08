@@ -10,6 +10,8 @@ export async function installMember(page) {
  await page.addInitScript(session=>localStorage.setItem('kampuscape-auth',JSON.stringify(session)),session);
  await page.route('https://kampuscape-test.supabase.co/**',route=>{
   const path=new URL(route.request().url()).pathname;
+  // Attendance RPCs: nobody going yet, unless a test overrides this route.
+  if(path.includes('/rest/v1/rpc/'))return route.fulfill({json:[]});
   if(path.endsWith('/settings'))return route.fulfill({json:{external:{email:true}}});
   if(path.endsWith('/user'))return route.fulfill({json:user});
   if(path.endsWith('/kampuscape_profiles'))return route.fulfill({json:[profile]});

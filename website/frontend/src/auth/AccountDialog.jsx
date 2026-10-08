@@ -125,7 +125,7 @@ function DeleteAccount({onCancel}){
  return <>
   <span className="account-danger-icon"><Trash2 size={24}/></span><span className="account-kicker account-kicker-danger">DELETE ACCOUNT</span>
   <h1 id="account-title">Delete your account?</h1>
-  <p className="account-intro">Kampuscape was built with privacy at its heart. Deleting your account permanently erases all of your data: your profile, pronouns, avatar and interests, your sign-in, any support messages you’ve sent, and the saved places and private plans on this device.</p>
+  <p className="account-intro">Kampuscape was built with privacy at its heart. Deleting your account permanently erases all of your data: your profile, pronouns, avatar and interests, your sign-in, the events you’re attending (including anonymous names), any support messages you’ve sent, and the saved places and private plans on this device.</p>
   <p className="account-caption account-caption-left">This can’t be undone. You can always join again later with your UIC email.</p>
   {error&&<p className="account-error" role="alert">{error}</p>}
   <button className="account-primary account-destructive" disabled={busy} onClick={erase}>{busy?<><LoaderCircle className="spin" size={18}/> Erasing your data…</>:<><Trash2 size={17}/> Delete my account and data</>}</button>

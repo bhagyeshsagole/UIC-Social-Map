@@ -27,7 +27,7 @@ try{
  await dialog.getByRole('button',{name:'Not going'}).click();
  assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('kampuscape-registered-events')||'[]').length),0);
  await page.evaluate(()=>window.dispatchEvent(new Event('focus')));await page.waitForTimeout(250);assert.equal(await dialog.count(),0);
- await returnFrom(link);await dialog.getByRole('button',{name:'Yes, I’m going'}).click();
+ await returnFrom(link);await dialog.getByRole('button',{name:'Yes, I’m going'}).click();await page.locator('.registration-dialog').getByRole('button',{name:'Just save it'}).click();
  await page.locator('.drafts').waitFor();assert.ok((await page.locator('.drafts').innerText()).includes(title));
  assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('kampuscape-registered-events')).length),1);
  assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('kampuscape-drafts')||'[]').length),0);
@@ -50,7 +50,7 @@ try{
  await page.reload();await external.close();await page.bringToFront();await page.evaluate(()=>window.dispatchEvent(new Event('focus')));
  await dialog.waitFor();assert.match(await dialog.innerText(),/Fall Fest/);
  await page.screenshot({path:'/tmp/uic-registration-return-desktop.png'});
- await dialog.getByRole('button',{name:'Yes, I’m going'}).click();
+ await dialog.getByRole('button',{name:'Yes, I’m going'}).click();await page.locator('.registration-dialog').getByRole('button',{name:'Just save it'}).click();
  await page.locator('.drafts').getByRole('button',{name:'Fall Fest',exact:true}).click();
  await page.getByRole('region',{name:'Selected event on map'}).getByRole('button',{name:'My Events',exact:true}).click();
  assert.match(await page.locator('.drafts').innerText(),/Fall Fest/);
