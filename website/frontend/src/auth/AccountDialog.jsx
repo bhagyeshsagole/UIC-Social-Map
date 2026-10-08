@@ -20,7 +20,7 @@ function PasswordField({id,label,value,onChange,autoComplete,hint,autoFocus}){
 }
 // Create account (verify email once) · Sign in (password, no email) · Forgot password.
 function SignIn(){
- const auth=useAuth(),[mode,setMode]=useState('signup'),[email,setEmail]=useState(''),[password,setPassword]=useState('');
+ const auth=useAuth(),[mode,setMode]=useState('choose'),[email,setEmail]=useState(''),[password,setPassword]=useState('');
  const [sent,setSent]=useState(''),[busy,setBusy]=useState(false),[error,setError]=useState(null),[cooldown,setCooldown]=useState(0);
  useEffect(()=>{if(!cooldown)return;const timer=setTimeout(()=>setCooldown(v=>v-1),1000);return()=>clearTimeout(timer);},[cooldown]);
  const run=async action=>{setBusy(true);setError(null);try{await action();}catch(e){setError(e);}finally{setBusy(false);}};
@@ -32,15 +32,21 @@ function SignIn(){
  });};
  const resend=()=>run(async()=>{if(sent==='reset')await auth.requestPasswordReset(email);else await auth.resendVerification(email);setCooldown(60);if(!sent)setSent('verify');});
  const address=email.trim().toLowerCase();
- const heading={signup:<>Your campus.<br/>Your kind of plans.</>,signin:'Welcome back.',forgot:'Reset your password.'}[mode];
- const intro={signup:'Join Kampuscape with your UIC email. You’ll verify it once, then sign in with your password.',signin:'Sign in with your UIC email and password.',forgot:'Enter your UIC email and we’ll send you a link to choose a new password.'}[mode];
+ const heading={choose:<>Your campus.<br/>Your kind of plans.</>,signup:'Create your account.',signin:'Welcome back.',forgot:'Reset your password.'}[mode];
+ const intro={choose:'Find your people and your next reason to get out, with your UIC account.',signup:'Join with your UIC email. You’ll verify it once, then sign in with your password.',signin:'Sign in with your UIC email and password.',forgot:'Enter your UIC email and we’ll send you a link to choose a new password.'}[mode];
  return <>
   <h1 id="account-title">{sent==='verify'?'Verify your email.':sent==='reset'?'Check your inbox.':heading}</h1>
-  {sent?<>
-   <div className="account-sent"><Mail size={22}/><div><strong>Check your UIC inbox</strong><span>{sent==='verify'?<>We sent a verification link to {address}. Open it on any device to finish creating your account. You only need to do this once.</>:<>If an account uses {address}, we sent it a link to choose a new password.</>}</span></div></div>
-   <p className="account-caption account-caption-left">Can’t find it? It can take a minute. Check Junk and the Other tab in Outlook; UIC may flag a new sender.</p>
+  {mode==='choose'&&!sent?<>
+   <p className="account-intro">{intro}</p>
+   <button className="account-primary account-choice" onClick={()=>go('signup')}>Create an account <ArrowRight size={18}/></button>
+   <button className="account-secondary account-choice" onClick={()=>go('signin')}>Sign in</button>
+   <p className="account-caption">Only verified @uic.edu accounts can join.</p>
+  </>:sent?<>
+   <div className="account-sent"><Mail size={22}/><div><strong>Check your UIC inbox</strong><span>{sent==='verify'?<>We sent a verification link to {address}. Open it to finish creating your account. You only need to do this once.</>:<>If an account uses {address}, we sent it a link to choose a new password.</>}</span></div></div>
+   <p className="account-caption account-caption-left">Open the button in your email to return to Kampuscape. Links work once and expire after 10 minutes. Can’t find it? Check Junk and the Other tab in Outlook.</p>
    <div className="account-inline-actions"><button disabled={busy||cooldown>0} onClick={resend}>{cooldown?`Resend in ${cooldown}s`:'Resend email'}</button><button disabled={busy} onClick={()=>go('signin')}>Back to sign in</button></div>
   </>:<>
+   <button className="account-back" onClick={()=>go(mode==='forgot'?'signin':'choose')}><ArrowLeft size={15}/> Back</button>
    <p className="account-intro">{intro}</p>
    {mode!=='forgot'&&auth.googleEnabled&&<><button className="account-google" disabled={busy||!auth.configured} onClick={()=>run(auth.signInGoogle)}><GoogleMark/> Continue with Google</button>
    <div className="account-divider"><span>or use your UIC email</span></div></>}
@@ -58,7 +64,7 @@ function SignIn(){
    {error?.existing&&<> <button className="account-error-action" onClick={()=>go('signin')}>Sign in</button></>}
    {error?.unconfirmed&&<> <button className="account-error-action" disabled={busy||cooldown>0} onClick={resend}>{cooldown?`Resend in ${cooldown}s`:'Resend verification email'}</button></>}
   </p>}
-  {!sent&&<p className="account-switch-mode">{mode==='signup'?<>Already have an account? <button onClick={()=>go('signin')}>Sign in</button></>:mode==='signin'?<>New to Kampuscape? <button onClick={()=>go('signup')}>Create an account</button></>:<>Remembered it? <button onClick={()=>go('signin')}>Back to sign in</button></>}</p>}
+  {!sent&&mode!=='choose'&&<p className="account-switch-mode">{mode==='signup'?<>Already have an account? <button onClick={()=>go('signin')}>Sign in</button></>:mode==='signin'?<>New to Kampuscape? <button onClick={()=>go('signup')}>Create an account</button></>:<>Remembered it? <button onClick={()=>go('signin')}>Back to sign in</button></>}</p>}
   {!auth.configured&&<p className="account-error" role="status">Sign-in is being set up. You can explore the map in the meantime.</p>}
   <button className="account-text" onClick={auth.close}>Explore the map first</button>
  </>;

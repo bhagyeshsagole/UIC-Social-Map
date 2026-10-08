@@ -29,4 +29,10 @@
 .account-input-icon .account-reveal svg{position:static}
 .account-forgot{display:block;margin:8px 0 0 auto;font-size:12px;font-weight:600;color:#55634f}
 .account-key-icon{background:#e7ede2;color:#42623d}
+/* First screen: choose Create an account or Sign in. */
+.account-choice{margin-top:12px}
+.account-choice:first-of-type{margin-top:4px}
+.account-secondary{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;min-height:49px;border:1px solid #cfd8c8;background:#fff;color:#2f4a2a;border-radius:13px;font-size:13px;font-weight:650;padding:13px 16px}
+.account-secondary:hover{background:#f1f4ed}
+.account-back{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;color:#55634f;margin:-6px 0 2px;padding:4px 0}
 

@@ -2,7 +2,7 @@
 
 Target project: [ddhqammspwmmrprpolfw](https://supabase.com/dashboard/project/ddhqammspwmmrprpolfw).
 
-The implementation provides email OTP and Google OAuth sign-in, exact `uic.edu` membership, and private profiles containing name, optional pronouns, a preset avatar and 1–8 interests. Email verification confirms mailbox control, not current enrollment.
+The implementation provides email/password accounts with verification links and Google OAuth sign-in, exact `uic.edu` membership, and private profiles containing name, optional pronouns, a preset avatar and 1–8 interests. Email verification confirms mailbox control, not current enrollment.
 
 ## Connection status
 
@@ -14,7 +14,7 @@ Code and local PostgreSQL/browser checks are implemented. The remote migration, 
 2. In Authentication → Hooks, enable both Postgres hooks:
    - Before User Created: `public.kampuscape_before_user_created`
    - Custom Access Token: `public.kampuscape_access_token_hook`
-3. Enable email sign-ups and email confirmation. Keep anonymous sign-in and manual identity linking disabled; keep secure email changes enabled. Set OTP length to 6 and expiry to 600 seconds. Use [magic-link.html](templates/magic-link.html) for both **Magic Link** and **Confirm signup** templates. The client also accepts 8-digit codes if the project uses that length.
+3. Enable email sign-ups and email confirmation. Keep anonymous sign-in and manual identity linking disabled; keep secure email changes enabled. Set OTP length to 6 and expiry to 600 seconds. Use [confirmation.html](templates/confirmation.html) for **Confirm signup** and [recovery.html](templates/recovery.html) for **Reset password**. These buttons point back to the app with `token_hash` and `type=email|recovery`; the app calls `verifyOtp`, removes the token from the URL and opens onboarding or the new-password form. Numeric codes are not used in these two flows.
 4. Configure an existing SMTP provider for delivery to real UIC addresses. Supabase's default mail service restricts recipients; successful mocked browser tests do not verify mail delivery. Keep email rate limits enabled.
 5. Enable Google under Authentication → Sign In / Providers using the project's Google OAuth web client. Add `https://ddhqammspwmmrprpolfw.supabase.co/auth/v1/callback` to Google's authorized redirect URIs. The Google client secret stays in Supabase. A Google account must have a verified UIC address; the `hd=uic.edu` chooser hint is not the security boundary.
 6. Configure Site URL for the deployed app and allow exact callback URLs. The current Pages configuration uses `https://kampuscape.com/uic` (no trailing slash; the client redirects to origin + pathname). Include `http://localhost:5173/` and `http://127.0.0.1:5173/` for local development, plus the precise development URL when using a different port. Do not use unrestricted wildcard redirects.
@@ -64,6 +64,19 @@ TEST_APP_URL=http://127.0.0.1:5174 node tests/smoke.mjs
 
 Mocks live only in test files. There is no development-auth bypass in the product. Screenshots are under `website/frontend/artifacts/onboarding-*.png`.
 
-Before releasing, verify a real UIC email code, real UIC Google sign-in, rejection of a non-UIC Google account, callback redirects, profile persistence from a second browser, and direct non-UIC signup rejection. Never use real user data as test fixtures.
+Before releasing, verify a real UIC signup email link and password-reset link, real UIC Google sign-in, rejection of a non-UIC Google account, callback redirects, profile persistence from a second browser, and direct non-UIC signup rejection. Never use real user data as test fixtures.
 
 References checked October 7, 2026: [Auth hooks](https://supabase.com/docs/guides/auth/auth-hooks), [before user creation](https://supabase.com/docs/guides/auth/auth-hooks/before-user-created-hook), [token hooks](https://supabase.com/docs/guides/auth/auth-hooks/custom-access-token-hook), [Google sign-in](https://supabase.com/docs/guides/auth/social-login/auth-google), [email templates](https://supabase.com/docs/guides/auth/auth-email-templates), [API keys](https://supabase.com/docs/guides/getting-started/api-keys).
+
+## Publish signup and recovery email templates
+
+Changing the local HTML alone does not change Supabase's outgoing emails. In Authentication → Emails, copy the matching template into Confirm signup and Reset password, including the subjects from `config.toml`. Preserve SMTP, redirect URLs, Google settings and Auth hooks.
+
+Alternatively, with `SUPABASE_ACCESS_TOKEN` supplied securely in the environment, run:
+
+```sh
+node website/backend/supabase/sync-email-templates.mjs --check
+node website/backend/supabase/sync-email-templates.mjs
+```
+
+This script updates only those two subjects and bodies and reads them back to verify the save. It never prints the management token or other Auth configuration. Deploy the matching frontend with `npm run deploy` from `website/frontend`. Test new emails after changing templates; previously delivered code emails do not change.

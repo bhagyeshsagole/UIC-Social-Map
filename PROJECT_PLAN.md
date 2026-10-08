@@ -175,3 +175,5 @@ Saved holds bookmarked places; My Events holds event drafts. These remain local-
 - Public discovery remains available; saving places and creating plans requires a completed account. Device-local bookmarks/drafts are scoped per signed-in user. Synchronized event storage remains a separate task.
 - A versioned keyword pipeline tags event content on refresh. For you ranks current events against explicitly selected interests, explains matches and supports date filtering. No demographic inference is used.
 - A25 / B12 contains the local implementation and tested database migration. Hosted migration, Auth hooks, SMTP/email delivery, Google provider and browser environment values require the project connection and real-flow verification before release. See [Supabase setup](website/backend/supabase/README.md).
+
+- **2026-10-07:** User supersedes numeric-code emails with clickable signup verification and password-reset links back to Kampuscape (A28/B13). Email/password sign-in and exact verified UIC membership remain; signup links open onboarding, recovery links open a new-password form.

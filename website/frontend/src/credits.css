@@ -1,5 +1,6 @@
 /* Sits under 2D/3D: bottom of the desktop control stack, below it on phones. */
-.credits{position:absolute;right:10px;bottom:40px;z-index:4}
+/* Same layer as N / UIC / 2D-3D, so open panels (Explore, Live events) cover it like them. */
+.credits{position:absolute;right:10px;bottom:40px;z-index:3}
 .credits-button{width:35px;height:35px;border-radius:50%;display:grid;place-items:center;padding:0;font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:15px;font-weight:700}
 .credits-button:hover,.credits-button[aria-expanded=true]{background:var(--field)}
 .credits-card{position:absolute;right:84px;bottom:0;width:236px;padding:14px 10px 10px;border-radius:20px}

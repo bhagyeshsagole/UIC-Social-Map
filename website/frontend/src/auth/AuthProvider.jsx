@@ -33,24 +33,31 @@ export function AuthProvider({children, client = supabase, providers = fetchAuth
     // Email buttons link to kampuscape.com itself (?token_hash=…&type=…), so the link
     // domain matches the sender and works in any browser or device.
     const tokenHash = callback.searchParams.get('token_hash'), linkType = callback.searchParams.get('type');
-    if (tokenHash && ['email', 'recovery'].includes(linkType)) {
-      callback.searchParams.delete('token_hash'); callback.searchParams.delete('type');
-      window.history.replaceState(null, '', callback.pathname + callback.search + callback.hash);
-      client.auth.verifyOtp({token_hash:tokenHash, type:linkType}).then(({error:linkFailure}) => {
-        if (!active) return;
-        if (linkFailure) {
-          setError(linkType === 'recovery' ? 'That reset link has expired or was already used. Request a new one with Forgot password.' : 'That verification link has expired or was already used. Try signing in; if your email isn’t verified yet, you can resend the link.');
-          setOpen(true);
-        } else if (linkType === 'recovery') {setRecovering(true); setOpen(true);}
-      });
-    }
     // Keep this callback synchronous: Supabase auth callbacks hold an auth lock.
     const {data:{subscription}} = client.auth.onAuthStateChange((event, next) => {
       if (!active) return;
       if (event === 'PASSWORD_RECOVERY') {setRecovering(true); setOpen(true);}
       setSession(next);
     });
-    client.auth.getSession().then(({data, error}) => {
+    if (tokenHash && ['email', 'recovery'].includes(linkType)) {
+      callback.searchParams.delete('token_hash'); callback.searchParams.delete('type');
+      window.history.replaceState(null, '', callback.pathname + callback.search + callback.hash);
+      setOpen(true);
+      // Subscribe before verifying so the new session and recovery event cannot be missed.
+      // Do not race getSession() against this request and overwrite its new session.
+      client.auth.verifyOtp({token_hash:tokenHash, type:linkType}).then(({data, error:linkFailure}) => {
+        if (!active) return;
+        if (linkFailure || !data?.session) {
+          setError(linkType === 'recovery' ? 'That reset link has expired or was already used. Request a new one with Forgot password.' : 'That verification link has expired or was already used. Try signing in; if your email isn’t verified yet, you can resend the link.');
+          setLoading(false);
+        } else {
+          if (linkType === 'recovery') setRecovering(true);
+          setSession(data.session);
+        }
+      }).catch(() => {
+        if (active) {setError('We couldn’t verify your email link. Reopen it to try again, or request a new one.'); setLoading(false);}
+      });
+    } else client.auth.getSession().then(({data, error}) => {
       if (!active) return;
       if (verifyCallback && !data?.session) {
         setNotice('Your email link was opened in another browser. If you just verified your email, you’re all set: sign in with your email and password.'); setOpen(true);

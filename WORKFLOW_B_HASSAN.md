@@ -36,6 +36,7 @@ Check a task only when its result exists. These tasks do not imply approval of a
 
 | Task | State | Evidence / blocker |
 | --- | --- | --- |
+| A28 / B13 | FRONTEND DEPLOYED; EMAIL TEMPLATES PENDING | User-requested production deployment `d89ac041` completed. 59 tests and Pages build passed; live `/uic` returns 200 and references the matching new bundle with signup/reset-link UI. Supabase CLI is unauthenticated and dashboard controls remain stuck; outgoing email templates still require saving. |
 | A25 / B12 | IN PROGRESS | Live on Supabase project `ddhqammspwmmrprpolfw`: migration applied, both Auth hooks on, 6-digit/10-min OTP, kampuscape.com/uic redirect URLs, publishable key in the deployed build; non-UIC signup rejected live. Pending: custom SMTP (Resend) then the code email template, Google OAuth client |
 | A27 | DONE | kampuscape.com/support (help, reach out, bug, content/safety reports → private `kampuscape_support_requests`, rate-limited); self-service account deletion with privacy confirmation; "i" creators card holding map attribution; hidden sign-in dialog scrollbar. 59 unit tests, PGlite migration tests, mocked browser delete flow, live permission probes |
 | A24 | DONE | Kampuscape page titles, package metadata, project documentation and contract fixtures; saved places/drafts migrate to new storage keys. 50 unit tests, production build and focused browser checks pass |
@@ -57,7 +58,7 @@ Mirrored in both workflow files. Add a row when work starts; remove it when the 
 
 | Who | Task | Paths being touched | Since |
 | --- | --- | --- | --- |
-| Claude Code (took over from Codex) | A25 / B12 | Supabase SMTP (Resend), email template push, Google OAuth — user-authorized | 2026-10-07 |
+| Claude Code | A25 / B12 | Google OAuth configuration (existing claim preserved) | 2026-10-07 |
 
 ## Handoffs and messages to Bhagesh
 
@@ -125,3 +126,9 @@ Provider handoff should include the SDK, supported version, configuration variab
 - **2026-10-06:** Bhagesh A23: `website/frontend/scripts/campus-events.mjs` now imports `parseIcs` and `mergeEvents` from `website/data/importers/uic-connections-importer.mjs` to fill UIC event locations the JSON feed leaves blank (16 events). **Please keep those two exports and their `title`/`startAt`/`location` fields stable, or tell Bhagesh before changing them.** B11 code unchanged. Confirmed B11 parses LOCATION correctly; the feed itself hides 534 of 682 locations behind sign-in.
 
 - **2026-10-07:** Bhagesh A24 completed the user-authorized Kampuscape rename across frontend branding/package/storage, shared project documentation and synthetic contract display names. Existing saved places/drafts are preserved through legacy reads. 50 unit tests, production build and focused browser migration/title checks pass; no remaining rename dependencies.
+
+- **2026-10-07 (A28/B13):** User requested links instead of numeric codes for signup and password reset. Restored branded app-link templates, changed inbox UI, preserved the new account-choice screen, and removed the code form. Auth subscribes before verification and avoids racing session restoration. All 59 unit tests, Pages build, and extended mocked browser checks passed, including confirmation/recovery in fresh browsers, password save, expired links and URL token cleanup. Added a targeted management-API template sync script with read-back verification. Local template check passes. Live update not performed: CLI lacks a management token and native dashboard controls are stuck; user asked to foreground the dashboard. Frontend deployment intentionally waits for template switch so current code emails continue to work. Existing Google claim and unrelated credits styles preserved.
+
+- **2026-10-07 (A28/B13 deployment):** User explicitly requested deployment after the template blocker was reported. Ran `npm run deploy`; all 59 tests and the Pages build passed. Cloudflare production deployment `d89ac041` succeeded (https://d89ac041.kampuscape.pages.dev). Verified https://kampuscape.com/uic returns HTTP 200 and references `/uic/assets/main-DKjR64W9.js`, whose content contains the new verification/reset-link UI. The build uses the current working tree, preserving the existing account-choice and credits styling. Retried Supabase template access: CLI still has no management login; native browser reaches Emails but loses the editor to a stuck sidebar accessibility view. No remote email-template save was performed; that dependency remains explicitly pending.
+
+- **2026-10-07 (A28/B13 template retry):** User opened Confirm signup editor. Observed live subject and numeric-token body. Browser clipboard timed out; typed HTML was not reliable, so no Save changes action was taken. Attempted Cancel but the browser connection failed before discard could be confirmed. User must replace the whole Body with the prepared confirmation/recovery HTML files before saving; do not save a partial editor draft. Production frontend remains deployed.
