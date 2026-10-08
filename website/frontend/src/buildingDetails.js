@@ -34,16 +34,34 @@ export function detailsFromElements(venue, elements = []) {
   const nodeNames = [...new Set(nodes.map(label=>label.name).filter(Boolean))];
   return nodeNames.length===1 ? {name:nodeNames[0],address:''} : null;
 }
-// Nominatim reverse geocoding answers in well under a second; accept its result
-// only when the returned shape covers the tapped point (or its point lies inside
-// the selected roof), so a nearby shop, bin or street is never used.
+// Nominatim reverse geocoding answers in under a second. Use the exact tapped
+// point: accept a building outline covering it, or a single shop/amenity point
+// within ~15 m of the tap and inside the roof. Never a street, park or campus area.
+const metres = ([x1,y1],[x2,y2]) => Math.hypot((x1-x2)*111320*Math.cos(y1*Math.PI/180),(y1-y2)*110540);
+function distanceTo(point, geometry) {
+  const rings = geometry?.type === 'Polygon' ? geometry.coordinates : geometry?.type === 'MultiPolygon' ? geometry.coordinates.flat() : [];
+  let best = Infinity;
+  const k = 111320*Math.cos(point[1]*Math.PI/180), m = 110540;
+  for (const ring of rings) for (let i=1;i<ring.length;i++) {
+    const [ax,ay]=ring[i-1], [bx,by]=ring[i];
+    const dx=(bx-ax)*k, dy=(by-ay)*m, px=(point[0]-ax)*k, py=(point[1]-ay)*m;
+    const t=Math.max(0,Math.min(1,(px*dx+py*dy)/((dx*dx+dy*dy)||1)));
+    best=Math.min(best,Math.hypot(px-t*dx,py-t*dy));
+  }
+  return best;
+}
 export function detailsFromReverse(venue, result) {
   if (!result || result.error) return null;
+  const tap = venue.tap || venue.coords, shape = result.geojson;
   const a = result.address || {};
   const address = text(a.house_number) && text(a.road) ? `${text(a.house_number)} ${text(a.road)}` : '';
   const name = text(result.name);
-  const shape = result.geojson;
-  const covers = shape?.type === 'Point' ? contains(shape.coordinates, venue.footprint) : contains(venue.coords, shape);
+  // In 3D a roof tap lands on the ground behind the building, so allow a building
+  // within ~15 m of the tap when its centre is inside the roof the map hit-tested.
+  const centre = [Number(result.lon), Number(result.lat)];
+  const covers = shape?.type === 'Point'
+    ? metres(shape.coordinates, tap) <= 15 && contains(shape.coordinates, venue.footprint)
+    : result.category === 'building' && (contains(tap, shape) || (contains(centre, venue.footprint) && distanceTo(tap, shape) <= 15));
   if (!covers || !(name || address)) return null;
   return {name:name || address, address};
 }
@@ -61,11 +79,13 @@ async function polite(signal) {
   await wait(delay, signal);
 }
 async function reverseLookup(venue, {signal, fetcher, reverseEndpoint}) {
-  const [lon,lat] = venue.coords;
+  const [lon,lat] = venue.tap || venue.coords;
   const url = `${reverseEndpoint}?format=jsonv2&lat=${lat}&lon=${lon}&zoom=18&addressdetails=1&polygon_geojson=1&polygon_threshold=0.00001`;
   const response = await fetcher(url, {signal, headers:{Accept:'application/json'}});
-  if (!response.ok) return null;
-  return detailsFromReverse(venue, await response.json());
+  if (!response.ok) throw new Error('Reverse lookup unavailable');
+  const result = await response.json();
+  // An answered "nothing here" is final; only an unreachable service falls back.
+  return {answered:!result.error, details:detailsFromReverse(venue, result)};
 }
 async function overpassLookup(venue, {signal, fetcher, endpoint}) {
   if (Date.now() < overpassPausedUntil) throw new Error('Building lookup paused');
@@ -88,8 +108,9 @@ export async function lookupBuilding(venue, {signal, fetcher=fetch, endpoint='ht
   if (cache.has(venue.id)) return cache.get(venue.id);
   // Debounce quick repins; cancellations never overwrite a later pin.
   await polite(signal);
-  let details = await reverseLookup(venue, {signal, fetcher, reverseEndpoint}).catch(e => {if (e?.name === 'AbortError') throw e; return null;});
-  if (!details) {
+  const reverse = await reverseLookup(venue, {signal, fetcher, reverseEndpoint}).catch(e => {if (e?.name === 'AbortError') throw e; return null;});
+  let details = reverse?.details || null;
+  if (!reverse?.answered) {
     await polite(signal);
     details = await overpassLookup(venue, {signal, fetcher, endpoint});
   }

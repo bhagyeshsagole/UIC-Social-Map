@@ -37,12 +37,26 @@ test('lookup caches successful results and cancels before requesting on repin',a
 });
 test('fast reverse lookup is used only when it covers the selected roof',async()=>{
  const roof={type:'Polygon',coordinates:[ring]};
- assert.deepEqual(detailsFromReverse(venue,{name:'Synthetic Hall',address:{house_number:'12',road:'Test Street'},geojson:roof}),{name:'Synthetic Hall',address:'12 Test Street'});
+ assert.deepEqual(detailsFromReverse(venue,{category:'building',name:'Synthetic Hall',address:{house_number:'12',road:'Test Street'},geojson:roof}),{name:'Synthetic Hall',address:'12 Test Street'});
+ assert.equal(detailsFromReverse(venue,{category:'amenity',name:'Whole campus',geojson:roof}),null,'non-building areas never name a roof');
+ const house={type:'Polygon',coordinates:[[[0,0],[.0002,0],[.0002,.0002],[0,.0002],[0,0]]]};
+ assert.equal(detailsFromReverse({...venue,tap:[.0008,.0008]},{category:'building',name:'',address:{house_number:'14',road:'Test Street'},geojson:house}),null,'neighbouring house under a merged footprint');
+ assert.equal(detailsFromReverse({...venue,tap:[.0001,.0001]},{category:'building',name:'',address:{house_number:'14',road:'Test Street'},geojson:house}).name,'14 Test Street','house under the tap');
+ // 3D tap a few metres behind a roof: centre inside the hit-tested roof, ~5 m away.
+ assert.equal(detailsFromReverse({...venue,tap:[.00025,.0001]},{category:'building',lon:'.0001',lat:'.0001',address:{house_number:'14',road:'Test Street'},geojson:house}).name,'14 Test Street','3D roof tap just outside the outline');
+ assert.equal(detailsFromReverse({...venue,tap:[.00025,.0001]},{category:'building',lon:'.003',lat:'.003',address:{house_number:'99',road:'Far Street'},geojson:house}),null,'centre outside the selected roof');
  assert.deepEqual(detailsFromReverse(venue,{name:'',address:{house_number:'12',road:'Test Street'},geojson:{type:'Point',coordinates:[.0005,.0005]}}),{name:'12 Test Street',address:'12 Test Street'});
  assert.equal(detailsFromReverse(venue,{name:'Corner shop',geojson:{type:'Point',coordinates:[.003,.003]}}),null,'nearby point outside the roof');
  assert.equal(detailsFromReverse(venue,{name:'',address:{road:'Test Street'},geojson:roof}),null,'street alone is not an address');
  let overpass=0;
- const fetcher=async url=>String(url).includes('reverse')?{ok:true,json:async()=>({name:'Synthetic Hall',address:{},geojson:roof})}:(overpass++,{ok:true,json:async()=>({elements:[]})});
+ const fetcher=async url=>String(url).includes('reverse')?{ok:true,json:async()=>({category:'building',name:'Synthetic Hall',address:{},geojson:roof})}:(overpass++,{ok:true,json:async()=>({elements:[]})});
  assert.equal((await lookupBuilding({...venue,id:'reverse-hit'},{fetcher})).name,'Synthetic Hall');
  assert.equal(overpass,0,'Overpass is skipped when the fast lookup matches');
+});
+test('an answered empty reverse lookup is final; only an unreachable one falls back',async()=>{
+ let overpass=0;
+ const nothing=async url=>String(url).includes('reverse')?{ok:true,json:async()=>({category:'highway',name:'Test Street',geojson:{type:'Point',coordinates:[.003,.003]}})}:(overpass++,{ok:true,json:async()=>({elements:[way({name:'Synthetic Hall'})]})});
+ assert.equal(await lookupBuilding({...venue,id:'answered-empty'},{fetcher:nothing}),null);assert.equal(overpass,0);
+ const down=async url=>String(url).includes('reverse')?{ok:false,status:503}:(overpass++,{ok:true,json:async()=>({elements:[way({name:'Synthetic Hall'})]})});
+ assert.equal((await lookupBuilding({...venue,id:'reverse-down'},{fetcher:down})).name,'Synthetic Hall');assert.equal(overpass,1);
 });

@@ -154,7 +154,8 @@ export default function Map({places,selected,onSelect,night,resetKey,eventVenues
           const label=buildingLabel(feature.properties);
           const saved=previous?.name==='Pinned building'?null:previous;
           const custom=cleanVenue({id:customId,...label,name:label.name||'Selected building',coords:center,footprint,featureId:feature.id});
-          const venue=known || saved || (custom?{...custom,needsLookup:!label.name}:null);
+          // tap: the exact point clicked (tile footprints often merge neighbouring houses).
+          const venue=known || saved || (custom?{...custom,tap:[e.lngLat.lng,e.lngLat.lat],needsLookup:!label.name}:null);
           hidePeek();buildingCallback.current?.(venue);return;
         }
         const ids=venuesAt(e);if(ids.length){hidePeek();venueCallback.current?.(ids);}
