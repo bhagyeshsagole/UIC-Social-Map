@@ -9,6 +9,8 @@ let mode='named';
 // Creating events requires a signed-in member; the fixture fakes one (no real accounts).
 await installMember(page);
 await page.route('**/api/campus-events',r=>r.fulfill({json:JSON.parse(readFileSync(new URL('../public/campus-events.json',import.meta.url)))}));
+// The fast reverse lookup finds nothing here, so the synthetic Overpass response decides.
+await page.route('**/reverse?**',r=>r.fulfill({json:{error:'Unable to geocode'}}));
 // Synthetic API responses for the selected roof; never published map content.
 await page.route('**/api/interpreter',async r=>{
  if(mode==='offline')return r.abort();

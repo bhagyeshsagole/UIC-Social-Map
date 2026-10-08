@@ -52,7 +52,7 @@ function App(){
    if(!creating || !pickedBuilding?.needsLookup)return;
    let cancelled=false;
    const controller=new AbortController();
-   const timeout=setTimeout(()=>controller.abort(),12000);
+   const timeout=setTimeout(()=>controller.abort(),6000);
    const id=pickedBuilding.id;
    const finish=details=>setPickedBuilding(current=>current?.id===id?{...current,...details,needsLookup:false,lookupMissing:!details?.name}:current);
    lookupBuilding(pickedBuilding,{signal:controller.signal,endpoint:import.meta.env.VITE_BUILDING_LOOKUP_URL || undefined})
