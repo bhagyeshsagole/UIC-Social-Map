@@ -116,7 +116,7 @@ function App(){
     <span className="nav-divider"/><button className="nav-search" aria-label="Search everything" aria-keyshortcuts="Meta+K Control+K" onClick={()=>setSpotlight(true)}><Search size={19}/></button>
    </nav>
    <button className="search-pill glass" aria-label="Search places and events" onClick={()=>setSpotlight(true)}><Search size={20}/></button>
-   <button className="profile glass" aria-label="Open profile" onClick={auth.openProfile}>{auth.profile?<Avatar id={auth.profile.avatar_id} size={27}/>:<User size={19}/>}<span>{auth.profile?.display_name||'Sign in'}</span><ChevronDown size={13}/></button>
+   <button className="profile glass" aria-label="Open profile" onClick={auth.openProfile}>{auth.profile?<Avatar id={auth.profile.avatar_id} size={27}/>:<User size={19}/>}<span className="profile-name">{auth.profile?.display_name||'Sign in'}</span><ChevronDown size={13}/></button>
   </header>
 
   {(selected||panelOpen)&&<aside className={`discovery glass ${selected?`has-detail${selected.photo?'':' no-photo'}`:venueView?'has-live-events has-building-events':tab==='Live events'?'has-live-events':''}`} aria-label={selected?"Place details":venueView?"Events in this building":"Discover places"}>
