@@ -14,7 +14,7 @@
 .credits-card a svg:last-child{opacity:.45}
 .credits-card a:hover,.credits-card a:focus-visible{background:var(--field)}
 @media(max-width:760px){
- .app .credits{top:calc(max(10px,env(safe-area-inset-top)) + 232px);bottom:auto;right:12px}
+ .app .credits{top:calc(max(10px,env(safe-area-inset-top)) + 144px);bottom:auto;right:13px}
  .app .credits-button{width:38px;height:38px}
  .app .credits-card{bottom:auto;top:0;right:calc(100% + 10px)}
  .app.sheet-open .credits{opacity:0;pointer-events:none}

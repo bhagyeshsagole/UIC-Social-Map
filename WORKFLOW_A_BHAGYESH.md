@@ -67,6 +67,8 @@ Check a task only when its result exists. If a task is partial, leave it uncheck
 
 | Task | State | Evidence / blocker |
 | --- | --- | --- |
+| A37 / B21 | READY (not deployed) | User-requested UI fixes: UIC button and first load centre on the campus label; private-event date/time fields fit on iOS and the header icon is larger; night-mode guide/social dialogs readable with no scrollbar; humanizer pass on UI copy; N button removed; phone layout puts How it works under the legend, What's happening/Messages under the profile, UIC and 2D/3D above search; floating buttons hide while a panel is open. Message emails: migration `202610100004_message_emails.sql` emails requests and new messages through Resend via pg_net + Vault, one email per unread streak, no message bodies, `#messages` link opens the inbox. 83 unit tests and build pass; `smoke.mjs` passes the map checks and stops at the credits link count (5 vs 4) from A36 work. Migration not applied; Vault secrets not set. |
+| A36 / B20 | IN PROGRESS | Expand sourced places within two miles of either campus; descriptions/images/categories and verified discount badges; member named/anonymous place reviews, tests and release. |
 | A35 / B19 | DONE | Release `4322371` pushed to origin/main; Pages deployment `9e9625b5` live at kampuscape.com/uic. Both social migrations applied, immediate signup/recovery template and all three Pages secrets verified. Scheduled Worker version `91c74746-688a-49f6-8d88-5f41c4897f66` runs every 15 minutes with shared KV. 80 tests/build passed; live mobile guide, feed (285 events), share 404/authorization routes and asset checks passed. Real email delivery not exercised. |
 | A34 / B18 | RELEASED (A35/B19) | Rich host/event/date/time PNG share pages; clickable first-visit guide; member visit recommendations; consent messages with global blocking; session-scoped caches, resilient edge refresh and optional cron Worker. 80 unit/database tests, social two-user/mobile, onboarding and private-event browser regressions, Pages build/function compile and Worker dry-run passed. Migrations/runtime variables applied and release published in A35/B19; [setup](website/backend/SOCIAL_FEATURES.md). |
 | A33 / B17 | RELEASED (A35/B19) | Immediate email/password signup, no Google UI/MFA/verification step; server-side Resend welcome email and SMTP recovery links. Unit suite, desktop/mobile browser flow (including mail failure), Pages build and function compile pass. Published with hosted Auth settings and Pages secrets in A35/B19; real mail delivery untested; see [setup](website/backend/supabase/README.md). |
@@ -104,6 +106,7 @@ Mirrored in both workflow files. Add a row when work starts; remove it when the 
 
 | Who | Task | Paths being touched | Since |
 | --- | --- | --- | --- |
+| Codex | A36 / B20 | frontend, place importer/data, reviews migration, contracts and workflow/plan docs | 2026-10-10 |
 | Claude Code | A25 / B12 | Google OAuth configuration (existing claim preserved) | 2026-10-07 |
 
 ## Handoffs and messages to Hassan
@@ -192,6 +195,7 @@ Ordered by impact for students on phones.
 
 ## Change log
 
+- **2026-10-10:** A37/B21 UI fixes, copy pass and message email notifications (see *Current work*). Backend migration added at the user's request; not applied or deployed.
 - **2026-10-06:** Bhagesh approved Hassan's B01 API/data contract and synthetic fixtures. B01 is complete, and its mirrored active claim has been removed; no frontend work was started.
 - **2026-10-06:** Hassan completed B11's local UIC Connections ICS importer. It produces normalized JSON with duplicate prevention and has no frontend, storage, or scheduled-job integration; the agreed monthly schedule remains deferred until storage integration.
 - **2026-10-06:** Hassan drafted the B01 API/data contract and synthetic fixtures for review. No frontend files changed; the mirrored B01 claim remains active while Bhagesh reviews the contract.

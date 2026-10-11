@@ -446,3 +446,7 @@ These additive Supabase RPCs are implemented and locally validated; hosted migra
 | `kampuscape_send_message` | `p_thread_id uuid`, `p_body text`, `p_client_id uuid` | Message ID; accepted, unblocked participants; UUID retry deduplication; 2,000 characters |
 
 Text cannot be sent before acceptance. Blocks follow internal accounts across event aliases, enforced transactionally. New requests are limited to 15/day and texts to 30/minute per sender. SQLSTATE `42501` means unavailable/forbidden, `22023` invalid input, and `54000` rate limit. Tables are not directly available to browser roles. Account deletion cascades to social records.
+
+## Place reviews — 2026-10-10
+
+[Place-review contract and security](../backend/PLACE_REVIEWS.md): public 20-item review pages with aggregate count/average and optional own review; member-only 1–5-star upsert, own deletion, and private reporting. Anonymous display never includes the underlying account/profile identity. Catalog IDs are generated from the sourced directory. Reviews cannot set a student discount badge.

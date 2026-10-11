@@ -65,9 +65,8 @@
  .app .map-legend{top:max(10px,env(safe-area-inset-top));bottom:auto;left:10px;padding:8px 10px;gap:5px;font-size:9.5px;border-radius:13px}
  .app .map-legend i{width:8px;height:8px}
  .app .map-legend span{gap:6px}
- .app .align-map{top:calc(max(10px,env(safe-area-inset-top)) + 54px);bottom:auto;right:13px;width:38px;height:38px}
- .app .uic-home{top:calc(max(10px,env(safe-area-inset-top)) + 100px);bottom:auto;right:13px;width:38px;height:38px}
- .app .view-toggle{top:calc(max(10px,env(safe-area-inset-top)) + 146px);bottom:auto;right:10px}
+ .app .uic-home{top:auto;bottom:calc(max(10px,env(safe-area-inset-bottom)) + 150px);right:19px;width:38px;height:38px}
+ .app .view-toggle{top:auto;bottom:calc(max(10px,env(safe-area-inset-bottom)) + 64px);right:17px}
  /* Bottom: one nav pill with full words, and search as its own pill. */
  .app .topbar .nav-pill{justify-self:stretch;align-self:auto;position:fixed;left:10px;right:64px;bottom:max(10px,env(safe-area-inset-bottom));top:auto;transform:none;width:auto;max-width:none;margin:0;height:56px;padding:4px;gap:2px;display:flex;justify-content:space-between;border-radius:24px;z-index:10}
  .app .topbar .nav-pill .nav-divider,.app .topbar .nav-pill .nav-search{display:none!important}

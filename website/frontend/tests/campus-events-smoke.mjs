@@ -55,7 +55,7 @@ try {
   assert.ok(await page.locator('.venue-event-card').count() > 0);
   assert.equal(await page.getByRole('region', {name:'Off-campus events'}).getByText('Gallery 400', {exact:true}).count(), 0, 'UIC gallery is not classified as independent');
   await tags.getByRole('button', {name:'Community', exact:true}).click();
-  await page.getByRole('heading', {name:'Plans start with people.'}).waitFor();
+  await page.getByRole('heading', {name:'No public events yet.'}).waitFor();
   assert.equal(await page.locator('.campus-event-card').count(), 0, 'Private drafts are not published community events');
   await page.getByRole('button', {name:'View My Events', exact:true}).click();
   await page.getByRole('heading', {name:'My Events', exact:true}).waitFor();

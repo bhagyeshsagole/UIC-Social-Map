@@ -1,0 +1,69 @@
+{
+  "additional": [
+    {
+      "id": "headrest-barber-uic",
+      "name": "Headrest Barber Shop",
+      "description": "Haircuts and grooming on the first floor of UIC Student Center East. UIC lists a lower haircut price for students who show an ID.",
+      "category": "Barbers & beauty",
+      "coords": [
+        -87.647964,
+        41.871967
+      ],
+      "address": "750 S Halsted St \u00b7 Student Center East, 1st floor",
+      "neighborhood": "UIC East campus",
+      "checked": "2026-10-10",
+      "kind": "discount",
+      "student": true,
+      "benefit": "Student haircut \u00b7 $40",
+      "condition": "UIC lists $40 with student ID, compared with a $50 general haircut. Confirm the current price when booking.",
+      "tags": [
+        "Haircuts",
+        "Barber",
+        "UIC perk"
+      ],
+      "hours": "UIC lists Mon\u2013Sat 8am\u20138pm; Sunday closed. Confirm before visiting.",
+      "schedule": [
+        null,
+        [
+          480,
+          1200
+        ],
+        [
+          480,
+          1200
+        ],
+        [
+          480,
+          1200
+        ],
+        [
+          480,
+          1200
+        ],
+        [
+          480,
+          1200
+        ],
+        [
+          480,
+          1200
+        ]
+      ],
+      "events": [],
+      "sources": [
+        [
+          "UIC Student Centers \u00b7 Headrest Barber Shop",
+          "https://studentcenters.uic.edu/be-here/be-here-sce/"
+        ]
+      ],
+      "photo": {
+        "file": "category-barber.svg",
+        "alt": "Barber illustration \u2014 not a venue photo",
+        "credit": "Kampuscape \u00b7 category illustration",
+        "href": "https://studentcenters.uic.edu/be-here/be-here-sce/",
+        "illustration": true
+      },
+      "accent": "rose"
+    }
+  ]
+}

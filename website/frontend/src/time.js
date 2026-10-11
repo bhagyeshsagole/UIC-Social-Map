@@ -19,7 +19,7 @@ export function openingStatus(place, now = new Date()) {
   return {label:open?'Usually open now':'Usually closed now',open};
 }
 export function currentEvents(place, now = new Date()) { const today=chicagoDate(now); return place.events.filter(e=>e.end>=today); }
-export function directions(place) { return 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(`${place.name}, ${place.address}, Chicago IL`); }
+export function directions(place) { return 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(place.address?.startsWith('Map location')?`${place.coords[1]},${place.coords[0]}`:`${place.name}, ${place.address}, Chicago IL`); }
 export const DAYS = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 export function chicagoDay(now = new Date()) { return ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(new Intl.DateTimeFormat('en-US',{timeZone:TIMEZONE,weekday:'short'}).format(now)); }
 export function formatMinutes(m) { if (m === 720) return 'noon'; if (m % 1440 === 0) return 'midnight'; const h = Math.floor(m / 60) % 24, min = m % 60; return `${h % 12 || 12}${min ? ':' + String(min).padStart(2,'0') : ''}${h < 12 ? 'am' : 'pm'}`; }

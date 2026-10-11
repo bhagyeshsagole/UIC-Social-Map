@@ -3,7 +3,7 @@ import * as maplibregl from 'maplibre-gl';
 import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
 maplibregl.setWorkerUrl(workerUrl);
 import { createRoot } from 'react-dom/client';
-import { Coffee, Utensils, Landmark, Footprints, Mountain, Trees, GraduationCap, Beer, Music, Binoculars, Martini } from 'lucide-react';
+import { Coffee, Utensils, Landmark, Footprints, Mountain, Trees, GraduationCap, Beer, Music, Binoculars, Martini, Scissors, BookOpen, ShoppingBasket, Wrench } from 'lucide-react';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import base from './base-style.json';
 import uicTiles from './uic-tile-index.json';
@@ -36,7 +36,7 @@ function peekContent(groups){
 }
 // Pins get the student badge only for documented UIC/student perks; free-for-everyone places show their benefit label instead.
 export const hasPerk=place=>!!place.student;
-export function PlaceIcon({place, size=19}) { const Icon=place.id==='three-run-two'?Footprints:place.category==='Nightlife'?(place.tags.some(t=>t==='Live music'||t==='Comedy')?Music:place.tags.includes('Cocktails')?Martini:Beer):place.category==='Sights'?Binoculars:place.category==='Outdoors'?Trees:place.category==='Get active'?Mountain:place.category==='Cafes'?Coffee:place.category==='Food & drink'?Utensils:Landmark; return <Icon size={size} strokeWidth={1.8}/>; }
+export function PlaceIcon({place, size=19}) { const Icon=place.id==='three-run-two'?Footprints:place.category==='Nightlife'?(place.tags.some(t=>t==='Live music'||t==='Comedy')?Music:place.tags.includes('Cocktails')?Martini:Beer):place.category==='Sights'?Binoculars:place.category==='Outdoors'?Trees:place.category==='Get active'?Mountain:place.category==='Study spaces'||place.category==='Books & supplies'?BookOpen:place.category==='Barbers & beauty'?Scissors:place.category==='Groceries & essentials'?ShoppingBasket:place.category==='Everyday services'?Wrench:place.category==='Cafes'?Coffee:place.category==='Food & drink'?Utensils:Landmark; return <Icon size={size} strokeWidth={1.8}/>; }
 export function styledMap(night, eventVenueIds = [], privateVenues = []) {
   const style=structuredClone(base);
   const c=night?{ground:'#292f3b',park:'#394a48',water:'#1d3544',road:'#626b7e',casing:'#343e50',building:'#817568',label:'#c0c6d0',halo:'#303744'}:{ground:'#e3e3dc',park:'#b9c8af',water:'#acc6cf',road:'#faf8ee',casing:'#c5c8c6',building:'#c7b9a6',label:'#5f696d',halo:'#e6e8e3'};
@@ -60,6 +60,7 @@ export default function Map({places,selected,onSelect,night,resetKey,eventVenues
   const privateKey=JSON.stringify(privateEvents.map(e=>e.venue));
   const colorVenues=useRef([]);colorVenues.current=[...privateEvents.map(e=>e.venue),...(previewVenue?[previewVenue]:[])];
   const colorKey=JSON.stringify(colorVenues.current);
+  const [viewportVersion,setViewportVersion]=useState(0);
   const [status,setStatus]=useState('loading'), [retry,setRetry]=useState(0), [flat,setFlat]=useState(false);
   callback.current=onSelect;
   const venueKey=JSON.stringify([...new Set(eventVenues.map(v=>v.id))].sort());
@@ -212,7 +213,10 @@ export default function Map({places,selected,onSelect,night,resetKey,eventVenues
     markers.current=[];
     if(!map.current)return;
     const entries=[];
-    places.forEach(p=>{
+    const mview=map.current,bounds=mview.getBounds(),center=mview.getCenter();
+    const shown=places.filter(p=>p.id===selected?.id||bounds.contains(p.coords)).sort((a,b)=>(a.id===selected?.id?-1:b.id===selected?.id?1:Math.hypot(a.coords[0]-center.lng,a.coords[1]-center.lat)-Math.hypot(b.coords[0]-center.lng,b.coords[1]-center.lat))).slice(0,180);
+    const moved=()=>setViewportVersion(v=>v+1);mview.on('moveend',moved);
+    shown.forEach(p=>{
       const el=document.createElement('div');el.dataset.labelActive='false';const root=createRoot(el);
       root.render(<button className={`map-pin ${p.accent} ${selected?.id===p.id?'selected':''}`} onClick={()=>callback.current(p)} aria-label={`View ${p.name}${hasPerk(p)?', student perk':''}`}><span className="pin-circle"><PlaceIcon place={p}/>{hasPerk(p)&&<span className="pin-badge" aria-hidden="true"><GraduationCap size={12} strokeWidth={2.4}/></span>}</span><span className="pin-label">{p.name}</span></button>);
       const marker=new maplibregl.Marker({element:el,anchor:'bottom'}).setLngLat(p.coords).addTo(map.current);
@@ -240,8 +244,8 @@ export default function Map({places,selected,onSelect,night,resetKey,eventVenues
     const surface=container.current;
     for(const name of ['pointerover','pointerout','focusin','focusout'])surface.addEventListener(name,schedule);
     schedule();
-    return ()=>{cancelAnimationFrame(frame);sizes.disconnect();m.off('render',layout);m.off('resize',schedule);for(const name of ['pointerover','pointerout','focusin','focusout'])surface.removeEventListener(name,schedule);markers.current.forEach(({marker,root})=>{marker.remove();setTimeout(()=>root.unmount(),0);});markers.current=[];};
-  },[places,selected,retry]);
+    return ()=>{mview.off('moveend',moved);cancelAnimationFrame(frame);sizes.disconnect();m.off('render',layout);m.off('resize',schedule);for(const name of ['pointerover','pointerout','focusin','focusout'])surface.removeEventListener(name,schedule);markers.current.forEach(({marker,root})=>{marker.remove();setTimeout(()=>root.unmount(),0);});markers.current=[];};
+  },[places,selected,retry,viewportVersion]);
   useEffect(()=>{if(selected&&map.current)map.current.flyTo({center:selected.coords,zoom:15.8,pitch:54,offset:window.innerWidth>760?[0,-220]:[0,-130],duration:900});},[selected]);
   useEffect(()=>{if(map.current&&resetKey>0)map.current.flyTo({center:HOME.center,zoom:15.3,pitch:54,bearing:-22,offset:[0,0],duration:900});},[resetKey]);
   useEffect(()=>{
@@ -266,7 +270,7 @@ export default function Map({places,selected,onSelect,night,resetKey,eventVenues
     <div className="map-vignette"/>
     {status!=='ready'&&<div className="map-status glass" role="status">{status==='loading'?'Loading Chicago…':<>Map unavailable. You can still browse every place.<button onClick={()=>setRetry(v=>v+1)}>Retry map</button></>}</div>}
 
-    <button className="uic-home" aria-label="Back to UIC main campus" title="Back to UIC main campus" onClick={()=>map.current?.flyTo({...HOME,offset:[0,0],duration:900})}>UIC</button><button className="align-map glass" aria-label="Align map north up, east right" title="Align north up · 45° 3D tilt" onClick={()=>map.current?.easeTo({bearing:0,roll:0,pitch:flat?0:45,duration:450})}>N</button>
+    <button className="uic-home" aria-label="Back to UIC main campus" title="Back to UIC main campus" onClick={()=>map.current?.flyTo({...HOME,offset:[0,0],duration:900})}>UIC</button>
     <div className="view-toggle glass" role="group" aria-label="Map perspective">
       <button aria-pressed={flat} onClick={()=>map.current?.easeTo({pitch:0,roll:0,duration:450})}>2D</button>
       <button aria-pressed={!flat} onClick={()=>map.current?.easeTo({pitch:45,roll:0,duration:450})}>3D</button>

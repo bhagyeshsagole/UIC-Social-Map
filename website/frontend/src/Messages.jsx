@@ -14,6 +14,8 @@ export function MessagingProvider({children}){
  const [open,setOpen]=useState(false),[request,setRequest]=useState(null),[selected,setSelected]=useState(null),[error,setError]=useState(''),[busy,setBusy]=useState(false);
  const dialog=useRef(),priorFocus=useRef(),activeUser=useRef(uid);activeUser.current=uid;
  useEffect(()=>{setOpen(false);setRequest(null);setSelected(null);setError('');setBusy(false);return()=>clearMessages(uid);},[uid]);
+ // Message notification emails link to #messages; open the inbox once the account is known.
+ useEffect(()=>{if(window.location.hash!=='#messages'||auth.loading)return;history.replaceState(null,'',window.location.pathname+window.location.search);if(uid){setOpen(true);resource.refresh({force:true});}else auth.openProfile();},[uid,auth.loading]);
  useEffect(()=>{if(open){priorFocus.current=document.activeElement;dialog.current?.showModal();}else if(dialog.current?.open){dialog.current.close();priorFocus.current?.focus();}},[open]);
  const threads=state.data||[],thread=threads.find(t=>t.id===selected);
  const unread=threads.reduce((n,t)=>n+(t.blocked?0:Number(t.unread||0)+(t.incoming&&t.status==='pending'?1:0)),0);
@@ -36,7 +38,7 @@ export function MessagingProvider({children}){
   {!thread.blocked_by_you&&<button className="text-link message-block" disabled={busy} onClick={()=>action(()=>messageCall('message_action',{p_thread_id:thread.id,p_action:'block'}))}><ShieldBan size={15}/> Block this person</button>}
  </>:<>
   <p>Requests and conversations with people you’ve found through events.</p>
-  {state.loading&&!state.data?<p role="status">Loading messages…</p>:threads.length?<ul className="message-inbox">{threads.map(t=><li key={t.id}><button onClick={()=>{setSelected(t.id);setError('');}}><Avatar id={t.avatar_id} size={40}/><span><strong>{t.display_name}</strong><small>{t.event_title}</small><small>{t.blocked?'Blocked':t.status==='pending'?(t.incoming?'Message request · Accept or decline':'Waiting for acceptance'):t.status==='declined'?'Request declined':'Conversation'}</small></span>{!t.blocked&&(Number(t.unread)>0||(t.incoming&&t.status==='pending'))&&<b className="unread-dot" aria-label="Unread"/>}</button></li>)}</ul>:<div className="message-state"><MessageCircle size={30}/><h3>Your next hello starts at an event.</h3><p>Open “Who’s going” on an event and tap Message beside someone’s name.</p></div>}
+  {state.loading&&!state.data?<p role="status">Loading messages…</p>:threads.length?<ul className="message-inbox">{threads.map(t=><li key={t.id}><button onClick={()=>{setSelected(t.id);setError('');}}><Avatar id={t.avatar_id} size={40}/><span><strong>{t.display_name}</strong><small>{t.event_title}</small><small>{t.blocked?'Blocked':t.status==='pending'?(t.incoming?'Message request · Accept or decline':'Waiting for acceptance'):t.status==='declined'?'Request declined':'Conversation'}</small></span>{!t.blocked&&(Number(t.unread)>0||(t.incoming&&t.status==='pending'))&&<b className="unread-dot" aria-label="Unread"/>}</button></li>)}</ul>:<div className="message-state"><MessageCircle size={30}/><h3>No messages yet.</h3><p>Open “Who’s going” on an event and tap Message beside someone’s name.</p></div>}
   {state.error&&<p className="form-error" role="alert">{state.error.message} <button className="text-link" onClick={()=>resource.refresh({force:true})}>Retry</button></p>}
  </>}
  {error&&<p className="form-error" role="alert">{error}</p>}

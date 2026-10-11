@@ -31,8 +31,8 @@ function SignIn(){
  });};
  const resend=()=>run(async()=>{await auth.requestPasswordReset(email);setCooldown(60);});
  const address=email.trim().toLowerCase();
- const heading={choose:<>Your campus.<br/>Your kind of plans.</>,signup:'Create your account.',signin:'Welcome back.',forgot:'Reset your password.'}[mode];
- const intro={choose:'Find your people and your next reason to get out, with your UIC account.',signup:'Create an account with your UIC email and password. You’ll be signed in right away.',signin:'Sign in with your UIC email and password.',forgot:'Enter your UIC email and we’ll send you a link to choose a new password.'}[mode];
+ const heading={choose:<>Find plans<br/>around UIC.</>,signup:'Create your account.',signin:'Welcome back.',forgot:'Reset your password.'}[mode];
+ const intro={choose:'Sign in with your UIC account to see who’s going and save your plans.',signup:'Create an account with your UIC email and password. You’ll be signed in right away.',signin:'Sign in with your UIC email and password.',forgot:'Enter your UIC email and we’ll send you a link to choose a new password.'}[mode];
  return <>
   <h1 id="account-title">{sent?'Check your inbox.':heading}</h1>
   {mode==='choose'&&!sent?<>
@@ -101,7 +101,7 @@ function ProfileForm(){
   {auth.notice&&<p className="account-notice" role="status">{auth.notice}</p>}
   <form onSubmit={next}>
    {step===0?<>
-    <div className="account-avatar-preview"><Avatar id={form.avatar_id} size={76}/><span>{form.display_name.trim()||'Your next chapter'}<small>{form.pronouns||'Your campus, your way'}</small></span></div>
+    <div className="account-avatar-preview"><Avatar id={form.avatar_id} size={76}/><span>{form.display_name.trim()||'Your name'}<small>{form.pronouns||'Your pronouns'}</small></span></div>
     <label className="account-label" htmlFor="profile-name">What should we call you?</label><input id="profile-name" autoComplete="nickname" placeholder="Your name" required minLength={2} maxLength={60} value={form.display_name} onChange={e=>set('display_name',e.target.value)} autoFocus/>
     <label className="account-label" htmlFor="profile-pronouns">Pronouns <span>Optional</span></label>
     <input id="profile-pronouns" list="pronoun-options" placeholder="Add yours, or leave blank" maxLength={40} value={form.pronouns} onChange={e=>set('pronouns',e.target.value)}/><datalist id="pronoun-options">{PRONOUNS.filter(Boolean).map(x=><option key={x} value={x}/>)}</datalist>
