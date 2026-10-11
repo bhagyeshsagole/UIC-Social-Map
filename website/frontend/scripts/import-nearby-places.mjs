@@ -2,6 +2,8 @@
 import {readFileSync,writeFileSync} from 'node:fs';
 import {details} from '../src/placeDetails.js';
 import {parsePlaces} from '../src/content.js';
+import {parseOpeningHours} from '../src/openingHours.js';
+import {existsSync} from 'node:fs';
 const existing=parsePlaces(readFileSync(new URL('../../../added_sites.md',import.meta.url),'utf8')).map(p=>({...details[p.id],...p}));
 const raw=JSON.parse(readFileSync(new URL('../../data/places/uic-nearby-osm.json',import.meta.url)));
 const centers=[{name:'East campus',coords:[-87.647964,41.871967]},{name:'West campus',coords:[-87.674561,41.870762]}];
@@ -23,9 +25,22 @@ for(const row of raw.elements){
  const cuisine=(t.cuisine||'').replaceAll('_',' ').split(';').filter(Boolean).slice(0,3);
  const description=`${t.name} is ${kind==='library'?'a library':kind==='hairdresser'?'a hair salon or barbershop':kind==='cafe'?'a café':`a ${titles[kind].toLowerCase()}`} ${t['addr:street']?`on ${t['addr:street']}`:`near UIC’s ${near.toLowerCase()}`}.${cuisine.length?` Listed cuisine: ${cuisine.join(', ')}.`:''}${kind==='library'?' Check access rules, study seating and opening hours before visiting.':''}`;
  const source=`https://www.openstreetmap.org/${row.type}/${row.id}`,website=t.website||t['contact:website'];
- records.push({id:`osm-${row.type}-${row.id}`,name:t.name,description,category,coords,address,neighborhood:`Near ${near}`,campus:near,distanceMiles:+nearest.toFixed(2),checked:'2026-10-10',kind:'regular',student:false,benefit:null,condition:null,tags:[titles[kind],...cuisine],hours:t.opening_hours?`Listed hours: ${t.opening_hours}. Confirm with the venue.`:'Hours not listed. Check with the venue before visiting.',schedule:null,events:[],sources:[['OpenStreetMap contributors · ODbL',source],...(/^https?:\/\//.test(website||'')?[['Venue website',website]]:[])],photo:{file:`category-${pics[category]}.svg`,alt:`${category} illustration — not a photo of ${t.name}`,credit:'Kampuscape · category illustration',href:source,illustration:true},accent:category==='Food & drink'?'orange':category==='Cafes'?'amber':category==='Barbers & beauty'?'rose':'mint',...(['Cafes','Food & drink'].includes(category)?{diet:{nonveg:'ask',veg:'ask',vegan:'ask',gf:'ask',halal:'ask'}}:{})});
+ records.push({id:`osm-${row.type}-${row.id}`,name:t.name,description,category,coords,address,neighborhood:`Near ${near}`,campus:near,distanceMiles:+nearest.toFixed(2),checked:'2026-10-10',kind:'regular',student:false,benefit:null,condition:null,tags:[titles[kind],...cuisine],hours:t.opening_hours?`Listed hours: ${t.opening_hours}. Confirm with the venue.`:'Hours not listed. Check with the venue before visiting.',schedule:parseOpeningHours(t.opening_hours),events:[],sources:[['OpenStreetMap contributors · ODbL',source],...(/^https?:\/\//.test(website||'')?[['Venue website',website]]:[])],photo:{file:`category-${pics[category]}.svg`,alt:`${category} illustration — not a photo of ${t.name}`,credit:'Kampuscape · category illustration',href:source,illustration:true},accent:category==='Food & drink'?'orange':category==='Cafes'?'amber':category==='Barbers & beauty'?'rose':'mint',...(['Cafes','Food & drink'].includes(category)?{diet:{nonveg:'ask',veg:'ask',vegan:'ask',gf:'ask',halal:'ask'}}:{})});
 }
 for(const p of records){if(photos[p.id])p.photo=photos[p.id];if(p.name==='Richard J. Daley Library'){p.description='UIC’s East campus library offers reading areas and reservable group study rooms. Check the library’s current hours and access requirements before visiting.';p.sources.push(['UIC Library · study rooms and access','https://library.uic.edu/libraries/daley/']);}}
+// Venue websites and Wikidata (scripts/fetch-venue-websites.mjs) fill hours and photos OpenStreetMap lacks.
+const venueFile=new URL('../../data/places/venue-websites.json',import.meta.url);
+const venues=existsSync(venueFile)?JSON.parse(readFileSync(venueFile)).places:{};
+const photoSources={};
+for(const p of records){
+ const found=venues[p.id];if(!found)continue;
+ if(!p.schedule&&found.website?.hours){p.schedule=found.website.hours.schedule;p.hours='Hours from the venue’s website. Confirm before visiting.';p.sources.push(['Venue website · hours',found.website.page]);}
+ if(!p.photo?.illustration)continue;
+ const fallback=p.photo.file;
+ if(found.commons)p.photo={src:found.commons.src,alt:`Photo of ${p.name}`,credit:`Wikimedia Commons · ${found.commons.credit}`,href:found.commons.page,fallback};
+ else if(found.website?.image){photoSources[p.id]=found.website.image.src;p.photo={proxied:true,alt:`Photo from ${p.name}’s website`,credit:`${p.name} website`,href:found.website.page,fallback};}
+}
+writeFileSync(new URL('../src/placePhotoSources.json',import.meta.url),JSON.stringify(photoSources));
 records.sort((a,b)=>(a.distanceMiles||0)-(b.distanceMiles||0)||a.name.localeCompare(b.name));
 writeFileSync(new URL('../src/nearbyPlaces.json',import.meta.url),JSON.stringify({checked:'2026-10-10',radiusMiles:2,centers,source:'https://www.openstreetmap.org/copyright',places:records}));
 console.log('Added sourced places:',records.length, 'Categories:',Object.fromEntries(Object.keys(pics).map(c=>[c,records.filter(p=>p.category===c).length])));

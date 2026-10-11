@@ -1,0 +1,5424 @@
+{
+ "checked": "2026-10-11",
+ "agent": "Mozilla/5.0 (compatible; KampuscapeBot/1.0; +https://kampuscape.com/support)",
+ "note": "Hours only from schema.org data whose address matches the place; images from the venue page or Wikimedia Commons.",
+ "places": {
+  "osm-node-13752916074": {
+   "website": {
+    "url": "https://locations.schlotzskys.com/il/chicago/2050-west-ogden-avenue",
+    "page": "https://locations.schlotzskys.com/il/chicago/2050-west-ogden-avenue",
+    "hours": {
+     "schedule": [
+      [
+       600,
+       1200
+      ],
+      [
+       600,
+       1200
+      ],
+      [
+       600,
+       1200
+      ],
+      [
+       600,
+       1200
+      ],
+      [
+       600,
+       1200
+      ],
+      [
+       600,
+       1200
+      ],
+      [
+       600,
+       1200
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-7807238848": {
+   "website": {
+    "url": "https://locations.jimmyjohns.com/il/chicago/sandwiches-3106.html",
+    "page": "https://locations.jimmyjohns.com/il/chicago/sandwiches-3106.html",
+    "hours": {
+     "schedule": [
+      [
+       600,
+       1260
+      ],
+      [
+       600,
+       1260
+      ],
+      [
+       600,
+       1260
+      ],
+      [
+       600,
+       1260
+      ],
+      [
+       600,
+       1260
+      ],
+      [
+       600,
+       1260
+      ],
+      [
+       600,
+       1260
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-7777868903": {
+   "website": {
+    "url": "https://locations.chipotle.com/il/chicago/725-s-seeley-st",
+    "page": "https://locations.chipotle.com/il/chicago/725-s-seeley-st",
+    "hours": {
+     "schedule": [
+      [
+       645,
+       1380
+      ],
+      [
+       645,
+       1380
+      ],
+      [
+       645,
+       1380
+      ],
+      [
+       645,
+       1380
+      ],
+      [
+       645,
+       1380
+      ],
+      [
+       645,
+       1380
+      ],
+      [
+       645,
+       1380
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-way-151673687": {
+   "website": {
+    "url": "https://library.uic.edu/libraries/daley/",
+    "page": "https://library.uic.edu/libraries/daley/",
+    "image": {
+     "src": "https://library.uic.edu/wp-content/uploads/sites/196/2020/02/idea.jpg",
+     "width": 1440,
+     "height": 700
+    }
+   }
+  },
+  "osm-way-209811123": {
+   "website": {
+    "url": "https://library.uic.edu/libraries/lhs-chicago/",
+    "page": "https://library.uic.edu/libraries/lhs-chicago/",
+    "image": {
+     "src": "https://library.uic.edu/wp-content/uploads/sites/196/2020/02/landscape.jpg",
+     "width": 1442,
+     "height": 702
+    }
+   }
+  },
+  "osm-node-13752916070": {
+   "website": {
+    "url": "https://locations.cinnabon.com/il/chicago/711-s-seeley-ave",
+    "page": "https://locations.cinnabon.com/il/chicago/711-s-seeley-ave",
+    "hours": {
+     "schedule": [
+      [
+       630,
+       1275
+      ],
+      [
+       630,
+       1275
+      ],
+      [
+       630,
+       1275
+      ],
+      [
+       630,
+       1275
+      ],
+      [
+       630,
+       1275
+      ],
+      [
+       630,
+       1275
+      ],
+      [
+       630,
+       1275
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-13752916068": {
+   "website": {
+    "url": "https://locations.auntieannes.com/il/chicago/711-s-seeley-ave",
+    "page": "https://locations.auntieannes.com/il/chicago/711-s-seeley-ave",
+    "hours": {
+     "schedule": [
+      [
+       630,
+       1275
+      ],
+      [
+       630,
+       1275
+      ],
+      [
+       630,
+       1275
+      ],
+      [
+       630,
+       1275
+      ],
+      [
+       630,
+       1275
+      ],
+      [
+       630,
+       1275
+      ],
+      [
+       630,
+       1275
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-13752916071": {
+   "website": {
+    "url": "https://locations.carvel.com/il/chicago/711-south-seeley-avenue",
+    "page": "https://locations.carvel.com/il/chicago/711-south-seeley-avenue",
+    "hours": {
+     "schedule": [
+      [
+       630,
+       1275
+      ],
+      [
+       630,
+       1275
+      ],
+      [
+       630,
+       1275
+      ],
+      [
+       630,
+       1275
+      ],
+      [
+       630,
+       1275
+      ],
+      [
+       630,
+       1275
+      ],
+      [
+       630,
+       1275
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-7404889773": {
+   "website": {
+    "url": "https://giordanos.com/locations/mccormick-place-west-loop/",
+    "page": "https://giordanos.com/locations/mccormick-place-west-loop/",
+    "hours": {
+     "schedule": [
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1320
+      ],
+      [
+       660,
+       1320
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-way-1431227169": {
+   "website": {
+    "url": "https://locations.raisingcanes.com/il/chicago/564-w-taylor-street",
+    "page": "https://locations.raisingcanes.com/il/chicago/564-w-taylor-street",
+    "hours": {
+     "schedule": [
+      [
+       600,
+       1500
+      ],
+      [
+       600,
+       1500
+      ],
+      [
+       600,
+       1500
+      ],
+      [
+       600,
+       1500
+      ],
+      [
+       600,
+       1500
+      ],
+      [
+       600,
+       1620
+      ],
+      [
+       600,
+       1620
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-9695680553": {
+   "website": {
+    "url": "https://restaurants.subway.com/united-states/il/chicago/1651-w-roosevelt",
+    "page": "https://restaurants.subway.com/united-states/il/chicago/1651-w-roosevelt",
+    "hours": {
+     "schedule": [
+      [
+       540,
+       1320
+      ],
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ],
+      [
+       420,
+       1320
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-9695680551": {
+   "website": {
+    "url": "https://locations.baskinrobbins.com/il/chicago/1651-w-roosevelt-rd-336600-br",
+    "page": "https://locations.baskinrobbins.com/il/chicago/1651-w-roosevelt-rd-336600-br",
+    "hours": {
+     "schedule": [
+      [
+       300,
+       1140
+      ],
+      [
+       300,
+       1200
+      ],
+      [
+       270,
+       1260
+      ],
+      [
+       270,
+       1260
+      ],
+      [
+       270,
+       1260
+      ],
+      [
+       270,
+       1260
+      ],
+      [
+       300,
+       1140
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-2361008462": {
+   "website": {
+    "url": "https://restaurants.subway.com/united-states/il/chicago/1611-w-harrison-street",
+    "page": "https://restaurants.subway.com/united-states/il/chicago/1611-w-harrison-street",
+    "hours": {
+     "schedule": [
+      [
+       600,
+       1020
+      ],
+      [
+       390,
+       1260
+      ],
+      [
+       390,
+       1260
+      ],
+      [
+       390,
+       1260
+      ],
+      [
+       390,
+       1260
+      ],
+      [
+       390,
+       1260
+      ],
+      [
+       420,
+       1020
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-9695680552": {
+   "website": {
+    "url": "https://salons.greatclips.com/us/il/chicago/1651-w-roosevelt-rd",
+    "page": "https://salons.greatclips.com/us/il/chicago/1651-w-roosevelt-rd",
+    "hours": {
+     "schedule": [
+      [
+       540,
+       1020
+      ],
+      [
+       540,
+       1200
+      ],
+      [
+       540,
+       1200
+      ],
+      [
+       540,
+       1200
+      ],
+      [
+       540,
+       1200
+      ],
+      [
+       540,
+       1200
+      ],
+      [
+       480,
+       1020
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-13332989848": {
+   "website": {
+    "url": "https://ahuevo.com/",
+    "page": "https://ahuevo.com/",
+    "image": {
+     "src": "https://img1.wsimg.com/isteam/ip/4598ee00-9247-4729-89aa-c8053a4d6234/8ea015c2-5241-4061-b750-974051fadbd5.png",
+     "width": 1536,
+     "height": 1024
+    }
+   }
+  },
+  "osm-way-210257371": {
+   "commons": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Manny%27s_Deli.jpg/1280px-Manny%27s_Deli.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Manny%27s_Deli.jpg",
+    "credit": "Sblument · CC BY-SA 4.0"
+   }
+  },
+  "osm-node-6298815422": {
+   "website": {
+    "url": "https://www.xiancuisinechicago.com/west-loop?utm_source=google&utm_medium=website",
+    "page": "https://www.xiancuisinechicago.com/west-loop?utm_source=google&utm_medium=website",
+    "image": {
+     "src": "https://d15z892a5np5w4.cloudfront.net/production/chef-shangri-la-north-riverside-il-3/images/b88135374daea514d9/mobile-bg-20230206035858.jpg",
+     "width": 800,
+     "height": 497
+    }
+   }
+  },
+  "osm-node-8117903924": {
+   "website": {
+    "url": "https://locations.baskinrobbins.com/il/chicago/500-w.-roosevelt-rd-346737-br",
+    "page": "https://locations.baskinrobbins.com/il/chicago/500-w.-roosevelt-rd-346737-br",
+    "hours": {
+     "schedule": [
+      [
+       300,
+       1440
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1140
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-6320625801": {
+   "website": {
+    "url": "https://www.lotusbanhmi.com/",
+    "page": "https://lotusbanhmi.com/",
+    "image": {
+     "src": "https://lotusbanhmi.com/wp-content/uploads/2024/08/Beef-Pho-1024x803.jpg",
+     "width": 1024,
+     "height": 803
+    }
+   }
+  },
+  "osm-node-13574803464": {
+   "website": {
+    "url": "https://mknoodleuic.com",
+    "page": "https://mknoodleuic.com/",
+    "image": {
+     "src": "https://img1.wsimg.com/isteam/getty/503129686",
+     "width": 2119,
+     "height": 1415
+    }
+   }
+  },
+  "osm-node-1619646338": {
+   "website": {
+    "url": "https://restaurants.subway.com/united-states/il/chicago/1232-s-canal-street",
+    "page": "https://restaurants.subway.com/united-states/il/chicago/1232-s-canal-street",
+    "hours": {
+     "schedule": [
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-1619646328": {
+   "website": {
+    "url": "https://pizza.dominos.com/illinois/chicago/1234-s-canal",
+    "page": "https://pizza.dominos.com/illinois/chicago/1234-s-canal",
+    "hours": {
+     "schedule": [
+      [
+       600,
+       1500
+      ],
+      [
+       600,
+       1500
+      ],
+      [
+       600,
+       1500
+      ],
+      [
+       600,
+       1500
+      ],
+      [
+       600,
+       1500
+      ],
+      [
+       600,
+       1620
+      ],
+      [
+       600,
+       1620
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-6294257885": {
+   "website": {
+    "url": "http://www.hawkeyesbar.com/",
+    "page": "https://hawkeyeschicago.com/",
+    "hours": {
+     "schedule": [
+      [
+       660,
+       1560
+      ],
+      [
+       660,
+       1560
+      ],
+      [
+       660,
+       1560
+      ],
+      [
+       660,
+       1560
+      ],
+      [
+       660,
+       1560
+      ],
+      [
+       660,
+       1560
+      ],
+      [
+       660,
+       1620
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-6314890056": {
+   "website": {
+    "url": "http://www.jarabechicago.com/",
+    "page": "https://www.jarabechicago.com/",
+    "image": {
+     "src": "https://www.jarabechicago.com/uploads/b/42d0b740-796e-11e9-885b-dd0af07181bd/IMG_7653.jpeg",
+     "width": 4032,
+     "height": 3024
+    }
+   }
+  },
+  "osm-node-6582897502": {
+   "website": {
+    "url": "https://pizza.dominos.com/illinois/chicago/901-w-madison-st/",
+    "page": "https://pizza.dominos.com/illinois/chicago/901-w-madison-st",
+    "hours": {
+     "schedule": [
+      [
+       630,
+       1500
+      ],
+      [
+       630,
+       1500
+      ],
+      [
+       630,
+       1500
+      ],
+      [
+       630,
+       1500
+      ],
+      [
+       630,
+       1500
+      ],
+      [
+       630,
+       1560
+      ],
+      [
+       630,
+       1560
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-7546476887": {
+   "website": {
+    "url": "https://www.kimura138.com/",
+    "page": "https://www.kimura138.com/",
+    "hours": {
+     "schedule": [
+      [
+       720,
+       1275
+      ],
+      [
+       695,
+       1275
+      ],
+      null,
+      [
+       695,
+       1275
+      ],
+      [
+       695,
+       1275
+      ],
+      [
+       695,
+       1275
+      ],
+      [
+       720,
+       1275
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    },
+    "image": {
+     "src": "https://www.fbgcdn.com/pictures/ba6b618b-4682-4f4b-a027-5432f793cc8a.jpg",
+     "width": 1600,
+     "height": 700
+    }
+   }
+  },
+  "osm-node-1619740982": {
+   "website": {
+    "url": "https://locations.chipotle.com/il/chicago/525-w-monroe-st",
+    "page": "https://locations.chipotle.com/il/chicago/525-w-monroe-st",
+    "hours": {
+     "schedule": [
+      [
+       645,
+       1260
+      ],
+      [
+       630,
+       1260
+      ],
+      [
+       630,
+       1260
+      ],
+      [
+       630,
+       1260
+      ],
+      [
+       630,
+       1260
+      ],
+      [
+       630,
+       1260
+      ],
+      [
+       645,
+       1260
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-6282530019": {
+   "website": {
+    "url": "https://chicagounionstation.com/",
+    "page": "https://chicagounionstation.com/",
+    "hours": {
+     "schedule": [
+      [
+       60,
+       300
+      ],
+      [
+       60,
+       300
+      ],
+      [
+       60,
+       300
+      ],
+      [
+       60,
+       300
+      ],
+      [
+       60,
+       300
+      ],
+      [
+       60,
+       300
+      ],
+      [
+       60,
+       300
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    },
+    "image": {
+     "src": "https://chicagounionstation.com/uploads/general/_1200x630_crop_center-center_82_none/HeaderImage_Centennial.jpg?mtime=1753474932",
+     "width": 1200,
+     "height": 630
+    }
+   }
+  },
+  "osm-node-12688510775": {
+   "website": {
+    "url": "https://barnhockeybar.com",
+    "page": "https://barnhockeybar.com/",
+    "image": {
+     "src": "https://static.spotapps.co/website_images/ab_websites/339669_website/food_back.jpg",
+     "width": 1200,
+     "height": 801
+    }
+   }
+  },
+  "osm-node-12007038772": {
+   "website": {
+    "url": "https://locations.baskinrobbins.com/il/chicago/901-w-washington-blvd-342164-br",
+    "page": "https://locations.baskinrobbins.com/il/chicago/901-w-washington-blvd-342164-br",
+    "hours": {
+     "schedule": [
+      [
+       300,
+       1320
+      ],
+      [
+       270,
+       1320
+      ],
+      [
+       270,
+       1320
+      ],
+      [
+       270,
+       1320
+      ],
+      [
+       270,
+       1320
+      ],
+      [
+       270,
+       1320
+      ],
+      [
+       270,
+       1320
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-12027004611": {
+   "website": {
+    "url": "https://westloopmarketchicago.com/",
+    "page": "https://westloopmarketchicago.com/",
+    "image": {
+     "src": "https://westloopmarketchicago.com/img/storefront.jpg",
+     "width": 780,
+     "height": 744
+    }
+   }
+  },
+  "osm-node-13289837088": {
+   "website": {
+    "url": "https://jsalonspa.com",
+    "page": "https://jsalonspa.com/",
+    "hours": {
+     "schedule": [
+      [
+       540,
+       1140
+      ],
+      [
+       540,
+       1140
+      ],
+      [
+       540,
+       1140
+      ],
+      [
+       420,
+       1140
+      ],
+      [
+       420,
+       1140
+      ],
+      [
+       420,
+       1140
+      ],
+      [
+       540,
+       1140
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-13304821019": {
+   "website": {
+    "url": "https://bkdrosca.com",
+    "page": "https://bkdrosca.com/",
+    "image": {
+     "src": "https://bkdrosca.com/_assets/images/bfa0a7c0f58ee3178e2583e55b79a6ab.jpg",
+     "width": 1200,
+     "height": 630
+    }
+   }
+  },
+  "osm-node-1951914730": {
+   "website": {
+    "url": "https://giordanos.com/locations/downtown-central-loop",
+    "page": "https://giordanos.com/locations/downtown-central-loop/",
+    "hours": {
+     "schedule": [
+      [
+       630,
+       1320
+      ],
+      [
+       630,
+       1320
+      ],
+      [
+       630,
+       1320
+      ],
+      [
+       630,
+       1320
+      ],
+      [
+       630,
+       1320
+      ],
+      [
+       630,
+       1380
+      ],
+      [
+       630,
+       1380
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-6282654184": {
+   "website": {
+    "url": "https://locations.cinnabon.com/il/chicago/500-west-madison-street",
+    "page": "https://locations.cinnabon.com/il/chicago/500-west-madison-street",
+    "hours": {
+     "schedule": [
+      [
+       0,
+       1440
+      ],
+      [
+       480,
+       900
+      ],
+      [
+       480,
+       900
+      ],
+      [
+       480,
+       900
+      ],
+      [
+       480,
+       900
+      ],
+      [
+       480,
+       900
+      ],
+      [
+       630,
+       900
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-9294065235": {
+   "website": {
+    "url": "https://locations.tacobell.com/il/chicago/500-w--madison-ave.html",
+    "page": "https://locations.tacobell.com/il/chicago/500-w--madison-ave.html",
+    "hours": {
+     "schedule": [
+      [
+       600,
+       1260
+      ],
+      [
+       600,
+       1260
+      ],
+      [
+       600,
+       1260
+      ],
+      [
+       600,
+       1260
+      ],
+      [
+       600,
+       1980
+      ],
+      [
+       600,
+       1260
+      ],
+      [
+       600,
+       1260
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-9217234407": {
+   "website": {
+    "url": "https://locations.qdoba.com/us/il/chicago/175-w-jackson-st.html",
+    "page": "https://locations.qdoba.com/us/il/chicago/175-w-jackson-st",
+    "hours": {
+     "schedule": [
+      [
+       660,
+       1260
+      ],
+      [
+       420,
+       1260
+      ],
+      [
+       420,
+       1260
+      ],
+      [
+       420,
+       1260
+      ],
+      [
+       420,
+       1260
+      ],
+      [
+       420,
+       1260
+      ],
+      [
+       660,
+       1260
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-6239068411": {
+   "website": {
+    "url": "https://pizza.dominos.com/illinois/chicago/2331-b-w-madison-street",
+    "page": "https://pizza.dominos.com/illinois/chicago/2331-b-w-madison-street",
+    "hours": {
+     "schedule": [
+      [
+       600,
+       1440
+      ],
+      [
+       600,
+       1440
+      ],
+      [
+       600,
+       1440
+      ],
+      [
+       600,
+       1440
+      ],
+      [
+       600,
+       1440
+      ],
+      [
+       600,
+       1560
+      ],
+      [
+       600,
+       1560
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-6239093318": {
+   "website": {
+    "url": "https://restaurants.subway.com/united-states/il/chicago/1525-w-madison-ave",
+    "page": "https://restaurants.subway.com/united-states/il/chicago/1525-w-madison-ave",
+    "hours": {
+     "schedule": [
+      [
+       540,
+       1260
+      ],
+      [
+       420,
+       1320
+      ],
+      [
+       420,
+       1320
+      ],
+      [
+       420,
+       1320
+      ],
+      [
+       420,
+       1320
+      ],
+      [
+       420,
+       1320
+      ],
+      [
+       480,
+       1260
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-11272453375": {
+   "website": {
+    "url": "https://locations.tacobell.com/il/chicago/941-w-randolph-st.html",
+    "page": "https://locations.tacobell.com/il/chicago/941-w-randolph-st.html",
+    "hours": {
+     "schedule": [
+      [
+       600,
+       1620
+      ],
+      [
+       600,
+       1620
+      ],
+      [
+       600,
+       1620
+      ],
+      [
+       600,
+       1620
+      ],
+      [
+       600,
+       1680
+      ],
+      [
+       600,
+       1680
+      ],
+      [
+       600,
+       1680
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-1699222276": {
+   "website": {
+    "url": "https://restaurants.subway.com/united-states/il/chicago/211-w-adams-st",
+    "page": "https://restaurants.subway.com/united-states/il/chicago/211-w-adams-st",
+    "hours": {
+     "schedule": [
+      [
+       600,
+       1200
+      ],
+      [
+       480,
+       1260
+      ],
+      [
+       480,
+       1260
+      ],
+      [
+       480,
+       1260
+      ],
+      [
+       480,
+       1260
+      ],
+      [
+       480,
+       1260
+      ],
+      [
+       600,
+       1200
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-6188968651": {
+   "website": {
+    "url": "https://restaurants.subway.com/united-states/il/chicago/2319-w-madison-street",
+    "page": "https://restaurants.subway.com/united-states/il/chicago/2319-w-madison-street",
+    "hours": {
+     "schedule": [
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-12737855250": {
+   "website": {
+    "url": "https://restaurants.subway.com/united-states/il/chicago/630-s-clark-st",
+    "page": "https://restaurants.subway.com/united-states/il/chicago/630-s-clark-st",
+    "hours": {
+     "schedule": [
+      [
+       540,
+       1320
+      ],
+      [
+       540,
+       1320
+      ],
+      [
+       540,
+       1320
+      ],
+      [
+       540,
+       1320
+      ],
+      [
+       540,
+       1320
+      ],
+      [
+       540,
+       1320
+      ],
+      [
+       540,
+       1320
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-way-209828751": {
+   "commons": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Billy_Goat_Tavern%2C_Chicago%2C_Illinois_%2841568796860%29.jpg/1280px-Billy_Goat_Tavern%2C_Chicago%2C_Illinois_%2841568796860%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Billy_Goat_Tavern,_Chicago,_Illinois_(41568796860).jpg",
+    "credit": "Ken Lund from Reno, Nevada, USA · CC BY-SA 2.0"
+   }
+  },
+  "osm-node-2481236974": {
+   "website": {
+    "url": "https://locations.chipotle.com/il/chicago/230-west-monroe-street",
+    "page": "https://locations.chipotle.com/il/chicago/230-west-monroe-street",
+    "hours": {
+     "schedule": [
+      [
+       0,
+       1440
+      ],
+      [
+       630,
+       1200
+      ],
+      [
+       630,
+       1200
+      ],
+      [
+       630,
+       1200
+      ],
+      [
+       630,
+       1200
+      ],
+      [
+       630,
+       1140
+      ],
+      [
+       0,
+       1440
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-5460599291": {
+   "website": {
+    "url": "https://cruzblancachi.com",
+    "page": "https://cruzblancachi.com/",
+    "image": {
+     "src": "https://cruzblancachi.com/wp-content/uploads/2023/10/MG_9915-2048.jpg",
+     "width": 2048,
+     "height": 1365
+    }
+   }
+  },
+  "osm-node-5460707118": {
+   "website": {
+    "url": "https://www.proxichicago.com/",
+    "page": "https://www.proxichicago.com/",
+    "image": {
+     "src": "https://www.proxichicago.com/static/5882e328e3df28fd785a49d7/t/588c2e472994ca8c2ada9974/1485581896479/proxi_social_1200x628_v01_format-1500w.jpg",
+     "width": 1200,
+     "height": 628
+    }
+   }
+  },
+  "osm-node-12093744765": {
+   "website": {
+    "url": "https://www.theoakville.com/",
+    "page": "https://www.theoakville.com/",
+    "image": {
+     "src": "https://storage.googleapis.com/theoakville_bucket/wp-content/uploads/5d43e0df-2023-08-31_the-oakville_vibe-check_0007-e1786632523525.jpg",
+     "width": 1597,
+     "height": 949
+    }
+   }
+  },
+  "osm-node-4196256205": {
+   "website": {
+    "url": "https://restaurants.subway.com/united-states/il/chicago/180-n-jefferson-st",
+    "page": "https://restaurants.subway.com/united-states/il/chicago/180-n-jefferson-st",
+    "hours": {
+     "schedule": [
+      [
+       540,
+       1260
+      ],
+      [
+       420,
+       1320
+      ],
+      [
+       420,
+       1320
+      ],
+      [
+       420,
+       1320
+      ],
+      [
+       420,
+       1320
+      ],
+      [
+       420,
+       1320
+      ],
+      [
+       480,
+       1260
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-4726220389": {
+   "website": {
+    "url": "https://momotarochicago.com/",
+    "page": "https://momotarochicago.com/",
+    "image": {
+     "src": "https://cdn.prod.website-files.com/621e6fe3c0a99283c0cc87fb/637015f71d81f46ef95a5a20_momomtaro-spread.jpeg",
+     "width": 3000,
+     "height": 2000
+    }
+   }
+  },
+  "osm-node-5289912852": {
+   "website": {
+    "url": "https://locations.jimmyjohns.com/il/chicago/sandwiches-1236.html",
+    "page": "https://locations.jimmyjohns.com/il/chicago/sandwiches-1236.html",
+    "hours": {
+     "schedule": [
+      [
+       0,
+       1440
+      ],
+      [
+       600,
+       960
+      ],
+      [
+       600,
+       960
+      ],
+      [
+       600,
+       960
+      ],
+      [
+       600,
+       960
+      ],
+      [
+       600,
+       960
+      ],
+      [
+       0,
+       1440
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-9033502385": {
+   "website": {
+    "url": "https://amaritthai.com",
+    "page": "https://www.amaritthai.com/",
+    "hours": {
+     "schedule": [
+      [
+       660,
+       1260
+      ],
+      [
+       630,
+       1255
+      ],
+      [
+       630,
+       1255
+      ],
+      [
+       630,
+       1255
+      ],
+      [
+       630,
+       1255
+      ],
+      [
+       660,
+       1290
+      ],
+      [
+       660,
+       1260
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    },
+    "image": {
+     "src": "https://www.amaritthai.com/assets/img/og.jpg",
+     "width": 1200,
+     "height": 630
+    }
+   }
+  },
+  "osm-node-6638973101": {
+   "website": {
+    "url": "https://www.tottosmarket.com/",
+    "page": "https://www.tottosmarket.com/",
+    "image": {
+     "src": "https://www.tottosmarket.com/images/content/5f3c3f3ae0709f6079414fce/1597867843109-ZW4EBSQD7UP4O41PZUUB/tottos-market-store-2%EF%B9%96format=1500w&content-type=image%EA%A4%B7jpeg.jpg",
+     "width": 1500,
+     "height": 911
+    }
+   }
+  },
+  "osm-node-5460308912": {
+   "website": {
+    "url": "https://www.saigonsisters.com/",
+    "page": "https://www.saigonsisters.com/",
+    "hours": {
+     "schedule": [
+      null,
+      null,
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1320
+      ],
+      [
+       720,
+       1320
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-14135704201": {
+   "website": {
+    "url": "https://www.gothambagels.com",
+    "page": "https://www.gothambagels.com/",
+    "hours": {
+     "schedule": [
+      [
+       420,
+       780
+      ],
+      [
+       420,
+       780
+      ],
+      [
+       420,
+       780
+      ],
+      [
+       420,
+       780
+      ],
+      [
+       420,
+       780
+      ],
+      [
+       420,
+       780
+      ],
+      [
+       420,
+       780
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    },
+    "image": {
+     "src": "https://www.gothambagels.com/images/og-gotham-sandwiches.jpg",
+     "width": 1200,
+     "height": 630
+    }
+   }
+  },
+  "osm-node-14135704202": {
+   "website": {
+    "url": "https://www.ginoseast.com/south-loop",
+    "page": "https://www.ginoseast.com/south-loop/",
+    "hours": {
+     "schedule": [
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1320
+      ],
+      [
+       660,
+       1320
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-13255821241": {
+   "website": {
+    "url": "https://cecinagrillpilsen.com",
+    "page": "https://cecinagrillpilsen.com/",
+    "image": {
+     "src": "https://static.spotapps.co/website_images/ab_websites/213902_website_v1/events_back.jpg",
+     "width": 1382,
+     "height": 921
+    }
+   }
+  },
+  "osm-node-5168246245": {
+   "website": {
+    "url": "https://www.haisous.com",
+    "page": "https://www.haisous.com/",
+    "hours": {
+     "schedule": [
+      [
+       [
+        600,
+        840
+       ],
+       [
+        960,
+        1260
+       ]
+      ],
+      null,
+      null,
+      [
+       960,
+       1260
+      ],
+      [
+       960,
+       1260
+      ],
+      [
+       960,
+       1260
+      ],
+      [
+       960,
+       1260
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-way-209383335": {
+   "website": {
+    "url": "https://locations.tacobell.com/il/chicago/57-n--western-ave-.html",
+    "page": "https://locations.tacobell.com/il/chicago/57-n--western-ave-.html",
+    "hours": {
+     "schedule": [
+      [
+       [
+        480,
+        1560
+       ],
+       [
+        480,
+        1320
+       ]
+      ],
+      [
+       [
+        480,
+        1560
+       ],
+       [
+        480,
+        1320
+       ]
+      ],
+      [
+       [
+        480,
+        1620
+       ],
+       [
+        480,
+        1320
+       ]
+      ],
+      [
+       [
+        480,
+        1620
+       ],
+       [
+        480,
+        1320
+       ]
+      ],
+      [
+       [
+        480,
+        1680
+       ],
+       [
+        480,
+        1320
+       ]
+      ],
+      [
+       [
+        480,
+        1680
+       ],
+       [
+        480,
+        1320
+       ]
+      ],
+      [
+       [
+        480,
+        1680
+       ],
+       [
+        480,
+        1320
+       ]
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-10788414160": {
+   "website": {
+    "url": "https://locations.tacobell.com/il/chicago/407-s--dearborn.html",
+    "page": "https://locations.tacobell.com/il/chicago/407-s--dearborn.html",
+    "hours": {
+     "schedule": [
+      [
+       600,
+       1560
+      ],
+      [
+       600,
+       1560
+      ],
+      [
+       600,
+       1560
+      ],
+      [
+       600,
+       1560
+      ],
+      [
+       600,
+       1560
+      ],
+      [
+       600,
+       1620
+      ],
+      [
+       600,
+       1620
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-2570892815": {
+   "website": {
+    "url": "https://www.newlinetavern.com/",
+    "page": "https://newlinetavern.com/",
+    "image": {
+     "src": "https://static.spotapps.co/website_images/ab_websites/14593_website_v1/social.jpg",
+     "width": 1200,
+     "height": 800
+    }
+   }
+  },
+  "osm-node-10925526297": {
+   "website": {
+    "url": "https://locations.chipotle.com/il/chicago/10-s-la-salle-st",
+    "page": "https://locations.chipotle.com/il/chicago/10-s-la-salle-st",
+    "hours": {
+     "schedule": [
+      [
+       0,
+       1440
+      ],
+      [
+       630,
+       1140
+      ],
+      [
+       630,
+       1140
+      ],
+      [
+       630,
+       1140
+      ],
+      [
+       630,
+       1140
+      ],
+      [
+       630,
+       1140
+      ],
+      [
+       0,
+       1440
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-6269042337": {
+   "website": {
+    "url": "https://brandoschicago.com/",
+    "page": "https://brandoschicago.com/",
+    "image": {
+     "src": "https://brandoschicago.com/wp-content/uploads/2025/01/Karaoke-bar-chicago-118-218.jpg",
+     "width": 2250,
+     "height": 1500
+    }
+   }
+  },
+  "osm-node-13841011476": {
+   "website": {
+    "url": "https://plumbers911chicago.com/",
+    "page": "https://plumbers911chicago.com/",
+    "hours": {
+     "schedule": [
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-way-1179640662": {
+   "website": {
+    "url": "https://www.thesterlingfoodhall.com/",
+    "page": "https://www.sterlingfoodhall.com/",
+    "hours": {
+     "schedule": [
+      null,
+      [
+       450,
+       1200
+      ],
+      [
+       450,
+       1200
+      ],
+      [
+       450,
+       1200
+      ],
+      [
+       450,
+       1200
+      ],
+      [
+       450,
+       1200
+      ],
+      null
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-way-28292694": {
+   "commons": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Harold_Washington_Library%2C_Chicago%2C_Illinois_%289181548762%29.jpg/1280px-Harold_Washington_Library%2C_Chicago%2C_Illinois_%289181548762%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Harold_Washington_Library,_Chicago,_Illinois_(9181548762).jpg",
+    "credit": "Ken Lund from Reno, Nevada, USA · CC BY-SA 2.0"
+   }
+  },
+  "osm-node-5460697773": {
+   "website": {
+    "url": "https://www.macellochicago.com",
+    "page": "https://macellochicago.com/",
+    "hours": {
+     "schedule": [
+      [
+       900,
+       1200
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       900,
+       1320
+      ],
+      [
+       900,
+       1320
+      ],
+      [
+       900,
+       1320
+      ],
+      [
+       900,
+       1380
+      ],
+      [
+       900,
+       1380
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    },
+    "image": {
+     "src": "https://static.spotapps.co/website_images/ab_websites/9081_website_v2/shared_image.jpg",
+     "width": 1600,
+     "height": 1067
+    }
+   }
+  },
+  "osm-node-6315212585": {
+   "website": {
+    "url": "https://thefatshallot.com/",
+    "page": "https://www.thefatshallot.com/",
+    "image": {
+     "src": "https://www.thefatshallot.com/wp-content/uploads/2026/02/fat-shallot-buffalo-chicken-fries-drink.jpg",
+     "width": 1200,
+     "height": 624
+    }
+   }
+  },
+  "osm-node-5460666621": {
+   "website": {
+    "url": "https://www.punchbowlsocial.com/",
+    "page": "https://punchbowlsocial.com/",
+    "image": {
+     "src": "https://cdn.sanity.io/images/37ma4tan/production/9795f4261c6dd9964c6f52c0fd433b25759ff8ce-1682x1121.jpg",
+     "width": 1682,
+     "height": 1121
+    }
+   }
+  },
+  "osm-node-12840047878": {
+   "website": {
+    "url": "https://forachicago.com",
+    "page": "https://forachicago.com/",
+    "image": {
+     "src": "https://forachicago.com/media_files/images/pasta_cheese_web_MZ79GfK.max-1900x1900.jpg",
+     "width": 1900,
+     "height": 1256
+    }
+   }
+  },
+  "osm-node-4196289891": {
+   "website": {
+    "url": "https://locations.einsteinbros.com/us/il/chicago/30-n-la-salle-st-lbby",
+    "page": "https://locations.einsteinbros.com/us/il/chicago/30-n-la-salle-st-lbby",
+    "hours": {
+     "schedule": [
+      [
+       0,
+       1440
+      ],
+      [
+       360,
+       840
+      ],
+      [
+       360,
+       840
+      ],
+      [
+       360,
+       840
+      ],
+      [
+       360,
+       840
+      ],
+      [
+       360,
+       840
+      ],
+      [
+       0,
+       1440
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-6159637957": {
+   "website": {
+    "url": "http://beatrixrestaurants.com/beatrix-market/loop/",
+    "page": "https://www.beatrixrestaurants.com/beatrix-market/loop/",
+    "image": {
+     "src": "https://storage.googleapis.com/beatrix2023_bucket/wp-content/uploads/cbe21eb9-bml_interiorwide.jpg",
+     "width": 1920,
+     "height": 1280
+    }
+   }
+  },
+  "osm-node-13139860164": {
+   "website": {
+    "url": "https://ordergreenapplephoever.com",
+    "page": "https://ordergreenapplephoever.com/",
+    "image": {
+     "src": "https://res.cloudinary.com/simplemenu/image/upload/q_auto:low/v1634156713/507688165_w2x3p4.jpg",
+     "width": 1254,
+     "height": 836
+    }
+   }
+  },
+  "osm-node-6302155846": {
+   "website": {
+    "url": "https://www.spokeandbird.com/",
+    "page": "https://www.spokeandbird.com/",
+    "hours": {
+     "schedule": [
+      [
+       540,
+       1020
+      ],
+      [
+       480,
+       900
+      ],
+      null,
+      null,
+      [
+       480,
+       900
+      ],
+      [
+       480,
+       900
+      ],
+      [
+       540,
+       1020
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-5460766489": {
+   "website": {
+    "url": "https://emilyhotel.com/destinations/chicago/eat-and-drink/the-coffee-bar/",
+    "page": "https://emilyhotel.com/destinations/chicago/eat-and-drink/the-coffee-bar/",
+    "image": {
+     "src": "https://emilyhotel.com/media_files/images/The_Emily_Hotels_Coffee_Bar_Lounge_Area.max-1900x1900.jpg",
+     "width": 1900,
+     "height": 1268
+    }
+   }
+  },
+  "osm-way-210270316": {
+   "website": {
+    "url": "https://www.jeffersontap.com/",
+    "page": "https://www.jeffersontap.com/",
+    "hours": {
+     "schedule": [
+      [
+       660,
+       1560
+      ],
+      [
+       660,
+       1560
+      ],
+      [
+       660,
+       1560
+      ],
+      [
+       660,
+       1560
+      ],
+      [
+       660,
+       1680
+      ],
+      [
+       660,
+       1680
+      ],
+      [
+       660,
+       1740
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-2953447610": {
+   "website": {
+    "url": "https://locations.qdoba.com/us/il/chicago/100-n-lasalle-st.html",
+    "page": "https://locations.qdoba.com/us/il/chicago/100-n-lasalle-st",
+    "hours": {
+     "schedule": [
+      [
+       630,
+       1320
+      ],
+      [
+       420,
+       1260
+      ],
+      [
+       420,
+       1260
+      ],
+      [
+       420,
+       1260
+      ],
+      [
+       420,
+       1260
+      ],
+      [
+       420,
+       1320
+      ],
+      [
+       630,
+       1320
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-8455207195": {
+   "website": {
+    "url": "https://locations.baskinrobbins.com/il/chicago/600-s.-wabash-ave-339728-br",
+    "page": "https://locations.baskinrobbins.com/il/chicago/600-s.-wabash-ave-339728-br",
+    "hours": {
+     "schedule": [
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1320
+      ],
+      [
+       330,
+       1440
+      ],
+      [
+       0,
+       1439
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-368064192": {
+   "website": {
+    "url": "https://www.theberghoff.com/",
+    "page": "https://www.theberghoff.com/",
+    "image": {
+     "src": "https://www.theberghoff.com/wp-content/uploads/2022/11/Capture.jpg",
+     "width": 1200,
+     "height": 806
+    }
+   },
+   "commons": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Berghoff1.JPG/1280px-Berghoff1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Berghoff1.JPG",
+    "credit": "David K. Staub · CC BY-SA 2.5"
+   }
+  },
+  "osm-node-13260171801": {
+   "website": {
+    "url": "https://a-cup-of-joe.com",
+    "page": "https://a-cup-of-joe.com/",
+    "image": {
+     "src": "https://a-cup-of-joe.com/wp-content/uploads/2019/11/b7c50be2-d5fb-468e-937c-ddb1ba81b31e.jpg",
+     "width": 2048,
+     "height": 2048
+    }
+   }
+  },
+  "osm-node-4463574018": {
+   "website": {
+    "url": "https://iheartcafecito.com",
+    "page": "https://iheartcafecito.com/",
+    "image": {
+     "src": "https://static.spotapps.co/website_images/ab_websites/129757_website_v1/social_share.jpg",
+     "width": 1200,
+     "height": 800
+    }
+   }
+  },
+  "osm-node-4792338322": {
+   "website": {
+    "url": "https://locations.chipotle.com/il/chicago/233-w-lake-st",
+    "page": "https://locations.chipotle.com/il/chicago/233-w-lake-st",
+    "hours": {
+     "schedule": [
+      [
+       0,
+       1440
+      ],
+      [
+       630,
+       1080
+      ],
+      [
+       630,
+       1080
+      ],
+      [
+       630,
+       1080
+      ],
+      [
+       630,
+       1080
+      ],
+      [
+       630,
+       1080
+      ],
+      [
+       645,
+       960
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-4425271093": {
+   "website": {
+    "url": "https://locations.chipotle.com/il/chicago/10-e-jackson-blvd",
+    "page": "https://locations.chipotle.com/il/chicago/10-e-jackson-blvd",
+    "hours": {
+     "schedule": [
+      [
+       660,
+       1200
+      ],
+      [
+       630,
+       1320
+      ],
+      [
+       630,
+       1320
+      ],
+      [
+       630,
+       1320
+      ],
+      [
+       630,
+       1320
+      ],
+      [
+       630,
+       1320
+      ],
+      [
+       660,
+       1200
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-way-210270035": {
+   "commons": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Bottom_Lounge%2C_Chicago.jpg/1280px-Bottom_Lounge%2C_Chicago.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Bottom_Lounge,_Chicago.jpg",
+    "credit": "Mx. Granger · CC0"
+   }
+  },
+  "osm-way-210224420": {
+   "commons": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Rudy_Lozano_Branch.jpg/1280px-Rudy_Lozano_Branch.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Rudy_Lozano_Branch.jpg",
+    "credit": "Mahir256 · CC BY-SA 3.0"
+   }
+  },
+  "osm-node-11065147597": {
+   "website": {
+    "url": "https://locations.chipotle.com/il/chicago/1142-s-wabash-ave",
+    "page": "https://locations.chipotle.com/il/chicago/1142-s-wabash-ave",
+    "hours": {
+     "schedule": [
+      [
+       645,
+       1380
+      ],
+      [
+       645,
+       1380
+      ],
+      [
+       645,
+       1380
+      ],
+      [
+       645,
+       1380
+      ],
+      [
+       645,
+       1380
+      ],
+      [
+       645,
+       1380
+      ],
+      [
+       645,
+       1380
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-306737605": {
+   "website": {
+    "url": "https://restaurants.subway.com/united-states/il/chicago/120-s-state-st",
+    "page": "https://restaurants.subway.com/united-states/il/chicago/120-s-state-st",
+    "hours": {
+     "schedule": [
+      [
+       540,
+       1260
+      ],
+      [
+       540,
+       1260
+      ],
+      [
+       540,
+       1260
+      ],
+      [
+       540,
+       1260
+      ],
+      [
+       540,
+       1260
+      ],
+      [
+       540,
+       1260
+      ],
+      [
+       540,
+       1260
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-14244505261": {
+   "website": {
+    "url": "https://www.deeppurplchicago.com/",
+    "page": "https://www.deeppurplchicago.com/",
+    "hours": {
+     "schedule": [
+      [
+       480,
+       1200
+      ],
+      [
+       480,
+       1200
+      ],
+      [
+       480,
+       1200
+      ],
+      [
+       480,
+       1200
+      ],
+      [
+       480,
+       1200
+      ],
+      [
+       480,
+       1200
+      ],
+      [
+       480,
+       1200
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-2353615733": {
+   "website": {
+    "url": "https://mollyscupcakes.com/",
+    "page": "https://mollyscupcakes.com/",
+    "image": {
+     "src": "https://mollyscupcakes.com/wp-content/uploads/2024/01/billboard-img.jpg",
+     "width": 1920,
+     "height": 1320
+    }
+   }
+  },
+  "osm-node-12118894952": {
+   "website": {
+    "url": "https://www.capitalone.com/local/chicago-statestreet/",
+    "page": "https://www.capitalone.com/local/chicago-statestreet/",
+    "image": {
+     "src": "https://ecm.capitalone.com/WCM/bank/local/cafes/hero-banners/chicago-statestreet/state-street-opengraph.jpg",
+     "width": 750,
+     "height": 416
+    }
+   }
+  },
+  "osm-node-6290963934": {
+   "website": {
+    "url": "https://floandsantos.com/",
+    "page": "https://floandsantos.com/",
+    "image": {
+     "src": "https://isteam.wsimg.com/ip/988e940d-451a-4504-bd23-da6f2f3323f9/floandsantos-164.jpg",
+     "width": 2500,
+     "height": 1667
+    }
+   }
+  },
+  "osm-node-2354410813": {
+   "website": {
+    "url": "https://locations.baskinrobbins.com/il/chicago/1231-s-wabash-ave",
+    "page": "https://locations.baskinrobbins.com/il/chicago/1231-s-wabash-ave-310285-br",
+    "hours": {
+     "schedule": [
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-7874385736": {
+   "website": {
+    "url": "https://locations.baskinrobbins.com/il/chicago/31-e-adams-st-307992-br",
+    "page": "https://locations.baskinrobbins.com/il/chicago/31-e-adams-st-307992-br",
+    "hours": {
+     "schedule": [
+      [
+       0,
+       1439
+      ],
+      [
+       300,
+       1320
+      ],
+      [
+       300,
+       1320
+      ],
+      [
+       300,
+       1320
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-11161469347": {
+   "website": {
+    "url": "https://restaurants.subway.com/united-states/il/chicago/60-e-jackson-blvd",
+    "page": "https://restaurants.subway.com/united-states/il/chicago/60-e-jackson-blvd",
+    "hours": {
+     "schedule": [
+      [
+       600,
+       1020
+      ],
+      [
+       540,
+       1080
+      ],
+      [
+       540,
+       1080
+      ],
+      [
+       540,
+       1080
+      ],
+      [
+       540,
+       1080
+      ],
+      [
+       540,
+       1080
+      ],
+      [
+       600,
+       1020
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-12277818056": {
+   "website": {
+    "url": "https://312fishmarket.com/",
+    "page": "https://312fishmarket.com/",
+    "image": {
+     "src": "https://312fishmarket.com/wp-content/uploads/2020/10/crop-0-0-7252-5061-0-Eel-Over-Rice-Highlight-1024x715.jpg",
+     "width": 1024,
+     "height": 715
+    }
+   }
+  },
+  "osm-node-2356511946": {
+   "website": {
+    "url": "https://restaurants.subway.com/united-states/il/chicago/1212-south-michigan-ave",
+    "page": "https://restaurants.subway.com/united-states/il/chicago/1212-south-michigan-ave",
+    "hours": {
+     "schedule": [
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-13335102922": {
+   "website": {
+    "url": "https://www.brewsnbites.us/",
+    "page": "https://www.brewsnbites.us/",
+    "image": {
+     "src": "https://www.brewsnbites.us/uploads/b/c85110a0-318e-11ef-98f8-c7676e1df785/chicago%20riverwalk.jpg",
+     "width": 3024,
+     "height": 2160
+    }
+   }
+  },
+  "osm-way-210222910": {
+   "website": {
+    "url": "https://www.pleasanthousepub.com/",
+    "page": "https://pleasanthousepub.com/",
+    "image": {
+     "src": "https://static.spotapps.co/website_images/ab_websites/8454_website_v1/shared_image.jpg",
+     "width": 1200,
+     "height": 764
+    }
+   }
+  },
+  "osm-node-2819285780": {
+   "website": {
+    "url": "https://locations.chipotle.com/il/chicago/8-e-madison-st",
+    "page": "https://locations.chipotle.com/il/chicago/8-e-madison-st",
+    "hours": {
+     "schedule": [
+      [
+       660,
+       1200
+      ],
+      [
+       645,
+       1320
+      ],
+      [
+       645,
+       1320
+      ],
+      [
+       645,
+       1320
+      ],
+      [
+       645,
+       1320
+      ],
+      [
+       645,
+       1320
+      ],
+      [
+       660,
+       1200
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-13966107729": {
+   "website": {
+    "url": "https://locations.tropicalsmoothiecafe.com/il/chicago/24-e-madison-st",
+    "page": "https://locations.tropicalsmoothiecafe.com/il/chicago/24-e-madison-st",
+    "hours": {
+     "schedule": [
+      [
+       480,
+       1260
+      ],
+      [
+       420,
+       1260
+      ],
+      [
+       420,
+       1260
+      ],
+      [
+       420,
+       1260
+      ],
+      [
+       420,
+       1260
+      ],
+      [
+       420,
+       1260
+      ],
+      [
+       480,
+       1260
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-13290160976": {
+   "website": {
+    "url": "https://nepalhouseonline.com/",
+    "page": "https://nepalhouseonline.com/",
+    "hours": {
+     "schedule": [
+      [
+       600,
+       1275
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       600,
+       1275
+      ],
+      [
+       600,
+       1275
+      ],
+      [
+       600,
+       1275
+      ],
+      [
+       600,
+       1275
+      ],
+      [
+       600,
+       1275
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    },
+    "image": {
+     "src": "https://img1.wsimg.com/isteam/ip/3ff02cb6-6d4e-4286-901b-7bd9b6d586b7/NepalHouseBarAndGrill_ChickenMoMo.jpg",
+     "width": 2560,
+     "height": 1921
+    }
+   }
+  },
+  "osm-node-13290160975": {
+   "website": {
+    "url": "https://mysumisushi.com/",
+    "page": "https://mysumisushi.com/",
+    "hours": {
+     "schedule": [
+      [
+       690,
+       1290
+      ],
+      [
+       690,
+       1290
+      ],
+      [
+       690,
+       1290
+      ],
+      [
+       690,
+       1290
+      ],
+      [
+       690,
+       1290
+      ],
+      [
+       690,
+       1350
+      ],
+      [
+       690,
+       1350
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    },
+    "image": {
+     "src": "https://mysumisushi.com/assets/img/og-image.jpg",
+     "width": 1200,
+     "height": 630
+    }
+   }
+  },
+  "osm-node-6250070145": {
+   "website": {
+    "url": "https://acebounce.com/1901-restaurant",
+    "page": "https://www.acebounce.com/menus/",
+    "image": {
+     "src": "https://www.acebounce.com/wp-content/uploads/2024/09/PPX.jpg",
+     "width": 900,
+     "height": 747
+    }
+   }
+  },
+  "osm-node-8092911417": {
+   "website": {
+    "url": "https://giordanos.com/locations/south-loop/",
+    "page": "https://giordanos.com/locations/south-loop/",
+    "hours": {
+     "schedule": [
+      [
+       660,
+       1320
+      ],
+      [
+       660,
+       1320
+      ],
+      [
+       660,
+       1320
+      ],
+      [
+       660,
+       1320
+      ],
+      [
+       660,
+       1320
+      ],
+      [
+       660,
+       1440
+      ],
+      [
+       660,
+       1440
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-3575231496": {
+   "website": {
+    "url": "https://lascarola.com/",
+    "page": "https://lascarola.com/",
+    "image": {
+     "src": "https://lascarola.com/wp-content/uploads/2020/05/IMG_8667-scaled.jpg",
+     "width": 2560,
+     "height": 1707
+    }
+   }
+  },
+  "osm-node-3575231494": {
+   "website": {
+    "url": "https://pearlclubchicago.com/",
+    "page": "https://pearlclubchicago.com/",
+    "hours": {
+     "schedule": [
+      [
+       1020,
+       1440
+      ],
+      [
+       1020,
+       1440
+      ],
+      [
+       1020,
+       1440
+      ],
+      [
+       1020,
+       1440
+      ],
+      [
+       1020,
+       1500
+      ],
+      [
+       1020,
+       1560
+      ],
+      [
+       1020,
+       1560
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    },
+    "image": {
+     "src": "https://img1.wsimg.com/isteam/ip/f9c3ad3f-1435-4242-8919-a087ce461ad8/PearlClubInteriors_digital-6976.jpg",
+     "width": 2400,
+     "height": 1602
+    }
+   }
+  },
+  "osm-node-13293612474": {
+   "website": {
+    "url": "https://www.mikamichicago.com/",
+    "page": "https://mikamichicago.com/",
+    "hours": {
+     "schedule": [
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1320
+      ],
+      [
+       660,
+       1320
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    },
+    "image": {
+     "src": "https://static.spotapps.co/website_images/ab_websites/633738_website_v1/social_share.jpg",
+     "width": 960,
+     "height": 640
+    }
+   }
+  },
+  "osm-node-13290173044": {
+   "website": {
+    "url": "https://www.chicagowaffles.com/south-loop/",
+    "page": "https://www.chicagowaffles.com/south-loop/",
+    "hours": {
+     "schedule": [
+      [
+       420,
+       960
+      ],
+      [
+       420,
+       900
+      ],
+      [
+       420,
+       900
+      ],
+      [
+       420,
+       900
+      ],
+      [
+       420,
+       900
+      ],
+      [
+       420,
+       900
+      ],
+      [
+       420,
+       960
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-14150001691": {
+   "website": {
+    "url": "https://goldenash.salon/",
+    "page": "https://goldenash.salon/",
+    "image": {
+     "src": "https://img1.wsimg.com/isteam/ip/a78ebbf6-ed53-4213-8975-f85af85d6d49/_MG_7531.jpg",
+     "width": 2560,
+     "height": 1799
+    }
+   }
+  },
+  "osm-node-4076939403": {
+   "website": {
+    "url": "https://restaurants.subway.com/united-states/il/chicago/2352-west-cermak-road",
+    "page": "https://restaurants.subway.com/united-states/il/chicago/2352-west-cermak-road",
+    "hours": {
+     "schedule": [
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-2819236838": {
+   "website": {
+    "url": "https://restaurants.subway.com/united-states/il/chicago/50-e-washington",
+    "page": "https://restaurants.subway.com/united-states/il/chicago/50-e-washington",
+    "hours": {
+     "schedule": [
+      [
+       540,
+       1440
+      ],
+      [
+       480,
+       1440
+      ],
+      [
+       480,
+       1440
+      ],
+      [
+       480,
+       1440
+      ],
+      [
+       480,
+       1440
+      ],
+      [
+       480,
+       1440
+      ],
+      [
+       540,
+       1440
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-2535218213": {
+   "website": {
+    "url": "https://outputchicago.com/",
+    "page": "https://outputchicago.com/",
+    "hours": {
+     "schedule": [
+      [
+       660,
+       1410
+      ],
+      [
+       720,
+       1350
+      ],
+      [
+       720,
+       1350
+      ],
+      [
+       720,
+       1350
+      ],
+      [
+       660,
+       1350
+      ],
+      [
+       660,
+       1440
+      ],
+      [
+       660,
+       1440
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    },
+    "image": {
+     "src": "https://static.spotapps.co/website_images/ab_websites/13985_website_v1/social_back.jpg",
+     "width": 1907,
+     "height": 1271
+    }
+   }
+  },
+  "osm-node-1308260687": {
+   "commons": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/20070707_Intelligentsia.JPG/1280px-20070707_Intelligentsia.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:20070707_Intelligentsia.JPG",
+    "credit": "User:TonyTheTiger · CC BY-SA 3.0"
+   }
+  },
+  "osm-node-6757796329": {
+   "website": {
+    "url": "https://www.pizzeriaportofino.com",
+    "page": "https://www.pizzeriaportofino.com/",
+    "hours": {
+     "schedule": [
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1290
+      ],
+      [
+       660,
+       1290
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    },
+    "image": {
+     "src": "https://storage.googleapis.com/pizzeriaportofino_bucket/wp-content/uploads/leye-riviera-select-07jun2019-50x75-002.jpg",
+     "width": 1500,
+     "height": 1000
+    }
+   }
+  },
+  "osm-node-9396244905": {
+   "website": {
+    "url": "https://locations.tacobell.com/il/chicago/178-north-wabash-ave.html",
+    "page": "https://locations.tacobell.com/il/chicago/178-north-wabash-ave.html",
+    "hours": {
+     "schedule": [
+      [
+       345,
+       1560
+      ],
+      [
+       540,
+       1560
+      ],
+      [
+       540,
+       1560
+      ],
+      [
+       540,
+       1560
+      ],
+      [
+       540,
+       1560
+      ],
+      [
+       480,
+       1770
+      ],
+      [
+       345,
+       1770
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-13009875101": {
+   "website": {
+    "url": "https://www.chubbycattle.com/",
+    "page": "https://www.chubbycattle.com/",
+    "image": {
+     "src": "https://www.chubbycattle.com/wp-content/uploads/2023/05/NikuX-Los-Angeles-Grand-Opening-Bryan-Miraflor-Photography-202302-059-min-1024x683.jpg",
+     "width": 1024,
+     "height": 683
+    }
+   }
+  },
+  "osm-node-5571138424": {
+   "website": {
+    "url": "https://www.chicafeonline.com/",
+    "page": "https://www.chicafeonline.com/",
+    "image": {
+     "src": "https://d15z892a5np5w4.cloudfront.net/production/chi-cafe-chicago-il-3/images/b880e77569bef864f2/mobilemainbg.jpg",
+     "width": 800,
+     "height": 427
+    }
+   }
+  },
+  "osm-node-3750517760": {
+   "commons": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/20080602_Park_Grill_Plaza_from_AT%26T_Plaza.JPG/1280px-20080602_Park_Grill_Plaza_from_AT%26T_Plaza.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:20080602_Park_Grill_Plaza_from_AT%26T_Plaza.JPG",
+    "credit": "TonyTheTiger at en.wikipedia · CC BY-SA 3.0"
+   }
+  },
+  "osm-way-388608320": {
+   "commons": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Chicago_Public_Library_Chinatown_Branch-0554.jpg/1280px-Chicago_Public_Library_Chinatown_Branch-0554.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Chicago_Public_Library_Chinatown_Branch-0554.jpg",
+    "credit": "Paul R. Burley · CC BY-SA 4.0"
+   }
+  },
+  "osm-node-11162217427": {
+   "website": {
+    "url": "https://restaurants.fiveguys.com/180-n-michigan-ave",
+    "page": "https://restaurants.fiveguys.com/180-n-michigan-ave",
+    "hours": {
+     "schedule": [
+      [
+       600,
+       1380
+      ],
+      [
+       600,
+       1380
+      ],
+      [
+       600,
+       1380
+      ],
+      [
+       600,
+       1380
+      ],
+      [
+       600,
+       1380
+      ],
+      [
+       600,
+       1380
+      ],
+      [
+       600,
+       1380
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-6133744155": {
+   "website": {
+    "url": "https://www.perillachicago.com/perilla-steakhouse-overview/",
+    "page": "https://www.perillachicago.com/perilla-steakhouse-overview/",
+    "image": {
+     "src": "https://images.getbento.com/accounts/e318d5ca87918a062858115041fb609f/media/images/71793perilla_L7_022557020-1_SMALL.jpg?w=1200&fit=crop&auto=compress,format&cs=origin&h=600",
+     "width": 1200,
+     "height": 600
+    }
+   }
+  },
+  "osm-node-6256587729": {
+   "website": {
+    "url": "https://alkchicago.com/",
+    "page": "https://arlohotels.com/chicago-downtown-hotel/eat-and-drink/about-last-knife/",
+    "hours": {
+     "schedule": [
+      [
+       420,
+       1380
+      ],
+      [
+       420,
+       1380
+      ],
+      [
+       420,
+       1380
+      ],
+      [
+       420,
+       1380
+      ],
+      [
+       420,
+       1380
+      ],
+      [
+       420,
+       1380
+      ],
+      [
+       420,
+       1380
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    },
+    "image": {
+     "src": "https://arlohotels.com/chicago-downtown-hotel/wp-content/uploads/sites/7/2024/06/202406_Chicago_Lifestyle_Restaurant_WEBSRGB-085698-scaled.jpg",
+     "width": 2560,
+     "height": 1707
+    }
+   }
+  },
+  "osm-node-12987076501": {
+   "website": {
+    "url": "http://dongpoimpression.com",
+    "page": "https://www.dongpoimpression.com/",
+    "image": {
+     "src": "https://d15z892a5np5w4.cloudfront.net/production/greenfish-poke-roll-wauwatosa-wi-3/images/b882b791726debf48e/slide1-20230410070118.jpg",
+     "width": 1920,
+     "height": 1080
+    }
+   }
+  },
+  "osm-node-11098503576": {
+   "website": {
+    "url": "https://locations.einsteinbros.com/us/il/chicago/400-n-dearborn-st",
+    "page": "https://locations.einsteinbros.com/us/il/chicago/400-n-dearborn-st",
+    "hours": {
+     "schedule": [
+      [
+       360,
+       840
+      ],
+      [
+       360,
+       840
+      ],
+      [
+       360,
+       840
+      ],
+      [
+       360,
+       840
+      ],
+      [
+       360,
+       840
+      ],
+      [
+       360,
+       840
+      ],
+      [
+       360,
+       840
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-6304001071": {
+   "website": {
+    "url": "https://tempestamarket.com/",
+    "page": "https://tempestamarket.com/",
+    "image": {
+     "src": "https://static.spotapps.co/website_images/ab_websites/70047_website_v1/social_share_img.jpg",
+     "width": 1382,
+     "height": 922
+    }
+   }
+  },
+  "osm-way-153320976": {
+   "commons": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Chicago_Varnish_Co._Building_Sign_Chicago_June_30%2C_2012-16.jpg/1280px-Chicago_Varnish_Co._Building_Sign_Chicago_June_30%2C_2012-16.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Chicago_Varnish_Co._Building_Sign_Chicago_June_30,_2012-16.jpg",
+    "credit": "Victorgrigas · CC BY-SA 3.0"
+   }
+  },
+  "osm-node-5458142438": {
+   "website": {
+    "url": "http://chicago.wearespin.com/",
+    "page": "https://wearespin.com/location/chicago/",
+    "image": {
+     "src": "https://wearespin.com/wp-content/uploads/SPIN-Chicago-Venue-170628105959.jpg",
+     "width": 1920,
+     "height": 1280
+    }
+   }
+  },
+  "osm-node-6299349213": {
+   "website": {
+    "url": "https://www.joychicago.com/parlay",
+    "page": "https://joychicago.com/parlay",
+    "image": {
+     "src": "https://octane.cdn.ing/api/v1/images/transform?url=https://cdn.ing/assets/files/record/48336/77e9awet2evaiitt1ciwt2p4ka8x&w=1200&h=630&q=85&f=webp&fit=cover&apiKey=os-be0a9afa-4bc0-4a19-a9c2-72740c8b15dc",
+     "width": 1200,
+     "height": 630
+    }
+   }
+  },
+  "osm-node-5457211334": {
+   "website": {
+    "url": "https://www.joychicago.com/",
+    "page": "https://joychicago.com/",
+    "image": {
+     "src": "https://octane.cdn.ing/api/v1/images/transform?url=https://cdn.ing/assets/files/record/48336/77e9awet2evaiitt1ciwt2p4ka8x&w=1200&h=630&q=85&f=webp&fit=cover&apiKey=os-be0a9afa-4bc0-4a19-a9c2-72740c8b15dc",
+     "width": 1200,
+     "height": 630
+    }
+   }
+  },
+  "osm-node-11759257310": {
+   "website": {
+    "url": "https://restaurants.subway.com/united-states/il/chicago/1916-s-state-st",
+    "page": "https://restaurants.subway.com/united-states/il/chicago/1916-s-state-st",
+    "hours": {
+     "schedule": [
+      [
+       600,
+       1140
+      ],
+      [
+       420,
+       1260
+      ],
+      [
+       420,
+       1260
+      ],
+      [
+       420,
+       1260
+      ],
+      [
+       420,
+       1260
+      ],
+      [
+       420,
+       1260
+      ],
+      [
+       540,
+       1260
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-5457439788": {
+   "website": {
+    "url": "http://rpmrestaurants.com/rpmsteak/chicago/",
+    "page": "https://www.rpmrestaurants.com/RPM-steak-Chicago/",
+    "hours": {
+     "schedule": [
+      [
+       900,
+       1260
+      ],
+      [
+       960,
+       1260
+      ],
+      [
+       960,
+       1260
+      ],
+      [
+       960,
+       1260
+      ],
+      [
+       960,
+       1260
+      ],
+      [
+       960,
+       1320
+      ],
+      [
+       900,
+       1320
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    },
+    "image": {
+     "src": "https://storage.googleapis.com/rpmrestaurants_bucket/wp-content/uploads/6fc39c5b-rpm-steak_westholme-strip-2.jpg",
+     "width": 1600,
+     "height": 1066
+    }
+   }
+  },
+  "osm-node-4831308139": {
+   "website": {
+    "url": "https://www.xiancuisinechicago.com/",
+    "page": "https://www.xiancuisinechicago.com/",
+    "image": {
+     "src": "https://d15z892a5np5w4.cloudfront.net/production/chef-shangri-la-north-riverside-il-3/images/b88135374daea514d9/mobile-bg-20230206035858.jpg",
+     "width": 800,
+     "height": 497
+    }
+   }
+  },
+  "osm-node-6291816768": {
+   "website": {
+    "url": "https://giordanos.com/locations/prudential-plaza-millenium-park/",
+    "page": "https://giordanos.com/locations/prudential-plaza-millennium-park/",
+    "hours": {
+     "schedule": [
+      [
+       630,
+       1320
+      ],
+      [
+       630,
+       1380
+      ],
+      [
+       630,
+       1380
+      ],
+      [
+       630,
+       1380
+      ],
+      [
+       630,
+       1380
+      ],
+      [
+       630,
+       1380
+      ],
+      [
+       630,
+       1380
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-4266779691": {
+   "website": {
+    "url": "https://www.tortoisesupperclub.com/",
+    "page": "https://tortoisesupperclub.com/",
+    "hours": {
+     "schedule": [
+      null,
+      null,
+      [
+       1020,
+       1260
+      ],
+      [
+       1020,
+       1260
+      ],
+      [
+       1020,
+       1260
+      ],
+      [
+       1020,
+       1410
+      ],
+      [
+       1020,
+       1410
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-5458095214": {
+   "website": {
+    "url": "http://ilporcellinochicago.com/",
+    "page": "https://www.ilporcellinochicago.com/",
+    "image": {
+     "src": "https://storage.googleapis.com/ilporcellinochicago_bucket/wp-content/uploads/IlPorcellino_Interior_3.jpg",
+     "width": 1200,
+     "height": 800
+    }
+   }
+  },
+  "osm-node-12962361242": {
+   "website": {
+    "url": "https://www.thestaley.com/",
+    "page": "https://www.thestaley.com/",
+    "image": {
+     "src": "https://cdn.prod.website-files.com/6785a0c5731a8e89a054f599/6790067af7f8d8c7afe1a160_Spread2.webp",
+     "width": 3500,
+     "height": 2333
+    }
+   }
+  },
+  "osm-node-11854008196": {
+   "website": {
+    "url": "https://www.lilbabareeba.com",
+    "page": "https://www.lilbabareeba.com/",
+    "image": {
+     "src": "https://storage.googleapis.com/lilbabareeba_bucket/wp-content/uploads/LBBR-Sangria-Tapas_Small-Plates_Lil-Ba-Ba-Reeba_DSCF6936.jpg",
+     "width": 1200,
+     "height": 800
+    }
+   }
+  },
+  "osm-node-5443133144": {
+   "website": {
+    "url": "https://www.ocallaghanspub.com/",
+    "page": "https://ocallaghanspub.com/",
+    "image": {
+     "src": "https://static.spotapps.co/website_images/ab_websites/3549_website/catering_left.jpg",
+     "width": 1200,
+     "height": 800
+    }
+   }
+  },
+  "osm-node-2819167161": {
+   "website": {
+    "url": "https://locations.chipotle.com/il/chicago/316-n-michigan-ave",
+    "page": "https://locations.chipotle.com/il/chicago/316-n-michigan-ave",
+    "hours": {
+     "schedule": [
+      [
+       630,
+       1320
+      ],
+      [
+       630,
+       1320
+      ],
+      [
+       630,
+       1320
+      ],
+      [
+       630,
+       1320
+      ],
+      [
+       630,
+       1320
+      ],
+      [
+       630,
+       1320
+      ],
+      [
+       630,
+       1320
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-2819072954": {
+   "website": {
+    "url": "https://locations.jimmyjohns.com/il/chicago/sandwiches-1037.html",
+    "page": "https://locations.jimmyjohns.com/il/chicago/sandwiches-1037.html",
+    "hours": {
+     "schedule": [
+      [
+       0,
+       1440
+      ],
+      [
+       600,
+       1200
+      ],
+      [
+       600,
+       1200
+      ],
+      [
+       600,
+       1200
+      ],
+      [
+       600,
+       1200
+      ],
+      [
+       600,
+       1200
+      ],
+      [
+       600,
+       1020
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-way-165243564": {
+   "website": {
+    "url": "https://locations.tonysfreshmarket.com/ll/us/il/chicago/2551-w-cermak-rd",
+    "page": "https://locations.tonysfreshmarket.com/ll/us/il/chicago/2551-w-cermak-rd",
+    "hours": {
+     "schedule": [
+      [
+       420,
+       1320
+      ],
+      [
+       420,
+       1320
+      ],
+      [
+       420,
+       1320
+      ],
+      [
+       420,
+       1320
+      ],
+      [
+       420,
+       1320
+      ],
+      [
+       420,
+       1320
+      ],
+      [
+       420,
+       1320
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-14150041253": {
+   "website": {
+    "url": "https://professorpizza.com/west-town/",
+    "page": "https://professorpizza.com/west-town/",
+    "image": {
+     "src": "https://professorpizza.com/wp-content/uploads/2025/09/Professor-Pizza-Catering-Chicago-1.webp",
+     "width": 1600,
+     "height": 900
+    }
+   }
+  },
+  "osm-way-210538066": {
+   "website": {
+    "url": "https://www.emperorschoicerestaurant.com/",
+    "page": "https://www.emperorschoicerestaurant.com/",
+    "image": {
+     "src": "https://d15z892a5np5w4.cloudfront.net/production/emperors-choice-chicago-il-4/images/b884f65c4a63214482/slide1-20220217060850.jpg",
+     "width": 1920,
+     "height": 1080
+    }
+   }
+  },
+  "osm-node-2578985158": {
+   "website": {
+    "url": "http://threedotschicago.com/",
+    "page": "https://www.threedotschicago.com/",
+    "image": {
+     "src": "https://storage.googleapis.com/threedots_2023_bucket/wp-content/uploads/677eef49-tiki-bar.jpeg",
+     "width": 1600,
+     "height": 1067
+    }
+   }
+  },
+  "osm-way-210538091": {
+   "website": {
+    "url": "https://www.legendtastyhouse.com/",
+    "page": "https://www.legendtastyhouse.com/",
+    "image": {
+     "src": "https://d15z892a5np5w4.cloudfront.net/production/legend-tasty-house-chicago-il-4/images/b885c48ecd9a1de4ef/slide2-20200619084024.jpg",
+     "width": 1920,
+     "height": 1080
+    }
+   }
+  },
+  "osm-node-12602162921": {
+   "website": {
+    "url": "https://locations.baskinrobbins.com/il/chicago/2448-w-24th-st-364102-br",
+    "page": "https://locations.baskinrobbins.com/il/chicago/2448-w-24th-st-364102-br",
+    "hours": {
+     "schedule": [
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-5458144419": {
+   "website": {
+    "url": "http://sushisanrestaurant.com/",
+    "page": "https://www.sushisanrestaurant.com/",
+    "image": {
+     "src": "https://storage.googleapis.com/sushisan2022_bucket/wp-content/uploads/40dd2191-sushisan_san-sets_megatron_placement_2.jpg",
+     "width": 1500,
+     "height": 1000
+    }
+   }
+  },
+  "osm-node-6412859404": {
+   "website": {
+    "url": "https://www.ocean-prime.com/locations-menus/chicago",
+    "page": "https://ocean-prime.com/locations-menus/chicago/",
+    "image": {
+     "src": "https://ocean-prime.com/wp-content/uploads/2022/07/Ocean-Prime-Chicago.jpg",
+     "width": 2300,
+     "height": 1533
+    }
+   }
+  },
+  "osm-node-5458117354": {
+   "website": {
+    "url": "http://www.pizzeriaora.com/",
+    "page": "https://www.pizzeriaora.com/",
+    "image": {
+     "src": "https://lh3.googleusercontent.com/pqgcPb2pbEf0UgYbyH0b16jrO-ssnlOQguWdYXafxpIqJ76aS4R_Dm-70GhEs1axOCXEF4-GNeAmgEQM9DMc-6QXSf3rBn3NO1Yt=s0",
+     "width": 3840,
+     "height": 2560
+    }
+   }
+  },
+  "osm-node-5029780621": {
+   "website": {
+    "url": "http://rpmrestaurants.com/rpmitalian/chicago/",
+    "page": "https://www.rpmrestaurants.com/RPM-Italian-Chicago/",
+    "image": {
+     "src": "https://storage.googleapis.com/rpmrestaurants_bucket/wp-content/uploads/c3fb71b2-rpm-italian_tignanello-antinori-sangiovese-cabernet-sauvignon-and-cabernet-franc-wine-by-the-glass-with-spaghetti-meatball-1006.jpg",
+     "width": 1600,
+     "height": 1177
+    }
+   }
+  },
+  "osm-node-12964893501": {
+   "website": {
+    "url": "https://www.slurpslurpnoodles.com/",
+    "page": "https://www.slurpslurpnoodles.com/",
+    "image": {
+     "src": "https://d15z892a5np5w4.cloudfront.net/production/slurp-slurp-noodles-chicago-il-3/images/b88cc049ccbac0e419/slide1-20201027032342.jpg",
+     "width": 1920,
+     "height": 1080
+    }
+   }
+  },
+  "osm-node-7567728968": {
+   "website": {
+    "url": "https://restaurants.subway.com/united-states/il/chicago/1118-south-kedzie-ave",
+    "page": "https://restaurants.subway.com/united-states/il/chicago/1118-south-kedzie-ave",
+    "hours": {
+     "schedule": [
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-5798411954": {
+   "website": {
+    "url": "https://restaurants.subway.com/united-states/il/chicago/447-n-state-st",
+    "page": "https://restaurants.subway.com/united-states/il/chicago/447-n-state-st",
+    "hours": {
+     "schedule": [
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-3581436121": {
+   "website": {
+    "url": "https://www.spokeandbird.com/",
+    "page": "https://www.spokeandbird.com/",
+    "hours": {
+     "schedule": [
+      [
+       420,
+       1020
+      ],
+      [
+       420,
+       1020
+      ],
+      [
+       420,
+       1020
+      ],
+      [
+       420,
+       1020
+      ],
+      [
+       420,
+       1020
+      ],
+      [
+       420,
+       1140
+      ],
+      [
+       420,
+       1140
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-5458152669": {
+   "website": {
+    "url": "https://www.thedrifterchicago.com/",
+    "page": "https://thedrifterchicago.com/",
+    "hours": {
+     "schedule": [
+      null,
+      null,
+      null,
+      [
+       1020,
+       1560
+      ],
+      [
+       1020,
+       1560
+      ],
+      [
+       1020,
+       1560
+      ],
+      [
+       1020,
+       1620
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    },
+    "image": {
+     "src": "https://thedrifterchicago.com/wp-content/uploads/2024/08/lua-daiquiri-1-scaled.jpg",
+     "width": 2560,
+     "height": 1707
+    }
+   }
+  },
+  "osm-way-897839772": {
+   "website": {
+    "url": "https://locations.tacobell.com/il/chicago/2410-s-western-ave.html",
+    "page": "https://locations.tacobell.com/il/chicago/2410-s-western-ave.html",
+    "hours": {
+     "schedule": [
+      [
+       [
+        0,
+        1440
+       ],
+       [
+        420,
+        1440
+       ]
+      ],
+      [
+       [
+        0,
+        1440
+       ],
+       [
+        420,
+        1440
+       ]
+      ],
+      [
+       [
+        0,
+        1440
+       ],
+       [
+        420,
+        1440
+       ]
+      ],
+      [
+       [
+        0,
+        1440
+       ],
+       [
+        420,
+        1440
+       ]
+      ],
+      [
+       [
+        0,
+        1440
+       ],
+       [
+        420,
+        1440
+       ]
+      ],
+      [
+       [
+        0,
+        1440
+       ],
+       [
+        420,
+        1440
+       ]
+      ],
+      [
+       [
+        0,
+        1440
+       ],
+       [
+        420,
+        1440
+       ]
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-5455670908": {
+   "website": {
+    "url": "https://www.starofsiamchicago.com/",
+    "page": "https://starofsiamchicago.com/",
+    "image": {
+     "src": "https://static.spotapps.co/website_images/ab_websites/227027_website_v1/catering_left.jpg",
+     "width": 1131,
+     "height": 844
+    }
+   }
+  },
+  "osm-way-220089987": {
+   "commons": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/McDonald%27s_Chicago_Flagship.jpg/1280px-McDonald%27s_Chicago_Flagship.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:McDonald%27s_Chicago_Flagship.jpg",
+    "credit": "Jrbarc! · CC BY-SA 4.0"
+   }
+  },
+  "osm-way-210680201": {
+   "website": {
+    "url": "https://www.greendoorchicago.com/",
+    "page": "https://greendoorchicago.com/",
+    "hours": {
+     "schedule": [
+      [
+       690,
+       1260
+      ],
+      [
+       1020,
+       1320
+      ],
+      [
+       960,
+       1440
+      ],
+      [
+       960,
+       1560
+      ],
+      [
+       960,
+       1560
+      ],
+      [
+       690,
+       1560
+      ],
+      [
+       690,
+       1620
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   },
+   "commons": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Greendoor.jpg/1280px-Greendoor.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Greendoor.jpg",
+    "credit": "Protobowladdict · CC BY 4.0"
+   }
+  },
+  "osm-node-13973198844": {
+   "website": {
+    "url": "https://locations.chipotle.com/il/chicago/6-w-grand-ave",
+    "page": "https://locations.chipotle.com/il/chicago/6-w-grand-ave",
+    "hours": {
+     "schedule": [
+      [
+       600,
+       1380
+      ],
+      [
+       600,
+       1380
+      ],
+      [
+       600,
+       1380
+      ],
+      [
+       600,
+       1380
+      ],
+      [
+       600,
+       1380
+      ],
+      [
+       600,
+       1380
+      ],
+      [
+       600,
+       1380
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-4465471490": {
+   "website": {
+    "url": "http://shawscrabhouse.com/chicago/",
+    "page": "https://www.shawscrabhouse.com/chicago-illinois/",
+    "image": {
+     "src": "https://storage.googleapis.com/shawscrabhouse_bucket/wp-content/uploads/99d76442-wholelobsterandcrabshaws-7.jpg",
+     "width": 1200,
+     "height": 800
+    }
+   }
+  },
+  "osm-way-240806164": {
+   "website": {
+    "url": "https://clublago.com/",
+    "page": "https://clublago.com/",
+    "hours": {
+     "schedule": [
+      [
+       0,
+       1440
+      ],
+      [
+       660,
+       1320
+      ],
+      [
+       660,
+       1320
+      ],
+      [
+       660,
+       1320
+      ],
+      [
+       660,
+       1320
+      ],
+      [
+       660,
+       1380
+      ],
+      [
+       660,
+       1380
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-11082605590": {
+   "website": {
+    "url": "https://locations.baskinrobbins.com/il/chicago/2477-s-archer-ave-337399-br",
+    "page": "https://locations.baskinrobbins.com/il/chicago/2477-s-archer-ave-337399-br",
+    "hours": {
+     "schedule": [
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-14148951957": {
+   "website": {
+    "url": "https://dannyhairstudios.com/",
+    "page": "https://dannyhairstudios.com/",
+    "image": {
+     "src": "https://img1.wsimg.com/isteam/stock/opgV6kp",
+     "width": 1247,
+     "height": 841
+    }
+   }
+  },
+  "osm-node-6316916580": {
+   "website": {
+    "url": "http://www.wildfirerestaurant.com/chicago/",
+    "page": "https://www.wildfirerestaurant.com/chicago",
+    "hours": {
+     "schedule": [
+      [
+       960,
+       1230
+      ],
+      [
+       960,
+       1230
+      ],
+      [
+       960,
+       1230
+      ],
+      [
+       960,
+       1230
+      ],
+      [
+       960,
+       1230
+      ],
+      [
+       960,
+       1260
+      ],
+      [
+       960,
+       1260
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-14148951954": {
+   "website": {
+    "url": "https://starshipsalon.glossgenius.com/",
+    "page": "https://starshipsalon.glossgenius.com/",
+    "hours": {
+     "schedule": [
+      [
+       0,
+       1440
+      ],
+      [
+       570,
+       900
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       570,
+       900
+      ],
+      [
+       570,
+       900
+      ],
+      [
+       540,
+       900
+      ],
+      [
+       0,
+       1440
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-5586698395": {
+   "website": {
+    "url": "https://restaurants.subway.com/united-states/il/chicago/8-west-ohio-street",
+    "page": "https://restaurants.subway.com/united-states/il/chicago/8-west-ohio-street",
+    "hours": {
+     "schedule": [
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-14148755311": {
+   "website": {
+    "url": "https://dagsdelivers.com/ogden-chicago/",
+    "page": "https://dagsdelivers.com/ogden-chicago/",
+    "hours": {
+     "schedule": [
+      [
+       660,
+       1320
+      ],
+      [
+       600,
+       1260
+      ],
+      [
+       600,
+       1260
+      ],
+      [
+       600,
+       1320
+      ],
+      [
+       600,
+       1320
+      ],
+      [
+       600,
+       1380
+      ],
+      [
+       660,
+       1380
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    },
+    "image": {
+     "src": "https://dagsdelivers.com/wp-content/uploads/2020/10/river-west-about.jpg",
+     "width": 600,
+     "height": 544
+    }
+   }
+  },
+  "osm-node-6298813013": {
+   "website": {
+    "url": "https://omakaseshoji.com",
+    "page": "https://omakaseshoji.com/",
+    "hours": {
+     "schedule": [
+      [
+       1020,
+       1440
+      ],
+      null,
+      [
+       1050,
+       1380
+      ],
+      [
+       1050,
+       1380
+      ],
+      [
+       1050,
+       1380
+      ],
+      [
+       1020,
+       1440
+      ],
+      [
+       1020,
+       1440
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-5458087082": {
+   "website": {
+    "url": "https://fabcakeschicago.com/",
+    "page": "https://fabcakeschicago.com/",
+    "image": {
+     "src": "https://fabcakeschicago.com/wp-content/uploads/2024/06/IMG_0067-e1719445903453.jpg",
+     "width": 640,
+     "height": 320
+    }
+   }
+  },
+  "osm-node-8701833923": {
+   "website": {
+    "url": "https://www.goddessandthebaker.com/location/grand-ave/",
+    "page": "https://www.goddessandthebaker.com/location/grand-ave/",
+    "hours": {
+     "schedule": [
+      [
+       480,
+       900
+      ],
+      [
+       420,
+       960
+      ],
+      [
+       420,
+       960
+      ],
+      [
+       420,
+       960
+      ],
+      [
+       420,
+       960
+      ],
+      [
+       420,
+       960
+      ],
+      [
+       480,
+       960
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-13435748389": {
+   "website": {
+    "url": "https://www.gingiechicago.com/",
+    "page": "https://www.gingiechicago.com/",
+    "hours": {
+     "schedule": [
+      [
+       1020,
+       1320
+      ],
+      [
+       1020,
+       1320
+      ],
+      [
+       1020,
+       1320
+      ],
+      [
+       1020,
+       1320
+      ],
+      [
+       1020,
+       1320
+      ],
+      [
+       1020,
+       1350
+      ],
+      [
+       1020,
+       1350
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-13867451697": {
+   "website": {
+    "url": "https://restaurants.subway.com/united-states/il/chicago/1958-w-chicago-ave",
+    "page": "https://restaurants.subway.com/united-states/il/chicago/1958-w-chicago-ave",
+    "hours": {
+     "schedule": [
+      [
+       480,
+       1320
+      ],
+      [
+       420,
+       1320
+      ],
+      [
+       420,
+       1320
+      ],
+      [
+       420,
+       1320
+      ],
+      [
+       420,
+       1320
+      ],
+      [
+       420,
+       1320
+      ],
+      [
+       480,
+       1320
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-6306783213": {
+   "website": {
+    "url": "https://tryzubchicago.com/",
+    "page": "https://tryzubchicago.com/",
+    "hours": {
+     "schedule": [
+      [
+       660,
+       1260
+      ],
+      null,
+      [
+       1020,
+       1260
+      ],
+      [
+       1020,
+       1260
+      ],
+      [
+       1020,
+       1260
+      ],
+      [
+       1020,
+       1320
+      ],
+      [
+       660,
+       1320
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-14149994631": {
+   "website": {
+    "url": "https://www.chicagobodywaxing.com/",
+    "page": "https://www.chicagobodywaxing.com/",
+    "image": {
+     "src": "https://ded7t1cra1lh5.cloudfront.net/site_banners/33234/original/peony-785300_1280.jpg?1481050734",
+     "width": 1280,
+     "height": 853
+    }
+   }
+  },
+  "osm-node-3641173764": {
+   "website": {
+    "url": "https://www.thegwenchicago.com/",
+    "page": "https://www.thegwenchicago.com/",
+    "image": {
+     "src": "https://www.thegwenchicago.com/content/uploads/2021/07/The-Gwen-Exterior-from-street-dusk-crop-1626900664-1536x731.jpg",
+     "width": 1440,
+     "height": 685
+    }
+   }
+  },
+  "osm-node-10948223739": {
+   "website": {
+    "url": "https://restaurants.subway.com/united-states/il/chicago/333-east-benton-place",
+    "page": "https://restaurants.subway.com/united-states/il/chicago/333-east-benton-place",
+    "hours": {
+     "schedule": [
+      [
+       540,
+       1260
+      ],
+      [
+       540,
+       1320
+      ],
+      [
+       540,
+       1320
+      ],
+      [
+       540,
+       1320
+      ],
+      [
+       540,
+       1320
+      ],
+      [
+       540,
+       1320
+      ],
+      [
+       540,
+       1380
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-14148813606": {
+   "website": {
+    "url": "https://locations.wingstop.com/il/chicago/wingstop-1501-chicago-il-60642",
+    "page": "https://locations.wingstop.com/il/chicago/wingstop-1501-chicago-il-60642",
+    "hours": {
+     "schedule": [
+      [
+       630,
+       1500
+      ],
+      [
+       630,
+       1500
+      ],
+      [
+       630,
+       1500
+      ],
+      [
+       630,
+       1500
+      ],
+      [
+       630,
+       1500
+      ],
+      [
+       630,
+       1500
+      ],
+      [
+       630,
+       1500
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-5458115445": {
+   "website": {
+    "url": "http://osteriaviastato.com/",
+    "page": "https://www.osteriaviastato.com/",
+    "image": {
+     "src": "https://storage.googleapis.com/osteriaviastato2022_bucket/wp-content/uploads/932b5a56-osteria-via-stato_spaghetti-arrabiata_2.jpg",
+     "width": 1500,
+     "height": 1119
+    }
+   }
+  },
+  "osm-node-6304139897": {
+   "website": {
+    "url": "https://windycityribs.net/",
+    "page": "https://windycityribs.net/",
+    "hours": {
+     "schedule": [
+      [
+       960,
+       1440
+      ],
+      [
+       960,
+       1440
+      ],
+      [
+       960,
+       1440
+      ],
+      [
+       960,
+       1440
+      ],
+      [
+       960,
+       1440
+      ],
+      [
+       960,
+       1560
+      ],
+      [
+       960,
+       1620
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-12470568647": {
+   "website": {
+    "url": "https://www.thepalm.com/location/the-palm-chicago/",
+    "page": "https://www.thepalm.com/location/the-palm-chicago/",
+    "image": {
+     "src": "https://images.getbento.com/accounts/aeb53c8d11e6c8c1cb67dcce0b0356a8/media/images/19925Image_2020-07-24_at_9.59.11_AM.png?w=1200&fit=crop&auto=compress,format&cs=origin&h=600",
+     "width": 1200,
+     "height": 600
+    }
+   }
+  },
+  "osm-node-5455726917": {
+   "website": {
+    "url": "https://steak48.com/",
+    "page": "https://www.steak48.com/",
+    "image": {
+     "src": "https://www.steak48.com/wp-content/uploads/2025/04/DSC02666-Large-1.webp",
+     "width": 1280,
+     "height": 853
+    }
+   }
+  },
+  "osm-node-3918944637": {
+   "commons": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Illycaff%C3%A8.jpg/1280px-Illycaff%C3%A8.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Illycaff%C3%A8.jpg",
+    "credit": "Tiesse · Public domain"
+   }
+  },
+  "osm-node-12520661802": {
+   "website": {
+    "url": "https://unamorchicago.com/",
+    "page": "https://unamorchicago.com/",
+    "image": {
+     "src": "https://cdn.prod.website-files.com/69a73aa6ed02a0c83bbcb50b/69ab090da57b62b3d41b3447_SEO.jpg",
+     "width": 1200,
+     "height": 630
+    }
+   }
+  },
+  "osm-node-6269627500": {
+   "website": {
+    "url": "https://cafecentralchicago.com/",
+    "page": "https://cafecentralchicago.com/",
+    "image": {
+     "src": "https://cafecentralchicago.com/wp-content/uploads/2023/12/Jibarito-Sandwich-p-1080.jpg",
+     "width": 1080,
+     "height": 1183
+    }
+   }
+  },
+  "osm-node-13290117249": {
+   "website": {
+    "url": "https://ilculaccino.com/",
+    "page": "https://ilculaccino.com/",
+    "image": {
+     "src": "https://ilculaccino.com/wp-content/uploads/2019/08/ilc-facebook-og-image.jpg",
+     "width": 1200,
+     "height": 630
+    }
+   }
+  },
+  "osm-node-8442102022": {
+   "website": {
+    "url": "https://locations.tacobell.com/il/chicago/3350-w--roosevelt-rd.html",
+    "page": "https://locations.tacobell.com/il/chicago/3350-w--roosevelt-rd.html",
+    "hours": {
+     "schedule": [
+      [
+       [
+        420,
+        1560
+       ],
+       [
+        540,
+        1260
+       ]
+      ],
+      [
+       [
+        420,
+        1560
+       ],
+       [
+        540,
+        1260
+       ]
+      ],
+      [
+       [
+        420,
+        1560
+       ],
+       [
+        540,
+        1260
+       ]
+      ],
+      [
+       [
+        420,
+        1560
+       ],
+       [
+        540,
+        1260
+       ]
+      ],
+      [
+       [
+        420,
+        1560
+       ],
+       [
+        540,
+        1260
+       ]
+      ],
+      [
+       [
+        420,
+        1620
+       ],
+       [
+        540,
+        1260
+       ]
+      ],
+      [
+       [
+        420,
+        1620
+       ],
+       [
+        540,
+        1260
+       ]
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-14148435062": {
+   "website": {
+    "url": "https://www.refinedbarber.co/barbershop-in-noble-square",
+    "page": "https://refinedbarber.co/barbershop-in-noble-square",
+    "hours": {
+     "schedule": [
+      [
+       660,
+       900
+      ],
+      [
+       600,
+       1140
+      ],
+      [
+       600,
+       1140
+      ],
+      [
+       600,
+       1140
+      ],
+      [
+       600,
+       1140
+      ],
+      [
+       600,
+       1140
+      ],
+      [
+       600,
+       1020
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-5457984857": {
+   "website": {
+    "url": "https://www.hqrivernorth.com/",
+    "page": "https://www.hqrivernorth.com/",
+    "image": {
+     "src": "https://irp.cdn-website.com/c58d78df/dms3rep/multi/opt/8624719Aug-HQBCRN-0142+%281%29+%281%29-9f8b4803-1920w.jpg",
+     "width": 1200,
+     "height": 857
+    }
+   }
+  },
+  "osm-node-10866618551": {
+   "website": {
+    "url": "https://www.eddebevics.com/",
+    "page": "https://www.eddebevics.com/",
+    "hours": {
+     "schedule": [
+      [
+       480,
+       1260
+      ],
+      [
+       480,
+       1260
+      ],
+      [
+       480,
+       1260
+      ],
+      [
+       480,
+       1260
+      ],
+      [
+       480,
+       1260
+      ],
+      [
+       480,
+       1260
+      ],
+      [
+       480,
+       1260
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-12104351977": {
+   "website": {
+    "url": "https://deeppurplchicago.com/",
+    "page": "https://www.deeppurplchicago.com/",
+    "hours": {
+     "schedule": [
+      [
+       480,
+       1260
+      ],
+      [
+       480,
+       1260
+      ],
+      [
+       480,
+       1260
+      ],
+      [
+       480,
+       1260
+      ],
+      [
+       480,
+       1260
+      ],
+      [
+       480,
+       1260
+      ],
+      [
+       480,
+       1260
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-3660900084": {
+   "website": {
+    "url": "https://locations.jimmyjohns.com/il/chicago/sandwiches-1486.html",
+    "page": "https://locations.jimmyjohns.com/il/chicago/sandwiches-1486.html",
+    "hours": {
+     "schedule": [
+      [
+       600,
+       1260
+      ],
+      [
+       600,
+       1260
+      ],
+      [
+       600,
+       1260
+      ],
+      [
+       600,
+       1260
+      ],
+      [
+       600,
+       1260
+      ],
+      [
+       600,
+       1260
+      ],
+      [
+       600,
+       1260
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-7873834324": {
+   "website": {
+    "url": "https://locations.baskinrobbins.com/il/chicago/200-e-ohio-st-338802-br",
+    "page": "https://locations.baskinrobbins.com/il/chicago/200-e-ohio-st-338802-br",
+    "hours": {
+     "schedule": [
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-6324376885": {
+   "website": {
+    "url": "https://www.marriott.com/hotels/hotel-information/restaurant/chigs-sheraton-grand-chicago?program=spg",
+    "page": "https://www.marriott.com/en-us/hotels/chigs-sheraton-grand-chicago-riverwalk/dining/",
+    "image": {
+     "src": "https://cache.marriott.com/is/image/marriotts7prod/si-chigs-chicago-river-dock-2-12405:Wide-Hor?wid=1336&fit=constrain",
+     "width": 1336,
+     "height": 754
+    }
+   }
+  },
+  "osm-node-4874072421": {
+   "website": {
+    "url": "https://locations.tgifridays.com/il/chicago/153-e-erie-st.html",
+    "page": "https://locations.tgifridays.com/il/chicago/153-e-erie-st.html",
+    "hours": {
+     "schedule": [
+      [
+       540,
+       1440
+      ],
+      [
+       660,
+       1440
+      ],
+      [
+       660,
+       1440
+      ],
+      [
+       660,
+       1440
+      ],
+      [
+       660,
+       1440
+      ],
+      [
+       660,
+       1440
+      ],
+      [
+       540,
+       1440
+      ]
+     ],
+     "source": "schema.org opening hours on the venue website"
+    }
+   }
+  },
+  "osm-node-12714770267": {
+   "website": {
+    "url": "https://greekcornergyros.com/",
+    "page": "https://greekcornergyros.com/",
+    "image": {
+     "src": "https://greekcornergyros.com/assets/images/card.jpg?v=10f50b85",
+     "width": 1280,
+     "height": 800
+    }
+   }
+  }
+ }
+}

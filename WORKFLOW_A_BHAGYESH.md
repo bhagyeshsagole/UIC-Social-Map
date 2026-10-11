@@ -67,6 +67,7 @@ Check a task only when its result exists. If a task is partial, leave it uncheck
 
 | Task | State | Evidence / blocker |
 | --- | --- | --- |
+| A38 / B22 | DONE | Place hours and photos: OSM `opening_hours` parsed into schedules (split shifts supported) and address-verified schema.org hours from venue sites → 896 of 2,074 nearby places have weekly hours (was 1). 100 real photos (87 venue-site photos via the allowlisted `/uic/api/place-photo` proxy, 3 Commons, 10 existing), filtered for logos, banners and hijacked domains; failures fall back to the labeled illustration. Map pins persist across camera moves (no rebuild on pan); names appear at zoom ≥16.5 without overlaps. Liquid-glass social dialogs; nearby-directory note removed. 91 unit tests, Worker build and all nine smoke tests pass. |
 | A37 / B21 | DONE | Commit `21e63fa` pushed to origin/main; Pages deployment `b01d5951` live at kampuscape.com/uic (bundle `main-BetW5Lu6.js` verified). UI fixes, copy pass, phone control layout, N removed, `#messages` deep link. Message-email migration is applied on the hosted project (pg_net 0.20.4, triggers and functions verified); emails stay off until the Vault secrets `kampuscape_resend_api_key` and `kampuscape_resend_from` are added. 83 unit tests and Pages build passed. The same release carries A36/B20 code (nearby places, reviews). |
 | A36 / B20 | DONE | Released in `21e63fa` and finished in the follow-up release (see A37/B21 change log). Production: 2,155 review catalog places match the generated migration; RLS on; write RPCs member-only. Fixes: search in Explore covers every place even from For you. Browser suite updated for the first-visit guide, cached feed, recentred camera and pin rebuilds; all nine smoke tests and 83 unit tests pass. |
 | A35 / B19 | DONE | Release `4322371` pushed to origin/main; Pages deployment `9e9625b5` live at kampuscape.com/uic. Both social migrations applied, immediate signup/recovery template and all three Pages secrets verified. Scheduled Worker version `91c74746-688a-49f6-8d88-5f41c4897f66` runs every 15 minutes with shared KV. 80 tests/build passed; live mobile guide, feed (285 events), share 404/authorization routes and asset checks passed. Real email delivery not exercised. |
@@ -194,6 +195,7 @@ Ordered by impact for students on phones.
 
 ## Change log
 
+- **2026-10-10:** A38/B22 (user-requested): place hours/photos from OSM, venue websites and Commons; pin persistence and zoom names; glass dialogs.
 - **2026-10-10:** Claude Code finished A36/B20 after Codex stopped: production review data verified, Explore search fixed, browser tests updated, released and deployed. Codex claim removed.
 - **2026-10-10:** User-requested release `21e63fa` (Pages `b01d5951`) shipped A37/B21 and the A36/B20 code (nearby places, place reviews). A36/B20's status and claim are left for its owner to close.
 - **2026-10-10:** A37/B21 UI fixes, copy pass and message email notifications (see *Current work*). Backend migration added at the user's request; not applied or deployed.

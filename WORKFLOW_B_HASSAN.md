@@ -40,6 +40,7 @@ Check a task only when its result exists. These tasks do not imply approval of a
 
 | Task | State | Evidence / blocker |
 | --- | --- | --- |
+| A38 / B22 | DONE | Data: `website/data/places/venue-websites.json` snapshot (robots.txt respected, KampuscapeBot UA); README documents sources, filters and removal on request. |
 | A37 / B21 | DONE (secrets pending) | `202610100004_message_emails.sql` applied on the hosted project (pushed with 0003/0005); triggers, functions, columns and pg_net verified. Emails start once the Vault secrets `kampuscape_resend_api_key` and `kampuscape_resend_from` exist. Released in `21e63fa` / Pages `b01d5951`. |
 | A36 / B20 | DONE | Review migrations 0003/0005 applied; production catalog (2,155) matches local generation; RLS and grants verified; Vault secrets for message email configured. |
 | A35 / B19 | DONE | Release `4322371` pushed to origin/main; Pages deployment `9e9625b5` live at kampuscape.com/uic. Both social migrations applied, immediate signup/recovery template and all three Pages secrets verified. Scheduled Worker version `91c74746-688a-49f6-8d88-5f41c4897f66` runs every 15 minutes with shared KV. 80 tests/build passed; live mobile guide, feed (285 events), share 404/authorization routes and asset checks passed. Real email delivery not exercised. |
@@ -81,6 +82,7 @@ Provider handoff should include the SDK, supported version, configuration variab
 
 ## Change log
 
+- **2026-10-10:** A38/B22 (user-requested): place hours/photos from OSM, venue websites and Commons; pin persistence and zoom names; glass dialogs.
 - **2026-10-10:** Claude Code finished A36/B20 after Codex stopped: production review data verified, Explore search fixed, browser tests updated, released and deployed. Codex claim removed.
 - **2026-10-10:** User-requested release `21e63fa` (Pages `b01d5951`) shipped A37/B21 and the A36/B20 code (nearby places, place reviews). A36/B20's status and claim are left for its owner to close.
 - **2026-10-10:** A37/B21 (Bhagesh's side, user-authorized) added `202610100004_message_emails.sql`: Resend emails for message requests and new messages, sent from Postgres through pg_net with the key in Vault. Not applied yet.

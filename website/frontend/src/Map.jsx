@@ -21,6 +21,8 @@ import {safariBleed} from './safariRunway';
 const UIC_LABEL = [-87.64927, 41.87191];
 // One home view for page load and the UIC button.
 const HOME = {center:UIC_LABEL,zoom:15.3,pitch:54,bearing:0,roll:0};
+// Street-level zoom where every pin with room shows its name.
+const NAME_ZOOM = 16.5;
 const EXTRUSIONS = base.layers.filter(l=>l.type==='fill-extrusion').map(l=>l.id);
 // Hover preview for a purple building. Feed text goes in through textContent only.
 function peekContent(groups){
@@ -53,7 +55,7 @@ export function styledMap(night, eventVenueIds = [], privateVenues = []) {
   return style;
 }
 export default function Map({places,selected,onSelect,night,resetKey,eventVenues=[],focusedEvent,venueGroups={},onVenuePick,focusedVenue,privateEvents=[],previewVenue=null,pickingBuilding=false,onBuildingPick,onPrivatePick}) {
-  const container=useRef(), map=useRef(), markers=useRef([]), callback=useRef(onSelect), groupsRef=useRef(venueGroups), venueCallback=useRef(onVenuePick);
+  const container=useRef(), map=useRef(), markers=useRef({}), callback=useRef(onSelect), groupsRef=useRef(venueGroups), venueCallback=useRef(onVenuePick);
   groupsRef.current=venueGroups;venueCallback.current=onVenuePick;
   const privateRef=useRef(privateEvents), pickingRef=useRef(pickingBuilding), buildingCallback=useRef(onBuildingPick), privateCallback=useRef(onPrivatePick);
   privateRef.current=privateEvents;pickingRef.current=pickingBuilding;buildingCallback.current=onBuildingPick;privateCallback.current=onPrivatePick;
@@ -208,43 +210,61 @@ export default function Map({places,selected,onSelect,night,resetKey,eventVenues
     container.current.dataset.focusedVenue=venues.map(v=>v.id).join('|');
     return()=>{marker.remove();delete container.current?.dataset.focusedVenue;};
   },[focusedVenue?.join('|'),retry]);
+  // Pins persist across camera moves: only pins entering or leaving the view are added or removed,
+  // so panning never rebuilds the whole set.
+  useEffect(()=>()=>{const cache=markers.current;cache.byId?.forEach(pin=>{pin.marker.remove();setTimeout(()=>pin.root.unmount(),0);});cache.campus?.remove();markers.current={};},[]);
   useEffect(()=>{
-    markers.current.forEach(({marker,root})=>{marker.remove();setTimeout(()=>root.unmount(),0);});
-    markers.current=[];
-    if(!map.current)return;
-    const entries=[];
-    const mview=map.current,bounds=mview.getBounds(),center=mview.getCenter();
+    const m=map.current;if(!m)return;
+    let cache=markers.current;
+    if(cache.map!==m){
+      cache.byId?.forEach(pin=>{pin.marker.remove();setTimeout(()=>pin.root.unmount(),0);});cache.campus?.remove();
+      const el=document.createElement('div');el.className='campus-pin';el.innerHTML='<b>UIC</b>';
+      cache=markers.current={map:m,byId:new globalThis.Map(),campus:new maplibregl.Marker({element:el}).setLngLat(UIC_LABEL).addTo(m)};
+    }
+    const bounds=m.getBounds(),center=m.getCenter();
     const shown=places.filter(p=>p.id===selected?.id||bounds.contains(p.coords)).sort((a,b)=>(a.id===selected?.id?-1:b.id===selected?.id?1:Math.hypot(a.coords[0]-center.lng,a.coords[1]-center.lat)-Math.hypot(b.coords[0]-center.lng,b.coords[1]-center.lat))).slice(0,180);
-    const moved=()=>setViewportVersion(v=>v+1);mview.on('moveend',moved);
-    shown.forEach(p=>{
-      const el=document.createElement('div');el.dataset.labelActive='false';const root=createRoot(el);
-      root.render(<button className={`map-pin ${p.accent} ${selected?.id===p.id?'selected':''}`} onClick={()=>callback.current(p)} aria-label={`View ${p.name}${hasPerk(p)?', student perk':''}`}><span className="pin-circle"><PlaceIcon place={p}/>{hasPerk(p)&&<span className="pin-badge" aria-hidden="true"><GraduationCap size={12} strokeWidth={2.4}/></span>}</span><span className="pin-label">{p.name}</span></button>);
-      const marker=new maplibregl.Marker({element:el,anchor:'bottom'}).setLngLat(p.coords).addTo(map.current);
-      markers.current.push({marker,root});entries.push({id:p.id,el,selected:selected?.id===p.id});
+    const keep=new Set(shown.map(p=>p.id));
+    cache.byId.forEach((pin,id)=>{if(!keep.has(id)){pin.marker.remove();setTimeout(()=>pin.root.unmount(),0);cache.byId.delete(id);}});
+    const entries=shown.map(p=>{
+      const isSelected=selected?.id===p.id;let pin=cache.byId.get(p.id);
+      if(!pin){const el=document.createElement('div');el.dataset.labelActive='false';pin={el,root:createRoot(el),marker:new maplibregl.Marker({element:el,anchor:'bottom'}).setLngLat(p.coords).addTo(m)};cache.byId.set(p.id,pin);}
+      if(pin.place!==p||pin.selected!==isSelected){pin.place=p;pin.selected=isSelected;pin.marker.setLngLat(p.coords);pin.root.render(<button className={`map-pin ${p.accent} ${isSelected?'selected':''}`} onClick={()=>callback.current(p)} aria-label={`View ${p.name}${hasPerk(p)?', student perk':''}`}><span className="pin-circle"><PlaceIcon place={p}/>{hasPerk(p)&&<span className="pin-badge" aria-hidden="true"><GraduationCap size={12} strokeWidth={2.4}/></span>}</span><span className="pin-label">{p.name}</span></button>);}
+      return {id:p.id,el:pin.el,selected:isSelected};
     });
-    const el=document.createElement('div');el.className='campus-pin';el.innerHTML='<b>UIC</b>';
-    const marker=new maplibregl.Marker({element:el}).setLngLat(UIC_LABEL).addTo(map.current);markers.current.push({marker,root:{unmount(){}}});
-    const m=map.current;let frame;
+    const campus=cache.campus.getElement();let frame;
     const union=(a,b)=>({left:Math.min(a.left,b.left),top:Math.min(a.top,b.top),right:Math.max(a.right,b.right),bottom:Math.max(a.bottom,b.bottom)});
+    const overlap=(a,b)=>Math.max(0,Math.min(a.right,b.right)-Math.max(a.left,b.left))*Math.max(0,Math.min(a.bottom,b.bottom)-Math.max(a.top,b.top));
+    // Zoomed in to street level, every pin that has room shows its name; otherwise only the hovered, focused or selected pin does.
+    const named=()=>m.getZoom()>=NAME_ZOOM;
     const layout=()=>{
       const view=container.current?.getBoundingClientRect();if(!view)return;
-      const ready=entries.map(entry=>({...entry,button:entry.el.querySelector('button'),circle:entry.el.querySelector('.pin-circle')})).filter(entry=>entry.button&&entry.circle);
+      const ready=entries.map(entry=>({...entry,button:entry.el.querySelector('button'),circle:entry.el.querySelector('.pin-circle'),label:entry.el.querySelector('.pin-label')})).filter(entry=>entry.button&&entry.circle&&entry.label);
       const active=ready.find(entry=>entry.button.matches(':hover'))||ready.find(entry=>entry.button.matches(':focus-visible'))||ready.find(entry=>entry.selected);
-      for(const entry of ready){entry.el.dataset.labelActive=String(entry===active);entry.el.style.zIndex=entry===active?'2':'0';}
-      if(!active)return;
-      const label=active.el.querySelector('.pin-label'),anchor=active.button.getBoundingClientRect(),size=label.getBoundingClientRect();
-      const obstacles=ready.filter(entry=>entry!==active).map(entry=>{let box=entry.circle.getBoundingClientRect();const badge=entry.el.querySelector('.pin-badge');return badge?union(box,badge.getBoundingClientRect()):box;});
-      obstacles.push(el.getBoundingClientRect());
-      const position=placeLabel(anchor,size,view,obstacles);
-      label.style.left=`${position.left-anchor.left}px`;label.style.top=`${position.top-anchor.top}px`;
+      const pinsBoxes=new globalThis.Map(ready.map(entry=>{const box=entry.circle.getBoundingClientRect(),badge=entry.el.querySelector('.pin-badge');return [entry,badge?union(box,badge.getBoundingClientRect()):box];}));
+      const order=named()?[...(active?[active]:[]),...ready.filter(entry=>entry!==active)]:active?[active]:[];
+      const placed=[],labelled=new Set();
+      for(const entry of order){
+        const anchor=entry.button.getBoundingClientRect(),size=entry.label.getBoundingClientRect();
+        if(entry!==active&&(anchor.left<view.left||anchor.right>view.right||anchor.top<view.top||anchor.bottom>view.bottom))continue;
+        const obstacles=[...[...pinsBoxes].filter(([other])=>other!==entry).map(([,box])=>box),...placed,campus.getBoundingClientRect()];
+        const position=placeLabel(anchor,size,view,obstacles,entry===active?undefined:[10]),box={left:position.left,top:position.top,right:position.left+size.width,bottom:position.top+size.height};
+        if(entry!==active&&obstacles.some(other=>overlap(box,other)>0))continue;
+        entry.label.style.left=`${position.left-anchor.left}px`;entry.label.style.top=`${position.top-anchor.top}px`;
+        placed.push(box);labelled.add(entry);
+      }
+      for(const entry of ready){entry.el.dataset.labelActive=String(labelled.has(entry));entry.el.style.zIndex=entry===active?'2':labelled.has(entry)?'1':'0';}
     };
     const schedule=()=>{cancelAnimationFrame(frame);frame=requestAnimationFrame(layout);};
+    // Names ride along with their pins while panning; zooming changes spacing, so they hide until the camera settles.
+    const follow=()=>{if(!named())layout();};
+    const zooming=()=>{for(const entry of entries)if(!entry.selected)entry.el.dataset.labelActive='false';};
+    const moved=()=>{setViewportVersion(v=>v+1);schedule();};
     const sizes=new ResizeObserver(schedule);entries.forEach(entry=>sizes.observe(entry.el));
-    m.on('render',layout);m.on('resize',schedule);
+    m.on('moveend',moved);m.on('zoomstart',zooming);m.on('render',follow);m.on('resize',schedule);
     const surface=container.current;
     for(const name of ['pointerover','pointerout','focusin','focusout'])surface.addEventListener(name,schedule);
     schedule();
-    return ()=>{mview.off('moveend',moved);cancelAnimationFrame(frame);sizes.disconnect();m.off('render',layout);m.off('resize',schedule);for(const name of ['pointerover','pointerout','focusin','focusout'])surface.removeEventListener(name,schedule);markers.current.forEach(({marker,root})=>{marker.remove();setTimeout(()=>root.unmount(),0);});markers.current=[];};
+    return ()=>{m.off('moveend',moved);m.off('zoomstart',zooming);cancelAnimationFrame(frame);sizes.disconnect();m.off('render',follow);m.off('resize',schedule);for(const name of ['pointerover','pointerout','focusin','focusout'])surface.removeEventListener(name,schedule);};
   },[places,selected,retry,viewportVersion]);
   useEffect(()=>{if(selected&&map.current)map.current.flyTo({center:selected.coords,zoom:15.8,pitch:54,offset:window.innerWidth>760?[0,-220]:[0,-130],duration:900});},[selected]);
   useEffect(()=>{if(map.current&&resetKey>0)map.current.flyTo({center:HOME.center,zoom:15.3,pitch:54,bearing:-22,offset:[0,0],duration:900});},[resetKey]);

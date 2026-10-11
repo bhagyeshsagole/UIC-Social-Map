@@ -1,8 +1,8 @@
 // Fit one active name box beside its pin, preferring space clear of other pins.
-export function placeLabel(anchor,size,view,obstacles=[]){
+export function placeLabel(anchor,size,view,obstacles=[],gaps=[10,36,64]){
  const width=size.width,height=size.height,centerX=(anchor.left+anchor.right)/2,centerY=(anchor.top+anchor.bottom)/2;
  const clamp=(n,min,max)=>Math.max(min,Math.min(n,Math.max(min,max)));
- const candidates=[10,36,64].flatMap(gap=>[
+ const candidates=gaps.flatMap(gap=>[
   [anchor.right+gap,centerY-height/2],[anchor.left-gap-width,centerY-height/2],
   [centerX-width/2,anchor.top-gap-height],[centerX-width/2,anchor.bottom+gap]
  ]).map(([x,y],index)=>{

@@ -15,6 +15,7 @@ Refresh the source with `python3 website/data/importers/uic-nearby-places.py` fr
 Run from `website/frontend`:
 
 ```sh
+node scripts/fetch-venue-websites.mjs   # optional refresh of venue-websites.json
 node scripts/import-nearby-places.mjs
 node scripts/build-review-places.mjs
 npm test
@@ -25,3 +26,14 @@ npm test
 `overrides.json` supplies individually checked additions; `photos.json` supplies coordinate-matched Wikimedia Commons photographs and attribution. The downloaded photographs retain their credited licenses; source links point to the original file/license pages. The remaining new records have original, explicitly labeled **category illustrations**, not purported venue photographs. Never substitute an unrelated chain photo for a branch. Actual venue-photo coverage remains partial (10 photographs across new records in this release); existing curated photos remain unchanged.
 
 Imported hours retain source wording and are not parsed into a claim that a venue is currently open. Missing hours and dietary facts ask the student to check. No ratings, visitors, discounts, prices or testimonials are fabricated. Only reviewed official/UIC discount evidence sets `student: true`; no discount is required for inclusion. Student reviews are independent user opinions and never automatically set a discount badge.
+
+## Hours and photos from venue websites
+
+`venue-websites.json` is a dated snapshot from `scripts/fetch-venue-websites.mjs`. For each new place with a website in OpenStreetMap, the script reads the venue's own page (respecting robots.txt, identifying as KampuscapeBot) and, where a place has a `wikidata` tag, its Wikimedia Commons image.
+
+- OpenStreetMap `opening_hours` are parsed into weekly schedules by `src/openingHours.js`. Rules outside the plain weekly subset (months, open-ended times, sunrise) stay as text.
+- Website hours are used only when the page's schema.org data carries opening hours and its street address matches the place. Some sites carry leftover template data for other businesses, so unmatched hours are ignored.
+- Website images come from the page's `og:image`. They are skipped for chain or shared websites, `brand:wikidata` listings, logos/icons, and anything under 480×270 or outside a photo-like aspect ratio. They are credited to the venue site, linked to the page, and served through `/uic/api/place-photo/<id>`, which fetches only allowlisted URLs from `src/placePhotoSources.json`.
+- Commons photos load directly from Wikimedia with the author and license from Commons metadata.
+
+These images belong to the venues or their authors. Remove an image on request by deleting its entry and rerunning the importer.
