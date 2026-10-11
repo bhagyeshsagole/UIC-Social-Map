@@ -4,37 +4,13 @@ import React, {useEffect, useRef, useState} from 'react';
 import {ArrowUpRight, CalendarDays, ChevronLeft, ChevronRight, MapPin, X} from 'lucide-react';
 import {CAMPUS_CALENDAR, CAMPUS_MONTHS, addMonths, campusDate, campusMonth, dayLabel, eventWhen, monthDates, monthLabel, onCampusDate, upcomingCampusEvents} from './campusEvents';
 
-async function readFeed(url, signal) {
-  const response = await fetch(url, {signal, cache:'no-store'});
-  if (!response.ok) throw new Error('Calendar unavailable');
-  const data = await response.json();
-  if (data.schemaVersion !== 1 || !Array.isArray(data.events) || !data.fetchedAt) throw new Error('Invalid calendar');
-  return data;
-}
+import {campusFeed,preloadEvents} from './eventFeed.js';
+import {useResource} from './useResource.js';
 export function useCampusEvents(now) {
-  const [feed, setFeed] = useState(null), [status, setStatus] = useState('loading'), [attempt, setAttempt] = useState(0);
-  const month = campusMonth(now);
-  useEffect(() => {
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 25000);
-    let active = true;
-    setStatus('loading');
-    (async () => {
-      // The checked snapshot keeps the list usable while the public source loads.
-      try {
-        const snapshot = await readFeed(`${import.meta.env.BASE_URL}campus-events.json`, controller.signal);
-        if (active) setFeed(previous => previous && previous.fetchedAt > snapshot.fetchedAt ? previous : snapshot);
-      } catch { /* Try the live endpoint even if no snapshot was bundled. */ }
-      try {
-        const live = await readFeed(`${import.meta.env.BASE_URL}api/campus-events`, controller.signal);
-        if (active) { setFeed(live); setStatus('ready'); }
-      } catch { if (active) setStatus('offline'); }
-      finally { clearTimeout(timeout); }
-    })();
-    const interval = setInterval(() => setAttempt(v => v + 1), 15 * 60000);
-    return () => { active = false; controller.abort(); clearTimeout(timeout); clearInterval(interval); };
-  }, [month, attempt]);
-  return {feed, status, events:upcomingCampusEvents(feed?.events || [], now), refresh:() => setAttempt(v => v + 1)};
+ const state=useResource(campusFeed);
+ useEffect(()=>{preloadEvents();},[]);
+ const feed=state.data;
+ return {feed,status:state.error?'offline':feed?'ready':'loading',events:upcomingCampusEvents(feed?.events||[],now),refresh:()=>campusFeed.refresh({force:true})};
 }
 
 export function CampusEventCard({event:e, onSelectEvent}) {

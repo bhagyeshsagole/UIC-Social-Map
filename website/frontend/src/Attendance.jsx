@@ -1,8 +1,11 @@
-import React, {useEffect, useRef, useState} from 'react';
-import {EyeOff, Users, X} from 'lucide-react';
+import React, {useEffect, useMemo, useRef, useState} from 'react';
+import {EyeOff, Users, X, MessageCircle} from 'lucide-react';
 import {useAuth} from './auth/AuthProvider.jsx';
 import {Avatar} from './auth/AccountDialog.jsx';
-import {attend, attendanceKey, eventAttendees, leaveEvent, myAttendance} from './attendance';
+import {attend, attendanceKey, attendanceResource, ownAttendanceResource, leaveEvent} from './attendance';
+
+import {useMessages} from './Messages.jsx';
+import {useResource} from './useResource.js';
 
 // Re-render when anyone on this page changes attendance.
 function useAttendanceVersion() {
@@ -24,7 +27,7 @@ export function AttendChoice({value, onChange}) {
       <Avatar id={auth.profile?.avatar_id} size={38}/><span><strong>As {auth.profile?.display_name}</strong><small>Your profile name and picture</small></span>
     </button>
     <button type="button" role="radio" aria-checked={value === 'anonymous'} className={value === 'anonymous' ? 'chosen' : ''} onClick={() => onChange('anonymous')}>
-      <span className="attend-anon-icon"><EyeOff size={18}/></span><span><strong>Anonymously</strong><small>A new random name and picture for this event only. Nobody can tell it’s you.</small></span>
+      <span className="attend-anon-icon"><EyeOff size={18}/></span><span><strong>Anonymously</strong><small>A new random name and picture for this event only. Your account name stays hidden.</small></span>
     </button>
   </div>;
 }
@@ -33,16 +36,10 @@ export function AttendChoice({value, onChange}) {
 // Everyone sees the count; names, pictures and joining need sign-in.
 export function WhosGoing({event}) {
   const auth = useAuth(), version = useAttendanceVersion(), dialog = useRef();
-  const [state, setState] = useState({loading:true, rows:[]}), [open, setOpen] = useState(false);
+  const messages=useMessages(),[open,setOpen]=useState(false);
+  const resource=useMemo(()=>attendanceResource(event,auth.user?.id),[event.id,event.registrationKey,event.url,auth.user?.id]);
+  const loaded=useResource(resource),state={loading:loaded.loading,rows:loaded.data||[],error:loaded.error};
   const member = isMember(auth);
-  useEffect(() => {
-    let live = true;
-    const load = () => eventAttendees(event).then(rows => live && setState({loading:false, rows})).catch(() => live && setState({loading:false, rows:[], error:true}));
-    load();
-    // Live list: refresh while the card is open.
-    const timer = setInterval(load, 20000);
-    return () => {live = false; clearInterval(timer);};
-  }, [event.registrationKey, event.id, event.url, version]);
   useEffect(() => {if (open) dialog.current?.showModal(); else if (dialog.current?.open) dialog.current.close();}, [open]);
   if (state.loading && !state.rows.length) return null;
   const total = Number(state.rows[0]?.total || 0), me = state.rows.find(r => r.is_you);
@@ -57,7 +54,8 @@ export function WhosGoing({event}) {
         <h2 id="attendees-heading">Who’s going</h2>
         <p className="fine-print">{event.title} · {total} {total === 1 ? 'person' : 'people'} from Kampuscape</p>
         {member ? <>
-          {total ? <ul className="attendee-list">{state.rows.map((r, i) => <li key={i}><Avatar id={r.avatar_id} size={30}/><span>{r.display_name}{r.is_you && <b> (you)</b>}</span>{r.anonymous && <small>anonymous</small>}</li>)}</ul> : <p className="attendee-empty">No one yet. Be the first.</p>}
+          {total ? <ul className="attendee-list">{state.rows.map((r, i) => <li key={i}><Avatar id={r.avatar_id} size={30}/><span>{r.display_name}{r.is_you && <b> (you)</b>}</span>{r.anonymous && <small>anonymous</small>}{!r.is_you&&r.contact_id&&<button className="text-link attendee-message" aria-label={`Message ${r.display_name}`} onClick={()=>{setOpen(false);messages.request(r,event,me?.display_name||auth.profile.display_name);}}><MessageCircle size={15}/> Message</button>}</li>)}</ul> : <p className="attendee-empty">No one yet. Be the first.</p>}
+          {state.error&&<p className="form-error" role="alert">Couldn’t refresh attendees. <button className="text-link" onClick={()=>resource.refresh({force:true})}>Retry</button></p>}
           <GoingAs event={event} compact/>
         </> : <>
           <p className="attendee-empty">Sign in with your UIC account to see who’s going and join, as yourself or anonymously.</p>
@@ -69,18 +67,18 @@ export function WhosGoing({event}) {
 }
 
 // My Events: switch between showing your name and going anonymously.
-let mine = {version:-1, promise:null};
+
 export function GoingAs({event, compact = false}) {
   const auth = useAuth(), version = useAttendanceVersion();
   const [row, setRow] = useState(undefined), [busy, setBusy] = useState(false), [error, setError] = useState(''), [confirming, setConfirming] = useState(null);
   const member = isMember(auth);
+  const ownResource=useMemo(()=>ownAttendanceResource(auth.user?.id),[auth.user?.id]);
   useEffect(() => {
     if (!member) return;
     let live = true;
-    if (mine.version !== version || !mine.promise) mine = {version, promise:myAttendance()};
-    Promise.all([mine.promise, attendanceKey(event)]).then(([map, key]) => live && setRow(map.get(key) || null)).catch(() => live && setRow(null));
+    Promise.all([ownResource.refresh({force:version>0}), attendanceKey(event)]).then(([map, key]) => live && setRow(map?.get(key) || null)).catch(() => live && setRow(null));
     return () => {live = false;};
-  }, [member, event.registrationKey, version]);
+  }, [member, auth.user?.id, event.id, event.registrationKey, version,ownResource]);
   if (!member) return compact ? null : <p className="going-as">Saved on this device. <button className="text-link" onClick={auth.openProfile}>Sign in</button> to join the attendee list.</p>;
   if (row === undefined) return null;
   const current = row ? (row.anonymous ? 'anonymous' : 'profile') : null;

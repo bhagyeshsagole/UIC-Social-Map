@@ -1,0 +1,9 @@
+name = "kampuscape-event-refresh"
+main = "worker.js"
+compatibility_date = "2026-10-10"
+compatibility_flags = ["nodejs_compat"]
+[triggers]
+crons = ["*/15 * * * *"]
+[[kv_namespaces]]
+binding = "EVENT_CACHE"
+id = "ad9686b78d9a43739baf0731a387d236"

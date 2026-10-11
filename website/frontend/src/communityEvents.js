@@ -1,3 +1,4 @@
+import {createResource} from './liveResource.js';
 import {supabase} from './auth/supabase.js';
 import {cleanEvent} from './privateEvents';
 
@@ -24,3 +25,5 @@ export async function unpublishEvent(event, client = supabase) {
   const {error} = await client.from('kampuscape_community_events').delete().eq('id', event.id);
   if (error) throw fail(error, 'Couldn’t remove the public listing. Please try again.');
 }
+
+export const communityFeed=createResource(()=>fetchCommunityEvents(),{interval:60000,storageKey:'kampuscape-community-feed-v1',maxAge:3600000,validate:data=>Array.isArray(data)&&data.every(e=>cleanEvent(e))});

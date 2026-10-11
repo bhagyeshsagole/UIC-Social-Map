@@ -29,7 +29,7 @@ export default function PrivateEventCreator({pickedVenue, picking, venueGroups, 
     {picking && <section className="pin-instructions glass" aria-label="Pin event location"><MapPin size={16} className="pin-instructions-icon" aria-hidden="true"/><p>{pickedVenue?<><strong>{pickedVenue.needsLookup?'Finding building…':pickedVenue.name}</strong><span>Pinned</span></>:'Tap a building to pin your event'}</p><div className="pin-setup-actions">{pickedVenue&&<button className="primary-button" disabled={pickedVenue.needsLookup} onClick={()=>onPickMap(false)}>Continue <ArrowRight size={14}/></button>}<button className="secondary-button" onClick={onCancel}>Cancel</button></div></section>}
     <dialog ref={dialog} className="create-event-dialog" onCancel={onCancel} onClick={e => {if(e.target === dialog.current) onCancel();}}>
       <div className="modal-content"><button className="modal-close icon-button" aria-label="Close event setup" onClick={onCancel}><X size={21}/></button>
-        <span className="modal-icon private-icon">{step === 0 ? <MapPin size={26}/> : <LockKeyhole size={26}/>}</span>
+        <span className="modal-icon private-icon">{step === 0 ? <MapPin size={38}/> : <LockKeyhole size={38}/>}</span>
         <h2 tabIndex={-1}>{['Your building is pinned.','What’s the plan?','Everything look good?'][step]}</h2>
         <p>{['Choose an existing event here, or host something of your own.','Add the details for your private event.','Your building is highlighted. Save your event to keep it on the map.'][step]}</p>
         <form onSubmit={submit}>

@@ -1,3 +1,4 @@
+import {createResource} from './liveResource.js';
 import {supabase} from './auth/supabase.js';
 import {registrationKey} from './registeredEvents';
 
@@ -9,7 +10,11 @@ export async function attendanceKey(event) {
   const hash = await crypto.subtle.digest('SHA-256', bytes);
   return [...new Uint8Array(hash)].map(b => b.toString(16).padStart(2, '0')).join('');
 }
-const changed = () => window.dispatchEvent(new Event('kampuscape-attendance'));
+const resources=new Map();
+const changed = () => {for(const resource of resources.values())resource.invalidate();window.dispatchEvent(new Event('kampuscape-attendance'));};
+export function attendanceResource(event,userId){const key=`${userId||'guest'}:${registrationKey(event)}`;if(!resources.has(key))resources.set(key,createResource(()=>eventAttendees(event),{interval:30000}));return resources.get(key);}
+export function ownAttendanceResource(userId){const key=`mine:${userId}`;if(!resources.has(key))resources.set(key,createResource(()=>myAttendance(),{interval:60000}));return resources.get(key);}
+export function clearAttendance(userId){for(const [key,resource] of resources){if(key===`mine:${userId}`||key.startsWith(`${userId||'guest'}:`)){resource.clear();resources.delete(key);}}}
 const call = async (fn, args, client) => {
   if (!client) throw new Error('Attendance is unavailable right now.');
   const {data, error} = await client.rpc(fn, args);
@@ -26,7 +31,12 @@ export async function leaveEvent(event, client = supabase) {
   changed();
 }
 export async function eventAttendees(event, client = supabase) {
-  return await call('kampuscape_event_attendees', {p_event_key:await attendanceKey(event)}, client) || [];
+  if(!client)return [];
+  const args={p_event_key:await attendanceKey(event)};
+  const {data,error}=await client.rpc('kampuscape_event_contacts',args);
+  if(error?.code==='PGRST202')return await call('kampuscape_event_attendees',args,client)||[];
+  if(error)throw new Error('Couldn’t load attendees. Please retry.');
+  return data||[];
 }
 export async function myAttendance(client = supabase) {
   const rows = await call('kampuscape_my_attendance', {}, client) || [];

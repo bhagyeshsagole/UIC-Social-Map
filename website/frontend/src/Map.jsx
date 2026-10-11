@@ -13,7 +13,6 @@ import {eventTime} from './search';
 import Credits from './Credits.jsx';
 import registry from './event-venues.json';
 import {cleanVenue,footprintId,buildingArea} from './privateEvents';
-import { UIC } from './time';
 import {buildingLabel} from './buildingDetails';
 import {touchFrame,touchCamera} from './gestures';
 import {placeLabel} from './labelPlacement';
@@ -21,7 +20,7 @@ import {safariBleed} from './safariRunway';
 // Label sits in the courtyard between the six Lecture Center buildings.
 const UIC_LABEL = [-87.64927, 41.87191];
 // One home view for page load and the UIC button.
-const HOME = {center:UIC,zoom:15.3,pitch:54,bearing:0,roll:0};
+const HOME = {center:UIC_LABEL,zoom:15.3,pitch:54,bearing:0,roll:0};
 const EXTRUSIONS = base.layers.filter(l=>l.type==='fill-extrusion').map(l=>l.id);
 // Hover preview for a purple building. Feed text goes in through textContent only.
 function peekContent(groups){
@@ -163,7 +162,7 @@ export default function Map({places,selected,onSelect,night,resetKey,eventVenues
       m.on('mousemove',hover);m.on('mouseout',hidePeek);m.on('dragstart',hidePeek);m.on('click',pick);
       cleanups.push(()=>peek.remove());
       m.on('load',()=>!stopped&&setStatus('ready'));
-      m.easeTo({center:UIC,offset:[0,0],duration:0});
+      m.easeTo({center:HOME.center,offset:[0,0],duration:0});
       map.current=m;
     } catch { setStatus('error'); }
     const timeout=setTimeout(()=>{if(!stopped&&m&&!m.isStyleLoaded())setStatus('error');},18000);
@@ -244,7 +243,7 @@ export default function Map({places,selected,onSelect,night,resetKey,eventVenues
     return ()=>{cancelAnimationFrame(frame);sizes.disconnect();m.off('render',layout);m.off('resize',schedule);for(const name of ['pointerover','pointerout','focusin','focusout'])surface.removeEventListener(name,schedule);markers.current.forEach(({marker,root})=>{marker.remove();setTimeout(()=>root.unmount(),0);});markers.current=[];};
   },[places,selected,retry]);
   useEffect(()=>{if(selected&&map.current)map.current.flyTo({center:selected.coords,zoom:15.8,pitch:54,offset:window.innerWidth>760?[0,-220]:[0,-130],duration:900});},[selected]);
-  useEffect(()=>{if(map.current&&resetKey>0)map.current.flyTo({center:UIC,zoom:15.3,pitch:54,bearing:-22,offset:[0,0],duration:900});},[resetKey]);
+  useEffect(()=>{if(map.current&&resetKey>0)map.current.flyTo({center:HOME.center,zoom:15.3,pitch:54,bearing:-22,offset:[0,0],duration:900});},[resetKey]);
   useEffect(()=>{
     const m=map.current;if(!m)return;
     const pins=privateRef.current.filter(event=>event.id!==focusedEvent?.id).map(event=>{

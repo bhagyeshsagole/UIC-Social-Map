@@ -1,4 +1,5 @@
-import {installMember,TEST_USER_ID} from './auth-fixture.mjs';
+import {shareHtml} from '../server/eventShare.js';
+import {installMember,TEST_USER_ID,installVisitDismissal,shareRecords} from './auth-fixture.mjs';
 import {chromium} from '@playwright/test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
@@ -8,6 +9,9 @@ const errors=[];
 async function setup(options={}){
  const context=await browser.newContext(options);await context.grantPermissions(['clipboard-read','clipboard-write']);
  const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));page.on('console',e=>{if(e.type()==='error'&&/expression|fill-extrusion|within/.test(e.text()))errors.push(e.text());});
+ await installVisitDismissal(page);
+ await page.route('**/rest/v1/rpc/kampuscape_shared_event',r=>r.fulfill({json:shareRecords.get(r.request().postDataJSON().p_token)||null}));
+ await page.route('**/uic/share/*',r=>{const token=new URL(r.request().url()).pathname.split('/').at(-1);return r.fulfill({contentType:'text/html',body:shareHtml(shareRecords.get(token),new URL(r.request().url()).origin,token)});});
  await page.clock.setFixedTime(new Date('2026-10-05T18:00:00Z'));
  await page.route('**/api/campus-events',r=>r.fulfill({json:feed}));return page;
 }
@@ -62,11 +66,11 @@ try{
  assert.equal(await page.locator('.private-building-marker').count(),1);
  await page.waitForTimeout(2200);await page.screenshot({path:'artifacts/private-event-building.png'});
  await detail.getByRole('button',{name:'Share Synthetic dinner test'}).click();
- assert.equal(await page.title(),'Synthetic dinner test');assert.equal(await page.locator('dialog[open] h2').innerText(),'Synthetic dinner test');assert.doesNotMatch(await page.locator('dialog[open]').innerText(),/SEND A PLAN|Meet me here|This link opens|Deleting your local event/);await page.screenshot({path:'artifacts/private-share.png'});
- const link=await page.getByLabel('Event link',{exact:true}).inputValue();assert.ok(link.includes('#event='));
+ await page.getByLabel('Event link').waitFor();assert.equal(await page.title(),'Synthetic dinner test');assert.equal(await page.locator('dialog[open] h2').innerText(),'Synthetic dinner test');assert.doesNotMatch(await page.locator('dialog[open]').innerText(),/SEND A PLAN|Meet me here|This link opens|Deleting your local event/);await page.screenshot({path:'artifacts/private-share.png'});
+ const link=await page.getByLabel('Event link',{exact:true}).inputValue();assert.ok(link.includes('/uic/share/'));
  await page.getByRole('button',{name:'Copy link',exact:true}).click();assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),link);
  await page.getByRole('button',{name:'Close share'}).click();
- const recipient=await setup({viewport:{width:390,height:844}});await recipient.goto(link);
+ const recipient=await setup({viewport:{width:390,height:844}});await recipient.goto(link);await recipient.getByRole('link',{name:'Open event on the map →'}).click();
  await recipient.getByRole('region',{name:'Selected event on map'}).waitFor();await recipient.waitForTimeout(1600);
  assert.equal(await recipient.title(),'Synthetic dinner test');
  const pose=JSON.parse(await recipient.locator('.map').getAttribute('data-camera'));

@@ -1,6 +1,13 @@
+import {randomUUID} from 'node:crypto';
+export const shareRecords=new Map();
+export async function installVisitDismissal(page){
+ await page.addLocatorHandler(page.locator('.guide-dialog[open]'),()=>page.getByRole('button',{name:'Close guide'}).click());
+ await page.addLocatorHandler(page.locator('.happening-dialog[open]'),()=>page.getByRole('button',{name:'Close recommendations'}).click());
+}
 // Test-only Auth transport. This file is never imported by the application.
 export const TEST_USER_ID='00000000-0000-0000-0000-000000000001';
 export async function installMember(page) {
+ await installVisitDismissal(page);
  const user={id:TEST_USER_ID,email:'synthetic@uic.edu',email_confirmed_at:'2026-10-07T12:00:00Z',
   aud:'authenticated',role:'authenticated',created_at:'2026-10-07T12:00:00Z',app_metadata:{provider:'email'},user_metadata:{},identities:[],is_anonymous:false};
  const enc=x=>Buffer.from(JSON.stringify(x)).toString('base64url');
@@ -10,6 +17,8 @@ export async function installMember(page) {
  await page.addInitScript(session=>localStorage.setItem('kampuscape-auth',JSON.stringify(session)),session);
  await page.route('https://kampuscape-test.supabase.co/**',route=>{
   const path=new URL(route.request().url()).pathname;
+  if(path.endsWith('/kampuscape_share_event')){const token=randomUUID();shareRecords.set(token,{...route.request().postDataJSON().p_event,host:{name:profile.display_name,avatar:profile.avatar_id},shareToken:token});return route.fulfill({json:token});}
+  if(path.endsWith('/kampuscape_revoke_share'))return route.fulfill({json:null});
   // Attendance RPCs: nobody going yet, unless a test overrides this route.
   if(path.includes('/rest/v1/rpc/'))return route.fulfill({json:[]});
   // Community events table: empty unless a test overrides this route.

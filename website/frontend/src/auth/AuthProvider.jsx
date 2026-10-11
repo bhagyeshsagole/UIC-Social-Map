@@ -1,5 +1,5 @@
 import React, {createContext, useCallback, useContext, useEffect, useRef, useState} from 'react';
-import {fetchAuthProviders, supabase} from './supabase.js';
+import {supabase} from './supabase.js';
 import {isEligibleUser, isUicEmail, validateProfile} from './profile.js';
 
 const AuthContext = createContext(null);
@@ -7,14 +7,11 @@ export const useAuth = () => useContext(AuthContext);
 const fields = 'id,display_name,pronouns,avatar_id,interests,onboarding_completed_at';
 export const PASSWORD_MIN = 8;
 
-export function AuthProvider({children, client = supabase, providers = fetchAuthProviders}) {
+export function AuthProvider({children, client = supabase}) {
   const [session, setSession] = useState(undefined), [user, setUser] = useState(null), [profile, setProfile] = useState(null);
   const [loading, setLoading] = useState(!!client), [error, setError] = useState(''), [open, setOpen] = useState(false);
   const [editing, setEditing] = useState(false), [retry, setRetry] = useState(0), [notice, setNotice] = useState('');
   const [recovering, setRecovering] = useState(false), [changingPassword, setChangingPassword] = useState(false);
-  // The Google button appears only once Google is enabled in Supabase.
-  const [googleEnabled, setGoogleEnabled] = useState(false);
-  useEffect(() => {if (client) providers().then(p => setGoogleEnabled(!!p.google));}, [client, providers]);
   const generation = useRef(0), currentUser = useRef(null), justSignedIn = useRef(false);
   useEffect(() => {
     if (!client) return;
@@ -25,7 +22,7 @@ export function AuthProvider({children, client = supabase, providers = fetchAuth
     if(linkError === 'otp_expired') {
       setError('That email link has expired or was already used. Sign in, or request a new link.'); setOpen(true);
     } else if(callback.searchParams.has('error') || hashParams.has('error')) {
-      setError('Sign-in was cancelled or could not be completed. Use a verified @uic.edu account and try again.'); setOpen(true);
+      setError('Sign-in was cancelled or could not be completed. Use an @uic.edu account and try again.'); setOpen(true);
     }
     // A verification link opened in a different browser verifies the email but can't
     // sign in there (no PKCE verifier); say so instead of showing a session error.
@@ -48,7 +45,7 @@ export function AuthProvider({children, client = supabase, providers = fetchAuth
       client.auth.verifyOtp({token_hash:tokenHash, type:linkType}).then(({data, error:linkFailure}) => {
         if (!active) return;
         if (linkFailure || !data?.session) {
-          setError(linkType === 'recovery' ? 'That reset link has expired or was already used. Request a new one with Forgot password.' : 'That verification link has expired or was already used. Try signing in; if your email isn’t verified yet, you can resend the link.');
+          setError(linkType === 'recovery' ? 'That reset link has expired or was already used. Request a new one with Forgot password.' : 'That verification link has expired or was already used. Try signing in, or use Forgot password to recover your account.');
           setLoading(false);
         } else {
           if (linkType === 'recovery') setRecovering(true);
@@ -84,7 +81,7 @@ export function AuthProvider({children, client = supabase, providers = fetchAuth
       if (authError) throw new Error('Your session could not be verified. Please sign in again.');
       if (!isEligibleUser(data.user)) {
         await client.auth.signOut({scope:'local'});
-        if (active) {setError('Sign in with a verified @uic.edu account. Other email domains cannot join Kampuscape.'); setOpen(true);}
+        if (active) {setError('Sign in with an @uic.edu account. Other email domains cannot join Kampuscape.'); setOpen(true);}
         return;
       }
       currentUser.current = data.user.id; setUser(data.user);
@@ -104,8 +101,7 @@ export function AuthProvider({children, client = supabase, providers = fetchAuth
     if(!profile?.onboarding_completed_at)return;
     try{const hash=sessionStorage.getItem('kampuscape-auth-return');if(hash?.startsWith('#event=')){sessionStorage.removeItem('kampuscape-auth-return');window.location.hash=hash;}}catch{}
   },[profile?.id,profile?.onboarding_completed_at]);
-  // Email + password: verification email once at sign-up, then password sign-in
-  // with no email. Errors carry flags so the dialog can offer the next step.
+  // Signup returns a session immediately. Only recovery sends an authentication link.
   const here = () => window.location.origin + window.location.pathname;
   const fail = (message, flags = {}) => Object.assign(new Error(message), flags);
   const account = (email, password) => {
@@ -117,30 +113,38 @@ export function AuthProvider({children, client = supabase, providers = fetchAuth
   };
   const signUp = async (email, password) => {
     const address = account(email, password);
-    rememberEvent();
+    setNotice(''); rememberEvent();
     const {data, error} = await client.auth.signUp({email:address, password, options:{emailRedirectTo:here()}});
     if (error?.status === 429) throw fail('Too many attempts. Please wait a few minutes and try again.');
     if (error?.code === 'weak_password') throw fail('Choose a stronger password: longer, and not a common one.');
     if (error?.status === 403) throw fail('Only @uic.edu accounts can join Kampuscape.');
+    if (error?.code === 'user_already_exists') throw fail('An account already uses this email. Sign in instead.', {existing:true});
     if (error) throw fail('We couldn’t create your account. Please try again.');
     // Supabase hides whether an address is taken: an existing account comes back with no identities.
     if (data.user && !data.user.identities?.length) throw fail('An account already uses this email. Sign in instead.', {existing:true});
+    if (!data.session) throw fail('Immediate signup is not enabled yet. Please contact support to finish setting up your account.');
+    setSession(data.session);
+    // The server derives the recipient from the session, never from browser input.
+    try {
+      const response = await fetch(`${import.meta.env.BASE_URL}api/account-created`, {
+        method:'POST', headers:{Authorization:`Bearer ${data.session.access_token}`}, signal:AbortSignal.timeout(15000),
+      });
+      if (!response.ok || !(await response.json()).sent) throw new Error('Email delivery failed');
+    } catch {
+      setNotice('Your account is ready, but we couldn’t send the welcome email. You can continue using Kampuscape.');
+    }
+
   };
   const signIn = async (email, password) => {
     const address = account(email);
     if (!password) throw fail('Enter your password.');
     rememberEvent();
-    justSignedIn.current = true;
+    setNotice(''); justSignedIn.current = true;
     const {error} = await client.auth.signInWithPassword({email:address, password});
     if (error) justSignedIn.current = false;
-    if (error?.code === 'email_not_confirmed') throw fail('Verify your email first. Open the link we sent when you signed up.', {unconfirmed:true});
+    if (error?.code === 'email_not_confirmed') throw fail('This older account hasn’t been activated. Use Forgot password, or contact support.', {unconfirmed:true});
     if (error?.status === 429) throw fail('Too many attempts. Please wait a few minutes and try again.');
     if (error) throw fail('That email and password don’t match. Try again, or reset your password.');
-  };
-  const resendVerification = async email => {
-    const address = account(email);
-    const {error} = await client.auth.resend({type:'signup', email:address, options:{emailRedirectTo:here()}});
-    if (error) throw fail(error.status === 429 ? 'Please wait a minute before requesting another email.' : 'We couldn’t resend the email. Please try again.');
   };
   const requestPasswordReset = async email => {
     const address = account(email);
@@ -158,16 +162,6 @@ export function AuthProvider({children, client = supabase, providers = fetchAuth
     if (error) throw fail('Your password couldn’t be saved. Please try again.');
     setRecovering(false); setChangingPassword(false); setNotice('Your password is saved. Next time, sign in with your email and password.');
   };
-  const signInGoogle = async () => {
-    if (!client) throw new Error('Sign-in is being set up. Please try again soon.');
-    // Keep shared-event fragments across the OAuth round trip, without sending them to Google.
-    rememberEvent();
-    const {error} = await client.auth.signInWithOAuth({provider:'google', options:{
-      redirectTo:window.location.origin + window.location.pathname,
-      queryParams:{hd:'uic.edu', prompt:'select_account'},
-    }});
-    if (error) throw new Error('Google sign-in is unavailable. Try your UIC email instead.');
-  };
   const saveProfile = async input => {
     if (!client || !isEligibleUser(user)) throw new Error('Please sign in with your UIC account first.');
     const clean = validateProfile(input), id = user.id, version = generation.current;
@@ -184,7 +178,7 @@ export function AuthProvider({children, client = supabase, providers = fetchAuth
     if (!client) return;
     const {error} = await client.auth.signOut({scope:'local'});
     if (error) throw new Error('Sign-out failed. Please retry.');
-    ++generation.current; currentUser.current=null; setSession(null);setUser(null);setProfile(null);setOpen(false);setEditing(false);setError('');setRecovering(false);setChangingPassword(false);
+    ++generation.current; currentUser.current=null; setSession(null);setUser(null);setProfile(null);setOpen(false);setEditing(false);setError('');setRecovering(false);setChangingPassword(false);setNotice('');
   };
   // Erases the account server-side (profile, support messages, Auth user), then
   // this device's per-user saved places and private plans.
@@ -205,5 +199,5 @@ export function AuthProvider({children, client = supabase, providers = fetchAuth
   const openProfile = useCallback(() => {setOpen(true);setEditing(false);}, []);
   return <AuthContext.Provider value={{configured:!!client,user,profile,loading,error,open,editing,setEditing,openProfile,
     close:()=>{if(!user || profile?.onboarding_completed_at){setOpen(false);setNotice('');setChangingPassword(false);setRecovering(false);}},
-    retry:()=>setRetry(v=>v+1),signUp,signIn,resendVerification,requestPasswordReset,updatePassword,recovering,changingPassword,setChangingPassword,googleEnabled,signInGoogle,saveProfile,signOut,deleteAccount,notice,clearNotice:()=>setNotice('')}}>{children}</AuthContext.Provider>;
+    retry:()=>setRetry(v=>v+1),signUp,signIn,requestPasswordReset,updatePassword,recovering,changingPassword,setChangingPassword,saveProfile,signOut,deleteAccount,notice,clearNotice:()=>setNotice('')}}>{children}</AuthContext.Provider>;
 }

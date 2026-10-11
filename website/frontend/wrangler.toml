@@ -3,3 +3,7 @@ pages_build_output_dir = "dist"
 compatibility_date = "2026-10-07"
 # The shared event importer uses node:crypto / node:path.
 compatibility_flags = ["nodejs_compat"]
+
+[[kv_namespaces]]
+binding = "EVENT_CACHE"
+id = "ad9686b78d9a43739baf0731a387d236"

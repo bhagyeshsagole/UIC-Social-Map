@@ -9,7 +9,6 @@ export function Avatar({id, size=44}) {
   const avatar = AVATARS.find(a=>a.id===id) || AVATARS[0];
   return <span className="account-avatar" style={{'--avatar-color':avatar.color,width:size,height:size,fontSize:size*.5}} aria-hidden="true">{avatar.symbol}</span>;
 }
-function GoogleMark(){return <svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.23c0-.71-.06-1.39-.18-2.05H12v3.88h5.38a4.6 4.6 0 0 1-2 3.02v2.51h3.23c1.89-1.74 2.99-4.3 2.99-7.36Z"/><path fill="#34A853" d="M12 22c2.7 0 4.96-.9 6.61-2.41l-3.23-2.51c-.89.6-2.03.96-3.38.96-2.6 0-4.8-1.76-5.59-4.12H3.07v2.59A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.41 13.92a6 6 0 0 1 0-3.84V7.49H3.07a10 10 0 0 0 0 9.02l3.34-2.59Z"/><path fill="#EA4335" d="M12 5.96c1.47 0 2.79.51 3.82 1.51l2.87-2.87A9.59 9.59 0 0 0 12 2a10 10 0 0 0-8.93 5.49l3.34 2.59C7.2 7.72 9.4 5.96 12 5.96Z"/></svg>;}
 function PasswordField({id,label,value,onChange,autoComplete,hint,autoFocus}){
  const [show,setShow]=useState(false);
  return <>
@@ -18,7 +17,7 @@ function PasswordField({id,label,value,onChange,autoComplete,hint,autoFocus}){
    <button type="button" className="account-reveal" aria-label={show?'Hide password':'Show password'} aria-pressed={show} onClick={()=>setShow(v=>!v)}>{show?<EyeOff size={18}/>:<Eye size={18}/>}</button></div>
  </>;
 }
-// Create account (verify email once) · Sign in (password, no email) · Forgot password.
+// Immediate signup · Email/password sign-in · Password reset link.
 function SignIn(){
  const auth=useAuth(),[mode,setMode]=useState('choose'),[email,setEmail]=useState(''),[password,setPassword]=useState('');
  const [sent,setSent]=useState(''),[busy,setBusy]=useState(false),[error,setError]=useState(null),[cooldown,setCooldown]=useState(0);
@@ -26,30 +25,28 @@ function SignIn(){
  const run=async action=>{setBusy(true);setError(null);try{await action();}catch(e){setError(e);}finally{setBusy(false);}};
  const go=next=>{setMode(next);setError(null);setSent('');setPassword('');};
  const submit=e=>{e.preventDefault();run(async()=>{
-  if(mode==='signup'){await auth.signUp(email,password);setSent('verify');setCooldown(60);}
+  if(mode==='signup'){await auth.signUp(email,password);}
   else if(mode==='signin'){await auth.signIn(email,password);}
   else{await auth.requestPasswordReset(email);setSent('reset');setCooldown(60);}
  });};
- const resend=()=>run(async()=>{if(sent==='reset')await auth.requestPasswordReset(email);else await auth.resendVerification(email);setCooldown(60);if(!sent)setSent('verify');});
+ const resend=()=>run(async()=>{await auth.requestPasswordReset(email);setCooldown(60);});
  const address=email.trim().toLowerCase();
  const heading={choose:<>Your campus.<br/>Your kind of plans.</>,signup:'Create your account.',signin:'Welcome back.',forgot:'Reset your password.'}[mode];
- const intro={choose:'Find your people and your next reason to get out, with your UIC account.',signup:'Join with your UIC email. You’ll verify it once, then sign in with your password.',signin:'Sign in with your UIC email and password.',forgot:'Enter your UIC email and we’ll send you a link to choose a new password.'}[mode];
+ const intro={choose:'Find your people and your next reason to get out, with your UIC account.',signup:'Create an account with your UIC email and password. You’ll be signed in right away.',signin:'Sign in with your UIC email and password.',forgot:'Enter your UIC email and we’ll send you a link to choose a new password.'}[mode];
  return <>
-  <h1 id="account-title">{sent==='verify'?'Verify your email.':sent==='reset'?'Check your inbox.':heading}</h1>
+  <h1 id="account-title">{sent?'Check your inbox.':heading}</h1>
   {mode==='choose'&&!sent?<>
    <p className="account-intro">{intro}</p>
    <button className="account-primary account-choice" onClick={()=>go('signup')}>Create an account <ArrowRight size={18}/></button>
    <button className="account-secondary account-choice" onClick={()=>go('signin')}>Sign in</button>
-   <p className="account-caption">Only verified @uic.edu accounts can join.</p>
+   <p className="account-caption">Use your @uic.edu email to join.</p>
   </>:sent?<>
-   <div className="account-sent"><Mail size={22}/><div><strong>Check your UIC inbox</strong><span>{sent==='verify'?<>We sent a verification link to {address}. Open it to finish creating your account. You only need to do this once.</>:<>If an account uses {address}, we sent it a link to choose a new password.</>}</span></div></div>
+   <div className="account-sent"><Mail size={22}/><div><strong>Check your UIC inbox</strong><span>If an account uses {address}, we sent it a link to choose a new password.</span></div></div>
    <p className="account-caption account-caption-left">Open the button in your email to return to Kampuscape. Links work once and expire after 10 minutes. Can’t find it? Check Junk and the Other tab in Outlook.</p>
    <div className="account-inline-actions"><button disabled={busy||cooldown>0} onClick={resend}>{cooldown?`Resend in ${cooldown}s`:'Resend email'}</button><button disabled={busy} onClick={()=>go('signin')}>Back to sign in</button></div>
   </>:<>
    <button className="account-back" onClick={()=>go(mode==='forgot'?'signin':'choose')}><ArrowLeft size={15}/> Back</button>
    <p className="account-intro">{intro}</p>
-   {mode!=='forgot'&&auth.googleEnabled&&<><button className="account-google" disabled={busy||!auth.configured} onClick={()=>run(auth.signInGoogle)}><GoogleMark/> Continue with Google</button>
-   <div className="account-divider"><span>or use your UIC email</span></div></>}
    <form onSubmit={submit}>
     <label className="account-label" htmlFor="uic-email">UIC email</label>
     <div className="account-input-icon"><Mail size={18}/><input id="uic-email" type="email" autoComplete={mode==='signup'?'email':'username'} placeholder="you@uic.edu" required maxLength={254} value={email} onChange={e=>setEmail(e.target.value)} disabled={busy}/></div>
@@ -57,12 +54,12 @@ function SignIn(){
     {mode==='signin'&&<button type="button" className="account-forgot" onClick={()=>go('forgot')}>Forgot password?</button>}
     <button className="account-primary" disabled={busy||!auth.configured}>{busy?<LoaderCircle className="spin" size={18}/>:<>{{signup:'Create account',signin:'Sign in',forgot:'Email me a reset link'}[mode]} <ArrowRight size={18}/></>}</button>
    </form>
-   <p className="account-caption">Only verified @uic.edu accounts can join.</p>
+   <p className="account-caption">Use your @uic.edu email to join.</p>
   </>}
   {auth.notice&&<p className="account-notice" role="status"><ShieldCheck size={17}/>{auth.notice}</p>}
   {(error||auth.error)&&<p className="account-error" role="alert">{error?.message||auth.error}
    {error?.existing&&<> <button className="account-error-action" onClick={()=>go('signin')}>Sign in</button></>}
-   {error?.unconfirmed&&<> <button className="account-error-action" disabled={busy||cooldown>0} onClick={resend}>{cooldown?`Resend in ${cooldown}s`:'Resend verification email'}</button></>}
+
   </p>}
   {!sent&&mode!=='choose'&&<p className="account-switch-mode">{mode==='signup'?<>Already have an account? <button onClick={()=>go('signin')}>Sign in</button></>:mode==='signin'?<>New to Kampuscape? <button onClick={()=>go('signup')}>Create an account</button></>:<>Remembered it? <button onClick={()=>go('signin')}>Back to sign in</button></>}</p>}
   {!auth.configured&&<p className="account-error" role="status">Sign-in is being set up. You can explore the map in the meantime.</p>}
@@ -76,7 +73,7 @@ function SetPassword(){
  return <>
   <span className="account-danger-icon account-key-icon"><KeyRound size={24}/></span>
   <h1 id="account-title">{auth.recovering?'Choose a new password.':'Change your password.'}</h1>
-  <p className="account-intro">You’ll use it with {auth.user.email} to sign in. No email needed.</p>
+  <p className="account-intro">You’ll use it with {auth.user.email} to sign in.</p>
   <form onSubmit={save}>
    <PasswordField id="new-password" label="New password" hint={`At least ${PASSWORD_MIN} characters`} value={password} onChange={setPassword} autoComplete="new-password" autoFocus/>
    {error&&<p className="account-error" role="alert">{error}</p>}
@@ -101,6 +98,7 @@ function ProfileForm(){
   <span className="account-kicker">{auth.editing?'MAKE IT YOURS':`A LITTLE ABOUT YOU · ${step+1} OF 2`}</span>
   <h1 id="account-title">{step===0?'Nice to meet you.':'What pulls you in?'}</h1>
   <p className="account-intro">{step===0?'Choose how you’ll show up on Kampuscape.':'Pick 1–8 interests. We’ll use these to suggest events you might enjoy.'}</p>
+  {auth.notice&&<p className="account-notice" role="status">{auth.notice}</p>}
   <form onSubmit={next}>
    {step===0?<>
     <div className="account-avatar-preview"><Avatar id={form.avatar_id} size={76}/><span>{form.display_name.trim()||'Your next chapter'}<small>{form.pronouns||'Your campus, your way'}</small></span></div>
@@ -125,7 +123,7 @@ function DeleteAccount({onCancel}){
  return <>
   <span className="account-danger-icon"><Trash2 size={24}/></span><span className="account-kicker account-kicker-danger">DELETE ACCOUNT</span>
   <h1 id="account-title">Delete your account?</h1>
-  <p className="account-intro">Kampuscape was built with privacy at its heart. Deleting your account permanently erases all of your data: your profile, pronouns, avatar and interests, your sign-in, the events you’re attending (including anonymous names), any support messages you’ve sent, and the saved places and private plans on this device.</p>
+  <p className="account-intro">Kampuscape was built with privacy at its heart. Deleting your account permanently erases all of your data: your profile, pronouns, avatar and interests, your sign-in, the events you’re attending (including anonymous names), your conversations and shared event links, any support messages you’ve sent, and the saved places and private plans on this device.</p>
   <p className="account-caption account-caption-left">This can’t be undone. You can always join again later with your UIC email.</p>
   {error&&<p className="account-error" role="alert">{error}</p>}
   <button className="account-primary account-destructive" disabled={busy} onClick={erase}>{busy?<><LoaderCircle className="spin" size={18}/> Erasing your data…</>:<><Trash2 size={17}/> Delete my account and data</>}</button>
@@ -139,7 +137,7 @@ function Profile(){
   <Avatar id={auth.profile.avatar_id} size={80}/><span className="account-kicker">YOUR CORNER OF CHICAGO</span>
   <h1 id="account-title">Hey, {auth.profile.display_name}.</h1>
   {auth.profile.pronouns&&<p className="account-pronouns">{auth.profile.pronouns}</p>}
-  <p className="account-caption">{auth.user.email} · Email verified</p>
+  <p className="account-caption">{auth.user.email}</p>
   <div className="profile-interest-list">{auth.profile.interests.map(id=>{const i=INTERESTS.find(i=>i.id===id);return i?<span key={id}>{i.emoji} {i.label}</span>:null;})}</div>
   <p className="account-intro">Your interests shape the For you tab in Live events.</p><p className="account-caption">Your profile syncs across devices. Saved places and private plans stay on this device.</p>
   <button className="account-primary" onClick={()=>auth.setEditing(true)}>Edit profile & interests <ArrowRight size={18}/></button>

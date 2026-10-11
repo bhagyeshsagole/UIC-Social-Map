@@ -1,3 +1,4 @@
+import {installVisitDismissal} from './auth-fixture.mjs';
 // Run against a dev server configured for https://kampuscape-test.supabase.co.
 // All Auth/profile traffic is intercepted. No email is sent and no real user is created.
 import {chromium} from '@playwright/test';
@@ -6,24 +7,28 @@ import {readFileSync,mkdirSync} from 'node:fs';
 const url=process.env.TEST_APP_URL||'http://127.0.0.1:5174';
 const browser=await chromium.launch({headless:true});
 const feed=JSON.parse(readFileSync(new URL('../public/campus-events.json',import.meta.url)));
-const profiles=new Map(), verifications=[], resets=[], passwordUpdates=[];
+const profiles=new Map(), verifications=[], resets=[], passwordUpdates=[], welcomeEmails=[];
 let currentEmail='student@uic.edu',failSave=true;const signups=[];const PASSWORD='correct-horse-9';
 const user=()=>({id:currentEmail==='second@uic.edu'?'00000000-0000-0000-0000-000000000002':'00000000-0000-0000-0000-000000000001',email:currentEmail,
  aud:'authenticated',role:'authenticated',email_confirmed_at:'2026-10-07T12:00:00Z',created_at:'2026-10-07T12:00:00Z',app_metadata:{provider:'email',providers:['email']},user_metadata:{},identities:[],is_anonymous:false});
 const token=()=>{const encoded=value=>Buffer.from(JSON.stringify(value)).toString('base64url');return `${encoded({alg:'HS256',typ:'JWT'})}.${encoded({sub:user().id,email:currentEmail,role:'authenticated',exp:Math.floor(Date.now()/1000)+3600})}.synthetic-signature`;};
 const errors=[];
-async function setup(options={}){
+async function setup(options={}, welcomeStatus=200){
  const context=await browser.newContext(options),page=await context.newPage();
+ await installVisitDismissal(page);
+ page.setDefaultTimeout(15000);page.setDefaultNavigationTimeout(15000);
  page.on('pageerror',e=>errors.push(e.message));
  await page.clock.setFixedTime(new Date('2026-10-07T18:00:00Z'));
  await page.route('**/api/campus-events',r=>r.fulfill({json:feed}));
+ await page.route('**/api/account-created',r=>{welcomeEmails.push(r.request().headers().authorization);return r.fulfill({status:welcomeStatus,json:{sent:welcomeStatus===200}});});
  await page.route('https://kampuscape-test.supabase.co/**',async route=>{
   const request=route.request(),path=new URL(request.url()).pathname;
   if(path.endsWith('/kampuscape_community_events'))return route.fulfill({json:[]});
   if(path.includes('/rest/v1/rpc/'))return route.fulfill({json:[]});
   if(path.endsWith('/settings'))return route.fulfill({json:{external:{email:true,google:true}}});
   if(path.endsWith('/signup')){const body=request.postDataJSON();signups.push(body.email);
-   return route.fulfill({json:{...user(),id:'00000000-0000-0000-0000-000000000009',email:body.email,email_confirmed_at:null,identities:[{id:'synthetic-identity'}]}});}
+   currentEmail=body.email;
+   return route.fulfill({json:{access_token:token(),refresh_token:'synthetic-refresh-token',expires_in:3600,token_type:'bearer',user:{...user(),identities:[{id:'synthetic-identity'}]}}});}
   if(path.endsWith('/token')&&new URL(request.url()).searchParams.get('grant_type')==='password'){
    const body=request.postDataJSON();currentEmail=body.email;
    if(body.password!==PASSWORD)return route.fulfill({status:400,json:{code:400,error_code:'invalid_credentials',msg:'Invalid login credentials'}});
@@ -67,13 +72,20 @@ try{
  await page.getByRole('button',{name:'Create account'}).click();
  await page.getByText('at least 8 characters',{exact:false}).last().waitFor();assert.equal(signups.length,0,'short passwords never reach Supabase');
  await page.getByLabel('Password',{exact:true}).fill(PASSWORD);await page.getByRole('button',{name:'Create account'}).click();
- await page.getByRole('heading',{name:'Verify your email.'}).waitFor();await page.getByText('We sent a verification link',{exact:false}).waitFor();assert.equal(await page.getByLabel('Verification code').count(),0);assert.deepEqual(signups,['student@uic.edu'],'sign-up sends one verification email');
- await page.getByRole('button',{name:'Back to sign in'}).click();await page.getByRole('heading',{name:'Welcome back.'}).waitFor();
+ await page.getByRole('heading',{name:'Nice to meet you.'}).waitFor();
+ assert.equal(await page.getByRole('heading',{name:'Verify your email.'}).count(),0,'signup opens onboarding immediately');
+ assert.equal(await page.getByRole('button',{name:'Continue with Google'}).count(),0);
+ assert.equal(welcomeEmails.length,1,'signup sends an authenticated welcome request');
+ assert.match(welcomeEmails[0],/^Bearer /);assert.equal(verifications.length,0,'signup requires no verification');
+ assert.deepEqual(signups,['student@uic.edu']);
+ await page.getByRole('button',{name:'Use a different account'}).click();
+ await page.getByRole('button',{name:'Open profile'}).click();await page.getByRole('button',{name:'Sign in',exact:true}).click();
+ await page.getByRole('heading',{name:'Welcome back.'}).waitFor();
  await page.getByLabel('UIC email',{exact:true}).fill('student@uic.edu');await page.getByLabel('Password',{exact:true}).fill('wrong-password');
  await page.getByRole('button',{name:'Sign in',exact:true}).click();
  await page.getByText('That email and password don’t match',{exact:false}).waitFor();
  await page.getByLabel('Password',{exact:true}).fill(PASSWORD);await page.getByRole('button',{name:'Sign in',exact:true}).click();
- assert.equal(signups.length,1,'signing in sends no email');
+ assert.equal(signups.length,1);assert.equal(welcomeEmails.length,1,'signing in sends no welcome email');assert.equal(resets.length,0,'signing in sends no reset email');
  await page.getByRole('heading',{name:'Nice to meet you.'}).waitFor();
  await page.keyboard.press('Escape');assert.equal(await dialog.evaluate(el=>el.open),true,'onboarding cannot be dismissed');
  await page.getByLabel('What should we call you?').fill('Test Explorer');
@@ -107,7 +119,7 @@ try{
  const rejected=await setup();
  await rejected.addInitScript(session=>localStorage.setItem('kampuscape-auth',JSON.stringify(session)),{access_token:token(),refresh_token:'synthetic-refresh-token',expires_at:Math.floor(Date.now()/1000)+3600,token_type:'bearer',user:user()});
  await rejected.goto(url,{waitUntil:'domcontentloaded'});
- await rejected.getByText('Sign in with a verified @uic.edu account.',{exact:false}).waitFor();
+ await rejected.getByText('Sign in with an @uic.edu account.',{exact:false}).waitFor();
  assert.equal(await rejected.getByRole('heading',{name:'Nice to meet you.'}).count(),0);
  currentEmail='student@uic.edu';
  const mobile=await setup({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
@@ -124,14 +136,10 @@ try{
  await mobile.getByRole('button',{name:'Find my kind of plans'}).click();
  await mobile.waitForFunction(()=>!document.querySelector('.account-dialog').open);
  assert.equal(profiles.size,2);assert.equal(profiles.get(user().id).pronouns,'');
- const google=await setup();
- let authorization;
- await google.route('**/auth/v1/authorize?**',r=>{authorization=new URL(r.request().url());return r.fulfill({contentType:'text/html',body:'Synthetic OAuth redirect'});});
- await google.goto(url,{waitUntil:'domcontentloaded'});await google.getByRole('button',{name:'Open profile'}).click();
- await google.getByRole('button',{name:'Sign in',exact:true}).click();
- await google.getByRole('button',{name:'Continue with Google'}).click();await google.waitForURL('**/auth/v1/authorize?**');
- assert.equal(authorization.searchParams.get('provider'),'google');assert.equal(authorization.searchParams.get('hd'),'uic.edu');
- assert.equal(authorization.searchParams.get('code_challenge_method'),'s256');assert.equal(new URL(authorization.searchParams.get('redirect_to')).origin,new URL(url).origin);
+ const passwordOnly=await setup();
+ await passwordOnly.goto(url,{waitUntil:'domcontentloaded'});await passwordOnly.getByRole('button',{name:'Open profile'}).click();
+ await passwordOnly.getByRole('button',{name:'Sign in',exact:true}).click();
+ assert.equal(await passwordOnly.getByRole('button',{name:'Continue with Google'}).count(),0,'only password login even if Google is enabled remotely');
  // Render the actual email button URLs and open each in a fresh browser context.
  const emailLink=(template,hash)=>{
   const html=readFileSync(new URL(`../../backend/supabase/templates/${template}.html`,import.meta.url),'utf8');
@@ -168,5 +176,13 @@ try{
   assert.equal(new URL(expired.url()).searchParams.has('token_hash'),false);
   assert.equal(await expired.getByRole('heading',{name:'Choose a new password.'}).count(),0);
  }
- assert.deepEqual(errors,[]);console.log('Onboarding browser checks passed: signup/reset email links on a fresh browser, password update, expired links, token cleanup, UIC-only password sign-up (one verification email) and sign-in, mandatory profile, retry, preferences, recommendations, reload, sign-out, non-UIC session rejection and phone layout.');
+ currentEmail='second@uic.edu';profiles.delete(user().id);
+ const noMail=await setup({},503);await noMail.goto(url,{waitUntil:'domcontentloaded'});
+ await noMail.getByRole('button',{name:'Open profile'}).click();await noMail.getByRole('button',{name:'Create an account'}).click();
+ await noMail.getByLabel('UIC email',{exact:true}).fill('second@uic.edu');await noMail.getByLabel('Password',{exact:true}).fill(PASSWORD);
+ await noMail.getByRole('button',{name:'Create account',exact:true}).click();
+ await noMail.getByRole('heading',{name:'Nice to meet you.'}).waitFor();
+ await noMail.getByText('Your account is ready, but we couldn’t send the welcome email.',{exact:false}).waitFor();
+ assert.equal(await noMail.getByLabel('What should we call you?').count(),1,'mail failure keeps the account usable');
+ assert.deepEqual(errors,[]);console.log('Onboarding browser checks passed: legacy confirmation/reset links on a fresh browser, password update, expired links, token cleanup, immediate UIC password signup, authenticated welcome email request, password-only sign-in without emails or Google, mandatory profile, retry, preferences, recommendations, reload, sign-out, non-UIC session rejection and phone layout.');
 }finally{await browser.close();}

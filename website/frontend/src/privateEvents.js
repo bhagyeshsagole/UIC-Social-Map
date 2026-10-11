@@ -1,4 +1,4 @@
-// Event links contain a snapshot, so they work without an account or shared database.
+// Legacy/external hash links contain snapshots; new owned-event links use eventShares.js.
 // Only explicitly allowed fields are read back from links and local storage.
 const text = (value, limit) => typeof value === 'string' ? value.trim().slice(0, limit) : '';
 const coords = value => Array.isArray(value) && value.length === 2 && value.every(Number.isFinite) && Math.abs(value[0]) <= 180 && Math.abs(value[1]) <= 85;
@@ -27,7 +27,9 @@ export function cleanEvent(value) {
     date:isPrivate ? value.date : undefined, time:isPrivate ? value.time : undefined,
     // Member events marked Public are listed for all UIC members; others stay link-only.
     visibility:isPrivate && value.visibility === 'public' ? 'public' : undefined,
-    description:text(value.description, 500), when:text(value.when, 180), url:safeUrl(value.url)};
+    description:text(value.description, 500), when:text(value.when, 180), url:safeUrl(value.url),
+    host:value.host && text(value.host.name,60)?{name:text(value.host.name,60),avatar:text(value.host.avatar,30)}:undefined,
+    shareToken:typeof value.shareToken==='string'&&/^[\da-f]{8}(-[\da-f]{4}){3}-[\da-f]{12}$/i.test(value.shareToken)?value.shareToken:undefined};
 }
 export function validDate(value) {
   return typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value) && Number.isFinite(Date.parse(value + 'T12:00:00Z')) && new Date(value + 'T12:00:00Z').toISOString().slice(0,10) === value;
@@ -41,7 +43,7 @@ export function eventLink(event, base, when) {
   const bytes = new TextEncoder().encode(JSON.stringify({v:1,event:snapshot}));
   const payload = btoa(Array.from(bytes, b => String.fromCharCode(b)).join('')).replaceAll('+','-').replaceAll('/','_').replace(/=+$/, '');
   if (payload.length > 24000) throw new Error('Choose a smaller building footprint to share this event.');
-  const url = new URL(base); url.hash = `event=${payload}`; return url.href;
+  const url = new URL(base); url.searchParams.delete('share'); url.hash = `event=${payload}`; return url.href;
 }
 export function readEventLink(hash) {
   if (!hash.startsWith('#event=')) return {event:null,error:''};

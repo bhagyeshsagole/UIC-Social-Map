@@ -1,6 +1,6 @@
 # Kampuscape — Living Plan and Tracker
 
-Last updated: 2026-10-07 (America/Chicago)
+Last updated: 2026-10-10 (America/Chicago)
 Phase: First local frontend prototype; production decisions and backend remain open<br>
 Team: Bhagesh — frontend; Hassan — backend, data, and deployment  
 Current review: [Evidence, loopholes, and recommendations](EVENT_MAP_REVIEW.md)
@@ -22,7 +22,7 @@ Statuses: TODO, IN PROGRESS, AWAITING TEAM INPUT, BLOCKED, DONE, DEFERRED, SUPER
 | ID | Requirement | Status |
 | --- | --- | --- |
 | E01 | Map-centered portal with Chicago places/events relevant to UIC students | Local frontend prototype built; no backend |
-| E02 | UIC students are the intended membership; require verification through a UIC email | Accepted goal; email alone does not prove current enrollment, mechanism unresolved |
+| E02 | UIC students are the intended membership; require the exact `uic.edu` email domain | Signup mailbox verification superseded by immediate signup on 2026-10-10; domain entry does not verify mailbox control or enrollment |
 | E03 | Seed places and recommendations using the builders' local knowledge | Accepted; factual benefits still need verification |
 | E04 | Surface student benefits and practical information, including free/discounted admission where documented | Seven sourced prototype listings; field-level caveats included |
 | E05 | Let users express intent to attend and see others planning to go | Accepted; time/group semantics to define |
@@ -49,10 +49,10 @@ Sources and details are in [EVENT_MAP_REVIEW.md](EVENT_MAP_REVIEW.md). These are
 
 | ID | Decision | Proposed starting point | State |
 | --- | --- | --- | --- |
-| EV01 | Membership boundary | User accepted exact verified `uic.edu` email membership via Supabase email OTP or Google; this verifies a mailbox, not enrollment | Accepted 2026-10-07; hosted configuration pending |
+| EV01 | Membership boundary | Exact `uic.edu` email and password; immediate signup, no MFA or signup verification; Resend account-created email and reset links | Accepted 2026-10-10, supersedes OTP/Google; local changes ready, hosted update pending |
 | EV02 | What a map pin represents | Separate place, dated external event, and student meetup records | Proposed |
 | EV03 | Who sees names, nicknames, and attendance | Login required; meetup-scoped nickname by default, explicit name opt-in; no public attendance history | Proposed |
-| EV04 | How chat and blocks work | Meetup group chat plus accepted requests for DMs; blocks follow internal accounts across nicknames | Proposed |
+| EV04 | How chat and blocks work | Event-attendee direct message requests; recipient accepts or declines before text, account-wide blocks across nicknames | Accepted 2026-10-10; locally implemented, hosted migration pending; group chat is not included |
 | EV05 | Who creates events/meetups | Verified members submit plans; team reviews pilot listings; consistent host profile and public venues initially | Proposed |
 | EV06 | Age policy and venue restrictions | Decide supported ages; show event restrictions separately from UIC verification | Open |
 | EV07 | Retention and moderation ownership | Define post-event chat/attendance lifetime, report handling, restricted evidence retention, and account deletion | Open |
@@ -186,3 +186,13 @@ Saved holds bookmarked places; My Events holds private event drafts and external
 - After opening event details/registration and returning to the app, ask “Did you register?” and offer **Add to My Events** or **Not now**. Never infer completed registration from a click.
 - Add saves an external event snapshot locally, with duplicate prevention, reopen and remove controls; it does not create a private event or change roof colors. Existing saved events do not prompt again.
 - **2026-10-07:** A29 implements the reminder across event cards, map details and programmatic event links. Pending returns survive reload for up to 24 hours; saved events persist on the device. Account synchronization remains H06 in Workflow A.
+
+## Account simplification accepted on 2026-10-10
+
+- User explicitly selected immediate signup with email/password and an account-created notification, superseding one-time signup verification. No two-factor authentication; remove the Google UI. Exact `uic.edu` domain guards remain, but mailbox control/enrollment is not established.
+- Welcome email is sent through a server-only Resend API call using the authenticated account address. Password-reset links use Supabase + Resend SMTP and the existing recovery form. Failed welcome delivery does not block the account.
+- A33/B17 includes the local implementation, configuration and validation. Publishing requires Supabase immediate-signup settings and Cloudflare Pages runtime email secrets; no hosted changes were made in this session.
+
+## Accepted experience changes — 2026-10-10
+
+The user requested rich private-event share links with host/event/date/time thumbnails, a first-visit clickable explanation of the main UI, efficient persistent feed caching/refresh, attendee-to-attendee messaging requiring recipient acceptance with blocking, and a Live-events recommendation popup each signed-in visit. Implemented locally as A34/B18; deployment remains pending. Private links deliberately reveal the event snapshot and host to anyone holding the URL, including preview crawlers. Recommendations use existing real event data and interest matches, with upcoming fallbacks. Browser polling pauses hidden/offline; an optional KV-backed scheduled Worker handles refresh without visitors. See [implementation and hosted setup](website/backend/SOCIAL_FEATURES.md).

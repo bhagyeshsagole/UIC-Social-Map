@@ -116,9 +116,9 @@ The share dialog uses the event name as its heading and page/native-share title,
 
 ## UIC accounts and recommendations
 
-A25 adds Supabase email-code/Google sign-in restricted to verified `uic.edu` accounts, name/optional pronouns/preset-avatar onboarding, and 1–8 interests. Sign in from the profile control, saving a place or creating an event. Public map browsing remains available. Profiles sync to Supabase; local saved places/private plans are scoped to the signed-in account. Existing guest records remain on the device.
+A33/B17 supersedes email-code/Google sign-in with immediate signup and email/password login for `uic.edu` accounts (no signup verification or MFA), name/optional pronouns/preset-avatar onboarding, and 1–8 interests. Sign in from the profile control, saving a place or creating an event. Public map browsing remains available. Profiles sync to Supabase; local saved places/private plans are scoped to the signed-in account. Existing guest records remain on the device.
 
-Copy `.env.example` to `.env.local` and supply the project’s public publishable key. The project URL is already specified. Follow the [Supabase setup](../backend/supabase/README.md) to apply the migration and enable the UIC Auth hooks, email delivery and Google provider. Missing configuration shows a setup message instead of simulating sign-in. Hosted setup is not yet verified.
+Copy `.env.example` to `.env.local` and supply the project’s public publishable key. The project URL is already specified. Follow the [Supabase setup](../backend/supabase/README.md) to apply the migration and enable the UIC Auth hooks, immediate signup, Resend SMTP recovery and Pages welcome-email secrets. Missing configuration shows a setup message instead of simulating sign-in. The October 10 changes still require publishing; see the backend guide for exact settings.
 
 Live events has a **For you** tab that matches the profile’s interests to current event content and explains each match. Edit interests from the profile or that tab. `npm run events:interests` retags the existing snapshot; `events:refresh` tags all refreshed events automatically. The shared `src/interests.js` catalog drives the UI, pipeline and ranking. Run `tests/onboarding-smoke.mjs` against the mock-configured dev server described in the backend guide for deterministic desktop/mobile verification.
 
@@ -139,3 +139,13 @@ A29 tracks event details/registration link activation, then waits for the page t
 Pending return state uses tab-scoped session storage (`kampuscape-registration-return`, also account-scoped), survives reload and expires after 24 hours. Saved events remain local until removed; account-specific saves and pending reminders clear on account deletion. Switching accounts remounts the registration state. Browser focus/visibility signals indicate return to the app, not completion on another website; browser tab suspension and disabled storage can limit recovery. Account-backed sync remains Workflow A H06.
 
 With Vite running: `PLAYWRIGHT_CHANNEL=chrome node tests/registration-return-smoke.mjs`. The test stubs external registration pages and simulates lifecycle signals in headless Chrome; it never submits a registration. It checks the Fall Fest detail link, UIC card links, add/dismiss, persistence, duplicates, removal, mobile bounds and pending-return recovery after reload.
+
+### Visit guide, recommendations, sharing, and messaging
+
+First visits show eight clickable guide cards; **How it works** reopens the guide. Members get up to four current Live-events recommendations on each page visit, ranked by interests and timing. A shared-event deep link takes priority over the recommendations popup. **What’s happening** reopens recommendations.
+
+Private-event **Share** now creates an unlisted server-rendered page with host/event/date/time metadata and a PNG thumbnail. **Who’s going → Message** sends a request; recipients accept or decline before chatting and can block across all events. Messages are available from the top-right control.
+
+Public event data preloads and survives temporary network failures. Account data caches are separated and cleared at sign-out; hidden/offline tabs pause polling. The optional scheduled Worker refreshes the public feed while nobody is browsing. See [backend setup and behavior](../backend/SOCIAL_FEATURES.md) for required migrations, Pages variables, privacy/lifecycle details, and the optional KV/cron deployment.
+
+Run `node tests/social-smoke.mjs` against the mock-configured port 5174 server described in the backend README for synthetic desktop/mobile two-user checks.

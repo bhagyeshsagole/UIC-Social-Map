@@ -10,11 +10,15 @@
 > 3. **When finished**, update both files again: the owner's workflow gets status, evidence, checkbox, and a dated change-log entry; remove the claim from *Active claims* in both files, and add a one-line change-log entry to the other workflow saying what changed.
 > 4. If it's unclear whose workflow a request belongs to, use the one that owns the paths being touched and ask if still unclear. Never edit the other person's folders without an agreed handoff or an explicit request.
 
-**Updated:** 2026-10-07<br>
+**Updated:** 2026-10-10<br>
 **Current task:** A24 complete (Kampuscape rename; selected building names and address fallback); A25/A28 accounts live with link-based verification emails<br> A29 registration return prompt ready for publication.
 **Implementation progress:** A02 and A08 complete; remaining production journey tasks pending
 
 ## Steps and tracker
+
+- [x] **A34 / B18 · Social experience and efficient refresh (local implementation).** Rich event previews, clickable guide, member visit recommendations, accepted-request messaging/account blocking, resilient shared caches and scheduled Worker; hosted activation pending.
+
+- [x] **A33 / B17 · Simplify accounts (local implementation).** Immediate email/password signup, no signup verification or MFA, Resend welcome/recovery emails; hosted activation remains pending.
 
 - [x] **A26 · Deploy to kampuscape.com/uic.** Cloudflare Pages project `kampuscape`, `/uic/` base, live campus events via a Pages Function, pages.dev and www redirected to kampuscape.com. `npm run deploy` in `website/frontend`.
 - [x] **A24 · Kampuscape rename.** Updated project titles, frontend package name, documentation and synthetic contract examples; migrate existing saved places and drafts to Kampuscape storage keys.
@@ -63,6 +67,9 @@ Check a task only when its result exists. If a task is partial, leave it uncheck
 
 | Task | State | Evidence / blocker |
 | --- | --- | --- |
+| A35 / B19 | IN PROGRESS | User-authorized Git push and production deployment of A33/A34; checking database, mail and Cloudflare prerequisites. |
+| A34 / B18 | LOCAL DONE; HOSTED PENDING | Rich host/event/date/time PNG share pages; clickable first-visit guide; member visit recommendations; consent messages with global blocking; session-scoped caches, resilient edge refresh and optional cron Worker. 80 unit/database tests, social two-user/mobile, onboarding and private-event browser regressions, Pages build/function compile and Worker dry-run passed. Apply migrations/runtime variables before publication; [setup](website/backend/SOCIAL_FEATURES.md). |
+| A33 / B17 | LOCAL DONE; HOSTED PENDING | Immediate email/password signup, no Google UI/MFA/verification step; server-side Resend welcome email and SMTP recovery links. Unit suite, desktop/mobile browser flow (including mail failure), Pages build and function compile pass. Publication requires Supabase management access and Pages Resend runtime secrets; see [setup](website/backend/supabase/README.md). |
 | A29 push | DONE | GitHub accepted `61158aa` on main after merging upstream; 68 unit tests, production build and desktop/mobile registration flow pass. H06 remains cloud-sync dependency. |
 | A29 | DONE | Return-only registration reminder, explicit add/dismiss, deduplicated local My Events with removal and Spotlight entries. 54 unit tests, build and desktop/mobile Chrome flow passed, including Fall Fest map details and pending-return recovery after reload. Account sync remains H06. |
 | A28 / B13 | DONE | User-requested production deployment `d89ac041` completed. 59 tests and Pages build passed; live `/uic` returns 200 and references the matching new bundle with signup/reset-link UI. Supabase CLI is unauthenticated and dashboard controls remain stuck; outgoing email templates still require saving. |
@@ -97,6 +104,7 @@ Mirrored in both workflow files. Add a row when work starts; remove it when the 
 
 | Who | Task | Paths being touched | Since |
 | --- | --- | --- | --- |
+| Codex | A35 / B19 | Release files, workflows, Supabase migrations/settings and Cloudflare deployment | 2026-10-10 |
 | Claude Code | A25 / B12 | Google OAuth configuration (existing claim preserved) | 2026-10-07 |
 
 ## Handoffs and messages to Hassan
@@ -105,6 +113,7 @@ Write requests here; Hassan responds in [his tracker](WORKFLOW_B_HASSAN.md#hando
 
 | ID | Date | Request / deliverable | State |
 | --- | --- | --- | --- |
+| H07 | 2026-10-10 | A33/B17 local account update is validated. Apply `sync-auth-settings.mjs`, disable hosted MFA, set Pages `SUPABASE_PUBLISHABLE_KEY`, `RESEND_API_KEY` and `RESEND_FROM_EMAIL`, publish and verify real signup/welcome/reset. This supersedes the Google UI request; mailbox verification is no longer required. | Hosted credentials/configuration pending |
 | H01 | 2026-10-04 | A08 uses MapLibre 6 + OpenFreeMap for a local prototype. Hassan to review production provider, bounds/coverage, and quotas in B02. Metadata in `website/frontend/src/placeDetails.js` is provisional. | Awaiting Hassan |
 | H02 | 2026-10-04 | Implement [B10 Sunday refresh](SUNDAY_REFRESH_TASK.md); preserve user-edited Markdown copy and produce source-backed review tasks. | TODO |
 | H03 | 2026-10-05 | A12 provides `website/frontend/scripts/campus-events.mjs` and a sanitized public snapshot. Local dev/preview refresh via a cached same-origin API. Reuse the importer for production API/scheduled builds when hosting is selected; static-only deploys show snapshot freshness and cannot refresh the upstream feed themselves. | Production endpoint deployed by A26 on 2026-10-07 (Cloudflare Pages Function, user-authorized); Hassan to review hosting choice in B03 |
@@ -280,3 +289,7 @@ Ordered by impact for students on phones.
 - **2026-10-07:** Who's going moved into the event card header beside the close button (stacks under the title on phones); My name / Anonymous is now a sliding switch, and switching an existing attendance asks for confirmation (joining is one tap).
 - **2026-10-07 (A31/B15 follow-up):** Per the user, public member events and attendee counts are visible without signing in. Migration `202610070006_public_events_for_everyone.sql` (applied): anon can select public-event columns (never `creator_id`); `kampuscape_event_attendees` is callable by anon but returns names/avatars/anonymous flags only to verified members (guests get the count). Creating, deleting and joining still require a verified member. Live probes: guest read 200, creator column 401, guest join 401.
 - **2026-10-08:** Public events show the host (user decision): migration `202610070007_public_event_hosts.sql` (applied) adds `kampuscape_public_events()` returning events plus the host's profile name/avatar (no IDs/emails) to everyone. Frontend: compact event pins (dot; name on hover/focus), "Hosted by" on cards, Community and search; public events in search, the events count, and refresh every 20 s and on tab focus; attendee block replaced by a small "N going · Join" pill opening a Who's going popup; My Events nav badge; sign-in closes the dialog instead of showing the profile; fixed the stretched My Events switch.
+
+- **2026-10-10 (A33/B17):** User explicitly chose immediate email/password signup, an account-created notification and Resend password resets, superseding signup email verification and the Google UI. Auth returns a session directly; profiles no longer display “Email verified.” Added an authenticated Pages welcome-email endpoint with server-derived UIC recipient, a ten-minute account-age limit, per-account Resend idempotency and generic provider errors. Welcome failures leave onboarding usable and show a notice. Kept legacy confirmation links compatible. Added targeted immediate-signup/recovery/Resend settings script and deployment instructions. Full unit suite, extended desktop/mobile onboarding smoke test (including mail failure), production Pages build, Pages Function compilation, local settings check and diff whitespace check pass. Screenshots reviewed and saved in `/tmp/kampuscape-account-qa/`. Hosted activation remains pending: Supabase CLI has no management access token and no Resend API key is available in this session; set Pages runtime secrets, turn off Confirm email/MFA, apply settings and publish. Existing Google configuration claim is preserved for coordination; provider credentials and concurrent map/event-creator edits were not changed by this task.
+
+- **2026-10-10:** A34/B18 locally completed (Codex), explicitly requested across frontend/backend contracts and deployment. Added persisted unlisted share pages with server-rendered host/event/date/time metadata and 1200×630 PNGs, revocation and expiration; first-visit clickable guide and per-visit member recommendations; attendee message requests, recipient acceptance/decline, account-wide blocking, paginated chat, SQL authorization/rate limits and send deduplication. Shared preload/cache resources pause hidden/offline, clear account data on sign-out, preserve last-good feeds, and avoid closed-conversation polling. Edge refresh supports optional KV and a 15-minute scheduled Worker. Evidence: 80 unit/database tests; desktop/mobile two-user social, immediate-signup/reset and private-event create/share/delete browser checks; visual PNG/mobile review; Pages build/functions compile and Worker dry-run. No real messages or emails sent. Hosted migrations/runtime keys/KV deployment remain pending; see [setup](website/backend/SOCIAL_FEATURES.md). Earlier A33 work and unrelated map/creator edits preserved.

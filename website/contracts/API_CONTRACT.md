@@ -428,3 +428,21 @@ The team must decide whether a meetup/event that other users joined is deleted, 
 - Approve or change the public visibility rules for meetup and attendance data.
 - Review the sample endpoint names and response field names before backend implementation.
 - Confirm that the synthetic examples contain no real user data or credentials.
+
+## Implemented social RPC extension — 2026-10-10
+
+These additive Supabase RPCs are implemented and locally validated; hosted migration is pending. The existing attendee endpoint is unchanged. See [behavior and deployment](../backend/SOCIAL_FEATURES.md).
+
+| RPC | Arguments | Result / access |
+| --- | --- | --- |
+| `kampuscape_share_event` | `p_event jsonb` | Stable UUID share token; completed member, own event only; authoritative profile host |
+| `kampuscape_shared_event` | `p_token uuid` | Whitelisted snapshot plus host and shareToken, or null; exact-token public access; no account IDs/emails |
+| `kampuscape_revoke_share` | `p_event_id uuid` | Void; deletes caller-owned link |
+| `kampuscape_event_contacts` | `p_event_key text` | Existing display fields plus nullable event-scoped `contact_id`; guests receive count-only rows |
+| `kampuscape_request_message` | `p_contact_id uuid` | Thread UUID; server-resolved participant and names, idempotent pair/event request |
+| `kampuscape_message_inbox` | none | Latest 200 caller-owned threads; display_name/avatar_id/your_name, incoming/status, blocked/blocked_by_you, unread, updated_at; no counterpart user ID |
+| `kampuscape_message_action` | `p_thread_id uuid`, `p_action text` | `accept`, `decline` (recipient only), `block`, `unblock`, `read`; participant only |
+| `kampuscape_message_history` | `p_thread_id uuid`, optional `p_before bigint` | 50 descending `{id,body,is_you,created_at}` messages; accepted thread participant only |
+| `kampuscape_send_message` | `p_thread_id uuid`, `p_body text`, `p_client_id uuid` | Message ID; accepted, unblocked participants; UUID retry deduplication; 2,000 characters |
+
+Text cannot be sent before acceptance. Blocks follow internal accounts across event aliases, enforced transactionally. New requests are limited to 15/day and texts to 30/minute per sender. SQLSTATE `42501` means unavailable/forbidden, `22023` invalid input, and `54000` rate limit. Tables are not directly available to browser roles. Account deletion cascades to social records.

@@ -2,11 +2,11 @@
 
 Target project: [ddhqammspwmmrprpolfw](https://supabase.com/dashboard/project/ddhqammspwmmrprpolfw).
 
-The implementation provides email/password accounts with verification links and Google OAuth sign-in, exact `uic.edu` membership, and private profiles containing name, optional pronouns, a preset avatar and 1–8 interests. Email verification confirms mailbox control, not current enrollment.
+The implementation provides immediate email/password signup and login, an account-created email through Resend, recovery links through Supabase + Resend SMTP, and private profiles with name, optional pronouns, a preset avatar and 1–8 interests. No Google button, signup verification step or MFA challenge is presented. The exact `uic.edu` domain is still enforced; mailbox control and current enrollment are not verified.
 
 ## Connection status
 
-Code and local PostgreSQL/browser checks are implemented. The remote migration, Auth hooks, email delivery, Google provider configuration and public browser key still need to be applied/verified through the project connection. Do not call sign-in live until these steps pass.
+On October 10, A35/B19 applied the social migrations, enabled immediate signup, saved the recovery-link template, and configured Pages runtime secrets using the existing verified sender. Resend SMTP and Auth hooks remain in place. Existing password-change protections are preserved. Real welcome/reset email delivery has not been exercised with a new account; no real emails were sent during release checks.
 
 ## Apply to the existing project
 
@@ -14,20 +14,20 @@ Code and local PostgreSQL/browser checks are implemented. The remote migration, 
 2. In Authentication → Hooks, enable both Postgres hooks:
    - Before User Created: `public.kampuscape_before_user_created`
    - Custom Access Token: `public.kampuscape_access_token_hook`
-3. Enable email sign-ups and email confirmation. Keep anonymous sign-in and manual identity linking disabled; keep secure email changes enabled. Set OTP length to 6 and expiry to 600 seconds. Use [confirmation.html](templates/confirmation.html) for **Confirm signup** and [recovery.html](templates/recovery.html) for **Reset password**. These buttons point back to the app with `token_hash` and `type=email|recovery`; the app calls `verifyOtp`, removes the token from the URL and opens onboarding or the new-password form. Numeric codes are not used in these two flows.
-4. Configure an existing SMTP provider for delivery to real UIC addresses. Supabase's default mail service restricts recipients; successful mocked browser tests do not verify mail delivery. Keep email rate limits enabled.
-5. Enable Google under Authentication → Sign In / Providers using the project's Google OAuth web client. Add `https://ddhqammspwmmrprpolfw.supabase.co/auth/v1/callback` to Google's authorized redirect URIs. The Google client secret stays in Supabase. A Google account must have a verified UIC address; the `hd=uic.edu` chooser hint is not the security boundary.
+3. Enable email sign-ups and turn **Confirm email off** (Management API: `mailer_autoconfirm: true`). This returns a session immediately. Supabase fills `email_confirmed_at` automatically; this field no longer proves mailbox control. Existing token hooks/RLS continue to check the authoritative Auth record and UIC domain. Keep anonymous sign-in, manual identity linking and MFA enrollment/verification disabled. Preserve existing secure password-change and reauthentication protections; password recovery uses the authorized reset-link session. Existing unactivated accounts may still need recovery or support; no existing users are modified by the settings script.
+4. Keep Resend SMTP configured: host `smtp.resend.com`, port `465`, user `resend`, password a server-only Resend API key, sender at the verified `kampuscape.com` domain, sender name Kampuscape. The [Resend setup guide](https://resend.com/docs/send-with-supabase-smtp) documents these settings. Set recovery-link expiry to 600 seconds and keep rate limits. Use [recovery.html](templates/recovery.html) for Reset password; its app link works on another device, with no numeric-code form.
+5. Configure Cloudflare Pages **runtime** variables/secrets for the welcome-email function: `SUPABASE_PUBLISHABLE_KEY` (the existing public browser key), `RESEND_API_KEY` (secret), and `RESEND_FROM_EMAIL` (sender address at the verified domain). The function uses the fixed project URL and obtains the recipient by validating the bearer token with Supabase Auth. It accepts only accounts created in the past ten minutes and uses a stable per-account [Resend idempotency key](https://resend.com/docs/dashboard/emails/idempotency-keys) to prevent duplicate welcome emails. The browser never chooses the recipient or sees the Resend key. Delivery failure leaves the created account usable and shows a notice in onboarding. Password reset continues through Supabase's existing Resend SMTP connection. Only creation requests a welcome email; normal login sends none. Local Vite does not run Pages Functions; use `wrangler pages dev dist` after building for an integrated local check.
 6. Configure Site URL for the deployed app and allow exact callback URLs. The current Pages configuration uses `https://kampuscape.com/uic` (no trailing slash; the client redirects to origin + pathname). Include `http://localhost:5173/` and `http://127.0.0.1:5173/` for local development, plus the precise development URL when using a different port. Do not use unrestricted wildcard redirects.
-7. Copy `website/frontend/.env.example` to `.env.local`, fill `VITE_SUPABASE_PUBLISHABLE_KEY` with the project's publishable key, and rebuild. Set both public `VITE_` variables in the production build environment too. No service-role key or Google secret belongs in a browser variable.
+7. Copy `website/frontend/.env.example` to `.env.local`, fill `VITE_SUPABASE_PUBLISHABLE_KEY` with the project's publishable key, and rebuild. Set both public `VITE_` variables in the production build environment too. No service-role key, Resend key or SMTP password belongs in a browser variable.
 
 ## Security model
 
 - The Auth database trigger rejects non-UIC addresses, pending non-UIC email changes and anonymous accounts. Exact domain matching rejects subdomains and suffix tricks.
 - The before-create hook returns a useful error for email and OAuth signup.
 - The access-token hook checks the canonical `auth.users` record for UIC email, confirmation, anonymous status and bans on issuance and refresh. Existing non-UIC users are denied new tokens once the hook is enabled.
-- RLS rechecks the current Auth record, independently of user-editable metadata and stale email claims. A verified member can select, insert and update only their own profile. Anonymous clients have no profile grants. No public profile list is exposed.
+- RLS rechecks the current Auth record, independently of user-editable metadata and stale email claims. An eligible member can select, insert and update only their own profile. Anonymous clients have no profile grants. No public profile list is exposed.
 - Database constraints validate name/pronoun lengths, avatar IDs, catalog interests and duplicates. Profile timestamps are maintained by a trigger.
-- The browser validates again for clear feedback. Google and email share the same profile. New members complete onboarding before account actions are enabled.
+- The browser validates the UIC domain again for clear feedback. New members complete onboarding before account actions are enabled.
 - Profiles sync through Supabase. Bookmarks and private drafts remain device-local, with separate storage keys per authenticated user. Existing guest records remain under their previous keys.
 
 ## Interest pipeline
@@ -64,19 +64,23 @@ TEST_APP_URL=http://127.0.0.1:5174 node tests/smoke.mjs
 
 Mocks live only in test files. There is no development-auth bypass in the product. Screenshots are under `website/frontend/artifacts/onboarding-*.png`.
 
-Before releasing, verify a real UIC signup email link and password-reset link, real UIC Google sign-in, rejection of a non-UIC Google account, callback redirects, profile persistence from a second browser, and direct non-UIC signup rejection. Never use real user data as test fixtures.
+Before releasing, verify immediate signup and its account-created email, email/password login without another email, a real password-reset link, callback redirects, profile persistence from a second browser, and direct non-UIC signup rejection. Never use real user data as test fixtures.
 
 References checked October 7, 2026: [Auth hooks](https://supabase.com/docs/guides/auth/auth-hooks), [before user creation](https://supabase.com/docs/guides/auth/auth-hooks/before-user-created-hook), [token hooks](https://supabase.com/docs/guides/auth/auth-hooks/custom-access-token-hook), [Google sign-in](https://supabase.com/docs/guides/auth/social-login/auth-google), [email templates](https://supabase.com/docs/guides/auth/auth-email-templates), [API keys](https://supabase.com/docs/guides/getting-started/api-keys).
 
-## Publish signup and recovery email templates
+## Apply immediate signup and recovery settings
 
-Changing the local HTML alone does not change Supabase's outgoing emails. In Authentication → Emails, copy the matching template into Confirm signup and Reset password, including the subjects from `config.toml`. Preserve SMTP, redirect URLs, Google settings and Auth hooks.
-
-Alternatively, with `SUPABASE_ACCESS_TOKEN` supplied securely in the environment, run:
+Local files do not change hosted Auth. With `SUPABASE_ACCESS_TOKEN` supplied securely, run from the repository root:
 
 ```sh
-node website/backend/supabase/sync-email-templates.mjs --check
-node website/backend/supabase/sync-email-templates.mjs
+node website/backend/supabase/sync-auth-settings.mjs --check
+node website/backend/supabase/sync-auth-settings.mjs
 ```
 
-This script updates only those two subjects and bodies and reads them back to verify the save. It never prints the management token or other Auth configuration. Deploy the matching frontend with `npm run deploy` from `website/frontend`. Test new emails after changing templates; previously delivered code emails do not change.
+The script reads existing configuration, requires an existing Resend SMTP connection (or `RESEND_API_KEY` + `RESEND_FROM_EMAIL` in the environment), enables immediate signup, saves the recovery template, and verifies the saved fields. It preserves hooks, redirects and provider credentials. Disable MFA enrollment/verification in Authentication → MFA too; the app does not enroll factors or issue challenges. Configure the Pages runtime variables before publishing the new function/frontend with `npm run deploy` from `website/frontend`.
+
+Confirmation/magic-link templates and the older `sync-email-templates.mjs` remain for already-issued legacy links. They are not part of new signup. `AuthProvider` still accepts old confirmation links so previously sent emails do not break.
+
+## Social feature migrations (2026-10-10)
+
+The additive `202610100001_event_shares.sql` and `202610100002_direct_messages.sql` migrations add unlisted rich-preview pages and consent-based direct messages. Apply after all earlier migrations before deploying the corresponding frontend. [Social feature setup](../SOCIAL_FEATURES.md) covers runtime public-key configuration, RPC permissions, link revocation, account-wide blocks, verification, and optional scheduled feed refresh. Both migrations were applied to the hosted project during A35/B19.
