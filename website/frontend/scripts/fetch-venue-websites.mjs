@@ -12,7 +12,8 @@ const AGENT = 'Mozilla/5.0 (compatible; KampuscapeBot/1.0; +https://kampuscape.c
 const CHECKED = new Date().toISOString().slice(0, 10);
 const out = new URL('../../data/places/venue-websites.json', import.meta.url);
 const raw = JSON.parse(readFileSync(new URL('../../data/places/uic-nearby-osm.json', import.meta.url)));
-const places = JSON.parse(readFileSync(new URL('../src/nearbyPlaces.json', import.meta.url))).places;
+// Shown and hidden places together: a hidden place may gain the photo or hours it lacks.
+const places = ['../src/nearbyPlaces.json', '../../data/places/hidden-places.json'].flatMap(file => {try {return JSON.parse(readFileSync(new URL(file, import.meta.url))).places;} catch {return [];}});
 const tagsById = new Map(raw.elements.map(e => [`osm-${e.type}-${e.id}`, e.tags || {}]));
 const websiteOf = p => (p.sources || []).find(([label]) => label === 'Venue website')?.[1];
 

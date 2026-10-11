@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import * as maplibregl from 'maplibre-gl';
 import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
 maplibregl.setWorkerUrl(workerUrl);
@@ -23,6 +23,35 @@ const UIC_LABEL = [-87.64927, 41.87191];
 const HOME = {center:UIC_LABEL,zoom:15.3,pitch:54,bearing:0,roll:0};
 // Street-level zoom where every pin with room shows its name.
 const NAME_ZOOM = 16.5;
+// Pins compete for room like labels on a printed map. Each place has a fixed rank: hand-picked
+// destinations, student perks and event venues first, then places with real photos, then places
+// with known hours, then the rest of the directory. A pin is drawn only when no higher-ranked pin
+// sits within `spacing` pixels and it isn't under the floating controls. Zooming in shrinks the
+// spacing and unlocks lower tiers, so the directory fills in street by street. The rank never
+// depends on the map centre, so panning only adds or removes pins at the edges.
+const TIER_ZOOM = [0, 14.5, 15, 16];
+const CHROME = '.topbar .nav-pill,.location-status,.event-count-pill,.profile,.search-pill,.map-legend,.social-tools button,.uic-home,.view-toggle,.credits-button';
+const pinTier = p => !p.id.startsWith('osm-') || p.student || p.events?.length ? 0 : p.photo && !p.photo.illustration ? 1 : p.schedule ? 2 : 3;
+function declutterPins(m, order, selected, revealAll, surface) {
+  const zoom = m.getZoom(), width = surface.clientWidth, height = surface.clientHeight, view = surface.getBoundingClientRect();
+  const spacing = (zoom >= 17.5 ? 54 : zoom >= 16.5 ? 68 : zoom >= 15.5 ? 84 : zoom >= 14.5 ? 100 : 120) * (revealAll ? .75 : 1);
+  const chrome = [...document.querySelectorAll(CHROME)].map(el => el.getBoundingClientRect()).filter(r => r.width && r.height)
+    .map(r => ({left: r.left - view.left - 6, top: r.top - view.top - 6, right: r.right - view.left + 6, bottom: r.bottom - view.top + 6}));
+  const b = m.getBounds(), dx = (b.getEast() - b.getWest()) * .2, dy = (b.getNorth() - b.getSouth()) * .2;
+  const near = ([lng, lat]) => lng > b.getWest() - dx && lng < b.getEast() + dx && lat > b.getSouth() - dy && lat < b.getNorth() + dy;
+  const placed = [];
+  for (const {place: p, tier} of selected ? [{place: selected, tier: 0}, ...order.filter(o => o.place.id !== selected.id)] : order) {
+    const chosen = p.id === selected?.id;
+    if (!chosen && ((!revealAll && zoom < TIER_ZOOM[tier]) || !near(p.coords))) continue;
+    const {x, y} = m.project(p.coords);
+    // Decide a little past the edges so pins entering the view don't flip on every pan.
+    if (!chosen && (x < -spacing || x > width + spacing || y < -spacing || y > height + spacing)) continue;
+    const box = {left: x - 26, top: y - 56, right: x + 26, bottom: y};
+    if (!chosen && (placed.some(q => (q.x - x) ** 2 + (q.y - y) ** 2 < spacing * spacing) || chrome.some(c => box.left < c.right && box.right > c.left && box.top < c.bottom && box.bottom > c.top))) continue;
+    placed.push({p, x, y});
+  }
+  return placed.filter(({p, x, y}) => p.id === selected?.id || (x > -40 && x < width + 40 && y > -10 && y < height + 70)).map(({p}) => p);
+}
 const EXTRUSIONS = base.layers.filter(l=>l.type==='fill-extrusion').map(l=>l.id);
 // Hover preview for a purple building. Feed text goes in through textContent only.
 function peekContent(groups){
@@ -54,7 +83,7 @@ export function styledMap(night, eventVenueIds = [], privateVenues = []) {
   style.light={anchor:'viewport',color:night?'#b7bedf':'#fff2d8',intensity:night?0.35:0.45,position:[1.5,210,45]};
   return style;
 }
-export default function Map({places,selected,onSelect,night,resetKey,eventVenues=[],focusedEvent,venueGroups={},onVenuePick,focusedVenue,privateEvents=[],previewVenue=null,pickingBuilding=false,onBuildingPick,onPrivatePick}) {
+export default function Map({revealAll=false,places,selected,onSelect,night,resetKey,eventVenues=[],focusedEvent,venueGroups={},onVenuePick,focusedVenue,privateEvents=[],previewVenue=null,pickingBuilding=false,onBuildingPick,onPrivatePick}) {
   const container=useRef(), map=useRef(), markers=useRef({}), callback=useRef(onSelect), groupsRef=useRef(venueGroups), venueCallback=useRef(onVenuePick);
   groupsRef.current=venueGroups;venueCallback.current=onVenuePick;
   const privateRef=useRef(privateEvents), pickingRef=useRef(pickingBuilding), buildingCallback=useRef(onBuildingPick), privateCallback=useRef(onPrivatePick);
@@ -63,6 +92,8 @@ export default function Map({places,selected,onSelect,night,resetKey,eventVenues
   const colorVenues=useRef([]);colorVenues.current=[...privateEvents.map(e=>e.venue),...(previewVenue?[previewVenue]:[])];
   const colorKey=JSON.stringify(colorVenues.current);
   const [viewportVersion,setViewportVersion]=useState(0);
+  // Ties keep the incoming order: distance from campus, or the For you ranking.
+  const pinOrder=useMemo(()=>places.map((place,index)=>({place,tier:pinTier(place),index})).sort((a,b)=>a.tier-b.tier||a.index-b.index),[places]);
   const [status,setStatus]=useState('loading'), [retry,setRetry]=useState(0), [flat,setFlat]=useState(false);
   callback.current=onSelect;
   const venueKey=JSON.stringify([...new Set(eventVenues.map(v=>v.id))].sort());
@@ -221,8 +252,7 @@ export default function Map({places,selected,onSelect,night,resetKey,eventVenues
       const el=document.createElement('div');el.className='campus-pin';el.innerHTML='<b>UIC</b>';
       cache=markers.current={map:m,byId:new globalThis.Map(),campus:new maplibregl.Marker({element:el}).setLngLat(UIC_LABEL).addTo(m)};
     }
-    const bounds=m.getBounds(),center=m.getCenter();
-    const shown=places.filter(p=>p.id===selected?.id||bounds.contains(p.coords)).sort((a,b)=>(a.id===selected?.id?-1:b.id===selected?.id?1:Math.hypot(a.coords[0]-center.lng,a.coords[1]-center.lat)-Math.hypot(b.coords[0]-center.lng,b.coords[1]-center.lat))).slice(0,180);
+    const shown=declutterPins(m,pinOrder,selected,revealAll,container.current);
     const keep=new Set(shown.map(p=>p.id));
     cache.byId.forEach((pin,id)=>{if(!keep.has(id)){pin.marker.remove();setTimeout(()=>pin.root.unmount(),0);cache.byId.delete(id);}});
     const entries=shown.map(p=>{
@@ -265,7 +295,7 @@ export default function Map({places,selected,onSelect,night,resetKey,eventVenues
     for(const name of ['pointerover','pointerout','focusin','focusout'])surface.addEventListener(name,schedule);
     schedule();
     return ()=>{m.off('moveend',moved);m.off('zoomstart',zooming);cancelAnimationFrame(frame);sizes.disconnect();m.off('render',follow);m.off('resize',schedule);for(const name of ['pointerover','pointerout','focusin','focusout'])surface.removeEventListener(name,schedule);};
-  },[places,selected,retry,viewportVersion]);
+  },[pinOrder,selected,revealAll,retry,viewportVersion]);
   useEffect(()=>{if(selected&&map.current)map.current.flyTo({center:selected.coords,zoom:15.8,pitch:54,offset:window.innerWidth>760?[0,-220]:[0,-130],duration:900});},[selected]);
   useEffect(()=>{if(map.current&&resetKey>0)map.current.flyTo({center:HOME.center,zoom:15.3,pitch:54,bearing:-22,offset:[0,0],duration:900});},[resetKey]);
   useEffect(()=>{

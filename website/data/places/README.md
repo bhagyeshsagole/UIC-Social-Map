@@ -37,3 +37,9 @@ Imported hours retain source wording and are not parsed into a claim that a venu
 - Commons photos load directly from Wikimedia with the author and license from Commons metadata.
 
 These images belong to the venues or their authors. Remove an image on request by deleting its entry and rerunning the importer.
+
+## Shown and hidden places
+
+A nearby place ships to the app only when it has a real photo (not a category illustration) and listed hours. The importer writes those to `website/frontend/src/nearbyPlaces.json` and stores every other place, with what it lacks (`missing: ["hours", "photo"]`), in `hidden-places.json`. Hidden places never reach the browser. Every nearby place is logged in the generated block at the end of [added_sites.md](../../../added_sites.md), split into shown and hidden.
+
+To bring a place back, give it what it lacks and rerun the importer: a credited photo in `photos.json`, hand-checked hours in `overrides.json` under `hours` (`{"<id>": {"opening_hours": "Mo-Fr 08:00-17:00", "source": "https://…"}}`), or a fix in OpenStreetMap. The review catalog keeps hidden IDs, so reviews survive a place being hidden and shown again.

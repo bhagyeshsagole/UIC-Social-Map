@@ -341,3 +341,8 @@ button.fact-event:hover .fact-event-more{text-decoration:underline;text-underlin
 .place-recommendation{display:flex;flex-direction:column;padding-top:10px}
 .place-recommendation>.recommendation-reasons{padding:0 10px;margin-bottom:2px}
 .category-list{overflow-x:auto;scrollbar-width:none}.category-list::-webkit-scrollbar{display:none}.category-list button{white-space:nowrap;flex-shrink:0}
+
+/* Pins revealed by zooming or panning fade in instead of popping. */
+@keyframes pin-in{from{opacity:0;translate:0 6px}}
+.map-pin{animation:pin-in .28s ease-out}
+@media(prefers-reduced-motion:reduce){.map-pin{animation:none}}
