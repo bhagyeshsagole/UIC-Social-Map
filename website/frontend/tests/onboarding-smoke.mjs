@@ -113,7 +113,7 @@ try{
  assert.deepEqual(profiles.get(user().id).interests,['arts','volunteering']);
  await page.getByRole('button',{name:'Open profile'}).click();await page.getByRole('button',{name:'Sign out',exact:true}).click();
  await page.waitForFunction(()=>!document.querySelector('.account-dialog').open);
- await page.getByRole('button',{name:'Create event',exact:true}).click();await page.getByRole('heading',{name:/Your campus/}).waitFor();
+ await page.getByRole('button',{name:'Create event',exact:true}).click();await page.getByRole('heading',{name:/Find plans/}).waitFor();
  // A verified Google/OAuth account from another domain still fails the client guard.
  currentEmail='outsider@gmail.com';
  const rejected=await setup();

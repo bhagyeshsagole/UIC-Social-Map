@@ -68,7 +68,7 @@ Check a task only when its result exists. If a task is partial, leave it uncheck
 | Task | State | Evidence / blocker |
 | --- | --- | --- |
 | A37 / B21 | DONE | Commit `21e63fa` pushed to origin/main; Pages deployment `b01d5951` live at kampuscape.com/uic (bundle `main-BetW5Lu6.js` verified). UI fixes, copy pass, phone control layout, N removed, `#messages` deep link. Message-email migration is applied on the hosted project (pg_net 0.20.4, triggers and functions verified); emails stay off until the Vault secrets `kampuscape_resend_api_key` and `kampuscape_resend_from` are added. 83 unit tests and Pages build passed. The same release carries A36/B20 code (nearby places, reviews). |
-| A36 / B20 | IN PROGRESS | Expand sourced places within two miles of either campus; descriptions/images/categories and verified discount badges; member named/anonymous place reviews, tests and release. |
+| A36 / B20 | DONE | Released in `21e63fa` and finished in the follow-up release (see A37/B21 change log). Production: 2,155 review catalog places match the generated migration; RLS on; write RPCs member-only. Fixes: search in Explore covers every place even from For you. Browser suite updated for the first-visit guide, cached feed, recentred camera and pin rebuilds; all nine smoke tests and 83 unit tests pass. |
 | A35 / B19 | DONE | Release `4322371` pushed to origin/main; Pages deployment `9e9625b5` live at kampuscape.com/uic. Both social migrations applied, immediate signup/recovery template and all three Pages secrets verified. Scheduled Worker version `91c74746-688a-49f6-8d88-5f41c4897f66` runs every 15 minutes with shared KV. 80 tests/build passed; live mobile guide, feed (285 events), share 404/authorization routes and asset checks passed. Real email delivery not exercised. |
 | A34 / B18 | RELEASED (A35/B19) | Rich host/event/date/time PNG share pages; clickable first-visit guide; member visit recommendations; consent messages with global blocking; session-scoped caches, resilient edge refresh and optional cron Worker. 80 unit/database tests, social two-user/mobile, onboarding and private-event browser regressions, Pages build/function compile and Worker dry-run passed. Migrations/runtime variables applied and release published in A35/B19; [setup](website/backend/SOCIAL_FEATURES.md). |
 | A33 / B17 | RELEASED (A35/B19) | Immediate email/password signup, no Google UI/MFA/verification step; server-side Resend welcome email and SMTP recovery links. Unit suite, desktop/mobile browser flow (including mail failure), Pages build and function compile pass. Published with hosted Auth settings and Pages secrets in A35/B19; real mail delivery untested; see [setup](website/backend/supabase/README.md). |
@@ -106,7 +106,6 @@ Mirrored in both workflow files. Add a row when work starts; remove it when the 
 
 | Who | Task | Paths being touched | Since |
 | --- | --- | --- | --- |
-| Codex | A36 / B20 | frontend, place importer/data, reviews migration, contracts and workflow/plan docs | 2026-10-10 |
 | Claude Code | A25 / B12 | Google OAuth configuration (existing claim preserved) | 2026-10-07 |
 
 ## Handoffs and messages to Hassan
@@ -195,6 +194,7 @@ Ordered by impact for students on phones.
 
 ## Change log
 
+- **2026-10-10:** Claude Code finished A36/B20 after Codex stopped: production review data verified, Explore search fixed, browser tests updated, released and deployed. Codex claim removed.
 - **2026-10-10:** User-requested release `21e63fa` (Pages `b01d5951`) shipped A37/B21 and the A36/B20 code (nearby places, place reviews). A36/B20's status and claim are left for its owner to close.
 - **2026-10-10:** A37/B21 UI fixes, copy pass and message email notifications (see *Current work*). Backend migration added at the user's request; not applied or deployed.
 - **2026-10-06:** Bhagesh approved Hassan's B01 API/data contract and synthetic fixtures. B01 is complete, and its mirrored active claim has been removed; no frontend work was started.

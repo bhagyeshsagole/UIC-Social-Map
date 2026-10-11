@@ -65,12 +65,14 @@ console.log('directions',await page.getByRole('link',{name:'Google Maps'}).getAt
 await page.screenshot({path:'artifacts/detail.png'});
 await page.getByRole('button',{name:'Close place details'}).click();
 assert.equal(await page.locator('.discovery').count(),0);
-await page.getByRole('button',{name:/^View Busy Burger/}).click({force:true});
+// Pins are rebuilt when the camera settles after closing details.
+await page.waitForTimeout(1200);await page.getByRole('button',{name:/^View Busy Burger/}).click({force:true});
 await page.getByRole('button',{name:'Make a plan',exact:true}).click();
 assert.equal(await page.locator('dialog[open]').count(),0);
 let pin='';
 for(let y=250;y<650&&!pin;y+=35)for(let x=350;x<1000&&!pin;x+=35){await page.mouse.click(x,y);pin=await page.locator('.map').getAttribute('data-preview-venue');}
 assert.ok(pin);await page.getByRole('region',{name:'Pin event location'}).getByRole('button',{name:'Continue',exact:true}).click();
+const buildingName=page.getByRole('textbox',{name:'Building name or address'});if(await buildingName.count()&&!(await buildingName.inputValue()))await buildingName.fill('Synthetic Hall');
 await page.getByRole('button',{name:'Create a new event',exact:true}).click();
 await page.getByLabel('Event name',{exact:true}).fill('Burger break');
 await page.getByLabel('Date',{exact:true}).fill('2026-12-20');

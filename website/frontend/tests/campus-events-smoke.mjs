@@ -7,6 +7,7 @@ const feed = JSON.parse(readFileSync(new URL('../public/campus-events.json', imp
 const now = new Date(feed.fetchedAt), expected = upcomingCampusEvents(feed.events, now);
 const browser = await chromium.launch({headless:true});
 const page = await browser.newPage({viewport:{width:1440,height:1000}, timezoneId:'Asia/Tokyo'});
+await page.addInitScript(() => localStorage.setItem('kampuscape-guide-v1', 'done'));
 const errors = [];
 page.on('pageerror', error => errors.push(error.message));
 try {
@@ -82,7 +83,8 @@ try {
   assert.ok(await page.locator('.campus-events .campus-event-card').first().evaluate(e => e.getBoundingClientRect().right <= innerWidth));
   await page.unroute('**/api/campus-events');
   await page.route('**/api/campus-events', route => route.fulfill({status:503, json:{error:'Unavailable'}}));
-  // No refresh button: a reload re-requests the feed and falls back to the saved snapshot.
+  // No refresh button: a reload re-requests a stale feed and falls back to the saved snapshot.
+  await page.evaluate(() => {const key = 'kampuscape-public-feed-v2', saved = JSON.parse(localStorage.getItem(key)); saved.at -= 16 * 60000; localStorage.setItem(key, JSON.stringify(saved));});
   await page.reload();
   await page.getByRole('button', {name:'Live events', exact:true}).click();
   await page.getByText('Showing saved listings; live refresh unavailable.').waitFor();

@@ -4,6 +4,7 @@ import {readFileSync} from 'node:fs';
 const feed=JSON.parse(readFileSync(new URL('../public/campus-events.json',import.meta.url)));
 const browser=await chromium.launch({headless:true});
 const page=await browser.newPage({viewport:{width:1440,height:1000}}),errors=[];
+await page.addInitScript(()=>localStorage.setItem('kampuscape-guide-v1','done'));
 page.on('pageerror',e=>errors.push(e.message));
 page.on('console',message=>{if(message.type()==='error'&&/fill-extrusion|expression|event_venues/i.test(message.text()))errors.push(message.text());});
 const pose=async()=>JSON.parse(await page.locator('.map').getAttribute('data-camera'));

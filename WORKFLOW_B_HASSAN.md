@@ -41,7 +41,7 @@ Check a task only when its result exists. These tasks do not imply approval of a
 | Task | State | Evidence / blocker |
 | --- | --- | --- |
 | A37 / B21 | DONE (secrets pending) | `202610100004_message_emails.sql` applied on the hosted project (pushed with 0003/0005); triggers, functions, columns and pg_net verified. Emails start once the Vault secrets `kampuscape_resend_api_key` and `kampuscape_resend_from` exist. Released in `21e63fa` / Pages `b01d5951`. |
-| A36 / B20 | IN PROGRESS | Expand sourced places within two miles of either campus; descriptions/images/categories and verified discount badges; member named/anonymous place reviews, tests and release. |
+| A36 / B20 | DONE | Review migrations 0003/0005 applied; production catalog (2,155) matches local generation; RLS and grants verified; Vault secrets for message email configured. |
 | A35 / B19 | DONE | Release `4322371` pushed to origin/main; Pages deployment `9e9625b5` live at kampuscape.com/uic. Both social migrations applied, immediate signup/recovery template and all three Pages secrets verified. Scheduled Worker version `91c74746-688a-49f6-8d88-5f41c4897f66` runs every 15 minutes with shared KV. 80 tests/build passed; live mobile guide, feed (285 events), share 404/authorization routes and asset checks passed. Real email delivery not exercised. |
 | A34 / B18 | RELEASED (A35/B19) | Rich host/event/date/time PNG share pages; clickable first-visit guide; member visit recommendations; consent messages with global blocking; session-scoped caches, resilient edge refresh and optional cron Worker. 80 unit/database tests, social two-user/mobile, onboarding and private-event browser regressions, Pages build/function compile and Worker dry-run passed. Migrations/runtime variables applied and release published in A35/B19; [setup](website/backend/SOCIAL_FEATURES.md). |
 | A33 / B17 | RELEASED (A35/B19) | Immediate email/password signup, no Google UI/MFA/verification step; server-side Resend welcome email and SMTP recovery links. Unit suite, desktop/mobile browser flow (including mail failure), Pages build and function compile pass. Published with hosted Auth settings and Pages secrets in A35/B19; real mail delivery untested; see [setup](website/backend/supabase/README.md). |
@@ -67,7 +67,6 @@ Mirrored in both workflow files. Add a row when work starts; remove it when the 
 
 | Who | Task | Paths being touched | Since |
 | --- | --- | --- | --- |
-| Codex | A36 / B20 | frontend, place importer/data, reviews migration, contracts and workflow/plan docs | 2026-10-10 |
 | Claude Code | A25 / B12 | Google OAuth configuration (existing claim preserved) | 2026-10-07 |
 
 ## Handoffs and messages to Bhagesh
@@ -82,6 +81,7 @@ Provider handoff should include the SDK, supported version, configuration variab
 
 ## Change log
 
+- **2026-10-10:** Claude Code finished A36/B20 after Codex stopped: production review data verified, Explore search fixed, browser tests updated, released and deployed. Codex claim removed.
 - **2026-10-10:** User-requested release `21e63fa` (Pages `b01d5951`) shipped A37/B21 and the A36/B20 code (nearby places, place reviews). A36/B20's status and claim are left for its owner to close.
 - **2026-10-10:** A37/B21 (Bhagesh's side, user-authorized) added `202610100004_message_emails.sql`: Resend emails for message requests and new messages, sent from Postgres through pg_net with the key in Vault. Not applied yet.
 - **2026-10-07:** A25/B12/A27 (Bhagesh's side, user-authorized) added and applied Supabase migrations `202610070002_support_requests.sql` and `202610070003_delete_account.sql` in `website/backend/supabase/migrations/`, plus production Site URL/redirects in `config.toml`. All three migrations are applied to `ddhqammspwmmrprpolfw`. Please review RLS/limits alongside B03/B05.
