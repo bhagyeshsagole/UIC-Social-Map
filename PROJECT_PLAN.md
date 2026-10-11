@@ -49,10 +49,10 @@ Sources and details are in [EVENT_MAP_REVIEW.md](EVENT_MAP_REVIEW.md). These are
 
 | ID | Decision | Proposed starting point | State |
 | --- | --- | --- | --- |
-| EV01 | Membership boundary | Exact `uic.edu` email and password; immediate signup, no MFA or signup verification; Resend account-created email and reset links | Accepted 2026-10-10, supersedes OTP/Google; local changes ready, hosted update pending |
+| EV01 | Membership boundary | Exact `uic.edu` email and password; immediate signup, no MFA or signup verification; Resend account-created email and reset links | Accepted 2026-10-10, supersedes OTP/Google; deployed in A35/B19; actual mail delivery not yet exercised |
 | EV02 | What a map pin represents | Separate place, dated external event, and student meetup records | Proposed |
 | EV03 | Who sees names, nicknames, and attendance | Login required; meetup-scoped nickname by default, explicit name opt-in; no public attendance history | Proposed |
-| EV04 | How chat and blocks work | Event-attendee direct message requests; recipient accepts or declines before text, account-wide blocks across nicknames | Accepted 2026-10-10; locally implemented, hosted migration pending; group chat is not included |
+| EV04 | How chat and blocks work | Event-attendee direct message requests; recipient accepts or declines before text, account-wide blocks across nicknames | Accepted 2026-10-10; implemented and deployed in A35/B19; group chat is not included |
 | EV05 | Who creates events/meetups | Verified members submit plans; team reviews pilot listings; consistent host profile and public venues initially | Proposed |
 | EV06 | Age policy and venue restrictions | Decide supported ages; show event restrictions separately from UIC verification | Open |
 | EV07 | Retention and moderation ownership | Define post-event chat/attendance lifetime, report handling, restricted evidence retention, and account deletion | Open |
@@ -195,4 +195,4 @@ Saved holds bookmarked places; My Events holds private event drafts and external
 
 ## Accepted experience changes — 2026-10-10
 
-The user requested rich private-event share links with host/event/date/time thumbnails, a first-visit clickable explanation of the main UI, efficient persistent feed caching/refresh, attendee-to-attendee messaging requiring recipient acceptance with blocking, and a Live-events recommendation popup each signed-in visit. Implemented locally as A34/B18; deployment remains pending. Private links deliberately reveal the event snapshot and host to anyone holding the URL, including preview crawlers. Recommendations use existing real event data and interest matches, with upcoming fallbacks. Browser polling pauses hidden/offline; an optional KV-backed scheduled Worker handles refresh without visitors. See [implementation and hosted setup](website/backend/SOCIAL_FEATURES.md).
+The user requested rich private-event share links with host/event/date/time thumbnails, a first-visit clickable explanation of the main UI, efficient persistent feed caching/refresh, attendee-to-attendee messaging requiring recipient acceptance with blocking, and a Live-events recommendation popup each signed-in visit. Implemented as A34/B18 and deployed in A35/B19 on 2026-10-10 (Pages `9e9625b5`, release commit `4322371`). Private links deliberately reveal the event snapshot and host to anyone holding the URL, including preview crawlers. Recommendations use existing real event data and interest matches, with upcoming fallbacks. Browser polling pauses hidden/offline; an optional KV-backed scheduled Worker handles refresh without visitors. See [implementation and hosted setup](website/backend/SOCIAL_FEATURES.md).

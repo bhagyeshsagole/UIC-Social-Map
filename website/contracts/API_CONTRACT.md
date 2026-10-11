@@ -431,7 +431,7 @@ The team must decide whether a meetup/event that other users joined is deleted, 
 
 ## Implemented social RPC extension — 2026-10-10
 
-These additive Supabase RPCs are implemented and locally validated; hosted migration is pending. The existing attendee endpoint is unchanged. See [behavior and deployment](../backend/SOCIAL_FEATURES.md).
+These additive Supabase RPCs are implemented and locally validated; hosted migrations were applied during A35/B19 on 2026-10-10. The existing attendee endpoint is unchanged. See [behavior and deployment](../backend/SOCIAL_FEATURES.md).
 
 | RPC | Arguments | Result / access |
 | --- | --- | --- |

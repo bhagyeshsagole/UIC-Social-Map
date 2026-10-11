@@ -1,6 +1,6 @@
 # Event shares, messaging, and feed refresh
 
-Release activation on 2026-10-10: both migrations are applied to the hosted Supabase project. Pages runtime secrets are configured; frontend and scheduled Worker publication are tracked in A35/B19.
+Release activation on 2026-10-10: both migrations are applied to the hosted Supabase project. Pages runtime secrets are configured; frontend deployment `9e9625b5` and scheduled Worker `91c74746-688a-49f6-8d88-5f41c4897f66` are live (A35/B19).
 
 ## Release order
 
@@ -40,7 +40,7 @@ For refresh while nobody is visiting:
 4. Deploy from `website/backend/event-refresh` with Wrangler. The cron is every 15 minutes. It imports only the existing official-source feed and reviewed public locations, then writes `campus:<Chicago YYYY-MM>` with a seven-day TTL. Failed imports leave the previous KV value intact.
 5. Monitor Worker errors and verify the KV feed's `fetchedAt` advances. Remove the cron/Worker to stop unattended refresh; Pages request-driven refresh continues.
 
-The production KV namespace `ad9686b78d9a43739baf0731a387d236` is configured as `EVENT_CACHE` in both Wrangler files. See the A35/B19 release record for Worker deployment verification.
+The production KV namespace `ad9686b78d9a43739baf0731a387d236` is configured as `EVENT_CACHE` in both Wrangler files. The Worker is deployed with cron `*/15 * * * *`. Live Pages checks returned 285 events with a fresh feed, expected 404s for unavailable share tokens, and 401 for an unauthenticated welcome-email request. The mobile guide opens/reopens without page errors. Real welcome/reset email delivery remains untested.
 
 ## Local verification
 
