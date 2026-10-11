@@ -48,8 +48,9 @@ export function eventLink(event, base, when) {
 export function readEventLink(hash) {
   if (!hash.startsWith('#event=')) return {event:null,error:''};
   try {
-    const payload = hash.slice(7);
-    if (payload.length > 24000 || !/^[\w-]+$/.test(payload)) throw new Error();
+    // Base64url stops at the first other character, so share text an app glued on ("%20Title · …") is ignored.
+    const payload = hash.slice(7).match(/^[\w-]*/)[0];
+    if (!payload || payload.length > 24000) throw new Error();
     const parsed = JSON.parse(new TextDecoder('utf-8', {fatal:true}).decode(Uint8Array.from(atob(payload.replaceAll('-','+').replaceAll('_','/')), c => c.charCodeAt(0))));
     const event = parsed.v === 1 ? cleanEvent(parsed.event) : null;
     if (!event) throw new Error();

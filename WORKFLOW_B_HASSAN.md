@@ -40,6 +40,7 @@ Check a task only when its result exists. These tasks do not imply approval of a
 
 | Task | State | Evidence / blocker |
 | --- | --- | --- |
+| A40 / B24 | DONE | Review catalog builder now only appends new IDs in a new migration (applied catalog untouched; current directory already covered). Production share RPCs verified in a rolled-back transaction. |
 | A39 / B23 | DONE | `website/data/places/hidden-places.json` stores hidden nearby places with what they lack; review catalog unchanged (byte-identical). |
 | A38 / B22 | DONE | Data: `website/data/places/venue-websites.json` snapshot (robots.txt respected, KampuscapeBot UA); README documents sources, filters and removal on request. |
 | A37 / B21 | DONE (secrets pending) | `202610100004_message_emails.sql` applied on the hosted project (pushed with 0003/0005); triggers, functions, columns and pg_net verified. Emails start once the Vault secrets `kampuscape_resend_api_key` and `kampuscape_resend_from` exist. Released in `21e63fa` / Pages `b01d5951`. |
@@ -83,6 +84,7 @@ Provider handoff should include the SDK, supported version, configuration variab
 
 ## Change log
 
+- **2026-10-10:** A40/B24 (user-requested): all places back within 1 mile, For students default, persistent categories, place picks, building For you, save-refresh and share-link fixes.
 - **2026-10-10:** A39/B23 (user-requested): decluttered map pins; nearby places need a photo and hours to show, the rest stored and logged as hidden.
 - **2026-10-10:** A38/B22 (user-requested): place hours/photos from OSM, venue websites and Commons; pin persistence and zoom names; glass dialogs.
 - **2026-10-10:** Claude Code finished A36/B20 after Codex stopped: production review data verified, Explore search fixed, browser tests updated, released and deployed. Codex claim removed.

@@ -346,3 +346,13 @@ button.fact-event:hover .fact-event-more{text-decoration:underline;text-underlin
 @keyframes pin-in{from{opacity:0;translate:0 6px}}
 .map-pin{animation:pin-in .28s ease-out}
 @media(prefers-reduced-motion:reduce){.map-pin{animation:none}}
+
+/* Under the Explore categories, lined up with the chips: the map follows the chosen category. */
+.category-note{margin:-8px 21px 14px;font-size:11.5px;line-height:1.5;color:var(--muted)}
+@media(min-width:761px){.category-note{margin:-2px 22px 12px}}
+@media(max-width:760px){.category-note{margin:-3px 17px 10px;font-size:11px}}
+/* Building events: All / For you, with counts. */
+.building-scope{margin:0 22px 14px}
+.event-scope-tags .scope-count{margin-left:6px;min-width:18px;padding:1px 6px;border-radius:10px;background:var(--field);font-size:10.5px;font-weight:650;font-variant-numeric:tabular-nums}
+.event-scope-tags button[aria-pressed=true] .scope-count{background:color-mix(in srgb,var(--glass) 35%,transparent)}
+@media(max-width:760px){.building-scope{margin:0 17px 10px}}

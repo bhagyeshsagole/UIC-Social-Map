@@ -4,7 +4,7 @@ import {eventTime} from './search.js';
 import {INTERESTS} from './interests.js';
 import './welcome.css';
 const guide=[
- ['Explore',Compass,'Find your next spot','Browse food, coffee, and music around Chicago. Tap a place to see its hours and get directions.','explore'],
+ ['Explore',Compass,'Find your next spot','The map starts with student deals. Pick a category, like Cafes, and the map keeps showing it. Tap a place for hours and directions.','explore'],
  ['Live events',Radio,'See what’s happening','Browse UIC, off-campus, and community events. For you matches your interests; the date picker narrows the day.','events'],
  ['Create event',Plus,'Make your own plan','Tap a building, add a date and time, then choose Public or Private. Share your event link with friends.','create'],
  ['Who’s going & messages',Users,'Meet people before you go','Open an event, tap Who’s going, and join with your name or an event nickname. Send a message request; chat starts after acceptance.','messages'],
@@ -23,7 +23,7 @@ export function WelcomeGuide({open,onClose,onAction}){
  <div className="social-actions"><button className="primary-button" onClick={onClose}>Got it. Let’s explore <Compass size={16}/></button><span>Reopen this anytime with “How it works”.</span></div>
  </dialog>;
 }
-export function WhatsHappening({open,onClose,recommendations,onSelect,onBrowse,name,offline}){
+export function WhatsHappening({open,onClose,recommendations,places=[],onSelect,onSelectPlace,onBrowse,name,offline}){
  const dialog=useRef();
  useEffect(()=>{if(open)dialog.current.showModal();else if(dialog.current.open)dialog.current.close();},[open]);
  return <dialog ref={dialog} className="social-dialog happening-dialog" aria-labelledby="happening-title" onCancel={onClose} onClick={e=>{if(e.target===dialog.current)onClose();}}>
@@ -32,6 +32,7 @@ export function WhatsHappening({open,onClose,recommendations,onSelect,onBrowse,n
  {offline&&<p className="social-offline" role="status">Showing saved event data while we reconnect.</p>}
  <div className="happening-list">{recommendations.map(({event,matched},i)=><button key={event.id||i} onClick={()=>{onClose();onSelect(event);}}><span className="happening-number">0{i+1}</span><span><strong>{event.title}</strong><small><CalendarDays size={14}/>{eventTime(event)}</small><small>{event.venue?.name||event.organizer||event.place?.name||'See event for location'}</small><span className="happening-tags">{matched.length?matched.map(id=><em key={id}>{INTERESTS.find(x=>x.id===id)?.label}</em>):<em>Coming up around UIC</em>}</span></span><ArrowUpRight size={19}/></button>)}</div>
  {!recommendations.length&&<div className="message-state"><CalendarDays size={30}/><p>No upcoming events are available right now. Check Live events for updates.</p></div>}
+ {places.length>0&&<section className="happening-places" aria-label="Places to try"><h3>Places to try</h3><div className="happening-list">{places.map(({place,src})=><button key={place.id} onClick={()=>{onClose();onSelectPlace(place);}}><span className="happening-thumb"><img src={src} alt="" referrerPolicy="no-referrer" onError={e=>{e.currentTarget.style.visibility='hidden';}}/></span><span><strong>{place.name}</strong><small>{place.category} · {place.neighborhood}</small></span><ArrowUpRight size={16} className="happening-arrow"/></button>)}</div></section>}
  <div className="social-actions"><button className="primary-button" onClick={()=>{onClose();onBrowse();}}>See all live events <ArrowUpRight size={16}/></button><button className="text-link" onClick={onClose}>Explore the map</button></div>
  </dialog>;
 }

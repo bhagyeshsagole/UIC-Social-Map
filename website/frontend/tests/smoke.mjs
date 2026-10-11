@@ -108,6 +108,7 @@ console.log('spotlight search passed');
 await page.getByRole('button',{name:'Close place details'}).click();
 await page.getByRole('button',{name:'Explore',exact:true}).click();
 await page.getByRole('textbox',{name:'Search places'}).fill('');
+await page.getByRole('button',{name:'All places',exact:true}).click();
 await page.getByRole('button',{name:'Filter places'}).click();
 await page.getByLabel('Free places only').check();
 assert.equal(await page.locator('.place-card').count(),Object.values(details).filter(d=>d.kind==='free').length);

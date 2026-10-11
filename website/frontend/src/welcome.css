@@ -17,3 +17,9 @@
 .message-bubble.mine{background:#7563a9;color:#fff}
 .message-compose textarea{background:var(--sd-card);border-color:var(--sd-line);color:var(--sd-text)}
 .social-dialog .modal-close{color:var(--sd-text)}
+.happening-places{margin-top:22px}
+.happening-places h3{margin:0 0 10px;font-size:12px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:var(--sd-muted)}
+.happening-places .happening-list>button{align-items:center}
+.happening-thumb{width:48px;height:48px;border-radius:13px;overflow:hidden;flex-shrink:0;background:var(--sd-card-hover)}
+.happening-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.happening-places .happening-arrow{margin-left:auto;color:var(--sd-muted);flex-shrink:0}

@@ -1,6 +1,6 @@
 # Places near both UIC campuses
 
-Snapshot checked 2026-10-10. New coverage is the union of two **straight-line two-mile circles**, centered on Student Center East (-87.647964, 41.871967) and Student Center West (-87.674561, 41.870762), from the project's UIC facility registry. Existing curated Chicago destinations are retained even if farther away.
+Snapshot checked 2026-10-10. New coverage is the union of two **straight-line one-mile circles** (hard limit, accepted 2026-10-10; was two miles), centered on Student Center East (-87.647964, 41.871967) and Student Center West (-87.674561, 41.870762), from the project's UIC facility registry. Existing curated Chicago destinations are retained even if farther away.
 
 `uic-nearby-osm.json` is the public OpenStreetMap source snapshot (ODbL). The source query covers a bounding rectangle; the importer clips every added place to the exact circles, excludes private/disused/abandoned listings and deduplicates nearby normalized names against the existing directory. Nearby branches with the same name can be coalesced within roughly 105 metres; review ambiguous cases before changing the threshold. OSM is community-maintained and is not an exhaustive or independently confirmed business registry. A fetched listing does not certify that the business is still open, has study seats, or offers a discount.
 
@@ -38,8 +38,8 @@ Imported hours retain source wording and are not parsed into a claim that a venu
 
 These images belong to the venues or their authors. Remove an image on request by deleting its entry and rerunning the importer.
 
-## Shown and hidden places
+## What the app shows
 
-A nearby place ships to the app only when it has a real photo (not a category illustration) and listed hours. The importer writes those to `website/frontend/src/nearbyPlaces.json` and stores every other place, with what it lacks (`missing: ["hours", "photo"]`), in `hidden-places.json`. Hidden places never reach the browser. Every nearby place is logged in the generated block at the end of [added_sites.md](../../../added_sites.md), split into shown and hidden.
+Every nearby place ships to the app (accepted 2026-10-10, replacing a short-lived photo-and-hours gate). The map opens on **For students**: only places with a documented UIC student discount or perk. Picking a category in Explore (Cafes, Groceries, All places…) shows every matching place on the map, and the choice stays on that device until another is picked. Places without a real photo keep their labeled category illustration; places without hours say so.
 
-To bring a place back, give it what it lacks and rerun the importer: a credited photo in `photos.json`, hand-checked hours in `overrides.json` under `hours` (`{"<id>": {"opening_hours": "Mo-Fr 08:00-17:00", "source": "https://…"}}`), or a fix in OpenStreetMap. The review catalog keeps hidden IDs, so reviews survive a place being hidden and shown again.
+The generated block at the end of [added_sites.md](../../../added_sites.md) lists every nearby place, grouped by what is still missing (photo, hours, or both). To fill a gap, add a credited photo to `photos.json`, hand-checked hours to `overrides.json` under `hours` (`{"<id>": {"opening_hours": "Mo-Fr 08:00-17:00", "source": "https://…"}}`), or fix the listing in OpenStreetMap, then rerun the importer. The review catalog only ever grows, so reviews survive any change in the directory.

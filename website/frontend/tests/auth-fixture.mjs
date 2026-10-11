@@ -17,7 +17,9 @@ export async function installMember(page) {
  await page.addInitScript(session=>localStorage.setItem('kampuscape-auth',JSON.stringify(session)),session);
  await page.route('https://kampuscape-test.supabase.co/**',route=>{
   const path=new URL(route.request().url()).pathname;
-  if(path.endsWith('/kampuscape_share_event')){const token=randomUUID();shareRecords.set(token,{...route.request().postDataJSON().p_event,host:{name:profile.display_name,avatar:profile.avatar_id},shareToken:token});return route.fulfill({json:token});}
+  // Like the database: one link per event, the same token on every re-share, readable by anyone holding it.
+  if(path.endsWith('/kampuscape_share_event')){const event=route.request().postDataJSON().p_event,token=[...shareRecords].find(([,r])=>r.id===event.id)?.[0]||randomUUID();shareRecords.set(token,{...event,host:{name:profile.display_name,avatar:profile.avatar_id},shareToken:token});return route.fulfill({json:token});}
+  if(path.endsWith('/kampuscape_shared_event'))return route.fulfill({json:shareRecords.get(route.request().postDataJSON().p_token)||null});
   if(path.endsWith('/kampuscape_revoke_share'))return route.fulfill({json:null});
   // Attendance RPCs: nobody going yet, unless a test overrides this route.
   if(path.includes('/rest/v1/rpc/'))return route.fulfill({json:[]});

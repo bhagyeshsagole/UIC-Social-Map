@@ -1,6 +1,10 @@
-import {sharedEvent,shareHtml,shareHeaders} from '../../../server/eventShare.js';
+import {sharedEvent,shareHtml,shareGoneHtml,shareHeaders,tokenFrom} from '../../../server/eventShare.js';
 export async function onRequestGet({request,env,params}){
- try{const event=await sharedEvent(params.token,env);if(!event)return new Response('This event link has expired or was removed.',{status:404,headers:shareHeaders});
- return new Response(shareHtml(event,new URL(request.url).origin,params.token),{headers:{...shareHeaders,'Content-Type':'text/html; charset=utf-8'}});
+ const token=tokenFrom(params.token),origin=new URL(request.url).origin;
+ if(!token)return new Response(shareGoneHtml(origin),{status:404,headers:{...shareHeaders,'Content-Type':'text/html; charset=utf-8'}});
+ // A link with text glued onto it goes to the clean link, so previews and the address bar stay canonical.
+ if(token!==params.token)return new Response(null,{status:301,headers:{...shareHeaders,Location:`${origin}/uic/share/${token}`}});
+ try{const event=await sharedEvent(token,env);if(!event)return new Response(shareGoneHtml(origin),{status:404,headers:{...shareHeaders,'Content-Type':'text/html; charset=utf-8'}});
+ return new Response(shareHtml(event,origin,token),{headers:{...shareHeaders,'Content-Type':'text/html; charset=utf-8'}});
  }catch{return new Response('This event is temporarily unavailable. Please try again.',{status:503,headers:shareHeaders});}
 }

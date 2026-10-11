@@ -1,5 +1,6 @@
 import {supabase} from './auth/supabase.js';
 import {cleanEvent} from './privateEvents.js';
+import {tokenFrom} from './shareToken.js';
 export async function saveEventShare(event,client=supabase){
  if(!client)throw new Error('Sharing is being set up. Please try again soon.');
  const {data,error}=await client.rpc('kampuscape_share_event',{p_event:cleanEvent(event)});
@@ -7,8 +8,10 @@ export async function saveEventShare(event,client=supabase){
  if(typeof window!=='undefined')window.dispatchEvent(new CustomEvent('kampuscape-share-created',{detail:{eventId:event.id,shareToken:data}}));
  return data;
 }
-export async function fetchEventShare(token,client=supabase){
- if(!/^[\da-f]{8}(-[\da-f]{4}){3}-[\da-f]{12}$/i.test(token))throw new Error('This event link is invalid.');
+export async function fetchEventShare(raw,client=supabase){
+ // Read the leading token even when a messaging app glued the share text onto the link.
+ const token=tokenFrom(raw);
+ if(!token)throw new Error('This event link is invalid.');
  if(!client)throw new Error('Event sharing is temporarily unavailable.');
  const {data,error}=await client.rpc('kampuscape_shared_event',{p_token:token});
  if(error)throw new Error('Couldn’t load the shared event. Please try again.');

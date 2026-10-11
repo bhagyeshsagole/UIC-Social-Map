@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {Share2, Copy, Check, X} from 'lucide-react';
 import {eventLink} from './privateEvents';
-import {saveEventShare,shareUrl} from './eventShares.js';
+import {saveEventShare,fetchEventShare,shareUrl} from './eventShares.js';
 import {useAuth} from './auth/AuthProvider.jsx';
 import {eventTime} from './search';
 
@@ -17,7 +17,9 @@ export default function ShareEvent({event,owned=false}) {
     setBusy(true);
     try {
       if(event.source==='Private event'&&(event.shareToken||owned)){
-        const token=event.shareToken||await saveEventShare(event);
+        // Hosts save on every share (same link, current details), and the link must open before it's handed out.
+        const token=owned?await saveEventShare(event):event.shareToken;
+        if(owned)await fetchEventShare(token).catch(()=>{throw new Error('Couldn’t confirm the share link. Please try again.');});
         link=shareUrl(token);
       }else link=eventLink(event,window.location.href,eventTime(event));
     } catch(error){setUrl('');setStatus(error.message);dialog.current.showModal();return;}
