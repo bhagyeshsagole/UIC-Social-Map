@@ -50,3 +50,14 @@ test('comma-joined rules add to earlier days and day lists may contain spaces', 
   assert.deepEqual(parseOpeningHours('Mo, We 10:00-18:00; Tu,Th 12:00-20:00')[3], [600,1080]);
   assert.deepEqual(parseOpeningHours('Mo,Tu closed, We 17:00-00:00')[1], null);
 });
+
+test('schema.org opens = closes = 00:00 means closed that day, not open around the clock', () => {
+  const schedule = parseOpeningSpecification([
+    {dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '10:00:00', closes: '16:00:00'},
+    {dayOfWeek: ['Saturday', 'Sunday'], opens: '00:00', closes: '00:00'},
+  ]);
+  assert.equal(schedule[6], null);
+  assert.equal(schedule[0], null);
+  assert.deepEqual(schedule[1], [600, 960]);
+  assert.deepEqual(parseOpeningSpecification([{dayOfWeek: 'Monday', opens: '00:00', closes: '23:59'}])[1], [0, 1439]);
+});

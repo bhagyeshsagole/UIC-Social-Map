@@ -69,6 +69,8 @@ export function parseOpeningSpecification(specs) {
     const indexes = dayNames.map(d => NAMED_DAYS.indexOf(d));
     if (!indexes.length || indexes.some(i => i < 0)) return null;
     if (!spec.opens && !spec.closes) continue;
+    // schema.org convention: opens and closes both "00:00" means closed all day.
+    if (String(spec.opens).slice(0, 5) === String(spec.closes).slice(0, 5)) continue;
     const r = range(`${String(spec.opens || '')}-${String(spec.closes || '')}`.replace(/(\d{1,2}:\d{2}):\d{2}/g, '$1'));
     if (!r) return null;
     for (const i of indexes) schedule[i].push(r);

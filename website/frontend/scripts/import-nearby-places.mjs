@@ -31,17 +31,25 @@ for(const row of raw.elements){
  records.push({id:`osm-${row.type}-${row.id}`,name:t.name,description,category,coords,address,neighborhood:`Near ${near}`,campus:near,distanceMiles:+nearest.toFixed(2),checked:'2026-10-10',kind:'regular',student:false,benefit:null,condition:null,tags:[titles[kind],...cuisine],hours:t.opening_hours?`Listed hours: ${t.opening_hours}. Confirm with the venue.`:'Hours not listed. Check with the venue before visiting.',schedule:parseOpeningHours(t.opening_hours),events:[],sources:[['OpenStreetMap contributors · ODbL',source],...(/^https?:\/\//.test(website||'')?[['Venue website',website]]:[])],photo:{file:`category-${pics[category]}.svg`,alt:`${category} illustration — not a photo of ${t.name}`,credit:'Kampuscape · category illustration',href:source,illustration:true},accent:category==='Food & drink'?'orange':category==='Cafes'?'amber':category==='Barbers & beauty'?'rose':'mint',...(['Cafes','Food & drink'].includes(category)?{diet:{nonveg:'ask',veg:'ask',vegan:'ask',gf:'ask',halal:'ask'}}:{})});
 }
 for(const p of records){if(photos[p.id])p.photo=photos[p.id];if(p.name==='Richard J. Daley Library'){p.description='UIC’s East campus library offers reading areas and reservable group study rooms. Check the library’s current hours and access requirements before visiting.';p.sources.push(['UIC Library · study rooms and access','https://library.uic.edu/libraries/daley/']);}}
-// Venue websites and Wikidata (scripts/fetch-venue-websites.mjs) fill hours and photos OpenStreetMap lacks.
-const venueFile=new URL('../../data/places/venue-websites.json',import.meta.url);
-const venues=existsSync(venueFile)?JSON.parse(readFileSync(venueFile)).places:{};
+// Venue websites (scripts/fetch-venue-websites.mjs) and Wikidata/Commons (scripts/fetch-commons-photos.mjs)
+// fill hours and photos OpenStreetMap lacks. Freely licensed photos come before venue-website photos.
+const snapshot=file=>{const url=new URL(`../../data/places/${file}`,import.meta.url);return existsSync(url)?JSON.parse(readFileSync(url)).places:{};};
+const venues=snapshot('venue-websites.json'),commonsPhotos=snapshot('commons-photos.json'),chainHours=snapshot('chain-hours.json');
+// Photos rejected on review (contact sheets) never ship, whichever source offers them again.
+const rejected=existsSync(new URL('../../data/places/photo-review.json',import.meta.url))?JSON.parse(readFileSync(new URL('../../data/places/photo-review.json',import.meta.url))).rejected:{};
 const photoSources={};
+// A website photo offered for several places is a shared or generic image (a food hall's banner), not any one of them.
+const srcCount=new globalThis.Map();for(const v of Object.values(venues)){const src=v.website?.image?.src;if(src)srcCount.set(src,(srcCount.get(src)||0)+1);}
 for(const p of records){
- const found=venues[p.id];if(!found)continue;
- if(!p.schedule&&found.website?.hours){p.schedule=found.website.hours.schedule;p.hours='Hours from the venue’s website. Confirm before visiting.';p.sources.push(['Venue website · hours',found.website.page]);}
+ const found=venues[p.id]||{},hours=found.website?.hours;
+ if(!p.schedule&&hours){p.schedule=hours.schedule;p.hours='Hours from the venue’s website. Confirm before visiting.';p.sources.push(['Venue website · hours',hours.page||found.website.page]);}
+ const chain=chainHours[p.id];
+ if(!p.schedule&&chain){p.schedule=chain.schedule;p.hours='Hours from the store’s page. Confirm before visiting.';p.sources.push(['Store page · hours',chain.page]);}
  if(!p.photo?.illustration)continue;
- const fallback=p.photo.file;
- if(found.commons)p.photo={src:found.commons.src,alt:`Photo of ${p.name}`,credit:`Wikimedia Commons · ${found.commons.credit}`,href:found.commons.page,fallback};
- else if(found.website?.image){photoSources[p.id]=found.website.image.src;p.photo={proxied:true,alt:`Photo from ${p.name}’s website`,credit:`${p.name} website`,href:found.website.page,fallback};}
+ const fallback=p.photo.file,free=commonsPhotos[p.id]||found.commons;
+ if(rejected[p.id])continue;
+ if(free)p.photo={src:free.src,alt:`Photo of ${p.name}`,credit:`Wikimedia Commons · ${free.credit}`,href:free.page,fallback};
+ else if(found.website?.image&&srcCount.get(found.website.image.src)===1){photoSources[p.id]=found.website.image.src;p.photo={proxied:true,alt:`Photo from the ${p.name} website`,credit:`${p.name} website`,href:found.website.page,fallback};}
 }
 // Hours an editor checked by hand, in OpenStreetMap syntax: overrides.json → hours: {id: {opening_hours, source}}.
 for(const p of records){const fix=overrides.hours?.[p.id],schedule=fix&&parseOpeningHours(fix.opening_hours);if(schedule){p.schedule=schedule;p.hours='Hours checked by Kampuscape. Confirm before visiting.';p.sources.push(['Hours source',fix.source]);}}

@@ -1,26 +1,34 @@
 // Reads each nearby place's own website (from OpenStreetMap) and Wikidata/Commons for published hours and
 // a representative photo. Writes a dated snapshot; import-nearby-places.mjs merges it. Never invents data:
-// hours count only when the page's schema.org address matches the place, and images must look like photos.
+// structured hours need a matching address (schema.org) or a single-branch site (microdata); prose hours
+// go through scripts/lib/hoursText.mjs, which refuses anything ambiguous; images must look like photos.
 // Run from website/frontend: node scripts/fetch-venue-websites.mjs
 import {readFileSync, writeFileSync, mkdtempSync, rmSync} from 'node:fs';
 import {execFileSync} from 'node:child_process';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {parseOpeningHours, parseOpeningSpecification} from '../src/openingHours.js';
+import {findHoursInPage, addressCount} from './lib/hoursText.mjs';
+import {robotsAllow} from './lib/robots.mjs';
 
 const AGENT = 'Mozilla/5.0 (compatible; KampuscapeBot/1.0; +https://kampuscape.com/support)';
 const CHECKED = new Date().toISOString().slice(0, 10);
 const out = new URL('../../data/places/venue-websites.json', import.meta.url);
 const raw = JSON.parse(readFileSync(new URL('../../data/places/uic-nearby-osm.json', import.meta.url)));
-// Shown and hidden places together: a hidden place may gain the photo or hours it lacks.
-const places = ['../src/nearbyPlaces.json', '../../data/places/hidden-places.json'].flatMap(file => {try {return JSON.parse(readFileSync(new URL(file, import.meta.url))).places;} catch {return [];}});
+const places = JSON.parse(readFileSync(new URL('../src/nearbyPlaces.json', import.meta.url))).places;
 const tagsById = new Map(raw.elements.map(e => [`osm-${e.type}-${e.id}`, e.tags || {}]));
 const websiteOf = p => (p.sources || []).find(([label]) => label === 'Venue website')?.[1];
 
-// A website shared by several listings is a chain or group site, not this branch.
+// A website domain used by several listings is a chain or group site, not one branch: its hours must sit
+// next to this branch's address, and its photos are not used. Hosting platforms are judged by full URL.
+const PLATFORM = /(^|\.)(facebook|instagram|linktr|square|squareup|toasttab|wixsite|squarespace|business\.site|google|yelp|godaddysites|weebly|wordpress|carrd|order\.online|clover|chownow|bentobox|getbento|popmenu)\./i;
+const siteKey = url => {try {const u = new URL(url), host = u.host.replace(/^www\./, '').toLowerCase(); return PLATFORM.test(`.${host}.`) ? `${host}${u.pathname.replace(/\/$/, '')}` : host;} catch {return url;}};
 const shared = new Map();
-for (const p of places) {const url = websiteOf(p); if (url) {const key = url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '').toLowerCase(); shared.set(key, (shared.get(key) || 0) + 1);}}
-const isShared = url => shared.get(url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '').toLowerCase()) > 1;
+for (const p of places) {const url = websiteOf(p); if (url) shared.set(siteKey(url), (shared.get(siteKey(url)) || 0) + 1);}
+const isShared = url => shared.get(siteKey(url)) > 1;
+const exact = new Map();
+for (const p of places) {const url = websiteOf(p); if (url) exact.set(url.replace(/\/$/, ''), (exact.get(url.replace(/\/$/, '')) || 0) + 1);}
+const sameUrl = url => exact.get(url.replace(/\/$/, '')) > 1;
 
 async function get(url, {limit = 3_000_000, accept = 'text/html,application/xhtml+xml'} = {}) {
   const response = await fetch(url, {headers: {'User-Agent': AGENT, Accept: accept}, redirect: 'follow', signal: AbortSignal.timeout(15000)});
@@ -31,15 +39,9 @@ async function get(url, {limit = 3_000_000, accept = 'text/html,application/xhtm
 
 const robots = new Map();
 async function allowed(url) {
-  const {origin, pathname} = new URL(url);
+  const {origin, pathname, search} = new URL(url);
   if (!robots.has(origin)) robots.set(origin, get(`${origin}/robots.txt`, {accept: 'text/plain'}).then(({response, bytes}) => response.ok ? bytes.toString('utf8') : '').catch(() => ''));
-  let applies = false, rules = [];
-  for (const line of (await robots.get(origin)).split(/\r?\n/)) {
-    const [key, ...rest] = line.split(':'), value = rest.join(':').trim(), field = key.trim().toLowerCase();
-    if (field === 'user-agent') applies = value === '*' || /kampuscape/i.test(value);
-    else if (applies && field === 'disallow' && value) rules.push(value);
-  }
-  return !rules.some(rule => pathname.startsWith(rule.replace(/\*.*$/, '')));
+  return robotsAllow(await robots.get(origin), pathname + search);
 }
 
 // Width and height from the first bytes of a JPEG, PNG or WebP file.
@@ -75,7 +77,7 @@ function palette(bytes) {
 }
 
 async function photoCheck(src) {
-  if (!/^https:\/\//.test(src) || /logo|icon|favicon|sprite|placeholder|avatar|badge|\.svg|\.gif/i.test(src)) return null;
+  if (!/^https?:\/\//.test(src) || /logo|icon|favicon|sprite|placeholder|avatar|badge|banner|header-bg|\.svg|\.gif|\.png(\?|$)/i.test(src)) return null;
   const {response, bytes} = await get(src, {limit: 8_000_000, accept: 'image/jpeg,image/png,image/webp'});
   if (!response.ok || !/^image\/(jpeg|webp)/.test(response.headers.get('content-type') || '')) return null;
   const size = dimensions(bytes);
@@ -96,17 +98,38 @@ function sameAddress(node, tags) {
   return false;
 }
 
-function readPage(html, tags) {
+// Hours from structured data: schema.org JSON-LD whose address matches, or microdata on a single-branch site.
+function structuredHours(html, tags, sharedSite) {
   const nodes = [...html.matchAll(/<script[^>]+application\/ld\+json[^>]*>([\s\S]*?)<\/script>/gi)].flatMap(m => {try {return flat(JSON.parse(m[1].trim()));} catch {return [];}});
-  let hours = null;
   for (const node of nodes) {
     if (!(node.openingHoursSpecification || node.openingHours) || !sameAddress(node, tags)) continue;
-    hours = parseOpeningSpecification(node.openingHoursSpecification) || parseOpeningHours((Array.isArray(node.openingHours) ? node.openingHours : [node.openingHours]).filter(Boolean).join('; '));
-    if (hours) break;
+    const schedule = parseOpeningSpecification(node.openingHoursSpecification) || parseOpeningHours((Array.isArray(node.openingHours) ? node.openingHours : [node.openingHours]).filter(Boolean).join('; '));
+    if (schedule) return {schedule, method: 'schema.org data'};
   }
+  if (sharedSite) return null;
+  const micro = [...html.matchAll(/itemprop=["']openingHours["'][^>]*?(?:content|datetime)=["']([^"']+)/gi), ...html.matchAll(/(?:content|datetime)=["']([^"']+)["'][^>]*?itemprop=["']openingHours["']/gi)].map(m => m[1]);
+  const schedule = micro.length ? parseOpeningHours([...new Set(micro)].join('; ')) : null;
+  return schedule ? {schedule, method: 'page markup'} : null;
+}
+
+function pageHours(html, tags, sharedSite) {
+  return structuredHours(html, tags, sharedSite) || (() => {
+    const schedule = findHoursInPage(html, {housenumber: tags['addr:housenumber'], street: tags['addr:street'], requireAddress: sharedSite});
+    return schedule ? {schedule, method: 'hours listed on the page'} : null;
+  })();
+}
+
+// Photo candidates in page order: share images first, then large inline images and backgrounds.
+function imageCandidates(html, page) {
   const meta = name => html.match(new RegExp(`<meta[^>]+(?:property|name)=["']${name}["'][^>]*content=["']([^"']+)`, 'i'))?.[1] || html.match(new RegExp(`<meta[^>]+content=["']([^"']+)["'][^>]*(?:property|name)=["']${name}["']`, 'i'))?.[1];
-  const image = meta('og:image:secure_url') || meta('og:image') || meta('twitter:image');
-  return {hours, image: image?.replaceAll('&amp;', '&')};
+  const found = [meta('og:image:secure_url'), meta('og:image'), meta('twitter:image')];
+  for (const m of html.matchAll(/<img\b[^>]*>/gi)) {
+    const tag = m[0], srcset = tag.match(/\b(?:data-)?srcset=["']([^"']+)/i)?.[1];
+    const widest = srcset?.split(',').map(s => s.trim().split(/\s+/)).sort((a, b) => parseInt(b[1] || 0) - parseInt(a[1] || 0))[0]?.[0];
+    found.push(widest || tag.match(/\b(?:data-src|data-lazy-src|src)=["']([^"']+)/i)?.[1]);
+  }
+  for (const m of html.matchAll(/background(?:-image)?\s*:\s*url\(["']?([^"')]+)/gi)) found.push(m[1]);
+  return [...new Set(found.filter(Boolean).map(src => {try {return new URL(src.replaceAll('&amp;', '&'), page).href;} catch {return null;}}).filter(Boolean))].slice(0, 10);
 }
 
 const GENERIC = new Set(['the','and','restaurant','cafe','coffee','chicago','grill','pizza','pizzeria','kitchen','market','bar','tavern','bakery','house','shop','food','foods','express','street','west','east','loop','company','store','salon','barber','beauty','pub','lounge','taqueria','deli']);
@@ -117,19 +140,59 @@ function namesVenue(html, name) {
   return distinctive.length ? distinctive.some(w => text.includes(w)) : text.includes(words(name).join(' '));
 }
 
-async function website(place, tags) {
-  const url = websiteOf(place);
-  if (!url || !(await allowed(url))) return null;
+const SUBPAGE = /hours|contact|location|visit|find-?us|about|info/i;
+async function fetchPage(url) {
+  if (!(await allowed(url))) return {status: 'robots'};
   const {response, bytes} = await get(url);
-  if (!response.ok || !/html/.test(response.headers.get('content-type') || '')) return null;
+  if (!response.ok) return {status: `http ${response.status}`};
+  if (!/html/.test(response.headers.get('content-type') || '')) return {status: 'not html'};
+  return {status: 'ok', html: bytes.toString('utf8'), page: response.url};
+}
+
+async function website(place, tags, log) {
+  const url = websiteOf(place);
+  if (!url) return null;
+  const home = await fetchPage(url);
+  log.status = home.status;
+  if (!home.html) return null;
   // Expired domains get taken over by spam, so the page must name the venue before anything is used.
-  const html = bytes.toString('utf8');
-  if (!namesVenue(html, place.name)) return null;
-  const page = response.url, {hours, image} = readPage(html, tags), result = {url, page};
-  if (hours) result.hours = {schedule: hours, source: 'schema.org opening hours on the venue website'};
-  if (image && !isShared(url) && !tags['brand:wikidata']) {
-    const src = new URL(image, page).href, size = await photoCheck(src).catch(() => null);
-    if (size) result.image = {src, ...size};
+  if (!namesVenue(home.html, place.name)) {log.status = 'page does not name the venue'; return null;}
+  // Same-named businesses elsewhere (a "Mojo Coffee" in New Zealand): the site must place itself in Chicago.
+  const street = (tags['addr:street'] || '').toLowerCase().replace(/\b(north|south|east|west|street|avenue|road|boulevard|drive|place|court)\b/g, '').trim(), number = tags['addr:housenumber'];
+  const addressed = number && street && new RegExp(`\\b${number}\\b[^<]{0,40}${street.split(/\s+/)[0]}`, 'i').test(home.html);
+  if (!/\bchicago\b|\billinois\b|\b606\d\d\b/i.test(home.html) && !addressed) {log.status = 'page is not about a Chicago location'; return null;}
+  // Hours on a shared site must sit next to this branch's address when the page lists several addresses or it's a chain.
+  const chain = !!tags['brand:wikidata'], sharedSite = chain || (isShared(url) && addressCount(home.html) > 1), result = {url, page: home.page};
+  // Photos: none from chains, from a page several listings point to, or from a shared site's home or locations page.
+  const genericPage = isShared(url) && /^\/?(locations?|collections\/locations|stores?)?\/?$/i.test(new URL(home.page).pathname.replace(/^\//, ''));
+  const photoAllowed = !chain && !sameUrl(url) && !genericPage;
+  let hours = pageHours(home.html, tags, sharedSite), hoursPage = home.page;
+  if (!hours) {
+    // Hours often live on a contact or location page linked from the homepage.
+    const origin = new URL(home.page).origin, links = [...home.html.matchAll(/<a\b[^>]*href=["']([^"'#]+)["'][^>]*>([\s\S]*?)<\/a>/gi)]
+      .map(m => {try {return {href: new URL(m[1].replaceAll('&amp;', '&'), home.page).href, text: m[2].replace(/<[^>]+>/g, ' ')};} catch {return null;}})
+      .filter(l => l && l.href.startsWith(origin) && l.href !== home.page && SUBPAGE.test(l.href + ' ' + l.text));
+    // Linked pages can be other branches ("Locations → Midway"), so their hours must sit next to this place's address.
+    for (const href of tags['addr:housenumber'] && tags['addr:street'] ? [...new Set(links.map(l => l.href))].slice(0, 4) : []) {
+      const sub = await fetchPage(href).catch(() => ({}));
+      if (sub.html && (hours = pageHours(sub.html, tags, true))) {hoursPage = sub.page; break;}
+    }
+  }
+  if (hours) {result.hours = {schedule: hours.schedule, source: `${hours.method} on the venue website`, page: hoursPage}; log.hours = hours.method;}
+  if (photoAllowed) {
+    // The homepage first, then up to two gallery or about pages on the same site.
+    const origin = new URL(home.page).origin, galleries = [...home.html.matchAll(/<a\b[^>]*href=["']([^"'#]+)["']/gi)]
+      .map(m => {try {return new URL(m[1].replaceAll('&amp;', '&'), home.page).href;} catch {return null;}})
+      .filter(href => href && href.startsWith(origin) && /gallery|photos|about|our-story|story|space|interior/i.test(href));
+    for (const pageUrl of [home.page, ...new Set(galleries)].slice(0, 3)) {
+      const page = pageUrl === home.page ? home : await fetchPage(pageUrl).catch(() => ({}));
+      if (!page.html) continue;
+      for (const src of imageCandidates(page.html, page.page)) {
+        const size = await photoCheck(src).catch(() => null);
+        if (size) {result.image = {src, ...size}; log.image = src; break;}
+      }
+      if (result.image) break;
+    }
   }
   return result.hours || result.image ? result : null;
 }
@@ -145,18 +208,19 @@ async function commons(tags) {
   return {src: info.thumburl || info.url, page: info.descriptionurl, credit: [strip(meta.Artist?.value), strip(meta.LicenseShortName?.value)].filter(Boolean).join(' · ') || 'Wikimedia Commons'};
 }
 
-const results = {}; let done = 0;
+const results = {}, diagnostics = {}; let done = 0;
 const queue = places.filter(p => p.id.startsWith('osm-') && (websiteOf(p) || tagsById.get(p.id)?.wikidata));
 async function worker() {
   for (let place; (place = queue.shift());) {
     const tags = tagsById.get(place.id) || {}, entry = {};
-    try {const site = await website(place, tags); if (site) entry.website = site;} catch {}
+    const log = {}; diagnostics[place.id] = log;
+    try {const site = await website(place, tags, log); if (site) entry.website = site;} catch (error) {log.status = `error ${error.name}`;}
     try {const photo = await commons(tags); if (photo) entry.commons = photo;} catch {}
     if (Object.keys(entry).length) results[place.id] = entry;
     if (++done % 100 === 0) console.log(done, 'checked');
   }
 }
 await Promise.all(Array.from({length: 16}, worker));
-writeFileSync(out, JSON.stringify({checked: CHECKED, agent: AGENT, note: 'Hours only from schema.org data whose address matches the place; images from the venue page or Wikimedia Commons.', places: results}, null, 1));
+writeFileSync(out, JSON.stringify({checked: CHECKED, agent: AGENT, note: 'Hours from address-matched schema.org data, single-branch page markup, or unambiguous hours text on the venue site; images from the venue page or Wikimedia Commons.', places: results, diagnostics}, null, 1));
 const values = Object.values(results);
 console.log({checked: done, hours: values.filter(v => v.website?.hours).length, websiteImages: values.filter(v => v.website?.image).length, commons: values.filter(v => v.commons).length});

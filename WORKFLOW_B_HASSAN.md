@@ -40,6 +40,7 @@ Check a task only when its result exists. These tasks do not imply approval of a
 
 | Task | State | Evidence / blocker |
 | --- | --- | --- |
+| A41 / B25 | DONE | New data snapshots: `chain-hours.json`, `commons-photos.json`, `photo-review.json`; `venue-websites.json` refreshed. README documents sources, robots.txt handling, and the hours/photo rules. |
 | A40 / B24 | DONE | Review catalog builder now only appends new IDs in a new migration (applied catalog untouched; current directory already covered). Production share RPCs verified in a rolled-back transaction. |
 | A39 / B23 | DONE | `website/data/places/hidden-places.json` stores hidden nearby places with what they lack; review catalog unchanged (byte-identical). |
 | A38 / B22 | DONE | Data: `website/data/places/venue-websites.json` snapshot (robots.txt respected, KampuscapeBot UA); README documents sources, filters and removal on request. |
@@ -84,6 +85,7 @@ Provider handoff should include the SDK, supported version, configuration variab
 
 ## Change log
 
+- **2026-10-11:** A41/B25 (user-requested overnight pass): photos and hours for nearby places from venue sites, chain store pages and Wikimedia, with by-eye photo review.
 - **2026-10-10:** A40/B24 (user-requested): all places back within 1 mile, For students default, persistent categories, place picks, building For you, save-refresh and share-link fixes.
 - **2026-10-10:** A39/B23 (user-requested): decluttered map pins; nearby places need a photo and hours to show, the rest stored and logged as hidden.
 - **2026-10-10:** A38/B22 (user-requested): place hours/photos from OSM, venue websites and Commons; pin persistence and zoom names; glass dialogs.

@@ -1,0 +1,85 @@
+{
+ "checked": "2026-10-11",
+ "note": "Photos reviewed by eye on contact sheets. Rejected photos never ship; approved Commons files ship even without a geotag. Rerunning the fetchers keeps these decisions.",
+ "rejected": {
+  "osm-way-1380916010": {
+   "name": "Little Italy Branch Library",
+   "reason": "architect rendering, not a photo",
+   "src": "https://chipublib.bibliocommons.com/events/uploads/images/full/7a6ac351955e50eec3914a6c6727a2eb/little-italy.jpg"
+  },
+  "osm-node-6322774469": {
+   "name": "Mojo Coffee",
+   "reason": "brand photo from the Mojo Coffee US site; not shown to be this Chicago location",
+   "src": "https://us.mojo.coffee/cdn/shop/files/Mojo_Coffee_2_1_2048x.jpg?v=1613507358"
+  },
+  "osm-node-6284415297": {
+   "name": "Mojo Coffee",
+   "reason": "brand photo from the Mojo Coffee US site; not shown to be this Chicago location",
+   "src": "https://us.mojo.coffee/cdn/shop/products/Terrace_location_600x600.jpg?v=1571357907"
+  },
+  "osm-way-1501510119": {
+   "name": "Chicago French Market",
+   "reason": "app mockup, not a photo of the market",
+   "src": "https://frenchmarketchicago.com/wp-content/uploads/cfm_bucket_img_open.jpg"
+  },
+  "osm-node-13179005207": {
+   "name": "Postcard",
+   "reason": "artistic close-up that does not show the cafe",
+   "src": "https://postcard.co/cdn/shop/files/Postcard-Desktop-2_1200x.jpg?v=1755552605"
+  },
+  "osm-node-1630387514": {
+   "name": "McDonald's",
+   "reason": "decades-old black-and-white photo; does not show the restaurant today",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/10_110778_McDonalds_Wells_St_Chicago_Loop.jpg/1280px-10_110778_McDonalds_Wells_St_Chicago_Loop.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  },
+  "osm-node-13731089938": {
+   "name": "Moka & Co",
+   "reason": "a painting, not a photo of the cafe",
+   "src": "https://mokanco.com/wp-content/uploads/2026/03/5026cb5a86afed9c1ac62c512614da4c@2x.jpg"
+  },
+  "osm-node-6300959267": {
+   "name": "The Rosebud",
+   "reason": "shows the Rosebud on Rush, a different location",
+   "src": "https://rosebudrestaurants.com/wp-content/uploads/rosebudrush_1-scaled-e1691596895923-2048x1536.jpeg"
+  },
+  "osm-node-13749212592": {
+   "name": "Bell Heirs BBQ",
+   "reason": "generic French Market image shared by several vendors",
+   "src": "https://frenchmarketchicago.com/wp-content/uploads/1-1024x816.jpg"
+  },
+  "osm-node-13749212586": {
+   "name": "Thimi\u2019s Empanadas",
+   "reason": "generic French Market image shared by several vendors",
+   "src": "https://frenchmarketchicago.com/wp-content/uploads/1-1024x816.jpg"
+  },
+  "osm-node-13322988701": {
+   "name": "Buen Apetito",
+   "reason": "generic French Market image shared by several vendors",
+   "src": "https://frenchmarketchicago.com/wp-content/uploads/1-1024x816.jpg"
+  },
+  "osm-node-13322988703": {
+   "name": "Panlasa",
+   "reason": "generic French Market image shared by several vendors",
+   "src": "https://frenchmarketchicago.com/wp-content/uploads/1-1024x816.jpg"
+  },
+  "osm-node-6251767399": {
+   "name": "5 Rabanitos Restaurante and Taqueria",
+   "reason": "mural close-ups that do not show the restaurant",
+   "src": "https://5rabanitosdotcom.wordpress.com/wp-content/uploads/2021/02/cropped-62ef432a-f58f-47ba-9604-c8fe1ad5974c.jpeg"
+  }
+ },
+ "approved": {
+  "osm-way-1294780459": {
+   "name": "Mario's Italian Lemonade",
+   "file": "Chicago in 2022 Mario's Italian Lemonade (52060872222).jpg"
+  },
+  "osm-node-5249789676": {
+   "name": "Bonci Pizzeria",
+   "file": "Chicago in 2022 Pizza at Bonci Pizzeria (52060592561).jpg"
+  },
+  "osm-node-7554563285": {
+   "name": "First Aid Comics",
+   "file": "Chicago in 2022 Superman neon sign at First Aid Comics (52061911476).jpg"
+  }
+ }
+}

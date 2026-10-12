@@ -27,16 +27,25 @@ npm test
 
 Imported hours retain source wording and are not parsed into a claim that a venue is currently open. Missing hours and dietary facts ask the student to check. No ratings, visitors, discounts, prices or testimonials are fabricated. Only reviewed official/UIC discount evidence sets `student: true`; no discount is required for inclusion. Student reviews are independent user opinions and never automatically set a discount badge.
 
-## Hours and photos from venue websites
+## Hours and photos
 
-`venue-websites.json` is a dated snapshot from `scripts/fetch-venue-websites.mjs`. For each new place with a website in OpenStreetMap, the script reads the venue's own page (respecting robots.txt, identifying as KampuscapeBot) and, where a place has a `wikidata` tag, its Wikimedia Commons image.
+Run from `website/frontend`, then rerun the importer. Every fetcher identifies itself as KampuscapeBot, follows robots.txt (standard matching: wildcards, `$`, Allow), and writes a dated snapshot here.
 
-- OpenStreetMap `opening_hours` are parsed into weekly schedules by `src/openingHours.js`. Rules outside the plain weekly subset (months, open-ended times, sunrise) stay as text.
-- Website hours are used only when the page's schema.org data carries opening hours and its street address matches the place. Some sites carry leftover template data for other businesses, so unmatched hours are ignored.
-- Website images come from the page's `og:image`. They are skipped for chain or shared websites, `brand:wikidata` listings, logos/icons, and anything under 480×270 or outside a photo-like aspect ratio. They are credited to the venue site, linked to the page, and served through `/uic/api/place-photo/<id>`, which fetches only allowlisted URLs from `src/placePhotoSources.json`.
-- Commons photos load directly from Wikimedia with the author and license from Commons metadata.
+| Snapshot | Script | What it adds |
+| --- | --- | --- |
+| `venue-websites.json` | `fetch-venue-websites.mjs` | Hours and a photo from each place's own website. |
+| `chain-hours.json` | `fetch-chain-hours.mjs` | Branch hours from chain store-locator pages. |
+| `commons-photos.json` | `fetch-commons-photos.mjs` | Freely licensed photos from Wikidata and Wikimedia Commons. |
+| `photo-review.json` | by hand | Photos rejected after looking at them; they never ship. |
 
-These images belong to the venues or their authors. Remove an image on request by deleting its entry and rerunning the importer.
+Rules that keep this honest:
+
+- **Hours, in order of trust:** OpenStreetMap `opening_hours` (parsed by `src/openingHours.js`), the venue site's schema.org data when its street address matches, single-branch page markup, then hours written as text on the page (`scripts/lib/hoursText.mjs`). The text reader refuses rather than guesses: a closing time needs am/pm, conflicting blocks fail, a block cut short before a section that names missing days fails, and on a page listing several addresses the hours must follow this branch's address.
+- **Same name, different business:** a site must name the venue and place itself in Chicago (city, state, 606 ZIP, or this street address).
+- **Chains and shared sites:** chain store pages count only when the page's own address matches the branch; photos are never taken from chain, shared or generic location pages, and no other branch's photo stands in for this one.
+- **Photos:** must look like photos (size, aspect, compression, colour variety), not logos or banners. Every new photo is checked by eye on a contact sheet before release; rejections go in `photo-review.json`. Commons photos must be geotagged at the place or named for it, never street scenes, buildings or people at events, and carry their author and license.
+
+These images belong to the venues or their authors. Remove one on request by adding it to `photo-review.json` and rerunning the importer.
 
 ## What the app shows
 
