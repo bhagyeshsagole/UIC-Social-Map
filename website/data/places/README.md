@@ -36,7 +36,8 @@ Run from `website/frontend`, then rerun the importer. Every fetcher identifies i
 | `venue-websites.json` | `fetch-venue-websites.mjs` | Hours and a photo from each place's own website. |
 | `chain-hours.json` | `fetch-chain-hours.mjs` | Branch hours from chain store-locator pages. |
 | `commons-photos.json` | `fetch-commons-photos.mjs` | Freely licensed photos from Wikidata and Wikimedia Commons. |
-| `photo-review.json` | by hand | Photos rejected after looking at them; they never ship. |
+| `photo-review.json` | by hand | `rejected`: photos that never ship. `approved` (Commons) and `approvedWebsite` (a venue's own site, served through the proxy): photos picked on contact sheets. |
+| `overrides.json` | by hand | `hours`: hand-checked hours in OpenStreetMap syntax with a source link. `details`: corrected `name` or `address`. `closed`: places confirmed closed or moved, kept out of the app and listed in `added_sites.md`. |
 
 Rules that keep this honest:
 
@@ -52,3 +53,7 @@ These images belong to the venues or their authors. Remove one on request by add
 Every nearby place ships to the app (accepted 2026-10-10, replacing a short-lived photo-and-hours gate). The map opens on **For students**: only places with a documented UIC student discount or perk. Picking a category in Explore (Cafes, Groceries, All places…) shows every matching place on the map, and the choice stays on that device until another is picked. Places without a real photo keep their labeled category illustration; places without hours say so.
 
 The generated block at the end of [added_sites.md](../../../added_sites.md) lists every nearby place, grouped by what is still missing (photo, hours, or both). To fill a gap, add a credited photo to `photos.json`, hand-checked hours to `overrides.json` under `hours` (`{"<id>": {"opening_hours": "Mo-Fr 08:00-17:00", "source": "https://…"}}`), or fix the listing in OpenStreetMap, then rerun the importer. The review catalog only ever grows, so reviews survive any change in the directory.
+
+## Hand-checked batches
+
+On 2026-10-12, 50 of the places closest to campus were completed by hand: each got a photo picked by eye from the venue's own website (a resized copy from the same host when the original was heavy) and weekly hours from the business's Google listing, its website, or the UIC Library hours page. Hours that already matched the app were left alone. The same pass found 9 listings that are permanently or temporarily closed or have moved; they are in `overrides.json` → `closed`. Expiring image links (signed Google Sites URLs) and photos from shared or event-venue sites are not used.

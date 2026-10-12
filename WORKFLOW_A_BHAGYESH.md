@@ -67,6 +67,7 @@ Check a task only when its result exists. If a task is partial, leave it uncheck
 
 | Task | State | Evidence / blocker |
 | --- | --- | --- |
+| A42 / B26 | DONE | 50 nearby places completed by hand (photo + hours), closest first, 0.13–0.99 mi: 41 venue-site photos picked on contact sheets (resized where heavy) and hours from Google listings, venue sites and the UIC Library page; 9 closed or moved listings hidden and logged. Complete places 97 → 147. Apple Maps–style pins: small coloured dots by kind, names as plain coloured text from neighbourhood zoom, pins without room for a name dropped (student deals always kept). 109 unit tests and nine smoke tests pass. |
 | A41 / B25 | DONE | Photo and hours pass for the 627 nearby places: real photos 20 → 136 (127 from venue websites through the allowlisted proxy, 8 freely licensed Wikidata/Commons, 1 existing); weekly hours 286 → 328 (venue sites, chain store pages). Every shipped website photo checked by eye on contact sheets; 13 rejected and 3 approved in `website/data/places/photo-review.json`. Hours reader refuses ambiguous text; all 22 prose-read schedules checked against their pages. Chains get hours only from address-matched store pages and never another branch's photo. 109 unit tests and nine smoke tests pass. |
 | A40 / B24 | DONE | All nearby places back, hard 1-mile radius (627 places); map opens on For students; Explore category persists per device with a note; What's happening adds 1–2 interest-matched place picks; building events get All / For you. Fixes: stale refresh after saves (forced refresh during an in-flight request now refetches; cached data revalidates on load), host share links re-saved and confirmed before sharing, glued share text redirected, styled expired-link page. 99 unit tests and nine smoke tests pass. |
 | A39 / B23 | DONE | Map declutter: pins ranked (hand-picked, perks and events first) and placed with screen spacing that shrinks as you zoom, never under the floating controls; default view 17 pins on desktop and 4 on phone (was 180 each). Nearby places shown only with a real photo and listed hours: 61 shown, 2,013 hidden in `website/data/places/hidden-places.json` and logged in `added_sites.md`. App bundle 1.45 MB (place data 1.9 MB → 65 KB). 93 unit tests and nine smoke tests pass. |
@@ -198,6 +199,7 @@ Ordered by impact for students on phones.
 
 ## Change log
 
+- **2026-10-12:** A42/B26 (user-requested): 50 closest incomplete places given checked photos and hours; closed listings hidden; Apple Maps–style pins.
 - **2026-10-11:** A41/B25 (user-requested overnight pass): photos and hours for nearby places from venue sites, chain store pages and Wikimedia, with by-eye photo review.
 - **2026-10-10:** A40/B24 (user-requested): all places back within 1 mile, For students default, persistent categories, place picks, building For you, save-refresh and share-link fixes.
 - **2026-10-10:** A39/B23 (user-requested): decluttered map pins; nearby places need a photo and hours to show, the rest stored and logged as hidden.

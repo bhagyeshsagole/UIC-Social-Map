@@ -21,8 +21,11 @@ import {safariBleed} from './safariRunway';
 const UIC_LABEL = [-87.64927, 41.87191];
 // One home view for page load and the UIC button.
 const HOME = {center:UIC_LABEL,zoom:15.3,pitch:54,bearing:0,roll:0};
-// Street-level zoom where every pin with room shows its name.
-const NAME_ZOOM = 16.5;
+// From neighbourhood zoom, every pin with room shows its name beside it, like Apple Maps.
+const NAME_ZOOM = 14.5;
+// Pin colour by kind of place, following Apple Maps: food and drink orange, shops and services yellow,
+// culture pink, study brown, parks green, fitness teal.
+const PIN_KIND = {'Food & drink':'food','Cafes':'food','Nightlife':'food','Groceries & essentials':'shop','Books & supplies':'shop','Barbers & beauty':'shop','Everyday services':'shop','Study spaces':'study','Arts & culture':'fun','Sights':'fun','Get active':'active','Outdoors':'park'};
 // Pins compete for room like labels on a printed map. Each place has a fixed rank: hand-picked
 // destinations, student perks and event venues first, then places with real photos, then places
 // with known hours, then the rest of the directory. A pin is drawn only when no higher-ranked pin
@@ -34,7 +37,8 @@ const CHROME = '.topbar .nav-pill,.location-status,.event-count-pill,.profile,.s
 const pinTier = p => !p.id.startsWith('osm-') || p.student || p.events?.length ? 0 : p.photo && !p.photo.illustration ? 1 : p.schedule ? 2 : 3;
 function declutterPins(m, order, selected, revealAll, surface) {
   const zoom = m.getZoom(), width = surface.clientWidth, height = surface.clientHeight, view = surface.getBoundingClientRect();
-  const spacing = (zoom >= 17.5 ? 54 : zoom >= 16.5 ? 68 : zoom >= 15.5 ? 84 : zoom >= 14.5 ? 100 : 120) * (revealAll ? .75 : 1);
+  // Dots are small; past NAME_ZOOM the name check (a pin needs room for its name) does most of the work.
+  const spacing = (zoom >= 17.5 ? 40 : zoom >= 16.5 ? 46 : zoom >= 15.5 ? 54 : zoom >= 14.5 ? 62 : 80) * (revealAll ? .8 : 1);
   const chrome = [...document.querySelectorAll(CHROME)].map(el => el.getBoundingClientRect()).filter(r => r.width && r.height)
     .map(r => ({left: r.left - view.left - 6, top: r.top - view.top - 6, right: r.right - view.left + 6, bottom: r.bottom - view.top + 6}));
   const b = m.getBounds(), dx = (b.getEast() - b.getWest()) * .2, dy = (b.getNorth() - b.getSouth()) * .2;
@@ -46,7 +50,7 @@ function declutterPins(m, order, selected, revealAll, surface) {
     const {x, y} = m.project(p.coords);
     // Decide a little past the edges so pins entering the view don't flip on every pan.
     if (!chosen && (x < -spacing || x > width + spacing || y < -spacing || y > height + spacing)) continue;
-    const box = {left: x - 26, top: y - 56, right: x + 26, bottom: y};
+    const box = {left: x - 19, top: y - 19, right: x + 19, bottom: y + 19};
     if (!chosen && (placed.some(q => (q.x - x) ** 2 + (q.y - y) ** 2 < spacing * spacing) || chrome.some(c => box.left < c.right && box.right > c.left && box.top < c.bottom && box.bottom > c.top))) continue;
     placed.push({p, x, y});
   }
@@ -257,9 +261,9 @@ export default function Map({revealAll=false,places,selected,onSelect,night,rese
     cache.byId.forEach((pin,id)=>{if(!keep.has(id)){pin.marker.remove();setTimeout(()=>pin.root.unmount(),0);cache.byId.delete(id);}});
     const entries=shown.map(p=>{
       const isSelected=selected?.id===p.id;let pin=cache.byId.get(p.id);
-      if(!pin){const el=document.createElement('div');el.dataset.labelActive='false';pin={el,root:createRoot(el),marker:new maplibregl.Marker({element:el,anchor:'bottom'}).setLngLat(p.coords).addTo(m)};cache.byId.set(p.id,pin);}
-      if(pin.place!==p||pin.selected!==isSelected){pin.place=p;pin.selected=isSelected;pin.marker.setLngLat(p.coords);pin.root.render(<button className={`map-pin ${p.accent} ${isSelected?'selected':''}`} onClick={()=>callback.current(p)} aria-label={`View ${p.name}${hasPerk(p)?', student perk':''}`}><span className="pin-circle"><PlaceIcon place={p}/>{hasPerk(p)&&<span className="pin-badge" aria-hidden="true"><GraduationCap size={12} strokeWidth={2.4}/></span>}</span><span className="pin-label">{p.name}</span></button>);}
-      return {id:p.id,el:pin.el,selected:isSelected};
+      if(!pin){const el=document.createElement('div');el.dataset.labelActive='false';pin={el,root:createRoot(el),marker:new maplibregl.Marker({element:el,anchor:'center'}).setLngLat(p.coords).addTo(m)};cache.byId.set(p.id,pin);}
+      if(pin.place!==p||pin.selected!==isSelected){pin.place=p;pin.selected=isSelected;pin.marker.setLngLat(p.coords);pin.root.render(<button className={`map-pin ${p.accent} ${isSelected?'selected':''}`} data-kind={PIN_KIND[p.category]||'other'} onClick={()=>callback.current(p)} aria-label={`View ${p.name}${hasPerk(p)?', student perk':''}`}><span className="pin-circle"><PlaceIcon place={p} size={14}/>{hasPerk(p)&&<span className="pin-badge" aria-hidden="true"><GraduationCap size={9} strokeWidth={2.6}/></span>}</span><span className="pin-label">{p.name}</span></button>);}
+      return {id:p.id,el:pin.el,selected:isSelected,tier:pinTier(p)};
     });
     const campus=cache.campus.getElement();let frame;
     const union=(a,b)=>({left:Math.min(a.left,b.left),top:Math.min(a.top,b.top),right:Math.max(a.right,b.right),bottom:Math.max(a.bottom,b.bottom)});
@@ -272,17 +276,21 @@ export default function Map({revealAll=false,places,selected,onSelect,night,rese
       const active=ready.find(entry=>entry.button.matches(':hover'))||ready.find(entry=>entry.button.matches(':focus-visible'))||ready.find(entry=>entry.selected);
       const pinsBoxes=new globalThis.Map(ready.map(entry=>{const box=entry.circle.getBoundingClientRect(),badge=entry.el.querySelector('.pin-badge');return [entry,badge?union(box,badge.getBoundingClientRect()):box];}));
       const order=named()?[...(active?[active]:[]),...ready.filter(entry=>entry!==active)]:active?[active]:[];
+      // Names never cover their own dot or the floating controls.
+      const controls=[...document.querySelectorAll(CHROME)].map(el=>el.getBoundingClientRect()).filter(r=>r.width&&r.height).map(r=>({left:r.left-4,top:r.top-4,right:r.right+4,bottom:r.bottom+4}));
       const placed=[],labelled=new Set();
       for(const entry of order){
-        const anchor=entry.button.getBoundingClientRect(),size=entry.label.getBoundingClientRect();
+        const anchor=entry.button.getBoundingClientRect(),dot=entry.circle.getBoundingClientRect(),size=entry.label.getBoundingClientRect();
         if(entry!==active&&(anchor.left<view.left||anchor.right>view.right||anchor.top<view.top||anchor.bottom>view.bottom))continue;
-        const obstacles=[...[...pinsBoxes].filter(([other])=>other!==entry).map(([,box])=>box),...placed,campus.getBoundingClientRect()];
-        const position=placeLabel(anchor,size,view,obstacles,entry===active?undefined:[10]),box={left:position.left,top:position.top,right:position.left+size.width,bottom:position.top+size.height};
+        const obstacles=[...pinsBoxes.values(),...placed,campus.getBoundingClientRect(),...controls];
+        const position=placeLabel(dot,size,view,obstacles,entry===active?[6,24,46]:[6]),box={left:position.left,top:position.top,right:position.left+size.width,bottom:position.top+size.height};
         if(entry!==active&&obstacles.some(other=>overlap(box,other)>0))continue;
         entry.label.style.left=`${position.left-anchor.left}px`;entry.label.style.top=`${position.top-anchor.top}px`;
         placed.push(box);labelled.add(entry);
       }
-      for(const entry of ready){entry.el.dataset.labelActive=String(labelled.has(entry));entry.el.style.zIndex=entry===active?'2':labelled.has(entry)?'1':'0';}
+      // Student deals and hand-picked places always stay on the map, named or not.
+      const crowded=entry=>named()&&!revealAll&&entry.tier>0&&!labelled.has(entry)&&entry!==active&&!entry.selected;
+      for(const entry of ready){entry.el.dataset.labelActive=String(labelled.has(entry));entry.el.style.zIndex=entry===active?'2':labelled.has(entry)?'1':'0';entry.el.style.visibility=crowded(entry)?'hidden':'';}
     };
     const schedule=()=>{cancelAnimationFrame(frame);frame=requestAnimationFrame(layout);};
     // Names ride along with their pins while panning; zooming changes spacing, so they hide until the camera settles.

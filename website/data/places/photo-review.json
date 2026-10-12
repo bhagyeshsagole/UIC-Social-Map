@@ -1,5 +1,5 @@
 {
- "checked": "2026-10-11",
+ "checked": "2026-10-12",
  "note": "Photos reviewed by eye on contact sheets. Rejected photos never ship; approved Commons files ship even without a geotag. Rerunning the fetchers keeps these decisions.",
  "rejected": {
   "osm-way-1380916010": {
@@ -48,7 +48,7 @@
    "src": "https://frenchmarketchicago.com/wp-content/uploads/1-1024x816.jpg"
   },
   "osm-node-13749212586": {
-   "name": "Thimi\u2019s Empanadas",
+   "name": "Thimi’s Empanadas",
    "reason": "generic French Market image shared by several vendors",
    "src": "https://frenchmarketchicago.com/wp-content/uploads/1-1024x816.jpg"
   },
@@ -80,6 +80,309 @@
   "osm-node-7554563285": {
    "name": "First Aid Comics",
    "file": "Chicago in 2022 Superman neon sign at First Aid Comics (52061911476).jpg"
+  }
+ },
+ "approvedWebsite": {
+  "osm-node-6291479444": {
+   "name": "Adda Indian Cuisine",
+   "src": "https://static.wixstatic.com/media/f452f7500f2042a084cc8c4e1b1fe58f.jpg/v1/fit/w_1400,h_1400,q_80/f452f7500f2042a084cc8c4e1b1fe58f.jpg",
+   "page": "https://www.addaindiancuisine.com/about",
+   "credit": "Adda Indian Cuisine website",
+   "alt": "Photo from the Adda Indian Cuisine website"
+  },
+  "osm-node-6842452393": {
+   "name": "Peanut Park Trattoria",
+   "src": "https://peanutpark.com/wp-content/uploads/reardining-2-scaled.jpg",
+   "page": "https://peanutpark.com/",
+   "credit": "Peanut Park Trattoria website",
+   "alt": "Photo from the Peanut Park Trattoria website"
+  },
+  "osm-node-13715364542": {
+   "name": "La Lagartija",
+   "src": "https://static.wixstatic.com/media/65d02b_fce30b78e9874e1289cb704de6296aa9~mv2.jpg/v1/fit/w_1600,h_1200,q_85/65d02b_fce30b78e9874e1289cb704de6296aa9~mv2.jpg",
+   "page": "https://www.lalagartijainc.com/",
+   "credit": "La Lagartija website",
+   "alt": "Photo from the La Lagartija website"
+  },
+  "osm-node-13322943078": {
+   "name": "Mammoth Poke & Ramen",
+   "src": "https://static.wixstatic.com/media/b6f9ae_d9aeaafb583a43b3ac0047dedc958c4c~mv2.jpg/v1/fit/w_1600,h_1200,q_85/b6f9ae_d9aeaafb583a43b3ac0047dedc958c4c~mv2.jpg",
+   "page": "https://www.mammothpoke.com/",
+   "credit": "Mammoth Poke & Ramen website",
+   "alt": "Photo from the Mammoth Poke & Ramen website"
+  },
+  "osm-node-11673117987": {
+   "name": "Bonyeon",
+   "src": "https://static.wixstatic.com/media/576e31_326a5b200ed046f89fb09ea717664d32~mv2.jpeg/v1/fit/w_1600,h_1200,q_85/576e31_326a5b200ed046f89fb09ea717664d32~mv2.jpeg",
+   "page": "https://www.bonyeonchicago.com/",
+   "credit": "Bonyeon website",
+   "alt": "Photo from the Bonyeon website"
+  },
+  "osm-node-13069843749": {
+   "name": "Polombia",
+   "src": "https://static.wixstatic.com/media/37dd65_b1ecbfa49d754e448d400fedf963826f~mv2.jpg",
+   "page": "https://www.polombiachi.com/",
+   "credit": "Polombia website",
+   "alt": "Photo from the Polombia website"
+  },
+  "osm-node-6285863501": {
+   "name": "EL Ideas",
+   "src": "https://images.squarespace-cdn.com/content/v1/555626fce4b02d69c9a333ea/1432076205125-ZNA6F20T0PNU2VH6QJHI/2015_04_23_eater_elideas_highres-001.jpg?format=1500w",
+   "page": "http://www.elideas.com/photography",
+   "credit": "EL Ideas website",
+   "alt": "Photo from the EL Ideas website"
+  },
+  "osm-node-479652775": {
+   "name": "Haymarket Pub & Brewery",
+   "src": "https://images.squarespace-cdn.com/content/v1/61d9e4e346d51b49b513a9fa/1641703952472-L8MPPVS1VO13LADPCVPV/IMG_1403.jpg",
+   "page": "https://www.haymarketbeer.com/",
+   "credit": "Haymarket Pub & Brewery website",
+   "alt": "Photo from the Haymarket Pub & Brewery website"
+  },
+  "osm-node-5460626543": {
+   "name": "Talay Sushi & Thai",
+   "src": "https://static.wixstatic.com/media/f68f40_46aec03f60764b399dc0582cc65f086a~mv2_d_4752_3168_s_4_2.jpg/v1/fit/w_1400,h_1400,q_80/f68f40_46aec03f60764b399dc0582cc65f086a~mv2_d_4752_3168_s_4_2.jpg",
+   "page": "https://www.talaychicago.com/",
+   "credit": "Talay Sushi & Thai website",
+   "alt": "Photo from the Talay Sushi & Thai website"
+  },
+  "osm-node-5359347426": {
+   "name": "Half Sour",
+   "src": "https://halfsourchicago.com/wp-content/uploads/2022/12/four-file-scaled.jpg",
+   "page": "https://halfsourchicago.com/",
+   "credit": "Half Sour website",
+   "alt": "Photo from the Half Sour website"
+  },
+  "osm-node-6126898602": {
+   "name": "Pizza Nova",
+   "src": "https://www.lapizzanova.com/images/media/pizza_wide.png",
+   "page": "https://www.lapizzanova.com/",
+   "credit": "Pizza Nova website",
+   "alt": "Photo from the Pizza Nova website"
+  },
+  "osm-node-6251767399": {
+   "name": "5 Rabanitos Restaurante and Taqueria",
+   "src": "https://5rabanitosdotcom.wordpress.com/wp-content/uploads/2021/05/img_9633.jpg",
+   "page": "https://5rabanitosdotcom.wordpress.com/",
+   "credit": "5 Rabanitos Restaurante and Taqueria website",
+   "alt": "Photo from the 5 Rabanitos Restaurante and Taqueria website"
+  },
+  "osm-node-6572921976": {
+   "name": "Bacci Pizzeria",
+   "src": "https://www.baccipizza.com/assets/img/og-image.jpg",
+   "page": "https://baccipizza.com/",
+   "credit": "Bacci Pizzeria website",
+   "alt": "Photo from the Bacci Pizzeria website"
+  },
+  "osm-node-12737879309": {
+   "name": "Pat's Pizza",
+   "src": "https://customer-ugajlzvkncemhxjh.cloudflarestream.com/e50be4fd594f42bbb6a5e24c1fb2e2f1/thumbnails/thumbnail.jpg?width=1200",
+   "page": "https://www.patspizzasouthloop.com/",
+   "credit": "Pat's Pizza website",
+   "alt": "Photo from the Pat's Pizza website"
+  },
+  "osm-node-12187329106": {
+   "name": "IDOF - I Dream of Falafel",
+   "src": "https://static.wixstatic.com/media/f14228_86df7fb265c840d3aa9b02541c5e64fe~mv2.webp/v1/crop/x_150,y_7,w_980,h_686,q_85,blur_2,enc_avif,quality_auto/f14228_86df7fb265c840d3aa9b02541c5e64fe~mv2.webp",
+   "page": "https://www.idreamoffalafel.com/",
+   "credit": "IDOF - I Dream of Falafel website",
+   "alt": "Photo from the IDOF - I Dream of Falafel website"
+  },
+  "osm-node-10045011967": {
+   "name": "Eppel's Restaurant",
+   "src": "https://static.wixstatic.com/media/fd6a5d_5e63b0cd6bcc49c09606f0d1badd8ad0~mv2_d_2016_1512_s_2.jpg",
+   "page": "https://www.eppelschicago.com/contact",
+   "credit": "Eppel's Restaurant website",
+   "alt": "Photo from the Eppel's Restaurant website"
+  },
+  "osm-node-13800178129": {
+   "name": "Maxwell Nail Spa",
+   "src": "https://images.squarespace-cdn.com/content/v1/59bd3d0ecd0f6896ae0aa561/1508692263927-N4HO9UYRVCRSYOQCSSPP/DSC01849.JPG",
+   "page": "https://maxwellnailspa.com/",
+   "credit": "Maxwell Nail Spa website",
+   "alt": "Photo from the Maxwell Nail Spa website"
+  },
+  "osm-node-6154694736": {
+   "name": "Lalo's Mexican Restaurant",
+   "src": "https://images.squarespace-cdn.com/content/v1/595fa3bb6a496373132cb9b5/1591200823474-ISQMDICNKL03CEMXOWR6/Lalos+int+4.jpg",
+   "page": "https://www.lalosonmaxwell.com/",
+   "credit": "Lalo's Mexican Restaurant website",
+   "alt": "Photo from the Lalo's Mexican Restaurant website"
+  },
+  "osm-node-12489358153": {
+   "name": "The Embassy",
+   "src": "https://theembassypublichouse.com/wp-content/uploads/2026/07/1-IMG_9539-2-scaled.jpg",
+   "page": "https://theembassypublichouse.com/",
+   "credit": "The Embassy website",
+   "alt": "Photo from the The Embassy website"
+  },
+  "osm-node-7865957623": {
+   "name": "Rye Deli",
+   "src": "https://images.squarespace-cdn.com/content/v1/5f354452e559b01f81834422/4793072b-1f1c-43ad-96b3-75ea97424c4e/Pastrami+%281%29.jpg?format=2500w",
+   "page": "https://www.ryechicago.com/our-story-1",
+   "credit": "Rye Deli website",
+   "alt": "Photo from the Rye Deli website"
+  },
+  "osm-node-2359636163": {
+   "name": "Joy Yee Noodle",
+   "src": "https://d15z892a5np5w4.cloudfront.net/restaurants/joyyee/bg/88.jpg",
+   "page": "https://joyyee.com/",
+   "credit": "Joy Yee Noodle website",
+   "alt": "Photo from the Joy Yee Noodle website"
+  },
+  "osm-node-7546476885": {
+   "name": "Mr. Greek Gyros",
+   "src": "http://mrgreekgyros-chicago.com/assets/img/gallery/6.webp",
+   "page": "http://mrgreekgyros-chicago.com/",
+   "credit": "Mr. Greek Gyros website",
+   "alt": "Photo from the Mr. Greek Gyros website"
+  },
+  "osm-node-7554554285": {
+   "name": "Hana",
+   "src": "https://imagedelivery.net/9lr8zq_Jvl7h6OFWqEi9IA/db3ca4d0-4ddc-4e4d-a677-b10dd6788300/public",
+   "page": "https://www.hanadragonil.com/",
+   "credit": "Hana website",
+   "alt": "Photo from the Hana website"
+  },
+  "osm-node-5452994604": {
+   "name": "Do-Rite Donuts & Coffee",
+   "src": "https://storage.googleapis.com/doritedonuts_bucket/wp-content/uploads/6-Reasons-Why-1024x683.jpg",
+   "page": "https://doritedonuts.com/",
+   "credit": "Do-Rite Donuts & Coffee website",
+   "alt": "Photo from the Do-Rite Donuts & Coffee website"
+  },
+  "osm-node-5460836745": {
+   "name": "Gyuro Ramen",
+   "src": "https://images.squarespace-cdn.com/content/v1/620dab7061ad523d8cea7f43/4381486a-3107-4974-9cad-157d28111a52/%C2%A9DLM+Photography+%26+Design_Gyuro+Ramen+Interiors_8.jpg?format=2500w",
+   "page": "https://www.gyuroramen.com/contactus",
+   "credit": "Gyuro Ramen website",
+   "alt": "Photo from the Gyuro Ramen website"
+  },
+  "osm-node-6291640639": {
+   "name": "PB&J",
+   "src": "https://pbjwestloop.com/wp-content/uploads/2022/10/N27A0834-HDR-Edit-HiRes-Final-min-min.jpg",
+   "page": "https://pbjwestloop.com/",
+   "credit": "PB&J website",
+   "alt": "Photo from the PB&J website"
+  },
+  "osm-node-6300753400": {
+   "name": "Sofi Restaurant",
+   "src": "https://static.wixstatic.com/media/9ac31c_9ecd07dc43954ffa920ccb0d32d56ae6~mv2.jpeg/v1/fit/w_1600,h_1200,q_85/9ac31c_9ecd07dc43954ffa920ccb0d32d56ae6~mv2.jpeg",
+   "page": "https://www.sofichicago.com/",
+   "credit": "Sofi Restaurant website",
+   "alt": "Photo from the Sofi Restaurant website"
+  },
+  "osm-node-10925526276": {
+   "name": "Seedo’s",
+   "src": "https://seedosbakery.net/wp-content/uploads/2025/04/0AA775BE-B68A-4EAC-BA90-8CFEC214397D-min.jpeg",
+   "page": "https://seedosbakery.net/",
+   "credit": "Seedo’s website",
+   "alt": "Photo from the Seedo’s website"
+  },
+  "osm-node-12075629330": {
+   "name": "Good Ambler",
+   "src": "https://images.squarespace-cdn.com/content/v1/68dd6b6f45ecc81870efc97d/18ab9197-2583-456a-b387-a27c3b104a30/20230515_RIVAS_GOODAMBLER_0088.jpg?format=1000w",
+   "page": "https://www.goodambler.com/",
+   "credit": "Good Ambler website",
+   "alt": "Photo from the Good Ambler website"
+  },
+  "osm-node-6013931441": {
+   "name": "Tamashii Ramen",
+   "src": "https://static.wixstatic.com/media/d875c5_fa5657c7ded644139662ff220f0e15b9~mv2.jpg/v1/fit/w_1600,h_1200,q_85/d875c5_fa5657c7ded644139662ff220f0e15b9~mv2.jpg",
+   "page": "https://www.tamashiiramenchicago.com/",
+   "credit": "Tamashii Ramen website",
+   "alt": "Photo from the Tamashii Ramen website"
+  },
+  "osm-node-5448861165": {
+   "name": "9 Muses Bar & Grill",
+   "src": "https://static.wixstatic.com/media/bfd0cb_38aaa916275c41758965e180b41ce1cc~mv2.jpg/v1/fit/w_1600,h_1200,q_85/bfd0cb_38aaa916275c41758965e180b41ce1cc~mv2.jpg",
+   "page": "https://www.9museschicago.com/",
+   "credit": "9 Muses Bar & Grill website",
+   "alt": "Photo from the 9 Muses Bar & Grill website"
+  },
+  "osm-node-6324116885": {
+   "name": "Original Ferrara Bakery",
+   "src": "https://static.wixstatic.com/media/bdf142_4c7809ee3f824ebcb3dfa3d930ce5ec1.jpg/v1/fit/w_1400,h_1400,q_80/bdf142_4c7809ee3f824ebcb3dfa3d930ce5ec1.jpg",
+   "page": "https://www.ferrarabakery.com/about",
+   "credit": "Original Ferrara Bakery website",
+   "alt": "Photo from the Original Ferrara Bakery website"
+  },
+  "osm-node-12060205210": {
+   "name": "Chloé Chen Spa",
+   "src": "https://images.squarespace-cdn.com/content/v1/667f6ea93ffeb6658cf0babc/db4c2e39-e755-4bfc-bb59-2ae52e87e336/WIX+-+SAKURA+2025++%284%29.png?format=1000w",
+   "page": "https://www.chloechenspa.com/",
+   "credit": "Chloé Chen Spa website",
+   "alt": "Photo from the Chloé Chen Spa website"
+  },
+  "osm-node-6294257885": {
+   "name": "Hawkeye’s Bar & Grill",
+   "src": "https://img1.wsimg.com/isteam/ip/d391741d-78bc-40e4-9efe-bb7d168e5cab/blob-0008.png",
+   "page": "https://hawkeyeschicago.com/",
+   "credit": "Hawkeye’s Bar & Grill website",
+   "alt": "Photo from the Hawkeye’s Bar & Grill website"
+  },
+  "osm-node-13715364540": {
+   "name": "Park Tavern",
+   "src": "https://images.squarespace-cdn.com/content/v1/5ed94136e1a26121942a5435/1591311218408-F73RW02IPJNBU8OWVE8B/Screen+Shot+2020-06-04+at+2.48.23+PM.png?format=1000w",
+   "page": "https://www.parktavernchicago.com/",
+   "credit": "Park Tavern website",
+   "alt": "Photo from the Park Tavern website"
+  },
+  "osm-node-12187329131": {
+   "name": "Jarabe",
+   "src": "https://www.jarabechicago.com/uploads/b/42d0b740-796e-11e9-885b-dd0af07181bd/IMG_7653.jpeg?width=1200&optimize=medium",
+   "page": "https://www.jarabechicago.com/",
+   "credit": "Jarabe website",
+   "alt": "Photo from the Jarabe website"
+  },
+  "osm-way-209809783": {
+   "name": "Lulu's Hot Dogs",
+   "src": "https://images.squarespace-cdn.com/content/v1/50ca885de4b0184ba7988a0f/1586368500231-AY2KCH2BYCK7TXOAISOB/image-asset.jpeg",
+   "page": "http://lulushotdogs.com/",
+   "credit": "Lulu's Hot Dogs website",
+   "alt": "Photo from the Lulu's Hot Dogs website"
+  },
+  "osm-node-12027016695": {
+   "name": "Izakaya Yume",
+   "src": "https://cdn.gotoeat.net/izakayayume/58376-albums-1.jpg",
+   "page": "https://izakayayume.gotoeat.net/",
+   "credit": "Izakaya Yume website",
+   "alt": "Photo from the Izakaya Yume website"
+  },
+  "osm-node-2693732316": {
+   "name": "Taco Burrito King",
+   "src": "https://www.tacoburritoking.com/wp-content/uploads/2021/08/enchiladas-01.jpg",
+   "page": "https://www.tacoburritoking.com/",
+   "credit": "Taco Burrito King website",
+   "alt": "Photo from the Taco Burrito King website"
+  },
+  "osm-node-13191620397": {
+   "name": "Himalayan Sherpa Kitchen",
+   "src": "https://sherpakitchenchicago.com/wp-content/uploads/2020/12/momocha.jpg",
+   "page": "https://sherpakitchenchicago.com/",
+   "credit": "Himalayan Sherpa Kitchen website",
+   "alt": "Photo from the Himalayan Sherpa Kitchen website"
+  },
+  "osm-node-6154694737": {
+   "name": "Hashbrowns",
+   "src": "https://images.squarespace-cdn.com/content/v1/579100e63e00bebc2be0b58a/1469136364720-7YSLP2KOITP8D6C1UB2C/hashbrowns-cafe-chicago-illinois-eggs-benedict.jpg",
+   "page": "http://www.hashbrownscafe.com/",
+   "credit": "Hashbrowns website",
+   "alt": "Photo from the Hashbrowns website"
+  },
+  "osm-node-7216542185": {
+   "name": "Damenzo's Pizza",
+   "src": "https://damenzos.com/wp-content/uploads/2025/03/Damenzos-Background.jpg",
+   "page": "https://damenzos.com/",
+   "credit": "Damenzo's Pizza website",
+   "alt": "Photo from the Damenzo's Pizza website"
+  },
+  "osm-node-6300959267": {
+   "name": "The Rosebud",
+   "src": "https://rosebudtaylor.com/wp-content/uploads/2025/08/Rosebud-Taylor-Street-4-2048x964.jpg",
+   "page": "https://rosebudtaylor.com/",
+   "credit": "The Rosebud website",
+   "alt": "Photo from the The Rosebud website"
   }
  }
 }

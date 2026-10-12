@@ -9,19 +9,19 @@
         -87.647964,
         41.871967
       ],
-      "address": "750 S Halsted St \u00b7 Student Center East, 1st floor",
+      "address": "750 S Halsted St · Student Center East, 1st floor",
       "neighborhood": "UIC East campus",
       "checked": "2026-10-10",
       "kind": "discount",
       "student": true,
-      "benefit": "Student haircut \u00b7 $40",
+      "benefit": "Student haircut · $40",
       "condition": "UIC lists $40 with student ID, compared with a $50 general haircut. Confirm the current price when booking.",
       "tags": [
         "Haircuts",
         "Barber",
         "UIC perk"
       ],
-      "hours": "UIC lists Mon\u2013Sat 8am\u20138pm; Sunday closed. Confirm before visiting.",
+      "hours": "UIC lists Mon–Sat 8am–8pm; Sunday closed. Confirm before visiting.",
       "schedule": [
         null,
         [
@@ -52,18 +52,378 @@
       "events": [],
       "sources": [
         [
-          "UIC Student Centers \u00b7 Headrest Barber Shop",
+          "UIC Student Centers · Headrest Barber Shop",
           "https://studentcenters.uic.edu/be-here/be-here-sce/"
         ]
       ],
       "photo": {
         "file": "category-barber.svg",
-        "alt": "Barber illustration \u2014 not a venue photo",
-        "credit": "Kampuscape \u00b7 category illustration",
+        "alt": "Barber illustration — not a venue photo",
+        "credit": "Kampuscape · category illustration",
         "href": "https://studentcenters.uic.edu/be-here/be-here-sce/",
         "illustration": true
       },
       "accent": "rose"
     }
-  ]
+  ],
+  "hours": {
+    "osm-node-4399383916": {
+      "opening_hours": "Su 15:00-20:45; Mo off; Tu-Fr 11:00-21:00; Sa 16:00-21:30",
+      "source": "https://www.google.com/maps/search/?api=1&query=Tufano's%20Vernon%20Park%20Tap%2C%201073%20West%20Vernon%20Park%20Place%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-6013931441": {
+      "opening_hours": "Su-Th 11:30-21:30; Fr,Sa 11:30-22:00",
+      "source": "https://www.tamashiiramenchicago.com",
+      "checked": "2026-10-12"
+    },
+    "osm-node-5448861165": {
+      "opening_hours": "Mo-Th 11:00-22:30; Fr,Sa 12:00-24:00; Su 12:00-22:30",
+      "source": "https://www.google.com/maps/search/?api=1&query=9%20Muses%20Bar%20%26%20Grill%2C%20315%20South%20Halsted%20Street%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-12060205210": {
+      "opening_hours": "Mo-Sa 08:00-20:00; Su 09:00-18:00",
+      "source": "https://www.google.com/maps/search/?api=1&query=Chlo%C3%A9%20Chen%20Spa%2C%20205%20South%20Peoria%20Street%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-10788368689": {
+      "opening_hours": "Mo-Fr 11:00-14:00",
+      "source": "https://www.google.com/maps/search/?api=1&query=Lotus%20Banh%20Mi%2C%20Map%20location%20%C2%B7%20street%20address%20not%20listed%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-way-210257168": {
+      "opening_hours": "Tu-Th,Su 16:00-21:00; Fr,Sa 16:00-22:00; Mo off",
+      "source": "https://www.google.com/maps/search/?api=1&query=Tuscany%2C%201014%20West%20Taylor%20Street%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-way-210257250": {
+      "opening_hours": "Mo-Fr 10:00-19:00; Sa 10:00-16:00; Su off",
+      "source": "https://www.google.com/maps/search/?api=1&query=Carm's%20Little%20Italy%2C%201057%20West%20Polk%20Street%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-10784632754": {
+      "opening_hours": "Mo-Su 11:00-22:00",
+      "source": "https://www.google.com/maps/search/?api=1&query=CityBird%20Tenders%2C%20120%20South%20Halsted%20Street%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-way-151673687": {
+      "opening_hours": "Mo-Th 07:00-23:00; Fr 07:00-21:00; Sa,Su off",
+      "source": "https://libcal.uic.edu/hours",
+      "checked": "2026-10-12"
+    },
+    "osm-way-209811123": {
+      "opening_hours": "Mo-Th 07:00-22:00; Fr 07:00-19:00; Su 11:00-19:00; Sa off",
+      "source": "https://libcal.uic.edu/hours",
+      "checked": "2026-10-12"
+    },
+    "osm-node-12187329131": {
+      "opening_hours": "Mo-Th 08:30-21:00; Fr,Sa 08:30-22:00; Su off",
+      "source": "https://www.google.com/maps/search/?api=1&query=Jarabe%2C%20Map%20location%20%C2%B7%20street%20address%20not%20listed%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-way-209809783": {
+      "opening_hours": "Mo-Fr 11:00-21:00; Sa 11:00-16:00; Su off",
+      "source": "https://www.google.com/maps/search/?api=1&query=Lulu's%20Hot%20Dogs%2C%201000%20South%20Leavitt%20Street%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-12027016695": {
+      "opening_hours": "Mo-Su 10:30-19:30",
+      "source": "https://www.google.com/maps/search/?api=1&query=Izakaya%20Yume%2C%20711%20West%20Jackson%20Boulevard%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-2693732316": {
+      "opening_hours": "Mo-Su 10:00-02:30",
+      "source": "https://www.google.com/maps/search/?api=1&query=Taco%20Burrito%20King%2C%20811%20West%20Jackson%20Boulevard%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-13191620397": {
+      "opening_hours": "Mo-Fr 11:00-21:00; Sa,Su 12:00-21:00",
+      "source": "https://sherpakitchenchicago.com",
+      "checked": "2026-10-12"
+    },
+    "osm-node-6154694737": {
+      "opening_hours": "Mo-Su 06:00-15:00",
+      "source": "https://www.google.com/maps/search/?api=1&query=Hashbrowns%2C%20731%20West%20Maxwell%20Street%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-7216542185": {
+      "opening_hours": "Su-Th 10:00-23:00; Fr,Sa 10:00-24:00",
+      "source": "https://www.google.com/maps/search/?api=1&query=Damenzo's%20Pizza%2C%202324%20West%20Taylor%20Street%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-6300959267": {
+      "opening_hours": "Mo-Th 11:00-21:00; Fr 11:00-22:00; Sa 16:00-22:00; Su 16:00-21:00",
+      "source": "https://www.google.com/maps/search/?api=1&query=The%20Rosebud%2C%201500%20West%20Taylor%20Street%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-7554563285": {
+      "opening_hours": "Mo 12:00-19:00; Tu-Sa 11:00-19:00; Su 12:00-17:00",
+      "source": "https://www.google.com/maps/search/?api=1&query=First%20Aid%20Comics%2C%201142%20W%20Taylor%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-13752916069": {
+      "opening_hours": "Mo-Fr 10:30-21:00; Sa off; Su 12:00-20:00",
+      "source": "https://www.google.com/maps/search/?api=1&query=Pita%20Pita%20Mediterranean%20Grill%2C%20705%20S%20Seeley%20Ave%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-7550195485": {
+      "opening_hours": "Mo-Fr 10:00-18:00; Sa 10:00-19:00; Su 13:00-19:00",
+      "source": "https://www.google.com/maps/search/?api=1&query=Living%20Water%20Tea%20House%2C%201453%20W%20Taylor%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-13332989848": {
+      "opening_hours": "Mo-Sa 07:30-14:30; Su 08:00-14:30",
+      "source": "https://www.google.com/maps/search/?api=1&query=Ahuevo%2C%20520%20W%20Harrison%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-12187329106": {
+      "opening_hours": "Mo-Su 11:00-21:00",
+      "source": "https://www.google.com/maps/search/?api=1&query=IDOF%20-%20I%20Dream%20of%20Falafel%2C%201129%20W%20Taylor%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-12187329120": {
+      "opening_hours": "Mo 13:00-21:00; Tu-Th 13:00-21:30; Fr 13:00-22:30; Sa 11:00-22:30; Su 13:00-21:00",
+      "source": "https://www.google.com/maps/search/?api=1&query=MiMi's%20Craft%20Kitchen%2C%201352%20W%20Taylor%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-10045011967": {
+      "opening_hours": "Mo-Su 06:00-16:00",
+      "source": "https://www.google.com/maps/search/?api=1&query=Eppel's%20Restaurant%2C%20554%20W%20Roosevelt%20Rd%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-12489358154": {
+      "opening_hours": "Mo-Th,Su 10:30-22:00; Fr,Sa 10:30-23:00",
+      "source": "https://www.google.com/maps/search/?api=1&query=Chilango%20Mexican%20Street%20Food%2C%201437%20W%20Taylor%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-13800178129": {
+      "opening_hours": "Mo,We-Sa 10:00-19:00; Tu off; Su 10:00-18:00",
+      "source": "https://www.google.com/maps/search/?api=1&query=Maxwell%20Nail%20Spa%2C%201254%20S%20Halsted%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-6327345657": {
+      "opening_hours": "Tu-Fr 11:00-19:00; Sa 11:00-15:00; Mo,Su off",
+      "source": "https://www.google.com/maps/search/?api=1&query=Patrick%20Knows%20Hair%2C%20558%20W%20Roosevelt%20Rd%20Suite%205%20(inside%20Sola%20Salon%20Studios)%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-6300411588": {
+      "opening_hours": "Mo-We 16:00-02:00; Th 15:00-02:00; Fr 14:00-02:00; Sa 12:00-03:00; Su 12:00-02:00",
+      "source": "https://www.google.com/maps/search/?api=1&query=Ph.D%20Pub%2C%201257%20S%20Halsted%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-way-441457243": {
+      "opening_hours": "Mo-Su 06:00-01:00",
+      "source": "https://www.google.com/maps/search/?api=1&query=Express%20Grill%2C%201260%20S%20Union%20Ave%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-2359636163": {
+      "opening_hours": "Mo-Su 11:30-21:30",
+      "source": "https://www.google.com/maps/search/?api=1&query=Joy%20Yee%20Noodle%2C%201335%20S%20Halsted%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-6154694736": {
+      "opening_hours": "Mo-We,Su 11:00-22:00; Th-Sa 11:00-23:00",
+      "source": "https://www.google.com/maps/search/?api=1&query=Lalo's%20on%20Maxwell%2C%20733%20W%20Maxwell%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-12080265454": {
+      "opening_hours": "Tu-Sa 12:00-21:00; Su 12:00-17:00; Mo off",
+      "source": "https://www.google.com/maps/search/?api=1&query=The%20Momo%20World%2C%20727%20W%20Maxwell%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-6239083276": {
+      "opening_hours": "Tu-Fr,Su 15:30-24:00; Sa 15:00-02:00; Mo off",
+      "source": "https://www.google.com/maps/search/?api=1&query=Dugan's%2C%20128%20S%20Halsted%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-13332981527": {
+      "opening_hours": "Mo-Th 07:00-20:00; Fr 07:00-21:00; Sa,Su off",
+      "source": "https://www.google.com/maps/search/?api=1&query=Canal%20Street%20Eatery%20%26%20Market%2C%20314%20S%20Canal%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-6842452393": {
+      "opening_hours": "Tu 16:00-22:00; We,Th 11:45-22:00; Fr 11:45-23:00; Sa 12:00-23:00; Su 12:00-21:00; Mo off",
+      "source": "https://www.google.com/maps/search/?api=1&query=Peanut%20Park%20Trattoria%2C%201359%20W%20Taylor%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-13069843749": {
+      "opening_hours": "Tu-Fr 09:30-19:30; Su 10:30-18:00; Mo,Sa off",
+      "source": "https://www.google.com/maps/search/?api=1&query=Polombia%2C%20500%20W%20Madison%20St%20(Chicago%20French%20Market)%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-6285863501": {
+      "opening_hours": "Th,Su 18:00-20:00; Fr,Sa 18:00-23:00; Mo-We off",
+      "source": "https://www.google.com/maps/search/?api=1&query=EL%20Ideas%2C%202419%20W%2014th%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-5359347426": {
+      "opening_hours": "Mo-Fr 12:00-02:00; Sa 10:00-02:00; Su 10:00-24:00",
+      "source": "https://www.google.com/maps/search/?api=1&query=Half%20Sour%2C%20755%20S%20Clark%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-6251767399": {
+      "opening_hours": "Mo-Th 11:00-21:00; Fr 11:00-22:00; Sa 09:00-22:00; Su 09:00-21:00",
+      "source": "https://www.google.com/maps/search/?api=1&query=5%20Rabanitos%20Restaurante%20and%20Taqueria%2C%201758%20W%2018th%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-6126898602": {
+      "opening_hours": "Mo-Su 10:00-23:00",
+      "source": "https://www.google.com/maps/search/?api=1&query=Pizza%20Nova%2C%201842%20W%2018th%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-5460626543": {
+      "opening_hours": "Mo-Th 15:30-21:30; Fr 11:30-21:30; Sa,Su 12:00-21:30",
+      "source": "https://www.google.com/maps/search/?api=1&query=Talay%20Sushi%20%26%20Thai%2C%201222%20W%20Madison%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-6291479444": {
+      "opening_hours": "Mo,We-Su 10:30-22:30; Tu off",
+      "source": "https://www.google.com/maps/search/?api=1&query=Adda%20Indian%20Cuisine%2C%201400%20W%20Taylor%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-13715364542": {
+      "opening_hours": "Mo-We 08:00-18:00; Th 08:00-22:00; Fr,Sa 08:00-03:00; Su 12:00-22:00",
+      "source": "https://www.google.com/maps/search/?api=1&query=La%20Lagartija%2C%20132%20S%20Ashland%20Ave%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-479652775": {
+      "opening_hours": "Mo-We 11:30-23:00; Th 11:30-01:00; Fr 11:30-02:00; Sa 11:00-02:00; Su 11:00-23:00",
+      "source": "https://www.google.com/maps/search/?api=1&query=Haymarket%20Pub%20%26%20Brewery%2C%20737%20W%20Randolph%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-6319870488": {
+      "opening_hours": "Mo-Su 09:00-21:00",
+      "source": "https://www.google.com/maps/search/?api=1&query=Oni%20Maki%2C%201424%20W%20Taylor%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-11877467009": {
+      "opening_hours": "Tu-Th 17:00-01:00; Fr,Sa 16:00-02:00; Su 15:00-01:00; Mo off",
+      "source": "https://www.google.com/maps/search/?api=1&query=Bar%2010%20Doors%2C%201251%20W%20Taylor%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-12489358153": {
+      "opening_hours": "Mo 13:30-01:30; Tu-Th 11:30-01:30; Fr 11:30-02:00; Sa 06:30-02:30; Su 06:30-01:30",
+      "source": "https://www.google.com/maps/search/?api=1&query=The%20Embassy%2C%201435%20W%20Taylor%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-7554554285": {
+      "opening_hours": "Mo-Su 11:00-22:00",
+      "source": "https://www.google.com/maps/search/?api=1&query=Hana%20Wok%2C%201311%20W%20Taylor%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-7546476885": {
+      "opening_hours": "Mo-Sa 10:00-24:00; Su 11:00-20:00",
+      "source": "https://www.google.com/maps/search/?api=1&query=Mr%20Greek%20Gyros%20-%20Taylor%20St%2C%201416%20W%20Taylor%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-6303861988": {
+      "opening_hours": "Mo-Fr 17:00-02:00; Sa 15:00-03:00; Su 15:00-02:00",
+      "source": "https://www.google.com/maps/search/?api=1&query=Taylor%20Street%20Tap%2C%201358%20W%20Taylor%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-7865957623": {
+      "opening_hours": "Mo-Fr 06:00-22:00; Sa,Su 08:00-17:00",
+      "source": "https://www.google.com/maps/search/?api=1&query=Rye%20Deli%20%2B%20Drink%2C%2025%20S%20Halsted%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-3914989147": {
+      "opening_hours": "Tu-Fr 11:30-14:00; Su 14:00-18:00; Mo,Sa off",
+      "source": "https://www.google.com/maps/search/?api=1&query=Sinh%C3%A1%2C%202018%20W%20Adams%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-11098556507": {
+      "opening_hours": "Mo-Fr 07:30-15:00; Sa,Su off",
+      "source": "https://www.google.com/maps/search/?api=1&query=Dollop%20Wacker%2C%20300%20S%20Wacker%20Dr%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-6572921976": {
+      "opening_hours": "Mo-Th 10:00-22:00; Fr 10:00-24:00; Sa 11:00-24:00; Su 12:00-21:00",
+      "source": "https://www.google.com/maps/search/?api=1&query=Bacci%20Pizzeria%20on%20Taylor%20Street%2C%202301%20W%20Taylor%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-12737879309": {
+      "opening_hours": "Mo,Tu 10:00-22:00; We,Th 10:00-23:00; Fr 10:00-24:00; Sa 11:00-24:00; Su 10:00-22:00",
+      "source": "https://www.google.com/maps/search/?api=1&query=Pat's%20Pizza%2C%20628%20S%20Clark%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-12027016694": {
+      "opening_hours": "Mo-Su 10:30-19:30",
+      "source": "https://www.google.com/maps/search/?api=1&query=Sang's%20Kitchen%2C%20711%20W%20Jackson%20Blvd%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    }
+  },
+  "details": {
+    "osm-node-12187329131": {
+      "address": "1104 W Taylor St"
+    },
+    "osm-node-12187329106": {
+      "address": "1129 W Taylor St"
+    },
+    "osm-node-6126898602": {
+      "address": "1842 W 18th St"
+    },
+    "osm-node-13069843749": {
+      "address": "500 W Madison St · Chicago French Market"
+    },
+    "osm-node-10045011967": {
+      "name": "Eppel's Restaurant"
+    }
+  },
+  "closed": {
+    "osm-node-7217104486": {
+      "status": "Permanently closed",
+      "note": "Google lists it as Patio Restaurant, permanently closed",
+      "source": "https://www.google.com/maps/search/?api=1&query=Patio%20Restaurant%2C%201503%20W%20Taylor%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-13332981526": {
+      "status": "Permanently closed",
+      "note": "",
+      "source": "https://www.google.com/maps/search/?api=1&query=AfterBar%2C%20310%20S%20Canal%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-7546476886": {
+      "status": "Permanently closed",
+      "note": "",
+      "source": "https://www.google.com/maps/search/?api=1&query=Yummy%20Thai%2C%201418%20W%20Taylor%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-6300506122": {
+      "status": "Permanently closed",
+      "note": "listed as The Port of Peri Peri",
+      "source": "https://www.google.com/maps/search/?api=1&query=The%20Port%20of%20Peri%20Peri%2C%201419%20W%20Taylor%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-13139860155": {
+      "status": "Temporarily closed",
+      "note": "",
+      "source": "https://www.google.com/maps/search/?api=1&query=Ithaki%20Estiatorio%2C%20314%20S%20Halsted%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-6284376630": {
+      "status": "Temporarily closed",
+      "note": "",
+      "source": "https://www.google.com/maps/search/?api=1&query=Demitasse%20Cafe%2C%201066%20W%20Taylor%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-12080265456": {
+      "status": "Temporarily closed",
+      "note": "",
+      "source": "https://www.google.com/maps/search/?api=1&query=Phlavz%20Bar%20%26%20Grille%2C%20717%20W%20Maxwell%20St%2C%20Chicago%2C%20IL",
+      "checked": "2026-10-12"
+    },
+    "osm-node-6314890056": {
+      "status": "Moved",
+      "note": "jarabechicago.com lists only 1104 W Taylor St",
+      "source": "https://www.jarabechicago.com/",
+      "checked": "2026-10-12"
+    },
+    "osm-node-11841529427": {
+      "status": "Moved",
+      "note": "jinseimotto.com lists only 2456 N California Ave",
+      "source": "https://www.jinseimotto.com/",
+      "checked": "2026-10-12"
+    }
+  }
 }

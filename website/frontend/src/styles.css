@@ -356,3 +356,31 @@ button.fact-event:hover .fact-event-more{text-decoration:underline;text-underlin
 .event-scope-tags .scope-count{margin-left:6px;min-width:18px;padding:1px 6px;border-radius:10px;background:var(--field);font-size:10.5px;font-weight:650;font-variant-numeric:tabular-nums}
 .event-scope-tags button[aria-pressed=true] .scope-count{background:color-mix(in srgb,var(--glass) 35%,transparent)}
 @media(max-width:760px){.building-scope{margin:0 17px 10px}}
+/* Apple Maps–style pins: a small dot in the place's colour with a white glyph, and the name as plain text
+   beside it with a soft halo. --pin is the dot, --pin-text the name (darker by day, lighter at night). */
+.map-pin{--pin:#8e8e93;--pin-text:#5b6168;padding:6px;filter:none;animation:pin-in .22s ease-out}
+.map-pin[data-kind=food]{--pin:#f2852e;--pin-text:#b45708}
+.map-pin[data-kind=shop]{--pin:#e7a915;--pin-text:#8a6400}
+.map-pin[data-kind=study]{--pin:#a27c55;--pin-text:#73563a}
+.map-pin[data-kind=fun]{--pin:#e8457b;--pin-text:#b2245a}
+.map-pin[data-kind=active]{--pin:#22a6bd;--pin-text:#137284}
+.map-pin[data-kind=park]{--pin:#39a35b;--pin-text:#24763f}
+.night .map-pin{--pin-text:#c8ccd2}
+.night .map-pin[data-kind=food]{--pin-text:#ffa765}
+.night .map-pin[data-kind=shop]{--pin-text:#ffd256}
+.night .map-pin[data-kind=study]{--pin-text:#dcbb93}
+.night .map-pin[data-kind=fun]{--pin-text:#ff86ac}
+.night .map-pin[data-kind=active]{--pin-text:#6fdcef}
+.night .map-pin[data-kind=park]{--pin-text:#7fd798}
+.map-pin .pin-circle{width:26px;height:26px;border:1.5px solid #ffffffe6;background:var(--pin);color:#fff;box-shadow:0 1px 3px #0a0f1959}
+.night .map-pin .pin-circle{border-color:#ffffff40;box-shadow:0 1px 4px #00000080}
+.map-pin .pin-circle:after{display:none}
+.map-pin .pin-badge{width:14px;height:14px;top:-5px;right:-6px;box-shadow:0 1px 3px #121d3340,0 0 0 1px #7563a9}
+.map-pin .pin-label{background:none;border:0;border-radius:0;padding:0;-webkit-backdrop-filter:none;backdrop-filter:none;color:var(--pin-text);font-size:11.5px;font-weight:650;letter-spacing:-.1px;line-height:1.15;width:max-content;max-width:118px;white-space:normal;text-shadow:0 0 2px #fff,0 0 2px #fff,0 0 4px #fff,0 0 7px #ffffffcc}
+.night .map-pin .pin-label{background:none;text-shadow:0 0 2px #1d2230,0 0 3px #1d2230,0 0 6px #1d2230e6}
+.map-pin:hover,.map-pin.selected{scale:1}
+.map-pin:hover .pin-circle,.map-pin.selected .pin-circle{scale:1.18;box-shadow:0 0 0 2px #fff,0 0 0 4px var(--pin),0 3px 10px #0a0f1966}
+.night .map-pin:hover .pin-circle,.night .map-pin.selected .pin-circle{box-shadow:0 0 0 2px #1d2230,0 0 0 4px var(--pin),0 3px 10px #00000099}
+.map-pin .pin-circle{transition:scale .15s ease}
+@media(max-width:760px){.map-pin .pin-circle{width:26px;height:26px}.map-pin .pin-label{font-size:11px;max-width:108px}}
+@media(prefers-reduced-motion:reduce){.map-pin,.map-pin .pin-circle{animation:none;transition:none}}
