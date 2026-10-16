@@ -2,9 +2,11 @@
 import urllib.request,urllib.parse,json
 from pathlib import Path
 q='[out:json][timeout:90];('
-for lat,lon in [(41.871967,-87.647964)]:
- for key,values in [('amenity','cafe|restaurant|fast_food|food_court|ice_cream|library|bar|pub'),('shop','hairdresser|beauty|bakery|supermarket|convenience|books|laundry')]:
-  q+=f'nwr(41.8410,-87.7150,41.9020,-87.6080)[{key}~"^({values})$"][name];'
+# Everyday student places: food, coffee, groceries and pharmacies, services, culture, sights, gyms and parks.
+for key,values in [('amenity','cafe|restaurant|fast_food|food_court|ice_cream|library|bar|pub|nightclub|biergarten|pharmacy|cinema|theatre|arts_centre|post_office'),
+                   ('shop','hairdresser|beauty|bakery|supermarket|convenience|books|laundry|coffee|tea|greengrocer|deli|butcher|seafood|chemist|department_store|variety_store|general|health_food|pastry|confectionery|chocolate|dry_cleaning|copyshop|stationery'),
+                   ('tourism','museum|gallery|attraction|viewpoint'),('leisure','fitness_centre|sports_centre|park')]:
+ q+=f'nwr(41.8410,-87.7150,41.9020,-87.6080)[{key}~"^({values})$"][name];'
 q+=');out center tags;'
 for host in ['https://overpass-api.de/api/interpreter','https://overpass.kumi.systems/api/interpreter']:
  try:

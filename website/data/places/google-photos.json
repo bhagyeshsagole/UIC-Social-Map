@@ -1,0 +1,811 @@
+{
+ "checked": "2026-10-16",
+ "note": "Photos from each place’s own Google Maps listing (accepted 2026-10-16 for places with no venue, Commons or brand photo). Saved locally at 800 px, credited to the listing, every one checked by eye on contact sheets. Remove one on request.",
+ "places": {
+  "osm-node-14018241864": {
+   "name": "UIC Bookstore",
+   "file": "google/osm-node-14018241864.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=UIC%20Bookstore%2C%20750%20S%20Halsted%20St",
+   "listing": "UIC Bookstore",
+   "checked": "2026-10-16"
+  },
+  "osm-node-6320224199": {
+   "name": "Chicago French Press",
+   "file": "google/osm-node-6320224199.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Chicago%20French%20Press%20at%20Rebecca%20Port%20Center%20Caf%C3%A9%2C%20601%20S%20Morgan%20St",
+   "listing": "Chicago French Press at Rebecca Port Center Café",
+   "checked": "2026-10-16"
+  },
+  "osm-node-13752916069": {
+   "name": "Pita Pita",
+   "file": "google/osm-node-13752916069.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Pita%20Pita%20Mediterranean%20Grill%2C%20705%20S%20Seeley%20Ave",
+   "listing": "Pita Pita Mediterranean Grill",
+   "checked": "2026-10-16"
+  },
+  "osm-node-12202217628": {
+   "name": "bp",
+   "file": "google/osm-node-12202217628.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=bp%2C%201004%20S%20Desplaines%20St",
+   "listing": "bp",
+   "checked": "2026-10-16"
+  },
+  "osm-node-12708709227": {
+   "name": "Curry On Fire",
+   "file": "google/osm-node-12708709227.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Curry%20on%20Fire%20indian%2C%201030%20W%20Taylor%20St",
+   "listing": "Curry on Fire indian",
+   "checked": "2026-10-16"
+  },
+  "osm-node-12187329136": {
+   "name": "Gents Barber Lounge",
+   "file": "google/osm-node-12187329136.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Gents%20Barber%20Lounge%2C%201039%20W%20Taylor%20St",
+   "listing": "Gents Barber Lounge",
+   "checked": "2026-10-16"
+  },
+  "osm-node-4399383916": {
+   "name": "Tufano's Vernon Park Tap",
+   "file": "google/osm-node-4399383916.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Tufano's%20Vernon%20Park%20Tap%2C%201073%20W%20Vernon%20Park%20Pl",
+   "listing": "Tufano's Vernon Park Tap",
+   "checked": "2026-10-16"
+  },
+  "osm-node-12187329101": {
+   "name": "the Bite",
+   "file": "google/osm-node-12187329101.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=The%20Bite%2C%201062%20W%20Taylor%20St",
+   "listing": "The Bite",
+   "checked": "2026-10-16"
+  },
+  "osm-way-149877831": {
+   "name": "Al's Beef",
+   "file": "google/osm-way-149877831.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Al's%20%231%20Italian%20Beef%2C%201079%20W%20Taylor%20St",
+   "listing": "Al's #1 Italian Beef",
+   "checked": "2026-10-16"
+  },
+  "osm-node-13308439201": {
+   "name": "Taco Pros",
+   "file": "google/osm-node-13308439201.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Taco%20Pros%20-%20Taylor%20%26%20Ogden%2C%202200%20W%20Taylor%20St",
+   "listing": "Taco Pros - Taylor & Ogden",
+   "checked": "2026-10-16"
+  },
+  "osm-node-6224215485": {
+   "name": "Philly‘s Best",
+   "file": "google/osm-node-6224215485.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Philly's%20Best%2C%20769%20W%20Jackson%20Blvd%20Unit%20103",
+   "listing": "Philly's Best",
+   "checked": "2026-10-16"
+  },
+  "osm-node-10562958394": {
+   "name": "Zeus Restaurant",
+   "file": "google/osm-node-10562958394.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Zeus%20Gyros%20of%20Chicago%2C%20806%20W%20Jackson%20Blvd",
+   "listing": "Zeus Gyros of Chicago",
+   "checked": "2026-10-16"
+  },
+  "osm-node-13332989848": {
+   "name": "Ahuevo",
+   "file": "google/osm-node-13332989848.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Ahuevo%2C%20520%20W%20Harrison%20St",
+   "listing": "Ahuevo",
+   "checked": "2026-10-16"
+  },
+  "osm-node-12288288800": {
+   "name": "Refined Barbershop",
+   "file": "google/osm-node-12288288800.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Refined%20Barber%20Co.%20West%20Loop%2C%20328%20S%20Jefferson%20St",
+   "listing": "Refined Barber Co. West Loop",
+   "checked": "2026-10-16"
+  },
+  "osm-node-12027016694": {
+   "name": "Sang's Kitchen",
+   "file": "google/osm-node-12027016694.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Sang's%20Kitchen%2C%20711%20W%20Jackson%20Blvd",
+   "listing": "Sang's Kitchen",
+   "checked": "2026-10-16"
+  },
+  "osm-node-5448871115": {
+   "name": "Spectrum Bar and Grill",
+   "file": "google/osm-node-5448871115.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Spectrum%20Bar%20%26%20Grill%2C%20233%20S%20Halsted%20St",
+   "listing": "Spectrum Bar & Grill",
+   "checked": "2026-10-16"
+  },
+  "osm-node-12075461859": {
+   "name": "Capitol Cleaners",
+   "file": "google/osm-node-12075461859.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Capitol%20Hill%20Cleaners%2C%20305%20S%20Desplaines%20St",
+   "listing": "Capitol Hill Cleaners",
+   "checked": "2026-10-16"
+  },
+  "osm-node-6327345657": {
+   "name": "Patrick Knows Hair",
+   "file": "google/osm-node-6327345657.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Patrick%20Knows%20Hair%2C%20Inside%20Sola%20Salon%20Studios%2C%20558%20W%20Roosevelt%20Rd%20Suite%205",
+   "listing": "Patrick Knows Hair",
+   "checked": "2026-10-16"
+  },
+  "osm-node-6300411588": {
+   "name": "Ph.D Pub",
+   "file": "google/osm-node-6300411588.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Ph.D%20Pub%20Chicago%2C%201257%20S%20Halsted%20St",
+   "listing": "Ph.D Pub Chicago",
+   "checked": "2026-10-16"
+  },
+  "osm-way-143274995": {
+   "name": "St. Ignatius  Student Athletics Facility",
+   "file": "google/osm-way-143274995.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=St.%20Ignatius%20College%20Prep%2C%201076%20Roosevelt%20Rd",
+   "listing": "St. Ignatius College Prep",
+   "checked": "2026-10-16"
+  },
+  "osm-node-13794086041": {
+   "name": "Jerky Jerk",
+   "file": "google/osm-node-13794086041.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Jerky%20Jerk%2C%202253%20W%20Taylor%20St",
+   "listing": "Jerky Jerk",
+   "checked": "2026-10-16"
+  },
+  "osm-node-12288326609": {
+   "name": "Byrd's Hot Chicken",
+   "file": "google/osm-node-12288326609.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Byrd's%20Hot%20Chicken%2C%20319%20S%20Jefferson%20St",
+   "listing": "Byrd's Hot Chicken",
+   "checked": "2026-10-16"
+  },
+  "osm-way-441457243": {
+   "name": "Express Grill",
+   "file": "google/osm-way-441457243.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Express%20Grill%2C%201260%20S%20Union%20Ave",
+   "listing": "Express Grill",
+   "checked": "2026-10-16"
+  },
+  "osm-node-7217139285": {
+   "name": "Campus Market",
+   "file": "google/osm-node-7217139285.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Campus%20Market%2C%201523%20W%20Taylor%20St",
+   "listing": "Campus Market",
+   "checked": "2026-10-16"
+  },
+  "osm-node-6154694738": {
+   "name": "Bar Louie",
+   "file": "google/osm-node-6154694738.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Bar%20Louie%20-University%20Village%2C%201325%20S%20Halsted%20St",
+   "listing": "Bar Louie -University Village",
+   "checked": "2026-10-16"
+  },
+  "osm-node-11672692564": {
+   "name": "Clean As A Whistle Cleaners",
+   "file": "google/osm-node-11672692564.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Clean%20As%20A%20Whistle%20Cleaners%2C%20836%20W%20Adams%20St%20%231",
+   "listing": "Clean As A Whistle Cleaners",
+   "checked": "2026-10-16"
+  },
+  "osm-node-12060380370": {
+   "name": "Jewel Nail Spa",
+   "file": "google/osm-node-12060380370.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Jewel%20Nail%20Spa%2C%20838%20W%20Adams%20St%20Ste.1",
+   "listing": "Jewel Nail Spa",
+   "checked": "2026-10-16"
+  },
+  "osm-node-5460620370": {
+   "name": "Beggars Pizza",
+   "file": "google/osm-node-5460620370.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Beggars%20Pizza%20-%20West%20Loop%2C%20310%20S%20Clinton%20St",
+   "listing": "Beggars Pizza - West Loop",
+   "checked": "2026-10-16"
+  },
+  "osm-way-156403648": {
+   "name": "Green Street Local",
+   "file": "google/osm-way-156403648.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Green%20Street%20Local%2C%20130%20S%20Green%20St",
+   "listing": "Green Street Local",
+   "checked": "2026-10-16"
+  },
+  "osm-node-12080265454": {
+   "name": "The Momo World",
+   "file": "google/osm-node-12080265454.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=The%20Momo%20World%2C%20727%20W%20Maxwell%20St",
+   "listing": "The Momo World",
+   "checked": "2026-10-16"
+  },
+  "osm-node-6239083276": {
+   "name": "Dugan's",
+   "file": "google/osm-node-6239083276.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Dugans%2C%20128%20S%20Halsted%20St",
+   "listing": "Dugans",
+   "checked": "2026-10-16"
+  },
+  "osm-node-12644109940": {
+   "name": "Milan Laser Hair Removal",
+   "file": "google/osm-node-12644109940.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Milan%20Laser%20Hair%20Removal%2C%20120%20S%20Halsted%20St",
+   "listing": "Milan Laser Hair Removal",
+   "checked": "2026-10-16"
+  },
+  "osm-way-210541840": {
+   "name": "White Palace Grill",
+   "file": "google/osm-way-210541840.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=White%20Palace%20Grill%2C%201159%20S%20Canal%20St",
+   "listing": "White Palace Grill",
+   "checked": "2026-10-16"
+  },
+  "osm-node-13332981527": {
+   "name": "Canal Street Eatery & Market",
+   "file": "google/osm-node-13332981527.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Canal%20Street%20Eatery%20and%20Market%2C%20314%20S%20Canal%20St",
+   "listing": "Canal Street Eatery and Market",
+   "checked": "2026-10-16"
+  },
+  "osm-way-209828845": {
+   "name": "Papo's Express",
+   "file": "google/osm-way-209828845.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Papo's%20Express%20Carwash%20BP%2C%201600%20W%20Van%20Buren%20St",
+   "listing": "Papo's Express Carwash BP",
+   "checked": "2026-10-16"
+  },
+  "osm-node-12083386909": {
+   "name": "Clean Your Dirty Face",
+   "file": "google/osm-node-12083386909.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Clean%20Your%20Dirty%20Face%2C%20849%20W%20Monroe%20St%20STE%201B",
+   "listing": "Clean Your Dirty Face",
+   "checked": "2026-10-16"
+  },
+  "osm-node-12083386910": {
+   "name": "Monroe Cleaners",
+   "file": "google/osm-node-12083386910.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Monroe%20Cleaners%20(Grace%20Clean%20Art)%2C%20841%20W%20Monroe%20St%20%231A",
+   "listing": "Monroe Cleaners (Grace Clean Art)",
+   "checked": "2026-10-16"
+  },
+  "osm-node-13144492841": {
+   "name": "Shipping & Beyond",
+   "file": "google/osm-node-13144492841.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=SHIPPING%20%26%20BEYOND%2C%201440%20W%20Taylor%20St",
+   "listing": "SHIPPING & BEYOND",
+   "checked": "2026-10-16"
+  },
+  "osm-node-3914989147": {
+   "name": "Sinhá",
+   "file": "google/osm-node-3914989147.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Sinh%C3%A1%2C%202018%20W%20Adams%20St",
+   "listing": "Sinhá",
+   "checked": "2026-10-16"
+  },
+  "osm-node-11877467009": {
+   "name": "Bar 10 Doors",
+   "file": "google/osm-node-11877467009.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=THE%20BAR%2010%20DOORS%2C%201251%20W%20Taylor%20St",
+   "listing": "THE BAR 10 DOORS",
+   "checked": "2026-10-16"
+  },
+  "osm-node-8117903918": {
+   "name": "Jason's Deli",
+   "file": "google/osm-node-8117903918.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Jason's%20Deli%2C%201258%20S%20Canal%20St",
+   "listing": "Jason's Deli",
+   "checked": "2026-10-16"
+  },
+  "osm-node-7550195385": {
+   "name": "Tuk Tuk Indian Street Food",
+   "file": "google/osm-node-7550195385.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Tuk%20Tuk%20Indian%20Street%20Food%2C%201400%20W%20Taylor%20St",
+   "listing": "Tuk Tuk Indian Street Food",
+   "checked": "2026-10-16"
+  },
+  "osm-way-210268961": {
+   "name": "First Ascent",
+   "file": "google/osm-way-210268961.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=First%20Ascent%20West%20Loop%2C%20100%20S%20Morgan%20St",
+   "listing": "First Ascent West Loop",
+   "checked": "2026-10-16"
+  },
+  "osm-node-6319870488": {
+   "name": "Onimaki",
+   "file": "google/osm-node-6319870488.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Oni%20Maki%2C%201424%20W%20Taylor%20St",
+   "listing": "Oni Maki",
+   "checked": "2026-10-16"
+  },
+  "osm-node-12288311164": {
+   "name": "Paramount Cleaners",
+   "file": "google/osm-node-12288311164.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Paramount%20Cleaners%2C%20125%20S%20Jefferson%20St",
+   "listing": "Paramount Cleaners",
+   "checked": "2026-10-16"
+  },
+  "osm-node-12170602299": {
+   "name": "7AM Nail Care",
+   "file": "google/osm-node-12170602299.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=7AM%20Nail%20Care%20(West%20Loop)%2C%201004%20W%20Monroe%20St",
+   "listing": "7AM Nail Care (West Loop)",
+   "checked": "2026-10-16"
+  },
+  "osm-node-12068333587": {
+   "name": "Metro Spice Mart",
+   "file": "google/osm-node-12068333587.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Metro%20Spice%20Mart%2C%20125%20S%20Jefferson%20St",
+   "listing": "Metro Spice Mart",
+   "checked": "2026-10-16"
+  },
+  "osm-node-13715364541": {
+   "name": "Ricano’s",
+   "file": "google/osm-node-13715364541.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Ricano's%20Restaurant%2C%20230%20S%20Ashland%20Ave",
+   "listing": "Ricano's Restaurant",
+   "checked": "2026-10-16"
+  },
+  "osm-node-12083308243": {
+   "name": "LaserAway",
+   "file": "google/osm-node-12083308243.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=LaserAway%20Chicago-West%20Loop%2C%20841%20W%20Madison%20St",
+   "listing": "LaserAway Chicago-West Loop",
+   "checked": "2026-10-16"
+  },
+  "osm-node-11672692563": {
+   "name": "Stelios Bottles & Bites",
+   "file": "google/osm-node-11672692563.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Stelios%20Bottles%20%26%20Bites%2C%2019%20S%20Morgan%20St",
+   "listing": "Stelios Bottles & Bites",
+   "checked": "2026-10-16"
+  },
+  "osm-node-5460651116": {
+   "name": "Ciao! Cafe & Wine Lounge",
+   "file": "google/osm-node-5460651116.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Ciao!%20Cafe%20%26%20Wine%20Lounge%2C%20939%20W%20Madison%20St",
+   "listing": "Ciao! Cafe & Wine Lounge",
+   "checked": "2026-10-16"
+  },
+  "osm-node-11098556507": {
+   "name": "Dollop Coffee Co.",
+   "file": "google/osm-node-11098556507.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Dollop%20Wacker%2C%20300%20S%20Wacker%20Dr",
+   "listing": "Dollop Wacker",
+   "checked": "2026-10-16"
+  },
+  "osm-node-6303861988": {
+   "name": "Taylor Street Tap",
+   "file": "google/osm-node-6303861988.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Taylor%20Street%20Tap%2C%201358%20W%20Taylor%20St",
+   "listing": "Taylor Street Tap",
+   "checked": "2026-10-16"
+  },
+  "osm-node-13001848264": {
+   "name": "L.A. Tan",
+   "file": "google/osm-node-13001848264.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=L.A.%20TAN%2F%20SOR%C3%89%20WELLNESS%2C%20916%20W%20Madison%20St",
+   "listing": "L.A. TAN/ SORÉ WELLNESS",
+   "checked": "2026-10-16"
+  },
+  "osm-node-12187329120": {
+   "name": "MiMi's Craft Kitchen",
+   "file": "google/osm-node-12187329120.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=MiMi's%20Craft%20Kitchen%2C%201352%20W%20Taylor%20St",
+   "listing": "MiMi's Craft Kitchen",
+   "checked": "2026-10-16"
+  },
+  "osm-node-5452736284": {
+   "name": "Viaggio Ristorante & Lounge",
+   "file": "google/osm-node-5452736284.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Viaggio%20Restaurant%20Chicago%2C%201027%20W%20Madison%20St",
+   "listing": "Viaggio Restaurant Chicago",
+   "checked": "2026-10-16"
+  },
+  "osm-way-210269296": {
+   "name": "Madison Crab House",
+   "file": "google/osm-way-210269296.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Madison%20Crab%20House%2C%201045%20W%20Madison%20St",
+   "listing": "Madison Crab House",
+   "checked": "2026-10-16"
+  },
+  "osm-node-11082636843": {
+   "name": "River City Market",
+   "file": "google/osm-node-11082636843.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=River%20City%20Market%2C%20800%20S%20Wells%20St%20Ste%20M60",
+   "listing": "River City Market",
+   "checked": "2026-10-16"
+  },
+  "osm-node-14130231641": {
+   "name": "Cafe Tabeeb",
+   "file": "google/osm-node-14130231641.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Cafe%20Tabeeb%2C%20712%20S%20Wells%20St",
+   "listing": "Cafe Tabeeb",
+   "checked": "2026-10-16"
+  },
+  "osm-node-5460643621": {
+   "name": "Cone Gourmet Ice Cream",
+   "file": "google/osm-node-5460643621.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Cone%20Gourmet%20Ice%20Cream%2C%201047%20W%20Madison%20St",
+   "listing": "Cone Gourmet Ice Cream",
+   "checked": "2026-10-16"
+  },
+  "osm-node-11098530575": {
+   "name": "Da Local Boy",
+   "file": "google/osm-node-11098530575.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Da%20Local%20Boy%20Downtown%20Chicago%2C%20335%20S%20Franklin%20St",
+   "listing": "Da Local Boy Downtown Chicago",
+   "checked": "2026-10-16"
+  },
+  "osm-way-209830060": {
+   "name": "Mabel Manning Branch Library",
+   "file": "google/osm-way-209830060.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Manning%20Branch%2C%20Chicago%20Public%20Library%2C%206%20S%20Hoyne%20Ave",
+   "listing": "Manning Branch, Chicago Public Library",
+   "checked": "2026-10-16"
+  },
+  "osm-node-5661489621": {
+   "name": "Chicago Waffles",
+   "file": "google/osm-node-5661489621.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Chicago%20Waffles%20West%20Loop%2C%201104%20W%20Madison%20St",
+   "listing": "Chicago Waffles West Loop",
+   "checked": "2026-10-16"
+  },
+  "osm-node-5460540248": {
+   "name": "El Che Steakhouse & Bar",
+   "file": "google/osm-node-5460540248.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=El%20Che%20Steakhouse%20%26%20Bar%2C%20845%20W%20Washington%20Blvd",
+   "listing": "El Che Steakhouse & Bar",
+   "checked": "2026-10-16"
+  },
+  "osm-node-7854398336": {
+   "name": "Madison Street Books",
+   "file": "google/osm-node-7854398336.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Madison%20Street%20Books%2C%201127%20W%20Madison%20St",
+   "listing": "Madison Street Books",
+   "checked": "2026-10-16"
+  },
+  "osm-node-1618326383": {
+   "name": "South Loop Market",
+   "file": "google/osm-node-1618326383.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=South%20Loop%20Market%20-%20Van%20Buren%2C%20235%20W%20Van%20Buren%20St%20Unit%202219",
+   "listing": "South Loop Market - Van Buren",
+   "checked": "2026-10-16"
+  },
+  "osm-node-7834973318": {
+   "name": "Wells Pantry",
+   "file": "google/osm-node-7834973318.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Wells%20pantry%2C%20611%20S%20Wells%20St%20Unit%20101",
+   "listing": "Wells pantry",
+   "checked": "2026-10-16"
+  },
+  "osm-node-5460635441": {
+   "name": "Third Rail Tavern",
+   "file": "google/osm-node-5460635441.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Third%20Rail%20Tavern%2C%201133%20W%20Madison%20St",
+   "listing": "Third Rail Tavern",
+   "checked": "2026-10-16"
+  },
+  "osm-node-14130231640": {
+   "name": "Con Azucar Cafe",
+   "file": "google/osm-node-14130231640.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Con%20Azucar%20Caf%C3%A9%20Chicago%20-%20South%20Loop%2C%20801%20S%20Financial%20Pl",
+   "listing": "Con Azucar Café Chicago - South Loop",
+   "checked": "2026-10-16"
+  },
+  "osm-node-13888546420": {
+   "name": "Bio Pinky Nail Studio",
+   "file": "google/osm-node-13888546420.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Bio%20Pinky%20Nail%20Studio%2C%201159%20W%20Madison%20St",
+   "listing": "Bio Pinky Nail Studio",
+   "checked": "2026-10-16"
+  },
+  "osm-way-1483956910": {
+   "name": "Chicago French Press",
+   "file": "google/osm-way-1483956910.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Chicago%20French%20Press%20at%20Roosevelt%20Collection%2C%201021%20S%20Delano%20Ct",
+   "listing": "Chicago French Press at Roosevelt Collection",
+   "checked": "2026-10-16"
+  },
+  "osm-node-5460635417": {
+   "name": "The Great American Bagel",
+   "file": "google/osm-node-5460635417.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=The%20Great%20American%20Bagel%2C%201154%20W%20Madison%20St",
+   "listing": "The Great American Bagel",
+   "checked": "2026-10-16"
+  },
+  "osm-node-7557514585": {
+   "name": "Groundswell Coffee Roasters",
+   "file": "google/osm-node-7557514585.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Groundswell%2C%201168%20W%20Madison%20St",
+   "listing": "Groundswell",
+   "checked": "2026-10-16"
+  },
+  "osm-way-779950638": {
+   "name": "ComEd Recreation Center at Addams Park",
+   "file": "google/osm-way-779950638.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=ComEd%20Recreation%20Center%20at%20Addams%20Park%2C%201434%20S%20Loomis%20St",
+   "listing": "ComEd Recreation Center at Addams Park",
+   "checked": "2026-10-16"
+  },
+  "osm-node-11672692559": {
+   "name": "West Loop Market",
+   "file": "google/osm-node-11672692559.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=West%20Loop%20Market%2C%201222%20W%20Madison%20St",
+   "listing": "West Loop Market",
+   "checked": "2026-10-16"
+  },
+  "osm-node-6188968653": {
+   "name": "Chan's King Wok",
+   "file": "google/osm-node-6188968653.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=King%20Wok%2C%202323%20W%20Madison%20St",
+   "listing": "King Wok",
+   "checked": "2026-10-16"
+  },
+  "osm-node-6188968652": {
+   "name": "Magic Nails Spa",
+   "file": "google/osm-node-6188968652.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Magic%20Nails%20Spa%2C%202321%20W%20Madison%20St",
+   "listing": "Magic Nails Spa",
+   "checked": "2026-10-16"
+  },
+  "osm-node-13298780043": {
+   "name": "Cerdito Muerto",
+   "file": "google/osm-node-13298780043.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=CERDITO%20MUERTO%2C%201700%20S%20Halsted%20St",
+   "listing": "CERDITO MUERTO",
+   "checked": "2026-10-16"
+  },
+  "osm-node-6326055702": {
+   "name": "Moon’s Sandwich Shop",
+   "file": "google/osm-node-6326055702.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Moon's%20Sandwich%20Shop%2C%2016%20S%20Western%20Ave",
+   "listing": "Moon's Sandwich Shop",
+   "checked": "2026-10-16"
+  },
+  "osm-node-12789001831": {
+   "name": "The Village Wash",
+   "file": "google/osm-node-12789001831.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=The%20Village%20Wash%2C%201726%20S%20Halsted%20St",
+   "listing": "The Village Wash",
+   "checked": "2026-10-16"
+  },
+  "osm-way-209810267": {
+   "name": "Panadería Nuevo Leon",
+   "file": "google/osm-way-209810267.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Panaderia%20Nuevo%20Leon%2C%201634%20W%2018th%20St",
+   "listing": "Panaderia Nuevo Leon",
+   "checked": "2026-10-16"
+  },
+  "osm-node-10563378334": {
+   "name": "Rockit Barbershop",
+   "file": "google/osm-node-10563378334.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Rockit%20Barbershop%20%26%20Beauty%20Salon%2C%201650%20W%2018th%20St",
+   "listing": "Rockit Barbershop & Beauty Salon",
+   "checked": "2026-10-16"
+  },
+  "osm-node-6317101571": {
+   "name": "Yvolina’s Tamales",
+   "file": "google/osm-node-6317101571.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Yvolina's%20Tamales%2C%20814%20W%2018th%20St",
+   "listing": "Yvolina's Tamales",
+   "checked": "2026-10-16"
+  },
+  "osm-node-14235546601": {
+   "name": "Anticonquista Café",
+   "file": "google/osm-node-14235546601.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Anticonquista%20Caf%C3%A9%2C%20952%20W%2018th%20St",
+   "listing": "Anticonquista Café",
+   "checked": "2026-10-16"
+  },
+  "osm-node-10563355063": {
+   "name": "Urban Treez",
+   "file": "google/osm-node-10563355063.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Urban%20Treez%20Chicago%2C%201649%20W%2018th%20St",
+   "listing": "Urban Treez Chicago",
+   "checked": "2026-10-16"
+  },
+  "osm-node-3919513825": {
+   "name": "El Sabor De Mexico",
+   "file": "google/osm-node-3919513825.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Never%C3%ADa%20El%20Sabor%20de%20M%C3%A9xico%2C%201639%20W%2018th%20St",
+   "listing": "Nevería El Sabor de México",
+   "checked": "2026-10-16"
+  },
+  "osm-way-346970683": {
+   "name": "Park Number 574",
+   "file": "google/osm-way-346970683.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Park%20%23574%2C%202540%20W%20Jackson%20Blvd",
+   "listing": "Park #574",
+   "checked": "2026-10-16"
+  },
+  "osm-node-11888212336": {
+   "name": "JaKaylaMadeBeauty",
+   "file": "google/osm-node-11888212336.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=JaKaylaMadeBeauty%2C%20917%20W%2018th%20St",
+   "listing": "JaKaylaMadeBeauty",
+   "checked": "2026-10-16"
+  },
+  "osm-node-5168246245": {
+   "name": "HaiSous Vietnamese Kitchen",
+   "file": "google/osm-node-5168246245.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=HaiSous%20Vietnamese%20Kitchen%2C%201800%20S%20Carpenter%20St",
+   "listing": "HaiSous Vietnamese Kitchen",
+   "checked": "2026-10-16"
+  },
+  "osm-node-12060493307": {
+   "name": "Banh Mi City",
+   "file": "google/osm-node-12060493307.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Banh%20Mi%20City%2C%201518%20W%2018th%20St",
+   "listing": "Banh Mi City",
+   "checked": "2026-10-16"
+  },
+  "osm-node-12060493296": {
+   "name": "Bobijoa",
+   "file": "google/osm-node-12060493296.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Bobijoa%20Korean%20Kitchen%2C%201140%20W%2018th%20St",
+   "listing": "Bobijoa Korean Kitchen",
+   "checked": "2026-10-16"
+  },
+  "osm-node-6284702362": {
+   "name": "Don Pedro Carnitas",
+   "file": "google/osm-node-6284702362.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Carnitas%20Don%20Pedro%2C%201113%20W%2018th%20St",
+   "listing": "Carnitas Don Pedro",
+   "checked": "2026-10-16"
+  },
+  "osm-node-6280484810": {
+   "name": "Cantón Regio",
+   "file": "google/osm-node-6280484810.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Cant%C3%B3n%20Regio%2C%201510%20W%2018th%20St",
+   "listing": "Cantón Regio",
+   "checked": "2026-10-16"
+  },
+  "osm-node-4356614733": {
+   "name": "La Vaca Margarita Bar",
+   "file": "google/osm-node-4356614733.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=La%20Vaca%20Margarita%20Bar%2C%201160%20W%2018th%20St",
+   "listing": "La Vaca Margarita Bar",
+   "checked": "2026-10-16"
+  },
+  "osm-node-13907969401": {
+   "name": "Pilsen Community Books",
+   "file": "google/osm-node-13907969401.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Pilsen%20Community%20Books%2C%201531%20W%2018th%20St",
+   "listing": "Pilsen Community Books",
+   "checked": "2026-10-16"
+  },
+  "osm-node-6291551593": {
+   "name": "Frida Room",
+   "file": "google/osm-node-6291551593.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Frida%20Room%20Pilsen%2C%201454%20W%2018th%20St",
+   "listing": "Frida Room Pilsen",
+   "checked": "2026-10-16"
+  },
+  "osm-node-12060493298": {
+   "name": "La Luna",
+   "file": "google/osm-node-12060493298.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=La%20Luna%2C%201726%20S%20Racine%20Ave",
+   "listing": "La Luna",
+   "checked": "2026-10-16"
+  },
+  "osm-way-209783182": {
+   "name": "Novel Pizza Cafe",
+   "file": "google/osm-way-209783182.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Novel%20Pizza%20Cafe%2C%201759%20W%2019th%20St",
+   "listing": "Novel Pizza Cafe",
+   "checked": "2026-10-16"
+  },
+  "osm-node-13867452874": {
+   "name": "Paletería Los Magos",
+   "file": "google/osm-node-13867452874.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Paleteria%20Los%20Magos%2C%201700%20W%2019th%20St",
+   "listing": "Paleteria Los Magos",
+   "checked": "2026-10-16"
+  },
+  "osm-node-12060493306": {
+   "name": "Coyotes",
+   "file": "google/osm-node-12060493306.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Coyotes%20Restaurant%2C%201451%20W%2018th%20St",
+   "listing": "Coyotes Restaurant",
+   "checked": "2026-10-16"
+  },
+  "osm-node-12060493305": {
+   "name": "Memo's Hot Dogs",
+   "file": "google/osm-node-12060493305.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Memo's%20Hot%20Dogs%2C%201447%20W%2018th%20St",
+   "listing": "Memo's Hot Dogs",
+   "checked": "2026-10-16"
+  },
+  "osm-node-6125250112": {
+   "name": "Prospectus Art Gallery",
+   "file": "google/osm-node-6125250112.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Prospectus%20Art%20Gallery%2C%201208%20W%2018th%20St",
+   "listing": "Prospectus Art Gallery",
+   "checked": "2026-10-16"
+  },
+  "osm-node-6263803114": {
+   "name": "Azul 18",
+   "file": "google/osm-node-6263803114.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Azul%2018%2C%201236%20W%2018th%20St",
+   "listing": "Azul 18",
+   "checked": "2026-10-16"
+  },
+  "osm-way-209784146": {
+   "name": "John's Lavanderia",
+   "file": "google/osm-way-209784146.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=John's%20Lavanderia%2C%201856%20S%20Ashland%20Ave",
+   "listing": "John's Lavanderia",
+   "checked": "2026-10-16"
+  },
+  "osm-node-6306942282": {
+   "name": "Twisted Cantina",
+   "file": "google/osm-node-6306942282.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Twisted%20Cantina%2C%201640%20S%20Blue%20Island%20Ave",
+   "listing": "Twisted Cantina",
+   "checked": "2026-10-16"
+  },
+  "osm-node-6397277460": {
+   "name": "Takumi Ramen",
+   "file": "google/osm-node-6397277460.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Takumi%20Ramen%2C%201239%20W%2018th%20St",
+   "listing": "Takumi Ramen",
+   "checked": "2026-10-16"
+  },
+  "osm-node-5928912596": {
+   "name": "Quesabirria Jalisco",
+   "file": "google/osm-node-5928912596.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=QuesaBirria%20Jalisco%20Pilsen%2C%201314%20W%2018th%20St",
+   "listing": "QuesaBirria Jalisco Pilsen",
+   "checked": "2026-10-16"
+  },
+  "osm-node-6280472914": {
+   "name": "Caminos De Michoacan Bar",
+   "file": "google/osm-node-6280472914.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Caminos%20de%20Michoacan%2C%201659%20W%20Cullerton%20St",
+   "listing": "Caminos de Michoacan",
+   "checked": "2026-10-16"
+  },
+  "osm-node-13259714001": {
+   "name": "Craft Burger",
+   "file": "google/osm-node-13259714001.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Craft%20Burger%2C%201311%20W%2018th%20St",
+   "listing": "Craft Burger",
+   "checked": "2026-10-16"
+  },
+  "osm-node-6280027510": {
+   "name": "Rubi’s Tacos",
+   "file": "google/osm-node-6280027510.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Rubi%E2%80%99s%20Tacos%2C%201316%20W%2018th%20St",
+   "listing": "Rubi’s Tacos",
+   "checked": "2026-10-16"
+  },
+  "osm-way-218369236": {
+   "name": "Throop Park",
+   "file": "google/osm-way-218369236.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Throop%20Park%2C%201811%20S%20Throop%20St",
+   "listing": "Throop Park",
+   "checked": "2026-10-16"
+  },
+  "osm-way-210222147": {
+   "name": "Pollo Express",
+   "file": "google/osm-way-210222147.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Pollo%20Express%2C%201315%20W%2018th%20St",
+   "listing": "Pollo Express",
+   "checked": "2026-10-16"
+  },
+  "osm-node-8508251823": {
+   "name": "La Esperanza",
+   "file": "google/osm-node-8508251823.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=La%20Esperanza%20Restaurant%20Pilsen%2C%201864%20S%20Blue%20Island%20Ave",
+   "listing": "La Esperanza Restaurant Pilsen",
+   "checked": "2026-10-16"
+  },
+  "osm-node-8508251822": {
+   "name": "Rice and Noodles",
+   "file": "google/osm-node-8508251822.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=Rice%20%26%20Noodles%2C%202018%20S%20Blue%20Island%20Ave",
+   "listing": "Rice & Noodles",
+   "checked": "2026-10-16"
+  },
+  "osm-node-6302155846": {
+   "name": "The Spoke & Bird Bakehouse",
+   "file": "google/osm-node-6302155846.jpg",
+   "page": "https://www.google.com/maps/search/?api=1&query=The%20Spoke%20%26%20Bird%20(Pilsen)%2C%201248%20W%2018th%20St",
+   "listing": "The Spoke & Bird (Pilsen)",
+   "checked": "2026-10-16"
+  }
+ }
+}

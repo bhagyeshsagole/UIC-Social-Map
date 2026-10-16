@@ -1,0 +1,811 @@
+{
+ "checked": "2026-10-16",
+ "agent": "KampuscapeBot/1.0 (https://kampuscape.com/support; student project) node-fetch",
+ "note": "Brand photos from Wikidata (P18) on Wikimedia Commons, else the brand website share image. Shown only on branches without their own photo, labeled as a brand photo, not this branch. Reject a photo in photo-review.json → rejectedBrands.",
+ "brands": {
+  "Q491516": {
+   "brand": "Chick-fil-A",
+   "file": "Chick Fil A - Cranberry TWP, PA - panoramio.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Chick_Fil_A_-_Cranberry_TWP%2C_PA_-_panoramio.jpg/1280px-Chick_Fil_A_-_Cranberry_TWP%2C_PA_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Chick_Fil_A_-_Cranberry_TWP,_PA_-_panoramio.jpg",
+   "author": "v343790",
+   "license": "CC BY 3.0"
+  },
+  "Q1358690": {
+   "brand": "Panda Express",
+   "file": "Panda Express.JPG",
+   "src": "https://upload.wikimedia.org/wikipedia/commons/6/67/Panda_Express.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Panda_Express.JPG",
+   "author": "Miosotis Jade",
+   "license": "CC BY-SA 4.0"
+  },
+  "Q847743": {
+   "brand": "Dunkin'",
+   "file": "Dunkin Donuts in Chicago -a.jpg",
+   "src": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Dunkin_Donuts_in_Chicago_-a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Dunkin_Donuts_in_Chicago_-a.jpg",
+   "author": "Shahrukh Hasan from Chicago, IL, US",
+   "license": "CC BY-SA 2.0"
+  },
+  "Q465751": {
+   "brand": "Chipotle",
+   "file": "Chipotle Brandon.jpeg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Chipotle_Brandon.jpeg/1280px-Chipotle_Brandon.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Chipotle_Brandon.jpeg",
+   "author": "User:proshob",
+   "license": "CC BY-SA 3.0"
+  },
+  "Q1689380": {
+   "brand": "Jimmy John's",
+   "file": "Jimmy John's in Gillette, Wyoming.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Jimmy_John%27s_in_Gillette%2C_Wyoming.jpg/1280px-Jimmy_John%27s_in_Gillette%2C_Wyoming.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Jimmy_John%27s_in_Gillette,_Wyoming.jpg",
+   "author": "Mr. Satterly",
+   "license": "CC0"
+  },
+  "Q2244796": {
+   "brand": "Schlotzsky's",
+   "file": "Euless Texas Schlotzsky.jpeg",
+   "src": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Euless_Texas_Schlotzsky.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Euless_Texas_Schlotzsky.jpeg",
+   "author": "Schlotzskys at English Wikipedia",
+   "license": "CC BY-SA 3.0"
+  },
+  "Q5491421": {
+   "brand": "Smoothie King",
+   "file": "Smoothie King, Thomasville.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Smoothie_King%2C_Thomasville.jpg/1280px-Smoothie_King%2C_Thomasville.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Smoothie_King,_Thomasville.jpg",
+   "author": "Michael Rivera",
+   "license": "CC BY-SA 4.0"
+  },
+  "Q37158": {
+   "brand": "Starbucks",
+   "file": "20191204 03 New Starbucks on Michigan Ave. (50313884981).jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/20191204_03_New_Starbucks_on_Michigan_Ave._%2850313884981%29.jpg/1280px-20191204_03_New_Starbucks_on_Michigan_Ave._%2850313884981%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:20191204_03_New_Starbucks_on_Michigan_Ave._(50313884981).jpg",
+   "author": "David Wilson from Oak Park, Illinois, USA",
+   "license": "CC BY 2.0"
+  },
+  "Q4822010": {
+   "brand": "Auntie Anne's",
+   "file": "Auntie Anne's in King of Prussia Mall.jpeg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Auntie_Anne%27s_in_King_of_Prussia_Mall.jpeg/1280px-Auntie_Anne%27s_in_King_of_Prussia_Mall.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Auntie_Anne%27s_in_King_of_Prussia_Mall.jpeg",
+   "author": "Dough4872",
+   "license": "CC BY-SA 4.0"
+  },
+  "Q509255": {
+   "brand": "Buffalo Wild Wings",
+   "file": "Buffalo Wild Wings Carson IMG 20180405 110842.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Buffalo_Wild_Wings_Carson_IMG_20180405_110842.jpg/1280px-Buffalo_Wild_Wings_Carson_IMG_20180405_110842.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Buffalo_Wild_Wings_Carson_IMG_20180405_110842.jpg",
+   "author": "Alexander Migl",
+   "license": "CC BY-SA 4.0"
+  },
+  "Q5047520": {
+   "brand": "Carvel",
+   "file": "Carvel Restaurant Franchise Canton Michigan.JPG",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Carvel_Restaurant_Franchise_Canton_Michigan.JPG/1280px-Carvel_Restaurant_Franchise_Canton_Michigan.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Carvel_Restaurant_Franchise_Canton_Michigan.JPG",
+   "author": "Dwight Burdette",
+   "license": "CC BY 3.0"
+  },
+  "Q1092539": {
+   "brand": "Cinnabon",
+   "file": "Cinnabon-tracy.jpg",
+   "src": "https://upload.wikimedia.org/wikipedia/commons/6/65/Cinnabon-tracy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Cinnabon-tracy.jpg",
+   "author": "Btotanes",
+   "license": "Public domain"
+  },
+  "Q1131810": {
+   "brand": "Five Guys",
+   "file": "2008-0830-UVA-FiveGuys.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/2008-0830-UVA-FiveGuys.jpg/1280px-2008-0830-UVA-FiveGuys.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:2008-0830-UVA-FiveGuys.jpg",
+   "author": "Bobak Ha'Eri",
+   "license": "CC BY 3.0"
+  },
+  "Q2589409": {
+   "brand": "Sbarro",
+   "file": "2015-05-11 16 22 23 Sbarro restaurant at the Commodore Perry Service Plaza along the Ohio Turnpike (Interstates 80 and 90) in Riley Township, Sandusky County, Ohio.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/2015-05-11_16_22_23_Sbarro_restaurant_at_the_Commodore_Perry_Service_Plaza_along_the_Ohio_Turnpike_%28Interstates_80_and_90%29_in_Riley_Township%2C_Sandusky_County%2C_Ohio.jpg/1280px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:2015-05-11_16_22_23_Sbarro_restaurant_at_the_Commodore_Perry_Service_Plaza_along_the_Ohio_Turnpike_(Interstates_80_and_90)_in_Riley_Township,_Sandusky_County,_Ohio.jpg",
+   "author": "Famartin",
+   "license": "CC BY-SA 4.0"
+  },
+  "Q4818942": {
+   "brand": "Au Bon Pain",
+   "file": "Aubonpainharvardsqaug2005.jpg",
+   "src": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Aubonpainharvardsqaug2005.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Aubonpainharvardsqaug2005.jpg",
+   "author": "Lyo at English Wikipedia",
+   "license": "CC BY-SA 3.0"
+  },
+  "Q2974437": {
+   "brand": "Citgo",
+   "missing": "website: fetch failed",
+   "site": "https://www.citgo.com"
+  },
+  "Q5563393": {
+   "brand": "Giordano's Pizzeria",
+   "file": "Giordano's Pizzeria - Hyde Park Neighborhood - Chicago - Illinois - USA.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Giordano%27s_Pizzeria_-_Hyde_Park_Neighborhood_-_Chicago_-_Illinois_-_USA.jpg/1280px-Giordano%27s_Pizzeria_-_Hyde_Park_Neighborhood_-_Chicago_-_Illinois_-_USA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Giordano%27s_Pizzeria_-_Hyde_Park_Neighborhood_-_Chicago_-_Illinois_-_USA.jpg",
+   "author": "Adam Jones, Ph.D.",
+   "license": "CC BY-SA 3.0"
+  },
+  "Q259340": {
+   "brand": "7-Eleven",
+   "file": "Night view of 7-Eleven store at 2546 Niagara Falls Boulevard, Tonawanda, New York - 20230202.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Night_view_of_7-Eleven_store_at_2546_Niagara_Falls_Boulevard%2C_Tonawanda%2C_New_York_-_20230202.jpg/1280px-Night_view_of_7-Eleven_store_at_2546_Niagara_Falls_Boulevard%2C_Tonawanda%2C_New_York_-_20230202.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Night_view_of_7-Eleven_store_at_2546_Niagara_Falls_Boulevard,_Tonawanda,_New_York_-_20230202.jpg",
+   "author": "Andre Carrotflower",
+   "license": "CC BY-SA 4.0"
+  },
+  "Q7285144": {
+   "brand": "Raising Cane's",
+   "file": "Raising Cane's South Beach, Miami Beach June 2025 - Sign.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Raising_Cane%27s_South_Beach%2C_Miami_Beach_June_2025_-_Sign.jpg/1280px-Raising_Cane%27s_South_Beach%2C_Miami_Beach_June_2025_-_Sign.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Raising_Cane%27s_South_Beach,_Miami_Beach_June_2025_-_Sign.jpg",
+   "author": "Phillip Pessar",
+   "license": "CC BY 4.0"
+  },
+  "Q7771029": {
+   "brand": "The UPS Store",
+   "file": "UPS Store 2.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/UPS_Store_2.jpg/1280px-UPS_Store_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:UPS_Store_2.jpg",
+   "author": "JBTHEMILKER",
+   "license": "CC BY-SA 4.0"
+  },
+  "Q110609570": {
+   "brand": "Al's Beef",
+   "missing": "website image rejected on review"
+  },
+  "Q244457": {
+   "brand": "Subway",
+   "file": "Subway in Stanhope, NJ.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Subway_in_Stanhope%2C_NJ.jpg/1280px-Subway_in_Stanhope%2C_NJ.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Subway_in_Stanhope,_NJ.jpg",
+   "author": "CHICHI7YT",
+   "license": "CC BY-SA 4.0"
+  },
+  "Q126391325": {
+   "brand": "TITLE Boxing Club",
+   "website": true,
+   "src": "https://www.titleboxingclub.com/hubfs/share.jpg",
+   "page": "https://www.titleboxingclub.com/"
+  },
+  "Q5289230": {
+   "brand": "Dollar Tree",
+   "file": "Dollar Tree, Griffin.JPG",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Dollar_Tree%2C_Griffin.JPG/1280px-Dollar_Tree%2C_Griffin.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Dollar_Tree,_Griffin.JPG",
+   "author": "Michael Rivera",
+   "license": "CC BY-SA 3.0"
+  },
+  "Q5636306": {
+   "brand": "H Mart",
+   "file": "20140809-0072 Diamond Jamboree.JPG",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/20140809-0072_Diamond_Jamboree.JPG/1280px-20140809-0072_Diamond_Jamboree.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:20140809-0072_Diamond_Jamboree.JPG",
+   "author": "Nandaro",
+   "license": "CC BY-SA 4.0"
+  },
+  "Q7130852": {
+   "brand": "Panera Bread",
+   "file": "Panera Bread.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Panera_Bread.jpg/1280px-Panera_Bread.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Panera_Bread.jpg",
+   "author": "Miosotis Jade",
+   "license": "CC BY-SA 4.0"
+  },
+  "Q62605260": {
+   "brand": "Paris Baguette",
+   "file": "Paris Baguette - August 2025 - Sarah Stierch 01.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Paris_Baguette_-_August_2025_-_Sarah_Stierch_01.jpg/1280px-Paris_Baguette_-_August_2025_-_Sarah_Stierch_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Paris_Baguette_-_August_2025_-_Sarah_Stierch_01.jpg",
+   "author": "Missvain",
+   "license": "CC0"
+  },
+  "Q584601": {
+   "brand": "Baskin-Robbins",
+   "file": "BaskinRobbinsMelrose.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/BaskinRobbinsMelrose.jpg/1280px-BaskinRobbinsMelrose.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:BaskinRobbinsMelrose.jpg",
+   "author": "Minnaert",
+   "license": "CC BY-SA 3.0"
+  },
+  "Q112757409": {
+   "brand": "Mochinut",
+   "file": "Mochinut Cerritos location exterior.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Mochinut_Cerritos_location_exterior.jpg/1280px-Mochinut_Cerritos_location_exterior.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Mochinut_Cerritos_location_exterior.jpg",
+   "author": "DarkNight0917",
+   "license": "CC BY-SA 4.0"
+  },
+  "Q1330910": {
+   "brand": "Popeyes",
+   "file": "Popeyes Louisiana Kitchen (51195358373).jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Popeyes_Louisiana_Kitchen_%2851195358373%29.jpg/1280px-Popeyes_Louisiana_Kitchen_%2851195358373%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Popeyes_Louisiana_Kitchen_(51195358373).jpg",
+   "author": "Phillip Pessar",
+   "license": "CC BY 2.0"
+  },
+  "Q110716465": {
+   "brand": "Shell",
+   "file": "Shell Tankstelle.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Shell_Tankstelle.jpg/1280px-Shell_Tankstelle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Shell_Tankstelle.jpg",
+   "author": "Blademaster88",
+   "license": "CC BY-SA 3.0"
+  },
+  "Q5455836": {
+   "brand": "Five Below",
+   "file": "Five below inside.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Five_below_inside.jpg/1280px-Five_below_inside.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Five_below_inside.jpg",
+   "author": "TenPoundHammer",
+   "license": "CC BY-SA 3.0"
+  },
+  "Q5598967": {
+   "brand": "Great Clips",
+   "file": "LLGCsalon.JPG",
+   "src": "https://upload.wikimedia.org/wikipedia/commons/c/c2/LLGCsalon.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:LLGCsalon.JPG",
+   "author": "Crobray",
+   "license": "Public domain"
+  },
+  "Q3178470": {
+   "brand": "Jewel-Osco",
+   "file": "The Sinclair, Division Street and Clark Street, Gold Coast, Chicago, IL (52878263643).jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/The_Sinclair%2C_Division_Street_and_Clark_Street%2C_Gold_Coast%2C_Chicago%2C_IL_%2852878263643%29.jpg/1280px-The_Sinclair%2C_Division_Street_and_Clark_Street%2C_Gold_Coast%2C_Chicago%2C_IL_%2852878263643%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:The_Sinclair,_Division_Street_and_Clark_Street,_Gold_Coast,_Chicago,_IL_(52878263643).jpg",
+   "author": "Warren LeMay from Chicago, IL, United States",
+   "license": "CC BY-SA 2.0"
+  },
+  "Q4999220": {
+   "brand": "Burlington",
+   "file": "Burlington (East Providence, Rhode Island) (51600754631).jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Burlington_%28East_Providence%2C_Rhode_Island%29_%2851600754631%29.jpg/1280px-Burlington_%28East_Providence%2C_Rhode_Island%29_%2851600754631%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Burlington_(East_Providence,_Rhode_Island)_(51600754631).jpg",
+   "author": "JJBers from Willimantic, Connecticut, USA",
+   "license": "CC BY 2.0"
+  },
+  "Q1094923": {
+   "brand": "Cold Stone Creamery",
+   "file": "ColdstoneCreameryHudsonOhio.JPG",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/ColdstoneCreameryHudsonOhio.JPG/1280px-ColdstoneCreameryHudsonOhio.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:ColdstoneCreameryHudsonOhio.JPG",
+   "author": "DangApricot (Erik Breedon)",
+   "license": "CC BY-SA 3.0"
+  },
+  "Q21015663": {
+   "brand": "CorePower Yoga",
+   "file": "CorePower Yoga Studio.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/CorePower_Yoga_Studio.jpg/1280px-CorePower_Yoga_Studio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:CorePower_Yoga_Studio.jpg",
+   "author": "Janekraaijvanger",
+   "license": "CC0"
+  },
+  "Q1089932": {
+   "brand": "Church's Chicken",
+   "file": "Churches Texas Chicken on Lake Bradford Road, Tallahassee.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Churches_Texas_Chicken_on_Lake_Bradford_Road%2C_Tallahassee.jpg/1280px-Churches_Texas_Chicken_on_Lake_Bradford_Road%2C_Tallahassee.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Churches_Texas_Chicken_on_Lake_Bradford_Road,_Tallahassee.jpg",
+   "author": "The Bushranger",
+   "license": "CC BY-SA 4.0"
+  },
+  "Q105529843": {
+   "brand": "Dog Haus",
+   "missing": "official website has no share image",
+   "site": "https://doghaus.com/"
+  },
+  "Q785943": {
+   "brand": "Staples",
+   "file": "Staples Savi Ranch.jpg",
+   "src": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Staples_Savi_Ranch.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Staples_Savi_Ranch.jpg",
+   "author": "Vercillo",
+   "license": "CC BY-SA 3.0"
+  },
+  "Q16935493": {
+   "brand": "Bar Louie",
+   "missing": "website image rejected on review"
+  },
+  "Q6457180": {
+   "brand": "LA Fitness",
+   "file": "LA Fitness building.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/LA_Fitness_building.jpg/1280px-LA_Fitness_building.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:LA_Fitness_building.jpg",
+   "author": "Mike Mozart",
+   "license": "CC BY 2.0"
+  },
+  "Q15903261": {
+   "brand": "Marshalls",
+   "file": "Marshalls store Dearborn Michigan.JPG",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Marshalls_store_Dearborn_Michigan.JPG/1280px-Marshalls_store_Dearborn_Michigan.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Marshalls_store_Dearborn_Michigan.JPG",
+   "author": "Dwight Burdette",
+   "license": "CC BY 3.0"
+  },
+  "Q113946029": {
+   "brand": "Beggars Pizza",
+   "missing": "official website has no share image",
+   "site": "https://www.beggarspizza.com/"
+  },
+  "Q177054": {
+   "brand": "Burger King",
+   "file": "A modern Burger King fast food restaurant in Ooltewah, Tennessee.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/A_modern_Burger_King_fast_food_restaurant_in_Ooltewah%2C_Tennessee.jpg/1280px-A_modern_Burger_King_fast_food_restaurant_in_Ooltewah%2C_Tennessee.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:A_modern_Burger_King_fast_food_restaurant_in_Ooltewah,_Tennessee.jpg",
+   "author": "Harrison Keely",
+   "license": "CC BY 4.0"
+  },
+  "Q112826281": {
+   "brand": "Nékter Juice Bar",
+   "missing": "official website has no share image",
+   "site": "https://www.nekterjuicebar.com/"
+  },
+  "Q191615": {
+   "brand": "Pizza Hut",
+   "file": "Pizza Hut Athens OH USA.JPG",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Pizza_Hut_Athens_OH_USA.JPG/1280px-Pizza_Hut_Athens_OH_USA.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Pizza_Hut_Athens_OH_USA.JPG",
+   "author": "Ed!(talk)(Hall of Fame)",
+   "license": "CC BY-SA 3.0"
+  },
+  "Q8025339": {
+   "brand": "Wingstop",
+   "file": "Wingstop chicken and chips.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Wingstop_chicken_and_chips.jpg/1280px-Wingstop_chicken_and_chips.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Wingstop_chicken_and_chips.jpg",
+   "author": "VulcanSphere",
+   "license": "CC BY 4.0"
+  },
+  "Q7234777": {
+   "brand": "Potbelly",
+   "file": "11-16-06-EPMN-potbelly.jpg",
+   "src": "https://upload.wikimedia.org/wikipedia/commons/4/43/11-16-06-EPMN-potbelly.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:11-16-06-EPMN-potbelly.jpg",
+   "author": "Bobak Ha'Eri",
+   "license": "CC BY-SA 2.5"
+  },
+  "Q1046951": {
+   "brand": "Target",
+   "file": "Target2398.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Target2398.jpg/1280px-Target2398.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Target2398.jpg",
+   "author": "Skinner2398",
+   "license": "CC BY-SA 4.0"
+  },
+  "Q133042646": {
+   "brand": "Milan Laser Hair Removal",
+   "missing": "official website has no share image",
+   "site": "https://milanlaser.com/"
+  },
+  "Q1809448": {
+   "brand": "Whole Foods Market",
+   "website": true,
+   "src": "https://m.media-amazon.com/images/S/assets.wholefoodsmarket.com/content/b5/68/d0e7dfed477d8afdb7234aeaab11/wfm-og-homepage-rectangle.png",
+   "page": "https://www.wholefoodsmarket.com/"
+  },
+  "Q3268010": {
+   "brand": "Circle K",
+   "file": "Circle K, Freeport, Florida.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Circle_K%2C_Freeport%2C_Florida.jpg/1280px-Circle_K%2C_Freeport%2C_Florida.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Circle_K,_Freeport,_Florida.jpg",
+   "author": "The Bushranger",
+   "license": "CC BY-SA 4.0"
+  },
+  "Q109676002": {
+   "brand": "Mobil Mart",
+   "file": "Mobil gas station in Belmont, California.jpg",
+   "src": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Mobil_gas_station_in_Belmont%2C_California.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Mobil_gas_station_in_Belmont,_California.jpg",
+   "author": "The original uploader was Coolcaesar at English Wikipedia.",
+   "license": "CC BY-SA 3.0"
+  },
+  "Q1591889": {
+   "brand": "Walgreens",
+   "file": "Local markets nlv walgreens storefront 2 (5956425119).jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Local_markets_nlv_walgreens_storefront_2_%285956425119%29.jpg/1280px-Local_markets_nlv_walgreens_storefront_2_%285956425119%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Local_markets_nlv_walgreens_storefront_2_(5956425119).jpg",
+   "author": "time anchor from Las Vegas, Nevada, U.S.A.",
+   "license": "CC BY 2.0"
+  },
+  "Q839466": {
+   "brand": "Domino's",
+   "file": "2023-08-02 17 53 07 Domino's Pizza store and delivery vehicle at the Ewing Square Shopping Center in Ewing Township, Mercer County, New Jersey.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/2023-08-02_17_53_07_Domino%27s_Pizza_store_and_delivery_vehicle_at_the_Ewing_Square_Shopping_Center_in_Ewing_Township%2C_Mercer_County%2C_New_Jersey.jpg/1280px-2023-08-02_17_53_07_Domino%27s_Pizza_store_and_delivery_vehicle_at_the_Ewing_Square_Shopping_Center_in_Ewing_Township%2C_Mercer_County%2C_New_Jersey.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:2023-08-02_17_53_07_Domino%27s_Pizza_store_and_delivery_vehicle_at_the_Ewing_Square_Shopping_Center_in_Ewing_Township,_Mercer_County,_New_Jersey.jpg",
+   "author": "Famartin",
+   "license": "CC BY-SA 4.0"
+  },
+  "Q474379": {
+   "brand": "FedEx Office",
+   "file": "FedEx Office (48155564796).jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/FedEx_Office_%2848155564796%29.jpg/1280px-FedEx_Office_%2848155564796%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:FedEx_Office_(48155564796).jpg",
+   "author": "Ajay Suresh from New York, NY, USA",
+   "license": "CC BY 2.0"
+  },
+  "Q111901442": {
+   "brand": "Naf Naf Grill",
+   "missing": "official website has no share image",
+   "site": "https://www.nafnafgrill.com/"
+  },
+  "Q48965480": {
+   "brand": "Cinnaholic",
+   "website": true,
+   "src": "https://irp.cdn-website.com/23d48f5c/dms3rep/multi/opt/OldSkool-2B-1920w.jpg",
+   "page": "https://www.cinnaholic.com/"
+  },
+  "Q16997641": {
+   "brand": "Jason's Deli",
+   "missing": "official website has no share image",
+   "site": "https://www.jasonsdeli.com/"
+  },
+  "Q38076": {
+   "brand": "McDonald's",
+   "file": "New-McDonald-HU-lg (43261171540).jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/New-McDonald-HU-lg_%2843261171540%29.jpg/1280px-New-McDonald-HU-lg_%2843261171540%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:New-McDonald-HU-lg_(43261171540).jpg",
+   "author": "Dirk Tussing from Chicago IL, United States",
+   "license": "CC BY-SA 2.0"
+  },
+  "Q2078880": {
+   "brand": "CVS Pharmacy",
+   "file": "CVS N Tarrant Davis.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/CVS_N_Tarrant_Davis.jpg/1280px-CVS_N_Tarrant_Davis.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:CVS_N_Tarrant_Davis.jpg",
+   "author": "Smarty9108",
+   "license": "CC BY-SA 4.0"
+  },
+  "Q120985884": {
+   "brand": "Stan's Donuts & Coffee",
+   "file": "Illuminated sign for Stan's Donuts & Coffee (52037815702).jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Illuminated_sign_for_Stan%27s_Donuts_%26_Coffee_%2852037815702%29.jpg/1280px-Illuminated_sign_for_Stan%27s_Donuts_%26_Coffee_%2852037815702%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Illuminated_sign_for_Stan%27s_Donuts_%26_Coffee_(52037815702).jpg",
+   "author": "Chris Rycroft from Cambridge, Massachusetts, United States",
+   "license": "CC BY 2.0"
+  },
+  "Q3535609": {
+   "brand": "Tous les Jours",
+   "website": true,
+   "src": "https://www.tlj.co.kr/static/images/common/sns_tlj_logo.jpg",
+   "page": "https://www.tlj.co.kr/index.asp"
+  },
+  "Q55622168": {
+   "brand": "Mariano's Fresh Market",
+   "file": "Marianos New Store.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Marianos_New_Store.jpg/1280px-Marianos_New_Store.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Marianos_New_Store.jpg",
+   "author": "LincolnSquareInsider",
+   "license": "CC BY 2.0"
+  },
+  "Q122705364": {
+   "brand": "Restore Hyper Wellness",
+   "website": true,
+   "src": "https://cdn.prod.website-files.com/615f535b3d97e2228b7fbce6/68bf39ddf0c899cd32cd7ed4_OG%20Image.jpg",
+   "page": "https://www.restore.com/"
+  },
+  "Q6184897": {
+   "brand": "Jersey Mike's Subs",
+   "file": "Jersey Mike's Subs, Valdosta.JPG",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Jersey_Mike%27s_Subs%2C_Valdosta.JPG/1280px-Jersey_Mike%27s_Subs%2C_Valdosta.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Jersey_Mike%27s_Subs,_Valdosta.JPG",
+   "author": "Michael Rivera",
+   "license": "CC BY-SA 4.0"
+  },
+  "Q1244034": {
+   "brand": "White Castle",
+   "file": "White Castle - Chicago, IL (3026769554).jpg",
+   "src": "https://upload.wikimedia.org/wikipedia/commons/7/7c/White_Castle_-_Chicago%2C_IL_%283026769554%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:White_Castle_-_Chicago,_IL_(3026769554).jpg",
+   "author": "Arnold Gatilao from Torrance, CA, USA",
+   "license": "CC BY 2.0"
+  },
+  "Q5171598": {
+   "brand": "Corner Bakery",
+   "file": "Corner Bakery Cafe on 14th, Washington DC.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Corner_Bakery_Cafe_on_14th%2C_Washington_DC.jpg/1280px-Corner_Bakery_Cafe_on_14th%2C_Washington_DC.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Corner_Bakery_Cafe_on_14th,_Washington_DC.jpg",
+   "author": "John Phelan",
+   "license": "CC BY-SA 3.0"
+  },
+  "Q2109109": {
+   "brand": "Pret A Manger",
+   "file": "London Barbican 13.04.2013 10-36-20.JPG",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/London_Barbican_13.04.2013_10-36-20.JPG/1280px-London_Barbican_13.04.2013_10-36-20.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:London_Barbican_13.04.2013_10-36-20.JPG",
+   "author": "Dirk Ingo Franke",
+   "license": "CC BY 3.0"
+  },
+  "Q524757": {
+   "brand": "KFC",
+   "file": "A modern KFC restaurant in Murphy, North Carolina.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/A_modern_KFC_restaurant_in_Murphy%2C_North_Carolina.jpg/1280px-A_modern_KFC_restaurant_in_Murphy%2C_North_Carolina.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:A_modern_KFC_restaurant_in_Murphy,_North_Carolina.jpg",
+   "author": "Harrison Keely",
+   "license": "CC BY 4.0"
+  },
+  "Q119982751": {
+   "brand": "LaserAway",
+   "missing": "official website has no share image",
+   "site": "https://www.laseraway.com/"
+  },
+  "Q124429271": {
+   "brand": "[solidcore]",
+   "website": true,
+   "src": "https://cdn.prod.website-files.com/6617b9233975c2e1cdf0a7a6/6ad2823fddf27281a3832507_2bbae7577bec1b74d0e84f5b43ec2d51_FH_SOLIDCORE_EVERGREEN_BLACK_GROUP_E_01_03596_AJ-EDIT.jpg",
+   "page": "https://solidcore.co/"
+  },
+  "Q109328844": {
+   "brand": "Club Pilates",
+   "file": "Club Pilates - Silver Spring, Maryland.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Club_Pilates_-_Silver_Spring%2C_Maryland.jpg/1280px-Club_Pilates_-_Silver_Spring%2C_Maryland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Club_Pilates_-_Silver_Spring,_Maryland.jpg",
+   "author": "Farragutful",
+   "license": "CC BY-SA 4.0"
+  },
+  "Q16997024": {
+   "brand": "Insomnia Cookies",
+   "file": "Insomnia Cookies, Chapel Hill.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Insomnia_Cookies%2C_Chapel_Hill.jpg/1280px-Insomnia_Cookies%2C_Chapel_Hill.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Insomnia_Cookies,_Chapel_Hill.jpg",
+   "author": "Mx. Granger",
+   "license": "CC0"
+  },
+  "Q3088784": {
+   "brand": "Jamba",
+   "missing": "website: fetch failed",
+   "site": "https://www.jambajuice.com/"
+  },
+  "Q25005163": {
+   "brand": "Orangetheory Fitness",
+   "file": "OrangetheoryFitnessMarkham2.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/OrangetheoryFitnessMarkham2.jpg/1280px-OrangetheoryFitnessMarkham2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:OrangetheoryFitnessMarkham2.jpg",
+   "author": "Raysonho @ Open Grid Scheduler / Scalable Grid Engine",
+   "license": "CC0"
+  },
+  "Q1094101": {
+   "brand": "Peet's Coffee",
+   "file": "PeetsStore.jpg",
+   "src": "https://upload.wikimedia.org/wikipedia/commons/c/cb/PeetsStore.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:PeetsStore.jpg",
+   "author": "No machine-readable author provided. Calton assumed (based on copyright claims).",
+   "license": "CC BY-SA 3.0"
+  },
+  "Q16997713": {
+   "brand": "Jet's Pizza",
+   "file": "Jet's Pizza Store, Ypsilanti Township, Michigan.JPG",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Jet%27s_Pizza_Store%2C_Ypsilanti_Township%2C_Michigan.JPG/1280px-Jet%27s_Pizza_Store%2C_Ypsilanti_Township%2C_Michigan.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Jet%27s_Pizza_Store,_Ypsilanti_Township,_Michigan.JPG",
+   "author": "Dwight Burdette",
+   "license": "CC BY 3.0"
+  },
+  "Q23016666": {
+   "brand": "Blaze Pizza",
+   "file": "Blaze Pizza, Tallahassee.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Blaze_Pizza%2C_Tallahassee.jpg/1280px-Blaze_Pizza%2C_Tallahassee.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Blaze_Pizza,_Tallahassee.jpg",
+   "author": "Michael Rivera",
+   "license": "CC BY-SA 4.0"
+  },
+  "Q26221514": {
+   "brand": "Joe & The Juice",
+   "file": "Joe & The Juice in River North, Chicago, Illinois.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Joe_%26_The_Juice_in_River_North%2C_Chicago%2C_Illinois.jpg/1280px-Joe_%26_The_Juice_in_River_North%2C_Chicago%2C_Illinois.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Joe_%26_The_Juice_in_River_North,_Chicago,_Illinois.jpg",
+   "author": "CarlCarlsonIV",
+   "license": "CC BY-SA 4.0"
+  },
+  "Q1058722": {
+   "brand": "Shake Shack",
+   "missing": "official website has no share image",
+   "site": "http://shakeshack.com"
+  },
+  "Q18636413": {
+   "brand": "Sweetgreen",
+   "missing": "official website has no share image",
+   "site": "http://sweetgreen.com/"
+  },
+  "Q294721": {
+   "brand": "AMC",
+   "file": "AMC Empire 25 NYC.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/AMC_Empire_25_NYC.jpg/1280px-AMC_Empire_25_NYC.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:AMC_Empire_25_NYC.jpg",
+   "author": "Photo: Andreas Praefcke",
+   "license": "CC BY 3.0"
+  },
+  "Q4931262": {
+   "brand": "Boar's Head",
+   "missing": "official website has no share image",
+   "site": "https://boarshead.com/"
+  },
+  "Q3866841": {
+   "brand": "Mrs. Fields",
+   "missing": "website image rejected on review"
+  },
+  "Q3472954": {
+   "brand": "Nando's",
+   "file": "Nandos-Canal-Walk.jpg",
+   "src": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Nandos-Canal-Walk.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Nandos-Canal-Walk.jpg",
+   "author": "Unknown author",
+   "license": "Public domain"
+  },
+  "Q1363885": {
+   "brand": "Qdoba",
+   "file": "Qdoba Mexican Grill.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Qdoba_Mexican_Grill.jpg/1280px-Qdoba_Mexican_Grill.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Qdoba_Mexican_Grill.jpg",
+   "author": "Anthony92931",
+   "license": "CC BY-SA 3.0"
+  },
+  "Q752941": {
+   "brand": "Taco Bell",
+   "file": "A modern Taco Bell restaurant in Hiawassee, Georgia.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/A_modern_Taco_Bell_restaurant_in_Hiawassee%2C_Georgia.jpg/1280px-A_modern_Taco_Bell_restaurant_in_Hiawassee%2C_Georgia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:A_modern_Taco_Bell_restaurant_in_Hiawassee,_Georgia.jpg",
+   "author": "Harrison Keely",
+   "license": "CC BY 4.0"
+  },
+  "Q550258": {
+   "brand": "Wendy's",
+   "file": "Wendy's flagship restaurant (Dublin, Ohio).jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Wendy%27s_flagship_restaurant_%28Dublin%2C_Ohio%29.jpg/1280px-Wendy%27s_flagship_restaurant_%28Dublin%2C_Ohio%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Wendy%27s_flagship_restaurant_(Dublin,_Ohio).jpg",
+   "author": "Nheyob",
+   "license": "CC BY-SA 4.0"
+  },
+  "Q86707084": {
+   "brand": "Pure Barre",
+   "file": "Pure Barre - Silver Spring, Maryland.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Pure_Barre_-_Silver_Spring%2C_Maryland.jpg/1280px-Pure_Barre_-_Silver_Spring%2C_Maryland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Pure_Barre_-_Silver_Spring,_Maryland.jpg",
+   "author": "Farragutful",
+   "license": "CC BY-SA 4.0"
+  },
+  "Q123165959": {
+   "brand": "Tacombi",
+   "missing": "website image rejected on review"
+  },
+  "Q23461663": {
+   "brand": "La Colombe Coffee Roasters",
+   "website": true,
+   "src": "http://www.lacolombe.com/cdn/shop/files/LC_BARISTA_COUNTER_DSC5164_BLEU_SOLO_1.jpg?v=1762287322",
+   "page": "https://www.lacolombe.com/"
+  },
+  "Q111972226": {
+   "brand": "Taco Bell",
+   "file": "Taco Bell Cantina in Las Vegas - 2020.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Taco_Bell_Cantina_in_Las_Vegas_-_2020.jpg/1280px-Taco_Bell_Cantina_in_Las_Vegas_-_2020.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Taco_Bell_Cantina_in_Las_Vegas_-_2020.jpg",
+   "author": "Jon Konrath",
+   "license": "CC BY 2.0"
+  },
+  "Q7755384": {
+   "brand": "The Original Pancake House",
+   "file": "The Original Pancake House Southfield Michigan.JPG",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/The_Original_Pancake_House_Southfield_Michigan.JPG/1280px-The_Original_Pancake_House_Southfield_Michigan.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:The_Original_Pancake_House_Southfield_Michigan.JPG",
+   "author": "Dwight Burdette",
+   "license": "CC BY 3.0"
+  },
+  "Q7941645": {
+   "brand": "Voodoo Doughnut",
+   "file": "Line in front of Voodoo Doughtnut.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Line_in_front_of_Voodoo_Doughtnut.jpg/1280px-Line_in_front_of_Voodoo_Doughtnut.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Line_in_front_of_Voodoo_Doughtnut.jpg",
+   "author": "Ian Sane from Oregon, USA",
+   "license": "CC BY 2.0"
+  },
+  "Q118793358": {
+   "brand": "Pete's Market",
+   "missing": "website image rejected on review"
+  },
+  "Q5659832": {
+   "brand": "Harold's Chicken Shack",
+   "missing": "website: fetch failed",
+   "site": "https://www.haroldschickenscorp.com/"
+  },
+  "Q104840749": {
+   "brand": "Nobu",
+   "file": "Nobu, Atlantis Paradise Island resort, Nassau, Bahamas (March 14, 2024).jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Nobu%2C_Atlantis_Paradise_Island_resort%2C_Nassau%2C_Bahamas_%28March_14%2C_2024%29.jpg/1280px-Nobu%2C_Atlantis_Paradise_Island_resort%2C_Nassau%2C_Bahamas_%28March_14%2C_2024%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Nobu,_Atlantis_Paradise_Island_resort,_Nassau,_Bahamas_(March_14,_2024).jpg",
+   "author": "Kiran891",
+   "license": "CC BY-SA 4.0"
+  },
+  "Q136400358": {
+   "brand": "Velvet Taco",
+   "website": true,
+   "src": "https://velvettaco.b-cdn.net/wp-content/uploads/2024/09/vt_tacos_og_image_mobile.jpg",
+   "page": "https://www.velvettaco.com/"
+  },
+  "Q111231031": {
+   "brand": "Aloha Pokē Co",
+   "missing": "official website has no share image",
+   "site": "https://www.alohapokeco.com/"
+  },
+  "Q668687": {
+   "brand": "United States Post Office",
+   "file": "Uptown Post Office Chicago Illinois 2020-0146.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Uptown_Post_Office_Chicago_Illinois_2020-0146.jpg/1280px-Uptown_Post_Office_Chicago_Illinois_2020-0146.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Uptown_Post_Office_Chicago_Illinois_2020-0146.jpg",
+   "author": "Paul R. Burley",
+   "license": "CC BY-SA 4.0"
+  },
+  "Q5175243": {
+   "brand": "Così",
+   "missing": "website image rejected on review"
+  },
+  "Q121459827": {
+   "brand": "CycleBar",
+   "missing": "official website has no share image",
+   "site": "https://www.cyclebar.com/"
+  },
+  "Q7049673": {
+   "brand": "Noodles & Company",
+   "file": "Noodles & Company Arborland Shopping Center Ann Arbor Michigan.JPG",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Noodles_%26_Company_Arborland_Shopping_Center_Ann_Arbor_Michigan.JPG/1280px-Noodles_%26_Company_Arborland_Shopping_Center_Ann_Arbor_Michigan.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Noodles_%26_Company_Arborland_Shopping_Center_Ann_Arbor_Michigan.JPG",
+   "author": "Dwight Burdette",
+   "license": "CC BY 3.0"
+  },
+  "Q5433101": {
+   "brand": "Family Dollar",
+   "file": "Family Dollar store in Dedham MA June 2026.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Family_Dollar_store_in_Dedham_MA_June_2026.jpg/1280px-Family_Dollar_store_in_Dedham_MA_June_2026.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Family_Dollar_store_in_Dedham_MA_June_2026.jpg",
+   "author": "4300streetcar",
+   "license": "CC BY 4.0"
+  },
+  "Q28229116": {
+   "brand": "Sarpino's Pizzeria",
+   "website": true,
+   "src": "http://gosarpinos.flywheelsites.com/wp-content/uploads/2024/01/Preview_Home.jpg",
+   "page": "https://www.gosarpinos.com/"
+  },
+  "Q120601241": {
+   "brand": "Barre3",
+   "missing": "official website has no share image",
+   "site": "https://barre3.com/"
+  },
+  "Q5384535": {
+   "brand": "Equinox",
+   "missing": "official website has no share image",
+   "site": "https://www.equinox.com/"
+  },
+  "Q6685628": {
+   "brand": "Lou Malnati's Pizzeria",
+   "file": "Lou Malnati's Deep Dish Pizza.JPG",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Lou_Malnati%27s_Deep_Dish_Pizza.JPG/1280px-Lou_Malnati%27s_Deep_Dish_Pizza.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Lou_Malnati%27s_Deep_Dish_Pizza.JPG",
+   "author": "Aneil Lutchman",
+   "license": "CC BY-SA 2.0"
+  },
+  "Q152057": {
+   "brand": "BP Shop",
+   "missing": "website image rejected on review"
+  },
+  "Q23091823": {
+   "brand": "Just Salad",
+   "missing": "official website has no share image",
+   "site": "http://www.justsalad.com"
+  },
+  "Q17118857": {
+   "brand": "La Michoacana",
+   "file": "Paletería La Michoacana en Mercado de Coyoacán.jpg",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Paleter%C3%ADa_La_Michoacana_en_Mercado_de_Coyoac%C3%A1n.jpg/1280px-Paleter%C3%ADa_La_Michoacana_en_Mercado_de_Coyoac%C3%A1n.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Paleter%C3%ADa_La_Michoacana_en_Mercado_de_Coyoac%C3%A1n.jpg",
+   "author": "ProtoplasmaKid",
+   "license": "CC BY-SA 4.0"
+  }
+ }
+}

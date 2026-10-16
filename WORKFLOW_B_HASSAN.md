@@ -10,7 +10,7 @@
 > 3. **When finished**, update both files again: the owner's workflow gets status, evidence, checkbox, and a dated change-log entry; remove the claim from *Active claims* in both files, and add a one-line change-log entry to the other workflow saying what changed.
 > 4. If it's unclear whose workflow a request belongs to, use the one that owns the paths being touched and ask if still unclear. Never edit the other person's folders without an agreed handoff or an explicit request.
 
-**Updated:** 2026-10-10<br>
+**Updated:** 2026-10-16<br>
 **Current task:** B01 data/API contract approved; B11 UIC Connections local importer complete; B02 provider review and B10 weekly Chicago place-content refresh pending<br>
 **Implementation progress:** 1 / 9 tasks complete
 
@@ -85,6 +85,10 @@ Write requests here; Bhagesh responds in [his tracker](WORKFLOW_A_BHAGYESH.md#ha
 Provider handoff should include the SDK, supported version, configuration variable names, cost limits, and any attribution requirements. Never put actual credentials here.
 
 ## Change log
+
+- **2026-10-16:** Bhagesh A44 touched `website/data/places/**` (new `park-district.json`, `brand-photos.json`, `google-photos.json`; `overrides.json` gains `excluded`, `duplicates`, `parkPages`; `photo-review.json` gains `rejectedBrands`, `brandPicks`), the OSM query in `uic-nearby-places.py`, and added review catalog migration `202610162257_review_place_catalog_2.sql` (apply before deploy). B10 refresh: Google-listing hours are dated 2026-10-16 snapshots; re-check them with the rest.
+
+- **2026-10-16:** A43 (user-requested): removed the selected place-data/OpenStreetMap/image-credit paragraph from `website/frontend/src/Credits.jsx` and updated its comment; creator and Help & reports links remain. `npm run build` passes. No backend dependencies or deployment.
 
 - **2026-10-12:** A42/B26 (user-requested): 50 closest incomplete places given checked photos and hours; closed listings hidden; Apple Maps–style pins.
 - **2026-10-11:** A41/B25 (user-requested overnight pass): photos and hours for nearby places from venue sites, chain store pages and Wikimedia, with by-eye photo review.

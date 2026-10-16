@@ -66,6 +66,11 @@
    "name": "5 Rabanitos Restaurante and Taqueria",
    "reason": "mural close-ups that do not show the restaurant",
    "src": "https://5rabanitosdotcom.wordpress.com/wp-content/uploads/2021/02/cropped-62ef432a-f58f-47ba-9604-c8fe1ad5974c.jpeg"
+  },
+  "osm-way-134017011": {
+   "name": "Arrigo Park",
+   "reason": "fenced empty pedestal after the 2020 monument removal, not a view of the park",
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Christopher_Columbus_Monument_Removal_Arrigo_Park_Chicago_July_25_2020-0515.jpg/960px-Christopher_Columbus_Monument_Removal_Arrigo_Park_Chicago_July_25_2020-0515.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
   }
  },
  "approved": {
@@ -383,6 +388,490 @@
    "page": "https://rosebudtaylor.com/",
    "credit": "The Rosebud website",
    "alt": "Photo from the The Rosebud website"
+  },
+  "osm-node-11875042749": {
+   "name": "Stan's Donuts & Coffee",
+   "src": "https://images.getbento.com/accounts/b9a42d46517eb361df8be76e90ffe63f/media/images/13777AF0A8627.JPG?w=1200&fit=crop&auto=compress,format&cs=origin&crop=focalpoint&fp-x=0.5&fp-y=0.5",
+   "page": "https://www.stansdonuts.com/",
+   "credit": "Stan's Donuts & Coffee website · brand photo, not this branch",
+   "alt": "Stan's Donuts & Coffee brand photo, not this branch"
+  },
+  "osm-node-12085231354": {
+   "name": "Naf Naf Grill",
+   "src": "https://www.nafnafgrill.com/wp-content/uploads/2026/01/Screenshot-2025-06-02-at-9.22.36-AM-1-760x640.jpg",
+   "page": "https://www.nafnafgrill.com/locations/",
+   "credit": "Naf Naf Grill website · brand photo, not this branch",
+   "alt": "Naf Naf Grill brand photo, not this branch"
+  },
+  "osm-node-12167120485": {
+   "name": "Nancy's Pizzeria",
+   "src": "https://img.aelieve.com/cb:vd3T.58234/w:700/h:503/q:91/g:sm/f:best/https://nancyspizza.com/wp-content/uploads/bb-plugin/cache/Gallery1-01-landscape-717deee42683ef1e3b14d79154d76a8b-ovk7lns4dxty.png",
+   "page": "https://nancyspizza.com/locations/chicago-west-loop-il/",
+   "credit": "Nancy's Pizzeria website",
+   "alt": "Photo from the Nancy's Pizzeria website"
+  },
+  "osm-node-12413321504": {
+   "name": "Bittersweet Pastry Shop",
+   "src": "https://bittersweetpastry.com/cdn/shop/files/Berry_Cake_Header.png?v=1782325996&width=1916",
+   "page": "https://bittersweetpastry.com/",
+   "credit": "Bittersweet Pastry Shop website",
+   "alt": "Photo from the Bittersweet Pastry Shop website"
+  },
+  "osm-way-209784688": {
+   "name": "Bittersweet Pastry Shop",
+   "src": "https://bittersweetpastry.com/cdn/shop/files/Bittersweet-White-2022_bc8d6b79-39d0-4416-b355-f42d35d6dfe0.png?v=1673095119&width=205",
+   "page": "https://bittersweetpastry.com/",
+   "credit": "Bittersweet Pastry Shop website",
+   "alt": "Photo from the Bittersweet Pastry Shop website"
+  },
+  "osm-node-12413411644": {
+   "name": "All in Motion",
+   "src": "https://static.wixstatic.com/media/917b38_f4c09d758c9d467bbbe5951e42dbb1d6~mv2_d_3247_3271_s_4_2.jpg/v1/fill/w_286,h_288,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/917b38_f4c09d758c9d467bbbe5951e42dbb1d6~mv2_d_3247_3271_s_4_2.jpg",
+   "page": "https://www.aimgymchicago.com/",
+   "credit": "All in Motion website",
+   "alt": "Photo from the All in Motion website"
+  },
+  "osm-node-13265227601": {
+   "name": "OverLay Cafe",
+   "src": "https://static.wixstatic.com/media/0ee021_b89fca88daeb459d8ed1477d9e47ccc9~mv2.png/v1/fill/w_382,h_377,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/0ee021_b89fca88daeb459d8ed1477d9e47ccc9~mv2.png",
+   "page": "https://www.overlaycoffee.com/",
+   "credit": "OverLay Cafe website",
+   "alt": "Photo from the OverLay Cafe website"
+  },
+  "osm-node-13731089938": {
+   "name": "Moka & Co",
+   "src": "https://mokanco.com/wp-content/uploads/2026/01/Fremont-1024x576.webp",
+   "page": "https://mokanco.com/chicago/",
+   "credit": "Moka & Co website",
+   "alt": "Photo from the Moka & Co website"
+  },
+  "osm-node-3325567180": {
+   "name": "Pete's Market",
+   "src": "https://www.petesfresh.com/sites/default/files/stores/010_MadisonWestern_v1.jpg",
+   "page": "https://www.petesfresh.com/stores/10-madison-western",
+   "credit": "Pete's Market website",
+   "alt": "Photo from the Pete's Market website"
+  },
+  "osm-node-5448865595": {
+   "name": "Meli Cafe",
+   "src": "https://static.wixstatic.com/media/c16b0e_60f3631c767044f587a4fa28b5934d33~mv2_d_3024_4032_s_4_2.jpeg/v1/crop/x_0,y_317,w_3024,h_3398/fill/w_445,h_500,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/c16b0e_60f3631c767044f587a4fa28b5934d33~mv2_d_3024_4032_s_4_2.jpeg",
+   "page": "https://www.melicafe.com/",
+   "credit": "Meli Cafe website",
+   "alt": "Photo from the Meli Cafe website"
+  },
+  "osm-node-6126571201": {
+   "name": "Sabas Vega",
+   "src": "https://donrafarestaurants.com/wp-content/uploads/Carnitas-Don-Rafa-Restaurant-Home-Page-Header--1500x625.jpg",
+   "page": "https://donrafarestaurants.com/",
+   "credit": "Sabas Vega website",
+   "alt": "Photo from the Sabas Vega website"
+  },
+  "osm-node-6300537487": {
+   "name": "Punch House",
+   "src": "http://static1.squarespace.com/static/6a68fdd1fd36e80fa34e547d/t/6a68fe3efd36e80fa34e6728/1727109470277/20230227-PunchHouse1330.jpg?format=1500w",
+   "page": "https://www.punchhousechicago.com/",
+   "credit": "Punch House website",
+   "alt": "Photo from the Punch House website"
+  },
+  "osm-way-210268951": {
+   "name": "Wild Fork",
+   "src": "https://images.ctfassets.net/ttw7uwgviuml/2jbdfhjPUitV5q0DB8uKbD/bb0f30b132de6775a4ad0733e8e4451c/Homepage_banner_2.png",
+   "page": "https://wildforkfoods.com/",
+   "credit": "Wild Fork website · brand photo, not this branch",
+   "alt": "Wild Fork brand photo, not this branch"
+  },
+  "osm-node-12668604221": {
+   "name": "Apple Spice",
+   "src": "https://www.applespice.com/wp-content/uploads/2025/09/ASJ_Sandwich-Glamour-2-lg-large.jpg",
+   "page": "https://www.applespice.com/locations/illinois/chicago/",
+   "credit": "Apple Spice website",
+   "alt": "Photo from the Apple Spice website"
+  },
+  "osm-node-6327345663": {
+   "name": "Sola Salon Studios",
+   "src": "https://images.ctfassets.net/ww2k3s0wlwlc/78PnBjshuvl9Esaz2vD8Uf/8f537c7e249563801ef23c55572551ed/D7AE9BC7-1158-43BC-A622-3AA7820EC960_1697059181.jpeg",
+   "page": "https://www.solasalonstudios.com/locations/south-loop",
+   "credit": "Sola Salon Studios website",
+   "alt": "Photo from the Sola Salon Studios website"
+  },
+  "osm-node-12085223296": {
+   "name": "spavia",
+   "src": "https://spaviadayspa.com/_next/image/?url=%2Fimages%2Fphotography%2Fretail-browsing-lifestyle.webp&w=3840&q=75&dpl=dpl_EKMwm3UgibR8UymD5yASwtMUjmXR",
+   "page": "https://spaviadayspa.com/locations/chicago-west-loop-il/",
+   "credit": "spavia website",
+   "alt": "Photo from the spavia website"
+  },
+  "osm-node-12962361237": {
+   "name": "Nékter Juice Bar",
+   "src": "https://llp-assets.meetsoci.com/live/assets/nektersites/local/images/layer-152x-large-min.jpeg",
+   "page": "https://locations.nekterjuicebar.com/ll/us/il/chicago/1338-s-halstead-space-12/",
+   "credit": "Nékter Juice Bar website · brand photo, not this branch",
+   "alt": "Nékter Juice Bar brand photo, not this branch"
+  },
+  "osm-node-6154694734": {
+   "name": "Dog Haus",
+   "src": "https://locations.doghaus.com/_next/image?url=%2Fstatic%2Fdoghaus%2Fdh_header.webp&w=3840&q=75&dpl=f349cd087b90987bda16d29e3cf7656800160692",
+   "page": "https://locations.doghaus.com/locations/il/chicago/1322-s-halsted-st",
+   "credit": "Dog Haus website",
+   "alt": "Photo from the Dog Haus website"
+  },
+  "osm-node-12479624269": {
+   "name": "The Threading House",
+   "src": "https://threadinghouse.com/assets/images/about-img1.jpg",
+   "page": "https://threadinghouse.com/",
+   "credit": "The Threading House website",
+   "alt": "Photo from the The Threading House website"
+  },
+  "osm-node-12098795749": {
+   "name": "Studio 84One Hair Salon",
+   "src": "https://www.studio84one.com/uploads/5/3/7/3/53739971/published/img-0801.jpg?1579956864",
+   "page": "https://www.studio84one.com/",
+   "credit": "Studio 84One Hair Salon website",
+   "alt": "Photo from the Studio 84One Hair Salon website"
+  },
+  "osm-node-12479624268": {
+   "name": "Mon Cheri Chitown",
+   "src": "https://moncherichitown.com/wp-content/uploads/home-01-1024x1024.jpg",
+   "page": "https://moncherichitown.com/",
+   "credit": "Mon Cheri Chitown website",
+   "alt": "Photo from the Mon Cheri Chitown website"
+  },
+  "osm-node-13048412000": {
+   "name": "On Your Mark Training & Coaching",
+   "src": "https://oymtraining.com/wp-content/uploads/2025/09/IG_Filler.png",
+   "page": "https://oymtraining.com/",
+   "credit": "On Your Mark Training & Coaching website",
+   "alt": "Photo from the On Your Mark Training & Coaching website"
+  },
+  "osm-node-13815785293": {
+   "name": "All Too Well",
+   "src": "https://images.squarespace-cdn.com/content/v1/6195be81b7a9bf522fd4154a/db7962fb-f3ce-419f-b3cb-700cfe2bb805/AllTooWell_lhewett_47.jpg",
+   "page": "https://www.alltoowellchi.com/",
+   "credit": "All Too Well website",
+   "alt": "Photo from the All Too Well website"
+  },
+  "osm-node-12134851380": {
+   "name": "Transformation Fitness",
+   "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/8LjKT5OmhpdL87k1i2Cj/media/657b3427ee2b7737b2c29a56.jpeg",
+   "page": "https://mytransformationfitness.com/",
+   "credit": "Transformation Fitness website",
+   "alt": "Photo from the Transformation Fitness website"
+  },
+  "osm-node-10563385713": {
+   "name": "Pilsen Arts Community House",
+   "src": "http://static1.squarespace.com/static/658260ffaedeb8655aa6d2c7/t/65826f534f450a0cf85cf4e5/1703046998000/PACH-Front1.jpg?format=1500w",
+   "page": "https://www.pilsenartscommunityhouse.org/",
+   "credit": "Pilsen Arts Community House website",
+   "alt": "Photo from the Pilsen Arts Community House website"
+  },
+  "osm-node-12083308236": {
+   "name": "NAILàCARTE",
+   "src": "https://nailacarte.com/wp-content/plugins/nailacarte-performance/assets/images/d186200aeb64a596-240-q65.webp",
+   "page": "https://nailacarte.com/",
+   "credit": "NAILàCARTE website",
+   "alt": "Photo from the NAILàCARTE website"
+  },
+  "osm-node-3919513824": {
+   "name": "Taqueria El Mezquite",
+   "src": "https://taqueriaelmezquite.com/images/quesadillaGigante.jpg",
+   "page": "https://taqueriaelmezquite.com/",
+   "credit": "Taqueria El Mezquite website",
+   "alt": "Photo from the Taqueria El Mezquite website"
+  },
+  "osm-node-8508251818": {
+   "name": "Taquieria Atotonilco",
+   "src": "http://static1.squarespace.com/static/6400bcd13e115f165bb89330/t/65d8e5a344e86d1f3b836d08/1708713379947/atotonilco-taco-trays.jpg?format=1500w",
+   "page": "https://www.atotonilcochicago.com/",
+   "credit": "Taquieria Atotonilco website",
+   "alt": "Photo from the Taquieria Atotonilco website"
+  },
+  "osm-node-13395760105": {
+   "name": "Kavi Gupta Gallery",
+   "src": "https://static-assets.artlogic.net/w_600,c_limit,f_auto,fl_lossy,q_auto/ws-kavigupta/usr/images/feature_panels/images_and_objects/95/5x7gc.jpg",
+   "page": "https://kavigupta.com/",
+   "credit": "Kavi Gupta Gallery website",
+   "alt": "Photo from the Kavi Gupta Gallery website"
+  },
+  "osm-node-12167120463": {
+   "name": "Face Foundrié",
+   "src": "https://facefoundrie.com/wp-content/uploads/2026/07/Facials-Face-Foundrie.jpg",
+   "page": "https://facefoundrie.com/",
+   "credit": "Face Foundrié website",
+   "alt": "Photo from the Face Foundrié website"
+  },
+  "osm-node-13333011618": {
+   "name": "Sushi Plus Rotary Sushi Bar",
+   "src": "https://static.wixstatic.com/media/f97806_cfdd3190840843a8917d4d959d00cc53~mv2.jpg/v1/fill/w_2500,h_1666,al_c/f97806_cfdd3190840843a8917d4d959d00cc53~mv2.jpg",
+   "page": "https://www.rotarysushi.com/",
+   "credit": "Sushi Plus Rotary Sushi Bar website",
+   "alt": "Photo from the Sushi Plus Rotary Sushi Bar website"
+  },
+  "osm-node-12168281577": {
+   "name": "Gen Cleaners",
+   "src": "https://gen-cleaners.com/cdn/shop/files/IMG_8696_600x600@2x.jpg?v=1615749578",
+   "page": "https://gen-cleaners.com/",
+   "credit": "Gen Cleaners website",
+   "alt": "Photo from the Gen Cleaners website"
+  },
+  "osm-node-12168281576": {
+   "name": "Allure Nail Spa",
+   "src": "https://s3.ezordernow.com/loc_Hs4RKBWvnqsxXk62531l8/background_images/0.jpg",
+   "page": "https://allurenailspainc.com/",
+   "credit": "Allure Nail Spa website",
+   "alt": "Photo from the Allure Nail Spa website"
+  },
+  "osm-node-11158104112": {
+   "name": "Legendary Art Gallery",
+   "src": "https://images.squarespace-cdn.com/content/v1/64500ba76fa4e7401dbb23ef/f01abe0c-91a9-4e7b-a8e5-1cc3beb7fb15/processed_20200310_132932.jpg",
+   "page": "https://www.legendaryartgallery.net/",
+   "credit": "Legendary Art Gallery website",
+   "alt": "Photo from the Legendary Art Gallery website"
+  },
+  "osm-node-6303127333": {
+   "name": "Taqueria Los Comales 3",
+   "src": "https://static.wixstatic.com/media/90e10e_5e9c1c6e49a94fa9af8084d9b7c6f013~mv2.jpg/v1/fill/w_147,h_220,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/IMG_8641.jpg",
+   "page": "https://www.loscomales.com/",
+   "credit": "Taqueria Los Comales 3 website",
+   "alt": "Photo from the Taqueria Los Comales 3 website"
+  },
+  "osm-node-13255821243": {
+   "name": "Tortilleria Sabinas",
+   "src": "https://www.sabinasfoods.com/storage/blog_images/01JMF5KJGH2FJTFDS7T2QA6BM7.webp",
+   "page": "https://www.sabinasfoods.com/",
+   "credit": "Tortilleria Sabinas website",
+   "alt": "Photo from the Tortilleria Sabinas website"
+  },
+  "osm-node-6315246763": {
+   "name": "The Green Room Tap",
+   "src": "https://images.squarespace-cdn.com/content/v1/5d9ca3fb0808d94abc20268d/1718144307818-213QAB5C31ESQN0TW1HJ/please+and+thank+you+BW.jpg",
+   "page": "https://www.greenroomtap.com/",
+   "credit": "The Green Room Tap website",
+   "alt": "Photo from the The Green Room Tap website"
+  },
+  "osm-node-11411670836": {
+   "name": "Giant Penny Whistle",
+   "src": "https://static.wixstatic.com/media/93d443_7dafaca5f57c42a1a0e5981accb717d3~mv2.jpg/v1/crop/x_0,y_44,w_1284,h_1194/fill/w_367,h_341,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_3055_edited.jpg",
+   "page": "https://www.giantpennywhistle.com/",
+   "credit": "Giant Penny Whistle website",
+   "alt": "Photo from the Giant Penny Whistle website"
+  },
+  "osm-node-6284704260": {
+   "name": "Don Churro",
+   "src": "https://cdn1.artcltn.com/storage/36352/01a11789-010a-7096-aa58-73931e2689ca/39fb71c5-db40-4423-9857-24489e8b84f3.jpg?w=1080",
+   "page": "https://www.donchurropilsen.com/",
+   "credit": "Don Churro website",
+   "alt": "Photo from the Don Churro website"
+  }
+ },
+ "rejectedBrands": {
+  "Q152057": {
+   "why": "Shows a different restaurant, not a BP shop",
+   "checked": "2026-10-16",
+   "website": true,
+   "websiteWhy": "Website image is an offshore rig, not a store"
+  },
+  "Q177054": {
+   "why": "Corporate headquarters, not a restaurant",
+   "checked": "2026-10-16"
+  },
+  "Q839466": {
+   "why": "Corporate headquarters, not a store",
+   "checked": "2026-10-16"
+  },
+  "Q847743": {
+   "why": "A former, closed store",
+   "checked": "2026-10-16"
+  },
+  "Q5433101": {
+   "why": "Storefront not identifiable",
+   "checked": "2026-10-16"
+  },
+  "Q3088784": {
+   "why": "Office building, not a store",
+   "checked": "2026-10-16"
+  },
+  "Q37158": {
+   "why": "Corporate headquarters, not a cafe",
+   "checked": "2026-10-16",
+   "website": true,
+   "websiteWhy": "Website share image is a logo or ad, not a photo"
+  },
+  "Q752941": {
+   "why": "Office building, not a restaurant",
+   "checked": "2026-10-16"
+  },
+  "Q1809448": {
+   "why": "Office building, not a store",
+   "checked": "2026-10-16"
+  },
+  "Q668687": {
+   "why": "Mail truck, not a post office",
+   "checked": "2026-10-16",
+   "website": true,
+   "websiteWhy": "Website share image is a logo or ad, not a photo"
+  },
+  "Q1244034": {
+   "why": "Historic building, not a current restaurant",
+   "checked": "2026-10-16",
+   "website": true,
+   "websiteWhy": "Website share image is a logo or ad, not a photo"
+  },
+  "Q110609570": {
+   "website": true,
+   "websiteWhy": "Website share image is a logo or ad, not a photo",
+   "checked": "2026-10-16"
+  },
+  "Q16935493": {
+   "website": true,
+   "websiteWhy": "Website share image is a logo or ad, not a photo",
+   "checked": "2026-10-16"
+  },
+  "Q109328844": {
+   "website": true,
+   "websiteWhy": "Website share image is a logo or ad, not a photo",
+   "checked": "2026-10-16"
+  },
+  "Q5175243": {
+   "website": true,
+   "websiteWhy": "Website share image is a logo or ad, not a photo",
+   "checked": "2026-10-16"
+  },
+  "Q5563393": {
+   "website": true,
+   "websiteWhy": "Website share image is a logo or ad, not a photo",
+   "checked": "2026-10-16"
+  },
+  "Q16997024": {
+   "website": true,
+   "websiteWhy": "Website share image is a logo or ad, not a photo",
+   "checked": "2026-10-16"
+  },
+  "Q112757409": {
+   "website": true,
+   "websiteWhy": "Website share image is a logo or ad, not a photo",
+   "checked": "2026-10-16"
+  },
+  "Q3866841": {
+   "website": true,
+   "websiteWhy": "Website share image is a logo or ad, not a photo",
+   "checked": "2026-10-16"
+  },
+  "Q62605260": {
+   "website": true,
+   "websiteWhy": "Website share image is a logo or ad, not a photo",
+   "checked": "2026-10-16"
+  },
+  "Q1094101": {
+   "website": true,
+   "websiteWhy": "Website share image is a logo or ad, not a photo",
+   "checked": "2026-10-16"
+  },
+  "Q118793358": {
+   "website": true,
+   "websiteWhy": "Website share image is a logo or ad, not a photo",
+   "checked": "2026-10-16"
+  },
+  "Q120985884": {
+   "website": true,
+   "websiteWhy": "Website share image is a logo or ad, not a photo",
+   "checked": "2026-10-16"
+  },
+  "Q123165959": {
+   "website": true,
+   "websiteWhy": "Website share image is a logo or ad, not a photo",
+   "checked": "2026-10-16"
+  },
+  "Q7771029": {
+   "website": true,
+   "websiteWhy": "Website share image is a logo or ad, not a photo",
+   "checked": "2026-10-16"
+  }
+ },
+ "brandPicks": {
+  "_note": "Commons photos picked by eye for chains whose Wikidata image was missing or rejected. Used before the Wikidata image.",
+  "Q847743": {
+   "file": "Dunkin Donuts in Chicago -a.jpg",
+   "checked": "2026-10-16"
+  },
+  "Q177054": {
+   "file": "A modern Burger King fast food restaurant in Ooltewah, Tennessee.jpg",
+   "checked": "2026-10-16"
+  },
+  "Q3178470": {
+   "file": "The Sinclair, Division Street and Clark Street, Gold Coast, Chicago, IL (52878263643).jpg",
+   "checked": "2026-10-16"
+  },
+  "Q7771029": {
+   "file": "UPS Store 2.jpg",
+   "checked": "2026-10-16"
+  },
+  "Q752941": {
+   "file": "A modern Taco Bell restaurant in Hiawassee, Georgia.jpg",
+   "checked": "2026-10-16"
+  },
+  "Q7285144": {
+   "file": "Raising Cane's South Beach, Miami Beach June 2025 - Sign.jpg",
+   "checked": "2026-10-16"
+  },
+  "Q5563393": {
+   "file": "Giordano's Pizzeria - Hyde Park Neighborhood - Chicago - Illinois - USA.jpg",
+   "checked": "2026-10-16"
+  },
+  "Q1094101": {
+   "file": "PeetsStore.jpg",
+   "checked": "2026-10-16"
+  },
+  "Q62605260": {
+   "file": "Paris Baguette - August 2025 - Sarah Stierch 01.jpg",
+   "checked": "2026-10-16"
+  },
+  "Q5433101": {
+   "file": "Family Dollar store in Dedham MA June 2026.jpg",
+   "checked": "2026-10-16"
+  },
+  "Q16997024": {
+   "file": "Insomnia Cookies, Chapel Hill.jpg",
+   "checked": "2026-10-16"
+  },
+  "Q1089932": {
+   "file": "Churches Texas Chicken on Lake Bradford Road, Tallahassee.jpg",
+   "checked": "2026-10-16"
+  },
+  "Q5491421": {
+   "file": "Smoothie King, Thomasville.jpg",
+   "checked": "2026-10-16"
+  },
+  "Q839466": {
+   "file": "2023-08-02 17 53 07 Domino's Pizza store and delivery vehicle at the Ewing Square Shopping Center in Ewing Township, Mercer County, New Jersey.jpg",
+   "checked": "2026-10-16"
+  },
+  "Q1244034": {
+   "file": "White Castle - Chicago, IL (3026769554).jpg",
+   "checked": "2026-10-16"
+  },
+  "Q120985884": {
+   "file": "Illuminated sign for Stan's Donuts & Coffee (52037815702).jpg",
+   "checked": "2026-10-16"
+  },
+  "Q668687": {
+   "file": "Uptown Post Office Chicago Illinois 2020-0146.jpg",
+   "checked": "2026-10-16"
+  },
+  "Q21015663": {
+   "file": "CorePower Yoga Studio.jpg",
+   "checked": "2026-10-16"
+  },
+  "Q109328844": {
+   "file": "Club Pilates - Silver Spring, Maryland.jpg",
+   "checked": "2026-10-16"
+  },
+  "Q112757409": {
+   "file": "Mochinut Cerritos location exterior.jpg",
+   "checked": "2026-10-16"
+  },
+  "Q37158": {
+   "file": "20191204 03 New Starbucks on Michigan Ave. (50313884981).jpg",
+   "checked": "2026-10-16"
   }
  }
 }

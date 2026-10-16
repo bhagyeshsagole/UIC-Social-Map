@@ -1,0 +1,609 @@
+{
+ "checked": "2026-10-16",
+ "agent": "Mozilla/5.0 (compatible; KampuscapeBot/1.0; +https://kampuscape.com/support)",
+ "note": "Weekly hours and a photo from each park’s own Chicago Park District page.",
+ "places": {
+  "osm-way-172706870": {
+   "page": "https://www.chicagoparkdistrict.com/parks-facilities/miller-samuel-park",
+   "title": "Miller (Samuel) Park",
+   "schedule": [
+    [
+     360,
+     1260
+    ],
+    [
+     360,
+     1260
+    ],
+    [
+     360,
+     1260
+    ],
+    [
+     360,
+     1260
+    ],
+    [
+     360,
+     1260
+    ],
+    [
+     360,
+     1260
+    ],
+    [
+     360,
+     1260
+    ]
+   ],
+   "image": {
+    "src": "https://files.chicagoparkdistrict.com/styles/coh_x_large/s3/2025-04/Playgrounds.png?itok=g4mJXXs4"
+   }
+  },
+  "osm-way-329568746": {
+   "page": "https://www.chicagoparkdistrict.com/parks-facilities/livingston-field-park",
+   "title": "Livingston Field Park",
+   "schedule": [
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ]
+   ],
+   "image": {
+    "src": "https://files.chicagoparkdistrict.com/styles/coh_x_large/s3/2025-04/Baseball_Field.png?itok=NdnXIm3j"
+   }
+  },
+  "osm-way-151428223": {
+   "page": "https://www.chicagoparkdistrict.com/parks-facilities/sheridan-philip-henry-park",
+   "title": "Sheridan (Philip Henry) Park",
+   "schedule": [
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ]
+   ],
+   "image": {
+    "src": "https://files.chicagoparkdistrict.com/styles/coh_x_large/s3/2025-04/Baseball_Field.png?itok=NdnXIm3j"
+   }
+  },
+  "osm-way-134017012": {
+   "page": "https://www.chicagoparkdistrict.com/parks-facilities/garibaldi-giuseppe-park",
+   "title": "Garibaldi (Giuseppe) Park",
+   "schedule": [
+    [
+     360,
+     1140
+    ],
+    [
+     360,
+     1140
+    ],
+    [
+     360,
+     1140
+    ],
+    [
+     360,
+     1140
+    ],
+    [
+     360,
+     1140
+    ],
+    [
+     360,
+     1140
+    ],
+    [
+     360,
+     1140
+    ]
+   ],
+   "image": {
+    "src": "https://files.chicagoparkdistrict.com/styles/coh_x_large/s3/2025-05/Artwork%20%26%20Monuments.png?itok=ZjMdV6vu"
+   }
+  },
+  "osm-way-130282534": {
+   "page": "https://www.chicagoparkdistrict.com/parks-facilities/bartelme-mary-park",
+   "title": "Bartelme (Mary) Park",
+   "schedule": [
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ]
+   ],
+   "image": {
+    "src": "https://files.chicagoparkdistrict.com/styles/coh_x_large/s3/2025-04/Dog_Friendly_Areas.png?itok=fW3oZAXQ"
+   }
+  },
+  "osm-way-173529681": {
+   "page": "https://www.chicagoparkdistrict.com/parks-facilities/claremont-park",
+   "title": "Claremont Park",
+   "schedule": [
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ]
+   ],
+   "image": {
+    "src": "https://files.chicagoparkdistrict.com/styles/coh_x_large/s3/2025-04/Playgrounds.png?itok=g4mJXXs4"
+   }
+  },
+  "osm-way-130282533": {
+   "page": "https://www.chicagoparkdistrict.com/parks-facilities/heritage-green-park",
+   "title": "Heritage Green Park",
+   "schedule": [
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ]
+   ],
+   "image": {
+    "src": "https://files.chicagoparkdistrict.com/styles/coh_x_large/s3/2025-05/Artwork%20%26%20Monuments.png?itok=ZjMdV6vu"
+   }
+  },
+  "osm-way-134017011": {
+   "page": "https://www.chicagoparkdistrict.com/parks-facilities/arrigo-victor-park",
+   "title": "Arrigo (Victor) Park",
+   "schedule": [
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ]
+   ],
+   "image": {
+    "src": "https://files.chicagoparkdistrict.com/styles/coh_medium_landscape/s3/2025-11/Arrigo-Park-Lawn.jpg?VersionId=c8U9oKV7cqbk_SFOBrFvRG_JZr_DXUfj&h=9e499333&itok=ofTrzR7f"
+   }
+  },
+  "osm-way-136454291": {
+   "page": "https://www.chicagoparkdistrict.com/parks-facilities/touhy-herbert-john-victor-park",
+   "title": "Touhy-Herbert (John, Victor) Park",
+   "schedule": [
+    [
+     360,
+     1260
+    ],
+    [
+     360,
+     1260
+    ],
+    [
+     360,
+     1260
+    ],
+    [
+     360,
+     1260
+    ],
+    [
+     360,
+     1260
+    ],
+    [
+     360,
+     1260
+    ],
+    [
+     360,
+     1260
+    ]
+   ],
+   "image": {
+    "src": "https://files.chicagoparkdistrict.com/styles/coh_x_large/s3/2025-04/Baseball_Field.png?itok=NdnXIm3j"
+   }
+  },
+  "osm-way-210257784": {
+   "page": "https://www.chicagoparkdistrict.com/parks-facilities/fosco-peter-park",
+   "title": "Fosco (Peter) Park",
+   "schedule": [
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ]
+   ],
+   "image": {
+    "src": "https://files.chicagoparkdistrict.com/styles/coh_x_large/s3/2025-05/Artwork%20%26%20Monuments.png?itok=ZjMdV6vu"
+   }
+  },
+  "osm-way-219051931": {
+   "page": "https://www.chicagoparkdistrict.com/parks-facilities/addams-jane-park",
+   "title": "Addams (Jane) Park",
+   "schedule": [
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ]
+   ],
+   "image": {
+    "src": "https://files.chicagoparkdistrict.com/styles/coh_x_large/s3/2025-04/Baseball_Field.png?itok=NdnXIm3j"
+   }
+  },
+  "osm-way-136453896": {
+   "page": "https://www.chicagoparkdistrict.com/parks-facilities/park-no-489",
+   "title": "Park No. 489"
+  },
+  "osm-way-31557401": {
+   "page": "https://www.chicagoparkdistrict.com/parks-facilities/skinner-mark-park",
+   "title": "Skinner (Mark) Park",
+   "schedule": [
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ],
+    [
+     360,
+     1380
+    ]
+   ],
+   "image": {
+    "src": "https://files.chicagoparkdistrict.com/styles/coh_x_large/s3/2025-05/Artwork%20%26%20Monuments.png?itok=ZjMdV6vu"
+   }
+  },
+  "osm-way-389561163": {
+   "page": "https://www.chicagoparkdistrict.com/parks-facilities/park-no-578",
+   "title": "Park No. 578",
+   "schedule": [
+    [
+     360,
+     1260
+    ],
+    [
+     360,
+     1260
+    ],
+    [
+     360,
+     1260
+    ],
+    [
+     360,
+     1260
+    ],
+    [
+     360,
+     1260
+    ],
+    [
+     360,
+     1260
+    ],
+    [
+     360,
+     1260
+    ]
+   ],
+   "image": {
+    "src": "https://files.chicagoparkdistrict.com/styles/coh_x_large/s3/2025-04/Playgrounds.png?itok=g4mJXXs4"
+   }
+  }
+ },
+ "log": [
+  [
+   "osm-way-172706870",
+   "hours",
+   "photo"
+  ],
+  [
+   "osm-way-329568746",
+   "hours",
+   "photo"
+  ],
+  [
+   "osm-way-151428223",
+   "hours",
+   "photo"
+  ],
+  [
+   "osm-way-134017012",
+   "hours",
+   "photo"
+  ],
+  [
+   "osm-way-130282534",
+   "hours",
+   "photo"
+  ],
+  [
+   "osm-way-173529681",
+   "hours",
+   "photo"
+  ],
+  [
+   "osm-way-130282533",
+   "hours",
+   "photo"
+  ],
+  [
+   "osm-way-134017011",
+   "hours",
+   "photo"
+  ],
+  [
+   "osm-way-136454291",
+   "hours",
+   "photo"
+  ],
+  [
+   "osm-way-210257784",
+   "hours",
+   "photo"
+  ],
+  [
+   "osm-way-219051931",
+   "hours",
+   "photo"
+  ],
+  [
+   "osm-way-779950638",
+   "no page",
+   "https://www.chicagoparkdistrict.com/parks-facilities/comed-recreation-center-addams-park"
+  ],
+  [
+   "osm-way-136453896",
+   "no hours",
+   "no photo"
+  ],
+  [
+   "osm-way-31557401",
+   "hours",
+   "photo"
+  ],
+  [
+   "osm-way-389561163",
+   "kept last good result",
+   "https://www.chicagoparkdistrict.com/parks-facilities/park-no-578"
+  ],
+  [
+   "osm-way-134017316",
+   "no page",
+   "https://www.chicagoparkdistrict.com/parks-facilities/jefferson-thomas-park"
+  ],
+  [
+   "osm-way-134045254",
+   "no page",
+   "https://www.chicagoparkdistrict.com/parks-facilities/altgeld-john-park"
+  ],
+  [
+   "osm-way-1046362901",
+   "no page",
+   "https://www.chicagoparkdistrict.com/parks-facilities/sain-park"
+  ],
+  [
+   "osm-way-136341654",
+   "no page",
+   "https://www.chicagoparkdistrict.com/parks-facilities/dearborn-henry-park"
+  ],
+  [
+   "osm-way-168104071",
+   "no page",
+   "https://www.chicagoparkdistrict.com/parks-facilities/Harrison-Park"
+  ],
+  [
+   "osm-way-346970683",
+   "no page",
+   "https://www.chicagoparkdistrict.com/parks-facilities/park-no-574 https://www.chicagoparkdistrict.com/parks-facilities/park-no-574"
+  ],
+  [
+   "osm-way-85595093",
+   "no page",
+   "https://www.chicagoparkdistrict.com/parks-facilities/roosevelt-theodore-park"
+  ],
+  [
+   "osm-way-218369236",
+   "no page",
+   "https://www.chicagoparkdistrict.com/parks-facilities/throop-amos-gager-park"
+  ]
+ ]
+}

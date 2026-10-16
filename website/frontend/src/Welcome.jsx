@@ -4,7 +4,7 @@ import {eventTime} from './search.js';
 import {INTERESTS} from './interests.js';
 import './welcome.css';
 const guide=[
- ['Explore',Compass,'Find your next spot','The map starts with student deals. Pick a category, like Cafes, and the map keeps showing it. Tap a place for hours and directions.','explore'],
+ ['Explore',Compass,'Find your next spot','The map shows every place near campus. Pick a category, like Cafes or For students, to narrow it. Tap a place for hours and directions.','explore'],
  ['Live events',Radio,'See what’s happening','Browse UIC, off-campus, and community events. For you matches your interests; the date picker narrows the day.','events'],
  ['Create event',Plus,'Make your own plan','Tap a building, add a date and time, then choose Public or Private. Share your event link with friends.','create'],
  ['Who’s going & messages',Users,'Meet people before you go','Open an event, tap Who’s going, and join with your name or an event nickname. Send a message request; chat starts after acceptance.','messages'],

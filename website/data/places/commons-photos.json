@@ -1,5 +1,5 @@
 {
- "checked": "2026-10-12",
+ "checked": "2026-10-16",
  "note": "Freely licensed photos matched to places by location and name; credit and license from Commons.",
  "places": {
   "osm-way-1294780459": {
@@ -26,6 +26,14 @@
    "height": 3845,
    "via": "Reviewed by hand"
   },
+  "osm-way-181379030": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/The_finished_National_Hellenic_Museum.jpg/960px-The_finished_National_Hellenic_Museum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:The_finished_National_Hellenic_Museum.jpg",
+   "credit": "Greek Museum · CC BY-SA 3.0",
+   "width": 1024,
+   "height": 683,
+   "via": "Wikidata Q6973035"
+  },
   "osm-way-210257371": {
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Manny%27s_Deli.jpg/960px-Manny%27s_Deli.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
    "page": "https://commons.wikimedia.org/wiki/File:Manny%27s_Deli.jpg",
@@ -33,6 +41,30 @@
    "width": 2999,
    "height": 2420,
    "via": "Wikidata Q110236166"
+  },
+  "osm-way-1026003466": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/The_Green_at_320_S._Canal_Street.jpg/960px-The_Green_at_320_S._Canal_Street.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:The_Green_at_320_S._Canal_Street.jpg",
+   "credit": "Gpwitteveen · CC BY-SA 3.0",
+   "width": 2448,
+   "height": 1949,
+   "via": "Wikidata Q124657345"
+  },
+  "osm-way-130282534": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Mary_Bartelme_Park.jpg/960px-Mary_Bartelme_Park.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Mary_Bartelme_Park.jpg",
+   "credit": "Gpwitteveen · CC BY-SA 3.0",
+   "width": 1198,
+   "height": 791,
+   "via": "Wikidata Q124657354"
+  },
+  "osm-way-219051931": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Addams_Park_-_Chicago%2C_IL_-_July_2026.jpg/960px-Addams_Park_-_Chicago%2C_IL_-_July_2026.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Addams_Park_-_Chicago,_IL_-_July_2026.jpg",
+   "credit": "AlphaBeta135 · CC BY 4.0",
+   "width": 3444,
+   "height": 2296,
+   "via": "Wikidata Q39047900"
   },
   "osm-node-12217307929": {
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Ceres_Cafe_in_the_board_of_trade.jpg/960px-Ceres_Cafe_in_the_board_of_trade.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -42,12 +74,52 @@
    "height": 2448,
    "via": "Wikidata Q19876974"
   },
+  "osm-way-124865443": {
+   "src": "https://upload.wikimedia.org/wikipedia/commons/6/66/Civic_Opera_House_060528.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Civic_Opera_House_060528.jpg",
+   "credit": "User:JeremyA · CC BY-SA 2.5",
+   "width": 768,
+   "height": 1024,
+   "via": "Wikidata Q1833594"
+  },
+  "osm-node-2979738790": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Federal_Reserve_Bank_of_Chicago_%2851574643886%29.jpg/960px-Federal_Reserve_Bank_of_Chicago_%2851574643886%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Federal_Reserve_Bank_of_Chicago_(51574643886).jpg",
+   "credit": "ajay_suresh · CC BY 2.0",
+   "width": 5184,
+   "height": 3240,
+   "via": "Wikidata Q965251"
+  },
+  "osm-way-168104071": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Harrison_Park_%282%29.jpg/960px-Harrison_Park_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Harrison_Park_(2).jpg",
+   "credit": "Mahir256 · CC BY-SA 3.0",
+   "width": 4032,
+   "height": 3024,
+   "via": "Wikidata Q34886234"
+  },
   "osm-way-148910721": {
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Taco_Lul%C3%BA_-_June_2022_-_Sarah_Stierch_03.jpg/960px-Taco_Lul%C3%BA_-_June_2022_-_Sarah_Stierch_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
    "page": "https://commons.wikimedia.org/wiki/File:Taco_Lul%C3%BA_-_June_2022_-_Sarah_Stierch_03.jpg",
    "credit": "Missvain · CC BY 4.0",
    "width": 4032,
    "height": 3024,
+   "via": "Commons geotag"
+  },
+  "osm-way-130282533": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Heritage_Park_-_panoramio.jpg/960px-Heritage_Park_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Heritage_Park_-_panoramio.jpg",
+   "credit": "Bohao Zhao · CC BY 3.0",
+   "width": 3000,
+   "height": 4000,
+   "via": "Commons geotag"
+  },
+  "osm-node-8199161223": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Nuts_on_Clark_-_Chicago_Union_Station_-_June_2022_-_Sarah_Stierch_01.jpg/960px-Nuts_on_Clark_-_Chicago_Union_Station_-_June_2022_-_Sarah_Stierch_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Nuts_on_Clark_-_Chicago_Union_Station_-_June_2022_-_Sarah_Stierch_01.jpg",
+   "credit": "Missvain · CC BY 4.0",
+   "width": 3024,
+   "height": 4032,
    "via": "Commons geotag"
   },
   "osm-node-1630387514": {
@@ -58,6 +130,14 @@
    "height": 1683,
    "via": "Commons geotag"
   },
+  "osm-way-236013041": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/20150902_Quest_Multisport_clinic_Tim_Hardaway_%281%29.JPG/960px-20150902_Quest_Multisport_clinic_Tim_Hardaway_%281%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:20150902_Quest_Multisport_clinic_Tim_Hardaway_(1).JPG",
+   "credit": "TonyTheTiger · CC BY-SA 4.0",
+   "width": 1065,
+   "height": 1364,
+   "via": "Commons geotag"
+  },
   "osm-way-210258521": {
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Shell_gas_station_at_the_Dan_Ryan_Expy_in_Chicago_%28June_2022%29.jpg/960px-Shell_gas_station_at_the_Dan_Ryan_Expy_in_Chicago_%28June_2022%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
    "page": "https://commons.wikimedia.org/wiki/File:Shell_gas_station_at_the_Dan_Ryan_Expy_in_Chicago_(June_2022).jpg",
@@ -66,12 +146,36 @@
    "height": 1800,
    "via": "Commons geotag"
   },
+  "osm-node-4075429623": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Casa_del_Pueblo_Taqueria.jpg/960px-Casa_del_Pueblo_Taqueria.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Casa_del_Pueblo_Taqueria.jpg",
+   "credit": "Edsel Little · CC BY-SA 2.0",
+   "width": 7360,
+   "height": 4912,
+   "via": "Commons geotag"
+  },
+  "osm-way-134017011": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Christopher_Columbus_Monument_Removal_Arrigo_Park_Chicago_July_25_2020-0515.jpg/960px-Christopher_Columbus_Monument_Removal_Arrigo_Park_Chicago_July_25_2020-0515.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Christopher_Columbus_Monument_Removal_Arrigo_Park_Chicago_July_25_2020-0515.jpg",
+   "credit": "Paul R. Burley · CC BY-SA 4.0",
+   "width": 6228,
+   "height": 4152,
+   "via": "Commons search"
+  },
   "osm-node-6282530019": {
    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Chicago_Union_Station_Metropolitan_Lounge_entrance_IMG_5971.jpg/960px-Chicago_Union_Station_Metropolitan_Lounge_entrance_IMG_5971.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
    "page": "https://commons.wikimedia.org/wiki/File:Chicago_Union_Station_Metropolitan_Lounge_entrance_IMG_5971.jpg",
    "credit": "SecretName101 · CC BY 4.0",
    "width": 3024,
    "height": 4032,
+   "via": "Commons search"
+  },
+  "osm-way-1368815128": {
+   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Endeavor_Health_Performance_Center_construction_-_Chicago%2C_IL_-_June_2024.jpg/960px-Endeavor_Health_Performance_Center_construction_-_Chicago%2C_IL_-_June_2024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Endeavor_Health_Performance_Center_construction_-_Chicago,_IL_-_June_2024.jpg",
+   "credit": "AlphaBeta135 · CC BY 4.0",
+   "width": 3375,
+   "height": 2250,
    "via": "Commons search"
   }
  }

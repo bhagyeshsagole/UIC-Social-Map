@@ -1,48 +1,8 @@
 {
- "checked": "2026-10-12",
+ "checked": "2026-10-16",
  "agent": "Mozilla/5.0 (compatible; KampuscapeBot/1.0; +https://kampuscape.com/support)",
  "note": "Hours from address-matched schema.org data, single-branch page markup, or unambiguous hours text on the venue site; images from the venue page or Wikimedia Commons.",
  "places": {
-  "osm-node-7777868903": {
-   "website": {
-    "url": "https://locations.chipotle.com/il/chicago/725-s-seeley-st",
-    "page": "https://locations.chipotle.com/il/chicago/725-s-seeley-st",
-    "hours": {
-     "schedule": [
-      [
-       645,
-       1380
-      ],
-      [
-       645,
-       1380
-      ],
-      [
-       645,
-       1380
-      ],
-      [
-       645,
-       1380
-      ],
-      [
-       645,
-       1380
-      ],
-      [
-       645,
-       1380
-      ],
-      [
-       645,
-       1380
-      ]
-     ],
-     "source": "schema.org data on the venue website",
-     "page": "https://locations.chipotle.com/il/chicago/725-s-seeley-st"
-    }
-   }
-  },
   "osm-node-13752916074": {
    "website": {
     "url": "https://locations.schlotzskys.com/il/chicago/2050-west-ogden-avenue",
@@ -123,83 +83,77 @@
     }
    }
   },
-  "osm-node-13752916070": {
+  "osm-node-7777868903": {
    "website": {
-    "url": "https://locations.cinnabon.com/il/chicago/711-s-seeley-ave",
-    "page": "https://locations.cinnabon.com/il/chicago/711-s-seeley-ave",
+    "url": "https://locations.chipotle.com/il/chicago/725-s-seeley-st",
+    "page": "https://locations.chipotle.com/il/chicago/725-s-seeley-st",
     "hours": {
      "schedule": [
       [
-       630,
-       1275
+       645,
+       1380
       ],
       [
-       630,
-       1275
+       645,
+       1380
       ],
       [
-       630,
-       1275
+       645,
+       1380
       ],
       [
-       630,
-       1275
+       645,
+       1380
       ],
       [
-       630,
-       1275
+       645,
+       1380
       ],
       [
-       630,
-       1275
+       645,
+       1380
       ],
       [
-       630,
-       1275
+       645,
+       1380
       ]
      ],
      "source": "schema.org data on the venue website",
-     "page": "https://locations.cinnabon.com/il/chicago/711-s-seeley-ave"
+     "page": "https://locations.chipotle.com/il/chicago/725-s-seeley-st"
     }
    }
   },
-  "osm-node-13752916071": {
+  "osm-node-6320224199": {
    "website": {
-    "url": "https://locations.carvel.com/il/chicago/711-south-seeley-avenue",
-    "page": "https://locations.carvel.com/il/chicago/711-south-seeley-avenue",
+    "url": "https://uicdining.sodexomyway.com/en-us/locations/chicago-french-press",
+    "page": "https://uicdining.sodexomyway.com/en-us/locations/chicago-french-press",
     "hours": {
      "schedule": [
+      null,
       [
-       630,
-       1275
+       480,
+       900
       ],
       [
-       630,
-       1275
+       480,
+       900
       ],
       [
-       630,
-       1275
+       480,
+       900
       ],
       [
-       630,
-       1275
+       480,
+       900
       ],
       [
-       630,
-       1275
+       480,
+       900
       ],
-      [
-       630,
-       1275
-      ],
-      [
-       630,
-       1275
-      ]
+      null
      ],
-     "source": "schema.org data on the venue website",
-     "page": "https://locations.carvel.com/il/chicago/711-south-seeley-avenue"
+     "source": "hours listed on the page on the venue website",
+     "page": "https://uicdining.sodexomyway.com/en-us/locations/chicago-french-press"
     }
    }
   },
@@ -240,379 +194,6 @@
      ],
      "source": "schema.org data on the venue website",
      "page": "https://locations.auntieannes.com/il/chicago/711-s-seeley-ave"
-    }
-   }
-  },
-  "osm-node-6320224199": {
-   "website": {
-    "url": "https://uicdining.sodexomyway.com/en-us/locations/chicago-french-press",
-    "page": "https://uicdining.sodexomyway.com/en-us/locations/chicago-french-press",
-    "hours": {
-     "schedule": [
-      null,
-      [
-       480,
-       900
-      ],
-      [
-       480,
-       900
-      ],
-      [
-       480,
-       900
-      ],
-      [
-       480,
-       900
-      ],
-      [
-       480,
-       900
-      ],
-      null
-     ],
-     "source": "hours listed on the page on the venue website",
-     "page": "https://uicdining.sodexomyway.com/en-us/locations/chicago-french-press"
-    }
-   }
-  },
-  "osm-node-14018241863": {
-   "website": {
-    "url": "https://jp2newman.org/cor/",
-    "page": "https://jp2newman.org/cor/",
-    "image": {
-     "src": "https://jp2newman.org/wp-content/uploads/2025/06/IMG_5137-scaled-e1750455325802.jpg",
-     "width": 1707,
-     "height": 1707
-    }
-   }
-  },
-  "osm-node-10110142361": {
-   "website": {
-    "url": "https://www.chick-fil-a.com/locations/il/university-of-illinois-chicago",
-    "page": "https://www.chick-fil-a.com/locations/il/university-of-illinois-chicago",
-    "hours": {
-     "schedule": [
-      null,
-      [
-       450,
-       1200
-      ],
-      [
-       450,
-       1200
-      ],
-      [
-       450,
-       1200
-      ],
-      [
-       450,
-       1200
-      ],
-      [
-       450,
-       1140
-      ],
-      [
-       540,
-       960
-      ]
-     ],
-     "source": "schema.org data on the venue website",
-     "page": "https://www.chick-fil-a.com/locations/il/university-of-illinois-chicago"
-    }
-   }
-  },
-  "osm-node-13752916073": {
-   "website": {
-    "url": "https://www.chick-fil-a.com/locations/il/illinois-medical-district-il-in-line",
-    "page": "https://www.chick-fil-a.com/locations/il/illinois-medical-district-il-in-line",
-    "hours": {
-     "schedule": [
-      null,
-      [
-       390,
-       1320
-      ],
-      [
-       390,
-       1320
-      ],
-      [
-       390,
-       1320
-      ],
-      [
-       390,
-       1320
-      ],
-      [
-       390,
-       1320
-      ],
-      [
-       390,
-       1320
-      ]
-     ],
-     "source": "schema.org data on the venue website",
-     "page": "https://www.chick-fil-a.com/locations/il/illinois-medical-district-il-in-line"
-    }
-   }
-  },
-  "osm-node-7404889773": {
-   "website": {
-    "url": "https://giordanos.com/locations/mccormick-place-west-loop/",
-    "page": "https://giordanos.com/locations/mccormick-place-west-loop/",
-    "hours": {
-     "schedule": [
-      [
-       660,
-       1260
-      ],
-      [
-       660,
-       1260
-      ],
-      [
-       660,
-       1260
-      ],
-      [
-       660,
-       1260
-      ],
-      [
-       660,
-       1260
-      ],
-      [
-       660,
-       1320
-      ],
-      [
-       660,
-       1320
-      ]
-     ],
-     "source": "schema.org data on the venue website",
-     "page": "https://giordanos.com/locations/mccormick-place-west-loop/"
-    }
-   }
-  },
-  "osm-way-1431227169": {
-   "website": {
-    "url": "https://locations.raisingcanes.com/il/chicago/564-w-taylor-street",
-    "page": "https://locations.raisingcanes.com/il/chicago/564-w-taylor-street",
-    "hours": {
-     "schedule": [
-      [
-       600,
-       1500
-      ],
-      [
-       600,
-       1500
-      ],
-      [
-       600,
-       1500
-      ],
-      [
-       600,
-       1500
-      ],
-      [
-       600,
-       1500
-      ],
-      [
-       600,
-       1620
-      ],
-      [
-       600,
-       1620
-      ]
-     ],
-     "source": "schema.org data on the venue website",
-     "page": "https://locations.raisingcanes.com/il/chicago/564-w-taylor-street"
-    }
-   }
-  },
-  "osm-way-151673687": {
-   "website": {
-    "url": "https://library.uic.edu/libraries/daley/",
-    "page": "https://library.uic.edu/libraries/daley/",
-    "image": {
-     "src": "https://library.uic.edu/wp-content/uploads/sites/196/2020/02/idea.jpg",
-     "width": 1440,
-     "height": 700
-    }
-   }
-  },
-  "osm-way-209811123": {
-   "website": {
-    "url": "https://library.uic.edu/libraries/lhs-chicago/",
-    "page": "https://library.uic.edu/libraries/lhs-chicago/",
-    "image": {
-     "src": "https://library.uic.edu/wp-content/uploads/sites/196/2020/02/landscape.jpg",
-     "width": 1442,
-     "height": 702
-    }
-   }
-  },
-  "osm-way-210257250": {
-   "website": {
-    "url": "https://www.carmslittleitaly.com",
-    "page": "https://www.carmslittleitaly.com/",
-    "image": {
-     "src": "https://images.squarespace-cdn.com/content/v1/5ea6f3acd27da50ac21557f7/1589086665831-814JSJT0JC0ERFBJVQME/IMG_1164-preview.jpg?format=2500w",
-     "width": 2500,
-     "height": 2412
-    }
-   }
-  },
-  "osm-way-210257168": {
-   "website": {
-    "url": "https://www.tuscanychicago.com/location/chicago/",
-    "page": "https://www.tuscanychicago.com/",
-    "image": {
-     "src": "https://static.wixstatic.com/media/91874b_9242ee018d4e45e7a5df4c1da48e3a34~mv2.jpg/v1/fill/w_2500,h_1666,al_c/91874b_9242ee018d4e45e7a5df4c1da48e3a34~mv2.jpg",
-     "width": 2500,
-     "height": 1666
-    }
-   }
-  },
-  "osm-node-6280752720": {
-   "website": {
-    "url": "https://chezjoelbistro.com/",
-    "page": "https://chezjoelbistro.com/",
-    "hours": {
-     "schedule": [
-      null,
-      [
-       1020,
-       1260
-      ],
-      [
-       1020,
-       1260
-      ],
-      [
-       1020,
-       1260
-      ],
-      [
-       1020,
-       1260
-      ],
-      [
-       1020,
-       1320
-      ],
-      [
-       1020,
-       1320
-      ]
-     ],
-     "source": "hours listed on the page on the venue website",
-     "page": "https://chezjoelbistro.com/"
-    },
-    "image": {
-     "src": "https://chezjoelbistro.com/wp-content/uploads/2026/05/IMG_0495.jpeg",
-     "width": 750,
-     "height": 563
-    }
-   }
-  },
-  "osm-node-9695680553": {
-   "website": {
-    "url": "https://restaurants.subway.com/united-states/il/chicago/1651-w-roosevelt",
-    "page": "https://restaurants.subway.com/united-states/il/chicago/1651-w-roosevelt",
-    "hours": {
-     "schedule": [
-      [
-       540,
-       1320
-      ],
-      [
-       360,
-       1380
-      ],
-      [
-       360,
-       1380
-      ],
-      [
-       360,
-       1380
-      ],
-      [
-       360,
-       1380
-      ],
-      [
-       360,
-       1380
-      ],
-      [
-       420,
-       1320
-      ]
-     ],
-     "source": "schema.org data on the venue website",
-     "page": "https://restaurants.subway.com/united-states/il/chicago/1651-w-roosevelt"
-    }
-   }
-  },
-  "osm-node-4953114355": {
-   "website": {
-    "url": "https://groundupchicago.com",
-    "page": "https://groundupchicago.com/",
-    "image": {
-     "src": "https://groundupchicago.com/cdn/shop/files/GroundUp-36_x800.jpg?v=1613533147",
-     "width": 1177,
-     "height": 800
-    }
-   }
-  },
-  "osm-node-6324116885": {
-   "website": {
-    "url": "https://www.ferrarabakery.com/",
-    "page": "https://www.ferrarabakery.com/",
-    "hours": {
-     "schedule": [
-      null,
-      [
-       540,
-       990
-      ],
-      [
-       540,
-       990
-      ],
-      [
-       540,
-       990
-      ],
-      [
-       540,
-       990
-      ],
-      [
-       540,
-       990
-      ],
-      [
-       540,
-       840
-      ]
-     ],
-     "source": "hours listed on the page on the venue website",
-     "page": "https://www.ferrarabakery.com/"
     }
    }
   },
@@ -718,6 +299,417 @@
     }
    }
   },
+  "osm-node-13752916070": {
+   "website": {
+    "url": "https://locations.cinnabon.com/il/chicago/711-s-seeley-ave",
+    "page": "https://locations.cinnabon.com/il/chicago/711-s-seeley-ave",
+    "hours": {
+     "schedule": [
+      [
+       630,
+       1275
+      ],
+      [
+       630,
+       1275
+      ],
+      [
+       630,
+       1275
+      ],
+      [
+       630,
+       1275
+      ],
+      [
+       630,
+       1275
+      ],
+      [
+       630,
+       1275
+      ],
+      [
+       630,
+       1275
+      ]
+     ],
+     "source": "schema.org data on the venue website",
+     "page": "https://locations.cinnabon.com/il/chicago/711-s-seeley-ave"
+    }
+   }
+  },
+  "osm-node-13752916071": {
+   "website": {
+    "url": "https://locations.carvel.com/il/chicago/711-south-seeley-avenue",
+    "page": "https://locations.carvel.com/il/chicago/711-south-seeley-avenue",
+    "hours": {
+     "schedule": [
+      [
+       630,
+       1275
+      ],
+      [
+       630,
+       1275
+      ],
+      [
+       630,
+       1275
+      ],
+      [
+       630,
+       1275
+      ],
+      [
+       630,
+       1275
+      ],
+      [
+       630,
+       1275
+      ],
+      [
+       630,
+       1275
+      ]
+     ],
+     "source": "schema.org data on the venue website",
+     "page": "https://locations.carvel.com/il/chicago/711-south-seeley-avenue"
+    }
+   }
+  },
+  "osm-node-14018241863": {
+   "website": {
+    "url": "https://jp2newman.org/cor/",
+    "page": "https://jp2newman.org/cor/",
+    "image": {
+     "src": "https://jp2newman.org/wp-content/uploads/2025/06/IMG_5137-scaled-e1750455325802.jpg",
+     "width": 1707,
+     "height": 1707
+    }
+   }
+  },
+  "osm-node-7404889773": {
+   "website": {
+    "url": "https://giordanos.com/locations/mccormick-place-west-loop/",
+    "page": "https://giordanos.com/locations/mccormick-place-west-loop/",
+    "hours": {
+     "schedule": [
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1320
+      ],
+      [
+       660,
+       1320
+      ]
+     ],
+     "source": "schema.org data on the venue website",
+     "page": "https://giordanos.com/locations/mccormick-place-west-loop/"
+    }
+   }
+  },
+  "osm-way-1431227169": {
+   "website": {
+    "url": "https://locations.raisingcanes.com/il/chicago/564-w-taylor-street",
+    "page": "https://locations.raisingcanes.com/il/chicago/564-w-taylor-street",
+    "hours": {
+     "schedule": [
+      [
+       600,
+       1500
+      ],
+      [
+       600,
+       1500
+      ],
+      [
+       600,
+       1500
+      ],
+      [
+       600,
+       1500
+      ],
+      [
+       600,
+       1500
+      ],
+      [
+       600,
+       1620
+      ],
+      [
+       600,
+       1620
+      ]
+     ],
+     "source": "schema.org data on the venue website",
+     "page": "https://locations.raisingcanes.com/il/chicago/564-w-taylor-street"
+    }
+   }
+  },
+  "osm-way-210257250": {
+   "website": {
+    "url": "https://www.carmslittleitaly.com",
+    "page": "https://www.carmslittleitaly.com/",
+    "image": {
+     "src": "https://images.squarespace-cdn.com/content/v1/5ea6f3acd27da50ac21557f7/1589086665831-814JSJT0JC0ERFBJVQME/IMG_1164-preview.jpg?format=2500w",
+     "width": 2500,
+     "height": 2412
+    }
+   }
+  },
+  "osm-way-151428223": {
+   "website": {
+    "url": "https://www.chicagoparkdistrict.com/parks-facilities/sheridan-philip-henry-park",
+    "page": "https://www.chicagoparkdistrict.com/parks-facilities/sheridan-philip-henry-park",
+    "hours": {
+     "schedule": [
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ]
+     ],
+     "source": "hours listed on the page on the venue website",
+     "page": "https://www.chicagoparkdistrict.com/parks-facilities/sheridan-philip-henry-park"
+    },
+    "image": {
+     "src": "https://www.chicagoparkdistrict.com/sites/default/files/styles/coh_medium_landscape/public/images/location/Sheridan-FieldHouse.JPG?h=881f65d3&itok=41h44kAb",
+     "width": 768,
+     "height": 512
+    }
+   }
+  },
+  "osm-node-6320625801": {
+   "website": {
+    "url": "https://www.lotusbanhmi.com/",
+    "page": "https://lotusbanhmi.com/",
+    "image": {
+     "src": "https://lotusbanhmi.com/wp-content/uploads/2024/08/Beef-Pho-1024x803.jpg",
+     "width": 1024,
+     "height": 803
+    }
+   }
+  },
+  "osm-way-181379030": {
+   "commons": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/e/ee/The_finished_National_Hellenic_Museum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "page": "https://commons.wikimedia.org/wiki/File:The_finished_National_Hellenic_Museum.jpg",
+    "credit": "Greek Museum · CC BY-SA 3.0"
+   }
+  },
+  "osm-way-151673687": {
+   "website": {
+    "url": "https://library.uic.edu/libraries/daley/",
+    "page": "https://library.uic.edu/libraries/daley/",
+    "image": {
+     "src": "https://library.uic.edu/wp-content/uploads/sites/196/2020/02/idea.jpg",
+     "width": 1440,
+     "height": 700
+    }
+   }
+  },
+  "osm-way-210257168": {
+   "website": {
+    "url": "https://www.tuscanychicago.com/location/chicago/",
+    "page": "https://www.tuscanychicago.com/",
+    "image": {
+     "src": "https://static.wixstatic.com/media/91874b_9242ee018d4e45e7a5df4c1da48e3a34~mv2.jpg/v1/fill/w_2500,h_1666,al_c/91874b_9242ee018d4e45e7a5df4c1da48e3a34~mv2.jpg",
+     "width": 2500,
+     "height": 1666
+    }
+   }
+  },
+  "osm-node-4953114355": {
+   "website": {
+    "url": "https://groundupchicago.com",
+    "page": "https://groundupchicago.com/",
+    "image": {
+     "src": "https://groundupchicago.com/cdn/shop/files/GroundUp-36_x800.jpg?v=1613533147",
+     "width": 1177,
+     "height": 800
+    }
+   }
+  },
+  "osm-way-209811123": {
+   "website": {
+    "url": "https://library.uic.edu/libraries/lhs-chicago/",
+    "page": "https://library.uic.edu/libraries/lhs-chicago/",
+    "image": {
+     "src": "https://library.uic.edu/wp-content/uploads/sites/196/2020/02/landscape.jpg",
+     "width": 1442,
+     "height": 702
+    }
+   }
+  },
+  "osm-node-9695680553": {
+   "website": {
+    "url": "https://restaurants.subway.com/united-states/il/chicago/1651-w-roosevelt",
+    "page": "https://restaurants.subway.com/united-states/il/chicago/1651-w-roosevelt",
+    "hours": {
+     "schedule": [
+      [
+       540,
+       1320
+      ],
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ],
+      [
+       420,
+       1320
+      ]
+     ],
+     "source": "schema.org data on the venue website",
+     "page": "https://restaurants.subway.com/united-states/il/chicago/1651-w-roosevelt"
+    }
+   }
+  },
+  "osm-node-6280752720": {
+   "website": {
+    "url": "https://chezjoelbistro.com/",
+    "page": "https://chezjoelbistro.com/",
+    "hours": {
+     "schedule": [
+      null,
+      [
+       1020,
+       1260
+      ],
+      [
+       1020,
+       1260
+      ],
+      [
+       1020,
+       1260
+      ],
+      [
+       1020,
+       1260
+      ],
+      [
+       1020,
+       1320
+      ],
+      [
+       1020,
+       1320
+      ]
+     ],
+     "source": "hours listed on the page on the venue website",
+     "page": "https://chezjoelbistro.com/"
+    },
+    "image": {
+     "src": "https://chezjoelbistro.com/wp-content/uploads/2026/05/IMG_0495.jpeg",
+     "width": 750,
+     "height": 563
+    }
+   }
+  },
+  "osm-node-9695680551": {
+   "website": {
+    "url": "https://locations.baskinrobbins.com/il/chicago/1651-w-roosevelt-rd-336600-br",
+    "page": "https://locations.baskinrobbins.com/il/chicago/1651-w-roosevelt-rd-336600-br",
+    "hours": {
+     "schedule": [
+      [
+       300,
+       1140
+      ],
+      [
+       270,
+       1260
+      ],
+      [
+       270,
+       1260
+      ],
+      [
+       270,
+       1260
+      ],
+      [
+       270,
+       1260
+      ],
+      [
+       270,
+       1260
+      ],
+      [
+       300,
+       1140
+      ]
+     ],
+     "source": "schema.org data on the venue website",
+     "page": "https://locations.baskinrobbins.com/il/chicago/1651-w-roosevelt-rd-336600-br"
+    }
+   }
+  },
   "osm-node-2361008462": {
    "website": {
     "url": "https://restaurants.subway.com/united-states/il/chicago/1611-w-harrison-street",
@@ -758,80 +750,14 @@
     }
    }
   },
-  "osm-way-1131554417": {
+  "osm-way-151181809": {
    "website": {
-    "url": "https://www.chick-fil-a.com/locations/il/south-loop-il",
-    "page": "https://www.chick-fil-a.com/locations/il/south-loop-il",
-    "hours": {
-     "schedule": [
-      null,
-      [
-       390,
-       1380
-      ],
-      [
-       390,
-       1380
-      ],
-      [
-       390,
-       1380
-      ],
-      [
-       390,
-       1380
-      ],
-      [
-       390,
-       1380
-      ],
-      [
-       390,
-       1380
-      ]
-     ],
-     "source": "schema.org data on the venue website",
-     "page": "https://www.chick-fil-a.com/locations/il/south-loop-il"
-    }
-   }
-  },
-  "osm-node-9695680551": {
-   "website": {
-    "url": "https://locations.baskinrobbins.com/il/chicago/1651-w-roosevelt-rd-336600-br",
-    "page": "https://locations.baskinrobbins.com/il/chicago/1651-w-roosevelt-rd-336600-br",
-    "hours": {
-     "schedule": [
-      [
-       300,
-       1140
-      ],
-      [
-       300,
-       1200
-      ],
-      [
-       270,
-       1260
-      ],
-      [
-       270,
-       1260
-      ],
-      [
-       270,
-       1260
-      ],
-      [
-       270,
-       1260
-      ],
-      [
-       300,
-       1140
-      ]
-     ],
-     "source": "schema.org data on the venue website",
-     "page": "https://locations.baskinrobbins.com/il/chicago/1651-w-roosevelt-rd-336600-br"
+    "url": "https://theatreandmusic.uic.edu/",
+    "page": "https://theatreandmusic.uic.edu/",
+    "image": {
+     "src": "https://theatreandmusic.uic.edu/wp-content/uploads/2025/08/1-Large.jpeg",
+     "width": 1280,
+     "height": 854
     }
    }
   },
@@ -872,6 +798,46 @@
      ],
      "source": "schema.org data on the venue website",
      "page": "https://salons.greatclips.com/us/il/chicago/1651-w-roosevelt-rd"
+    }
+   }
+  },
+  "osm-node-12202217629": {
+   "website": {
+    "url": "https://locations.fivebelow.com/il/chicago/1014-s-canal-st",
+    "page": "https://locations.fivebelow.com/il/chicago/1014-s-canal-st",
+    "hours": {
+     "schedule": [
+      [
+       600,
+       1200
+      ],
+      [
+       600,
+       1260
+      ],
+      [
+       600,
+       1260
+      ],
+      [
+       600,
+       1260
+      ],
+      [
+       600,
+       1260
+      ],
+      [
+       600,
+       1260
+      ],
+      [
+       600,
+       1260
+      ]
+     ],
+     "source": "schema.org data on the venue website",
+     "page": "https://locations.fivebelow.com/il/chicago/1014-s-canal-st"
     }
    }
   },
@@ -959,14 +925,14 @@
     "credit": "Sblument · CC BY-SA 4.0"
    }
   },
-  "osm-way-210270131": {
+  "osm-node-6298815422": {
    "website": {
-    "url": "https://www.athenachicago.com/",
-    "page": "https://www.athenachicago.com/",
+    "url": "https://www.xiancuisinechicago.com/west-loop",
+    "page": "https://www.xiancuisinechicago.com/west-loop",
     "image": {
-     "src": "https://images.getbento.com/accounts/9dca1a20f3409f83d8b305fcc41a98aa/media/Uez3uRfTcWgtHZ8pFhi0_athena_vibetribecreative-48.jpg?w=1200&fit=max&auto=compress,format&cs=origin",
-     "width": 1200,
-     "height": 800
+     "src": "https://d15z892a5np5w4.cloudfront.net/production/chef-shangri-la-north-riverside-il-3/images/b88135374daea514d9/mobile-bg-20230206035858.jpg",
+     "width": 800,
+     "height": 497
     }
    }
   },
@@ -1010,36 +976,40 @@
     }
    }
   },
-  "osm-node-6301965552": {
+  "osm-node-6324116885": {
    "website": {
-    "url": "https://www.swadesicafe.com/",
-    "page": "https://www.swadesicafe.com/",
-    "image": {
-     "src": "https://static.wixstatic.com/media/aa5469_d38b8abc911e45b8a7068a45554d631d~mv2.jpg/v1/fit/w_480,h_479,q_90,enc_avif,quality_auto/aa5469_d38b8abc911e45b8a7068a45554d631d~mv2.jpg",
-     "width": 480,
-     "height": 384
-    }
-   }
-  },
-  "osm-node-6320625801": {
-   "website": {
-    "url": "https://www.lotusbanhmi.com/",
-    "page": "https://lotusbanhmi.com/",
-    "image": {
-     "src": "https://lotusbanhmi.com/wp-content/uploads/2024/08/Beef-Pho-1024x803.jpg",
-     "width": 1024,
-     "height": 803
-    }
-   }
-  },
-  "osm-node-6298815422": {
-   "website": {
-    "url": "https://www.xiancuisinechicago.com/west-loop?utm_source=google&utm_medium=website",
-    "page": "https://www.xiancuisinechicago.com/west-loop?utm_source=google&utm_medium=website",
-    "image": {
-     "src": "https://d15z892a5np5w4.cloudfront.net/production/chef-shangri-la-north-riverside-il-3/images/b88135374daea514d9/mobile-bg-20230206035858.jpg",
-     "width": 800,
-     "height": 497
+    "url": "https://www.ferrarabakery.com/",
+    "page": "https://www.ferrarabakery.com/",
+    "hours": {
+     "schedule": [
+      null,
+      [
+       540,
+       990
+      ],
+      [
+       540,
+       990
+      ],
+      [
+       540,
+       990
+      ],
+      [
+       540,
+       990
+      ],
+      [
+       540,
+       990
+      ],
+      [
+       540,
+       840
+      ]
+     ],
+     "source": "hours listed on the page on the venue website",
+     "page": "https://www.ferrarabakery.com/"
     }
    }
   },
@@ -1083,25 +1053,105 @@
     }
    }
   },
-  "osm-node-11999275135": {
+  "osm-way-210270131": {
    "website": {
-    "url": "https://www.kurimuchicago.com/",
-    "page": "https://www.kurimuchicago.com/",
+    "url": "https://www.athenachicago.com/",
+    "page": "https://www.athenachicago.com/",
     "image": {
-     "src": "https://static.wixstatic.com/media/fbec2d_491633e9780441ef8a9a262180739ef1~mv2.jpg/v1/fill/w_873,h_592,al_c/fbec2d_491633e9780441ef8a9a262180739ef1~mv2.jpg",
-     "width": 873,
-     "height": 592
+     "src": "https://images.getbento.com/accounts/9dca1a20f3409f83d8b305fcc41a98aa/media/Uez3uRfTcWgtHZ8pFhi0_athena_vibetribecreative-48.jpg?w=1200&fit=max&auto=compress,format&cs=origin",
+     "width": 1200,
+     "height": 800
     }
    }
   },
-  "osm-node-12027016696": {
+  "osm-node-12202303623": {
    "website": {
-    "url": "https://www.sgdrestaurant.com/",
-    "page": "https://www.sgdrestaurant.com/",
+    "url": "https://www.corepoweryoga.com/yoga-studios/il/chicago/south-loop",
+    "page": "https://www.corepoweryoga.com/yoga-studios/il/chicago/south-loop",
+    "hours": {
+     "schedule": [
+      [
+       360,
+       1320
+      ],
+      [
+       360,
+       1320
+      ],
+      [
+       360,
+       1320
+      ],
+      [
+       360,
+       1320
+      ],
+      [
+       360,
+       1320
+      ],
+      [
+       360,
+       1320
+      ],
+      [
+       360,
+       1320
+      ]
+     ],
+     "source": "schema.org data on the venue website",
+     "page": "https://www.corepoweryoga.com/yoga-studios/il/chicago/south-loop"
+    }
+   }
+  },
+  "osm-node-6301965552": {
+   "website": {
+    "url": "https://www.swadesicafe.com/",
+    "page": "https://www.swadesicafe.com/",
     "image": {
-     "src": "https://static.wixstatic.com/media/c39e23_587c84067bf042ed8a946d16471aa7cc~mv2_d_2000_1335_s_2.jpg/v1/fill/w_650,h_460,q_90,enc_avif,quality_auto/c39e23_587c84067bf042ed8a946d16471aa7cc~mv2_d_2000_1335_s_2.jpg",
-     "width": 650,
-     "height": 460
+     "src": "https://static.wixstatic.com/media/aa5469_d38b8abc911e45b8a7068a45554d631d~mv2.jpg/v1/fit/w_480,h_479,q_90,enc_avif,quality_auto/aa5469_d38b8abc911e45b8a7068a45554d631d~mv2.jpg",
+     "width": 480,
+     "height": 384
+    }
+   }
+  },
+  "osm-node-8117903926": {
+   "website": {
+    "url": "https://stores.staples.com/il/chicago/1130-south-canal-street",
+    "page": "https://stores.staples.com/il/chicago/1130-south-canal-street",
+    "hours": {
+     "schedule": [
+      [
+       600,
+       1080
+      ],
+      [
+       480,
+       1200
+      ],
+      [
+       480,
+       1200
+      ],
+      [
+       480,
+       1200
+      ],
+      [
+       480,
+       1200
+      ],
+      [
+       480,
+       1200
+      ],
+      [
+       540,
+       1080
+      ]
+     ],
+     "source": "schema.org data on the venue website",
+     "page": "https://stores.staples.com/il/chicago/1130-south-canal-street"
     }
    }
   },
@@ -1145,434 +1195,14 @@
     }
    }
   },
-  "osm-node-8117903924": {
+  "osm-node-11999275135": {
    "website": {
-    "url": "https://locations.baskinrobbins.com/il/chicago/500-w.-roosevelt-rd-346737-br",
-    "page": "https://locations.baskinrobbins.com/il/chicago/500-w.-roosevelt-rd-346737-br",
-    "hours": {
-     "schedule": [
-      [
-       300,
-       1440
-      ],
-      [
-       0,
-       1439
-      ],
-      [
-       0,
-       1439
-      ],
-      [
-       0,
-       1439
-      ],
-      [
-       0,
-       1439
-      ],
-      [
-       0,
-       1439
-      ],
-      [
-       0,
-       1140
-      ]
-     ],
-     "source": "schema.org data on the venue website",
-     "page": "https://locations.baskinrobbins.com/il/chicago/500-w.-roosevelt-rd-346737-br"
-    }
-   }
-  },
-  "osm-node-6314890056": {
-   "website": {
-    "url": "http://www.jarabechicago.com/",
-    "page": "https://www.jarabechicago.com/",
+    "url": "https://www.kurimuchicago.com/",
+    "page": "https://www.kurimuchicago.com/",
     "image": {
-     "src": "https://www.jarabechicago.com/uploads/b/42d0b740-796e-11e9-885b-dd0af07181bd/IMG_7653.jpeg",
-     "width": 4032,
-     "height": 3024
-    }
-   }
-  },
-  "osm-node-11105609921": {
-   "website": {
-    "url": "https://www.taylorstacoschicago.com/",
-    "page": "https://www.taylorstacoschicago.com/",
-    "image": {
-     "src": "https://www.taylorstacoschicago.com/_next/image?url=%2Fimages%2Fbehind-the-scenes%2Ftaylors-tacos-chicago-staff-preparing-orders.webp&w=828&q=75",
-     "width": 828,
-     "height": 552
-    }
-   }
-  },
-  "osm-node-13574803464": {
-   "website": {
-    "url": "https://mknoodleuic.com",
-    "page": "https://mknoodleuic.com/",
-    "hours": {
-     "schedule": [
-      [
-       690,
-       1260
-      ],
-      [
-       660,
-       1260
-      ],
-      null,
-      [
-       660,
-       1260
-      ],
-      [
-       660,
-       1260
-      ],
-      [
-       660,
-       1320
-      ],
-      [
-       660,
-       1320
-      ]
-     ],
-     "source": "hours listed on the page on the venue website",
-     "page": "https://mknoodleuic.com/contact"
-    },
-    "image": {
-     "src": "https://img1.wsimg.com/isteam/getty/503129686",
-     "width": 2119,
-     "height": 1415
-    }
-   }
-  },
-  "osm-node-11877467008": {
-   "website": {
-    "url": "https://www.gathersteabar.com/",
-    "page": "https://www.gathersteabar.com/",
-    "image": {
-     "src": "https://images.squarespace-cdn.com/content/v1/64a837cca1e40f159e149962/459a3d6e-6f34-420d-8604-67e3401d8326/GathersDrinks-%40airamdphoto-2.jpg?format=2500w",
-     "width": 2500,
-     "height": 1667
-    }
-   }
-  },
-  "osm-node-1619646328": {
-   "website": {
-    "url": "https://pizza.dominos.com/illinois/chicago/1234-s-canal",
-    "page": "https://pizza.dominos.com/illinois/chicago/1234-s-canal",
-    "hours": {
-     "schedule": [
-      [
-       600,
-       1500
-      ],
-      [
-       600,
-       1500
-      ],
-      [
-       600,
-       1500
-      ],
-      [
-       600,
-       1500
-      ],
-      [
-       600,
-       1500
-      ],
-      [
-       600,
-       1620
-      ],
-      [
-       600,
-       1620
-      ]
-     ],
-     "source": "schema.org data on the venue website",
-     "page": "https://pizza.dominos.com/illinois/chicago/1234-s-canal"
-    }
-   }
-  },
-  "osm-node-6294257885": {
-   "website": {
-    "url": "http://www.hawkeyesbar.com/",
-    "page": "https://hawkeyeschicago.com/",
-    "hours": {
-     "schedule": [
-      [
-       660,
-       1560
-      ],
-      [
-       660,
-       1560
-      ],
-      [
-       660,
-       1560
-      ],
-      [
-       660,
-       1560
-      ],
-      [
-       660,
-       1560
-      ],
-      [
-       660,
-       1560
-      ],
-      [
-       660,
-       1620
-      ]
-     ],
-     "source": "schema.org data on the venue website",
-     "page": "https://hawkeyeschicago.com/"
-    }
-   }
-  },
-  "osm-node-1619646338": {
-   "website": {
-    "url": "https://restaurants.subway.com/united-states/il/chicago/1232-s-canal-street",
-    "page": "https://restaurants.subway.com/united-states/il/chicago/1232-s-canal-street",
-    "hours": {
-     "schedule": [
-      [
-       0,
-       1440
-      ],
-      [
-       0,
-       1440
-      ],
-      [
-       0,
-       1440
-      ],
-      [
-       0,
-       1440
-      ],
-      [
-       0,
-       1440
-      ],
-      [
-       0,
-       1440
-      ],
-      [
-       0,
-       1440
-      ]
-     ],
-     "source": "hours listed on the page on the venue website",
-     "page": "https://restaurants.subway.com/united-states/il/chicago/1232-s-canal-street"
-    }
-   }
-  },
-  "osm-node-12288326605": {
-   "website": {
-    "url": "https://www.market-creations.com",
-    "page": "https://www.market-creations.com/",
-    "image": {
-     "src": "https://static.wixstatic.com/media/2bd630_a7325088225e4bd5842f9daadef85dc7~mv2.jpg/v1/fill/w_2500,h_1256,al_c/2bd630_a7325088225e4bd5842f9daadef85dc7~mv2.jpg",
-     "width": 2500,
-     "height": 1256
-    }
-   }
-  },
-  "osm-node-7550195485": {
-   "website": {
-    "url": "https://www.livingwaterteahouse.com/",
-    "page": "https://www.livingwaterteahouse.com/",
-    "image": {
-     "src": "https://images.squarespace-cdn.com/content/v1/5ec202822eec7a077891958a/21807824-d015-4f4a-9437-f0f99f910625/WechatIMG4.jpg?format=2500w",
-     "width": 1280,
-     "height": 1280
-    }
-   }
-  },
-  "osm-way-148910721": {
-   "website": {
-    "url": "https://www.tacolulu.com",
-    "page": "https://www.tacolulu.com/",
-    "image": {
-     "src": "https://www.tacolulu.com/images/our-services/pic1.jpg",
-     "width": 500,
-     "height": 333
-    }
-   }
-  },
-  "osm-node-5448871115": {
-   "website": {
-    "url": "https://spectrumbarandgrill.com/",
-    "page": "https://spectrumbarandgrill.com/",
-    "hours": {
-     "schedule": [
-      [
-       1020,
-       1680
-      ],
-      [
-       960,
-       1680
-      ],
-      [
-       960,
-       1680
-      ],
-      [
-       960,
-       1680
-      ],
-      [
-       960,
-       1680
-      ],
-      [
-       960,
-       1680
-      ],
-      [
-       1020,
-       1740
-      ]
-     ],
-     "source": "hours listed on the page on the venue website",
-     "page": "https://spectrumbarandgrill.com/"
-    }
-   }
-  },
-  "osm-node-6322570530": {
-   "website": {
-    "url": "https://www.darkmattercoffee.com/blogs/news/introducing-meddle",
-    "page": "https://www.darkmattercoffee.com/blogs/news/introducing-meddle",
-    "image": {
-     "src": "https://www.darkmattercoffee.com/cdn/shop/articles/MeddleBar2.jpg?crop=center&height=1200&v=1476889499&width=1200",
-     "width": 1200,
-     "height": 1200
-    }
-   }
-  },
-  "osm-node-10784632754": {
-   "website": {
-    "url": "https://www.citybirdtenders.com/",
-    "page": "https://www.citybirdtenders.com/",
-    "image": {
-     "src": "https://www.citybirdtenders.com/images/City_Bird_7_of_9_w_3840.jpg",
-     "width": 3840,
-     "height": 2560
-    }
-   }
-  },
-  "osm-node-13539143989": {
-   "website": {
-    "url": "https://contedisavoia.com/",
-    "page": "https://www.contedisavoia.com/",
-    "hours": {
-     "schedule": [
-      [
-       540,
-       960
-      ],
-      [
-       540,
-       1080
-      ],
-      [
-       540,
-       1080
-      ],
-      [
-       540,
-       1080
-      ],
-      [
-       540,
-       1080
-      ],
-      [
-       540,
-       1080
-      ],
-      [
-       540,
-       1080
-      ]
-     ],
-     "source": "hours listed on the page on the venue website",
-     "page": "https://www.contedisavoia.com/"
-    },
-    "image": {
-     "src": "https://images.squarespace-cdn.com/content/v1/6998999f0f853f6cf0549b8c/54c84a93-1b72-41ad-9c0e-f3a33fef328c/IMG_2798.JPG?format=2500w",
-     "width": 2500,
-     "height": 1875
-    }
-   }
-  },
-  "osm-node-12489358152": {
-   "website": {
-    "url": "https://www.vintageontaylor.com/",
-    "page": "https://www.vintageontaylor.com/",
-    "hours": {
-     "schedule": [
-      [
-       660,
-       1560
-      ],
-      [
-       660,
-       1560
-      ],
-      [
-       660,
-       1560
-      ],
-      [
-       660,
-       1560
-      ],
-      [
-       660,
-       1560
-      ],
-      [
-       660,
-       1560
-      ],
-      [
-       660,
-       1620
-      ]
-     ],
-     "source": "hours listed on the page on the venue website",
-     "page": "https://www.vintageontaylor.com/"
-    },
-    "image": {
-     "src": "https://static.wixstatic.com/media/8b5d58_b3c78ae3d0704a6aa20e3c68d9eb910c~mv2.jpg/v1/fill/w_541,h_415,q_90,usm_0.60_0.94_0.00,enc_avif,quality_auto/8b5d58_b3c78ae3d0704a6aa20e3c68d9eb910c~mv2.jpg",
-     "width": 541,
-     "height": 415
-    }
-   }
-  },
-  "osm-node-12413321504": {
-   "website": {
-    "url": "https://bittersweetpastry.com",
-    "page": "https://bittersweetpastry.com/",
-    "image": {
-     "src": "https://bittersweetpastry.com/cdn/shop/files/Atoic_Cake_2026.jpg?crop=center&height=1333&v=1787432490&width=1200",
-     "width": 1200,
-     "height": 1200
+     "src": "https://static.wixstatic.com/media/fbec2d_491633e9780441ef8a9a262180739ef1~mv2.jpg/v1/fill/w_873,h_592,al_c/fbec2d_491633e9780441ef8a9a262180739ef1~mv2.jpg",
+     "width": 873,
+     "height": 592
     }
    }
   },
@@ -1621,45 +1251,670 @@
     }
    }
   },
-  "osm-node-7546476887": {
+  "osm-node-8117903924": {
    "website": {
-    "url": "https://www.kimura138.com/",
-    "page": "https://www.kimura138.com/",
+    "url": "https://locations.baskinrobbins.com/il/chicago/500-w.-roosevelt-rd-346737-br",
+    "page": "https://locations.baskinrobbins.com/il/chicago/500-w.-roosevelt-rd-346737-br",
     "hours": {
      "schedule": [
       [
-       720,
-       1275
+       300,
+       1440
       ],
       [
-       695,
-       1275
-      ],
-      null,
-      [
-       695,
-       1275
+       0,
+       1439
       ],
       [
-       695,
-       1275
+       0,
+       1439
       ],
       [
-       695,
-       1275
+       0,
+       1439
       ],
       [
-       720,
-       1275
+       0,
+       1439
+      ],
+      [
+       0,
+       1439
+      ],
+      [
+       0,
+       1140
       ]
      ],
      "source": "schema.org data on the venue website",
-     "page": "https://www.kimura138.com/"
+     "page": "https://locations.baskinrobbins.com/il/chicago/500-w.-roosevelt-rd-346737-br"
+    }
+   }
+  },
+  "osm-node-12027016696": {
+   "website": {
+    "url": "https://www.sgdrestaurant.com/",
+    "page": "https://www.sgdrestaurant.com/",
+    "image": {
+     "src": "https://static.wixstatic.com/media/c39e23_587c84067bf042ed8a946d16471aa7cc~mv2_d_2000_1335_s_2.jpg/v1/fill/w_650,h_460,q_90,enc_avif,quality_auto/c39e23_587c84067bf042ed8a946d16471aa7cc~mv2_d_2000_1335_s_2.jpg",
+     "width": 650,
+     "height": 460
+    }
+   }
+  },
+  "osm-node-6322570530": {
+   "website": {
+    "url": "https://www.darkmattercoffee.com/blogs/news/introducing-meddle",
+    "page": "https://www.darkmattercoffee.com/blogs/news/introducing-meddle",
+    "image": {
+     "src": "https://www.darkmattercoffee.com/cdn/shop/articles/MeddleBar2.jpg?crop=center&height=1200&v=1476889499&width=1200",
+     "width": 1200,
+     "height": 1200
+    }
+   }
+  },
+  "osm-node-11105609921": {
+   "website": {
+    "url": "https://www.taylorstacoschicago.com/",
+    "page": "https://www.taylorstacoschicago.com/",
+    "image": {
+     "src": "https://www.taylorstacoschicago.com/_next/image?url=%2Fimages%2Fbehind-the-scenes%2Ftaylors-tacos-chicago-staff-preparing-orders.webp&w=828&q=75",
+     "width": 828,
+     "height": 552
+    }
+   }
+  },
+  "osm-node-11877467008": {
+   "website": {
+    "url": "https://www.gathersteabar.com/",
+    "page": "https://www.gathersteabar.com/",
+    "image": {
+     "src": "https://images.squarespace-cdn.com/content/v1/64a837cca1e40f159e149962/459a3d6e-6f34-420d-8604-67e3401d8326/GathersDrinks-%40airamdphoto-2.jpg?format=2500w",
+     "width": 2500,
+     "height": 1667
+    }
+   }
+  },
+  "osm-way-130282534": {
+   "website": {
+    "url": "https://www.chicagoparkdistrict.com/parks-facilities/bartelme-mary-park",
+    "page": "https://www.chicagoparkdistrict.com/parks-facilities/bartelme-mary-park",
+    "hours": {
+     "schedule": [
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ]
+     ],
+     "source": "hours listed on the page on the venue website",
+     "page": "https://www.chicagoparkdistrict.com/parks-facilities/bartelme-mary-park"
     },
     "image": {
-     "src": "https://www.fbgcdn.com/pictures/ba6b618b-4682-4f4b-a027-5432f793cc8a.jpg",
-     "width": 1600,
-     "height": 700
+     "src": "https://www.chicagoparkdistrict.com/sites/default/files/styles/coh_medium_landscape/public/images/location/bartleme.jpg?h=260f0cf3&itok=_YrLCRIh",
+     "width": 768,
+     "height": 512
+    }
+   }
+  },
+  "osm-node-5448871115": {
+   "website": {
+    "url": "https://spectrumbarandgrill.com/",
+    "page": "https://spectrumbarandgrill.com/",
+    "hours": {
+     "schedule": [
+      [
+       1020,
+       1680
+      ],
+      [
+       960,
+       1680
+      ],
+      [
+       960,
+       1680
+      ],
+      [
+       960,
+       1680
+      ],
+      [
+       960,
+       1680
+      ],
+      [
+       960,
+       1680
+      ],
+      [
+       1020,
+       1740
+      ]
+     ],
+     "source": "hours listed on the page on the venue website",
+     "page": "https://spectrumbarandgrill.com/"
+    }
+   }
+  },
+  "osm-node-6294257885": {
+   "website": {
+    "url": "http://www.hawkeyesbar.com/",
+    "page": "https://hawkeyeschicago.com/",
+    "hours": {
+     "schedule": [
+      [
+       660,
+       1560
+      ],
+      [
+       660,
+       1560
+      ],
+      [
+       660,
+       1560
+      ],
+      [
+       660,
+       1560
+      ],
+      [
+       660,
+       1560
+      ],
+      [
+       660,
+       1560
+      ],
+      [
+       660,
+       1620
+      ]
+     ],
+     "source": "schema.org data on the venue website",
+     "page": "https://hawkeyeschicago.com/"
+    }
+   }
+  },
+  "osm-node-10784632754": {
+   "website": {
+    "url": "https://www.citybirdtenders.com/",
+    "page": "https://www.citybirdtenders.com/",
+    "image": {
+     "src": "https://www.citybirdtenders.com/images/City_Bird_7_of_9_w_3840.jpg",
+     "width": 3840,
+     "height": 2560
+    }
+   }
+  },
+  "osm-node-12288326605": {
+   "website": {
+    "url": "https://www.market-creations.com",
+    "page": "https://www.market-creations.com/",
+    "image": {
+     "src": "https://static.wixstatic.com/media/2bd630_a7325088225e4bd5842f9daadef85dc7~mv2.jpg/v1/fill/w_2500,h_1256,al_c/2bd630_a7325088225e4bd5842f9daadef85dc7~mv2.jpg",
+     "width": 2500,
+     "height": 1256
+    }
+   }
+  },
+  "osm-node-1619646328": {
+   "website": {
+    "url": "https://pizza.dominos.com/illinois/chicago/1234-s-canal",
+    "page": "https://pizza.dominos.com/illinois/chicago/1234-s-canal",
+    "hours": {
+     "schedule": [
+      [
+       600,
+       1500
+      ],
+      [
+       600,
+       1500
+      ],
+      [
+       600,
+       1500
+      ],
+      [
+       600,
+       1500
+      ],
+      [
+       600,
+       1500
+      ],
+      [
+       600,
+       1620
+      ],
+      [
+       600,
+       1620
+      ]
+     ],
+     "source": "schema.org data on the venue website",
+     "page": "https://pizza.dominos.com/illinois/chicago/1234-s-canal"
+    }
+   }
+  },
+  "osm-node-1619646338": {
+   "website": {
+    "url": "https://restaurants.subway.com/united-states/il/chicago/1232-s-canal-street",
+    "page": "https://restaurants.subway.com/united-states/il/chicago/1232-s-canal-street",
+    "hours": {
+     "schedule": [
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ],
+      [
+       0,
+       1440
+      ]
+     ],
+     "source": "hours listed on the page on the venue website",
+     "page": "https://restaurants.subway.com/united-states/il/chicago/1232-s-canal-street"
+    }
+   }
+  },
+  "osm-way-1026003466": {
+   "website": {
+    "url": "https://thegreenat320southcanal.com/",
+    "page": "https://thegreenat320southcanal.com/",
+    "image": {
+     "src": "https://thegreenat320southcanal.com/wp-content/uploads/2024/11/thegreen320-social.jpg",
+     "width": 1200,
+     "height": 630
+    }
+   }
+  },
+  "osm-node-13574803464": {
+   "website": {
+    "url": "https://mknoodleuic.com",
+    "page": "https://mknoodleuic.com/",
+    "hours": {
+     "schedule": [
+      [
+       690,
+       1260
+      ],
+      [
+       660,
+       1260
+      ],
+      null,
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1320
+      ],
+      [
+       660,
+       1320
+      ]
+     ],
+     "source": "hours listed on the page on the venue website",
+     "page": "https://mknoodleuic.com/contact"
+    },
+    "image": {
+     "src": "https://img1.wsimg.com/isteam/getty/503129686",
+     "width": 2119,
+     "height": 1415
+    }
+   }
+  },
+  "osm-way-173529681": {
+   "website": {
+    "url": "https://www.chicagoparkdistrict.com/parks-facilities/claremont-park",
+    "page": "https://www.chicagoparkdistrict.com/parks-facilities/claremont-park",
+    "hours": {
+     "schedule": [
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ]
+     ],
+     "source": "hours listed on the page on the venue website",
+     "page": "https://www.chicagoparkdistrict.com/parks-facilities/claremont-park"
+    },
+    "image": {
+     "src": "https://www.chicagoparkdistrict.com/sites/default/files/styles/coh_medium_landscape/public/images/location/db1fc6af29344b678ff76fdc63e2ba381.JPG?h=260f0cf3&itok=IA7NF7O8",
+     "width": 768,
+     "height": 512
+    }
+   }
+  },
+  "osm-way-130282533": {
+   "website": {
+    "url": "https://www.chicagoparkdistrict.com/parks-facilities/heritage-green-park",
+    "page": "https://www.chicagoparkdistrict.com/parks-facilities/heritage-green-park",
+    "image": {
+     "src": "https://www.chicagoparkdistrict.com/sites/default/files/styles/coh_medium_landscape/public/images/location/3f41619aec014b3782a5b831a4a120791.jpg?h=260f0cf3&itok=kUf44trP",
+     "width": 768,
+     "height": 512
+    }
+   }
+  },
+  "osm-way-148910721": {
+   "website": {
+    "url": "https://www.tacolulu.com",
+    "page": "https://www.tacolulu.com/",
+    "image": {
+     "src": "https://www.tacolulu.com/images/our-services/pic1.jpg",
+     "width": 500,
+     "height": 333
+    }
+   }
+  },
+  "osm-node-7550195485": {
+   "website": {
+    "url": "https://www.livingwaterteahouse.com/",
+    "page": "https://www.livingwaterteahouse.com/",
+    "image": {
+     "src": "https://images.squarespace-cdn.com/content/v1/5ec202822eec7a077891958a/21807824-d015-4f4a-9437-f0f99f910625/WechatIMG4.jpg?format=2500w",
+     "width": 1280,
+     "height": 1280
+    }
+   }
+  },
+  "osm-node-13306530001": {
+   "website": {
+    "url": "https://www.musecoffeestudio.com/",
+    "page": "https://www.musecoffeestudio.com/",
+    "hours": {
+     "schedule": [
+      [
+       480,
+       900
+      ],
+      [
+       480,
+       900
+      ],
+      [
+       480,
+       900
+      ],
+      [
+       480,
+       900
+      ],
+      [
+       480,
+       900
+      ],
+      [
+       480,
+       900
+      ],
+      [
+       480,
+       900
+      ]
+     ],
+     "source": "schema.org data on the venue website",
+     "page": "https://www.musecoffeestudio.com/"
+    },
+    "image": {
+     "src": "https://images.squarespace-cdn.com/content/v1/5f1bcc105616be203667960f/e6b3576d-eb48-4f42-a970-873ae08d3215/IMG_0009.jpeg?format=2500w",
+     "width": 2500,
+     "height": 1875
+    }
+   }
+  },
+  "osm-node-13539143989": {
+   "website": {
+    "url": "https://contedisavoia.com/",
+    "page": "https://www.contedisavoia.com/",
+    "hours": {
+     "schedule": [
+      [
+       540,
+       960
+      ],
+      [
+       540,
+       1080
+      ],
+      [
+       540,
+       1080
+      ],
+      [
+       540,
+       1080
+      ],
+      [
+       540,
+       1080
+      ],
+      [
+       540,
+       1080
+      ],
+      [
+       540,
+       1080
+      ]
+     ],
+     "source": "hours listed on the page on the venue website",
+     "page": "https://www.contedisavoia.com/"
+    },
+    "image": {
+     "src": "https://images.squarespace-cdn.com/content/v1/6998999f0f853f6cf0549b8c/54c84a93-1b72-41ad-9c0e-f3a33fef328c/IMG_2798.JPG?format=2500w",
+     "width": 2500,
+     "height": 1875
+    }
+   }
+  },
+  "osm-way-134017011": {
+   "website": {
+    "url": "https://www.chicagoparkdistrict.com/parks-facilities/arrigo-victor-park",
+    "page": "https://www.chicagoparkdistrict.com/parks-facilities/arrigo-victor-park",
+    "hours": {
+     "schedule": [
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ]
+     ],
+     "source": "hours listed on the page on the venue website",
+     "page": "https://www.chicagoparkdistrict.com/parks-facilities/arrigo-victor-park"
+    },
+    "image": {
+     "src": "https://files.chicagoparkdistrict.com/styles/coh_medium_landscape/s3/2025-11/Arrigo-Park-Lawn.jpg?VersionId=c8U9oKV7cqbk_SFOBrFvRG_JZr_DXUfj&h=9e499333&itok=ofTrzR7f",
+     "width": 768,
+     "height": 512
+    }
+   }
+  },
+  "osm-way-136454291": {
+   "website": {
+    "url": "https://www.chicagoparkdistrict.com/parks-facilities/touhy-herbert-john-victor-park",
+    "page": "https://www.chicagoparkdistrict.com/parks-facilities/touhy-herbert-john-victor-park",
+    "hours": {
+     "schedule": [
+      [
+       360,
+       1260
+      ],
+      [
+       360,
+       1260
+      ],
+      [
+       360,
+       1260
+      ],
+      [
+       360,
+       1260
+      ],
+      [
+       360,
+       1260
+      ],
+      [
+       360,
+       1260
+      ],
+      [
+       360,
+       1260
+      ]
+     ],
+     "source": "hours listed on the page on the venue website",
+     "page": "https://www.chicagoparkdistrict.com/parks-facilities/touhy-herbert-john-victor-park"
+    },
+    "image": {
+     "src": "https://www.chicagoparkdistrict.com/sites/default/files/styles/coh_medium_landscape/public/images/location/TouhyHerbert-slideshow02.jpg?h=260f0cf3&itok=HjllG8rc",
+     "width": 768,
+     "height": 512
+    }
+   }
+  },
+  "osm-node-6282530019": {
+   "website": {
+    "url": "https://chicagounionstation.com/",
+    "page": "https://chicagounionstation.com/",
+    "hours": {
+     "schedule": [
+      [
+       60,
+       300
+      ],
+      [
+       60,
+       300
+      ],
+      [
+       60,
+       300
+      ],
+      [
+       60,
+       300
+      ],
+      [
+       60,
+       300
+      ],
+      [
+       60,
+       300
+      ],
+      [
+       60,
+       300
+      ]
+     ],
+     "source": "schema.org data on the venue website",
+     "page": "https://chicagounionstation.com/"
+    },
+    "image": {
+     "src": "https://chicagounionstation.com/uploads/general/_1200x630_crop_center-center_82_none/HeaderImage_Centennial.jpg?mtime=1753474932",
+     "width": 1200,
+     "height": 630
     }
    }
   },
@@ -1699,6 +1954,45 @@
      "src": "https://littletoasted.com/wp-content/uploads/2023/11/LT-HERO-v2.jpg",
      "width": 1440,
      "height": 960
+    }
+   }
+  },
+  "osm-way-1285774845": {
+   "website": {
+    "url": "https://www.nphm.org/",
+    "page": "https://nphm.org/",
+    "hours": {
+     "schedule": [
+      [
+       600,
+       1020
+      ],
+      null,
+      null,
+      [
+       600,
+       1020
+      ],
+      [
+       600,
+       1020
+      ],
+      [
+       600,
+       1020
+      ],
+      [
+       600,
+       1020
+      ]
+     ],
+     "source": "hours listed on the page on the venue website",
+     "page": "https://nphm.org/visit/"
+    },
+    "image": {
+     "src": "https://nphm.org/wp-content/uploads/2025/07/2025.06.01-NPHM-Resilient-Hues-Event-Ryan-Barayuga-22-1024x683.jpg",
+     "width": 1024,
+     "height": 683
     }
    }
   },
@@ -1742,40 +2036,56 @@
     }
    }
   },
-  "osm-node-8199197617": {
+  "osm-node-7546476887": {
    "website": {
-    "url": "https://www.chick-fil-a.com/locations/il/chicago-union-station",
-    "page": "https://www.chick-fil-a.com/locations/il/chicago-union-station",
+    "url": "https://www.kimura138.com/",
+    "page": "https://www.kimura138.com/",
     "hours": {
      "schedule": [
+      [
+       720,
+       1275
+      ],
+      [
+       695,
+       1275
+      ],
       null,
       [
-       420,
-       1140
+       695,
+       1275
       ],
       [
-       420,
-       1140
+       695,
+       1275
       ],
       [
-       420,
-       1140
+       695,
+       1275
       ],
       [
-       420,
-       1140
-      ],
-      [
-       420,
-       1140
-      ],
-      [
-       420,
-       1140
+       720,
+       1275
       ]
      ],
      "source": "schema.org data on the venue website",
-     "page": "https://www.chick-fil-a.com/locations/il/chicago-union-station"
+     "page": "https://www.kimura138.com/"
+    },
+    "image": {
+     "src": "https://www.fbgcdn.com/pictures/ba6b618b-4682-4f4b-a027-5432f793cc8a.jpg",
+     "width": 1600,
+     "height": 700
+    }
+   }
+  },
+  "osm-node-12489358154": {
+   "website": {
+    "url": "https://chilangorestaurant.com/",
+    "page": "https://chilangorestaurant.com/",
+    "image": {
+     "src": "https://chilangorestaurant.com/wp-content/uploads/2017/01/chilangoaboutuspic2-2.jpg",
+     "width": 800,
+     "height": 533
     }
    }
   },
@@ -1816,70 +2126,6 @@
      ],
      "source": "schema.org data on the venue website",
      "page": "https://pizza.dominos.com/illinois/chicago/901-w-madison-st"
-    }
-   }
-  },
-  "osm-node-6291479444": {
-   "website": {
-    "url": "https://www.addachicago.com/",
-    "page": "https://www.addaindiancuisine.com/",
-    "hours": {
-     "schedule": [
-      [
-       [
-        660,
-        870
-       ],
-       [
-        1020,
-        1320
-       ]
-      ],
-      null,
-      null,
-      [
-       [
-        660,
-        870
-       ],
-       [
-        1020,
-        1320
-       ]
-      ],
-      [
-       [
-        660,
-        870
-       ],
-       [
-        1020,
-        1320
-       ]
-      ],
-      [
-       [
-        660,
-        870
-       ],
-       [
-        1020,
-        1320
-       ]
-      ],
-      [
-       [
-        660,
-        870
-       ],
-       [
-        1020,
-        1320
-       ]
-      ]
-     ],
-     "source": "schema.org data on the venue website",
-     "page": "https://www.addaindiancuisine.com/"
     }
    }
   },
@@ -1934,136 +2180,116 @@
     }
    }
   },
-  "osm-node-6282530019": {
+  "osm-node-12489358152": {
    "website": {
-    "url": "https://chicagounionstation.com/",
-    "page": "https://chicagounionstation.com/",
-    "hours": {
-     "schedule": [
-      [
-       60,
-       300
-      ],
-      [
-       60,
-       300
-      ],
-      [
-       60,
-       300
-      ],
-      [
-       60,
-       300
-      ],
-      [
-       60,
-       300
-      ],
-      [
-       60,
-       300
-      ],
-      [
-       60,
-       300
-      ]
-     ],
-     "source": "schema.org data on the venue website",
-     "page": "https://chicagounionstation.com/"
-    },
-    "image": {
-     "src": "https://chicagounionstation.com/uploads/general/_1200x630_crop_center-center_82_none/HeaderImage_Centennial.jpg?mtime=1753474932",
-     "width": 1200,
-     "height": 630
-    }
-   }
-  },
-  "osm-node-13322943078": {
-   "website": {
-    "url": "https://www.mammothpoke.com/",
-    "page": "https://www.mammothpoke.com/",
+    "url": "https://www.vintageontaylor.com/",
+    "page": "https://www.vintageontaylor.com/",
     "hours": {
      "schedule": [
       [
        660,
-       1260
+       1560
       ],
       [
        660,
-       1260
+       1560
       ],
       [
        660,
-       1260
+       1560
       ],
       [
        660,
-       1260
+       1560
       ],
       [
        660,
-       1260
+       1560
       ],
       [
        660,
-       1260
+       1560
       ],
       [
        660,
-       1260
+       1620
       ]
      ],
      "source": "hours listed on the page on the venue website",
-     "page": "https://www.mammothpoke.com/"
+     "page": "https://www.vintageontaylor.com/"
+    },
+    "image": {
+     "src": "https://static.wixstatic.com/media/8b5d58_b3c78ae3d0704a6aa20e3c68d9eb910c~mv2.jpg/v1/fill/w_541,h_415,q_90,usm_0.60_0.94_0.00,enc_avif,quality_auto/8b5d58_b3c78ae3d0704a6aa20e3c68d9eb910c~mv2.jpg",
+     "width": 541,
+     "height": 415
     }
    }
   },
-  "osm-node-13715364542": {
+  "osm-node-6300959267": {
    "website": {
-    "url": "https://www.lalagartijainc.com",
-    "page": "https://www.lalagartijainc.com/",
+    "url": "https://rosebudrestaurants.com/",
+    "page": "https://rosebudrestaurants.com/",
+    "image": {
+     "src": "https://rosebudrestaurants.com/wp-content/uploads/rosebudrush_1-scaled-e1691596895923-2048x1536.jpeg",
+     "width": 2048,
+     "height": 1536
+    }
+   }
+  },
+  "osm-node-12089317411": {
+   "website": {
+    "url": "https://www.basecampfitness.com/studio/chicago",
+    "page": "https://www.basecampfitness.com/studio/chicago",
     "hours": {
      "schedule": [
       [
-       540,
-       1080
-      ],
-      null,
-      [
-       540,
-       1320
+       480,
+       720
       ],
       [
-       540,
-       1320
+       360,
+       1140
       ],
       [
-       540,
-       1320
+       300,
+       1140
       ],
       [
-       540,
-       1320
+       360,
+       1140
       ],
       [
-       540,
-       1320
+       [
+        300,
+        810
+       ],
+       [
+        930,
+        1170
+       ]
+      ],
+      [
+       [
+        360,
+        810
+       ],
+       [
+        930,
+        1050
+       ]
+      ],
+      [
+       480,
+       720
       ]
      ],
-     "source": "schema.org data on the venue website",
-     "page": "https://www.lalagartijainc.com/"
-    }
-   }
-  },
-  "osm-node-12489358154": {
-   "website": {
-    "url": "https://chilangorestaurant.com/",
-    "page": "https://chilangorestaurant.com/",
+     "source": "hours listed on the page on the venue website",
+     "page": "https://www.basecampfitness.com/studio/chicago"
+    },
     "image": {
-     "src": "https://chilangorestaurant.com/wp-content/uploads/2017/01/chilangoaboutuspic2-2.jpg",
-     "width": 800,
-     "height": 533
+     "src": "https://cdn.prod.website-files.com/6594490dfa88ecb41f8ebb2c/68efba69998c076291746ab3_68efb45dfd2b544937f0c613_studio.webp",
+     "width": 1500,
+     "height": 738
     }
    }
   },
@@ -2107,6 +2333,17 @@
     }
    }
   },
+  "osm-node-12688510775": {
+   "website": {
+    "url": "https://barnhockeybar.com",
+    "page": "https://barnhockeybar.com/",
+    "image": {
+     "src": "https://static.spotapps.co/website_images/ab_websites/339669_website/food_back.jpg",
+     "width": 1200,
+     "height": 801
+    }
+   }
+  },
   "osm-way-209829283": {
    "website": {
     "url": "https://baccipizza.com/",
@@ -2144,6 +2381,17 @@
      ],
      "source": "schema.org data on the venue website",
      "page": "https://baccipizza.com/locations.html"
+    }
+   }
+  },
+  "osm-node-12083308239": {
+   "website": {
+    "url": "https://wndrmuseum.com",
+    "page": "https://www.wndrmuseum.com/",
+    "image": {
+     "src": "https://app.wndrmuseum.com/images/WNDR-RB-8064.webp",
+     "width": 1199,
+     "height": 800
     }
    }
   },
@@ -2187,14 +2435,54 @@
     }
    }
   },
-  "osm-node-1699221031": {
+  "osm-node-4934342974": {
    "website": {
-    "url": "https://pazzoschicago.com/",
-    "page": "https://pazzoschicago.com/",
+    "url": "https://monteverdechicago.com/",
+    "page": "https://monteverdechicago.com/",
     "image": {
-     "src": "https://pazzoschicago.com/wp-content/uploads/2023/08/311building-120-311-South-Wacker-Drive_crop.jpg",
-     "width": 780,
-     "height": 520
+     "src": "https://monteverdechicago.com/wp-content/uploads/2023/09/Burrata-e-Ham-PB-4-scaled.jpg",
+     "width": 2560,
+     "height": 1578
+    }
+   }
+  },
+  "osm-node-13322943078": {
+   "website": {
+    "url": "https://www.mammothpoke.com/",
+    "page": "https://www.mammothpoke.com/",
+    "hours": {
+     "schedule": [
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1260
+      ]
+     ],
+     "source": "hours listed on the page on the venue website",
+     "page": "https://www.mammothpoke.com/"
     }
    }
   },
@@ -2243,28 +2531,6 @@
     }
    }
   },
-  "osm-node-4934342974": {
-   "website": {
-    "url": "https://monteverdechicago.com/",
-    "page": "https://monteverdechicago.com/",
-    "image": {
-     "src": "https://monteverdechicago.com/wp-content/uploads/2023/09/Burrata-e-Ham-PB-4-scaled.jpg",
-     "width": 2560,
-     "height": 1578
-    }
-   }
-  },
-  "osm-node-12688510775": {
-   "website": {
-    "url": "https://barnhockeybar.com",
-    "page": "https://barnhockeybar.com/",
-    "image": {
-     "src": "https://static.spotapps.co/website_images/ab_websites/339669_website/food_back.jpg",
-     "width": 1200,
-     "height": 801
-    }
-   }
-  },
   "osm-node-11673117987": {
    "website": {
     "url": "https://www.bonyeonchicago.com",
@@ -2299,48 +2565,51 @@
     }
    }
   },
-  "osm-way-1380916010": {
+  "osm-way-210270830": {
    "website": {
-    "url": "https://www.chipublib.org/locations/62/",
-    "page": "https://www.chipublib.org/locations/62/",
+    "url": "https://chicagochildrenstheatre.org/",
+    "page": "https://chicagochildrenstheatre.org/",
+    "image": {
+     "src": "https://chicagochildrenstheatre.org/wp-content/uploads/2026/05/Website-Image-2400x1256-1-2048x1072.jpg",
+     "width": 2048,
+     "height": 1072
+    }
+   }
+  },
+  "osm-node-13715364542": {
+   "website": {
+    "url": "https://www.lalagartijainc.com",
+    "page": "https://www.lalagartijainc.com/",
     "hours": {
      "schedule": [
       [
-       780,
-       1020
-      ],
-      [
-       720,
-       1200
-      ],
-      [
-       600,
+       540,
        1080
       ],
+      null,
       [
-       720,
-       1200
-      ],
-      [
-       600,
-       1080
+       540,
+       1320
       ],
       [
        540,
-       1020
+       1320
       ],
       [
        540,
-       1020
+       1320
+      ],
+      [
+       540,
+       1320
+      ],
+      [
+       540,
+       1320
       ]
      ],
      "source": "schema.org data on the venue website",
-     "page": "https://www.chipublib.org/locations/62/"
-    },
-    "image": {
-     "src": "https://chipublib.bibliocommons.com/events/uploads/images/full/7a6ac351955e50eec3914a6c6727a2eb/little-italy.jpg",
-     "width": 570,
-     "height": 400
+     "page": "https://www.lalagartijainc.com/"
     }
    }
   },
@@ -2363,62 +2632,6 @@
      "src": "https://westloopmarketchicago.com/img/storefront.jpg",
      "width": 780,
      "height": 744
-    }
-   }
-  },
-  "osm-node-13289837088": {
-   "website": {
-    "url": "https://jsalonspa.com",
-    "page": "https://jsalonspa.com/",
-    "hours": {
-     "schedule": [
-      [
-       540,
-       1140
-      ],
-      [
-       540,
-       1140
-      ],
-      [
-       540,
-       1140
-      ],
-      [
-       420,
-       1140
-      ],
-      [
-       420,
-       1140
-      ],
-      [
-       420,
-       1140
-      ],
-      [
-       540,
-       1140
-      ]
-     ],
-     "source": "schema.org data on the venue website",
-     "page": "https://jsalonspa.com/"
-    },
-    "image": {
-     "src": "https://img1.wsimg.com/isteam/ip/5910d375-d726-41d5-8cee-6c8e0d96681f/Untitled%20design%20(1).jpg/:/cr=t:0%25,l:2.51%25,w:94.97%25,h:100%25/rs=w:600,h:451.12781954887214,cg:true",
-     "width": 600,
-     "height": 451
-    }
-   }
-  },
-  "osm-node-11962879573": {
-   "website": {
-    "url": "https://www.tamuchicago.com/",
-    "page": "https://www.tamuchicago.com/",
-    "image": {
-     "src": "https://images.squarespace-cdn.com/content/v1/63179b2ff7d27f7f1baad758/d8788f41-f804-4a7e-8358-9375ef9b3902/20240510_rst_tamu_01_015+edited.jpg?format=2500w",
-     "width": 2400,
-     "height": 1601
     }
    }
   },
@@ -2500,81 +2713,48 @@
     }
    }
   },
-  "osm-node-11672692560": {
+  "osm-node-11962879573": {
    "website": {
-    "url": "https://www.pokepokechi.com/",
-    "page": "https://www.pokepokechi.com/",
+    "url": "https://www.tamuchicago.com/",
+    "page": "https://www.tamuchicago.com/",
     "image": {
-     "src": "https://static.wixstatic.com/media/b05a6f_5fa6930646c547c59b3793283cd37eba~mv2.jpg/v1/fit/w_480,h_640,q_90,enc_avif,quality_auto/b05a6f_5fa6930646c547c59b3793283cd37eba~mv2.jpg",
-     "width": 480,
-     "height": 480
+     "src": "https://images.squarespace-cdn.com/content/v1/63179b2ff7d27f7f1baad758/d8788f41-f804-4a7e-8358-9375ef9b3902/20240510_rst_tamu_01_015+edited.jpg?format=2500w",
+     "width": 2400,
+     "height": 1601
     }
    }
   },
-  "osm-node-5855320076": {
+  "osm-node-13395760105": {
    "website": {
-    "url": "https://www.omakaseyume.com/",
-    "page": "https://www.omakaseyume.com/",
-    "image": {
-     "src": "https://static.wixstatic.com/media/b4d207_fe94a7cf0988422fbab692f6dbe1aa72~mv2_d_4032_3024_s_4_2.jpeg/v1/fill/w_605,h_454,q_90,enc_avif,quality_auto/b4d207_fe94a7cf0988422fbab692f6dbe1aa72~mv2_d_4032_3024_s_4_2.jpeg",
-     "width": 605,
-     "height": 454
-    }
-   }
-  },
-  "osm-node-5460629402": {
-   "website": {
-    "url": "https://ryotachicago.com",
-    "page": "https://www.ryotachicago.com/",
+    "url": "https://kavigupta.com",
+    "page": "https://kavigupta.com/",
     "hours": {
      "schedule": [
+      null,
+      null,
       [
-       720,
-       1290
+       660,
+       1080
+      ],
+      [
+       660,
+       1080
+      ],
+      [
+       660,
+       1080
+      ],
+      [
+       660,
+       1080
       ],
       [
        720,
-       1290
-      ],
-      [
-       720,
-       1290
-      ],
-      [
-       720,
-       1290
-      ],
-      [
-       720,
-       1290
-      ],
-      [
-       720,
-       1350
-      ],
-      [
-       720,
-       1350
+       1020
       ]
      ],
      "source": "hours listed on the page on the venue website",
-     "page": "https://www.ryotachicago.com/"
-    },
-    "image": {
-     "src": "https://images.squarespace-cdn.com/content/v1/680f8e58cceec04972a772b5/034143d7-a7a9-4c00-9bb1-8af01be118b2/uni.jpeg?format=2500w",
-     "width": 1852,
-     "height": 1852
-    }
-   }
-  },
-  "osm-node-6300959267": {
-   "website": {
-    "url": "https://rosebudrestaurants.com/",
-    "page": "https://rosebudrestaurants.com/",
-    "image": {
-     "src": "https://rosebudrestaurants.com/wp-content/uploads/rosebudrush_1-scaled-e1691596895923-2048x1536.jpeg",
-     "width": 2048,
-     "height": 1536
+     "page": "https://kavigupta.com/"
     }
    }
   },
@@ -2623,14 +2803,48 @@
     }
    }
   },
-  "osm-node-13304821019": {
+  "osm-node-5460629402": {
    "website": {
-    "url": "https://bkdrosca.com",
-    "page": "https://bkdrosca.com/",
+    "url": "https://ryotachicago.com",
+    "page": "https://www.ryotachicago.com/",
+    "hours": {
+     "schedule": [
+      [
+       720,
+       1290
+      ],
+      [
+       720,
+       1290
+      ],
+      [
+       720,
+       1290
+      ],
+      [
+       720,
+       1290
+      ],
+      [
+       720,
+       1290
+      ],
+      [
+       720,
+       1350
+      ],
+      [
+       720,
+       1350
+      ]
+     ],
+     "source": "hours listed on the page on the venue website",
+     "page": "https://www.ryotachicago.com/"
+    },
     "image": {
-     "src": "https://bkdrosca.com/_assets/images/bfa0a7c0f58ee3178e2583e55b79a6ab.jpg",
-     "width": 1200,
-     "height": 630
+     "src": "https://images.squarespace-cdn.com/content/v1/680f8e58cceec04972a772b5/034143d7-a7a9-4c00-9bb1-8af01be118b2/uni.jpeg?format=2500w",
+     "width": 1852,
+     "height": 1852
     }
    }
   },
@@ -2676,6 +2890,17 @@
     }
    }
   },
+  "osm-node-13304821019": {
+   "website": {
+    "url": "https://bkdrosca.com",
+    "page": "https://bkdrosca.com/",
+    "image": {
+     "src": "https://bkdrosca.com/_assets/images/bfa0a7c0f58ee3178e2583e55b79a6ab.jpg",
+     "width": 1200,
+     "height": 630
+    }
+   }
+  },
   "osm-node-6300747755": {
    "website": {
     "url": "https://www.sojubbq.com/",
@@ -2687,48 +2912,137 @@
     }
    }
   },
-  "osm-way-209830060": {
+  "osm-node-5855320076": {
    "website": {
-    "url": "https://www.chipublib.org/locations/48/",
-    "page": "https://www.chipublib.org/locations/48/",
+    "url": "https://www.omakaseyume.com/",
+    "page": "https://www.omakaseyume.com/",
+    "image": {
+     "src": "https://static.wixstatic.com/media/b4d207_fe94a7cf0988422fbab692f6dbe1aa72~mv2_d_4032_3024_s_4_2.jpeg/v1/fill/w_605,h_454,q_90,enc_avif,quality_auto/b4d207_fe94a7cf0988422fbab692f6dbe1aa72~mv2_d_4032_3024_s_4_2.jpeg",
+     "width": 605,
+     "height": 454
+    }
+   }
+  },
+  "osm-node-11672692560": {
+   "website": {
+    "url": "https://www.pokepokechi.com/",
+    "page": "https://www.pokepokechi.com/",
+    "image": {
+     "src": "https://static.wixstatic.com/media/b05a6f_5fa6930646c547c59b3793283cd37eba~mv2.jpg/v1/fit/w_480,h_640,q_90,enc_avif,quality_auto/b05a6f_5fa6930646c547c59b3793283cd37eba~mv2.jpg",
+     "width": 480,
+     "height": 480
+    }
+   }
+  },
+  "osm-node-12753167288": {
+   "website": {
+    "url": "https://garciaschicago.live",
+    "page": "https://garciaschicago.live/",
+    "image": {
+     "src": "https://garciaschicago.live/wp-content/uploads/2026/07/1200x628_website-1-768x402.jpg",
+     "width": 768,
+     "height": 402
+    }
+   }
+  },
+  "osm-node-1699221031": {
+   "website": {
+    "url": "https://pazzoschicago.com/",
+    "page": "https://pazzoschicago.com/",
+    "image": {
+     "src": "https://pazzoschicago.com/wp-content/uploads/2023/08/311building-120-311-South-Wacker-Drive_crop.jpg",
+     "width": 780,
+     "height": 520
+    }
+   }
+  },
+  "osm-node-5460717972": {
+   "website": {
+    "url": "https://slightlytoasted.com/",
+    "page": "https://slightlytoasted.com/",
+    "hours": {
+     "schedule": [
+      null,
+      [
+       840,
+       1320
+      ],
+      [
+       840,
+       1320
+      ],
+      [
+       840,
+       1320
+      ],
+      [
+       840,
+       1320
+      ],
+      [
+       840,
+       1320
+      ],
+      null
+     ],
+     "source": "hours listed on the page on the venue website",
+     "page": "https://slightlytoasted.com/"
+    },
+    "image": {
+     "src": "https://slightlytoasted.com/wp-content/uploads/2023/11/SlightlyToasted2023-08.17-2-1920x1175-1.jpg",
+     "width": 1920,
+     "height": 1175
+    }
+   }
+  },
+  "osm-node-1951914730": {
+   "website": {
+    "url": "https://giordanos.com/locations/downtown-central-loop",
+    "page": "https://giordanos.com/locations/downtown-central-loop/",
     "hours": {
      "schedule": [
       [
-       780,
-       1020
+       630,
+       1320
       ],
       [
-       720,
-       1200
+       630,
+       1320
       ],
       [
-       600,
-       1080
+       630,
+       1320
       ],
       [
-       720,
-       1200
+       630,
+       1320
       ],
       [
-       600,
-       1080
+       630,
+       1320
       ],
       [
-       540,
-       1020
+       630,
+       1380
       ],
       [
-       540,
-       1020
+       630,
+       1380
       ]
      ],
      "source": "schema.org data on the venue website",
-     "page": "https://www.chipublib.org/locations/48/"
-    },
+     "page": "https://giordanos.com/locations/downtown-central-loop/"
+    }
+   }
+  },
+  "osm-node-5460524407": {
+   "website": {
+    "url": "https://www.foxbar.com/",
+    "page": "https://www.foxbar.com/",
     "image": {
-     "src": "https://chipublib.bibliocommons.com/events/uploads/images/full/4652b9502871f0cbdf7df926b7a3b2d7/manning.jpg",
-     "width": 600,
-     "height": 399
+     "src": "https://www.foxbar.com/img/foxbar-bg.jpg",
+     "width": 2500,
+     "height": 1577
     }
    }
   },
@@ -2777,65 +3091,14 @@
     }
    }
   },
-  "osm-node-1951914730": {
+  "osm-node-2485002923": {
    "website": {
-    "url": "https://giordanos.com/locations/downtown-central-loop",
-    "page": "https://giordanos.com/locations/downtown-central-loop/",
-    "hours": {
-     "schedule": [
-      [
-       630,
-       1320
-      ],
-      [
-       630,
-       1320
-      ],
-      [
-       630,
-       1320
-      ],
-      [
-       630,
-       1320
-      ],
-      [
-       630,
-       1320
-      ],
-      [
-       630,
-       1380
-      ],
-      [
-       630,
-       1380
-      ]
-     ],
-     "source": "schema.org data on the venue website",
-     "page": "https://giordanos.com/locations/downtown-central-loop/"
-    }
-   }
-  },
-  "osm-node-6326180396": {
-   "website": {
-    "url": "https://oneilsonwells.com/",
-    "page": "https://oneilsonwells.com/",
+    "url": "https://southbranchchicago.com",
+    "page": "https://www.southbranchchicago.com/",
     "image": {
-     "src": "https://static.spotapps.co/spots/b6/834570b8b011e6b9507f2fd9a41c6a/full",
-     "width": 800,
-     "height": 800
-    }
-   }
-  },
-  "osm-node-3407985512": {
-   "website": {
-    "url": "https://greenstreetmeats.com/",
-    "page": "https://www.greenstreetmeats.com/",
-    "image": {
-     "src": "https://images.squarespace-cdn.com/content/v1/66796d776badab5315907cae/c6283f87-a4c3-413c-94a5-90c567e32a59/IMG_4165.jpg?format=2500w",
-     "width": 2500,
-     "height": 1706
+     "src": "https://www.southbranchchicago.com/wp-content/uploads/2022/02/MR.0111.jpg",
+     "width": 900,
+     "height": 900
     }
    }
   },
@@ -2879,14 +3142,120 @@
     }
    }
   },
-  "osm-node-2485002923": {
+  "osm-node-11673117985": {
    "website": {
-    "url": "https://southbranchchicago.com",
-    "page": "https://www.southbranchchicago.com/",
+    "url": "https://asaditotaco.com/",
+    "page": "https://asaditotaco.com/",
+    "hours": {
+     "schedule": [
+      null,
+      [
+       660,
+       840
+      ],
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1200
+      ],
+      null
+     ],
+     "source": "hours listed on the page on the venue website",
+     "page": "https://asaditotaco.com/"
+    },
     "image": {
-     "src": "https://www.southbranchchicago.com/wp-content/uploads/2022/02/MR.0111.jpg",
-     "width": 900,
-     "height": 900
+     "src": "https://asaditotaco.com/wp-content/uploads/2024/08/AsaditoAugust62024_KMendiola-62-1920x1281.jpg",
+     "width": 1920,
+     "height": 1281
+    }
+   }
+  },
+  "osm-node-13289837088": {
+   "website": {
+    "url": "https://jsalonspa.com",
+    "page": "https://jsalonspa.com/",
+    "hours": {
+     "schedule": [
+      [
+       540,
+       1140
+      ],
+      [
+       540,
+       1140
+      ],
+      [
+       540,
+       1140
+      ],
+      [
+       420,
+       1140
+      ],
+      [
+       420,
+       1140
+      ],
+      [
+       420,
+       1140
+      ],
+      [
+       540,
+       1140
+      ]
+     ],
+     "source": "schema.org data on the venue website",
+     "page": "https://jsalonspa.com/"
+    },
+    "image": {
+     "src": "https://img1.wsimg.com/isteam/ip/5910d375-d726-41d5-8cee-6c8e0d96681f/Untitled%20design%20(1).jpg/:/cr=t:0%25,l:2.51%25,w:94.97%25,h:100%25/rs=w:600,h:451.12781954887214,cg:true",
+     "width": 600,
+     "height": 451
+    }
+   }
+  },
+  "osm-node-3407985512": {
+   "website": {
+    "url": "https://greenstreetmeats.com/",
+    "page": "https://www.greenstreetmeats.com/",
+    "image": {
+     "src": "https://images.squarespace-cdn.com/content/v1/66796d776badab5315907cae/c6283f87-a4c3-413c-94a5-90c567e32a59/IMG_4165.jpg?format=2500w",
+     "width": 2500,
+     "height": 1706
+    }
+   }
+  },
+  "osm-node-6321371838": {
+   "website": {
+    "url": "https://www.madisontavern.com/",
+    "page": "https://www.madisontavern.com/",
+    "image": {
+     "src": "https://images.squarespace-cdn.com/content/v1/5d6588179aa21900014955f8/1569260865444-ARZITUFPV57FZ1BY3XQB/5C9C4216-C6E8-4BB5-9E5E-85CFC18E5751.JPG",
+     "width": 728,
+     "height": 456
+    }
+   }
+  },
+  "osm-node-6326180396": {
+   "website": {
+    "url": "https://oneilsonwells.com/",
+    "page": "https://oneilsonwells.com/",
+    "image": {
+     "src": "https://static.spotapps.co/spots/b6/834570b8b011e6b9507f2fd9a41c6a/full",
+     "width": 800,
+     "height": 800
     }
    }
   },
@@ -2935,28 +3304,6 @@
     }
    }
   },
-  "osm-node-5460524407": {
-   "website": {
-    "url": "https://www.foxbar.com/",
-    "page": "https://www.foxbar.com/",
-    "image": {
-     "src": "https://www.foxbar.com/img/foxbar-bg.jpg",
-     "width": 2500,
-     "height": 1577
-    }
-   }
-  },
-  "osm-node-3407985511": {
-   "website": {
-    "url": "https://highfiveramen.com/",
-    "page": "https://www.highfiveramen.com/",
-    "image": {
-     "src": "https://images.squarespace-cdn.com/content/v1/66cc871a85028e30df8097f3/b3ee419a-368b-488c-a388-73435ff592d6/tonkatsu-ramen-bowl.jpg?format=2500w",
-     "width": 2500,
-     "height": 1667
-    }
-   }
-  },
   "osm-node-9294065235": {
    "website": {
     "url": "https://locations.tacobell.com/il/chicago/500-w--madison-ave.html",
@@ -2994,46 +3341,6 @@
      ],
      "source": "schema.org data on the venue website",
      "page": "https://locations.tacobell.com/il/chicago/500-w--madison-ave.html"
-    }
-   }
-  },
-  "osm-node-9217234407": {
-   "website": {
-    "url": "https://locations.qdoba.com/us/il/chicago/175-w-jackson-st.html",
-    "page": "https://locations.qdoba.com/us/il/chicago/175-w-jackson-st",
-    "hours": {
-     "schedule": [
-      [
-       660,
-       1260
-      ],
-      [
-       420,
-       1260
-      ],
-      [
-       420,
-       1260
-      ],
-      [
-       420,
-       1260
-      ],
-      [
-       420,
-       1260
-      ],
-      [
-       420,
-       1260
-      ],
-      [
-       660,
-       1260
-      ]
-     ],
-     "source": "schema.org data on the venue website",
-     "page": "https://locations.qdoba.com/us/il/chicago/175-w-jackson-st"
     }
    }
   },
@@ -3077,6 +3384,57 @@
     }
    }
   },
+  "osm-node-9217234407": {
+   "website": {
+    "url": "https://locations.qdoba.com/us/il/chicago/175-w-jackson-st.html",
+    "page": "https://locations.qdoba.com/us/il/chicago/175-w-jackson-st",
+    "hours": {
+     "schedule": [
+      [
+       660,
+       1260
+      ],
+      [
+       420,
+       1260
+      ],
+      [
+       420,
+       1260
+      ],
+      [
+       420,
+       1260
+      ],
+      [
+       420,
+       1260
+      ],
+      [
+       420,
+       1260
+      ],
+      [
+       660,
+       1260
+      ]
+     ],
+     "source": "schema.org data on the venue website",
+     "page": "https://locations.qdoba.com/us/il/chicago/175-w-jackson-st"
+    }
+   }
+  },
+  "osm-node-3407985511": {
+   "website": {
+    "url": "https://highfiveramen.com/",
+    "page": "https://www.highfiveramen.com/",
+    "image": {
+     "src": "https://images.squarespace-cdn.com/content/v1/66cc871a85028e30df8097f3/b3ee419a-368b-488c-a388-73435ff592d6/tonkatsu-ramen-bowl.jpg?format=2500w",
+     "width": 2500,
+     "height": 1667
+    }
+   }
+  },
   "osm-node-2882733946": {
    "website": {
     "url": "https://locations.jimmyjohns.com/il/chicago/sandwiches-1105.html",
@@ -3111,6 +3469,51 @@
     }
    }
   },
+  "osm-node-4565654594": {
+   "website": {
+    "url": "https://www.theallis.com/",
+    "page": "https://www.theallis.com/",
+    "hours": {
+     "schedule": [
+      [
+       480,
+       1020
+      ],
+      [
+       420,
+       1320
+      ],
+      [
+       420,
+       1320
+      ],
+      [
+       420,
+       1320
+      ],
+      [
+       420,
+       1320
+      ],
+      [
+       420,
+       1500
+      ],
+      [
+       420,
+       1500
+      ]
+     ],
+     "source": "hours listed on the page on the venue website",
+     "page": "https://www.theallis.com/"
+    },
+    "image": {
+     "src": "https://www.theallis.com/system/files/112025/691f51d11cb7110336000004/full_bleed/allis4.jpg?1763660258",
+     "width": 1280,
+     "height": 961
+    }
+   }
+  },
   "osm-node-6263487032": {
    "website": {
     "url": "https://www.avanticaffe.com/",
@@ -3119,67 +3522,6 @@
      "src": "https://images.squarespace-cdn.com/content/v1/6991c8ca084726683b7945c2/da852360-12aa-4633-a38e-7047056b2428/DSCF0132-1.jpg?format=2500w",
      "width": 2500,
      "height": 1875
-    }
-   }
-  },
-  "osm-node-6321371838": {
-   "website": {
-    "url": "https://www.madisontavern.com/",
-    "page": "https://www.madisontavern.com/",
-    "image": {
-     "src": "https://images.squarespace-cdn.com/content/v1/5d6588179aa21900014955f8/1569260865444-ARZITUFPV57FZ1BY3XQB/5C9C4216-C6E8-4BB5-9E5E-85CFC18E5751.JPG",
-     "width": 728,
-     "height": 456
-    }
-   }
-  },
-  "osm-node-5460717972": {
-   "website": {
-    "url": "https://slightlytoasted.com/",
-    "page": "https://slightlytoasted.com/",
-    "hours": {
-     "schedule": [
-      null,
-      [
-       840,
-       1320
-      ],
-      [
-       840,
-       1320
-      ],
-      [
-       840,
-       1320
-      ],
-      [
-       840,
-       1320
-      ],
-      [
-       840,
-       1320
-      ],
-      null
-     ],
-     "source": "hours listed on the page on the venue website",
-     "page": "https://slightlytoasted.com/"
-    },
-    "image": {
-     "src": "https://slightlytoasted.com/wp-content/uploads/2023/11/SlightlyToasted2023-08.17-2-1920x1175-1.jpg",
-     "width": 1920,
-     "height": 1175
-    }
-   }
-  },
-  "osm-node-10974086037": {
-   "website": {
-    "url": "https://www.blackwoodbbq.com/211-w-adams-st-location",
-    "page": "https://www.blackwoodbbq.com/211-w-adams-st-location",
-    "image": {
-     "src": "https://images.squarespace-cdn.com/content/v1/59ca889f6f4ca33b3d4731ac/1558373849275-89TSRYWHD9VXUC6YASJ4/BW+BBQ+211+Adams+Exterior.JPG?format=2500w",
-     "width": 2500,
-     "height": 1874
     }
    }
   },
@@ -3194,87 +3536,25 @@
     }
    }
   },
-  "osm-node-11673117985": {
+  "osm-node-5460679519": {
    "website": {
-    "url": "https://asaditotaco.com/",
-    "page": "https://asaditotaco.com/",
-    "hours": {
-     "schedule": [
-      null,
-      [
-       660,
-       840
-      ],
-      [
-       660,
-       1260
-      ],
-      [
-       660,
-       1260
-      ],
-      [
-       660,
-       1260
-      ],
-      [
-       660,
-       1200
-      ],
-      null
-     ],
-     "source": "hours listed on the page on the venue website",
-     "page": "https://asaditotaco.com/"
-    },
+    "url": "https://www.jpgraziano.com/",
+    "page": "https://jpgraziano.com/",
     "image": {
-     "src": "https://asaditotaco.com/wp-content/uploads/2024/08/AsaditoAugust62024_KMendiola-62-1920x1281.jpg",
-     "width": 1920,
-     "height": 1281
+     "src": "https://jpgraziano.com/wp-content/uploads/2025/09/foodandwinemag.webp",
+     "width": 750,
+     "height": 500
     }
    }
   },
-  "osm-way-1504753584": {
+  "osm-node-10974086037": {
    "website": {
-    "url": "https://www.banditliquors.com/",
-    "page": "https://www.banditliquors.com/",
-    "hours": {
-     "schedule": [
-      [
-       600,
-       1380
-      ],
-      [
-       690,
-       1440
-      ],
-      [
-       690,
-       1440
-      ],
-      [
-       690,
-       1440
-      ],
-      [
-       690,
-       1440
-      ],
-      [
-       690,
-       1440
-      ],
-      [
-       600,
-       1440
-      ]
-     ],
-     "source": "schema.org data on the venue website",
-     "page": "https://www.banditliquors.com/location/bandit-liquors/"
-    },
+    "url": "https://www.blackwoodbbq.com/211-w-adams-st-location",
+    "page": "https://www.blackwoodbbq.com/211-w-adams-st-location",
     "image": {
-     "src": "https://images.getbento.com/accounts/214d52f9ad5944e03f1fb0ba17cd6c72/media/images/115696.8Bandit-7037.jpg?w=5400&fit=max&auto=compress,format&cs=origin",
-     "width": 5400,
-     "height": 3857
+     "src": "https://images.squarespace-cdn.com/content/v1/59ca889f6f4ca33b3d4731ac/1558373849275-89TSRYWHD9VXUC6YASJ4/BW+BBQ+211+Adams+Exterior.JPG?format=2500w",
+     "width": 2500,
+     "height": 1874
     }
    }
   },
@@ -3329,59 +3609,43 @@
     }
    }
   },
-  "osm-way-1504713103": {
+  "osm-node-6239093318": {
    "website": {
-    "url": "https://www.sushidokku.com/",
-    "page": "https://www.sushidokku.com/",
-    "image": {
-     "src": "https://images.squarespace-cdn.com/content/v1/5e5407678fda8d4ea85bddfe/44f3fdee-503c-47ba-bb75-3012ad2f649b/SushiDokku-Yokocho-296.jpg?format=2500w",
-     "width": 2500,
-     "height": 1666
-    }
-   }
-  },
-  "osm-node-4565654594": {
-   "website": {
-    "url": "https://www.theallis.com/",
-    "page": "https://www.theallis.com/",
+    "url": "https://restaurants.subway.com/united-states/il/chicago/1525-w-madison-ave",
+    "page": "https://restaurants.subway.com/united-states/il/chicago/1525-w-madison-ave",
     "hours": {
      "schedule": [
       [
+       540,
+       1260
+      ],
+      [
+       420,
+       1320
+      ],
+      [
+       420,
+       1320
+      ],
+      [
+       420,
+       1320
+      ],
+      [
+       420,
+       1320
+      ],
+      [
+       420,
+       1320
+      ],
+      [
        480,
-       1020
-      ],
-      [
-       420,
-       1320
-      ],
-      [
-       420,
-       1320
-      ],
-      [
-       420,
-       1320
-      ],
-      [
-       420,
-       1320
-      ],
-      [
-       420,
-       1500
-      ],
-      [
-       420,
-       1500
+       1260
       ]
      ],
-     "source": "hours listed on the page on the venue website",
-     "page": "https://www.theallis.com/"
-    },
-    "image": {
-     "src": "https://www.theallis.com/system/files/112025/691f51d11cb7110336000004/full_bleed/allis4.jpg?1763660258",
-     "width": 1280,
-     "height": 961
+     "source": "schema.org data on the venue website",
+     "page": "https://restaurants.subway.com/united-states/il/chicago/1525-w-madison-ave"
     }
    }
   },
@@ -3425,43 +3689,14 @@
     }
    }
   },
-  "osm-node-6239093318": {
+  "osm-way-1504713103": {
    "website": {
-    "url": "https://restaurants.subway.com/united-states/il/chicago/1525-w-madison-ave",
-    "page": "https://restaurants.subway.com/united-states/il/chicago/1525-w-madison-ave",
-    "hours": {
-     "schedule": [
-      [
-       540,
-       1260
-      ],
-      [
-       420,
-       1320
-      ],
-      [
-       420,
-       1320
-      ],
-      [
-       420,
-       1320
-      ],
-      [
-       420,
-       1320
-      ],
-      [
-       420,
-       1320
-      ],
-      [
-       480,
-       1260
-      ]
-     ],
-     "source": "schema.org data on the venue website",
-     "page": "https://restaurants.subway.com/united-states/il/chicago/1525-w-madison-ave"
+    "url": "https://www.sushidokku.com/",
+    "page": "https://www.sushidokku.com/",
+    "image": {
+     "src": "https://images.squarespace-cdn.com/content/v1/5e5407678fda8d4ea85bddfe/44f3fdee-503c-47ba-bb75-3012ad2f649b/SushiDokku-Yokocho-296.jpg?format=2500w",
+     "width": 2500,
+     "height": 1666
     }
    }
   },
@@ -3516,6 +3751,51 @@
     }
    }
   },
+  "osm-node-11272453389": {
+   "website": {
+    "url": "https://levainbakery.com/pages/west-loop",
+    "page": "https://levainbakery.com/pages/west-loop",
+    "hours": {
+     "schedule": [
+      [
+       450,
+       1410
+      ],
+      [
+       450,
+       1410
+      ],
+      [
+       450,
+       1410
+      ],
+      [
+       450,
+       1410
+      ],
+      [
+       450,
+       1410
+      ],
+      [
+       450,
+       1410
+      ],
+      [
+       450,
+       1410
+      ]
+     ],
+     "source": "hours listed on the page on the venue website",
+     "page": "https://levainbakery.com/pages/west-loop"
+    },
+    "image": {
+     "src": "https://levainbakery.com/cdn/shop/files/Giftguide_Navigation_Evergreen_1.jpg?crop=center&height=528&v=1787165325&width=660",
+     "width": 660,
+     "height": 528
+    }
+   }
+  },
   "osm-node-3325567180": {
    "website": {
     "url": "https://www.petesfresh.com/stores/pfm-10-madison-western",
@@ -3554,6 +3834,67 @@
      "source": "hours listed on the page on the venue website",
      "page": "https://www.petesfresh.com/stores/10-madison-western"
     }
+   }
+  },
+  "osm-way-1504753584": {
+   "website": {
+    "url": "https://www.banditliquors.com/",
+    "page": "https://www.banditliquors.com/",
+    "hours": {
+     "schedule": [
+      [
+       600,
+       1380
+      ],
+      [
+       690,
+       1440
+      ],
+      [
+       690,
+       1440
+      ],
+      [
+       690,
+       1440
+      ],
+      [
+       690,
+       1440
+      ],
+      [
+       690,
+       1440
+      ],
+      [
+       600,
+       1440
+      ]
+     ],
+     "source": "schema.org data on the venue website",
+     "page": "https://www.banditliquors.com/location/bandit-liquors/"
+    },
+    "image": {
+     "src": "https://images.getbento.com/accounts/214d52f9ad5944e03f1fb0ba17cd6c72/media/images/115696.8Bandit-7037.jpg?w=5400&fit=max&auto=compress,format&cs=origin",
+     "width": 5400,
+     "height": 3857
+    }
+   }
+  },
+  "osm-way-219051931": {
+   "website": {
+    "url": "https://www.chicagoparkdistrict.com/parks-facilities/addams-jane-park",
+    "page": "https://www.chicagoparkdistrict.com/parks-facilities/addams-jane-park",
+    "image": {
+     "src": "https://www.chicagoparkdistrict.com/sites/default/files/styles/coh_medium_landscape/public/images/location/Addams%2520Medill%2520Park%25202020-4211-Edit-0.jpg?h=9d766c34&itok=3PhPdTxo",
+     "width": 768,
+     "height": 512
+    }
+   },
+   "commons": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Addams_Park_-_Chicago%2C_IL_-_July_2026.jpg/1280px-Addams_Park_-_Chicago%2C_IL_-_July_2026.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Addams_Park_-_Chicago,_IL_-_July_2026.jpg",
+    "credit": "AlphaBeta135 · CC BY 4.0"
    }
   },
   "osm-node-11272453390": {
@@ -3643,59 +3984,14 @@
     }
    }
   },
-  "osm-node-4457007838": {
+  "osm-node-5168217739": {
    "website": {
-    "url": "https://www.barsiena.com/",
-    "page": "https://www.barsiena.com/",
+    "url": "https://www.avecrestaurant.com/",
+    "page": "https://www.avecrestaurant.com/",
     "image": {
-     "src": "https://images.getbento.com/accounts/b145f5a5f5a038009353e16bd46c1c77/media/images/24998BSWL_VENUE_3.jpg?w=1200&fit=crop&auto=compress,format&cs=origin&crop=focalpoint&fp-x=0.5&fp-y=0.5",
+     "src": "https://images.getbento.com/accounts/ebd8868d5a1468df664c380099992dfe/media/images/72027Avec_Fish_Dinner_2000px.jpg?w=1200&fit=crop&auto=compress,format&cs=origin&crop=focalpoint&fp-x=0.5&fp-y=0.5",
      "width": 1200,
-     "height": 760
-    }
-   }
-  },
-  "osm-node-11272453389": {
-   "website": {
-    "url": "https://levainbakery.com/pages/west-loop",
-    "page": "https://levainbakery.com/pages/west-loop",
-    "hours": {
-     "schedule": [
-      [
-       450,
-       1410
-      ],
-      [
-       450,
-       1410
-      ],
-      [
-       450,
-       1410
-      ],
-      [
-       450,
-       1410
-      ],
-      [
-       450,
-       1410
-      ],
-      [
-       450,
-       1410
-      ],
-      [
-       450,
-       1410
-      ]
-     ],
-     "source": "hours listed on the page on the venue website",
-     "page": "https://levainbakery.com/pages/west-loop"
-    },
-    "image": {
-     "src": "https://levainbakery.com/cdn/shop/files/Giftguide_Navigation_Evergreen_1.jpg?crop=center&height=528&v=1787165325&width=660",
-     "width": 660,
-     "height": 528
+     "height": 801
     }
    }
   },
@@ -3707,17 +4003,6 @@
      "src": "https://images.getbento.com/accounts/33df34d609a7630609ad327639457292/media/images/74167Short_Rib_Taco.jpg?w=1200&fit=max&auto=compress,format&cs=origin",
      "width": 1200,
      "height": 800
-    }
-   }
-  },
-  "osm-node-5168217739": {
-   "website": {
-    "url": "https://www.avecrestaurant.com/",
-    "page": "https://www.avecrestaurant.com/",
-    "image": {
-     "src": "https://images.getbento.com/accounts/ebd8868d5a1468df664c380099992dfe/media/images/72027Avec_Fish_Dinner_2000px.jpg?w=1200&fit=crop&auto=compress,format&cs=origin&crop=focalpoint&fp-x=0.5&fp-y=0.5",
-     "width": 1200,
-     "height": 801
     }
    }
   },
@@ -3758,6 +4043,58 @@
      ],
      "source": "hours listed on the page on the venue website",
      "page": "https://restaurants.subway.com/united-states/il/chicago/2319-w-madison-street"
+    }
+   }
+  },
+  "osm-way-1504713097": {
+   "website": {
+    "url": "https://www.niarestaurant.com/",
+    "page": "https://niarestaurant.com/",
+    "hours": {
+     "schedule": [
+      null,
+      null,
+      [
+       1020,
+       1320
+      ],
+      [
+       1020,
+       1320
+      ],
+      [
+       1020,
+       1320
+      ],
+      [
+       1020,
+       1380
+      ],
+      [
+       1020,
+       1380
+      ]
+     ],
+     "source": "hours listed on the page on the venue website",
+     "page": "https://niarestaurant.com/"
+    }
+   }
+  },
+  "osm-way-209828751": {
+   "commons": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Billy_Goat_Tavern%2C_Chicago%2C_Illinois_%2841568796860%29.jpg/1280px-Billy_Goat_Tavern%2C_Chicago%2C_Illinois_%2841568796860%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Billy_Goat_Tavern,_Chicago,_Illinois_(41568796860).jpg",
+    "credit": "Ken Lund from Reno, Nevada, USA · CC BY-SA 2.0"
+   }
+  },
+  "osm-node-4457007838": {
+   "website": {
+    "url": "https://www.barsiena.com/",
+    "page": "https://www.barsiena.com/",
+    "image": {
+     "src": "https://images.getbento.com/accounts/b145f5a5f5a038009353e16bd46c1c77/media/images/24998BSWL_VENUE_3.jpg?w=1200&fit=crop&auto=compress,format&cs=origin&crop=focalpoint&fp-x=0.5&fp-y=0.5",
+     "width": 1200,
+     "height": 760
     }
    }
   },
@@ -3806,6 +4143,46 @@
     }
    }
   },
+  "osm-node-12737855250": {
+   "website": {
+    "url": "https://restaurants.subway.com/united-states/il/chicago/630-s-clark-st",
+    "page": "https://restaurants.subway.com/united-states/il/chicago/630-s-clark-st",
+    "hours": {
+     "schedule": [
+      [
+       540,
+       1320
+      ],
+      [
+       540,
+       1320
+      ],
+      [
+       540,
+       1320
+      ],
+      [
+       540,
+       1320
+      ],
+      [
+       540,
+       1320
+      ],
+      [
+       540,
+       1320
+      ],
+      [
+       540,
+       1320
+      ]
+     ],
+     "source": "schema.org data on the venue website",
+     "page": "https://restaurants.subway.com/united-states/il/chicago/630-s-clark-st"
+    }
+   }
+  },
   "osm-way-1504730668": {
    "website": {
     "url": "https://www.lonewolftavern.com/#new-page",
@@ -3848,6 +4225,96 @@
      "src": "https://images.squarespace-cdn.com/content/v1/5953173129687f3f29a02430/1499817075062-U8N33PACTXFIH62T3X8L/038_LoneWolf.jpg",
      "width": 2000,
      "height": 1333
+    }
+   }
+  },
+  "osm-way-31557401": {
+   "website": {
+    "url": "https://www.chicagoparkdistrict.com/parks-facilities/skinner-mark-park",
+    "page": "https://www.chicagoparkdistrict.com/parks-facilities/skinner-mark-park",
+    "hours": {
+     "schedule": [
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ],
+      [
+       360,
+       1380
+      ]
+     ],
+     "source": "hours listed on the page on the venue website",
+     "page": "https://www.chicagoparkdistrict.com/parks-facilities/skinner-mark-park"
+    },
+    "image": {
+     "src": "https://www.chicagoparkdistrict.com/sites/default/files/styles/coh_medium_landscape/public/images/location/Skinner-slideshow01.jpg?h=260f0cf3&itok=cZiFawnw",
+     "width": 768,
+     "height": 512
+    }
+   }
+  },
+  "osm-way-389561163": {
+   "website": {
+    "url": "https://www.chicagoparkdistrict.com/parks-facilities/park-no-578",
+    "page": "https://www.chicagoparkdistrict.com/parks-facilities/park-no-578",
+    "hours": {
+     "schedule": [
+      [
+       360,
+       1260
+      ],
+      [
+       360,
+       1260
+      ],
+      [
+       360,
+       1260
+      ],
+      [
+       360,
+       1260
+      ],
+      [
+       360,
+       1260
+      ],
+      [
+       360,
+       1260
+      ],
+      [
+       360,
+       1260
+      ]
+     ],
+     "source": "hours listed on the page on the venue website",
+     "page": "https://www.chicagoparkdistrict.com/parks-facilities/park-no-578"
+    },
+    "image": {
+     "src": "https://www.chicagoparkdistrict.com/sites/default/files/styles/coh_medium_landscape/public/images/location/9a1c1cf41cee49618165fabdd954381d1.JPG?h=260f0cf3&itok=vT1RebIv",
+     "width": 768,
+     "height": 512
     }
    }
   },
@@ -3941,43 +4408,50 @@
     }
    }
   },
-  "osm-node-12737855250": {
+  "osm-node-6267257392": {
    "website": {
-    "url": "https://restaurants.subway.com/united-states/il/chicago/630-s-clark-st",
-    "page": "https://restaurants.subway.com/united-states/il/chicago/630-s-clark-st",
+    "url": "https://www.bigshoulderscoffee.com/",
+    "page": "https://bigshoulderscoffee.com/",
     "hours": {
      "schedule": [
+      null,
       [
-       540,
-       1320
+       420,
+       720
       ],
       [
-       540,
-       1320
+       420,
+       900
       ],
       [
-       540,
-       1320
+       420,
+       900
       ],
       [
-       540,
-       1320
+       420,
+       900
       ],
-      [
-       540,
-       1320
-      ],
-      [
-       540,
-       1320
-      ],
-      [
-       540,
-       1320
-      ]
+      null,
+      null
      ],
-     "source": "schema.org data on the venue website",
-     "page": "https://restaurants.subway.com/united-states/il/chicago/630-s-clark-st"
+     "source": "hours listed on the page on the venue website",
+     "page": "https://bigshoulderscoffee.com/pages/locations"
+    },
+    "image": {
+     "src": "https://bigshoulderscoffee.com/cdn/shop/collections/Manos.jpg?v=1713799051",
+     "width": 3059,
+     "height": 3059
+    }
+   }
+  },
+  "osm-way-1504713096": {
+   "website": {
+    "url": "https://www.jubileejuice.com/",
+    "page": "https://jubileejuice.com/",
+    "image": {
+     "src": "https://jubileejuice.com/wp-content/uploads/2026/06/unnamed-7-e1781267107663.webp",
+     "width": 765,
+     "height": 720
     }
    }
   },
@@ -3989,45 +4463,6 @@
      "src": "https://www.umaichicago.com/uploads/5/8/6/0/5860584/30079518-571152879935895-3428541516153356288-n.jpg",
      "width": 800,
      "height": 800
-    }
-   }
-  },
-  "osm-way-1504713097": {
-   "website": {
-    "url": "https://www.niarestaurant.com/",
-    "page": "https://niarestaurant.com/",
-    "hours": {
-     "schedule": [
-      null,
-      null,
-      [
-       1020,
-       1320
-      ],
-      [
-       1020,
-       1320
-      ],
-      [
-       1020,
-       1320
-      ],
-      [
-       1020,
-       1380
-      ],
-      [
-       1020,
-       1380
-      ]
-     ],
-     "source": "hours listed on the page on the venue website",
-     "page": "https://niarestaurant.com/"
-    },
-    "image": {
-     "src": "https://niarestaurant.com/wp-content/uploads/2026/10/featured-image-1791745226.jpeg",
-     "width": 1200,
-     "height": 896
     }
    }
   },
@@ -4082,90 +4517,6 @@
      "src": "https://images.squarespace-cdn.com/content/v1/68706c9cf6091b1191bc5d54/73bb4a6f-19f9-4983-adf7-d8b49a1335e2/GAZ01122.JPG?format=2500w",
      "width": 2048,
      "height": 1365
-    }
-   }
-  },
-  "osm-node-13298780043": {
-   "website": {
-    "url": "https://cerditomuerto.com",
-    "page": "https://cerditomuerto.com/",
-    "hours": {
-     "schedule": [
-      null,
-      null,
-      null,
-      [
-       1020,
-       1440
-      ],
-      [
-       1020,
-       1440
-      ],
-      [
-       1020,
-       1560
-      ],
-      [
-       1020,
-       1560
-      ]
-     ],
-     "source": "hours listed on the page on the venue website",
-     "page": "https://cerditomuerto.com/hours-%26-contact"
-    }
-   }
-  },
-  "osm-node-5460707118": {
-   "website": {
-    "url": "https://www.proxichicago.com/",
-    "page": "https://www.proxichicago.com/",
-    "hours": {
-     "schedule": [
-      null,
-      [
-       1020,
-       1260
-      ],
-      [
-       1020,
-       1260
-      ],
-      [
-       1020,
-       1260
-      ],
-      [
-       1020,
-       1260
-      ],
-      [
-       1020,
-       1320
-      ],
-      [
-       1020,
-       1320
-      ]
-     ],
-     "source": "hours listed on the page on the venue website",
-     "page": "https://www.proxichicago.com/"
-    },
-    "image": {
-     "src": "https://www.proxichicago.com/static/5882e328e3df28fd785a49d7/t/588c2e472994ca8c2ada9974/1485581896479/proxi_social_1200x628_v01_format-1500w.jpg",
-     "width": 1200,
-     "height": 628
-    }
-   }
-  },
-  "osm-node-6251767399": {
-   "website": {
-    "url": "https://5rabanitosdotcom.wordpress.com/",
-    "page": "https://5rabanitosdotcom.wordpress.com/",
-    "image": {
-     "src": "https://5rabanitosdotcom.wordpress.com/wp-content/uploads/2021/02/cropped-a62483ac-795b-48d9-b94a-646bcd2358af.jpeg",
-     "width": 1088,
-     "height": 680
     }
    }
   },
@@ -4225,42 +4576,56 @@
     }
    }
   },
-  "osm-node-12217307929": {
+  "osm-node-5460707118": {
    "website": {
-    "url": "https://www.cerescafechicago.com/",
-    "page": "https://www.cerescafechicago.com/",
+    "url": "https://www.proxichicago.com/",
+    "page": "https://www.proxichicago.com/",
     "hours": {
      "schedule": [
       null,
       [
-       420,
-       1200
+       1020,
+       1260
       ],
       [
-       420,
-       1200
+       1020,
+       1260
       ],
       [
-       420,
-       1200
+       1020,
+       1260
       ],
       [
-       420,
-       1200
+       1020,
+       1260
       ],
       [
-       420,
-       1200
+       1020,
+       1320
       ],
-      null
+      [
+       1020,
+       1320
+      ]
      ],
      "source": "hours listed on the page on the venue website",
-     "page": "https://www.cerescafechicago.com/"
+     "page": "https://www.proxichicago.com/"
     },
     "image": {
-     "src": "https://static.wixstatic.com/media/d832cc_18da887f997848aeb64df03f808019c9%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/d832cc_18da887f997848aeb64df03f808019c9%7Emv2.jpg",
-     "width": 2216,
-     "height": 1330
+     "src": "https://www.proxichicago.com/static/5882e328e3df28fd785a49d7/t/588c2e472994ca8c2ada9974/1485581896479/proxi_social_1200x628_v01_format-1500w.jpg",
+     "width": 1200,
+     "height": 628
+    }
+   }
+  },
+  "osm-node-6251767399": {
+   "website": {
+    "url": "https://5rabanitosdotcom.wordpress.com/",
+    "page": "https://5rabanitosdotcom.wordpress.com/",
+    "image": {
+     "src": "https://5rabanitosdotcom.wordpress.com/wp-content/uploads/2021/02/cropped-075c6841-e3a4-4e55-baac-689add22f84e.jpeg",
+     "width": 1088,
+     "height": 935
     }
    }
   },
@@ -4309,14 +4674,42 @@
     }
    }
   },
-  "osm-way-1504713096": {
+  "osm-node-12217307929": {
    "website": {
-    "url": "https://www.jubileejuice.com/",
-    "page": "https://jubileejuice.com/",
+    "url": "https://www.cerescafechicago.com/",
+    "page": "https://www.cerescafechicago.com/",
+    "hours": {
+     "schedule": [
+      null,
+      [
+       420,
+       1200
+      ],
+      [
+       420,
+       1200
+      ],
+      [
+       420,
+       1200
+      ],
+      [
+       420,
+       1200
+      ],
+      [
+       420,
+       1200
+      ],
+      null
+     ],
+     "source": "hours listed on the page on the venue website",
+     "page": "https://www.cerescafechicago.com/"
+    },
     "image": {
-     "src": "https://jubileejuice.com/wp-content/uploads/2026/06/unnamed-7-e1781267107663.webp",
-     "width": 765,
-     "height": 720
+     "src": "https://static.wixstatic.com/media/d832cc_18da887f997848aeb64df03f808019c9%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/d832cc_18da887f997848aeb64df03f808019c9%7Emv2.jpg",
+     "width": 2216,
+     "height": 1330
     }
    }
   },
@@ -4331,53 +4724,6 @@
     }
    }
   },
-  "osm-way-209828751": {
-   "commons": {
-    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Billy_Goat_Tavern%2C_Chicago%2C_Illinois_%2841568796860%29.jpg/1280px-Billy_Goat_Tavern%2C_Chicago%2C_Illinois_%2841568796860%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-    "page": "https://commons.wikimedia.org/wiki/File:Billy_Goat_Tavern,_Chicago,_Illinois_(41568796860).jpg",
-    "credit": "Ken Lund from Reno, Nevada, USA · CC BY-SA 2.0"
-   }
-  },
-  "osm-node-2481236974": {
-   "website": {
-    "url": "https://locations.chipotle.com/il/chicago/230-west-monroe-street",
-    "page": "https://locations.chipotle.com/il/chicago/230-west-monroe-street",
-    "hours": {
-     "schedule": [
-      [
-       0,
-       1440
-      ],
-      [
-       630,
-       1200
-      ],
-      [
-       630,
-       1200
-      ],
-      [
-       630,
-       1200
-      ],
-      [
-       630,
-       1200
-      ],
-      [
-       630,
-       1140
-      ],
-      [
-       0,
-       1440
-      ]
-     ],
-     "source": "schema.org data on the venue website",
-     "page": "https://locations.chipotle.com/il/chicago/230-west-monroe-street"
-    }
-   }
-  },
   "osm-node-13078237253": {
    "website": {
     "url": "https://eaveschicago.com/",
@@ -4389,169 +4735,34 @@
     }
    }
   },
-  "osm-node-5460275344": {
+  "osm-node-13298780043": {
    "website": {
-    "url": "https://frenchmarketchicago.com/vendor/vanille-patisserie/",
-    "page": "https://frenchmarketchicago.com/vendor/vanille-patisserie/",
-    "image": {
-     "src": "https://frenchmarketchicago.com/wp-content/uploads/mac_asstd_tier_lor_nick-1024x680.jpg",
-     "width": 1024,
-     "height": 680
-    }
-   }
-  },
-  "osm-node-13749212586": {
-   "website": {
-    "url": "https://frenchmarketchicago.com/vendor/thimis-empanadas/",
-    "page": "https://frenchmarketchicago.com/vendor/thimis-empanadas/",
-    "image": {
-     "src": "https://frenchmarketchicago.com/wp-content/uploads/1-1024x816.jpg",
-     "width": 1024,
-     "height": 816
-    }
-   }
-  },
-  "osm-node-13749212592": {
-   "website": {
-    "url": "https://frenchmarketchicago.com/vendor/bell-heirs-bbq/",
-    "page": "https://frenchmarketchicago.com/vendor/bell-heirs-bbq/",
-    "image": {
-     "src": "https://frenchmarketchicago.com/wp-content/uploads/1-1024x816.jpg",
-     "width": 1024,
-     "height": 816
-    }
-   }
-  },
-  "osm-node-13322988709": {
-   "website": {
-    "url": "https://frenchmarketchicago.com/vendor/blue-spot-sushi/",
-    "page": "https://frenchmarketchicago.com/vendor/blue-spot-sushi/",
-    "image": {
-     "src": "https://frenchmarketchicago.com/wp-content/uploads/bs01_vendor-slideshow.jpg",
-     "width": 700,
-     "height": 465
-    }
-   }
-  },
-  "osm-way-210269759": {
-   "website": {
-    "url": "https://www.chipublib.org/locations/88/",
-    "page": "https://www.chipublib.org/locations/88/",
+    "url": "https://cerditomuerto.com",
+    "page": "https://cerditomuerto.com/",
     "hours": {
      "schedule": [
+      null,
+      null,
+      null,
       [
-       780,
-       1020
+       1020,
+       1440
       ],
       [
-       600,
-       1080
+       1020,
+       1440
       ],
       [
-       720,
-       1200
+       1020,
+       1560
       ],
       [
-       600,
-       1080
-      ],
-      [
-       720,
-       1200
-      ],
-      [
-       540,
-       1020
-      ],
-      [
-       540,
-       1020
+       1020,
+       1560
       ]
      ],
-     "source": "schema.org data on the venue website",
-     "page": "https://www.chipublib.org/locations/88/"
-    },
-    "image": {
-     "src": "https://chipublib.bibliocommons.com/events/uploads/images/full/6f4318cb886ccc68bfc30ce6142cf894/CPL-West-Loop-Branch-Tom-Harris-web.jpg",
-     "width": 570,
-     "height": 400
-    }
-   }
-  },
-  "osm-node-13322988707": {
-   "website": {
-    "url": "https://frenchmarketchicago.com/vendor/firenze-italian-street-food/",
-    "page": "https://frenchmarketchicago.com/vendor/firenze-italian-street-food/",
-    "image": {
-     "src": "https://frenchmarketchicago.com/wp-content/uploads/vendor-slideshow6.jpg",
-     "width": 700,
-     "height": 465
-    }
-   }
-  },
-  "osm-node-13322988701": {
-   "website": {
-    "url": "https://frenchmarketchicago.com/vendor/buen-apetito/",
-    "page": "https://frenchmarketchicago.com/vendor/buen-apetito/",
-    "image": {
-     "src": "https://frenchmarketchicago.com/wp-content/uploads/1-1024x816.jpg",
-     "width": 1024,
-     "height": 816
-    }
-   }
-  },
-  "osm-node-6221680435": {
-   "website": {
-    "url": "https://allavitachicago.com/",
-    "page": "https://allavitachicago.com/",
-    "image": {
-     "src": "https://cdn.prod.website-files.com/608c22a9a0bebf3476f71608/68e5750019ac73afd6b9e797_08_25_Alla_Vita_Interior_Main_Dining_Room_NP_159.jpeg",
-     "width": 3000,
-     "height": 2000
-    }
-   }
-  },
-  "osm-node-13322931499": {
-   "website": {
-    "url": "https://frenchmarketchicago.com/vendor/k-kitchen/",
-    "page": "https://frenchmarketchicago.com/vendor/k-kitchen/",
-    "image": {
-     "src": "https://frenchmarketchicago.com/wp-content/uploads/bibm-rice-bowl-1024x860.jpg",
-     "width": 1024,
-     "height": 860
-    }
-   }
-  },
-  "osm-node-6284753435": {
-   "website": {
-    "url": "https://doughnutvault.com/",
-    "page": "https://www.doughnutvault.com/",
-    "image": {
-     "src": "https://images.squarespace-cdn.com/content/v1/66675789efc1680422bf043f/ee01935b-c312-499f-a38d-05ce900d8d2d/1B9A8047.jpg?format=2500w",
-     "width": 1365,
-     "height": 1233
-    }
-   }
-  },
-  "osm-node-13815785295": {
-   "website": {
-    "url": "https://www.pizzalobo.com",
-    "page": "https://www.pizzalobo.com/",
-    "image": {
-     "src": "https://images.squarespace-cdn.com/content/v1/630d4fcc4dd84c42357c7ead/1730736845087-5FAW3UR0LPA736RUOSM7/image-asset.jpeg",
-     "width": 1000,
-     "height": 1000
-    }
-   }
-  },
-  "osm-node-13749212588": {
-   "website": {
-    "url": "https://frenchmarketchicago.com/vendor/klay-oven-kitchen/",
-    "page": "https://frenchmarketchicago.com/vendor/klay-oven-kitchen/",
-    "image": {
-     "src": "https://frenchmarketchicago.com/wp-content/uploads/slide-klayoven-1.jpg",
-     "width": 700,
-     "height": 465
+     "source": "hours listed on the page on the venue website",
+     "page": "https://cerditomuerto.com/hours-%26-contact"
     }
    }
   },
@@ -4595,6 +4806,192 @@
     }
    }
   },
+  "osm-node-13322988705": {
+   "website": {
+    "url": "https://frenchmarketchicago.com/vendor/bills-olive-oil/",
+    "page": "https://frenchmarketchicago.com/vendor/bills-olive-oil/",
+    "image": {
+     "src": "https://frenchmarketchicago.com/wp-content/uploads/1-1024x816.jpg",
+     "width": 1024,
+     "height": 816
+    }
+   }
+  },
+  "osm-node-2481236974": {
+   "website": {
+    "url": "https://locations.chipotle.com/il/chicago/230-west-monroe-street",
+    "page": "https://locations.chipotle.com/il/chicago/230-west-monroe-street",
+    "hours": {
+     "schedule": [
+      [
+       0,
+       1440
+      ],
+      [
+       630,
+       1200
+      ],
+      [
+       630,
+       1200
+      ],
+      [
+       630,
+       1200
+      ],
+      [
+       630,
+       1200
+      ],
+      [
+       630,
+       1140
+      ],
+      [
+       0,
+       1440
+      ]
+     ],
+     "source": "schema.org data on the venue website",
+     "page": "https://locations.chipotle.com/il/chicago/230-west-monroe-street"
+    }
+   }
+  },
+  "osm-way-124865443": {
+   "commons": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/6/66/Civic_Opera_House_060528.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "page": "https://commons.wikimedia.org/wiki/File:Civic_Opera_House_060528.jpg",
+    "credit": "User:JeremyA · CC BY-SA 2.5"
+   }
+  },
+  "osm-node-13322988709": {
+   "website": {
+    "url": "https://frenchmarketchicago.com/vendor/blue-spot-sushi/",
+    "page": "https://frenchmarketchicago.com/vendor/blue-spot-sushi/",
+    "image": {
+     "src": "https://frenchmarketchicago.com/wp-content/uploads/bs01_vendor-slideshow.jpg",
+     "width": 700,
+     "height": 465
+    }
+   }
+  },
+  "osm-node-13749212586": {
+   "website": {
+    "url": "https://frenchmarketchicago.com/vendor/thimis-empanadas/",
+    "page": "https://frenchmarketchicago.com/vendor/thimis-empanadas/",
+    "image": {
+     "src": "https://frenchmarketchicago.com/wp-content/uploads/1-1024x816.jpg",
+     "width": 1024,
+     "height": 816
+    }
+   }
+  },
+  "osm-node-5460275344": {
+   "website": {
+    "url": "https://frenchmarketchicago.com/vendor/vanille-patisserie/",
+    "page": "https://frenchmarketchicago.com/vendor/vanille-patisserie/",
+    "image": {
+     "src": "https://frenchmarketchicago.com/wp-content/uploads/mac_asstd_tier_lor_nick-1024x680.jpg",
+     "width": 1024,
+     "height": 680
+    }
+   }
+  },
+  "osm-node-2979738790": {
+   "commons": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/a/af/Federal_reserve_bank_of_chicago.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "page": "https://commons.wikimedia.org/wiki/File:Federal_reserve_bank_of_chicago.jpg",
+    "credit": "Public domain"
+   }
+  },
+  "osm-node-13749212592": {
+   "website": {
+    "url": "https://frenchmarketchicago.com/vendor/bell-heirs-bbq/",
+    "page": "https://frenchmarketchicago.com/vendor/bell-heirs-bbq/",
+    "image": {
+     "src": "https://frenchmarketchicago.com/wp-content/uploads/1-1024x816.jpg",
+     "width": 1024,
+     "height": 816
+    }
+   }
+  },
+  "osm-node-13322988707": {
+   "website": {
+    "url": "https://frenchmarketchicago.com/vendor/firenze-italian-street-food/",
+    "page": "https://frenchmarketchicago.com/vendor/firenze-italian-street-food/",
+    "image": {
+     "src": "https://frenchmarketchicago.com/wp-content/uploads/vendor-slideshow6.jpg",
+     "width": 700,
+     "height": 465
+    }
+   }
+  },
+  "osm-node-6221680435": {
+   "website": {
+    "url": "https://allavitachicago.com/",
+    "page": "https://allavitachicago.com/",
+    "image": {
+     "src": "https://cdn.prod.website-files.com/608c22a9a0bebf3476f71608/68e5750019ac73afd6b9e797_08_25_Alla_Vita_Interior_Main_Dining_Room_NP_159.jpeg",
+     "width": 3000,
+     "height": 2000
+    }
+   }
+  },
+  "osm-node-13322931499": {
+   "website": {
+    "url": "https://frenchmarketchicago.com/vendor/k-kitchen/",
+    "page": "https://frenchmarketchicago.com/vendor/k-kitchen/",
+    "image": {
+     "src": "https://frenchmarketchicago.com/wp-content/uploads/bibm-rice-bowl-1024x860.jpg",
+     "width": 1024,
+     "height": 860
+    }
+   }
+  },
+  "osm-node-13749212587": {
+   "website": {
+    "url": "https://frenchmarketchicago.com/vendor/fresco-delicioso/",
+    "page": "https://frenchmarketchicago.com/vendor/fresco-delicioso/",
+    "image": {
+     "src": "https://frenchmarketchicago.com/wp-content/uploads/1-1024x816.jpg",
+     "width": 1024,
+     "height": 816
+    }
+   }
+  },
+  "osm-node-6284753435": {
+   "website": {
+    "url": "https://doughnutvault.com/",
+    "page": "https://www.doughnutvault.com/",
+    "image": {
+     "src": "https://images.squarespace-cdn.com/content/v1/66675789efc1680422bf043f/ee01935b-c312-499f-a38d-05ce900d8d2d/1B9A8047.jpg?format=2500w",
+     "width": 1365,
+     "height": 1233
+    }
+   }
+  },
+  "osm-node-13322988701": {
+   "website": {
+    "url": "https://frenchmarketchicago.com/vendor/buen-apetito/",
+    "page": "https://frenchmarketchicago.com/vendor/buen-apetito/",
+    "image": {
+     "src": "https://frenchmarketchicago.com/wp-content/uploads/1-1024x816.jpg",
+     "width": 1024,
+     "height": 816
+    }
+   }
+  },
+  "osm-node-13749212588": {
+   "website": {
+    "url": "https://frenchmarketchicago.com/vendor/klay-oven-kitchen/",
+    "page": "https://frenchmarketchicago.com/vendor/klay-oven-kitchen/",
+    "image": {
+     "src": "https://frenchmarketchicago.com/wp-content/uploads/slide-klayoven-1.jpg",
+     "width": 700,
+     "height": 465
+    }
+   }
+  },
   "osm-node-13322931498": {
    "website": {
     "url": "https://frenchmarketchicago.com/vendor/saigon-sisters/",
@@ -4603,6 +5000,140 @@
      "src": "https://frenchmarketchicago.com/wp-content/uploads/slide-saigon-1.jpg",
      "width": 700,
      "height": 465
+    }
+   }
+  },
+  "osm-node-13815785295": {
+   "website": {
+    "url": "https://www.pizzalobo.com",
+    "page": "https://www.pizzalobo.com/",
+    "image": {
+     "src": "https://images.squarespace-cdn.com/content/v1/630d4fcc4dd84c42357c7ead/1730736845087-5FAW3UR0LPA736RUOSM7/image-asset.jpeg",
+     "width": 1000,
+     "height": 1000
+    }
+   }
+  },
+  "osm-node-13322988702": {
+   "website": {
+    "url": "https://frenchmarketchicago.com/vendor/vertige/",
+    "page": "https://frenchmarketchicago.com/vendor/vertige/",
+    "image": {
+     "src": "https://frenchmarketchicago.com/wp-content/uploads/img_6618.jpg",
+     "width": 1024,
+     "height": 1024
+    }
+   }
+  },
+  "osm-node-13749212593": {
+   "website": {
+    "url": "https://frenchmarketchicago.com/vendor/righteous-kitchen/",
+    "page": "https://frenchmarketchicago.com/vendor/righteous-kitchen/",
+    "image": {
+     "src": "https://frenchmarketchicago.com/wp-content/uploads/406802727_933705658185097_5777383536149457113_n-1024x683.jpg",
+     "width": 1024,
+     "height": 683
+    }
+   }
+  },
+  "osm-node-6324294699": {
+   "website": {
+    "url": "http://www.panaderiaelacambaro.com/",
+    "page": "http://www.panaderiaelacambaro.com/",
+    "image": {
+     "src": "http://www.panaderiaelacambaro.com/publishImages/~master~master~~master3.jpg",
+     "width": 979,
+     "height": 514
+    }
+   }
+  },
+  "osm-node-13322988703": {
+   "website": {
+    "url": "https://frenchmarketchicago.com/vendor/panlasa/",
+    "page": "https://frenchmarketchicago.com/vendor/panlasa/",
+    "image": {
+     "src": "https://frenchmarketchicago.com/wp-content/uploads/1-1024x816.jpg",
+     "width": 1024,
+     "height": 816
+    }
+   }
+  },
+  "osm-node-12990167037": {
+   "website": {
+    "url": "https://www.cbotbuilding.com/chicago-board-of-trade-building-museum/",
+    "page": "https://www.cbotbuilding.com/chicago-board-of-trade-building-museum/",
+    "hours": {
+     "schedule": [
+      null,
+      [
+       600,
+       960
+      ],
+      [
+       600,
+       960
+      ],
+      [
+       600,
+       960
+      ],
+      [
+       600,
+       960
+      ],
+      [
+       600,
+       960
+      ],
+      null
+     ],
+     "source": "hours listed on the page on the venue website",
+     "page": "https://www.cbotbuilding.com/chicago-board-of-trade-building-museum/"
+    },
+    "image": {
+     "src": "https://www.cbotbuilding.com/wp-content/themes/cbot_building/img/museum-slide-6.jpg",
+     "width": 1920,
+     "height": 1080
+    }
+   }
+  },
+  "osm-node-14086324951": {
+   "website": {
+    "url": "https://locations.familydollar.com/il/chicago/1700-w-18th-st",
+    "page": "https://locations.familydollar.com/il/chicago/1700-w-18th-st",
+    "hours": {
+     "schedule": [
+      [
+       480,
+       1320
+      ],
+      [
+       480,
+       1320
+      ],
+      [
+       480,
+       1320
+      ],
+      [
+       480,
+       1320
+      ],
+      [
+       480,
+       1320
+      ],
+      [
+       480,
+       1320
+      ],
+      [
+       480,
+       1320
+      ]
+     ],
+     "source": "schema.org data on the venue website",
+     "page": "https://locations.familydollar.com/il/chicago/1700-w-18th-st"
     }
    }
   },
@@ -4645,70 +5176,6 @@
     }
    }
   },
-  "osm-node-6324294699": {
-   "website": {
-    "url": "http://www.panaderiaelacambaro.com/",
-    "page": "http://www.panaderiaelacambaro.com/",
-    "image": {
-     "src": "http://www.panaderiaelacambaro.com/publishImages/~master~master~~master3.jpg",
-     "width": 979,
-     "height": 514
-    }
-   }
-  },
-  "osm-node-13322988702": {
-   "website": {
-    "url": "https://frenchmarketchicago.com/vendor/vertige/",
-    "page": "https://frenchmarketchicago.com/vendor/vertige/",
-    "image": {
-     "src": "https://frenchmarketchicago.com/wp-content/uploads/img_6618.jpg",
-     "width": 1024,
-     "height": 1024
-    }
-   }
-  },
-  "osm-node-5448894821": {
-   "website": {
-    "url": "https://www.fornorossopizzeria.com/",
-    "page": "https://www.fornorossopizzeria.com/",
-    "hours": {
-     "schedule": [
-      [
-       960,
-       1260
-      ],
-      null,
-      [
-       960,
-       1260
-      ],
-      [
-       960,
-       1260
-      ],
-      [
-       660,
-       1260
-      ],
-      [
-       660,
-       1320
-      ],
-      [
-       720,
-       1320
-      ]
-     ],
-     "source": "hours listed on the page on the venue website",
-     "page": "https://www.fornorossopizzeria.com/"
-    },
-    "image": {
-     "src": "https://static.wixstatic.com/media/6fd971_308acad3eda3434e8b4089fc7537ab64~mv2.jpg/v1/fit/w_480,h_480,q_90,enc_avif,quality_auto/6fd971_308acad3eda3434e8b4089fc7537ab64~mv2.jpg",
-     "width": 480,
-     "height": 320
-    }
-   }
-  },
   "osm-node-6459394817": {
    "website": {
     "url": "https://www.makochicago.com",
@@ -4745,17 +5212,6 @@
      "src": "https://images.squarespace-cdn.com/content/v1/5b621f125cfd79831a7effc2/1786400761243-K4XI0KWOQQUQ2RIUQKTT/20260402_rst_mako_01_053.jpg",
      "width": 1500,
      "height": 1001
-    }
-   }
-  },
-  "osm-node-13322988703": {
-   "website": {
-    "url": "https://frenchmarketchicago.com/vendor/panlasa/",
-    "page": "https://frenchmarketchicago.com/vendor/panlasa/",
-    "image": {
-     "src": "https://frenchmarketchicago.com/wp-content/uploads/1-1024x816.jpg",
-     "width": 1024,
-     "height": 816
     }
    }
   },
@@ -4846,25 +5302,92 @@
     }
    }
   },
-  "osm-node-13749212593": {
+  "osm-way-134017316": {
    "website": {
-    "url": "https://frenchmarketchicago.com/vendor/righteous-kitchen/",
-    "page": "https://frenchmarketchicago.com/vendor/righteous-kitchen/",
+    "url": "https://www.chicagoparkdistrict.com/parks-facilities/jefferson-thomas-park",
+    "page": "https://www.chicagoparkdistrict.com/parks-facilities/jefferson-thomas-park",
     "image": {
-     "src": "https://frenchmarketchicago.com/wp-content/uploads/406802727_933705658185097_5777383536149457113_n-1024x683.jpg",
-     "width": 1024,
-     "height": 683
+     "src": "https://www.chicagoparkdistrict.com/sites/default/files/styles/coh_medium_landscape/public/images/location/41fc07cf99f940a7838c521c656bb4921.JPG?h=260f0cf3&itok=shuxKDGy",
+     "width": 768,
+     "height": 512
     }
    }
   },
-  "osm-node-14092961101": {
+  "osm-node-5295997076": {
    "website": {
-    "url": "https://www.pochoschicago.com/",
-    "page": "https://www.pochoschicago.com/",
+    "url": "https://www.onenorthchicago.com/",
+    "page": "https://www.onenorthchicago.com/",
+    "hours": {
+     "schedule": [
+      null,
+      null,
+      [
+       660,
+       1200
+      ],
+      [
+       660,
+       1200
+      ],
+      [
+       660,
+       1200
+      ],
+      [
+       660,
+       1200
+      ],
+      null
+     ],
+     "source": "schema.org data on the venue website",
+     "page": "https://www.onenorthchicago.com/"
+    },
     "image": {
-     "src": "https://images.squarespace-cdn.com/content/v1/64496f27ec600e50c4fe804c/a53bb56d-9ee0-4c9e-9270-662e20b2972f/Pochos-16.jpg",
-     "width": 2500,
-     "height": 1490
+     "src": "https://static.wixstatic.com/media/03a929_16a694a8a38a4f4a966f67ccd1f33757%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/03a929_16a694a8a38a4f4a966f67ccd1f33757%7Emv2.jpg",
+     "width": 960,
+     "height": 960
+    }
+   }
+  },
+  "osm-node-5448894821": {
+   "website": {
+    "url": "https://www.fornorossopizzeria.com/",
+    "page": "https://www.fornorossopizzeria.com/",
+    "hours": {
+     "schedule": [
+      [
+       960,
+       1260
+      ],
+      null,
+      [
+       960,
+       1260
+      ],
+      [
+       960,
+       1260
+      ],
+      [
+       660,
+       1260
+      ],
+      [
+       660,
+       1320
+      ],
+      [
+       720,
+       1320
+      ]
+     ],
+     "source": "hours listed on the page on the venue website",
+     "page": "https://www.fornorossopizzeria.com/"
+    },
+    "image": {
+     "src": "https://static.wixstatic.com/media/6fd971_308acad3eda3434e8b4089fc7537ab64~mv2.jpg/v1/fit/w_480,h_480,q_90,enc_avif,quality_auto/6fd971_308acad3eda3434e8b4089fc7537ab64~mv2.jpg",
+     "width": 480,
+     "height": 320
     }
    }
   },
@@ -4876,6 +5399,17 @@
      "src": "https://images.squarespace-cdn.com/content/v1/6734ef115721c22388025782/9859bf6e-4823-45f3-b1d5-32e68af2e7a5/IMG_8800-Enhanced-NR.jpg?format=2500w",
      "width": 2500,
      "height": 1667
+    }
+   }
+  },
+  "osm-node-6316955696": {
+   "website": {
+    "url": "https://www.wishbonechicago.com/",
+    "page": "https://www.wishbonechicago.com/",
+    "image": {
+     "src": "https://www.wishbonechicago.com/images/hero-1.jpg",
+     "width": 1800,
+     "height": 1208
     }
    }
   },
@@ -4916,50 +5450,54 @@
     }
    }
   },
-  "osm-node-6407436054": {
+  "osm-node-4196256205": {
    "website": {
-    "url": "https://cirachicago.com/",
-    "page": "https://cirachicago.com/",
-    "image": {
-     "src": "https://images.squarespace-cdn.com/content/v1/5c58fd94fb22a57d9b8abd7d/1554234397997-CBIQQ4LSS9F61J0IYYLF/Cira.jpg",
-     "width": 2500,
-     "height": 1667
+    "url": "https://restaurants.subway.com/united-states/il/chicago/180-n-jefferson-st",
+    "page": "https://restaurants.subway.com/united-states/il/chicago/180-n-jefferson-st",
+    "hours": {
+     "schedule": [
+      [
+       540,
+       1260
+      ],
+      [
+       420,
+       1320
+      ],
+      [
+       420,
+       1320
+      ],
+      [
+       420,
+       1320
+      ],
+      [
+       420,
+       1320
+      ],
+      [
+       420,
+       1320
+      ],
+      [
+       480,
+       1260
+      ]
+     ],
+     "source": "schema.org data on the venue website",
+     "page": "https://restaurants.subway.com/united-states/il/chicago/180-n-jefferson-st"
     }
    }
   },
-  "osm-node-5295997076": {
+  "osm-node-14092961101": {
    "website": {
-    "url": "https://www.onenorthchicago.com/",
-    "page": "https://www.onenorthchicago.com/",
-    "hours": {
-     "schedule": [
-      null,
-      null,
-      [
-       660,
-       1200
-      ],
-      [
-       660,
-       1200
-      ],
-      [
-       660,
-       1200
-      ],
-      [
-       660,
-       1200
-      ],
-      null
-     ],
-     "source": "schema.org data on the venue website",
-     "page": "https://www.onenorthchicago.com/"
-    },
+    "url": "https://www.pochoschicago.com/",
+    "page": "https://www.pochoschicago.com/",
     "image": {
-     "src": "https://static.wixstatic.com/media/03a929_16a694a8a38a4f4a966f67ccd1f33757%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/03a929_16a694a8a38a4f4a966f67ccd1f33757%7Emv2.jpg",
-     "width": 960,
-     "height": 960
+     "src": "https://images.squarespace-cdn.com/content/v1/64496f27ec600e50c4fe804c/a53bb56d-9ee0-4c9e-9270-662e20b2972f/Pochos-16.jpg",
+     "width": 2500,
+     "height": 1490
     }
    }
   },
@@ -4971,6 +5509,73 @@
      "src": "https://images.squarespace-cdn.com/content/v1/66536296f27321176a4760b3/35134e3a-bdda-4734-a222-964a3f936c87/matchacita-06292022-84+%282%29.jpg?format=2500w",
      "width": 1024,
      "height": 683
+    }
+   }
+  },
+  "osm-node-11841529422": {
+   "website": {
+    "url": "https://www.trainmoment.com/",
+    "page": "https://www.trainmoment.com/",
+    "hours": {
+     "schedule": [
+      [
+       480,
+       840
+      ],
+      [
+       360,
+       1200
+      ],
+      [
+       360,
+       1200
+      ],
+      [
+       360,
+       1200
+      ],
+      [
+       360,
+       1200
+      ],
+      [
+       360,
+       1200
+      ],
+      [
+       480,
+       840
+      ]
+     ],
+     "source": "schema.org data on the venue website",
+     "page": "https://www.trainmoment.com/"
+    },
+    "image": {
+     "src": "https://images.squarespace-cdn.com/content/v1/6390cfed5016e11a174ddef1/7bb07773-7462-41d1-98db-d2bc0e301ed8/2022.03.01+-+Engberg+-+Train+Moment-1-10.jpg?format=2500w",
+     "width": 2500,
+     "height": 1663
+    }
+   }
+  },
+  "osm-node-6407436054": {
+   "website": {
+    "url": "https://cirachicago.com/",
+    "page": "https://cirachicago.com/",
+    "image": {
+     "src": "https://images.squarespace-cdn.com/content/v1/5c58fd94fb22a57d9b8abd7d/1554234397997-CBIQQ4LSS9F61J0IYYLF/Cira.jpg",
+     "width": 2500,
+     "height": 1667
+    }
+   }
+  },
+  "osm-node-11134662781": {
+   "website": {
+    "url": "https://www.necessary-coffee.com",
+    "page": "https://www.necessary-coffee.com/",
+    "image": {
+     "src": "https://images.squarespace-cdn.com/content/v1/695ef57250d4e50de10cb606/7ab6e80f-971a-41f1-8599-522007c3b02d/IMG_1720-1.jpg?format=2500w",
+     "width": 2016,
+     "height": 1512
     }
    }
   },
@@ -5019,65 +5624,48 @@
     }
    }
   },
-  "osm-node-4196256205": {
+  "osm-way-134045254": {
    "website": {
-    "url": "https://restaurants.subway.com/united-states/il/chicago/180-n-jefferson-st",
-    "page": "https://restaurants.subway.com/united-states/il/chicago/180-n-jefferson-st",
+    "url": "https://www.chicagoparkdistrict.com/parks-facilities/altgeld-john-park",
+    "page": "https://www.chicagoparkdistrict.com/parks-facilities/altgeld-john-park",
     "hours": {
      "schedule": [
       [
-       540,
+       360,
        1260
       ],
       [
-       420,
-       1320
+       360,
+       1260
       ],
       [
-       420,
-       1320
+       360,
+       1260
       ],
       [
-       420,
-       1320
+       360,
+       1260
       ],
       [
-       420,
-       1320
+       360,
+       1260
       ],
       [
-       420,
-       1320
+       360,
+       1260
       ],
       [
-       480,
+       360,
        1260
       ]
      ],
-     "source": "schema.org data on the venue website",
-     "page": "https://restaurants.subway.com/united-states/il/chicago/180-n-jefferson-st"
-    }
-   }
-  },
-  "osm-node-6316955696": {
-   "website": {
-    "url": "https://www.wishbonechicago.com/",
-    "page": "https://www.wishbonechicago.com/",
+     "source": "hours listed on the page on the venue website",
+     "page": "https://www.chicagoparkdistrict.com/parks-facilities/altgeld-john-park"
+    },
     "image": {
-     "src": "https://www.wishbonechicago.com/images/hero-1.jpg",
-     "width": 1800,
-     "height": 1208
-    }
-   }
-  },
-  "osm-node-4726220389": {
-   "website": {
-    "url": "https://momotarochicago.com/",
-    "page": "https://momotarochicago.com/",
-    "image": {
-     "src": "https://cdn.prod.website-files.com/621e6fe3c0a99283c0cc87fb/637015f71d81f46ef95a5a20_momomtaro-spread.jpeg",
-     "width": 3000,
-     "height": 2000
+     "src": "https://www.chicagoparkdistrict.com/sites/default/files/styles/coh_medium_landscape/public/images/location/b792f485dbd942a0ada5e1c6f1e459d01.JPG?h=260f0cf3&itok=hybgjSMq",
+     "width": 768,
+     "height": 512
     }
    }
   },
@@ -5115,25 +5703,14 @@
     }
    }
   },
-  "osm-node-4196289896": {
+  "osm-node-4726220389": {
    "website": {
-    "url": "https://www.open-books.org/stores/open-books-west-loop/",
-    "page": "https://www.open-books.org/stores/open-books-west-loop/",
+    "url": "https://momotarochicago.com/",
+    "page": "https://momotarochicago.com/",
     "image": {
-     "src": "https://www.open-books.org/wp-content/uploads/2018/03/Open_Books_13SEPT16-62-of-99-1.jpg",
-     "width": 1224,
-     "height": 817
-    }
-   }
-  },
-  "osm-node-11134662781": {
-   "website": {
-    "url": "https://www.necessary-coffee.com",
-    "page": "https://www.necessary-coffee.com/",
-    "image": {
-     "src": "https://images.squarespace-cdn.com/content/v1/695ef57250d4e50de10cb606/7ab6e80f-971a-41f1-8599-522007c3b02d/IMG_1720-1.jpg?format=2500w",
-     "width": 2016,
-     "height": 1512
+     "src": "https://cdn.prod.website-files.com/621e6fe3c0a99283c0cc87fb/637015f71d81f46ef95a5a20_momomtaro-spread.jpeg",
+     "width": 3000,
+     "height": 2000
     }
    }
   },
@@ -5193,14 +5770,14 @@
     }
    }
   },
-  "osm-node-12479624261": {
+  "osm-node-6407178684": {
    "website": {
-    "url": "https://www.inkwellbar.com",
-    "page": "https://www.inkwellbar.com/",
+    "url": "https://www.cabrachicago.com",
+    "page": "https://www.cabrachicago.com/",
     "image": {
-     "src": "https://images.getbento.com/accounts/cf5699c868195e5e67a4a73213f51da1/media/images/39740NEw-7741ddf8-7611-425f-bd99-cdc6222760cf.jpg?w=1200&fit=crop&auto=compress,format&cs=origin&crop=focalpoint&fp-x=0.5&fp-y=0.5",
-     "width": 1200,
-     "height": 805
+     "src": "https://images.squarespace-cdn.com/content/v1/5cd2efedfd6793286fbd8050/1777924348041-397LGWTZY7TW4UZA0WID/03_26_Cabra_NP_72.jpg",
+     "width": 2500,
+     "height": 1667
     }
    }
   },
@@ -5210,17 +5787,6 @@
     "page": "https://www.moneygunchicago.com/",
     "image": {
      "src": "https://images.squarespace-cdn.com/content/v1/6034289a8baac278d260f16c/a2d009b1-f739-4c42-b826-3f77c7adfbb4/IMG_5050+%286%29.JPG?format=2500w",
-     "width": 2500,
-     "height": 1667
-    }
-   }
-  },
-  "osm-node-6407178684": {
-   "website": {
-    "url": "https://www.cabrachicago.com",
-    "page": "https://www.cabrachicago.com/",
-    "image": {
-     "src": "https://images.squarespace-cdn.com/content/v1/5cd2efedfd6793286fbd8050/1777924348041-397LGWTZY7TW4UZA0WID/03_26_Cabra_NP_72.jpg",
      "width": 2500,
      "height": 1667
     }
@@ -5237,37 +5803,22 @@
     }
    }
   },
-  "osm-node-3263537492": {
+  "osm-node-4196289896": {
    "website": {
-    "url": "https://senoritascantina.com/",
-    "page": "https://www.senoritascantina.com/",
+    "url": "https://www.open-books.org/stores/open-books-west-loop/",
+    "page": "https://www.open-books.org/stores/open-books-west-loop/",
     "image": {
-     "src": "https://images.getbento.com/accounts/50772f0372f7dc6cc8ee898c26974939/media/images/49273cantina_burger.webp?w=5400&fit=max&auto=compress,format&cs=origin",
-     "width": 1360,
-     "height": 1020
+     "src": "https://www.open-books.org/wp-content/uploads/2018/03/Open_Books_13SEPT16-62-of-99-1.jpg",
+     "width": 1224,
+     "height": 817
     }
    }
   },
-  "osm-node-5460581461": {
-   "website": {
-    "url": "https://www.sunnygunchicago.com/",
-    "page": "https://www.sunnygunchicago.com/",
-    "image": {
-     "src": "http://static1.squarespace.com/static/64495f709a1ab06f2f1a059c/t/645840ff4e96fe4154262033/1730749010079/_MG_0826.jpg?format=1500w",
-     "width": 1500,
-     "height": 1000
-    }
-   }
-  },
-  "osm-node-13038099781": {
-   "website": {
-    "url": "https://www.chengdubistro.com",
-    "page": "https://www.chengdubistro.com/",
-    "image": {
-     "src": "https://static.wixstatic.com/media/25ef43_618be80c7f7e4beda863430f29ad18b3~mv2.jpg/v1/fit/w_696,h_464,q_90,enc_avif,quality_auto/25ef43_618be80c7f7e4beda863430f29ad18b3~mv2.jpg",
-     "width": 696,
-     "height": 464
-    }
+  "osm-way-168104071": {
+   "commons": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Harrison_Park_%282%29.jpg/1280px-Harrison_Park_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Harrison_Park_(2).jpg",
+    "credit": "Mahir256 · CC BY-SA 3.0"
    }
   },
   "osm-node-14214664146": {
@@ -5301,6 +5852,135 @@
      ],
      "source": "hours listed on the page on the venue website",
      "page": "https://kinsleychicago.com/"
+    }
+   }
+  },
+  "osm-node-13697293713": {
+   "website": {
+    "url": "https://www.equinox.com/clubs/chicago/fulton-market",
+    "page": "https://www.equinox.com/clubs/chicago/fulton-market",
+    "hours": {
+     "schedule": [
+      [
+       420,
+       1140
+      ],
+      [
+       300,
+       1320
+      ],
+      [
+       300,
+       1320
+      ],
+      [
+       300,
+       1320
+      ],
+      [
+       300,
+       1320
+      ],
+      [
+       300,
+       1260
+      ],
+      [
+       420,
+       1140
+      ]
+     ],
+     "source": "schema.org data on the venue website",
+     "page": "https://www.equinox.com/clubs/chicago/fulton-market"
+    }
+   }
+  },
+  "osm-node-3263537492": {
+   "website": {
+    "url": "https://senoritascantina.com/",
+    "page": "https://www.senoritascantina.com/",
+    "image": {
+     "src": "https://images.getbento.com/accounts/50772f0372f7dc6cc8ee898c26974939/media/images/49273cantina_burger.webp?w=5400&fit=max&auto=compress,format&cs=origin",
+     "width": 1360,
+     "height": 1020
+    }
+   }
+  },
+  "osm-node-5460581461": {
+   "website": {
+    "url": "https://www.sunnygunchicago.com/",
+    "page": "https://www.sunnygunchicago.com/",
+    "image": {
+     "src": "http://static1.squarespace.com/static/64495f709a1ab06f2f1a059c/t/645840ff4e96fe4154262033/1730749010079/_MG_0826.jpg?format=1500w",
+     "width": 1500,
+     "height": 1000
+    }
+   }
+  },
+  "osm-node-12479624261": {
+   "website": {
+    "url": "https://www.inkwellbar.com",
+    "page": "https://www.inkwellbar.com/",
+    "image": {
+     "src": "https://images.getbento.com/accounts/cf5699c868195e5e67a4a73213f51da1/media/images/39740NEw-7741ddf8-7611-425f-bd99-cdc6222760cf.jpg?w=1200&fit=crop&auto=compress,format&cs=origin&crop=focalpoint&fp-x=0.5&fp-y=0.5",
+     "width": 1200,
+     "height": 805
+    }
+   }
+  },
+  "osm-node-12470308851": {
+   "website": {
+    "url": "https://105f.com/schedule/south-loop-studio/",
+    "page": "https://105f.com/schedule/south-loop-studio/",
+    "image": {
+     "src": "https://105f.com/wp-content/uploads/2023/09/LauraArmstrongPhoto_105headshots206-500x500.jpg",
+     "width": 500,
+     "height": 500
+    }
+   }
+  },
+  "osm-node-1699207181": {
+   "website": {
+    "url": "https://kaseystavern.com/",
+    "page": "https://kaseystavern.com/",
+    "hours": {
+     "schedule": [
+      [
+       660,
+       1560
+      ],
+      [
+       660,
+       1560
+      ],
+      [
+       660,
+       1560
+      ],
+      [
+       660,
+       1560
+      ],
+      [
+       660,
+       1560
+      ],
+      [
+       660,
+       1560
+      ],
+      [
+       660,
+       1620
+      ]
+     ],
+     "source": "hours listed on the page on the venue website",
+     "page": "https://kaseystavern.com/"
+    },
+    "image": {
+     "src": "https://kaseystavern.com/wp-content/uploads/2024/07/taps_home-1536x1377.jpg",
+     "width": 1536,
+     "height": 1377
     }
    }
   },
@@ -5368,87 +6048,104 @@
     }
    }
   },
-  "osm-node-5460308912": {
+  "osm-node-13038099781": {
    "website": {
-    "url": "https://www.saigonsisters.com/",
-    "page": "https://www.saigonsisters.com/",
-    "hours": {
-     "schedule": [
-      null,
-      null,
-      [
-       660,
-       1260
-      ],
-      [
-       660,
-       1260
-      ],
-      [
-       660,
-       1260
-      ],
-      [
-       660,
-       1320
-      ],
-      [
-       720,
-       1320
-      ]
-     ],
-     "source": "schema.org data on the venue website",
-     "page": "https://www.saigonsisters.com/"
-    },
+    "url": "https://www.chengdubistro.com",
+    "page": "https://www.chengdubistro.com/",
     "image": {
-     "src": "https://www.saigonsisters.com/maglev/assets/dfcaee47-3739-4f80-8d51-1e55b5a5818e-pad-thai.jpg",
-     "width": 1163,
-     "height": 720
+     "src": "https://static.wixstatic.com/media/25ef43_618be80c7f7e4beda863430f29ad18b3~mv2.jpg/v1/fit/w_696,h_464,q_90,enc_avif,quality_auto/25ef43_618be80c7f7e4beda863430f29ad18b3~mv2.jpg",
+     "width": 696,
+     "height": 464
     }
    }
   },
-  "osm-node-1699207181": {
+  "osm-node-10925526276": {
    "website": {
-    "url": "https://kaseystavern.com/",
-    "page": "https://kaseystavern.com/",
+    "url": "https://seedosbakery.net/",
+    "page": "https://seedosbakery.net/",
+    "hours": {
+     "schedule": [
+      null,
+      [
+       480,
+       900
+      ],
+      [
+       480,
+       900
+      ],
+      [
+       480,
+       900
+      ],
+      [
+       480,
+       900
+      ],
+      [
+       480,
+       900
+      ],
+      null
+     ],
+     "source": "hours listed on the page on the venue website",
+     "page": "https://seedosbakery.net/"
+    }
+   }
+  },
+  "osm-node-13255821241": {
+   "website": {
+    "url": "https://cecinagrillpilsen.com",
+    "page": "https://cecinagrillpilsen.com/",
+    "image": {
+     "src": "https://static.spotapps.co/website_images/ab_websites/213902_website_v1/events_back.jpg",
+     "width": 1382,
+     "height": 921
+    }
+   }
+  },
+  "osm-node-12055973474": {
+   "website": {
+    "url": "https://pressboxchi.com/",
+    "page": "https://pressboxchi.com/",
     "hours": {
      "schedule": [
       [
        660,
-       1560
+       1440
+      ],
+      [
+       1080,
+       1380
+      ],
+      [
+       900,
+       1440
+      ],
+      [
+       900,
+       1440
+      ],
+      [
+       900,
+       1440
+      ],
+      [
+       900,
+       1500
       ],
       [
        660,
        1560
-      ],
-      [
-       660,
-       1560
-      ],
-      [
-       660,
-       1560
-      ],
-      [
-       660,
-       1560
-      ],
-      [
-       660,
-       1560
-      ],
-      [
-       660,
-       1620
       ]
      ],
      "source": "hours listed on the page on the venue website",
-     "page": "https://kaseystavern.com/"
+     "page": "https://pressboxchi.com/"
     },
     "image": {
-     "src": "https://kaseystavern.com/wp-content/uploads/2024/07/taps_home-1536x1377.jpg",
-     "width": 1536,
-     "height": 1377
+     "src": "https://pressboxchi.com/wp-content/uploads/2026/01/AdobeStock_464519829-scaled.jpeg",
+     "width": 2560,
+     "height": 1685
     }
    }
   },
@@ -5497,6 +6194,28 @@
     }
    }
   },
+  "osm-node-9850357044": {
+   "website": {
+    "url": "https://artofimagination.com/",
+    "page": "https://artofimagination.com/",
+    "image": {
+     "src": "https://artofimagination.com/udata/slideshow/1",
+     "width": 740,
+     "height": 450
+    }
+   }
+  },
+  "osm-node-9850272301": {
+   "website": {
+    "url": "https://www.strewnchicago.com/",
+    "page": "https://www.strewnchicago.com/",
+    "image": {
+     "src": "http://static1.squarespace.com/static/5ffb4e72d7c44740fac3f3ca/t/6017502bec0c2e6e6c1741d8/1612140604468/homepage%3F.jpg?format=1500w",
+     "width": 1500,
+     "height": 1000
+    }
+   }
+  },
   "osm-node-6026364086": {
    "website": {
     "url": "https://www.ramensan.com/",
@@ -5508,94 +6227,169 @@
     }
    }
   },
-  "osm-node-10925526276": {
+  "osm-node-8508251821": {
    "website": {
-    "url": "https://seedosbakery.net/",
-    "page": "https://seedosbakery.net/",
-    "hours": {
-     "schedule": [
-      null,
-      [
-       480,
-       900
-      ],
-      [
-       480,
-       900
-      ],
-      [
-       480,
-       900
-      ],
-      [
-       480,
-       900
-      ],
-      [
-       480,
-       900
-      ],
-      null
-     ],
-     "source": "hours listed on the page on the venue website",
-     "page": "https://seedosbakery.net/"
-    }
-   }
-  },
-  "osm-node-12055973474": {
-   "website": {
-    "url": "https://pressboxchi.com/",
-    "page": "https://pressboxchi.com/",
+    "url": "https://www.pilsenyards.com/",
+    "page": "https://www.pilsenyards.com/",
     "hours": {
      "schedule": [
       [
        660,
-       1440
+       1260
+      ],
+      null,
+      null,
+      [
+       900,
+       1320
       ],
       [
-       1080,
+       900,
+       1320
+      ],
+      [
+       900,
        1380
       ],
       [
-       900,
+       660,
+       1380
+      ]
+     ],
+     "source": "hours listed on the page on the venue website",
+     "page": "https://www.pilsenyards.com/"
+    },
+    "image": {
+     "src": "https://images.squarespace-cdn.com/content/v1/5f3565c422b73529eeeb6be2/e1aa4bd8-cc73-4bcd-86d7-60ca8a0114d9/Bar+July+2022.jpeg?format=2500w",
+     "width": 2500,
+     "height": 1667
+    }
+   }
+  },
+  "osm-node-13259627303": {
+   "website": {
+    "url": "https://www.pilsensgym.com/",
+    "page": "https://www.pilsensgym.com/",
+    "image": {
+     "src": "https://www.pilsensgym.com/images/pilsens-gym-social.jpg",
+     "width": 1200,
+     "height": 630
+    }
+   }
+  },
+  "osm-node-13260171801": {
+   "website": {
+    "url": "https://a-cup-of-joe.com",
+    "page": "https://a-cup-of-joe.com/",
+    "image": {
+     "src": "https://a-cup-of-joe.com/wp-content/uploads/2019/11/b7c50be2-d5fb-468e-937c-ddb1ba81b31e.jpg",
+     "width": 2048,
+     "height": 2048
+    }
+   }
+  },
+  "osm-node-6300537487": {
+   "website": {
+    "url": "https://www.punchhousechicago.com/",
+    "page": "https://www.punchhousechicago.com/",
+    "hours": {
+     "schedule": [
+      [
+       1020,
        1440
       ],
       [
-       900,
-       1440
-      ],
-      [
-       900,
-       1440
-      ],
-      [
-       900,
+       1020,
        1500
       ],
       [
-       660,
+       1020,
+       1500
+      ],
+      [
+       1020,
+       1500
+      ],
+      [
+       1020,
+       1500
+      ],
+      [
+       1020,
+       1560
+      ],
+      [
+       1020,
        1560
       ]
      ],
      "source": "hours listed on the page on the venue website",
-     "page": "https://pressboxchi.com/"
-    },
+     "page": "https://www.punchhousechicago.com/"
+    }
+   }
+  },
+  "osm-way-210224420": {
+   "commons": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Rudy_Lozano_Branch.jpg/1280px-Rudy_Lozano_Branch.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Rudy_Lozano_Branch.jpg",
+    "credit": "Mahir256 · CC BY-SA 3.0"
+   }
+  },
+  "osm-node-13260156202": {
+   "website": {
+    "url": "https://asalonchicago.com",
+    "page": "https://www.asalonchicago.com/",
     "image": {
-     "src": "https://pressboxchi.com/wp-content/uploads/2026/01/AdobeStock_464519829-scaled.jpeg",
-     "width": 2560,
-     "height": 1685
+     "src": "https://images.squarespace-cdn.com/content/v1/6863f64ea57ecd65321083ef/f3664b69-1955-4581-a41b-6a0d602c3776/20190317_ASalon_Interior_007.JPG?format=2500w",
+     "width": 2500,
+     "height": 1667
+    }
+   }
+  },
+  "osm-node-5791054158": {
+   "website": {
+    "url": "http://www.alulubrew.com/",
+    "page": "http://www.alulubrew.com/",
+    "image": {
+     "src": "http://www.alulubrew.com/public/images/panel-home.jpg",
+     "width": 1800,
+     "height": 1200
+    }
+   }
+  },
+  "osm-node-9281265683": {
+   "website": {
+    "url": "https://www.darkmattercoffee.com/pages/sleep-walk-chocolateria-1",
+    "page": "https://www.darkmattercoffee.com/pages/sleep-walk-chocolateria-1",
+    "image": {
+     "src": "https://www.darkmattercoffee.com/cdn/shop/files/nav-coffee2.jpg?v=1723055529&width=750",
+     "width": 600,
+     "height": 600
+    }
+   }
+  },
+  "osm-node-4075429622": {
+   "website": {
+    "url": "https://mariscossanpedro.com",
+    "page": "https://www.mariscossanpedro.com/",
+    "image": {
+     "src": "https://images.squarespace-cdn.com/content/v1/65f0c175d8700464cf7f6994/be2f6a8f-1ac5-45e5-9d7e-a948f5c9e92e/000054940010.jpg?format=2500w",
+     "width": 2500,
+     "height": 1657
     }
    }
   }
  },
  "diagnostics": {
+  "osm-node-6269654371": {
+   "status": "page is not about a Chicago location"
+  },
   "osm-node-14018241865": {
    "status": "ok",
    "hours": "hours listed on the page"
   },
   "osm-node-10110142361": {
-   "status": "ok",
-   "hours": "schema.org data"
+   "status": "http 403"
   },
   "osm-node-10110142360": {
    "status": "http 403"
@@ -5604,7 +6398,7 @@
    "status": "page does not name the venue"
   },
   "osm-node-10110142362": {
-   "status": "http 404"
+   "status": "page is not about a Chicago location"
   },
   "osm-node-6320625801": {
    "status": "ok",
@@ -5645,8 +6439,7 @@
    "image": "https://jp2newman.org/wp-content/uploads/2025/06/IMG_5137-scaled-e1750455325802.jpg"
   },
   "osm-node-13752916073": {
-   "status": "ok",
-   "hours": "schema.org data"
+   "status": "http 403"
   },
   "osm-way-209811123": {
    "status": "ok",
@@ -5684,6 +6477,9 @@
    "status": "http 404"
   },
   "osm-node-11156254001": {
+   "status": "page is not about a Chicago location"
+  },
+  "osm-way-172706870": {
    "status": "http 404"
   },
   "osm-way-210257250": {
@@ -5691,7 +6487,7 @@
    "image": "https://images.squarespace-cdn.com/content/v1/5ea6f3acd27da50ac21557f7/1589086665831-814JSJT0JC0ERFBJVQME/IMG_1164-preview.jpg?format=2500w"
   },
   "osm-node-12708709227": {
-   "status": "http 429"
+   "status": "http 403"
   },
   "osm-node-7404889773": {
    "status": "ok",
@@ -5706,6 +6502,10 @@
   "osm-node-1619646334": {
    "status": "http 404"
   },
+  "osm-way-151181809": {
+   "status": "ok",
+   "image": "https://theatreandmusic.uic.edu/wp-content/uploads/2025/08/1-Large.jpeg"
+  },
   "osm-node-4953114355": {
    "status": "ok",
    "image": "https://groundupchicago.com/cdn/shop/files/GroundUp-36_x800.jpg?v=1613533147"
@@ -5717,11 +6517,17 @@
    "status": "ok",
    "hours": "schema.org data"
   },
+  "osm-way-329568746": {
+   "status": "http 404"
+  },
+  "osm-way-181379030": {},
   "osm-way-149877831": {
    "status": "ok"
   },
-  "osm-node-13139860155": {
-   "status": "ok"
+  "osm-way-151428223": {
+   "status": "ok",
+   "hours": "hours listed on the page",
+   "image": "https://www.chicagoparkdistrict.com/sites/default/files/styles/coh_medium_landscape/public/images/location/Sheridan-FieldHouse.JPG?h=881f65d3&itok=41h44kAb"
   },
   "osm-node-13308439201": {
    "status": "page is not about a Chicago location"
@@ -5751,8 +6557,7 @@
    "image": "https://chezjoelbistro.com/wp-content/uploads/2026/05/IMG_0495.jpeg"
   },
   "osm-way-1131554417": {
-   "status": "ok",
-   "hours": "schema.org data"
+   "status": "http 403"
   },
   "osm-node-9695680553": {
    "status": "ok",
@@ -5761,6 +6566,9 @@
   "osm-node-6298815422": {
    "status": "ok",
    "image": "https://d15z892a5np5w4.cloudfront.net/production/chef-shangri-la-north-riverside-il-3/images/b88135374daea514d9/mobile-bg-20230206035858.jpg"
+  },
+  "osm-node-12060178073": {
+   "status": "error TimeoutError"
   },
   "osm-way-156356426": {
    "status": "ok"
@@ -5785,8 +6593,9 @@
   "osm-node-13332989848": {
    "status": "ok"
   },
+  "osm-node-354097497": {},
   "osm-node-9695680548": {
-   "status": "ok"
+   "status": "page is not about a Chicago location"
   },
   "osm-node-9695680551": {
    "status": "ok",
@@ -5811,6 +6620,10 @@
    "status": "ok",
    "hours": "schema.org data"
   },
+  "osm-node-12202217629": {
+   "status": "ok",
+   "hours": "schema.org data"
+  },
   "osm-node-9695680552": {
    "status": "ok",
    "hours": "schema.org data"
@@ -5830,9 +6643,8 @@
    "status": "ok",
    "image": "https://images.getbento.com/accounts/9dca1a20f3409f83d8b305fcc41a98aa/media/Uez3uRfTcWgtHZ8pFhi0_athena_vibetribecreative-48.jpg?w=1200&fit=max&auto=compress,format&cs=origin"
   },
-  "osm-node-6314890056": {
-   "status": "ok",
-   "image": "https://www.jarabechicago.com/uploads/b/42d0b740-796e-11e9-885b-dd0af07181bd/IMG_7653.jpeg"
+  "osm-node-8117903920": {
+   "status": "ok"
   },
   "osm-node-13794086041": {
    "status": "http 403"
@@ -5841,8 +6653,12 @@
    "status": "ok",
    "image": "https://static.wixstatic.com/media/fbec2d_491633e9780441ef8a9a262180739ef1~mv2.jpg/v1/fill/w_873,h_592,al_c/fbec2d_491633e9780441ef8a9a262180739ef1~mv2.jpg"
   },
+  "osm-node-12202303623": {
+   "status": "ok",
+   "hours": "schema.org data"
+  },
   "osm-way-441457243": {
-   "status": "robots"
+   "status": "http 403"
   },
   "osm-node-6301018501": {
    "status": "http 403"
@@ -5857,6 +6673,7 @@
    "status": "ok",
    "image": "https://www.darkmattercoffee.com/cdn/shop/articles/MeddleBar2.jpg?crop=center&height=1200&v=1476889499&width=1200"
   },
+  "osm-way-134017012": {},
   "osm-node-9773119861": {
    "status": "error TypeError"
   },
@@ -5867,17 +6684,24 @@
    "status": "ok",
    "hours": "hours listed on the page"
   },
+  "osm-node-8117903926": {
+   "status": "ok",
+   "hours": "schema.org data"
+  },
   "osm-node-6154694738": {
    "status": "http 404"
   },
+  "osm-node-2422407798": {
+   "status": "error TypeError"
+  },
   "osm-node-5460620370": {
-   "status": "ok"
+   "status": "http 403"
   },
   "osm-node-1740872220": {
-   "status": "ok"
+   "status": "page is not about a Chicago location"
   },
   "osm-node-8117903923": {
-   "status": "http 404"
+   "status": "page is not about a Chicago location"
   },
   "osm-node-11877467008": {
    "status": "ok",
@@ -5909,11 +6733,15 @@
   "osm-node-6239083276": {
    "status": "page does not name the venue"
   },
+  "osm-way-210281094": {
+   "status": "ok"
+  },
+  "osm-way-1026003466": {
+   "status": "ok",
+   "image": "https://thegreenat320southcanal.com/wp-content/uploads/2024/11/thegreen320-social.jpg"
+  },
   "osm-node-2422410180": {
    "status": "page is not about a Chicago location"
-  },
-  "osm-node-7217104486": {
-   "status": "ok"
   },
   "osm-node-6300959267": {
    "status": "ok",
@@ -5933,7 +6761,18 @@
    "status": "ok",
    "image": "https://static.wixstatic.com/media/2bd630_a7325088225e4bd5842f9daadef85dc7~mv2.jpg/v1/fill/w_2500,h_1256,al_c/2bd630_a7325088225e4bd5842f9daadef85dc7~mv2.jpg"
   },
+  "osm-way-130282534": {
+   "status": "ok",
+   "hours": "hours listed on the page",
+   "image": "https://www.chicagoparkdistrict.com/sites/default/files/styles/coh_medium_landscape/public/images/location/bartleme.jpg?h=260f0cf3&itok=_YrLCRIh"
+  },
   "osm-node-13715364540": {
+   "status": "ok"
+  },
+  "osm-node-12472700601": {
+   "status": "ok"
+  },
+  "osm-way-148910688": {
    "status": "ok"
   },
   "osm-way-210541840": {
@@ -5951,12 +6790,32 @@
    "status": "ok",
    "image": "https://www.tacolulu.com/images/our-services/pic1.jpg"
   },
+  "osm-node-12413411644": {
+   "status": "ok"
+  },
   "osm-node-7550195485": {
    "status": "ok",
    "image": "https://images.squarespace-cdn.com/content/v1/5ec202822eec7a077891958a/21807824-d015-4f4a-9437-f0f99f910625/WechatIMG4.jpg?format=2500w"
   },
+  "osm-node-12488896040": {
+   "status": "ok"
+  },
   "osm-way-210268951": {
    "status": "ok"
+  },
+  "osm-way-173529681": {
+   "status": "ok",
+   "hours": "hours listed on the page",
+   "image": "https://www.chicagoparkdistrict.com/sites/default/files/styles/coh_medium_landscape/public/images/location/db1fc6af29344b678ff76fdc63e2ba381.JPG?h=260f0cf3&itok=IA7NF7O8"
+  },
+  "osm-way-130282533": {
+   "status": "ok",
+   "image": "https://www.chicagoparkdistrict.com/sites/default/files/styles/coh_medium_landscape/public/images/location/3f41619aec014b3782a5b831a4a120791.jpg?h=260f0cf3&itok=kUf44trP"
+  },
+  "osm-node-13306530001": {
+   "status": "ok",
+   "hours": "schema.org data",
+   "image": "https://images.squarespace-cdn.com/content/v1/5f1bcc105616be203667960f/e6b3576d-eb48-4f42-a970-873ae08d3215/IMG_0009.jpeg?format=2500w"
   },
   "osm-node-12085231354": {
    "status": "page does not name the venue"
@@ -5984,15 +6843,25 @@
    "status": "error TypeError"
   },
   "osm-node-12413321504": {
-   "status": "ok",
-   "image": "https://bittersweetpastry.com/cdn/shop/files/Atoic_Cake_2026.jpg?crop=center&height=1333&v=1787432490&width=1200"
+   "status": "ok"
   },
   "osm-node-12489358154": {
    "status": "ok",
    "image": "https://chilangorestaurant.com/wp-content/uploads/2017/01/chilangoaboutuspic2-2.jpg"
   },
+  "osm-node-9434660174": {
+   "status": "http 403"
+  },
   "osm-node-11875042749": {
    "status": "ok"
+  },
+  "osm-way-134017011": {
+   "status": "ok",
+   "hours": "hours listed on the page",
+   "image": "https://files.chicagoparkdistrict.com/styles/coh_medium_landscape/s3/2025-11/Arrigo-Park-Lawn.jpg?VersionId=c8U9oKV7cqbk_SFOBrFvRG_JZr_DXUfj&h=9e499333&itok=ofTrzR7f"
+  },
+  "osm-way-210268961": {
+   "status": "http 403"
   },
   "osm-node-6320572779": {
    "status": "ok",
@@ -6007,20 +6876,27 @@
   "osm-way-220950832": {
    "status": "error TimeoutError"
   },
+  "osm-way-1285774845": {
+   "status": "ok",
+   "hours": "hours listed on the page",
+   "image": "https://nphm.org/wp-content/uploads/2025/07/2025.06.01-NPHM-Resilient-Hues-Event-Ryan-Barayuga-22-1024x683.jpg"
+  },
   "osm-node-12068333589": {
    "status": "page is not about a Chicago location"
   },
   "osm-node-12068333587": {
    "status": "ok"
   },
-  "osm-node-6300506122": {
-   "status": "page does not name the venue"
-  },
   "osm-way-209357940": {
    "status": "http 404"
   },
   "osm-node-1591485484": {
    "status": "http 404"
+  },
+  "osm-way-136454291": {
+   "status": "ok",
+   "hours": "hours listed on the page",
+   "image": "https://www.chicagoparkdistrict.com/sites/default/files/styles/coh_medium_landscape/public/images/location/TouhyHerbert-slideshow02.jpg?h=260f0cf3&itok=HjllG8rc"
   },
   "osm-node-6282530019": {
    "status": "ok",
@@ -6041,12 +6917,10 @@
    "status": "ok"
   },
   "osm-node-6291479444": {
-   "status": "ok",
-   "hours": "schema.org data"
+   "status": "http 429"
   },
   "osm-node-8199197617": {
-   "status": "ok",
-   "hours": "schema.org data"
+   "status": "http 403"
   },
   "osm-node-8199121419": {
    "status": "ok"
@@ -6055,9 +6929,7 @@
    "status": "ok"
   },
   "osm-way-1380916010": {
-   "status": "ok",
-   "hours": "schema.org data",
-   "image": "https://chipublib.bibliocommons.com/events/uploads/images/full/7a6ac351955e50eec3914a6c6727a2eb/little-italy.jpg"
+   "status": "page does not name the venue"
   },
   "osm-node-11672692563": {
    "status": "http 403"
@@ -6074,7 +6946,7 @@
    "hours": "schema.org data"
   },
   "osm-node-8199161325": {
-   "status": "ok"
+   "status": "page is not about a Chicago location"
   },
   "osm-node-5460615421": {
    "status": "http 429"
@@ -6119,6 +6991,11 @@
    "status": "ok",
    "image": "https://static.spotapps.co/website_images/ab_websites/339669_website/food_back.jpg"
   },
+  "osm-node-12089317411": {
+   "status": "ok",
+   "hours": "hours listed on the page",
+   "image": "https://cdn.prod.website-files.com/6594490dfa88ecb41f8ebb2c/68efba69998c076291746ab3_68efb45dfd2b544937f0c613_studio.webp"
+  },
   "osm-node-13416540209": {
    "status": "page is not about a Chicago location"
   },
@@ -6126,16 +7003,23 @@
    "status": "http 403"
   },
   "osm-node-5460616621": {
-   "status": "ok"
+   "status": "http 403"
   },
   "osm-way-210269296": {
-   "status": "page does not name the venue"
+   "status": "error TypeError"
   },
   "osm-way-131998284": {
    "status": "page does not name the venue"
   },
+  "osm-node-12083308239": {
+   "status": "ok",
+   "image": "https://app.wndrmuseum.com/images/WNDR-RB-8064.webp"
+  },
   "osm-node-5460643621": {
    "status": "error TypeError"
+  },
+  "osm-node-12327487721": {
+   "status": "http 503"
   },
   "osm-node-6322774469": {
    "status": "ok"
@@ -6159,13 +7043,15 @@
    "status": "ok",
    "hours": "schema.org data"
   },
+  "osm-way-210270830": {
+   "status": "ok",
+   "image": "https://chicagochildrenstheatre.org/wp-content/uploads/2026/05/Website-Image-2400x1256-1-2048x1072.jpg"
+  },
   "osm-node-11098530575": {
    "status": "http 403"
   },
   "osm-way-209830060": {
-   "status": "ok",
-   "hours": "schema.org data",
-   "image": "https://chipublib.bibliocommons.com/events/uploads/images/full/4652b9502871f0cbdf7df926b7a3b2d7/manning.jpg"
+   "status": "page does not name the venue"
   },
   "osm-node-1699221031": {
    "status": "ok",
@@ -6176,10 +7062,14 @@
    "hours": "hours listed on the page"
   },
   "osm-node-479652783": {
-   "status": "ok"
+   "status": "page is not about a Chicago location"
   },
   "osm-node-5460540248": {
    "status": "robots"
+  },
+  "osm-node-13395760105": {
+   "status": "ok",
+   "hours": "hours listed on the page"
   },
   "osm-node-11672692560": {
    "status": "ok",
@@ -6195,6 +7085,9 @@
   },
   "osm-node-4926134282": {
    "status": "page is not about a Chicago location"
+  },
+  "osm-node-10945307458": {
+   "status": "robots"
   },
   "osm-node-5460629402": {
    "status": "ok",
@@ -6220,6 +7113,10 @@
   "osm-node-12027004611": {
    "status": "ok",
    "image": "https://westloopmarketchicago.com/img/storefront.jpg"
+  },
+  "osm-node-12753167288": {
+   "status": "ok",
+   "image": "https://garciaschicago.live/wp-content/uploads/2026/07/1200x628_website-1-768x402.jpg"
   },
   "osm-node-13289837088": {
    "status": "ok",
@@ -6251,7 +7148,7 @@
    "image": "https://images.squarespace-cdn.com/content/v1/67ed7a8a60e0dc4d0a061067/716907d2-298f-48ea-a695-d44dd40d173f/Bunker-FC-0422-0033.jpg?format=2500w"
   },
   "osm-node-1951914729": {
-   "status": "http 404"
+   "status": "page is not about a Chicago location"
   },
   "osm-way-331694624": {
    "status": "http 403"
@@ -6279,6 +7176,9 @@
   },
   "osm-node-1639964356": {
    "status": "ok"
+  },
+  "osm-way-1483956931": {
+   "status": "http 403"
   },
   "osm-node-5460628921": {
    "status": "ok",
@@ -6329,6 +7229,9 @@
   "osm-node-5460635417": {
    "status": "page is not about a Chicago location"
   },
+  "osm-node-13293647064": {
+   "status": "ok"
+  },
   "osm-node-6269041647": {
    "status": "page is not about a Chicago location"
   },
@@ -6337,7 +7240,7 @@
    "hours": "schema.org data"
   },
   "osm-node-8117903931": {
-   "status": "ok"
+   "status": "page is not about a Chicago location"
   },
   "osm-node-12167120485": {
    "status": "ok"
@@ -6386,7 +7289,10 @@
    "status": "page is not about a Chicago location"
   },
   "osm-node-10788399522": {
-   "status": "http 404"
+   "status": "page is not about a Chicago location"
+  },
+  "osm-node-13296711320": {
+   "status": "ok"
   },
   "osm-node-2882733946": {
    "status": "ok",
@@ -6413,14 +7319,21 @@
    "status": "ok",
    "image": "https://images.squarespace-cdn.com/content/v1/59ca889f6f4ca33b3d4731ac/1558373849275-89TSRYWHD9VXUC6YASJ4/BW+BBQ+211+Adams+Exterior.JPG?format=2500w"
   },
+  "osm-node-5460679519": {
+   "status": "ok",
+   "image": "https://jpgraziano.com/wp-content/uploads/2025/09/foodandwinemag.webp"
+  },
+  "osm-way-219051931": {
+   "status": "ok",
+   "image": "https://www.chicagoparkdistrict.com/sites/default/files/styles/coh_medium_landscape/public/images/location/Addams%2520Medill%2520Park%25202020-4211-Edit-0.jpg?h=9d766c34&itok=3PhPdTxo"
+  },
   "osm-way-1504713096": {
    "status": "ok",
    "image": "https://jubileejuice.com/wp-content/uploads/2026/06/unnamed-7-e1781267107663.webp"
   },
   "osm-way-1504713097": {
    "status": "ok",
-   "hours": "hours listed on the page",
-   "image": "https://niarestaurant.com/wp-content/uploads/2026/10/featured-image-1791745226.jpeg"
+   "hours": "hours listed on the page"
   },
   "osm-node-5460537098": {
    "status": "http 403"
@@ -6435,12 +7348,18 @@
   "osm-way-209828751": {
    "status": "ok"
   },
+  "osm-way-779950638": {
+   "status": "http 404"
+  },
   "osm-node-6285863501": {
    "status": "page does not name the venue"
   },
   "osm-node-5460545276": {
    "status": "ok",
    "image": "https://images.squarespace-cdn.com/content/v1/54b6ed69e4b09cb81d7842fb/1596146400426-GQUNPOADLJTWGITAVWIG/Formento_s_Lamb_199.jpg"
+  },
+  "osm-node-6315187492": {
+   "status": "ok"
   },
   "osm-node-479652775": {
    "status": "ok"
@@ -6465,6 +7384,9 @@
   "osm-node-4076939313": {
    "status": "http 429"
   },
+  "osm-way-136453896": {
+   "status": "ok"
+  },
   "osm-node-6239093318": {
    "status": "ok",
    "hours": "schema.org data"
@@ -6480,7 +7402,7 @@
    "status": "http 403"
   },
   "osm-node-11672692554": {
-   "status": "ok"
+   "status": "page is not about a Chicago location"
   },
   "osm-node-11272453390": {
    "status": "ok",
@@ -6513,6 +7435,11 @@
    "status": "ok",
    "image": "https://images.getbento.com/accounts/b145f5a5f5a038009353e16bd46c1c77/media/images/24998BSWL_VENUE_3.jpg?w=1200&fit=crop&auto=compress,format&cs=origin&crop=focalpoint&fp-x=0.5&fp-y=0.5"
   },
+  "osm-node-6267257392": {
+   "status": "ok",
+   "hours": "hours listed on the page",
+   "image": "https://bigshoulderscoffee.com/cdn/shop/collections/Manos.jpg?v=1713799051"
+  },
   "osm-node-11168679790": {
    "status": "ok",
    "image": "https://images.getbento.com/accounts/33df34d609a7630609ad327639457292/media/images/74167Short_Rib_Taco.jpg?w=1200&fit=max&auto=compress,format&cs=origin"
@@ -6526,7 +7453,7 @@
    "image": "https://cruzblancachi.com/wp-content/uploads/2023/10/MG_9915-2048.jpg"
   },
   "osm-node-11931153522": {
-   "status": "http 404"
+   "status": "page is not about a Chicago location"
   },
   "osm-node-11672692556": {
    "status": "http 403"
@@ -6556,6 +7483,11 @@
   "osm-node-6757797206": {
    "status": "http 403"
   },
+  "osm-way-31557401": {
+   "status": "ok",
+   "hours": "hours listed on the page",
+   "image": "https://www.chicagoparkdistrict.com/sites/default/files/styles/coh_medium_landscape/public/images/location/Skinner-slideshow01.jpg?h=260f0cf3&itok=cZiFawnw"
+  },
   "osm-node-6188968651": {
    "status": "ok",
    "hours": "hours listed on the page"
@@ -6584,11 +7516,19 @@
    "status": "ok",
    "hours": "hours listed on the page"
   },
+  "osm-node-6920818832": {
+   "status": "http 403"
+  },
   "osm-node-10284734627": {
-   "status": "ok"
+   "status": "page is not about a Chicago location"
   },
   "osm-node-5460388170": {
    "status": "ok"
+  },
+  "osm-way-389561163": {
+   "status": "ok",
+   "hours": "hours listed on the page",
+   "image": "https://www.chicagoparkdistrict.com/sites/default/files/styles/coh_medium_landscape/public/images/location/9a1c1cf41cee49618165fabdd954381d1.JPG?h=260f0cf3&itok=vT1RebIv"
   },
   "osm-node-12737879309": {
    "status": "ok"
@@ -6605,10 +7545,11 @@
    "hours": "hours listed on the page",
    "image": "https://storage.googleapis.com/theoakville_bucket/wp-content/uploads/5d43e0df-2023-08-31_the-oakville_vibe-check_0007-e1786632523525.jpg"
   },
+  "osm-node-8379930803": {
+   "status": "ok"
+  },
   "osm-way-210269759": {
-   "status": "ok",
-   "hours": "schema.org data",
-   "image": "https://chipublib.bibliocommons.com/events/uploads/images/full/6f4318cb886ccc68bfc30ce6142cf894/CPL-West-Loop-Branch-Tom-Harris-web.jpg"
+   "status": "page does not name the venue"
   },
   "osm-node-10974152342": {
    "status": "ok"
@@ -6649,10 +7590,14 @@
   },
   "osm-node-6251767399": {
    "status": "ok",
-   "image": "https://5rabanitosdotcom.wordpress.com/wp-content/uploads/2021/02/cropped-a62483ac-795b-48d9-b94a-646bcd2358af.jpeg"
+   "image": "https://5rabanitosdotcom.wordpress.com/wp-content/uploads/2021/02/cropped-075c6841-e3a4-4e55-baac-689add22f84e.jpeg"
   },
   "osm-node-5460269794": {
    "status": "ok"
+  },
+  "osm-node-13322988705": {
+   "status": "ok",
+   "image": "https://frenchmarketchicago.com/wp-content/uploads/1-1024x816.jpg"
   },
   "osm-node-12217307929": {
    "status": "ok",
@@ -6661,6 +7606,9 @@
   },
   "osm-way-1501510119": {
    "status": "ok"
+  },
+  "osm-way-124865443": {
+   "status": "http 403"
   },
   "osm-node-13322931494": {
    "status": "ok",
@@ -6675,6 +7623,13 @@
    "hours": "hours listed on the page",
    "image": "https://images.squarespace-cdn.com/content/v1/69d1b936ec065905f2b93c51/0410bea5-e051-4890-9038-3a7fc1696aca/Jimmy%27s+Tap+handle+shot.jpeg?format=2500w"
   },
+  "osm-node-13749212587": {
+   "status": "ok",
+   "image": "https://frenchmarketchicago.com/wp-content/uploads/1-1024x816.jpg"
+  },
+  "osm-node-2979738790": {
+   "status": "http 404"
+  },
   "osm-node-13322931495": {
    "status": "http 500"
   },
@@ -6682,6 +7637,9 @@
    "status": "ok"
   },
   "osm-node-13322931493": {
+   "status": "ok"
+  },
+  "osm-way-151216593": {
    "status": "ok"
   },
   "osm-node-13749212586": {
@@ -6711,6 +7669,11 @@
    "status": "ok",
    "image": "https://frenchmarketchicago.com/wp-content/uploads/1-1024x816.jpg"
   },
+  "osm-node-12990167037": {
+   "status": "ok",
+   "hours": "hours listed on the page",
+   "image": "https://www.cbotbuilding.com/wp-content/themes/cbot_building/img/museum-slide-6.jpg"
+  },
   "osm-node-2481236974": {
    "status": "ok",
    "hours": "schema.org data"
@@ -6719,7 +7682,7 @@
    "status": "http 404"
   },
   "osm-node-13322988704": {
-   "status": "http 500"
+   "status": "http 404"
   },
   "osm-node-6284753435": {
    "status": "ok",
@@ -6728,9 +7691,6 @@
   "osm-node-13322988707": {
    "status": "ok",
    "image": "https://frenchmarketchicago.com/wp-content/uploads/vendor-slideshow6.jpg"
-  },
-  "osm-node-11841529427": {
-   "status": "ok"
   },
   "osm-node-13322931499": {
    "status": "ok",
@@ -6776,6 +7736,9 @@
    "status": "ok",
    "image": "https://frenchmarketchicago.com/wp-content/uploads/img_6618.jpg"
   },
+  "osm-way-209381333": {
+   "status": "ok"
+  },
   "osm-node-6261376991": {
    "status": "error TypeError"
   },
@@ -6806,10 +7769,26 @@
   "osm-node-6315654639": {
    "status": "http 301"
   },
+  "osm-node-11841529422": {
+   "status": "ok",
+   "hours": "schema.org data",
+   "image": "https://images.squarespace-cdn.com/content/v1/6390cfed5016e11a174ddef1/7bb07773-7462-41d1-98db-d2bc0e301ed8/2022.03.01+-+Engberg+-+Train+Moment-1-10.jpg?format=2500w"
+  },
   "osm-node-5460610021": {
    "status": "ok",
    "hours": "hours listed on the page",
    "image": "https://images.getbento.com/accounts/f6ff01c46a03f776e4903e197ac135d5/media/images/50310blvd0920_9024_1-min.jpg?w=1200&fit=crop&auto=compress,format&cs=origin&crop=focalpoint&fp-x=0.5&fp-y=0.5"
+  },
+  "osm-node-7179700301": {
+   "status": "ok"
+  },
+  "osm-node-14086324951": {
+   "status": "ok",
+   "hours": "schema.org data"
+  },
+  "osm-way-134017316": {
+   "status": "ok",
+   "image": "https://www.chicagoparkdistrict.com/sites/default/files/styles/coh_medium_landscape/public/images/location/41fc07cf99f940a7838c521c656bb4921.JPG?h=260f0cf3&itok=shuxKDGy"
   },
   "osm-node-6459394817": {
    "status": "ok",
@@ -6848,15 +7827,17 @@
   "osm-node-5452994605": {
    "status": "http 403"
   },
-  "osm-node-6126946629": {
-   "status": "http 403"
-  },
   "osm-node-6316955696": {
    "status": "ok",
    "image": "https://www.wishbonechicago.com/images/hero-1.jpg"
   },
   "osm-node-6317101571": {
    "status": "page is not about a Chicago location"
+  },
+  "osm-way-134045254": {
+   "status": "ok",
+   "hours": "hours listed on the page",
+   "image": "https://www.chicagoparkdistrict.com/sites/default/files/styles/coh_medium_landscape/public/images/location/b792f485dbd942a0ada5e1c6f1e459d01.JPG?h=260f0cf3&itok=hybgjSMq"
   },
   "osm-node-12479624263": {
    "status": "ok",
@@ -6867,10 +7848,10 @@
    "image": "https://images.squarespace-cdn.com/content/v1/5c58fd94fb22a57d9b8abd7d/1554234397997-CBIQQ4LSS9F61J0IYYLF/Cira.jpg"
   },
   "osm-node-10563328892": {
-   "status": "ok"
+   "status": "page is not about a Chicago location"
   },
   "osm-node-11881628173": {
-   "status": "ok"
+   "status": "page is not about a Chicago location"
   },
   "osm-node-5460565146": {
    "status": "http 403"
@@ -6905,6 +7886,9 @@
   "osm-node-13179005209": {
    "status": "http 403"
   },
+  "osm-way-1046362901": {
+   "status": "http 404"
+  },
   "osm-node-5418466192": {
    "status": "ok"
   },
@@ -6923,6 +7907,10 @@
    "status": "ok",
    "image": "https://www.churrofactory.com/Churros.jpg"
   },
+  "osm-node-12470308851": {
+   "status": "ok",
+   "image": "https://105f.com/wp-content/uploads/2023/09/LauraArmstrongPhoto_105headshots206-500x500.jpg"
+  },
   "osm-node-5418466191": {
    "status": "ok"
   },
@@ -6931,6 +7919,9 @@
    "hours": "schema.org data",
    "image": "https://www.amaritthai.com/assets/img/og.jpg"
   },
+  "osm-node-3919513826": {
+   "status": "http 404"
+  },
   "osm-node-6407178684": {
    "status": "ok",
    "image": "https://images.squarespace-cdn.com/content/v1/5cd2efedfd6793286fbd8050/1777924348041-397LGWTZY7TW4UZA0WID/03_26_Cabra_NP_72.jpg"
@@ -6938,9 +7929,15 @@
   "osm-node-5355148074": {
    "status": "http 404"
   },
+  "osm-way-136341654": {
+   "status": "page does not name the venue"
+  },
   "osm-node-11272453397": {
    "status": "ok",
    "image": "https://images.squarespace-cdn.com/content/v1/5c5495d9e5f7d1576e8f4802/f9a78f7c-7c1d-4771-9ff2-44d77835e508/_MG_2182-Edit-EDIT.jpg?format=2500w"
+  },
+  "osm-way-168104071": {
+   "status": "http 404"
   },
   "osm-node-12479624261": {
    "status": "ok",
@@ -6957,11 +7954,17 @@
    "status": "ok",
    "image": "https://images.squarespace-cdn.com/content/v1/6034289a8baac278d260f16c/a2d009b1-f739-4c42-b826-3f77c7adfbb4/IMG_5050+%286%29.JPG?format=2500w"
   },
+  "osm-way-346970683": {
+   "status": "page does not name the venue"
+  },
   "osm-node-6291640639": {
    "status": "page does not name the venue"
   },
   "osm-node-11881628172": {
    "status": "http 404"
+  },
+  "osm-way-85595093": {
+   "status": "page does not name the venue"
   },
   "osm-node-3263537492": {
    "status": "ok",
@@ -6984,10 +7987,14 @@
    "status": "page does not name the venue"
   },
   "osm-node-9971098352": {
-   "status": "ok"
+   "status": "page is not about a Chicago location"
   },
   "osm-way-210270813": {
-   "status": "ok"
+   "status": "page is not about a Chicago location"
+  },
+  "osm-node-13697293713": {
+   "status": "ok",
+   "hours": "schema.org data"
   },
   "osm-node-1699207181": {
    "status": "ok",
@@ -6996,6 +8003,9 @@
   },
   "osm-node-5348219721": {
    "status": "http 429"
+  },
+  "osm-node-13656590196": {
+   "status": "page does not name the venue"
   },
   "osm-node-11673117989": {
    "status": "ok",
@@ -7028,6 +8038,9 @@
   "osm-node-6300080964": {
    "status": "ok"
   },
+  "osm-node-4731347921": {
+   "status": "ok"
+  },
   "osm-node-1699206943": {
    "status": "http 404"
   },
@@ -7043,9 +8056,7 @@
    "image": "https://storage.googleapis.com/ramensan_bucket/wp-content/uploads/e29c5e9d-ramen-san_tonkotsu-ramen-bowl-with-traditional-broth-chashu-molten-egg-1003.jpg"
   },
   "osm-node-5460308912": {
-   "status": "ok",
-   "hours": "schema.org data",
-   "image": "https://www.saigonsisters.com/maglev/assets/dfcaee47-3739-4f80-8d51-1e55b5a5818e-pad-thai.jpg"
+   "status": "http 403"
   },
   "osm-way-210269727": {
    "status": "ok",
@@ -7053,7 +8064,7 @@
    "image": "https://citywinery.com/cdn/shop/files/Grape-Blue-Hands.jpg?v=1789503876&width=900"
   },
   "osm-node-1618326382": {
-   "status": "not html"
+   "status": "http 403"
   },
   "osm-node-2570892816": {
    "status": "ok"
@@ -7062,6 +8073,111 @@
    "status": "ok"
   },
   "osm-node-6303127333": {
+   "status": "ok"
+  },
+  "osm-node-13255821241": {
+   "status": "ok",
+   "image": "https://static.spotapps.co/website_images/ab_websites/213902_website_v1/events_back.jpg"
+  },
+  "osm-node-5168246245": {
+   "status": "http 403"
+  },
+  "osm-node-6126571201": {
+   "status": "page does not name the venue"
+  },
+  "osm-node-9850357044": {
+   "status": "ok",
+   "image": "https://artofimagination.com/udata/slideshow/1"
+  },
+  "osm-node-8508251827": {
+   "status": "http 404"
+  },
+  "osm-node-9850272301": {
+   "status": "ok",
+   "image": "http://static1.squarespace.com/static/5ffb4e72d7c44740fac3f3ca/t/6017502bec0c2e6e6c1741d8/1612140604468/homepage%3F.jpg?format=1500w"
+  },
+  "osm-node-6280484810": {
+   "status": "http 404"
+  },
+  "osm-node-13907969401": {
+   "status": "page is not about a Chicago location"
+  },
+  "osm-node-8508251826": {
+   "status": "page does not name the venue"
+  },
+  "osm-node-8508251821": {
+   "status": "ok",
+   "hours": "hours listed on the page",
+   "image": "https://images.squarespace-cdn.com/content/v1/5f3565c422b73529eeeb6be2/e1aa4bd8-cc73-4bcd-86d7-60ca8a0114d9/Bar+July+2022.jpeg?format=2500w"
+  },
+  "osm-node-13255821243": {
+   "status": "page does not name the venue"
+  },
+  "osm-node-6294594846": {
+   "status": "error TypeError"
+  },
+  "osm-node-6263803114": {
+   "status": "error TypeError"
+  },
+  "osm-node-6284704260": {
+   "status": "error TypeError"
+  },
+  "osm-node-4075429622": {
+   "status": "ok",
+   "image": "https://images.squarespace-cdn.com/content/v1/65f0c175d8700464cf7f6994/be2f6a8f-1ac5-45e5-9d7e-a948f5c9e92e/000054940010.jpg?format=2500w"
+  },
+  "osm-node-6300537487": {
+   "status": "ok",
+   "hours": "hours listed on the page"
+  },
+  "osm-way-210258348": {
+   "status": "http 403"
+  },
+  "osm-node-6302155846": {
+   "status": "http 403"
+  },
+  "osm-node-6306942282": {
+   "status": "robots"
+  },
+  "osm-node-13259627303": {
+   "status": "ok",
+   "image": "https://www.pilsensgym.com/images/pilsens-gym-social.jpg"
+  },
+  "osm-node-13260171801": {
+   "status": "ok",
+   "image": "https://a-cup-of-joe.com/wp-content/uploads/2019/11/b7c50be2-d5fb-468e-937c-ddb1ba81b31e.jpg"
+  },
+  "osm-node-13260156202": {
+   "status": "ok",
+   "image": "https://images.squarespace-cdn.com/content/v1/6863f64ea57ecd65321083ef/f3664b69-1955-4581-a41b-6a0d602c3776/20190317_ASalon_Interior_007.JPG?format=2500w"
+  },
+  "osm-node-6280472914": {
+   "status": "page does not name the venue"
+  },
+  "osm-node-13259714001": {
+   "status": "ok"
+  },
+  "osm-node-4075429623": {
+   "status": "page does not name the venue"
+  },
+  "osm-node-6280027510": {
+   "status": "page does not name the venue"
+  },
+  "osm-way-210224420": {
+   "status": "page does not name the venue"
+  },
+  "osm-node-9281265683": {
+   "status": "ok",
+   "image": "https://www.darkmattercoffee.com/cdn/shop/files/nav-coffee2.jpg?v=1723055529&width=750"
+  },
+  "osm-node-5791054158": {
+   "status": "ok",
+   "image": "http://www.alulubrew.com/public/images/panel-home.jpg"
+  },
+  "osm-node-8508251822": {
+   "status": "page does not name the venue"
+  },
+  "osm-way-209784688": {
    "status": "ok"
   }
  }

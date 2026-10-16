@@ -10,11 +10,15 @@
 > 3. **When finished**, update both files again: the owner's workflow gets status, evidence, checkbox, and a dated change-log entry; remove the claim from *Active claims* in both files, and add a one-line change-log entry to the other workflow saying what changed.
 > 4. If it's unclear whose workflow a request belongs to, use the one that owns the paths being touched and ask if still unclear. Never edit the other person's folders without an agreed handoff or an explicit request.
 
-**Updated:** 2026-10-10<br>
+**Updated:** 2026-10-16<br>
 **Current task:** A24 complete (Kampuscape rename; selected building names and address fallback); A25/A28 accounts live with link-based verification emails<br> A29 registration return prompt ready for publication.
 **Implementation progress:** A02 and A08 complete; remaining production journey tasks pending
 
 ## Steps and tracker
+
+- [x] **A44 · Every place near campus.** All places on the map by default; half-mile coverage around campus with photos and hours; Chicago sights added.
+
+- [x] **A43 · Clean up creators panel.** Remove the selected place-data and image-credit paragraph. Production build passes.
 
 - [x] **A34 / B18 · Social experience and efficient refresh (released).** Rich event previews, clickable guide, member visit recommendations, accepted-request messaging/account blocking, resilient shared caches and scheduled Worker; deployed in A35/B19.
 
@@ -67,6 +71,8 @@ Check a task only when its result exists. If a task is partial, leave it uncheck
 
 | Task | State | Evidence / blocker |
 | --- | --- | --- |
+| A44 / B27 | DONE | Every place within half a mile of campus: map opens on All places with every pin; import widened (coffee shops, pharmacies, Target/dollar stores, delis, services, museums, galleries, theatres, gyms, Park District parks) and area extended to half a mile around every East, West and South campus building (835 → 783 places after excluding courtyards, duplicates and 26 closed). Within half a mile: 417 places, complete (photo + hours) 75 → 365. Hours from Google listings (213, name and street number matched), UIC Dining Fall 2026, Park District and official sites; photos from venue sites, Commons, Park District, 115 Google listing photos (user-approved) and captioned brand photos for chains (user-approved); every photo checked by eye. Sights: 360 CHICAGO, Chicago Architecture Center, Chicago History Museum, DuSable Museum, Harold Washington Library, Buckingham Fountain, Maxwell Street Market; Skydeck hours; 17 curated places got hours; Kristoffer's (closed) removed. 109 unit tests pass and the build passes; browser smoke tests not run (Playwright browsers not installed), checked by hand in Chrome instead. |
+| A43 | DONE | Removed the selected place-data/OSM/image-credit paragraph from `Credits.jsx`; creator and help links remain. `npm run build` passes; no dependencies. |
 | A42 / B26 | DONE | 50 nearby places completed by hand (photo + hours), closest first, 0.13–0.99 mi: 41 venue-site photos picked on contact sheets (resized where heavy) and hours from Google listings, venue sites and the UIC Library page; 9 closed or moved listings hidden and logged. Complete places 97 → 147. Apple Maps–style pins: small coloured dots by kind, names as plain coloured text from neighbourhood zoom, pins without room for a name dropped (student deals always kept). 109 unit tests and nine smoke tests pass. |
 | A41 / B25 | DONE | Photo and hours pass for the 627 nearby places: real photos 20 → 136 (127 from venue websites through the allowlisted proxy, 8 freely licensed Wikidata/Commons, 1 existing); weekly hours 286 → 328 (venue sites, chain store pages). Every shipped website photo checked by eye on contact sheets; 13 rejected and 3 approved in `website/data/places/photo-review.json`. Hours reader refuses ambiguous text; all 22 prose-read schedules checked against their pages. Chains get hours only from address-matched store pages and never another branch's photo. 109 unit tests and nine smoke tests pass. |
 | A40 / B24 | DONE | All nearby places back, hard 1-mile radius (627 places); map opens on For students; Explore category persists per device with a note; What's happening adds 1–2 interest-matched place picks; building events get All / For you. Fixes: stale refresh after saves (forced refresh during an in-flight request now refetches; cached data revalidates on load), host share links re-saved and confirmed before sharing, glued share text redirected, styled expired-link page. 99 unit tests and nine smoke tests pass. |
@@ -198,6 +204,10 @@ Ordered by impact for students on phones.
 - [ ] **AD12 · Touch pin names.** Show names for nearby pins on touch devices without needing a tap.
 
 ## Change log
+
+- **2026-10-16:** A44/B27 (user-requested): Every place within half a mile of campus: map opens on All places with every pin; import widened (coffee shops, pharmacies, Target/dollar stores, delis, services, museums, galleries, theatres, gyms, Park District parks) and area extended to half a mile around every East, West and South campus building (835 → 783 places after excluding courtyards, duplicates and 26 closed). Within half a mile: 417 places, complete (photo + hours) 75 → 365. Hours from Google listings (213, name and street number matched), UIC Dining Fall 2026, Park District and official sites; photos from venue sites, Commons, Park District, 115 Google listing photos (user-approved) and captioned brand photos for chains (user-approved); every photo checked by eye. Sights: 360 CHICAGO, Chicago Architecture Center, Chicago History Museum, DuSable Museum, Harold Washington Library, Buckingham Fountain, Maxwell Street Market; Skydeck hours; 17 curated places got hours; Kristoffer's (closed) removed. 109 unit tests pass and the build passes; browser smoke tests not run (Playwright browsers not installed), checked by hand in Chrome instead. New review catalog migration `website/backend/supabase/migrations/202610162257_review_place_catalog_2.sql` (136 places) must be applied before the frontend is deployed.
+
+- **2026-10-16:** A43 (user-requested): removed the selected place-data/OpenStreetMap/image-credit paragraph from `website/frontend/src/Credits.jsx` and updated its comment; creator and Help & reports links remain. `npm run build` passes. No backend dependencies or deployment.
 
 - **2026-10-12:** A42/B26 (user-requested): 50 closest incomplete places given checked photos and hours; closed listings hidden; Apple Maps–style pins.
 - **2026-10-11:** A41/B25 (user-requested overnight pass): photos and hours for nearby places from venue sites, chain store pages and Wikimedia, with by-eye photo review.

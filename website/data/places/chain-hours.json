@@ -1,149 +1,13 @@
 {
- "checked": "2026-10-12",
+ "checked": "2026-10-16",
  "agent": "Mozilla/5.0 (compatible; KampuscapeBot/1.0; +https://kampuscape.com/support)",
  "note": "Chain branch hours from store pages found in each chain’s sitemap by street address; the page’s own address must match.",
  "places": {
-  "osm-node-1619646334": {
+  "osm-node-12749008917": {
    "schedule": [
     [
      600,
-     1260
-    ],
-    [
-     600,
-     1260
-    ],
-    [
-     600,
-     1260
-    ],
-    [
-     600,
-     1260
-    ],
-    [
-     600,
-     1260
-    ],
-    [
-     600,
-     1260
-    ],
-    [
-     600,
-     1260
-    ]
-   ],
-   "source": "schema.org data on the Jimmy John's store page",
-   "page": "https://locations.jimmyjohns.com/il/chicago/sandwiches-0019.html"
-  },
-  "osm-node-12187329125": {
-   "schedule": [
-    [
-     600,
-     1080
-    ],
-    [
-     600,
-     1200
-    ],
-    [
-     600,
-     1260
-    ],
-    [
-     600,
-     1260
-    ],
-    [
-     600,
-     1260
-    ],
-    [
-     600,
-     1260
-    ],
-    [
-     600,
-     1080
-    ]
-   ],
-   "source": "schema.org data on the Jimmy John's store page",
-   "page": "https://locations.jimmyjohns.com/il/chicago/sandwiches-0592.html"
-  },
-  "osm-way-206224188": {
-   "schedule": [
-    [
-     600,
-     1320
-    ],
-    [
-     600,
-     1320
-    ],
-    [
-     600,
-     1320
-    ],
-    [
-     600,
-     1320
-    ],
-    [
-     600,
-     1320
-    ],
-    [
-     600,
-     1320
-    ],
-    [
-     600,
-     1320
-    ]
-   ],
-   "source": "schema.org data on the Church's Chicken store page",
-   "page": "https://locations.churchs.com/il/chicago/1755-w.-jackson-boulevard"
-  },
-  "osm-node-8117903927": {
-   "schedule": [
-    [
-     600,
-     1500
-    ],
-    [
-     600,
-     1500
-    ],
-    [
-     600,
-     1500
-    ],
-    [
-     600,
-     1500
-    ],
-    [
-     600,
-     1500
-    ],
-    [
-     600,
-     1500
-    ],
-    [
-     600,
-     1500
-    ]
-   ],
-   "source": "schema.org data on the Wingstop store page",
-   "page": "https://www.wingstop.com/illinois/chicago/wingstop-1215-chicago-il-60607"
-  },
-  "osm-node-6154694735": {
-   "schedule": [
-    [
-     600,
-     960
+     900
     ],
     [
      540,
@@ -170,172 +34,42 @@
      1020
     ]
    ],
-   "source": "schema.org data on the Great Clips store page",
-   "page": "https://salons.greatclips.com/us/il/chicago/1342-s-halsted-st"
+   "source": "schema.org data on the The UPS Store store page",
+   "page": "https://locations.theupsstore.com/il/chicago/308-s-jefferson-st"
   },
-  "osm-node-12068333589": {
+  "osm-node-12305205112": {
    "schedule": [
     [
-     300,
-     1380
-    ],
-    [
-     300,
-     1380
-    ],
-    [
-     300,
-     1380
-    ],
-    [
-     300,
-     1380
-    ],
-    [
-     300,
-     1380
-    ],
-    [
-     300,
-     1380
-    ],
-    [
-     300,
-     1380
-    ]
-   ],
-   "source": "hours next to the store address on the Circle K store page",
-   "page": "https://www.circlek.com/station/139-s-clinton-st-chicago-us"
-  },
-  "osm-node-12327487722": {
-   "schedule": [
-    [
-     570,
-     1020
-    ],
-    [
-     540,
-     1140
-    ],
-    [
-     540,
-     1140
-    ],
-    [
-     540,
-     1140
-    ],
-    [
-     540,
-     1140
-    ],
-    [
-     540,
-     1140
+     0,
+     1440
     ],
     [
      480,
-     1020
+     1170
+    ],
+    [
+     480,
+     1170
+    ],
+    [
+     480,
+     1170
+    ],
+    [
+     480,
+     1170
+    ],
+    [
+     480,
+     1170
+    ],
+    [
+     630,
+     930
     ]
    ],
-   "source": "schema.org data on the Great Clips store page",
-   "page": "https://salons.greatclips.com/us/il/chicago/547-w-madison-st"
-  },
-  "osm-node-1951914734": {
-   "schedule": [
-    null,
-    [
-     600,
-     960
-    ],
-    [
-     600,
-     960
-    ],
-    [
-     600,
-     960
-    ],
-    [
-     600,
-     960
-    ],
-    [
-     600,
-     960
-    ],
-    null
-   ],
-   "source": "schema.org data on the Jimmy John's store page",
-   "page": "https://locations.jimmyjohns.com/il/chicago/sandwiches-0531.html"
-  },
-  "osm-way-1504730670": {
-   "schedule": [
-    [
-     600,
-     1500
-    ],
-    [
-     600,
-     1500
-    ],
-    [
-     600,
-     1500
-    ],
-    [
-     600,
-     1500
-    ],
-    [
-     600,
-     1500
-    ],
-    [
-     600,
-     1650
-    ],
-    [
-     600,
-     1650
-    ]
-   ],
-   "source": "schema.org data on the Raising Cane's store page",
-   "page": "https://locations.raisingcanes.com/il/chicago/820-w-randolph-st."
-  },
-  "osm-node-1699206943": {
-   "schedule": [
-    [
-     600,
-     1200
-    ],
-    [
-     600,
-     1200
-    ],
-    [
-     600,
-     1200
-    ],
-    [
-     600,
-     1200
-    ],
-    [
-     600,
-     1200
-    ],
-    [
-     600,
-     1200
-    ],
-    [
-     600,
-     1200
-    ]
-   ],
-   "source": "schema.org data on the Jimmy John's store page",
-   "page": "https://locations.jimmyjohns.com/il/chicago/sandwiches-0474.html"
+   "source": "schema.org data on the The UPS Store store page",
+   "page": "https://locations.theupsstore.com/il/chicago/623-w-lake-st"
   }
  },
  "log": {
@@ -408,17 +142,6 @@
    "candidates": [],
    "found": false
   },
-  "osm-node-1619646334": {
-   "brand": "Jimmy John's",
-   "address": "812 West Van Buren Street",
-   "hosts": [
-    "locations.jimmyjohns.com"
-   ],
-   "candidates": [
-    "https://locations.jimmyjohns.com/il/chicago/sandwiches-0019.html"
-   ],
-   "found": true
-  },
   "osm-node-13841310517": {
    "brand": "Starbucks",
    "address": "600 South Paulina Street",
@@ -433,6 +156,15 @@
    "address": "1650 West Harrison Street",
    "hosts": [
     "www.aubonpain.com"
+   ],
+   "candidates": [],
+   "found": false
+  },
+  "osm-node-4848469819": {
+   "brand": "TITLE Boxing Club",
+   "address": "313 South Peoria Street",
+   "hosts": [
+    "titleboxingclub.com"
    ],
    "candidates": [],
    "found": false
@@ -458,17 +190,6 @@
    ],
    "found": false
   },
-  "osm-node-12187329125": {
-   "brand": "Jimmy John's",
-   "address": "1133 West Taylor Street",
-   "hosts": [
-    "locations.jimmyjohns.com"
-   ],
-   "candidates": [
-    "https://locations.jimmyjohns.com/il/chicago/sandwiches-0592.html"
-   ],
-   "found": true
-  },
   "osm-node-9445865004": {
    "brand": "Shell",
    "address": "1001 West Jackson Boulevard",
@@ -483,6 +204,19 @@
    ],
    "candidates": [],
    "found": false
+  },
+  "osm-node-12749008917": {
+   "brand": "The UPS Store",
+   "address": "308 South Jefferson Street",
+   "hosts": [
+    "locations.theupsstore.com"
+   ],
+   "candidates": [
+    "https://locations.theupsstore.com/il/chicago/308-s-jefferson-st",
+    "https://locations.theupsstore.com/es/il/chicago/308-s-jefferson-st",
+    "https://locations.theupsstore.com/il/chicago/308-s-jefferson-st/notary"
+   ],
+   "found": true
   },
   "osm-node-6154694733": {
    "brand": "Cold Stone Creamery",
@@ -499,19 +233,6 @@
    "candidates": [],
    "found": false
   },
-  "osm-way-206224188": {
-   "brand": "Church's Chicken",
-   "address": "1755 West Jackson Boulevard",
-   "hosts": [
-    "locations.churchs.com"
-   ],
-   "candidates": [
-    "https://locations.churchs.com/il/chicago/1755-w.-jackson-boulevard",
-    "https://locations.churchs.com/il/chicago/1755-w.-jackson-boulevard/family-meals",
-    "https://locations.churchs.com/il/chicago/1755-w.-jackson-boulevard/chicken-tenders"
-   ],
-   "found": true
-  },
   "osm-node-6154694734": {
    "brand": "Dog Haus",
    "address": "1322 South Halsted Street",
@@ -525,6 +246,21 @@
     "www.barlouie.com"
    ],
    "candidates": [],
+   "found": false
+  },
+  "osm-node-2422407798": {
+   "brand": "LA Fitness",
+   "address": "1101 South Canal Street",
+   "hosts": [
+    "www.lafitness.com"
+   ],
+   "candidates": [],
+   "found": false
+  },
+  "osm-node-8117903922": {
+   "brand": "Marshalls",
+   "address": "1101 South Canal Street",
+   "hosts": [],
    "found": false
   },
   "osm-node-12068333586": {
@@ -545,30 +281,11 @@
    "candidates": [],
    "found": false
   },
-  "osm-node-8117903927": {
-   "brand": "Wingstop",
-   "address": "500 West Roosevelt Road",
-   "hosts": [
-    "www.wingstop.com",
-    "locations.wingstop.com"
-   ],
-   "candidates": [
-    "https://www.wingstop.com/illinois/chicago/wingstop-1215-chicago-il-60607"
-   ],
-   "found": true
-  },
-  "osm-node-6154694735": {
-   "brand": "Great Clips",
-   "address": "1342 South Halsted Street",
-   "hosts": [
-    "salons.greatclips.com",
-    "www.greatclips.com"
-   ],
-   "candidates": [
-    "https://salons.greatclips.com/us/il/chicago/1342-s-halsted-st",
-    "https://salons.greatclips.com/us/il/chicago/1342-s-halsted-st/salon-services"
-   ],
-   "found": true
+  "osm-node-12962361237": {
+   "brand": "Nékter Juice Bar",
+   "address": "1338 South Halsted Street",
+   "hosts": [],
+   "found": false
   },
   "osm-node-6689916393": {
    "brand": "Potbelly",
@@ -609,10 +326,46 @@
    "hosts": [],
    "found": false
   },
+  "osm-node-12472700601": {
+   "brand": "Walgreens",
+   "address": "433 West Van Buren Street",
+   "hosts": [
+    "www.walgreens.com"
+   ],
+   "candidates": [],
+   "found": false
+  },
+  "osm-node-12488896040": {
+   "brand": "Walgreens",
+   "address": "501 West Roosevelt Road",
+   "hosts": [
+    "www.walgreens.com"
+   ],
+   "candidates": [],
+   "found": false
+  },
+  "osm-node-1619646329": {
+   "brand": "FedEx Office",
+   "address": "1242 South Canal Street",
+   "hosts": [
+    "local.fedex.com"
+   ],
+   "candidates": [],
+   "found": false
+  },
   "osm-node-8117903918": {
    "brand": "Jason's Deli",
    "address": "1258 South Canal Street",
    "hosts": [],
+   "found": false
+  },
+  "osm-node-9434660174": {
+   "brand": "CVS Pharmacy",
+   "address": "1211 West Roosevelt Road",
+   "hosts": [
+    "www.cvs.com"
+   ],
+   "candidates": [],
    "found": false
   },
   "osm-node-11875042749": {
@@ -641,17 +394,6 @@
    "address": "24 South Halsted Street",
    "hosts": [],
    "found": false
-  },
-  "osm-node-12068333589": {
-   "brand": "Circle K",
-   "address": "139 South Clinton Street",
-   "hosts": [
-    "www.circlek.com"
-   ],
-   "candidates": [
-    "https://www.circlek.com/station/139-s-clinton-st-chicago-us"
-   ],
-   "found": true
   },
   "osm-node-12489358150": {
    "brand": "Jersey Mike's Subs",
@@ -716,11 +458,50 @@
    "candidates": [],
    "found": false
   },
+  "osm-node-12580485266": {
+   "brand": "[solidcore]",
+   "address": "7 South Halsted Street",
+   "hosts": [
+    "solidcore.co"
+   ],
+   "candidates": [],
+   "found": false
+  },
+  "osm-node-12479624266": {
+   "brand": "Club Pilates",
+   "address": "907 West Madison Street",
+   "hosts": [],
+   "found": false
+  },
+  "osm-node-12187329122": {
+   "brand": "Insomnia Cookies",
+   "address": "1335 West Taylor Street",
+   "hosts": [],
+   "found": false
+  },
+  "osm-node-11175635780": {
+   "brand": "Orangetheory Fitness",
+   "address": "823 West Madison Street",
+   "hosts": [
+    "www.orangetheory.com"
+   ],
+   "candidates": [],
+   "found": false
+  },
   "osm-node-12042618072": {
    "brand": "7-Eleven",
    "address": "200 South Racine Avenue",
    "hosts": [
     "www.7-eleven.com"
+   ],
+   "candidates": [],
+   "found": false
+  },
+  "osm-node-6582995273": {
+   "brand": "FedEx Office",
+   "address": "1 South Sangamon Street",
+   "hosts": [
+    "local.fedex.com"
    ],
    "candidates": [],
    "found": false
@@ -745,19 +526,6 @@
    "address": "1025 West Madison Street",
    "hosts": [],
    "found": false
-  },
-  "osm-node-12327487722": {
-   "brand": "Great Clips",
-   "address": "547 West Madison Street",
-   "hosts": [
-    "salons.greatclips.com",
-    "www.greatclips.com"
-   ],
-   "candidates": [
-    "https://salons.greatclips.com/us/il/chicago/547-w-madison-st",
-    "https://salons.greatclips.com/us/il/chicago/547-w-madison-st/salon-services"
-   ],
-   "found": true
   },
   "osm-node-2670169972": {
    "brand": "Potbelly",
@@ -802,16 +570,29 @@
    "candidates": [],
    "found": false
   },
-  "osm-node-1951914734": {
-   "brand": "Jimmy John's",
-   "address": "216 West Jackson Boulevard",
+  "osm-way-1483956931": {
+   "brand": "AMC",
+   "address": "1011 South Delano Court",
    "hosts": [
-    "locations.jimmyjohns.com"
+    "www.amctheatres.com"
    ],
-   "candidates": [
-    "https://locations.jimmyjohns.com/il/chicago/sandwiches-0531.html"
+   "candidates": [],
+   "found": false
+  },
+  "osm-node-13293647064": {
+   "brand": "TITLE Boxing Club",
+   "address": "1136 South Delano Court",
+   "hosts": [
+    "titleboxingclub.com"
    ],
-   "found": true
+   "candidates": [],
+   "found": false
+  },
+  "osm-node-2882842870": {
+   "brand": "Mrs. Fields",
+   "address": "500 West Madison Street",
+   "hosts": [],
+   "found": false
   },
   "osm-way-1483956927": {
    "brand": "Nando's",
@@ -847,6 +628,12 @@
     "locations.dunkindonuts.com"
    ],
    "candidates": [],
+   "found": false
+  },
+  "osm-node-7557514485": {
+   "brand": "Pure Barre",
+   "address": "1170 West Madison Street",
+   "hosts": [],
    "found": false
   },
   "osm-node-5625466899": {
@@ -909,16 +696,23 @@
    "candidates": [],
    "found": false
   },
-  "osm-way-1504730670": {
-   "brand": "Raising Cane's",
-   "address": "820 West Randolph Street",
+  "osm-node-6920818832": {
+   "brand": "CVS Pharmacy",
+   "address": "1154 South Clark Street",
    "hosts": [
-    "locations.raisingcanes.com"
+    "www.cvs.com"
    ],
-   "candidates": [
-    "https://locations.raisingcanes.com/il/chicago/820-w-randolph-st."
+   "candidates": [],
+   "found": false
+  },
+  "osm-node-8379930803": {
+   "brand": "Walgreens",
+   "address": "1051 West Randolph Street",
+   "hosts": [
+    "www.walgreens.com"
    ],
-   "found": true
+   "candidates": [],
+   "found": false
   },
   "osm-node-10974152342": {
    "brand": "7-Eleven",
@@ -943,6 +737,15 @@
    "address": "946 West Randolph Street",
    "hosts": [
     "www.starbucks.com"
+   ],
+   "candidates": [],
+   "found": false
+  },
+  "osm-way-209383337": {
+   "brand": "United States Post Office",
+   "address": "116 South Western Avenue",
+   "hosts": [
+    "tools.usps.com"
    ],
    "candidates": [],
    "found": false
@@ -974,11 +777,57 @@
    "candidates": [],
    "found": false
   },
+  "osm-way-209381333": {
+   "brand": "Walgreens",
+   "address": "2340 West Madison Street",
+   "hosts": [
+    "www.walgreens.com"
+   ],
+   "candidates": [],
+   "found": false
+  },
+  "osm-node-13332982300": {
+   "brand": "The UPS Store",
+   "address": "29 North Wacker Drive",
+   "hosts": [
+    "locations.theupsstore.com"
+   ],
+   "candidates": [],
+   "found": false
+  },
+  "osm-node-12305205112": {
+   "brand": "The UPS Store",
+   "address": "623 West Lake Street",
+   "hosts": [
+    "locations.theupsstore.com"
+   ],
+   "candidates": [
+    "https://locations.theupsstore.com/il/chicago/623-w-lake-st",
+    "https://locations.theupsstore.com/es/il/chicago/623-w-lake-st",
+    "https://locations.theupsstore.com/il/chicago/623-w-lake-st/search"
+   ],
+   "found": true
+  },
   "osm-node-6637767913": {
    "brand": "7-Eleven",
    "address": "567 West Lake Street",
    "hosts": [
     "www.7-eleven.com"
+   ],
+   "candidates": [],
+   "found": false
+  },
+  "osm-node-12479624260": {
+   "brand": "Barre3",
+   "address": "171 North Aberdeen Street",
+   "hosts": [],
+   "found": false
+  },
+  "osm-node-6302285569": {
+   "brand": "FedEx Office",
+   "address": "101 North Wacker Drive",
+   "hosts": [
+    "local.fedex.com"
    ],
    "candidates": [],
    "found": false
@@ -1011,16 +860,23 @@
    "candidates": [],
    "found": false
   },
-  "osm-node-1699206943": {
-   "brand": "Jimmy John's",
-   "address": "200 North Jefferson Street",
+  "osm-node-11881628175": {
+   "brand": "CVS Pharmacy",
+   "address": "1034 West Lake Street",
    "hosts": [
-    "locations.jimmyjohns.com"
+    "www.cvs.com"
    ],
-   "candidates": [
-    "https://locations.jimmyjohns.com/il/chicago/sandwiches-0474.html"
+   "candidates": [],
+   "found": false
+  },
+  "osm-node-12305205113": {
+   "brand": "FedEx Office",
+   "address": "608 West Lake Street",
+   "hosts": [
+    "local.fedex.com"
    ],
-   "found": true
+   "candidates": [],
+   "found": false
   },
   "osm-node-14131598931": {
    "brand": "Just Salad",
@@ -1056,6 +912,21 @@
     "www.starbucks.com"
    ],
    "candidates": [],
+   "found": false
+  },
+  "osm-way-209786640": {
+   "brand": "United States Post Office",
+   "address": "1859 South Ashland Avenue",
+   "hosts": [
+    "tools.usps.com"
+   ],
+   "candidates": [],
+   "found": false
+  },
+  "osm-way-210222498": {
+   "brand": "La Michoacana",
+   "address": "1847 South Blue Island Avenue",
+   "hosts": [],
    "found": false
   }
  }

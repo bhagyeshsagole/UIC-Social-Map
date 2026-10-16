@@ -8,8 +8,7 @@ const CREATORS = [
   ['Pawan Kumar', 'https://www.linkedin.com/in/pawan-kumar-uic/'],
 ];
 
-// "i" map control: who made Kampuscape and where to get help. Map data
-// attribution accompanies the expanded OpenStreetMap place directory.
+// "i" map control: who made Kampuscape and where to get help.
 // Closes on Escape or an outside tap.
 export default function Credits() {
   const [open, setOpen] = useState(false), root = useRef(null);
@@ -24,7 +23,6 @@ export default function Credits() {
     <button className="credits-button glass" aria-expanded={open} aria-controls="credits-card" aria-label="About Kampuscape's creators" title="Creators" onClick={() => setOpen(v => !v)}>i</button>
     {open && <section id="credits-card" className="credits-card glass" aria-label="Creators">
       <h2>Made by</h2>
-      <p className="fine-print">Place data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors · ODbL</a>. Images credited on each listing.</p>
       <ul>{CREATORS.map(([name, href]) => <li key={href}>
         <a href={href} target="_blank" rel="noopener noreferrer"><Linkedin size={15} aria-hidden="true"/><span>{name}</span><ArrowUpRight size={14} aria-hidden="true"/></a>
       </li>)}</ul>
