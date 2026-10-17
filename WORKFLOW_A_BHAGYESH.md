@@ -205,6 +205,8 @@ Ordered by impact for students on phones.
 
 ## Change log
 
+- **2026-10-16:** A47 (user-requested): hand-picked restaurants and cafes no longer count as landmarks, so zoomed out only parks, sights, arts and culture, libraries and study spots are named; everyday places (hand-picked or not) are named from street zoom 17 (was 16). Checked in Chrome at 15.3, 16.15 and 17.0 (night theme); 112 unit tests and build pass.
+
 - **2026-10-16:** A45/A46 released (user-requested): commit `46dbbf7` pushed to origin/main; Pages deployment `0efeb0f9` live at https://kampuscape.com/uic (bundle `main-DHLZ27s7.js` verified to carry the street-zoom naming and building mask).
 
 - **2026-10-16:** A46 (user-requested): two-level map names. Landmarks (parks, sights, arts and culture, libraries and study spots, and every hand-picked destination) are named from neighbourhood zoom as before; everyday places (food, cafes, shops, services, bars, gyms) show only their icon until street zoom 16, a step past the opening view (15.3), and then name themselves too. Landmarks pick name spots first; at street zoom the rooftop limit loosens from 20% to 40% so the names someone zoomed in for appear. Pins only count as crowded once they could have been named, so For students and For you keep their pins at the opening zoom. Checked in Chrome at 15.3, 15.96 and 16.39 (night theme); 112 unit tests and build pass.

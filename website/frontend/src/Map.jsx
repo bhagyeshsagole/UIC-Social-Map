@@ -23,12 +23,12 @@ const UIC_LABEL = [-87.64927, 41.87191];
 const HOME = {center:UIC_LABEL,zoom:15.3,pitch:54,bearing:0,roll:0};
 // From neighbourhood zoom, every pin with room shows its name beside it, like Apple Maps.
 const NAME_ZOOM = 14.5;
-// Landmarks (parks, sights, culture, libraries and hand-picked destinations) are named from neighbourhood
+// Landmarks (parks, sights, arts and culture, libraries and study spots) are named from neighbourhood
 // zoom. Everyday places (food, cafes, shops, services, bars, gyms) show only their icon until street zoom,
 // a step past the opening view, so a street's names appear when someone zooms in to see what's on it.
-const STREET_ZOOM = 16;
+const STREET_ZOOM = 17;
 const LANDMARK = new Set(['Outdoors','Sights','Arts & culture','Study spaces']);
-const isLandmark = p => LANDMARK.has(p.category) || !p.id.startsWith('osm-');
+const isLandmark = p => LANDMARK.has(p.category);
 // A name may cover at most this share of rooftop; otherwise it waits for a zoom level with more street room.
 // At street zoom the limit loosens a little so the names someone zoomed in for do appear.
 const ROOF_LIMIT = .2, STREET_ROOF_LIMIT = .4;
