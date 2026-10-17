@@ -4,6 +4,7 @@ import {details} from '../src/placeDetails.js';
 import {parsePlaces,DIRECTORY_START,DIRECTORY_END} from '../src/content.js';
 import {parseOpeningHours} from '../src/openingHours.js';
 import {existsSync} from 'node:fs';
+import {lighterImage} from './lib/lighterImage.mjs';
 const sitesFile=new URL('../../../added_sites.md',import.meta.url);
 const existing=parsePlaces(readFileSync(sitesFile,'utf8')).map(p=>({...details[p.id],...p}));
 const raw=JSON.parse(readFileSync(new URL('../../data/places/uic-nearby-osm.json',import.meta.url)));
@@ -96,6 +97,9 @@ records.splice(0,records.length,...records.filter(p=>inArea(p.coords)));
 // Places confirmed closed or moved stay out of the app (overrides.json → closed) and are listed in the log instead.
 const closed=records.filter(p=>overrides.closed?.[p.id]).map(p=>({...p,closed:overrides.closed[p.id]}));
 records.splice(0,records.length,...records.filter(p=>!overrides.closed?.[p.id]));
+// Card-sized copies from image hosts that resize on request (scripts/lib/lighterImage.mjs).
+for(const p of records)if(p.photo?.src)p.photo.src=lighterImage(p.photo.src);
+for(const id of Object.keys(photoSources))photoSources[id]=lighterImage(photoSources[id]);
 writeFileSync(new URL('../src/nearbyPlaces.json',import.meta.url),JSON.stringify({checked:'2026-10-16',radiusMiles:RADIUS,campusRadiusMiles:CAMPUS_RADIUS,centers,source:'https://www.openstreetmap.org/copyright',places:records}));
 writeFileSync(new URL('../src/placePhotoSources.json',import.meta.url),JSON.stringify(Object.fromEntries(Object.entries(photoSources).filter(([id])=>records.some(p=>p.id===id)))));
 // Log every nearby place in added_sites.md, below the hand-edited places, so editors can see what still needs a photo or hours.

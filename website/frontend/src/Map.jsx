@@ -26,7 +26,7 @@ const NAME_ZOOM = 14.5;
 // Landmarks (parks, sights, arts and culture, libraries and study spots) are named from neighbourhood
 // zoom. Everyday places (food, cafes, shops, services, bars, gyms) show only their icon until street zoom,
 // a step past the opening view, so a street's names appear when someone zooms in to see what's on it.
-const STREET_ZOOM = 16.5;
+const STREET_ZOOM = 15.5;
 const LANDMARK = new Set(['Outdoors','Sights','Arts & culture','Study spaces']);
 const isLandmark = p => LANDMARK.has(p.category);
 // A name may cover at most this share of rooftop; otherwise it waits for a zoom level with more street room.
@@ -99,7 +99,7 @@ export function styledMap(night, eventVenueIds = [], privateVenues = []) {
   style.light={anchor:'viewport',color:night?'#b7bedf':'#fff2d8',intensity:night?0.35:0.45,position:[1.5,210,45]};
   return style;
 }
-export default function Map({revealAll=false,places,selected,onSelect,night,resetKey,eventVenues=[],focusedEvent,venueGroups={},onVenuePick,focusedVenue,privateEvents=[],previewVenue=null,pickingBuilding=false,onBuildingPick,onPrivatePick}) {
+export default function Map({onWarm,onShown,revealAll=false,places,selected,onSelect,night,resetKey,eventVenues=[],focusedEvent,venueGroups={},onVenuePick,focusedVenue,privateEvents=[],previewVenue=null,pickingBuilding=false,onBuildingPick,onPrivatePick}) {
   const container=useRef(), map=useRef(), markers=useRef({}), callback=useRef(onSelect), groupsRef=useRef(venueGroups), venueCallback=useRef(onVenuePick);
   groupsRef.current=venueGroups;venueCallback.current=onVenuePick;
   const privateRef=useRef(privateEvents), pickingRef=useRef(pickingBuilding), buildingCallback=useRef(onBuildingPick), privateCallback=useRef(onPrivatePick);
@@ -113,7 +113,7 @@ export default function Map({revealAll=false,places,selected,onSelect,night,rese
   // Ties keep the incoming order: distance from campus, or the For you ranking.
   const pinOrder=useMemo(()=>places.map((place,index)=>({place,tier:pinTier(place),index})).sort((a,b)=>a.tier-b.tier||a.index-b.index),[places]);
   const [status,setStatus]=useState('loading'), [retry,setRetry]=useState(0), [flat,setFlat]=useState(false);
-  callback.current=onSelect;
+  callback.current=onSelect;const warm=useRef(onWarm),shownCallback=useRef(onShown);warm.current=onWarm;shownCallback.current=onShown;
   const venueKey=JSON.stringify([...new Set(eventVenues.map(v=>v.id))].sort());
   const activeVenues=useRef([]);activeVenues.current=JSON.parse(venueKey);
   useEffect(()=>{
@@ -271,12 +271,15 @@ export default function Map({revealAll=false,places,selected,onSelect,night,rese
       cache=markers.current={map:m,byId:new globalThis.Map(),campus:new maplibregl.Marker({element:el}).setLngLat(UIC_LABEL).addTo(m)};
     }
     const shown=declutterPins(m,pinOrder,selected,revealAll,container.current);
+    // The first places in view get their photos warmed in idle time (main.jsx → warmPhotos), never before the map
+    // itself has finished loading, so photos don't compete with map tiles.
+    if(m.loaded()&&m.areTilesLoaded())shownCallback.current?.(shown);else m.once('idle',()=>shownCallback.current?.(shown));
     const keep=new Set(shown.map(p=>p.id));
     cache.byId.forEach((pin,id)=>{if(!keep.has(id)){pin.marker.remove();setTimeout(()=>pin.root.unmount(),0);cache.byId.delete(id);}});
     const entries=shown.map(p=>{
       const isSelected=selected?.id===p.id;let pin=cache.byId.get(p.id);
       if(!pin){const el=document.createElement('div');el.dataset.labelActive='false';pin={el,root:createRoot(el),marker:new maplibregl.Marker({element:el,anchor:'center'}).setLngLat(p.coords).addTo(m)};cache.byId.set(p.id,pin);}
-      if(pin.place!==p||pin.selected!==isSelected){pin.place=p;pin.selected=isSelected;pin.marker.setLngLat(p.coords);pin.root.render(<button className={`map-pin ${p.accent} ${isSelected?'selected':''}`} data-kind={PIN_KIND[p.category]||'other'} onClick={()=>callback.current(p)} aria-label={`View ${p.name}${hasPerk(p)?', student perk':''}`}><span className="pin-circle"><PlaceIcon place={p} size={14}/>{hasPerk(p)&&<span className="pin-badge" aria-hidden="true"><GraduationCap size={9} strokeWidth={2.6}/></span>}</span><span className="pin-label">{p.name}</span></button>);}
+      if(pin.place!==p||pin.selected!==isSelected){pin.place=p;pin.selected=isSelected;pin.marker.setLngLat(p.coords);pin.root.render(<button className={`map-pin ${p.accent} ${isSelected?'selected':''}`} data-kind={PIN_KIND[p.category]||'other'} onClick={()=>callback.current(p)} onPointerEnter={()=>warm.current?.(p)} onFocus={()=>warm.current?.(p)} onPointerDown={()=>warm.current?.(p)} aria-label={`View ${p.name}${hasPerk(p)?', student perk':''}`}><span className="pin-circle"><PlaceIcon place={p} size={14}/>{hasPerk(p)&&<span className="pin-badge" aria-hidden="true"><GraduationCap size={9} strokeWidth={2.6}/></span>}</span><span className="pin-label">{p.name}</span></button>);}
       return {id:p.id,el:pin.el,selected:isSelected,tier:pinTier(p),landmark:isLandmark(p)};
     });
     const campus=cache.campus.getElement();let frame;

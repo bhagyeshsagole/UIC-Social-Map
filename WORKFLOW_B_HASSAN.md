@@ -86,6 +86,8 @@ Provider handoff should include the SDK, supported version, configuration variab
 
 ## Change log
 
+- **2026-10-16:** Bhagesh A49 touched `website/frontend/scripts/import-nearby-places.mjs` output only (lighter image URLs in `nearbyPlaces.json` and `placePhotoSources.json`); no data snapshot changes.
+
 - **2026-10-16:** Bhagesh A48 (frontend only): street-zoom names from 16.5.
 
 - **2026-10-16:** A47 released: commit `5f15d3d` pushed to origin/main; Pages deployment `3a40ba37` live at https://kampuscape.com/uic.

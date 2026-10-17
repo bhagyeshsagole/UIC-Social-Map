@@ -172,7 +172,7 @@ function App(){
  // On phones an open place, event or building sheet takes the screen; the bottom nav and search step aside.
  const sheetOpen=!!selected||!!venueView||(!!focusedEvent&&!panelOpen);
  return <main className={`${solar.night?'app night':'app day'}${sheetOpen?' sheet-open':''}${panelOpen?' panel-open':''}`}>
-  <Map places={visible} revealAll={tab==='Saved'||searching||!['For you','For students'].includes(category)} selected={selected} onSelect={p=>{setFocusedEvent(null);setFocusedVenue(null);setSelected(p);}} night={solar.night} resetKey={reset} eventVenues={[...visible.map(p=>venueOfPlace.get(p.id)).filter(Boolean),...mapEvents.filter(e=>!e.venue.id.startsWith('uic-')).map(e=>e.venue)]} privateEvents={mapPrivateEvents} previewVenue={creating?pickedBuilding:null} pickingBuilding={pickingBuilding} onBuildingPick={pickBuilding} onPrivatePick={selectEvent} focusedEvent={focusedEvent} venueGroups={venueGroups} onVenuePick={pickVenue} focusedVenue={venueView?focusedVenue:null}/>
+  <Map onWarm={warmPhoto} onShown={warmPhotos} places={visible} revealAll={tab==='Saved'||searching||!['For you','For students'].includes(category)} selected={selected} onSelect={p=>{setFocusedEvent(null);setFocusedVenue(null);setSelected(p);}} night={solar.night} resetKey={reset} eventVenues={[...visible.map(p=>venueOfPlace.get(p.id)).filter(Boolean),...mapEvents.filter(e=>!e.venue.id.startsWith('uic-')).map(e=>e.venue)]} privateEvents={mapPrivateEvents} previewVenue={creating?pickedBuilding:null} pickingBuilding={pickingBuilding} onBuildingPick={pickBuilding} onPrivatePick={selectEvent} focusedEvent={focusedEvent} venueGroups={venueGroups} onVenuePick={pickVenue} focusedVenue={venueView?focusedVenue:null}/>
   <div className="map-legend glass" role="group" aria-label="Map legend"><span><i className="legend-red"/><span className="legend-label">UIC<span className="legend-extra"> Building</span></span></span><span><i className="legend-purple"/><span className="legend-label">Off-campus<span className="legend-extra"> places & events</span></span></span><span><i className="legend-yellow"/><span className="legend-label">Private<span className="legend-extra"> Events</span></span></span></div>
   <header className="topbar" inert={pickingBuilding?true:undefined}>
    <div className="location-status"><div className="location-chip glass"><MapPin size={16}/><span>Chicago, IL</span><span className="location-line"/>{solar.night?<Moon size={18}/>:<Sun size={18}/>}</div><button className="event-count-pill glass" aria-label={`${campusCalendar.events.length+events.length+communityEvents.length} events available`} onClick={()=>openPanel('Live events')}><CalendarDays size={16}/><span aria-live="polite">{!campusCalendar.feed&&campusCalendar.status==='loading'?'Loading events…':<><strong>{campusCalendar.events.length+events.length+communityEvents.length}</strong> events <span className="count-available">available</span></>}</span></button></div>
@@ -227,10 +227,22 @@ function App(){
 }
 // Local photos and illustrations ship with the app; venue-website photos come through /api/place-photo,
 // Commons photos load directly. A photo that fails to load falls back to the labeled category illustration.
+// Photos load before they are needed: on hover, focus or press of a pin or list card, and quietly for the
+// first places in view once the map settles. The browser cache then has them when the card opens.
+const warmed=new Set();
+function warmPhoto(place){
+ if(!place?.photo||place.photo.illustration)return;const src=photoSrc(place);if(warmed.has(src))return;warmed.add(src);
+ const img=new Image();img.decoding='async';try{img.fetchPriority='low';}catch{}img.src=src;
+}
+function warmPhotos(list,count=12){
+ if(navigator.connection?.saveData)return;
+ const run=()=>list.filter(p=>p.photo&&!p.photo.illustration).slice(0,count).forEach(warmPhoto);
+ (window.requestIdleCallback||(fn=>setTimeout(fn,300)))(run);
+}
 function photoSrc(place,photo=place.photo){return photo.proxied?`${import.meta.env.BASE_URL}api/place-photo/${encodeURIComponent(place.id)}`:photo.src||`${import.meta.env.BASE_URL}places/${photo.file}`;}
 function PlacePhoto({place}){
  const [failed,setFailed]=useState(false),photo=failed&&place.photo.fallback?{file:place.photo.fallback,alt:`${place.category} illustration — not a photo of ${place.name}`,credit:'Kampuscape · category illustration',href:place.photo.href,illustration:true}:place.photo;
- return <figure className={`place-photo ${place.accent}`}><img src={photoSrc(place,photo)} alt={photo.alt} style={{objectPosition:photo.focus}} referrerPolicy="no-referrer" onError={e=>{if(place.photo.fallback&&!failed)setFailed(true);else e.currentTarget.style.visibility='hidden';}}/><figcaption><span>{place.category}</span><External href={photo.href} title={`Photo: ${photo.credit}`}>{photo.illustration?'Illustration':'Photo'} · {photo.credit}</External></figcaption></figure>;
+ return <figure className={`place-photo ${place.accent}`}><img src={photoSrc(place,photo)} fetchpriority="high" decoding="async" alt={photo.alt} style={{objectPosition:photo.focus}} referrerPolicy="no-referrer" onError={e=>{if(place.photo.fallback&&!failed)setFailed(true);else e.currentTarget.style.visibility='hidden';}}/><figcaption><span>{place.category}</span><External href={photo.href} title={`Photo: ${photo.credit}`}>{photo.illustration?'Illustration':'Photo'} · {photo.credit}</External></figcaption></figure>;
 }
 function HoursCard({place:p,now}){
  const [open,setOpen]=useState(false),ref=useRef(),today=chicagoDay(now),todays=dayHours(p,today),status=openingStatus(p,now);
@@ -242,6 +254,6 @@ function HoursCard({place:p,now}){
  </div>;
 }
 function UtensilsIcon(){return <Leaf size={16}/>;}
-function PlaceCard({place:p,saved,onSave,onSelect,now}){const status=openingStatus(p,now);return <article className="place-card"><button className="place-main" onClick={onSelect}><span className={`mini-art ${p.accent}`}><PlaceIcon place={p} size={25}/></span><span className="card-copy"><span className="card-category">{p.neighborhood}</span><strong>{p.name}</strong>{p.benefit&&<span className={`benefit-label ${p.kind==='free'?'free':''}`}>{p.student?<GraduationCap size={12}/>:p.kind==='free'?<Ticket size={12}/>:<span className="percent">%</span>}{p.benefit}</span>}<span className="card-meta"><i className={status.open?'open':''}/>{status.label}</span></span></button><button className={`save-button ${saved?'is-saved':''}`} onClick={onSave} aria-label={`${saved?'Unsave':'Save'} ${p.name}`}><Bookmark size={17} fill={saved?'currentColor':'none'}/></button></article>;}
+function PlaceCard({place:p,saved,onSave,onSelect,now}){const status=openingStatus(p,now);return <article className="place-card"><button className="place-main" onClick={onSelect} onPointerEnter={()=>warmPhoto(p)} onFocus={()=>warmPhoto(p)} onTouchStart={()=>warmPhoto(p)}><span className={`mini-art ${p.accent}`}><PlaceIcon place={p} size={25}/></span><span className="card-copy"><span className="card-category">{p.neighborhood}</span><strong>{p.name}</strong>{p.benefit&&<span className={`benefit-label ${p.kind==='free'?'free':''}`}>{p.student?<GraduationCap size={12}/>:p.kind==='free'?<Ticket size={12}/>:<span className="percent">%</span>}{p.benefit}</span>}<span className="card-meta"><i className={status.open?'open':''}/>{status.label}</span></span></button><button className={`save-button ${saved?'is-saved':''}`} onClick={onSave} aria-label={`${saved?'Unsave':'Save'} ${p.name}`}><Bookmark size={17} fill={saved?'currentColor':'none'}/></button></article>;}
 function SessionApp(){const auth=useAuth();useEffect(()=>()=>clearAttendance(auth.user?.id),[auth.user?.id]);if(auth.loading&&!auth.profile)return <div className="session-loading" role="status"><Compass size={30}/><strong>Kampuscape</strong><span>Getting your account ready…</span></div>;return <><RegistrationProvider key={auth.user?.id||'guest'} userId={auth.user?.id}><App/></RegistrationProvider><AccountDialog/></>;}
 createRoot(document.getElementById('root')).render(<AuthProvider><MessagingProvider><SessionApp/></MessagingProvider></AuthProvider>);
