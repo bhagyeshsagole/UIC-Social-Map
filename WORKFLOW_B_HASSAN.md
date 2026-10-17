@@ -86,6 +86,10 @@ Provider handoff should include the SDK, supported version, configuration variab
 
 ## Change log
 
+- **2026-10-16:** Bhagesh A46 (frontend only): landmark names from neighbourhood zoom, everyday place names from street zoom. No data or backend changes.
+
+- **2026-10-16:** Bhagesh A45 (frontend only): map place names avoid covering 3D buildings. No data or backend changes.
+
 - **2026-10-16:** A44/B27 released (user-requested): commit `89b231e` pushed to origin/main; review catalog migration `202610162257` applied to `ddhqammspwmmrprpolfw` (remote history matches); Pages deployment `a611ac9d` live at https://kampuscape.com/uic. Verified live: bundle `main-CqOVSjYg.js` carries the All places default and new sights, a Google listing photo, a proxied venue photo and the 360 CHICAGO photo all return 200; signed-in page renders.
 
 - **2026-10-16:** Bhagesh A44 touched `website/data/places/**` (new `park-district.json`, `brand-photos.json`, `google-photos.json`; `overrides.json` gains `excluded`, `duplicates`, `parkPages`; `photo-review.json` gains `rejectedBrands`, `brandPicks`), the OSM query in `uic-nearby-places.py`, and added review catalog migration `202610162257_review_place_catalog_2.sql` (applied 2026-10-16). B10 refresh: Google-listing hours are dated 2026-10-16 snapshots; re-check them with the rest.

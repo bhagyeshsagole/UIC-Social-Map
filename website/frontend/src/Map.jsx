@@ -15,7 +15,7 @@ import registry from './event-venues.json';
 import {cleanVenue,footprintId,buildingArea} from './privateEvents';
 import {buildingLabel} from './buildingDetails';
 import {touchFrame,touchCamera} from './gestures';
-import {placeLabel} from './labelPlacement';
+import {placeLabel,buildingMask,groundTest} from './labelPlacement';
 import {safariBleed} from './safariRunway';
 // Label sits in the courtyard between the six Lecture Center buildings.
 const UIC_LABEL = [-87.64927, 41.87191];
@@ -23,6 +23,15 @@ const UIC_LABEL = [-87.64927, 41.87191];
 const HOME = {center:UIC_LABEL,zoom:15.3,pitch:54,bearing:0,roll:0};
 // From neighbourhood zoom, every pin with room shows its name beside it, like Apple Maps.
 const NAME_ZOOM = 14.5;
+// Landmarks (parks, sights, culture, libraries and hand-picked destinations) are named from neighbourhood
+// zoom. Everyday places (food, cafes, shops, services, bars, gyms) show only their icon until street zoom,
+// a step past the opening view, so a street's names appear when someone zooms in to see what's on it.
+const STREET_ZOOM = 16;
+const LANDMARK = new Set(['Outdoors','Sights','Arts & culture','Study spaces']);
+const isLandmark = p => LANDMARK.has(p.category) || !p.id.startsWith('osm-');
+// A name may cover at most this share of rooftop; otherwise it waits for a zoom level with more street room.
+// At street zoom the limit loosens a little so the names someone zoomed in for do appear.
+const ROOF_LIMIT = .2, STREET_ROOF_LIMIT = .4;
 // Pin colour by kind of place, following Apple Maps: food and drink orange, shops and services yellow,
 // culture pink, study brown, parks green, fitness teal.
 const PIN_KIND = {'Food & drink':'food','Cafes':'food','Nightlife':'food','Groceries & essentials':'shop','Books & supplies':'shop','Barbers & beauty':'shop','Everyday services':'shop','Study spaces':'study','Arts & culture':'fun','Sights':'fun','Get active':'active','Outdoors':'park'};
@@ -72,9 +81,12 @@ function peekContent(groups){
 // Pins get the student badge only for documented UIC/student perks; free-for-everyone places show their benefit label instead.
 export const hasPerk=place=>!!place.student;
 export function PlaceIcon({place, size=19}) { const Icon=place.id==='three-run-two'?Footprints:place.category==='Nightlife'?(place.tags.some(t=>t==='Live music'||t==='Comedy')?Music:place.tags.includes('Cocktails')?Martini:Beer):place.category==='Sights'?Binoculars:place.category==='Outdoors'?Trees:place.category==='Get active'?Mountain:place.category==='Study spaces'||place.category==='Books & supplies'?BookOpen:place.category==='Barbers & beauty'?Scissors:place.category==='Groceries & essentials'?ShoppingBasket:place.category==='Everyday services'?Wrench:place.category==='Cafes'?Coffee:place.category==='Food & drink'?Utensils:Landmark; return <Icon size={size} strokeWidth={1.8}/>; }
+export const mapColors=night=>night?{ground:'#292f3b',park:'#394a48',water:'#1d3544',road:'#626b7e',casing:'#343e50',building:'#817568',label:'#c0c6d0',halo:'#303744'}:{ground:'#e3e3dc',park:'#b9c8af',water:'#acc6cf',road:'#faf8ee',casing:'#c5c8c6',building:'#c7b9a6',label:'#5f696d',halo:'#e6e8e3'};
+// Flat layers only: what isn't one of these colours (or a blend of two) on screen is a lit building.
+const groundTests={day:groundTest(['ground','park','water','road','casing'].map(k=>mapColors(false)[k])),night:groundTest(['ground','park','water','road','casing'].map(k=>mapColors(true)[k]))};
 export function styledMap(night, eventVenueIds = [], privateVenues = []) {
   const style=structuredClone(base);
-  const c=night?{ground:'#292f3b',park:'#394a48',water:'#1d3544',road:'#626b7e',casing:'#343e50',building:'#817568',label:'#c0c6d0',halo:'#303744'}:{ground:'#e3e3dc',park:'#b9c8af',water:'#acc6cf',road:'#faf8ee',casing:'#c5c8c6',building:'#c7b9a6',label:'#5f696d',halo:'#e6e8e3'};
+  const c=mapColors(night);
   style.layers=style.layers.filter(l=>l.type!=='symbol'&&!l.id.includes('hatching')&&l.id!=='road_area_pattern');
   style.layers.forEach(l=>{
     l.paint ||= {};
@@ -96,6 +108,8 @@ export default function Map({revealAll=false,places,selected,onSelect,night,rese
   const colorVenues=useRef([]);colorVenues.current=[...privateEvents.map(e=>e.venue),...(previewVenue?[previewVenue]:[])];
   const colorKey=JSON.stringify(colorVenues.current);
   const [viewportVersion,setViewportVersion]=useState(0);
+  // Where buildings are drawn on screen, read from the last settled frame (labelPlacement.js → buildingMask).
+  const roofs=useRef(null),roofCapture=useRef({wanted:false,tiles:false}),nightRef=useRef(night);nightRef.current=night;
   // Ties keep the incoming order: distance from campus, or the For you ranking.
   const pinOrder=useMemo(()=>places.map((place,index)=>({place,tier:pinTier(place),index})).sort((a,b)=>a.tier-b.tier||a.index-b.index),[places]);
   const [status,setStatus]=useState('loading'), [retry,setRetry]=useState(0), [flat,setFlat]=useState(false);
@@ -263,7 +277,7 @@ export default function Map({revealAll=false,places,selected,onSelect,night,rese
       const isSelected=selected?.id===p.id;let pin=cache.byId.get(p.id);
       if(!pin){const el=document.createElement('div');el.dataset.labelActive='false';pin={el,root:createRoot(el),marker:new maplibregl.Marker({element:el,anchor:'center'}).setLngLat(p.coords).addTo(m)};cache.byId.set(p.id,pin);}
       if(pin.place!==p||pin.selected!==isSelected){pin.place=p;pin.selected=isSelected;pin.marker.setLngLat(p.coords);pin.root.render(<button className={`map-pin ${p.accent} ${isSelected?'selected':''}`} data-kind={PIN_KIND[p.category]||'other'} onClick={()=>callback.current(p)} aria-label={`View ${p.name}${hasPerk(p)?', student perk':''}`}><span className="pin-circle"><PlaceIcon place={p} size={14}/>{hasPerk(p)&&<span className="pin-badge" aria-hidden="true"><GraduationCap size={9} strokeWidth={2.6}/></span>}</span><span className="pin-label">{p.name}</span></button>);}
-      return {id:p.id,el:pin.el,selected:isSelected,tier:pinTier(p)};
+      return {id:p.id,el:pin.el,selected:isSelected,tier:pinTier(p),landmark:isLandmark(p)};
     });
     const campus=cache.campus.getElement();let frame;
     const union=(a,b)=>({left:Math.min(a.left,b.left),top:Math.min(a.top,b.top),right:Math.max(a.right,b.right),bottom:Math.max(a.bottom,b.bottom)});
@@ -276,20 +290,23 @@ export default function Map({revealAll=false,places,selected,onSelect,night,rese
       const active=ready.find(entry=>entry.button.matches(':hover'))||ready.find(entry=>entry.button.matches(':focus-visible'))||ready.find(entry=>entry.selected);
       const pinsBoxes=new globalThis.Map(ready.map(entry=>{const box=entry.circle.getBoundingClientRect(),badge=entry.el.querySelector('.pin-badge');return [entry,badge?union(box,badge.getBoundingClientRect()):box];}));
       const order=named()?[...(active?[active]:[]),...ready.filter(entry=>entry!==active)]:active?[active]:[];
-      // Names never cover their own dot or the floating controls.
+      // Names never cover their own dot, other pins or the floating controls.
       const controls=[...document.querySelectorAll(CHROME)].map(el=>el.getBoundingClientRect()).filter(r=>r.width&&r.height).map(r=>({left:r.left-4,top:r.top-4,right:r.right+4,bottom:r.bottom+4}));
-      const placed=[],labelled=new Set();
-      for(const entry of order){
+      const placed=[],labelled=new Set(),street=m.getZoom()>=STREET_ZOOM,roofLimit=street?STREET_ROOF_LIMIT:ROOF_LIMIT;
+      // Landmarks pick their spot first; everyday places join them from street zoom.
+      const naming=[...order.filter(entry=>entry===active),...order.filter(entry=>entry!==active&&entry.landmark),...(street?order.filter(entry=>entry!==active&&!entry.landmark):[])];
+      for(const entry of naming){
         const anchor=entry.button.getBoundingClientRect(),dot=entry.circle.getBoundingClientRect(),size=entry.label.getBoundingClientRect();
         if(entry!==active&&(anchor.left<view.left||anchor.right>view.right||anchor.top<view.top||anchor.bottom>view.bottom))continue;
         const obstacles=[...pinsBoxes.values(),...placed,campus.getBoundingClientRect(),...controls];
-        const position=placeLabel(dot,size,view,obstacles,entry===active?[6,24,46]:[6]),box={left:position.left,top:position.top,right:position.left+size.width,bottom:position.top+size.height};
-        if(entry!==active&&obstacles.some(other=>overlap(box,other)>0))continue;
+        const position=placeLabel(dot,size,view,obstacles,entry===active?[6,24,46]:[6,16],roofs.current),box={left:position.left,top:position.top,right:position.left+size.width,bottom:position.top+size.height};
+        // Other names sit over streets and open ground so the city's buildings stay in view; the hovered or selected name always shows.
+        if(entry!==active&&(obstacles.some(other=>overlap(box,other)>0)||position.roof>roofLimit))continue;
         entry.label.style.left=`${position.left-anchor.left}px`;entry.label.style.top=`${position.top-anchor.top}px`;
         placed.push(box);labelled.add(entry);
       }
       // Student deals and hand-picked places always stay on the map, named or not.
-      const crowded=entry=>named()&&!revealAll&&entry.tier>0&&!labelled.has(entry)&&entry!==active&&!entry.selected;
+      const crowded=entry=>named()&&!revealAll&&entry.tier>0&&!labelled.has(entry)&&entry!==active&&!entry.selected&&(entry.landmark||street);
       for(const entry of ready){entry.el.dataset.labelActive=String(labelled.has(entry));entry.el.style.zIndex=entry===active?'2':labelled.has(entry)?'1':'0';entry.el.style.visibility=crowded(entry)?'hidden':'';}
     };
     const schedule=()=>{cancelAnimationFrame(frame);frame=requestAnimationFrame(layout);};
@@ -297,12 +314,24 @@ export default function Map({revealAll=false,places,selected,onSelect,night,rese
     const follow=()=>{if(!named())layout();};
     const zooming=()=>{for(const entry of entries)if(!entry.selected)entry.el.dataset.labelActive='false';};
     const moved=()=>{setViewportVersion(v=>v+1);schedule();};
+    // A WebGL canvas can only be read in the frame it was drawn, so the mask is taken inside a render the
+    // pins ask for: after the camera settles (this effect reruns on moveend) and after new tiles finish loading.
+    const scratch=document.createElement('canvas');
+    const capture=()=>{
+      const canvas=m.getCanvas(),rect=canvas.getBoundingClientRect(),w=Math.max(1,Math.round(rect.width/4)),h=Math.max(1,Math.round(rect.height/4));
+      scratch.width=w;scratch.height=h;const ctx=scratch.getContext('2d',{willReadFrequently:true});
+      try{ctx.drawImage(canvas,0,0,w,h);roofs.current=buildingMask(ctx.getImageData(0,0,w,h).data,w,h,rect,groundTests[nightRef.current?'night':'day']);}catch{roofs.current=null;}
+    };
+    const want=()=>{roofCapture.current.wanted=true;m.triggerRepaint();};
+    const rendered=()=>{follow();if(roofCapture.current.wanted){roofCapture.current.wanted=false;capture();schedule();}};
+    const tiles=e=>{if(e.dataType==='source'&&e.tile)roofCapture.current.tiles=true;};
+    const idle=()=>{if(roofCapture.current.tiles){roofCapture.current.tiles=false;want();}};
     const sizes=new ResizeObserver(schedule);entries.forEach(entry=>sizes.observe(entry.el));
-    m.on('moveend',moved);m.on('zoomstart',zooming);m.on('render',follow);m.on('resize',schedule);
+    m.on('moveend',moved);m.on('zoomstart',zooming);m.on('render',rendered);m.on('resize',schedule);m.on('data',tiles);m.on('idle',idle);
     const surface=container.current;
     for(const name of ['pointerover','pointerout','focusin','focusout'])surface.addEventListener(name,schedule);
-    schedule();
-    return ()=>{m.off('moveend',moved);m.off('zoomstart',zooming);cancelAnimationFrame(frame);sizes.disconnect();m.off('render',follow);m.off('resize',schedule);for(const name of ['pointerover','pointerout','focusin','focusout'])surface.removeEventListener(name,schedule);};
+    schedule();want();
+    return ()=>{m.off('moveend',moved);m.off('zoomstart',zooming);cancelAnimationFrame(frame);sizes.disconnect();m.off('render',rendered);m.off('resize',schedule);m.off('data',tiles);m.off('idle',idle);for(const name of ['pointerover','pointerout','focusin','focusout'])surface.removeEventListener(name,schedule);};
   },[pinOrder,selected,revealAll,retry,viewportVersion]);
   useEffect(()=>{if(selected&&map.current)map.current.flyTo({center:selected.coords,zoom:15.8,pitch:54,offset:window.innerWidth>760?[0,-220]:[0,-130],duration:900});},[selected]);
   useEffect(()=>{if(map.current&&resetKey>0)map.current.flyTo({center:HOME.center,zoom:15.3,pitch:54,bearing:-22,offset:[0,0],duration:900});},[resetKey]);
