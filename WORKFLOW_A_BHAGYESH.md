@@ -205,6 +205,8 @@ Ordered by impact for students on phones.
 
 ## Change log
 
+- **2026-10-16:** A45/A46 released (user-requested): commit `46dbbf7` pushed to origin/main; Pages deployment `0efeb0f9` live at https://kampuscape.com/uic (bundle `main-DHLZ27s7.js` verified to carry the street-zoom naming and building mask).
+
 - **2026-10-16:** A46 (user-requested): two-level map names. Landmarks (parks, sights, arts and culture, libraries and study spots, and every hand-picked destination) are named from neighbourhood zoom as before; everyday places (food, cafes, shops, services, bars, gyms) show only their icon until street zoom 16, a step past the opening view (15.3), and then name themselves too. Landmarks pick name spots first; at street zoom the rooftop limit loosens from 20% to 40% so the names someone zoomed in for appear. Pins only count as crowded once they could have been named, so For students and For you keep their pins at the opening zoom. Checked in Chrome at 15.3, 15.96 and 16.39 (night theme); 112 unit tests and build pass.
 
 - **2026-10-16:** A45 (user-requested, released with A46): place names on the map stay off buildings. After each settled frame the pins read a quarter-size copy of the map canvas; pixels that are not one of the flat map colours (ground, roads, casings, parks, water, or a blend of two) count as building. Each name tries the four sides of its dot, then the four corners, and is shown only where under 20% of it covers rooftop; hovered and selected names always show. `src/labelPlacement.js` (`groundTest`, `buildingMask`), `src/Map.jsx`; 112 unit tests and build pass; checked by eye in Chrome at the home view and one zoom closer (night theme).
