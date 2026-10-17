@@ -205,6 +205,8 @@ Ordered by impact for students on phones.
 
 ## Change log
 
+- **2026-10-16:** A48 (user-requested): street-zoom names from 16.5 (was 17). Released in the same step.
+
 - **2026-10-16:** A47 released: commit `5f15d3d` pushed to origin/main; Pages deployment `3a40ba37` live at https://kampuscape.com/uic.
 
 - **2026-10-16:** A47 (user-requested): hand-picked restaurants and cafes no longer count as landmarks, so zoomed out only parks, sights, arts and culture, libraries and study spots are named; everyday places (hand-picked or not) are named from street zoom 17 (was 16). Checked in Chrome at 15.3, 16.15 and 17.0 (night theme); 112 unit tests and build pass.

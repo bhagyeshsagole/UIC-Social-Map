@@ -26,7 +26,7 @@ const NAME_ZOOM = 14.5;
 // Landmarks (parks, sights, arts and culture, libraries and study spots) are named from neighbourhood
 // zoom. Everyday places (food, cafes, shops, services, bars, gyms) show only their icon until street zoom,
 // a step past the opening view, so a street's names appear when someone zooms in to see what's on it.
-const STREET_ZOOM = 17;
+const STREET_ZOOM = 16.5;
 const LANDMARK = new Set(['Outdoors','Sights','Arts & culture','Study spaces']);
 const isLandmark = p => LANDMARK.has(p.category);
 // A name may cover at most this share of rooftop; otherwise it waits for a zoom level with more street room.

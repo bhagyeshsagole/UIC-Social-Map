@@ -86,6 +86,8 @@ Provider handoff should include the SDK, supported version, configuration variab
 
 ## Change log
 
+- **2026-10-16:** Bhagesh A48 (frontend only): street-zoom names from 16.5.
+
 - **2026-10-16:** A47 released: commit `5f15d3d` pushed to origin/main; Pages deployment `3a40ba37` live at https://kampuscape.com/uic.
 
 - **2026-10-16:** Bhagesh A47 (frontend only): street-zoom names from 17; landmarks by category only. No data or backend changes.
