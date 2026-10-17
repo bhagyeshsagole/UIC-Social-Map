@@ -86,6 +86,8 @@ Provider handoff should include the SDK, supported version, configuration variab
 
 ## Change log
 
+- **2026-10-16:** A48/A49 released: commit `83fa629` pushed to origin/main; Pages deployment `49d057fc` live at https://kampuscape.com/uic; proxied photos verified 200 image/webp through the live proxy.
+
 - **2026-10-16:** Bhagesh A49 touched `website/frontend/scripts/import-nearby-places.mjs` output only (lighter image URLs in `nearbyPlaces.json` and `placePhotoSources.json`); no data snapshot changes.
 
 - **2026-10-16:** Bhagesh A48 (frontend only): street-zoom names from 16.5.

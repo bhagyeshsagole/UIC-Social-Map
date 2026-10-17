@@ -205,6 +205,8 @@ Ordered by impact for students on phones.
 
 ## Change log
 
+- **2026-10-16:** A48/A49 released: commit `83fa629` pushed to origin/main; Pages deployment `49d057fc` live at https://kampuscape.com/uic; proxied photos verified 200 image/webp through the live proxy.
+
 - **2026-10-16:** A49 (user-requested): faster place photos and street-zoom names from 15.5. `scripts/lib/lighterImage.mjs` asks Squarespace, Wix, Bento, Contentful, GoDaddy, Shopify and Wikimedia for a card-sized copy (~900 px) instead of the original upload (checked photos 60.8 MB → 24 MB; every rewritten link verified to return an image); curated local photos recompressed to ≤1100 px (25 → 21 MB). Photos are warmed before they're opened: on hover, focus or press of a map pin or list card, and in idle time for the first 12 pins in view once the map has finished loading (skipped with Save-Data); the open card's image gets high fetch priority. 112 unit tests and build pass.
 
 - **2026-10-16:** A48 (user-requested): street-zoom names from 16.5 (was 17). Released in the same step.
